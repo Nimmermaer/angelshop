@@ -53,6 +53,7 @@ return array(
     'TYPO3\\CMS\\Cshmanual\\' => array($baseDir . '/typo3_src/typo3/sysext/cshmanual/Classes'),
     'TYPO3\\CMS\\Core\\' => array($baseDir . '/typo3_src/typo3/sysext/core/Classes'),
     'TYPO3\\CMS\\ContextHelp\\' => array($baseDir . '/typo3_src/typo3/sysext/context_help/Classes'),
+    'TYPO3\\CMS\\Composer\\' => array($vendorDir . '/typo3/cms-composer-installers/src'),
     'TYPO3\\CMS\\Beuser\\' => array($baseDir . '/typo3_src/typo3/sysext/beuser/Classes'),
     'TYPO3\\CMS\\Belog\\' => array($baseDir . '/typo3_src/typo3/sysext/belog/Classes'),
     'TYPO3\\CMS\\Backend\\' => array($baseDir . '/typo3_src/typo3/sysext/backend/Classes'),
@@ -61,5 +62,6 @@ return array(
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'MB\\Angelshop\\' => array($baseDir . '/typo3conf/ext/angelshop/Classes'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
 );

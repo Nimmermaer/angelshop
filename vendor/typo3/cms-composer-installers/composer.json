@@ -6,11 +6,15 @@
     "keywords": [
         "installer", "typo3", "cms", "core", "extension"
     ],
-    "homepage": "http://forge.typo3.org/projects/team-composer",
+    "homepage": "https://github.com/TYPO3/CmsComposerInstallers",
     "authors": [
         {
             "name": "Christian Opitz",
             "email": "christian.opitz@netresearch.de"
+        },
+        {
+            "name": "Helmut Hummel",
+            "email": "info@helhum.io"
         },
         {
             "name": "Lars Peipmann",
@@ -18,7 +22,9 @@
         }
     ],
     "autoload": {
-        "psr-0": { "": "Classes/"}
+        "psr-4": {
+            "TYPO3\\CMS\\Composer\\": "src/"
+        }
     },
     "minimum-stability": "dev",
     "replace": {
@@ -29,7 +35,7 @@
         "composer-plugin-api": "^1.0.0"
     },
     "conflict": {
-        "composer/installers": "<1.0.24,>1.0.24"
+        "composer/installers": "<1.0.24 || >1.0.24"
     },
     "require-dev": {
         "composer/composer": "1.*"
@@ -37,7 +43,7 @@
     "extra": {
         "class": "TYPO3\\CMS\\Composer\\Installer\\Plugin",
         "branch-alias": {
-            "dev-master": "1.2.x-dev"
+            "dev-master": "1.3.x-dev"
         }
     }
 }
