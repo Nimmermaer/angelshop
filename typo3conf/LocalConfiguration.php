@@ -16,9 +16,11 @@ return [
     'EXT' => [
         'extConf' => [
             'angelshop' => 'a:0:{}',
+            'backend' => 'a:3:{s:9:"loginLogo";s:0:"";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";}',
             'extension_builder' => 'a:3:{s:15:"enableRoundtrip";s:1:"1";s:15:"backupExtension";s:1:"1";s:9:"backupDir";s:35:"uploads/tx_extensionbuilder/backups";}',
             'formhandler' => 'a:0:{}',
             'gridelements' => 'a:2:{s:20:"additionalStylesheet";s:0:"";s:19:"nestingInListModule";s:1:"0";}',
+            'lfeditor' => 'a:4:{s:13:"viewLanguages";s:6:"de, en";s:15:"defaultLanguage";s:2:"de";s:9:"extIgnore";s:23:"/^(CVS|.svn|.git|csh_)/";s:13:"changeXlfDate";s:1:"1";}',
             'rsaauth' => 'a:1:{s:18:"temporaryDirectory";s:0:"";}',
             'saltedpasswords' => 'a:2:{s:3:"BE.";a:4:{s:21:"saltedPWHashingMethod";s:41:"TYPO3\\CMS\\Saltedpasswords\\Salt\\PhpassSalt";s:11:"forceSalted";i:0;s:15:"onlyAuthService";i:0;s:12:"updatePasswd";i:1;}s:3:"FE.";a:5:{s:7:"enabled";i:1;s:21:"saltedPWHashingMethod";s:41:"TYPO3\\CMS\\Saltedpasswords\\Salt\\PhpassSalt";s:11:"forceSalted";i:0;s:15:"onlyAuthService";i:0;s:12:"updatePasswd";i:1;}}',
             'vhs' => 'a:0:{}',
@@ -37,7 +39,6 @@ return [
             'TYPO3\CMS\Install\Updates\BackendUserStartModuleUpdate' => 1,
             'TYPO3\CMS\Install\Updates\Compatibility6ExtractionUpdate' => 1,
             'TYPO3\CMS\Install\Updates\ContentTypesToTextMediaUpdate' => 1,
-            'TYPO3\CMS\Install\Updates\ExtensionManagerTables' => 1,
             'TYPO3\CMS\Install\Updates\FileListIsStartModuleUpdate' => 1,
             'TYPO3\CMS\Install\Updates\FilesReplacePermissionUpdate' => 1,
             'TYPO3\CMS\Install\Updates\LanguageIsoCodeUpdate' => 1,

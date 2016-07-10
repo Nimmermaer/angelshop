@@ -240,18 +240,6 @@ return [
             'packagePath' => 'typo3/sysext/viewpage/',
             'suggestions' => [],
         ],
-        'angelshop' => [
-            'composerName' => 'angelshop',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/angelshop/',
-            'suggestions' => [],
-        ],
-        'extension_builder' => [
-            'composerName' => 'ebt/extension_builder',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/extension_builder/',
-            'suggestions' => [],
-        ],
         'formhandler' => [
             'composerName' => 'typoheads/formhandler',
             'state' => 'active',
@@ -268,6 +256,24 @@ return [
             'composerName' => 'fluidtypo3/vhs',
             'state' => 'active',
             'packagePath' => 'typo3conf/ext/vhs/',
+            'suggestions' => [],
+        ],
+        'angelshop' => [
+            'composerName' => 'MB/Angelshop',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/angelshop/',
+            'suggestions' => [],
+        ],
+        'extension_builder' => [
+            'composerName' => 'ebt/extension_builder',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/extension_builder/',
+            'suggestions' => [],
+        ],
+        'lfeditor' => [
+            'composerName' => 'sgalinski/lfeditor',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/lfeditor/',
             'suggestions' => [],
         ],
         'adodb' => [

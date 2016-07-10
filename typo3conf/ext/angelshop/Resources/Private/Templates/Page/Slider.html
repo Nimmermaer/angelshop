@@ -1,0 +1,19 @@
+<body>
+<!-- Navigation -->
+<f:render partial="Page/Header" arguments="{_all}"/>
+<!-- Header Carousel -->
+{columnSpecial->f:format.raw()}
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                {data.title}
+            </h1>
+        </div>
+    </div>
+    {columnMain->f:format.raw()}
+    <hr>
+    <!-- Footer -->
+    <f:render partial="Page/Footer"/>
+</div>

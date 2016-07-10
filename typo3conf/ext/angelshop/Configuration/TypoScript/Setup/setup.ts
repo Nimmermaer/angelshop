@@ -1,2 +1,9 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/page.setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/config.setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/Gridelements/_init.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/menu.setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/ce.setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/columns.setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/template.setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/style.setup.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Setup/plugin.setup.ts">

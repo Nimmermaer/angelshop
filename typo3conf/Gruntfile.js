@@ -1,0 +1,124 @@
+module.exports = function (grunt) {
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        watch: {
+            javascript: {
+                files: [
+                    'ext/angelshop/Resources/Private/Js/*.js',
+					'ext/angelshop/Resources/Private/Js/*.js'
+                ],
+                tasks: ['concat', 'jshint'],
+                options: {nospawn: true}
+            },
+            css: {
+                files: [
+                    'ext/angelshop/Resources/Private/**/*.{less,scss,sass}',
+                    'ext/angelshop/Resources/Private/**/*.{less,scss,sass}'
+                ],
+                tasks: ['less'],
+                options: {nospawn: true}
+            },
+            gruntfile: {
+                files: 'Gruntfile.js',
+                tasks: ['jshint:gruntfile']
+            },
+            src: {
+                files: [
+                    'ext/angelshop/Resources/Private/Js/*.js',
+                    'ext/angelshop/Resources/Private/Js/*.js',
+                    'ext/angelshop/Resources/Private/**/*.{less,scss,sass}',
+                    'ext/angelshop/Resources/Private/**/*.{less,scss,sass}'
+                ],
+                tasks: ['default']
+            }
+        },
+        jshint: {
+            options: {
+                bitwise: true,
+                browser: true,
+                camelcase: true,
+                curly: true,
+                devel: true,
+                eqeqeq: true,
+                immed: false,
+                jquery: true,
+                maxcomplexity: 30,
+                maxdepth: 8,
+                maxlen: 200,
+                maxparams: 5,
+                maxstatements: 60,
+                newcap: true,
+                undef: false,
+                unused: false,
+                noarg: true,
+                nonew: false,
+                quotmark: 'single',
+                trailing: true,
+                white: false,
+                globals: ['_', 'jQuery', '$', 'undef']
+            },
+            all: [
+				'!ext/angelshop/Resources/Private/Js/*.js',
+                'ext/angelshop/Resources/Private/Js/*.js'
+            ]
+        },
+        concat: {
+            options: {
+                banner: '<%= banner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>',
+                stripBanners: false
+            },
+            bootstrap: {
+                src: [
+                    'ext/angelshop/Resources/Private/Js/bootstrap/transition.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/alert.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/button.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/carousel.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/collapse.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/dropdown.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/modal.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/tooltip.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/popover.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/scrollspy.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/tab.js',
+                    'ext/angelshop/Resources/Private/Js/bootstrap/affix.js'
+                ],
+                dest: 'ext/angelshop/Resources/Public/Js/bootstrap.js'
+            },
+			angelshop: {
+                src: [
+                    'ext/angelshop/Resources/Private/Js/*.js'
+                ],
+                dest: 'ext/angelshop/Resources/Public/Js/scripts.js'
+            }
+        },
+        sprite:{
+			angelshop: {
+                src: 'ext/angelshop/Resources/Public/Img/*.png',
+                dest: 'ext/angelshop/Resources/Public/Img/spritesheet.png',
+                destCss: 'ext/angelshop/Resources/Public/Css/sprites.css'
+            }
+        },
+        less: {
+			angelshop: {
+                options: {
+                    strictMath: true,
+                    sourceMap: false,
+                    outputSourceFiles: true
+                },
+                src: 'ext/angelshop/Resources/Private/Less/angelshop.less',
+                dest: 'ext/angelshop/Resources/Public/Css/angelshop.css'
+            }
+        }
+    });
+
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    //grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    //grunt.loadNpmTasks('grunt-spritesmith');
+
+    //grunt.registerTask('default', ['less', 'jshint', 'concat', 'sprite']);
+    grunt.registerTask('default', ['less', 'jshint', 'concat']);
+};

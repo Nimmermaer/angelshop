@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z" product-name="angelshop">
+        <header/>
+        <body>
+            <trans-unit id="tx_angelshop_domain_model_gallery">
+                <source>Gallery</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_teaserrow">
+                <source>Teaserrow</source>
+            </trans-unit>
+            <trans-unit id="tx_sidebarList.title">
+                <source>Sidebarlist</source>
+            </trans-unit>
+            <trans-unit id="tx_accordion.title">
+                <source>Accordion</source>
+            </trans-unit>
+            <trans-unit id="tx_table.title">
+                <source>Table</source>
+            </trans-unit>
+            <trans-unit id="tx_project.title">
+                <source>Project</source>
+            </trans-unit>
+            <trans-unit id="tx_impressum.title">
+                <source>Impressum</source>
+            </trans-unit>
+            <trans-unit id="tx_serviceList.title">
+                <source>ServiceList</source>
+            </trans-unit>
+            <trans-unit id="tx_tab.title">
+                <source>Tab</source>
+            </trans-unit>
+            <trans-unit id="tx_service.title">
+                <source>Service</source>
+            </trans-unit>
+            <trans-unit id="tx_callToAction.title">
+                <source>CallToAction</source>
+            </trans-unit>
+            <trans-unit id="tx_slider.title">
+                <source>Slider</source>
+            </trans-unit>
+            <trans-unit id="tx_teaser.title">
+                <source>Teaser</source>
+            </trans-unit>
+            <trans-unit id="tx_team.title">
+                <source>Team Element</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

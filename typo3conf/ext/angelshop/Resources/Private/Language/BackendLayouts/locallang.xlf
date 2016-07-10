@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z" product-name="angelshop">
+        <header/>
+        <body>
+            <trans-unit id="Default.title">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="Default.col.0">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="Slider.title">
+                <source>Slider</source>
+            </trans-unit>
+            <trans-unit id="Slider.col.0">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="Slider.col.1">
+                <source>Slider</source>
+            </trans-unit>
+            <trans-unit id="Sidebar.title">
+                <source>Sidebar</source>
+            </trans-unit>
+            <trans-unit id="Sidebar.col.0">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="Sidebar.col.1">
+                <source>Sidebar</source>
+            </trans-unit>
+            <trans-unit id="Product.title">
+                <source>Product</source>
+            </trans-unit>
+            <trans-unit id="Product.col.0">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="Product.col.1">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="Product.col.2">
+                <source>Footer</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

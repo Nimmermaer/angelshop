@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
+          product-name="angelshop">
+        <header/>
+        <body>
+            <trans-unit id="grid-50-50.title">
+                <source>50:50</source>
+            </trans-unit>
+            <trans-unit id="grid-50-50.description">
+                <source>Zweispalter</source>
+            </trans-unit>
+            <trans-unit id="grid-40-80.title">
+                <source>40:80</source>
+            </trans-unit>
+            <trans-unit id="grid-40-80.description">
+                <source>Zweispalter</source>
+            </trans-unit>
+            <trans-unit id="grid-80-40.title">
+                <source>80:40</source>
+            </trans-unit>
+            <trans-unit id="grid-80-40.description">
+                <source>Zweispalter</source>
+            </trans-unit>
+            <trans-unit id="grid-30-30-30-30.title">
+                <source>30:30:30:30</source>
+            </trans-unit>
+            <trans-unit id="grid-30-30-30-30.description">
+                <source>Vierspalter</source>
+            </trans-unit>
+            <trans-unit id="grid-40-40-40.title">
+                <source>40:40:40</source>
+            </trans-unit>
+            <trans-unit id="grid-40-40-40.description">
+                <source>Vierspalter</source>
+            </trans-unit>
+
+            <trans-unit id="grid-fullwidth.title">
+                <source>Volle Breite</source>
+            </trans-unit>
+            <trans-unit id="grid-fullwidth.description">
+                <source>Über die ganze Breite</source>
+            </trans-unit>
+
+            <trans-unit id="column.left">
+                <source>Linke Spalte</source>
+            </trans-unit>
+            <trans-unit id="column.right">
+                <source>Rechte Spalte</source>
+            </trans-unit>
+            <trans-unit id="column.middle-left">
+                <source>Mitte-Links</source>
+            </trans-unit>
+            <trans-unit id="column.middle-right">
+                <source>Mitte-Rechts</source>
+            </trans-unit>
+            <trans-unit id="column.middle">
+                <source>Mitte</source>
+            </trans-unit>
+            <trans-unit id="column.main">
+                <source>Main</source>
+            </trans-unit>
+            <trans-unit id="accordion.column">
+                <source>Accordion content</source>
+            </trans-unit>
+            <trans-unit id="accordion.title">
+                <source>Accordion</source>
+            </trans-unit>
+            <trans-unit id="accordionItem.title">
+                <source>Accordion Element</source>
+            </trans-unit>
+            <trans-unit id="accordionItem.column">
+                <source>Accordion Item Content</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

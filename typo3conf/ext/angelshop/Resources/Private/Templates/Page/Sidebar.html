@@ -1,0 +1,25 @@
+<!-- Navigation -->
+<f:render partial="Page/Header" arguments="{_all}"/>
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <f:render partial="Page/Breadcrumb" arguments="{_all}"/>
+    <!-- /.row -->
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            {columnSpecial->f:format.raw()}
+        </div>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            {columnMain->f:format.raw()}
+        </div>
+    </div>
+    <!-- /.row -->
+    <hr>
+    <!-- Footer -->
+    <f:render partial="Page/Footer" arguments="{_all}"/>
+
+</div>

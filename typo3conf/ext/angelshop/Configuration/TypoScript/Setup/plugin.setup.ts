@@ -1,3 +1,14 @@
+plugin.tx_angelshop {
+    view {
+        templateRootPaths.0 = {$plugin.tx_angelshop.view.templateRootPath}
+        partialRootPaths.0 = {$plugin.tx_angelshop.view.partialRootPath}
+        layoutRootPaths.0 = {$plugin.tx_angelshop.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_angelshop_gallery.persistence.storagePid}
+    }
+}
+
 plugin.tx_angelshop_gallery {
     view {
         templateRootPaths.0 = {$plugin.tx_angelshop_gallery.view.templateRootPath}

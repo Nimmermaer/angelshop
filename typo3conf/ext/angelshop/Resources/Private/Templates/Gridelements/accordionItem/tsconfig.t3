@@ -1,0 +1,19 @@
+tx_gridelements.setup.accordionItem {
+    title = LLL:EXT:angelshop/Resources/Private/Language/Gridelements/locallang.xlf:accordionItem.title
+    description = LLL:EXT:angelshop/Resources/Private/Language/Gridelements/locallang.xlf:accordionItem.description
+   iconIdentifier = mimetypes-x-backend_layout
+   config {
+        colCount = 1
+       	rowCount = 1
+       	rows {
+       		1 {
+       			columns {
+       				1 {
+       					name = LLL:EXT:angelshop/Resources/Private/Language/Gridelements/locallang.xlf:accordionItem.column
+       					colPos = 20
+       				}
+       			}
+       		}
+       	}
+    }
+}

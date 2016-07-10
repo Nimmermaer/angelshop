@@ -9,6 +9,39 @@
 			<trans-unit id="tx_angelshop_domain_model_teaserrow">
 				<source>Teaserrow</source>
 			</trans-unit>
+			<trans-unit id="tx_sidebarList.title">
+				<source>Sidebarlist</source>
+			</trans-unit>
+			<trans-unit id="tx_accordion.title">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="tx_table.title">
+				<source>Table</source>
+			</trans-unit>
+			<trans-unit id="tx_project.title">
+				<source>Project</source>
+			</trans-unit>
+			<trans-unit id="tx_impressum.title">
+				<source>Impressum</source>
+			</trans-unit>
+			<trans-unit id="tx_serviceList.title">
+				<source>ServiceList</source>
+			</trans-unit>
+			<trans-unit id="tx_tab.title">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="tx_service.title">
+				<source>Service</source>
+			</trans-unit>
+			<trans-unit id="tx_callToAction.title">
+				<source>CallToAction</source>
+			</trans-unit>
+			<trans-unit id="tx_slider.title">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="tx_teaser.title">
+				<source>Teaser</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

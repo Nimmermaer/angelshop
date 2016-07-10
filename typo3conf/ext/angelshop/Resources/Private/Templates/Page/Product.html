@@ -1,0 +1,29 @@
+<!-- Navigation -->
+<f:render partial="Page/Header" arguments="{_all}"/>
+<!-- Page Content -->
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <f:render partial="Page/Breadcrumb" arguments="{_all}"/>
+    <!-- /.row -->
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-8">
+            {columnSpecial->f:format.raw()}
+        </div>
+
+        <div class="col-md-4">
+            {columnMain->f:format.raw()}
+        </div>
+
+    </div>
+    <!-- /.row -->
+    {columnBottom->f:format.raw()}
+    <hr>
+
+    <!-- Footer -->
+    <f:render partial="Page/Footer" arguments="{_all}"/>
+
+
+</div>

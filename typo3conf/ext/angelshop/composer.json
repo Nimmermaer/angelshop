@@ -1,0 +1,26 @@
+{
+  "name": "MB/Angelshop",
+  "type": "typo3-cms-extension",
+  "description": "provider extension",
+  "version": "0.0.1",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "authors": [
+    {
+      "name": "Michael Blunck",
+      "email": "mi.blunck@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "MB\\Angelshop\\": "Classes"
+    }
+  },
+  "replace": {
+    "angelshop": "*"
+  }
+}
