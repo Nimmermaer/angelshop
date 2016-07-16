@@ -270,12 +270,6 @@ return [
             'packagePath' => 'typo3conf/ext/extension_builder/',
             'suggestions' => [],
         ],
-        'lfeditor' => [
-            'composerName' => 'sgalinski/lfeditor',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/lfeditor/',
-            'suggestions' => [],
-        ],
         'adodb' => [
             'composerName' => 'typo3/cms-adodb',
             'state' => 'inactive',

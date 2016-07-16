@@ -6,6 +6,15 @@
             <trans-unit id="tx_angelshop_domain_model_gallery">
                 <source>Gallery</source>
             </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_link">
+                <source>Link</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_fontawesome">
+                <source>Fontawesome Icon <a href="http://fontawesome.io/icons/">Iconsuche</a> </source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_title">
+                <source>Titel</source>
+            </trans-unit>
             <trans-unit id="tx_angelshop_domain_model_teaserrow">
                 <source>Teaserrow</source>
             </trans-unit>
@@ -44,6 +53,15 @@
             </trans-unit>
             <trans-unit id="tx_team.title">
                 <source>Team Element</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_fontawesome.tx_angelshop_title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_fontawesome.class">
+                <source>Klasse</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_fontawesome.class">
+                <source>Klasse</source>
             </trans-unit>
         </body>
     </file>

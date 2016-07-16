@@ -1,1 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Page/page.ts">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:angelshop/Configuration/TypoScript/Page" extensions="ts">

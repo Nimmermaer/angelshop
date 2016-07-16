@@ -39,20 +39,21 @@ $newTtContentColumns = array(
 	),
 	'tx_angelshop_fontawesome' => array(
 		'exclude' => 1,
-		'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_link',
+		'displayCond' => array(
+			'FIELD:layout:=:1',
+			'FIELD:layout:=:2',
+			'FIELD:layout:=:3',
+		),
+		'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_fontawesome',
 		'config'  => array(
-			'type'  => 'select',
-			'items' => array(
-				array( ' --- Bitte wählen --- ', 0 ),
-				'foreign_table' => 'tx_angelshop_domain_model_fontawesome',
-				'minitems'      => 0,
-				'maxitems'      => 1,
-				'default'       => ''
-			)
+			'type'  => 'inline',
+			'foreign_table' => 'tx_angelshop_domain_model_fontawesome',
+			'foreign_field' => 'record',
 		)
-	)
+	),
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns( 'tt_content', $newTtContentColumns );
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'tx_angelshop_fontawesome', '', 'after:header');
 
 $contentelements = array(
 	'slider',
@@ -149,3 +150,4 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_team']         = array(
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
 );
+$GLOBALS['TCA']['tt_content']['ctrl']['requestUpdate'] = 'layout';

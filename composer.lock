@@ -603,6 +603,7 @@
                     ""
                 ],
                 "exclude-from-classmap": [
+                    "Migrations",
                     "Tests",
                     "tests",
                     "class.ext_update.php"

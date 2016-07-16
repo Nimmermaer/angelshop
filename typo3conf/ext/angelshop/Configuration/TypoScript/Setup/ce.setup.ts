@@ -29,6 +29,23 @@ tt_content {
         }
     }
 
+    textmedia {
+        dataProcessing {
+            100 = MB\Angelshop\DataProcessing\ContentElementProcessor
+            100 {
+                references.fieldName = tx_angelshop_domain_model_fontawesome
+            }
+            #    100 =  TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            #    100 {
+            #        table = tx_angelshop_domain_model_fontawesome
+            #        where.data = field:uid
+            #        where.wrap = record=|
+            #        orderBy = sorting
+            #        as = content
+            #    }
+        }
+    }
+
     tx_teaser < lib.fluidContent
     tx_teaser {
         templateName = Angelshop/Teaser
@@ -127,6 +144,7 @@ tt_content {
             }
         }
     }
+
     tx_team < lib.fluidContent
     tx_team {
         templateName = Angelshop/Team
@@ -148,4 +166,5 @@ tt_content {
             }
         }
     }
+}
 }

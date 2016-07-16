@@ -1,1 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:angelshop/Configuration/TypoScript/Constants/constants.ts">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:angelshop/Configuration/TypoScript/Constants/" extensions="ts">

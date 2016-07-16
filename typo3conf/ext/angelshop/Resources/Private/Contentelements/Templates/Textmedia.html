@@ -1,26 +1,62 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<div id="c{data.uid}">
-	<f:if condition="{gallery.position.noWrap} != 1">
-		<f:render partial="Header" arguments="{_all}" />
-	</f:if>
+<f:switch expression="{data.layout}">
+    <f:case value="0">
+        <div id="c{data.uid}">
+            <f:if condition="{gallery.position.noWrap} != 1">
+                <f:render partial="Header" arguments="{_all}"/>
+            </f:if>
 
-	<div class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
-		<f:if condition="{gallery.position.vertical} != 'below'">
-			<f:render partial="MediaGallery" arguments="{_all}" />
-		</f:if>
+            <div class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
+                <f:if condition="{gallery.position.vertical} != 'below'">
+                    <f:render partial="MediaGallery" arguments="{_all}"/>
+                </f:if>
 
-		<div class="ce-bodytext">
-			<f:if condition="{gallery.position.noWrap}">
-				<f:render partial="Header" arguments="{_all}" />
-			</f:if>
-			<f:format.html>{data.bodytext}</f:format.html>
-		</div>
+                <div class="ce-bodytext">
+                    <f:if condition="{gallery.position.noWrap}">
+                        <f:render partial="Header" arguments="{_all}"/>
+                    </f:if>
+                    <f:format.html>{data.bodytext}</f:format.html>
+                </div>
 
-		<f:if condition="{gallery.position.vertical} == 'below'">
-			<f:render partial="MediaGallery" arguments="{_all}" />
-		</f:if>
-	</div>
+                <f:if condition="{gallery.position.vertical} == 'below'">
+                    <f:render partial="MediaGallery" arguments="{_all}"/>
+                </f:if>
+            </div>
+            <f:render partial="Footer" arguments="{_all}"/>
+        </div>
+    </f:case>
+    <f:case value="1">
+        <div class="thumbnail text-center">
+            <f:debug>{_all}</f:debug>
+            <f:render partial="MediaGallery" arguments="{gallery:'{gallery}', class:'img-responsive'}"/>
+            <div class="caption">
+                <f:debug>{_all}</f:debug>
+                <f:if condition="{data.header}">
+                    <h3>{data.header}<br>
+                        <f:if condition="{data.rowDescription}">
+                            <small>Job Title</small>
+                        </f:if>
 
-	<f:render partial="Footer" arguments="{_all}" />
-</div>
+                    </h3>
+                </f:if>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </f:case>
+    <f:case value="2">
+
+    </f:case>
+    <f:case value="3">
+
+    </f:case>
+</f:switch>
 </html>

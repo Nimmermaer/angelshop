@@ -1,19 +1,13 @@
-
 translate = LLL:EXT:angelshop/Resources/Private/Language/locallang.xlf
 
 # Global constants
 # Here defined constants are available in all pagetrees of the TYPO3 instance.
 global {
     homePageUid = 1
-
-    # Constants which contains pids to sysfolders
     storage {
         navService = 23
         news =
     }
-
-    # Constants which are used by EXT:news
-
 
     languageLabels {
         current = Deutsch
@@ -22,9 +16,9 @@ global {
     }
 
     navigation {
-        footerStartPoint =
-        serviceStartPoint =
-        metaStartPoint =
+        footerStartPoint = 5
+        serviceStartPoint = 3
+        metaStartPoint = 1
     }
 
     page {
