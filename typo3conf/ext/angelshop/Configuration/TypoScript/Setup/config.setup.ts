@@ -34,10 +34,10 @@ config {
     absRefPrefix = /
     # prefixLocalAnchors = all
 
-    compressCss = 0
-    compressJs = 0
-    concatenateCss = 0
-    concatenateJs = 0
+    compressCss = 1
+    compressJs = 1
+    concatenateCss = 1
+    concatenateJs = 1
 
     simulateStaticDocuments = 0
     tx_realurl_enable = 1
@@ -45,3 +45,12 @@ config {
     index_enable = 1
     index_metatags = 1
 }
+
+[applicationContext = Development]
+    config {
+        compressCss = 0
+        compressJs = 0
+        concatenateCss = 0
+        concatenateJs = 0
+    }
+[global]

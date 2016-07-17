@@ -28,6 +28,18 @@ lib.templates.base {
         metaStartPoint {
             value = {$global.navigation.metaStartPoint}
         }
+
+        searchPid = TEXT
+        searchPid {
+            value = {$global.page.search.pid}
+        }
+
+        copyright = TEXT
+        copyright {
+            data = date:U
+            strftime = %Y
+            wrap = &copy;  &nbsp; Aba-Angelshop &nbsp; |
+        }
     }
 }
 

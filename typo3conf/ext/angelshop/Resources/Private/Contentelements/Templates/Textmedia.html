@@ -1,4 +1,5 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 <f:switch expression="{data.layout}">
     <f:case value="0">
         <div id="c{data.uid}">
@@ -27,36 +28,68 @@
     </f:case>
     <f:case value="1">
         <div class="thumbnail text-center">
-            <f:debug>{_all}</f:debug>
+
             <f:render partial="MediaGallery" arguments="{gallery:'{gallery}', class:'img-responsive'}"/>
             <div class="caption">
-                <f:debug>{_all}</f:debug>
+
                 <f:if condition="{data.header}">
                     <h3>{data.header}<br>
                         <f:if condition="{data.rowDescription}">
-                            <small>Job Title</small>
+                            <small>{data.rowDescription}</small>
                         </f:if>
 
                     </h3>
                 </f:if>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+                <p>{data.bodytext->f:format.raw()}</p>
                 <ul class="list-inline">
-                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    </li>
+                    <f:for each="{Textmedia}" as="social">
+                        <li>
+                            <v:link.typolink configuration="{parameter:'{social.link}'}">
+                                <i class="fa fa-2x {social.class}"></i>
+                            </v:link.typolink>
+                        </li>
+                    </f:for>
                 </ul>
             </div>
         </div>
     </f:case>
     <f:case value="2">
-
+        <div class="img-portfolio">
+            <v:link.typolink configuration="{parameter:'{data.header_link}'}">
+                <f:render partial="MediaGallery" arguments="{gallery:'{gallery}', class:'img-responsive img-hover'}"/>
+            </v:link.typolink>
+            <h3>
+                <v:link.typolink configuration="{parameter:'{data.header_link}'}">{data.header}</v:link.typolink>
+            </h3>
+            <p>{data.bodytext->f:format.raw()}</p>
+        </div>
     </f:case>
     <f:case value="3">
-
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>{data.bodytext->f:format.raw()}</p>
+                </div>
+                <div class="col-md-4">
+                    <v:link.typolink  configuration="{parameter:'{data.header_link}', ATagParams:'class=\"btn btn-lg btn-default btn-block\"'}">
+                        {data.header}
+                    </v:link.typolink>
+                </div>
+            </div>
+        </div>
+    </f:case>
+    <f:case value="4">
+           <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw {data.tx_angelshop_class}"></i>{data.header}</h4>
+                </div>
+                <div class="panel-body">
+                    <p>{data.bodytext->f:format.html()}</p>
+                    <v:link.typolink configuration="{parameter:'{data.header_link}', ATagParams:'class=\"btn  btn-default\"'}" >
+                        {data.rowDescription->f:format.nl2br()}
+                    </v:link.typolink>
+                </div>
+            </div>
     </f:case>
 </f:switch>
 </html>

@@ -18,32 +18,31 @@ lib.fluidContent {
 }
 
 tt_content {
+
     tx_slider < lib.fluidContent
     tx_slider {
         templateName = Angelshop/Slider
         dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
             10 {
-                references.fieldName = assets
+                references.fieldName = image
             }
         }
     }
 
+    header {
+        templateName = Angelshop/Header
+    }
     textmedia {
+
         dataProcessing {
             100 = MB\Angelshop\DataProcessing\ContentElementProcessor
             100 {
                 references.fieldName = tx_angelshop_domain_model_fontawesome
             }
-            #    100 =  TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-            #    100 {
-            #        table = tx_angelshop_domain_model_fontawesome
-            #        where.data = field:uid
-            #        where.wrap = record=|
-            #        orderBy = sorting
-            #        as = content
-            #    }
+
         }
+
     }
 
     tx_teaser < lib.fluidContent
@@ -166,5 +165,4 @@ tt_content {
             }
         }
     }
-}
 }

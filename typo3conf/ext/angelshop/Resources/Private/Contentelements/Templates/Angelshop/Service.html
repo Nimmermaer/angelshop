@@ -1,14 +1,18 @@
-<f:debug>{_all}</f:debug>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 <div class="panel panel-default text-center">
     <div class="panel-heading">
                         <span class="fa-stack fa-5x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
+                              <i class="fa {data.tx_angelshop_class} fa-stack-1x fa-inverse"></i>
                         </span>
     </div>
     <div class="panel-body">
-        <h4>Service One</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <a href="#" class="btn btn-primary">Learn More</a>
+        <h4>{data.header}</h4>
+        <p>{data.bodytext->f:format.nl2br()}</p>
+        <v:link.typolink configuration="{parameter:'{data.header_link}', ATagParams:'class=\"btn btn-primary\"'}">
+            {data.subheader}
+        </v:link.typolink>
     </div>
 </div>
+</html>

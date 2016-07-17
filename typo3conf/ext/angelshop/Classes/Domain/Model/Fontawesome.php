@@ -19,6 +19,11 @@ class Fontawesome extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
+	protected $link = '';
+
+	/**
+	 * @var string
+	 */
 	protected $class = '';
 
 	/**
@@ -47,6 +52,20 @@ class Fontawesome extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setClass( $class ) {
 		$this->class = $class;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getLink() {
+		return $this->link;
+	}
+
+	/**
+	 * @param string $link
+	 */
+	public function setLink( $link ) {
+		$this->link = $link;
 	}
 
 }

@@ -63,6 +63,9 @@
             <trans-unit id="tx_angelshop_domain_model_fontawesome.class">
                 <source>Klasse</source>
             </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_class">
+                <source>Header Icon</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

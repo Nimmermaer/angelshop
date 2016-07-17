@@ -42,3 +42,5 @@ plugin.tx_angelshop_fullwidthvideo {
     }
 }
 
+plugin.tx_frontend._CSS_DEFAULT_STYLE >
+

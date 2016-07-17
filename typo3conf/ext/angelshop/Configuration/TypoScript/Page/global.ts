@@ -1,9 +1,6 @@
-# Column naming
 TCEFORM {
     pages {
-        # Disable field "layout" (we use backend_layouts instead)
         layout.disabled = 1
-        # Disable option "none" for backend_layouts
         backend_layout.removeItems = -1
         backend_layout_next_level.removeItems = -1
     }
@@ -13,13 +10,16 @@ TCEFORM {
         imageheight.disabled = 1
         imageborder.disabled = 1
         imageorient.disabled = 1
-        categories.disabled = 1
         imagecols.disabled = 1
         layout {
+            addItems {
+                4 =Teaser
+            }
             altLabels {
                 1 = Team
                 2 = Projekt
-                3 = Service Panel
+                3 = Call-To-Action
+
             }
         }
 
@@ -39,3 +39,4 @@ TCEFORM {
         }
     }
 }
+

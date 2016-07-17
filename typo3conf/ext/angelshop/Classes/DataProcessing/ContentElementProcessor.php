@@ -16,56 +16,56 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  * Class ContentElementProcessor
  * @package MB\Angelshop\DataProcessing
  */
-class ContentElementProcessor implements DataProcessorInterface
-{
+class ContentElementProcessor implements DataProcessorInterface {
 
 
-    /**
-     * fontAwesomeRepository
-     *
-     * @var \MB\Angelshop\Domain\Repository\FontawesomeRepository
-     * @inject
-     */
-    protected $fontawesomeRepository = null;
+	/**
+	 * fontAwesomeRepository
+	 *
+	 * @var \MB\Angelshop\Domain\Repository\FontawesomeRepository
+	 * @inject
+	 */
+	protected $fontawesomeRepository = null;
 
 
-    /**
-     * @param ContentObjectRenderer $cObj
-     * @param array $contentObjectConfiguration
-     * @param array $processorConfiguration
-     * @param array $processedData
-     *
-     * @return array
-     */
-    public function process(
-        ContentObjectRenderer $cObj,
-        array $contentObjectConfiguration,
-        array $processorConfiguration,
-        array $processedData
-    ) {
+	/**
+	 * @param ContentObjectRenderer $cObj
+	 * @param array $contentObjectConfiguration
+	 * @param array $processorConfiguration
+	 * @param array $processedData
+	 *
+	 * @return array
+	 */
+	public function process(
+		ContentObjectRenderer $cObj,
+		array $contentObjectConfiguration,
+		array $processorConfiguration,
+		array $processedData
+	) {
 
 
-        $function = 'processFor' . str_replace(' ', '',
-                ucwords(str_replace("_", " ", $contentObjectConfiguration['templateName'])));
+		$function = 'processFor' . str_replace( ' ', '',
+				ucwords( str_replace( "_", " ", $contentObjectConfiguration['templateName'] ) ) );
+		if ( method_exists( $this, $function ) ) {
+			$processedData[ $contentObjectConfiguration['templateName'] ] = call_user_func( array(
+				$this,
+				$function,
+			), $processedData );
+		}
 
-        if (method_exists($this, $function)) {
-            $processedData[$contentObjectConfiguration['templateName']] =  call_user_func(array($this, $function,),$processedData);
-        }
+		return $processedData;
+	}
 
-        return $processedData;
-    }
+	/**
+	 * @param $processedData
+	 *
+	 * @return string
+	 */
+	public function processForTextMedia( $processedData ) {
+		$objectManager =
+			\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( 'TYPO3\\CMS\\Extbase\\Object\\ObjectManager' );
+		$repository    = $objectManager->get( 'MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository' );
 
-    /**
-     * @param $processedData
-     * @return string
-     */
-    public function processForTextMedia($processedData)
-    {
-        $objectManager =
-            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
-
-        $var =  $this->repository->findByRecord($processedData['uid']);
-        return $var ;
-    }
+		return $repository->findByRecord( $processedData['data']['uid'] );
+	}
 }

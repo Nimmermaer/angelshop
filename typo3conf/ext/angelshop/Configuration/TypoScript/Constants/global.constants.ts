@@ -22,6 +22,9 @@ global {
     }
 
     page {
+        search {
+            pid = 12
+        }
         news {
             rss = 1460122875
         }

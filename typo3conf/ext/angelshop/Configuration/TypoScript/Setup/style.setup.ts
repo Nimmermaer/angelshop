@@ -9,6 +9,7 @@ page {
 
     includeJSFooter {
         bootstrap = EXT:angelshop/Resources/Public/Js/bootstrap.js
+        lightbox = EXT:angelshop/Resources/Public/Js/lightbox.js
         scripts = EXT:angelshop/Resources/Public/Js/scripts.js
     }
 }

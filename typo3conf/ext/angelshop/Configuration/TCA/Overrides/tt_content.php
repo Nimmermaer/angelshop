@@ -39,11 +39,7 @@ $newTtContentColumns = array(
 	),
 	'tx_angelshop_fontawesome' => array(
 		'exclude' => 1,
-		'displayCond' => array(
-			'FIELD:layout:=:1',
-			'FIELD:layout:=:2',
-			'FIELD:layout:=:3',
-		),
+		'displayCond' => 'FIELD:layout:=:1',
 		'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_fontawesome',
 		'config'  => array(
 			'type'  => 'inline',
@@ -51,9 +47,124 @@ $newTtContentColumns = array(
 			'foreign_field' => 'record',
 		)
 	),
+	'subheader' => array(
+		'exclude' => 1,
+		'displayCond' =>'FIELD:CType:=:tx_service',
+		'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.subheader',
+		'config' => array(
+			'type' => 'input',
+			'size' => '50',
+			'max' => '255',
+			'softref' => 'email[subst]'
+		)
+	),
+	'tx_angelshop_class' => array(
+		'exclude' => 1,
+		'displayCond' =>array(
+			'OR' => array(
+				'FIELD:layout:=:4',
+				'FIELD:CType:=:tx_service',
+			),
+		),
+		'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_class',
+		'config'  => array(
+			'type'    => 'select',
+			'items'   => array(
+				array(
+					'Kein Icon',
+					0
+				),
+				array(
+					'Facebook',
+					'fa-facebook-square'
+				),
+				array(
+					'Xing',
+					'fa-xing-square'
+				),
+				array(
+					'Geschenk',
+					'fa-gift'
+				),
+				array(
+					'Check',
+					'fa-check'
+				),
+				array(
+					'Kompass',
+					'fa-compass'
+				),
+				array(
+					'Twitter',
+					'fa-twitter-square'
+				),
+				array(
+					'linkedIn',
+					'fa-linkedin-square'
+				),
+				array(
+					'Baum',
+					'fa-tree'
+				),
+				array(
+					'Auto',
+					'fa-car',
+				),
+				array(
+					'Kalender',
+					'fa-calendar-check-o'
+				),
+				array(
+					'Google +',
+					'fa-google-plus-square'
+				),
+				array(
+					'Einkaufstasche',
+					'fa-shopping-bag'
+				),
+				array(
+					'Buch',
+					'fa-book'
+				),
+				array(
+					'Kommentare',
+					'fa-comments'
+				),
+				array(
+					'Foto',
+					'fa-picture-o'
+				),
+				array(
+					'Telefon',
+					'fa-phone-square'
+				),
+				array(
+					'Schiff',
+					'fa-ship'
+				),
+				array(
+					'Gruppe',
+					'fa-users'
+				),
+				array(
+					'Stift',
+					'fa-pencil'
+				),
+				array(
+					'Kamera',
+					'fa-camera'
+				),
+				array(
+					'Papierflieger',
+					'fa-paper-plane-o'
+				),
+			),
+		),
+	),
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns( 'tt_content', $newTtContentColumns );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'tx_angelshop_fontawesome', '', 'after:header');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'tx_angelshop_class', '', 'after:header');
 
 $contentelements = array(
 	'slider',
@@ -66,7 +177,6 @@ $contentelements = array(
 	'project',
 	'table',
 	'accordion',
-	'team',
 	'sidebarList'
 );
 foreach ( $contentelements as $contentelement ) {
@@ -89,26 +199,16 @@ $commonFields = '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_t
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
       --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended';
 
-$GLOBALS['TCA']['tt_content']['types'] ['tx_teaser']       = array(
-	'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,tx_angelshop_fontawesome,bodytext;;9;richtext:[*],
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
-);
 $GLOBALS['TCA']['tt_content']['types'] ['tx_slider']       = array(
 	'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,images,
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,image,' . $commonFields
 
-);
-$GLOBALS['TCA']['tt_content']['types'] ['tx_callToAction'] = array(
-	'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
 );
 $GLOBALS['TCA']['tt_content']['types'] ['tx_service']      = array(
 	'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+         header,subheader;Buttontext,header_link;Buttonlink,tx_angelshop_class,bodytext,' . $commonFields
 );
 $GLOBALS['TCA']['tt_content']['types'] ['tx_tab']          = array(
 	'showitem' => '
@@ -125,29 +225,16 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_impressum']    = array(
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
 );
-$GLOBALS['TCA']['tt_content']['types'] ['tx_project']      = array(
-	'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
-);
 $GLOBALS['TCA']['tt_content']['types'] ['tx_sidebarList']  = array(
 	'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
 );
-$GLOBALS['TCA']['tt_content']['types'] ['tx_accordion']    = array(
-	'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
-);
+
 $GLOBALS['TCA']['tt_content']['types'] ['tx_table']        = array(
 	'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
 );
-$GLOBALS['TCA']['tt_content']['types'] ['tx_team']         = array(
-	'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
-);
+
 $GLOBALS['TCA']['tt_content']['ctrl']['requestUpdate'] = 'layout';

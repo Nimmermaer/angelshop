@@ -1,4 +1,4 @@
-<f:debug>{_all}</f:debug>
+
 <!-- Navigation -->
 <f:render partial="Page/Header" arguments="{_all}"/>
 <!-- Header Carousel -->
@@ -15,5 +15,5 @@
     {columnMain->f:format.raw()}
     <hr>
     <!-- Footer -->
-    <f:render partial="Page/Footer"/>
+    <f:render partial="Page/Footer" arguments="{_all}"/>
 </div>

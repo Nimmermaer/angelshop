@@ -4,7 +4,8 @@
 CREATE TABLE tt_content (
 	tx_angelshop_title text,
 	tx_angelshop_link int(11) DEFAULT '0' NOT NULL,
-	tx_angelshop_fontawesome varchar(255) DEFAULT '0' NOT NULL
+	tx_angelshop_fontawesome varchar(255) DEFAULT '0' NOT NULL,
+	tx_angelshop_class varchar(255) DEFAULT '0' NOT NULL
 
 );
 
