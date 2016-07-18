@@ -18,7 +18,6 @@ lib.fluidContent {
 }
 
 tt_content {
-
     tx_slider < lib.fluidContent
     tx_slider {
         templateName = Angelshop/Slider
@@ -33,16 +32,25 @@ tt_content {
     header {
         templateName = Angelshop/Header
     }
-    textmedia {
 
+    textmedia {
         dataProcessing {
             100 = MB\Angelshop\DataProcessing\ContentElementProcessor
             100 {
                 references.fieldName = tx_angelshop_domain_model_fontawesome
             }
-
         }
+    }
 
+    tx_trader_slider < lib.fluidContent
+    tx_trader_slider {
+        templateName = TraderSlider
+        dataProcessing {
+            100 = MB\Angelshop\DataProcessing\ContentElementProcessor
+            100 {
+                references.fieldName = tx_angelshop_domain_model_trader
+            }
+        }
     }
 
     tx_teaser < lib.fluidContent
@@ -56,16 +64,6 @@ tt_content {
         }
     }
 
-    tx_callToAction < lib.fluidContent
-    tx_callToAction {
-        templateName = Angelshop/CallToAction
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
-            }
-        }
-    }
 
     tx_service < lib.fluidContent
     tx_service {
@@ -144,16 +142,6 @@ tt_content {
         }
     }
 
-    tx_team < lib.fluidContent
-    tx_team {
-        templateName = Angelshop/Team
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
-            }
-        }
-    }
 
     tx_sidebarList < lib.fluidContent
     tx_sidebarList {

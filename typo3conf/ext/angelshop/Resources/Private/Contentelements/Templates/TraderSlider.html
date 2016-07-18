@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<div class="row">
+    <div class="col-md-12">
+        <div class="trader-slider-outer">
+            <div class="trader-slider">
+                <f:for each="{TraderSlider}" as="item">
+                    <div>
+                        <v:link.typolink configuration="{parameter:item.link}">
+                            <img src="{f:uri.image(src:'{item.uid}', treatIdAsReference:1,width:165, height:100c)}"/>
+                        </v:link.typolink>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

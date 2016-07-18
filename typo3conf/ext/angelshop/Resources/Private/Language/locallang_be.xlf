@@ -30,6 +30,9 @@
             <trans-unit id="tx_project.title">
                 <source>Project</source>
             </trans-unit>
+            <trans-unit id="tx_trader_slider.title">
+                <source>Händlerslider</source>
+            </trans-unit>
             <trans-unit id="tx_impressum.title">
                 <source>Impressum</source>
             </trans-unit>
@@ -65,6 +68,15 @@
             </trans-unit>
             <trans-unit id="tca.tt_content.tx_angelshop_class">
                 <source>Header Icon</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_trader.image">
+                <source>Händlerbild</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_trader.title">
+                <source>Händler</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_trader.link">
+                <source>Link</source>
             </trans-unit>
         </body>
     </file>

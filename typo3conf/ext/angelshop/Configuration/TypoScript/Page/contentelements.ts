@@ -27,6 +27,14 @@ mod{
                     CType = tx_service
                 }
             }
+            tx_trader_slider {
+                iconIdentifier = content-beside-text-img-above-center
+                title = Trader Slider
+                description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_service.description
+                tt_content_defValues {
+                    CType = tx_trader_slider
+                }
+            }
             tx_tab {
                 iconIdentifier = content-image
                 title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_tab.title
@@ -57,14 +65,6 @@ mod{
                 description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_sidebarList.description
                 tt_content_defValues {
                     CType = tx_sidebarList
-                }
-            }
-            tx_accordion {
-                iconIdentifier = content-image
-                title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_accordion.title
-                description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_accordion.description
-                tt_content_defValues {
-                    CType = tx_accordion
                 }
             }
             tx_table {

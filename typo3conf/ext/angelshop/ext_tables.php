@@ -37,6 +37,10 @@ $boot = function ($extensionKey) {
         'EXT:angelshop/Resources/Private/Language/locallang_csh_tx_angelshop_domain_model_fontawesome.xlf');
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_angelshop_domain_model_fontawesome');
 
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_angelshop_domain_model_trader',
+        'EXT:angelshop/Resources/Private/Language/locallang_csh_tx_angelshop_domain_model_trader.xlf');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_angelshop_domain_model_trader');
+
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['angelshop']
         = \MB\Angelshop\Hooks\AngelshopPreviewRenderer::class;
 

@@ -3,6 +3,9 @@
 	<file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z" product-name="angelshop">
 		<header/>
 		<body>
+			<trans-unit id="tx_angelshop_domain_model_trader">
+				<source>Trader</source>
+			</trans-unit>
 			<trans-unit id="tx_angelshop_domain_model_gallery">
 				<source>Gallery</source>
 			</trans-unit>

@@ -9,17 +9,18 @@ TCEFORM {
         imagewidth.disabled = 1
         imageheight.disabled = 1
         imageborder.disabled = 1
-        imageorient.disabled = 1
         imagecols.disabled = 1
+        imageorient {
+            removeItems = 1,2,9,10,17,18
+        }
         layout {
-            addItems {
-                4 =Teaser
-            }
             altLabels {
                 1 = Team
                 2 = Projekt
                 3 = Call-To-Action
-
+            }
+            addItems {
+                4 =Teaser
             }
         }
 
