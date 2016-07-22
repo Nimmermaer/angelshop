@@ -195,7 +195,8 @@ $contentelements = array(
 	'impressum',
 	'project',
 	'table',
-	'sidebarList'
+	'sidebarList',
+	'gallery'
 );
 foreach ( $contentelements as $contentelement ) {
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
@@ -218,6 +219,11 @@ $commonFields = '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_t
       --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended';
 
 $GLOBALS['TCA']['tt_content']['types'] ['tx_slider']      = array(
+	'showitem' => '
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,image,' . $commonFields);
+
+$GLOBALS['TCA']['tt_content']['types'] ['tx_gallery']      = array(
 	'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,image,' . $commonFields);

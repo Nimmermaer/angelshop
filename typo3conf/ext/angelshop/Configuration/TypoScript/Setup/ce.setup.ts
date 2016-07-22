@@ -52,6 +52,16 @@ tt_content {
             }
         }
     }
+    tx_gallery < lib.fluidContent
+    tx_gallery {
+        templateName = Angelshop/Gallery
+        dataProcessing {
+            100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            100 {
+                references.fieldName = image
+            }
+        }
+    }
 
     tx_teaser < lib.fluidContent
     tx_teaser {

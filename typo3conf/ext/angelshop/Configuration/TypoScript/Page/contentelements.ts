@@ -1,16 +1,16 @@
-mod{
+mod {
     web_layout.tt_content.preview {
-        tx_slider =  EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Slider.html
-        tx_tab =  EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Tab.html
-        tx_serviceList =  EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/ServiceList.html
-        tx_impressum =  EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Impressum.html
-        tx_sidebarList =  EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/SidebarList.html
-        tx_table =  EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Table.html
-        tx_accordion =  EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Accordion.html
-     }
+        tx_slider = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Slider.html
+        tx_serviceList = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/ServiceList.html
+        tx_impressum = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Impressum.html
+        tx_sidebarList = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/SidebarList.html
+        tx_table = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Table.html
+        tx_accordion = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Accordion.html
+    }
+
     wizards.newContentElement.wizardItems.common {
         elements {
-         tx_slider {
+            tx_slider {
                 iconIdentifier = content-image
                 title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_slider.title
                 description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_slider.description
@@ -27,6 +27,7 @@ mod{
                     CType = tx_service
                 }
             }
+
             tx_trader_slider {
                 iconIdentifier = content-beside-text-img-above-center
                 title = Trader Slider
@@ -35,6 +36,7 @@ mod{
                     CType = tx_trader_slider
                 }
             }
+
             tx_tab {
                 iconIdentifier = content-image
                 title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_tab.title
@@ -43,6 +45,7 @@ mod{
                     CType = tx_tab
                 }
             }
+
             tx_serviceList {
                 iconIdentifier = content-image
                 title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_serviceList.title
@@ -51,6 +54,7 @@ mod{
                     CType = tx_serviceList
                 }
             }
+
             tx_impressum {
                 iconIdentifier = content-image
                 title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_impressum.title
@@ -59,6 +63,7 @@ mod{
                     CType = tx_serviceList
                 }
             }
+
             tx_sidebarList {
                 iconIdentifier = content-bullets
                 title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_sidebarList.title
@@ -67,6 +72,7 @@ mod{
                     CType = tx_sidebarList
                 }
             }
+
             tx_table {
                 iconIdentifier = content-table
                 title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_table.title
@@ -75,7 +81,17 @@ mod{
                     CType = tx_table
                 }
             }
+
+            tx_gallery {
+                iconIdentifier = content-table
+                title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_gallery.title
+                description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_gallery.description
+                tt_content_defValues {
+                    CType = tx_gallery
+                }
+            }
         }
+
         show = *
     }
 }

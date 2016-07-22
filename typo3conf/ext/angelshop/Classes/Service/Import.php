@@ -19,10 +19,10 @@ class Import {
 	public function import() {
 
 
-		$db = mysqli_connect( 'localhost', 'root', '', 'db555981083' );
+		$db = mysqli_connect( 'localhost', 'root', '', 'old_shop' );
 
 		if ( $db->connect_errno > 0 ) {
-			die( 'tt' );
+			die( 'error' );
 		}
 		$query = "SELECT pd.products_id, pd.products_name, pd.products_keywords, pd.products_description,  p.products_model, p.products_price ,(SELECT manufacturers_name FROM manufacturers as m WHERE m.manufacturers_id = p.manufacturers_id  ) as manufacturers_name
                   FROM products_description as pd,  products as p

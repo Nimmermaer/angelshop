@@ -21,41 +21,81 @@
             <trans-unit id="tx_sidebarList.title">
                 <source>Sidebarlist</source>
             </trans-unit>
+            <trans-unit id="tx_sidebarList.description">
+                <source>Ermöglicht eine Seitenleiste</source>
+            </trans-unit>
+
             <trans-unit id="tx_accordion.title">
                 <source>Accordion</source>
+            </trans-unit>
+            <trans-unit id="tx_accordion.description">
+                <source>Erstellt ein Accordion Element</source>
             </trans-unit>
             <trans-unit id="tx_table.title">
                 <source>Table</source>
             </trans-unit>
+            <trans-unit id="tx_table.description">
+                <source>Ermöglicht eine Tabelle zu erstellen</source>
+            </trans-unit>
             <trans-unit id="tx_project.title">
                 <source>Project</source>
+            </trans-unit>
+            <trans-unit id="tx_project.description">
+                <source>Erstellt eine Projektkachel</source>
             </trans-unit>
             <trans-unit id="tx_trader_slider.title">
                 <source>Händlerslider</source>
             </trans-unit>
+            <trans-unit id="tx_trader_slider.description">
+                <source>Einzelne Händler anlegen und als Slider anzeigen</source>
+            </trans-unit>
             <trans-unit id="tx_impressum.title">
                 <source>Impressum</source>
+            </trans-unit>
+            <trans-unit id="tx_impressum.description">
+                <source>Impressum anlegen mit Google Karte</source>
             </trans-unit>
             <trans-unit id="tx_serviceList.title">
                 <source>ServiceList</source>
             </trans-unit>
+            <trans-unit id="tx_serviceList.description">
+                <source>Eine Liste mit Serviceitems und kurzer Erklärung</source>
+            </trans-unit>
             <trans-unit id="tx_tab.title">
                 <source>Tab</source>
+            </trans-unit>
+            <trans-unit id="tx_tab.description">
+                <source>Tabelement</source>
             </trans-unit>
             <trans-unit id="tx_service.title">
                 <source>Service</source>
             </trans-unit>
+            <trans-unit id="tx_service.description">
+                <source>Einzelne Serviceboxen mit Icons</source>
+            </trans-unit>
             <trans-unit id="tx_callToAction.title">
                 <source>CallToAction</source>
+            </trans-unit>
+            <trans-unit id="tx_callToAction.description">
+                <source>Button mit Link und Beschreibung</source>
             </trans-unit>
             <trans-unit id="tx_slider.title">
                 <source>Slider</source>
             </trans-unit>
+            <trans-unit id="tx_slider.description">
+                <source>Großer Bilderslider</source>
+            </trans-unit>
             <trans-unit id="tx_teaser.title">
                 <source>Teaser</source>
             </trans-unit>
+            <trans-unit id="tx_teaser.description">
+                <source>Kleiner Teaser mit Icon, Überschrift und Link</source>
+            </trans-unit>
             <trans-unit id="tx_team.title">
                 <source>Team Element</source>
+            </trans-unit>
+            <trans-unit id="tx_team.title">
+                <source>Element mit Sociallinks</source>
             </trans-unit>
             <trans-unit id="tx_angelshop_domain_model_fontawesome.tx_angelshop_title">
                 <source>Titel</source>
@@ -69,6 +109,9 @@
             <trans-unit id="tca.tt_content.tx_angelshop_class">
                 <source>Header Icon</source>
             </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_class">
+                <source>Icon für Element</source>
+            </trans-unit>
             <trans-unit id="tx_angelshop_domain_model_trader.image">
                 <source>Händlerbild</source>
             </trans-unit>
@@ -77,6 +120,12 @@
             </trans-unit>
             <trans-unit id="tx_angelshop_domain_model_trader.link">
                 <source>Link</source>
+            </trans-unit>
+            <trans-unit id="tx_gallery.title">
+                <source>Gallery</source>
+            </trans-unit>
+            <trans-unit id="tx_gallery.description">
+                <source>Gallery mit PopUp</source>
             </trans-unit>
         </body>
     </file>
