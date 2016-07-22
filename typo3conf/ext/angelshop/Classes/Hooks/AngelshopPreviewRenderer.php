@@ -28,7 +28,7 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface {
 	public function preProcess( PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row ) {
 		$function = 'show' . str_replace( ' ', '', ucwords( str_replace( "_", " ", $row['CType'] ) ) );
 		if ( method_exists( $this, $function ) ) {
-			$itemContent .= call_user_func( array( $this, $function, ), array( 'data' => $row  ) );
+			$itemContent .= call_user_func( array( $this, $function, ), array( 'data' => $row ) );
 			$drawItem = false;
 		}
 	}
@@ -46,6 +46,31 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface {
 	/**
 	 * @return string
 	 */
+	public function showTxTab( $row ) {
+		$addContent    = '';
+		$i             = 1;
+		$objectManager =
+			\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( 'TYPO3\\CMS\\Extbase\\Object\\ObjectManager' );
+		$repository    = $objectManager->get( 'MB\\Angelshop\\Domain\\Repository\\TabRepository' );
+		$tabs          = $repository->findByRecord( $row['data']['uid'] );
+		if ( $tabs ) {
+			foreach ( $tabs as $item ) {
+				$addContent .= 'Tab-' . $i . '<br/>';
+				$addContent .= '<strong>' . $item->getHeader() . '</strong>';
+				$addContent .= '<p>' . substr( $item->getText(), 0, 80 ) . '</p> <hr style="background-color:black; "  />';
+				$i ++;
+			};
+		}
+
+
+		$addContent .= '<h3>Tab</h3>';
+
+		return $addContent;
+	}
+
+	/**
+	 * @return string
+	 */
 	public function showTextmedia( $row ) {
 		$addContent = '';
 		if ( $row['data']['layout'] == 1 ) {
@@ -55,11 +80,9 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface {
 			$addContent = '<h3>Projekt Element</h3>';
 		}
 		if ( $row['data']['layout'] == 3 ) {
-
 			$addContent = '<h3>Call To Action Element</h3>';
 		}
 		if ( $row['data']['layout'] == 4 ) {
-
 			$addContent = '<h3>Teaser Element</h3>';
 		}
 

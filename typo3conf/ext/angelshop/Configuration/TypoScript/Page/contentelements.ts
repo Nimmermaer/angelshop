@@ -4,6 +4,7 @@ mod {
         tx_serviceList = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/ServiceList.html
         tx_impressum = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Impressum.html
         tx_sidebarList = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/SidebarList.html
+        tx_tab = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Tab.html
         tx_table = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Table.html
         tx_accordion = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Accordion.html
     }
