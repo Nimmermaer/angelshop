@@ -1,0 +1,101 @@
+<<!-- ###TEMPLATE_EMAIL_USER_PLAIN### -->
+<!-- ###TEMPLATE_EMAIL_ADMIN_PLAIN### -->
+<!-- ###TEMPLATE_EMAIL_USER_HTML### -->
+
+###LLL:email_admin_text###
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta property="og:title" content="*|MC:SUBJECT|*"/>
+    <title>*|MC:SUBJECT|*</title>
+</head>
+<body style=" margin-left: 0; margin-top: auto; margin-bottom: auto; margin-height:auto;  background-color: #ffffee">
+<center>
+    <table style="border:0;  cellpadding:0; cellspacing:0;  width:660px">
+        <table style="border:0; width: 660px; margin-top:20px; ">
+            <tr>
+                <td  style="text-align:left">
+                    ###LLL:admin_text_2###
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top; height: 150px">
+                    ###value_mail_name###<br/>
+                    <!-- ###IF_phone###  -->
+                    ###value_phone###<br/>
+                    <!-- ###IF_END### -->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ###LLL:mail_dear###,
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ###LLL:mail_status_1### ###value_date### ###LLL:mail_status_2###<br/>
+                    ###LLL:mail_status_3###<br/>
+
+
+                </td>
+
+            </tr>
+        </table>
+        <table style="border:0; width: 660px; margin-top:20px; ">
+            <th style="margin-bottom: 20px; text-align:left">
+
+                ###LLL:mail_text###
+            </th>
+
+            <tr>
+                <td>
+                    ###value_text###
+                </td>
+                <td>
+                    Gewüschtes Produkt: <br />
+                    ###value_product###
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ###value_request###
+                </td>
+            </tr>
+        </table>
+        <table border="0" width="660" height="130px">
+            <tr>
+                <td>
+                    ###LLL:mail_sincerely###<br/>
+                    ###LLL:mail_label###
+                </td>
+            </tr>
+        </table>
+
+        <table border="0" width="660">
+
+            <th style="color:#660033; text-align:left">
+                Impressum
+            </th>
+            <tr>
+                <td>
+                    Aba-Angelshop <br />
+                    Gartenstr. 10 <br/>
+                    D 83410 Laufen/Leobendorf<br/>
+                    Deutschland <br />
+                    Tel.:  <a style="color: #660033 ;text-align:center;" href="tel:+498682953918 ">+49 - (0)86 82 - 953 918</a> <br />
+                    E-Mail: <a about="" href="mailto:info@aba-angelshop.de" style="color: #660033 ;text-align:center;" >info@aba-angelshop.de</a><br />
+                    Internet: <a href="http://www.aba-angelshop.de"
+                                 style="color: #660033;text-align:center;"> www.aba-angelshop.de</a><br />
+                    USt.-IdNr.:DE 197624 886<br />
+                </td>
+            </tr>
+
+        </table>
+    </table>
+</center>
+</body>
+
+</html>
+<!-- ###TEMPLATE_EMAIL_USER_HTML### -->
+

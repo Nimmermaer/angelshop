@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <data type="array">
+        <languageKey index="de" type="array">
+
+            <!--deutsch -->
+            <!--Formular text-->
+
+            <label index="error_mail_name_required">Bitte einen Namen eintragen.</label>
+            <label index="error_email_required">Bitte eine E-Mail-Adresse eintragen.</label>
+            <label index="error_email_email">Bitte eine korrekte E-Mail-Adresse eingeben .</label>
+
+            <label index="error_apply">Bitte bestätigen.</label>
+            <label index="mail_company">Firma</label>
+            <label index="mail_company_necessary">ggf. bitte eintragen</label>
+            <label index="mail_name">Name</label>
+            <label index="mail_product">Gewünschtes Produkt</label>
+            <label index="mail_email">E-Mail</label>
+            <label index="mail_phone">Telefonnummer</label>
+            <label index="mail_subject">Betreff</label>
+            <label index="mail_text">Ihre Nachricht</label>
+            <label index="mail_require">Kopie der Mail erwünscht</label>
+            <label index="page_text_1">* Pflichtfelder</label>
+            <label index="page_text_2">Die mit einem * markierte Felder bitte ausfüllen.</label>
+            <label index="page_text_3">**freiwillige Angabe</label>
+            <label index="page_submit">Nachricht absenden</label>
+            <label index="page_reset">zurücksetzen</label>
+
+            <label index="user_data"> Ihre Daten </label>
+            <label index="check_question">Unverbindliche Anfrage</label>
+            <label index="check_order">Verbindliche Bestellung</label>
+            <label index="mail_agb2">AGB </label>
+            <label index="mail_agb1"> Ich habe die </label>
+            <label index="mail_agb3"> und die </label>
+            <label index="mail_conditions1">Widerrufsbelehrung</label>
+            <label index="mail_conditions2"> des Aba-Angelshop Angelika Sailer zur Kenntnis genommen.</label>
+
+            <!-- Error -->
+            <label index="error_first_name_required">Bitte einen Vornamen eingeben.</label>
+            <label index="mail_conditions">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der Widerrufsbelehrung.</label>
+            <label index="mail_agb">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der AGB.</label>
+            <label index="error_mail_agb_required">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der AGB.</label>
+            <label index="error_mail_conditions_required">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der Widerrufsbelehrung.</label>
+
+            <!-- Usermail -->
+            <label index="user_details">Ihre Daten</label>
+            <label index="mail_text_4">Mit freundlichen Grüßen</label>
+            <label index="mail_text_1">Ihre Bestellung</label>
+            <label index="mail_dear">Sehr geehrter Kunde</label>
+            <label index="mail_status_1">Am</label>
+            <label index="mail_status_2">ging folgende Anfrage/Bestellung an das</label>
+            <label index="mail_status_3">Aba-Angelshop Angelika Sailer: </label>
+            <label index="mail_sincerely">mit freundlichen Grüßen</label>
+            <label index="mail_label">Aba-Angelshop Angelika Sailer</label>
+            <label index="mail_company_details">Impressum</label>
+
+            <!--abbreviation -->
+            <label index="abb_phone">Tel.</label>
+            <label index="abb_email">E-Mail</label>
+            <label index="abb_internet">Internet</label>
+            <label index="abb_ust"> USt.-IdNr.</label>
+
+            <!--Adminmail-->
+            <label index="user_details">Ihre Daten</label>
+            <label index="admin_text_2">Kundendaten</label>
+
+
+            <!-- Values -->
+            <label index="value_phone">Telefonnummer</label>
+            <label index="value_email">Email</label>
+            <label index="value_name">Name</label>
+            <label index="value_place">Ort</label>
+
+            <label index="success">Vielen Dank für Ihre Anfrage</label>
+
+        </languageKey>
+
+        <languageKey index="default" type="array">
+            <!--englisch -->
+
+            <label index="error_mail_name_required">Please enter your Name.</label>
+            <label index="error_email_required">Please enter a email.</label>
+            <label index="error_email_email">Please enter a valid email.</label>
+            <label index="mail_name">Name</label>
+            <label index="mail_product">Your product</label>
+            <label index="mail_email">Email</label>
+            <label index="mail_phone">Phonenumber</label>
+            <label index="mail_subject">Subject</label>
+            <label index="mail_text">Your Message</label>
+            <label index="mail_require">Desired copy of the e - mail</label>
+            <label index="page_text_1">* required Fields</label>
+            <label index="page_text_2">Please fill in all marked with a * .</label>
+            <label index="page_submit">Send</label>
+            <label index="page_reset">Reset</label>
+
+            <label index="user_data">Your Data</label>
+            <label index="check_question">Non-binding inquiry</label>
+            <label index="check_order">Binding Order</label>
+            <label index="mail_agb2">Terms and Conditions</label>
+            <label index="mail_agb1">I have the</label>
+            <label index="mail_agb3">and</label>
+            <label index="mail_conditions1">cancellation policy</label>
+            <label index="mail_conditions2">registered from the music Aba-Angelshop Angelika Sailer.</label>
+
+            <!-- Usermail -->
+            <label index=" user_details">Your data</label>
+            <label index="mail_text_4">Sincerly</label>
+            <label index="mail_text_1">Your Question</label>
+            <label index="mail_dear">Dear Customer</label>
+            <label index="mail_status_1">On</label>
+            <label index="mail_status_2">the following inquiry / order was given to the</label>
+            <label index="mail_status_3">Aba-Angelshop Angelika Sailer: </label>
+            <label index="mail_sincerely">yours sincerely</label>
+            <label index="mail_label">Aba-Angelshop Angelika Sailer</label>
+            <label index="mail_company_details">company details</label>
+
+            <!--abbreviation -->
+            <label index="abb_phone">tel</label>
+            <label index="abb_email">E-Mail</label>
+            <label index="abb_internet">Homepage</label>
+            <label index="abb_ust">VAT Reg.No.</label>
+
+            <!--Adminmail-->
+            <label index="user_details">Customerdata</label>
+            <label index="admin_text_2">Customerdata</label>
+
+            <!-- Values -->
+            <label index="value_phone">Phonenumber</label>
+            <label index="value_email">Email</label>
+            <label index="value_name">Name</label>
+            <label index="success">Thank you for your inquiry</label>
+
+            <!-- Error -->
+            <label index="error_first_name_required">Please enter a first name.</label>
+            <label index="mail_conditions">Please select 'Non-binding inquiry' or confirm the notice of the cancellation policy.</label>
+            <label index="mail_agb">Please select 'Non-binding inquiry' or confirm the acknowledgment of the terms and conditions.</label>
+            <label index="error_mail_agb_required">Please select 'Non-binding inquiry' or confirm the notice of the cancellation policy.</label>
+            <label index="error_mail_conditions_required">Please select 'Non-binding inquiry' or confirm the acknowledgment of the terms and conditions.</label>
+            <label index="success">Thank you for your request</label>
+
+
+        </languageKey>
+    </data>
+</T3locallang>

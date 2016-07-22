@@ -1,0 +1,57 @@
+<!-- ###TEMPLATE_FORM1### begin -->
+<div class="row">
+    <div class="col-md-8">
+        <form role="form" action="###REL_URL###" name="sentMessage" method="post" id="contactForm" >
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>###LLL:mail_product###*</label>
+                    <input type="text" class="form-control" name="formhandler[product]" id="mail_product"
+                           value="###value_product###" />
+                </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>###LLL:mail_name###*</label>
+                    <input type="text" class="form-control" name="formhandler[mail_name]" id="mail_name"
+                           value="###value_mail_name###" />
+                    ###error_mail_name###
+
+                </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label for="phone">###LLL:mail_phone###</label>
+                    <input type="text" class="form-control" name="formhandler[phone]" id="phone"
+                           value="###value_phone###"
+                            />
+                </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label for="email">###LLL:mail_email###*</label>
+                    <input type="text" class="form-control" name="formhandler[email]" id="email"
+                           value="###value_email###"
+                            />
+                    ###error_email###
+                </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label for="text">###LLL:mail_text###</label>
+                <textarea name="formhandler[text]" rows="10" maxlength="999" cols="100" class="form-control" id="text"
+                        >###value_text###</textarea>
+                </div>
+            </div>
+            <div id="success"></div>
+            <!-- For success/fail messages -->
+            <input class="btn btn-primary" type="submit" value="###LLL:page_submit###" ###submit_nextStep### />
+        </form>
+    </div>
+</div>
+
+<!-- ###TEMPLATE_FORM1### end -->
+
+<!-- ###TEMPLATE_SUBMITTEDOK### begin -->
+<div class="jumbotron"><p>Ihre Anfrage wurde versendet! Vielen Dank! </p></div>
+<p>###value_message###</p>
+<!-- ###TEMPLATE_SUBMITTEDOK### end -->
