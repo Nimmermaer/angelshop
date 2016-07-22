@@ -47,6 +47,7 @@ class ContentElementProcessor implements DataProcessorInterface {
 		$function = 'processFor' . str_replace( ' ', '',
 				ucwords( str_replace( "_", " ", $contentObjectConfiguration['templateName'] ) ) );
 
+
 		if ( method_exists( $this, $function ) ) {
 			$processedData[ $contentObjectConfiguration['templateName'] ] = call_user_func( array(
 				$this,
@@ -80,5 +81,17 @@ class ContentElementProcessor implements DataProcessorInterface {
 		$repository    = $objectManager->get( 'MB\\Angelshop\\Domain\\Repository\\TraderRepository' );
 
 		return $repository->findByContentelementUid( $processedData['data']['uid'] );
+	}
+	/**
+	 * @param $processedData
+	 *
+	 * @return string
+	 */
+	public function processForTabs( $processedData ) {
+		$objectManager =
+			\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( 'TYPO3\\CMS\\Extbase\\Object\\ObjectManager' );
+		$repository    = $objectManager->get( 'MB\\Angelshop\\Domain\\Repository\\TabRepository' );
+
+		return $repository->findByRecord( $processedData['data']['uid'] );
 	}
 }

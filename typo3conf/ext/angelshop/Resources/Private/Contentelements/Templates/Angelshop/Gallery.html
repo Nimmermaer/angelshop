@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-lg-12">
+        <f:render partial="Header/OnlyHeader" arguments="{layout:'{data.header_layout}', header:'{data.header}',link:'{data.header_link}'}" />
+    </div>
+    <f:if condition="{files->f:count()} == 1">
+        <f:then>
+            <f:for each="{files}" as="image" >
+                <div class="col-md-12">
+                    <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1 )}" data-title='{image.title}' data-lightbox="image-{data.uid}">
+                        <img class="img-responsive img-portfolio img-hover" src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1,width:750c, height:450)}" alt="">
+                    </a>
+                </div>
+            </f:for>
+        </f:then>
+        <f:else>
+            <f:for each="{files}" as="image" >
+
+                <div class="col-md-4 col-sm-6">
+                    <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1 )}" data-title='{image.title}' data-lightbox="gallery-{data.uid}">
+                        <img class="img-responsive img-portfolio img-hover" src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1,width:750c, height:450)}" alt="">
+                    </a>
+                </div>
+            </f:for>
+        </f:else>
+    </f:if>
+
+</div>

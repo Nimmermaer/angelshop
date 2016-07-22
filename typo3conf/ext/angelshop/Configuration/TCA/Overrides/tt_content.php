@@ -49,22 +49,22 @@ $newTtContentColumns = array(
 	),
 	'tx_angelshop_trader' => array(
 		'exclude'     => 1,
+		'displayCond' => 'FIELD:layout:=:1',
 		'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_trader',
 		'config'      => array(
-			'type'          => 'group',
-			'internal_type' => 'db',
-			'allowed'       => 'tx_angelshop_domain_model_trader',
-			'MM' => 'tx_angelshop_trader_ttcontent_mm',
-			'size'          => '5',
-			'maxitems'      => '200',
-			'minitems'      => '0',
-			'show_thumbs'   => '1',
-			'wizards'       => array(
-				'suggest' => array(
-					'type' => 'suggest',
-				),
-			),
-		),
+			'type'          => 'inline',
+			'foreign_table' => 'tx_angelshop_domain_model_fontawesome',
+			'foreign_field' => 'record',
+		)
+	),
+	'tx_angelshop_tab' => array(
+		'exclude'     => 1,
+		'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_tab',
+		'config'      => array(
+			'type'          => 'inline',
+			'foreign_table' => 'tx_angelshop_domain_model_tab',
+			'foreign_field' => 'record',
+		)
 	),
 	'subheader'                => array(
 		'exclude'     => 1,
@@ -197,6 +197,7 @@ $contentelements = array(
 	'table',
 	'sidebarList',
 	'gallery'
+
 );
 foreach ( $contentelements as $contentelement ) {
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
@@ -241,8 +242,8 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_service']     = array(
 );
 $GLOBALS['TCA']['tt_content']['types'] ['tx_tab']         = array(
 	'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_angelshop_tab,' . $commonFields
 );
 $GLOBALS['TCA']['tt_content']['types'] ['tx_serviceList'] = array(
 	'showitem' => '

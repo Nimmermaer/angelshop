@@ -73,8 +73,6 @@ tt_content {
             }
         }
     }
-
-
     tx_service < lib.fluidContent
     tx_service {
         templateName = Angelshop/Service
@@ -88,11 +86,11 @@ tt_content {
 
     tx_tab < lib.fluidContent
     tx_tab {
-        templateName = Angelshop/Tabs
+        templateName = Tabs
         dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
+            100 = MB\Angelshop\DataProcessing\ContentElementProcessor
+            100 {
+                references.fieldName = tx_angelshop_domain_model_tab
             }
         }
     }

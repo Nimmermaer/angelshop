@@ -1,8 +1,8 @@
 <?php
 return array(
 	'ctrl'      => array(
-		'title'                    => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tx_angelshop_domain_model_fontawesome',
-		'label'                    => 'title',
+		'title'                    => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tx_angelshop_domain_model_tab',
+		'label'                    => 'header',
 		'tstamp'                   => 'tstamp',
 		'crdate'                   => 'crdate',
 		'cruser_id'                => 'cruser_id',
@@ -18,14 +18,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime'   => 'endtime',
 		),
-		'searchFields'             => 'title',
-		'iconfile'                 => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'angelshop' ) . 'Resources/Public/Icons/tx_angelshop_domain_model_fontawesome.gif'
+		'searchFields'             => '',
+		'iconfile'                 => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'angelshop' ) . 'Resources/Public/Icons/tx_angelshop_domain_model_tab.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title,class,link,',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, header, icon, text, image',
 	),
 	'types'     => array(
-		'1' => array( 'showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1,title,class,link, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime' ),
+		'1' => array( 'showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, header, icon, text, image,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime' ),
 	),
 	'palettes'  => array(
 		'1' => array( 'showitem' => '' ),
@@ -56,8 +56,8 @@ return array(
 				'items'               => array(
 					array( '', 0 ),
 				),
-				'foreign_table'       => 'tx_angelshop_domain_model_fontawesome',
-				'foreign_table_where' => 'AND tx_angelshop_domain_model_fontawesome.pid=###CURRENT_PID### AND tx_angelshop_domain_model_fontawesome.sys_language_uid IN (-1,0)',
+				'foreign_table'       => 'tx_angelshop_domain_model_tab',
+				'foreign_table_where' => 'AND tx_angelshop_domain_model_tab.pid=###CURRENT_PID### AND tx_angelshop_domain_model_tab.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource'  => array(
@@ -112,21 +112,39 @@ return array(
 				),
 			),
 		),
-		'title'            => array(
+		'text'             => array(
+			'label'         => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.text',
+			'config'        => array(
+				'type' => 'text',
+				'cols' => '40',
+				'rows' => '6'
+			),
+			'defaultExtras' => 'richtext[]'
+		),
+		'header'           => array(
 			'exclude' => 1,
-			'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_fontawesome.tx_angelshop_title',
+			'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.header',
 			'config'  => array(
 				'type' => 'input',
-				'size' => '20',
+				'size' => '30',
 				'eval' => 'trim',
+			)
+		),
+		'image'            => array(
+			'exclude' => 0,
+			'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.image',
+			'config'  => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'image',
+				array( 'maxitems' => 1 ),
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
 		),
-		'class'            => array(
+		'icon'             => array(
 			'exclude' => 1,
-			'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_fontawesome.class',
+			'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.icon',
 			'config'  => array(
-				'type'    => 'select',
-				'items'   => array(
+				'type'  => 'select',
+				'items' => array(
 					array(
 						'Kein Icon',
 						0
@@ -141,11 +159,11 @@ return array(
 					),
 					array(
 						'Geschenk',
-						'fa-fw fa-gift'
+						'fa-gift'
 					),
 					array(
 						'Check',
-						'fa-fw fa-check'
+						'fa-check'
 					),
 					array(
 						'Kompass',
@@ -222,28 +240,6 @@ return array(
 			'config' => array(
 				'type' => 'passthrough',
 			),
-		),
-		'link'             => array(
-			'label'   => 'LLL:EXT:cms/locallang_ttc.xlf:header_link',
-			'exclude' => 1,
-			'config'  => array(
-				'type'    => 'input',
-				'size'    => '50',
-				'max'     => '256',
-				'eval'    => 'trim',
-				'wizards' => array(
-					'link' => array(
-						'type'         => 'popup',
-						'title'        => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
-						'icon'         => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_link.gif',
-						'module'       => array(
-							'name' => 'wizard_link',
-						),
-						'JSopenParams' => 'height=800,width=600,status=0,menubar=0,scrollbars=1'
-					)
-				),
-				'softref' => 'typolink'
-			)
 		),
 	),
 );

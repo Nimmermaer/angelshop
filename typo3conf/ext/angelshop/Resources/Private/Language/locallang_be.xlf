@@ -127,6 +127,21 @@
             <trans-unit id="tx_gallery.description">
                 <source>Gallery mit PopUp</source>
             </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_tab.image">
+                <source>Bild</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_tab.header">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_tab.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_tab.icon">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_tab">
+                <source>Tabs</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
