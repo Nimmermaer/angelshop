@@ -9047,6 +9047,12 @@ a.navbar-brand {
 .ce-textpic.ce-above .ce-gallery {
   margin-bottom: 15px;
 }
+.col-lg-12.file {
+  margin-bottom: 20px;
+}
+.col-lg-12.file img {
+  border-radius: 5px;
+}
 /* Slider */
 .slick-slider {
   position: relative;

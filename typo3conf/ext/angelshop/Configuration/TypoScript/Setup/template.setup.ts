@@ -3,7 +3,12 @@ lib.templates.base = FLUIDTEMPLATE
 lib.templates.base {
     partialRootPath = EXT:angelshop/Resources/Private/Partials/
     layoutRootPath = EXT:angelshop/Resources/Private/Layouts/
-
+    dataProcessing {
+        100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        100 {
+            references.fieldName = media
+        }
+    }
     variables {
         columnMain =< lib.contents.columns.main
         columnBottom =< lib.contents.columns.bottom
