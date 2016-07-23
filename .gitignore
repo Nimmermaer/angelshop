@@ -10,3 +10,4 @@ uploads
 /typo3conf/node_modules
 typo3conf/node_modules
 /node_modules
+/fileadmin.tar.gz
