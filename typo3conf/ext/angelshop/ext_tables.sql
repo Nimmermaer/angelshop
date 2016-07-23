@@ -7,7 +7,18 @@ CREATE TABLE tt_content (
 	tx_angelshop_fontawesome varchar(255) DEFAULT '0' NOT NULL,
 	tx_angelshop_class varchar(255) DEFAULT '0' NOT NULL,
 	tx_angelshop_trader int(11) DEFAULT '0' NOT NULL,
-	tx_angelshop_tab int(11) DEFAULT '0' NOT NULL
+	tx_angelshop_tab int(11) DEFAULT '0' NOT NULL,
+	tx_angelshop_contact int(11) DEFAULT '0' NOT NULL
+
+);
+#
+# Table structure for table 'fe_users'
+#
+CREATE TABLE fe_users (
+	feuser_cognizance varchar(255) DEFAULT '0' NOT NULL,
+	feuser_sales_tax_indicator varchar(255) DEFAULT '0' NOT NULL,
+	feuser_opentime varchar(255) DEFAULT '0' NOT NULL,
+	record int(11) DEFAULT '0' NOT NULL
 
 );
 

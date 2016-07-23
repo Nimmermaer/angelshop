@@ -142,6 +142,18 @@
             <trans-unit id="tca.tt_content.tx_angelshop_tab">
                 <source>Tabs</source>
             </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_contact">
+                <source>Impressum Kontakt</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_sales_tax_indicator">
+                <source>USt-IdNr.</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_opentime">
+                <source>Öffnungszeiten</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_cognizance">
+                <source>Gerichtsbarkeit</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
