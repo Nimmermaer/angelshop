@@ -7,11 +7,11 @@ return [
         'loginSecurityLevel' => 'rsa',
     ],
     'DB' => [
-        'database' => 'angelshop',
-        'host' => '127.0.0.1',
-        'password' => '',
+        'database' => 'db638756891',
+        'host' => 'db638756891.db.1and1.com',
+        'password' => 'Srm4p8RJQEBW',
         'port' => 3306,
-        'username' => 'root',
+        'username' => 'dbo638756891',
     ],
     'EXT' => [
         'extConf' => [
