@@ -16,7 +16,7 @@ global {
     }
 
     navigation {
-        footerStartPoint = 5
+        footerStartPoint = 8
         serviceStartPoint = 3
         metaStartPoint = 1
     }
