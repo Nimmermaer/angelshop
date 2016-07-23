@@ -98,7 +98,7 @@
                     <p>{data.bodytext->f:format.raw()}</p>
                 </div>
                 <div class="col-md-4">
-                    <v:link.typolink  configuration="{parameter:'{data.header_link}', ATagParams:'class=\"btn btn-lg btn-default btn-block\"'}">
+                    <v:link.typolink  configuration="{parameter:'{data.header_link}',class:'btn btn-lg btn-default btn-block'}">
                         {data.header}
                     </v:link.typolink>
                 </div>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="panel-body">
                     <p>{data.bodytext->f:format.html()}</p>
-                    <v:link.typolink configuration="{parameter:'{data.header_link}', ATagParams:'class=\"btn  btn-default\"'}" >
+                    <v:link.typolink configuration="{parameter:'{data.header_link}', class:'btn btn-default'}" >
                         {data.rowDescription->f:format.nl2br()}
                     </v:link.typolink>
                 </div>
