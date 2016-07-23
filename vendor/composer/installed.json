@@ -486,37 +486,6 @@
         ]
     },
     {
-        "name": "typo3/cms-base-distribution",
-        "version": "7.6.1",
-        "version_normalized": "7.6.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://git.typo3.org/TYPO3CMS/Distributions/Base.git",
-            "reference": "3d60aa3b850c4b9e45a7e5516867b3ef78d9c9de"
-        },
-        "require": {
-            "typo3/cms": "~7.6.0"
-        },
-        "require-dev": {
-            "mikey179/vfsstream": "1.4.*@dev",
-            "phpunit/phpunit": "~4.7.0"
-        },
-        "time": "2015-11-10 14:04:05",
-        "type": "library",
-        "extra": {
-            "typo3/cms": {
-                "cms-package-dir": "{$vendor-dir}/typo3/cms",
-                "web-dir": "web"
-            }
-        },
-        "installation-source": "source",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "description": "TYPO3 CMS Base Distribution"
-    },
-    {
         "name": "typo3-ter/gridelements",
         "version": "7.0.5",
         "version_normalized": "7.0.5.0",
@@ -875,18 +844,62 @@
         "homepage": "https://symfony.com"
     },
     {
+        "name": "typo3-ter/extension-builder",
+        "version": "7.6.0",
+        "version_normalized": "7.6.0.0",
+        "dist": {
+            "type": "t3x",
+            "url": "https://typo3.org/extensions/repository/download/extension_builder/7.6.0/t3x/",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "typo3/cms-core": ">= 7.6.0, <= 7.6.99"
+        },
+        "replace": {
+            "extension_builder": "self.version",
+            "typo3-ter/extension_builder": "self.version"
+        },
+        "suggest": {
+            "typo3-ter/phpunit": "*"
+        },
+        "time": "2015-11-23 00:02:22",
+        "type": "typo3-cms-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                ""
+            ],
+            "exclude-from-classmap": [
+                "Migrations",
+                "Tests",
+                "tests",
+                "class.ext_update.php"
+            ]
+        },
+        "authors": [
+            {
+                "name": "Nico de Haen",
+                "email": "mail@ndh-websolutions.de",
+                "company": "",
+                "username": "nicodh"
+            }
+        ],
+        "description": "The Extension Builder helps you build and manage your Extbase based TYPO3 extensions."
+    },
+    {
         "name": "typo3/cms",
-        "version": "7.6.9",
-        "version_normalized": "7.6.9.0",
+        "version": "7.6.10",
+        "version_normalized": "7.6.10.0",
         "source": {
             "type": "git",
             "url": "https://github.com/TYPO3/TYPO3.CMS.git",
-            "reference": "ecc552537efb1bfe184c7e1d8b1e79facf0a2c20"
+            "reference": "540f30a1072c77ae377198a337924b2b1b338e9f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/ecc552537efb1bfe184c7e1d8b1e79facf0a2c20",
-            "reference": "ecc552537efb1bfe184c7e1d8b1e79facf0a2c20",
+            "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/540f30a1072c77ae377198a337924b2b1b338e9f",
+            "reference": "540f30a1072c77ae377198a337924b2b1b338e9f",
             "shasum": ""
         },
         "require": {
@@ -906,7 +919,7 @@
             "symfony/console": "~2.7.0",
             "symfony/finder": "~2.7.0",
             "typo3/class-alias-loader": "^1.0",
-            "typo3/cms-composer-installers": "^1.2.5"
+            "typo3/cms-composer-installers": "^1.2.8"
         },
         "replace": {
             "typo3/cms-about": "self.version",
@@ -976,14 +989,14 @@
             "ext-zip": "",
             "ext-zlib": "TYPO3 uses zlib for amongst others output compression and un/packing t3x extension files"
         },
-        "time": "2016-05-24 10:02:34",
+        "time": "2016-07-19 10:37:20",
         "type": "typo3-cms-core",
         "extra": {
             "typo3/class-alias-loader": {
                 "always-add-alias-loader": true
             },
             "branch-alias": {
-                "dev-master": "7.x-dev"
+                "dev-TYPO3_7-6": "7.x-dev"
             }
         },
         "installation-source": "dist",
@@ -1057,14 +1070,14 @@
         ],
         "authors": [
             {
-                "name": "TYPO3 CMS Core Team",
-                "homepage": "http://forge.typo3.org/projects/typo3cms-core",
-                "role": "Developer"
-            },
-            {
                 "name": "The TYPO3 Community",
                 "homepage": "https://typo3.org/community/",
                 "role": "Contributor"
+            },
+            {
+                "name": "TYPO3 CMS Core Team",
+                "homepage": "https://forge.typo3.org/projects/typo3cms-core",
+                "role": "Developer"
             }
         ],
         "description": "TYPO3 CMS is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.",
@@ -1077,47 +1090,30 @@
         ]
     },
     {
-        "name": "typo3-ter/extension-builder",
-        "version": "7.6.0",
-        "version_normalized": "7.6.0.0",
-        "dist": {
-            "type": "t3x",
-            "url": "https://typo3.org/extensions/repository/download/extension_builder/7.6.0/t3x/",
-            "reference": null,
-            "shasum": null
+        "name": "typo3/cms-base-distribution",
+        "version": "7.6.10",
+        "version_normalized": "7.6.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.typo3.org/TYPO3CMS/Distributions/Base.git",
+            "reference": "d460cd3b86ec47f185c74bb4e02de958d6f35e12"
         },
         "require": {
-            "typo3/cms-core": ">= 7.6.0, <= 7.6.99"
+            "typo3/cms": "^7.6"
         },
-        "replace": {
-            "extension_builder": "self.version",
-            "typo3-ter/extension_builder": "self.version"
-        },
-        "suggest": {
-            "typo3-ter/phpunit": "*"
-        },
-        "time": "2015-11-23 00:02:22",
-        "type": "typo3-cms-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                ""
-            ],
-            "exclude-from-classmap": [
-                "Migrations",
-                "Tests",
-                "tests",
-                "class.ext_update.php"
-            ]
-        },
-        "authors": [
-            {
-                "name": "Nico de Haen",
-                "email": "mail@ndh-websolutions.de",
-                "company": "",
-                "username": "nicodh"
+        "time": "2016-07-21 13:32:33",
+        "type": "library",
+        "extra": {
+            "typo3/cms": {
+                "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                "web-dir": "web"
             }
+        },
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
         ],
-        "description": "The Extension Builder helps you build and manage your Extbase based TYPO3 extensions."
+        "description": "TYPO3 CMS Base Distribution"
     }
 ]
