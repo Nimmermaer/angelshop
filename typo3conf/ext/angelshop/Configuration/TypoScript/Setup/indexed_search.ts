@@ -4,14 +4,13 @@ config.index_metatags = 1
 
 # Plugin configuration
 plugin.tx_indexedsearch {
-
     settings {
         searchPid = {$global.page.search.pid}
         # show the rules
         displayRules = 0
 
         # show a link to the advanced search
-        displayAdvancedSearchLink = 1
+        displayAdvancedSearchLink = 0
 
         # show the number of results
         displayResultNumber = 0
@@ -30,7 +29,7 @@ plugin.tx_indexedsearch {
         mediaList =
 
         #search.rootPidList
-        rootPidList =
+        rootPidList = 1
         page_links = 10
         detectDomainRcords = 0
         defaultFreeIndexUidList =
@@ -59,7 +58,7 @@ plugin.tx_indexedsearch {
             searchType = 0
             defaultOperand = 0
             sections = 0
-            freeIndexUid = 1
+            freeIndexUid = 0
             mediaType = 0
             sortOrder = 0
             group = 0
@@ -69,6 +68,7 @@ plugin.tx_indexedsearch {
             # defaultOperand.1 = 1
             # extResume=1
         }
+
         /*
         flagRendering = CASE
         flagRendering {
@@ -105,24 +105,23 @@ plugin.tx_indexedsearch {
             sortDesc = 1
             searchType = 1
         }
-
     }
-
 
     view {
         templateRootPaths {
             0 = EXT:indexed_search/Resources/Private/Templates/
             10 = {$plugin.tx_indexedsearch.view.templateRootPath}
         }
+
         partialRootPaths {
             0 = EXT:indexed_search/Resources/Private/Partials/
             10 = {$plugin.tx_indexedsearch.view.partialRootPath}
         }
+
         layoutRootPaths {
             0 = EXT:indexed_search/Resources/Private/Layouts/
             10 = {$plugin.tx_indexedsearch.view.layoutRootPath}
         }
     }
-
 }
 

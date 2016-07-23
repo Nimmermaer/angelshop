@@ -40,6 +40,15 @@ lib {
             NO = 1
             NO {
                 allWrap = <li>|</li>
+                stdWrap.cObject = COA
+                stdWrap.cObject {
+                    10 = TEXT
+                    10.field = title
+                    15 = TEXT
+                    15.value = &nbsp;
+                    20 = TEXT
+                    20.field = subtitle
+                }
             }
 
             wrap = <ul class="dropdown-menu">|</ul>
@@ -71,7 +80,6 @@ lib {
             ACT {
                 wrapItemAndSub = <li class="active " > | &nbsp;&#149;  </li>|*|<li class="active" >|&nbsp;&#149;</li>|*|<li class="active last" >&nbsp;| </li>
             }
-
         }
     }
 
@@ -90,6 +98,4 @@ lib {
             }
         }
     }
-
-
 }

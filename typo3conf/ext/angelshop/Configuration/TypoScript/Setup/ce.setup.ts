@@ -14,6 +14,7 @@ lib.fluidContent {
 
     settings {
         defaultHeaderType = {$styles.content.defaultHeaderType}
+        offerPid = {$global.page.offerPid}
     }
 }
 
@@ -31,6 +32,17 @@ tt_content {
 
     header {
         templateName = Angelshop/Header
+    }
+
+    ce_product  < lib.fluidContent
+    ce_product {
+        templateName = Angelshop/Product
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+            }
+        }
     }
 
     textmedia {
@@ -52,6 +64,7 @@ tt_content {
             }
         }
     }
+
     tx_gallery < lib.fluidContent
     tx_gallery {
         templateName = Angelshop/Gallery
@@ -73,6 +86,7 @@ tt_content {
             }
         }
     }
+
     tx_service < lib.fluidContent
     tx_service {
         templateName = Angelshop/Service
@@ -110,9 +124,16 @@ tt_content {
     tx_impressum {
         templateName = Angelshop/Impressum
         dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
+            100 = MB\Angelshop\DataProcessing\ContentElementProcessor
+            100 {
+                references.fieldName = tx_angelshop_domain_model_fontawesome
+            }
+        }
+
+        dataProcessing {
+            110 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            110 {
+                references.fieldName = image
             }
         }
     }
@@ -149,7 +170,6 @@ tt_content {
             }
         }
     }
-
 
     tx_sidebarList < lib.fluidContent
     tx_sidebarList {

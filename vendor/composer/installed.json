@@ -844,50 +844,6 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "typo3-ter/extension-builder",
-        "version": "7.6.0",
-        "version_normalized": "7.6.0.0",
-        "dist": {
-            "type": "t3x",
-            "url": "https://typo3.org/extensions/repository/download/extension_builder/7.6.0/t3x/",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "typo3/cms-core": ">= 7.6.0, <= 7.6.99"
-        },
-        "replace": {
-            "extension_builder": "self.version",
-            "typo3-ter/extension_builder": "self.version"
-        },
-        "suggest": {
-            "typo3-ter/phpunit": "*"
-        },
-        "time": "2015-11-23 00:02:22",
-        "type": "typo3-cms-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                ""
-            ],
-            "exclude-from-classmap": [
-                "Migrations",
-                "Tests",
-                "tests",
-                "class.ext_update.php"
-            ]
-        },
-        "authors": [
-            {
-                "name": "Nico de Haen",
-                "email": "mail@ndh-websolutions.de",
-                "company": "",
-                "username": "nicodh"
-            }
-        ],
-        "description": "The Extension Builder helps you build and manage your Extbase based TYPO3 extensions."
-    },
-    {
         "name": "typo3/cms",
         "version": "7.6.10",
         "version_normalized": "7.6.10.0",

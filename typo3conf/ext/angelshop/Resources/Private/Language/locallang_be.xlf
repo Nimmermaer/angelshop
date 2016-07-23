@@ -142,8 +142,8 @@
             <trans-unit id="tca.tt_content.tx_angelshop_tab">
                 <source>Tabs</source>
             </trans-unit>
-            <trans-unit id="tca.tt_content.tx_angelshop_contact">
-                <source>Impressum Kontakt</source>
+            <trans-unit id="tca.tt_content.tx_angelshop_trader">
+                <source>Händler</source>
             </trans-unit>
             <trans-unit id="tca.tt_content.tx_angelshop_sales_tax_indicator">
                 <source>USt-IdNr.</source>
@@ -153,6 +153,24 @@
             </trans-unit>
             <trans-unit id="tca.tt_content.tx_angelshop_cognizance">
                 <source>Gerichtsbarkeit</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_address">
+                <source>Adresse</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_phone">
+                <source>Telefon</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_email">
+                <source>E-Mail</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_owner">
+                <source>Inhaber</source>
+            </trans-unit>
+            <trans-unit id="ce_product.title">
+                <source>Produkt</source>
+            </trans-unit>
+            <trans-unit id="ce_product.description">
+                <source>Einzelne Produktbeschreibung</source>
             </trans-unit>
         </body>
     </file>

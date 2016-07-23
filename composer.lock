@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "21d42f41d96df0163e037b026c80bfc5",
-    "content-hash": "ddf7fa225f675af511f93e28a57e4d20",
+    "hash": "69e7e9850f52430d945f14a8308694d2",
+    "content-hash": "8f92ff71543c187bd90cf5adcee7b921",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -577,48 +577,6 @@
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
             "time": "2016-06-28 06:24:06"
-        },
-        {
-            "name": "typo3-ter/extension-builder",
-            "version": "7.6.0",
-            "dist": {
-                "type": "t3x",
-                "url": "https://typo3.org/extensions/repository/download/extension_builder/7.6.0/t3x/",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "typo3/cms-core": ">= 7.6.0, <= 7.6.99"
-            },
-            "replace": {
-                "extension_builder": "self.version",
-                "typo3-ter/extension_builder": "self.version"
-            },
-            "suggest": {
-                "typo3-ter/phpunit": "*"
-            },
-            "type": "typo3-cms-extension",
-            "autoload": {
-                "classmap": [
-                    ""
-                ],
-                "exclude-from-classmap": [
-                    "Migrations",
-                    "Tests",
-                    "tests",
-                    "class.ext_update.php"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "Nico de Haen",
-                    "email": "mail@ndh-websolutions.de",
-                    "company": "",
-                    "username": "nicodh"
-                }
-            ],
-            "description": "The Extension Builder helps you build and manage your Extbase based TYPO3 extensions.",
-            "time": "2015-11-23 00:02:22"
         },
         {
             "name": "typo3-ter/formhandler",

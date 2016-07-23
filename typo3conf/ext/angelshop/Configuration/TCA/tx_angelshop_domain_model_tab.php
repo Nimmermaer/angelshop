@@ -19,7 +19,7 @@ return array(
 			'endtime'   => 'endtime',
 		),
 		'searchFields'             => '',
-		'iconfile'                 => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'angelshop' ) . 'Resources/Public/Icons/tx_angelshop_domain_model_tab.gif'
+		'iconfile'                 => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath( 'angelshop' ) . 'Resources/Public/Icons/Svg/tab.svg'
 	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, header, icon, text, image',

@@ -270,12 +270,6 @@ return [
             'packagePath' => 'typo3conf/ext/angelshop/',
             'suggestions' => [],
         ],
-        'extension_builder' => [
-            'composerName' => 'ebt/extension_builder',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/extension_builder/',
-            'suggestions' => [],
-        ],
         'adodb' => [
             'composerName' => 'typo3/cms-adodb',
             'state' => 'inactive',

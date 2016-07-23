@@ -1,0 +1,86 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<div itemscope itemtype="http://schema.org/Product" class="row">
+    <div class="col-md-8">
+        <div itemprop="name" class="hidden">{data.header}</div>
+        <div id="Carousel-{data.uid}" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <f:if condition="{files}">
+                <f:if condition="{files->f:count()}>1">
+                    <ol class="carousel-indicators">
+                        <f:for each="{files}" as="image" iteration="imageIteration">
+                            <f:if condition="{imageIteration.isFirst}">
+                                <f:then>
+                                    <li data-target="#Carousel-{data.uid}" data-slide-to="{imageIteration.index}"
+                                        class="active"></li>
+                                </f:then>
+                                <f:else>
+                                    <li data-target="#Carousel-{data.uid}" data-slide-to="{imageIteration.index}"></li>
+                                </f:else>
+                            </f:if>
+
+                        </f:for>
+                    </ol>
+                </f:if>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <f:for each="{files}" as="image" iteration="imageIteration">
+                        <div class="{f:if(condition:'{imageIteration.isFirst}',then:'item active',else:'item')}">
+                            <img itemprop="image" class=" img-responsive"
+                                 src="{f:uri.image(src:'{image.originalFile.publicUrl}',maxWidth:'750',maxHeight:'500c')}"
+                                 alt="{image.reference.alternative}"/>
+
+                            <div class="carousel-caption">
+                                {image.reference.title}
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+                <!-- Controls -->
+                <f:for each="{files}" as="image" iteration="imageIteration">
+                    <f:if condition="{imageIteration.cycle}>1">
+                        <a class="left carousel-control" href="#Carousel-{data.uid}" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#Carousel-{data.uid}" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </f:if>
+                </f:for>
+            </f:if>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+        <f:format.html>{data.bodytext}</f:format.html>
+        <f:if condition="{data.tx_abatemplate_product_description}">
+            <h3>Produkt Details</h3>
+            <span itemprop="description">
+            {data.tx_abatemplate_product_description}<br/>
+            </span>
+        </f:if>
+        <f:if condition="{data.tx_abatemplate_product_description}">
+            <h3>Zusätzliche Informationen</h3>
+            {data.tx_abatemplate_product_additional_description}<br/>
+        </f:if>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <div itemprop="name" class="hidden">{data.header}</div>
+            <meta itemprop="priceCurrency" content="EUR"/>
+
+            <h3>Preis:</h3>
+
+            <div itemprop="price"
+                 content="{data.tx_abatemplate_product_price-> f:format.currency(thousandsSeparator: ',')}">
+                {data.tx_abatemplate_product_price-> f:format.currency(thousandsSeparator: ',', currencySign: '€')}<br/>
+            </div>
+        </div>
+
+        <div>
+            <f:link.page pageUid="12" class="btn btn-success" additionalParams="{order:'{data.header}'}"
+                         noCacheHash="1">
+                Interesse Am Produkt &raquo;
+            </f:link.page>
+        </div>
+
+    </div>
+</div>

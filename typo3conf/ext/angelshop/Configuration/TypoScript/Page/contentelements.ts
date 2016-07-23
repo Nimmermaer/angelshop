@@ -11,19 +11,19 @@ mod {
             header = Angelshop
             elements {
                 tx_impressum {
-                    iconIdentifier = content-image
+                    iconIdentifier = map
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_impressum.title
                     description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_impressum.description
                     tt_content_defValues {
                         CType = tx_impressum
                     }
                 }
-                tx_table {
+                ce_product {
                     iconIdentifier = content-table
-                    title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_table.title
-                    description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_table.description
+                    title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:ce_product.title
+                    description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:ce_product.description
                     tt_content_defValues {
-                        CType = tx_table
+                        CType = ce_product
                     }
                 }
             }
@@ -42,7 +42,7 @@ mod {
                 }
 
                 tx_service {
-                    iconIdentifier = content-beside-text-img-above-center
+                    iconIdentifier = service
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_service.title
                     description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_service.description
                     tt_content_defValues {
@@ -51,7 +51,7 @@ mod {
                 }
 
                 tx_trader_slider {
-                    iconIdentifier = content-beside-text-img-above-center
+                    iconIdentifier = business
                     title = Trader Slider
                     description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_service.description
                     tt_content_defValues {
@@ -60,7 +60,7 @@ mod {
                 }
 
                 tx_tab {
-                    iconIdentifier = content-image
+                    iconIdentifier = tab
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_tab.title
                     description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_tab.description
                     tt_content_defValues {
@@ -68,7 +68,7 @@ mod {
                     }
                 }
                 tx_gallery {
-                    iconIdentifier = content-table
+                    iconIdentifier = gallery
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_gallery.title
                     description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_gallery.description
                     tt_content_defValues {

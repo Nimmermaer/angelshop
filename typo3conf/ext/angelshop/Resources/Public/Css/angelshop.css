@@ -9029,6 +9029,9 @@ a.navbar-brand {
 .carousel-inner > .item > a > img {
   width: 100%;
 }
+.img-portfolio h3 {
+  color: #337ab7;
+}
 .ce-textpic.ce-left .ce-gallery {
   width: 50%;
   float: left;
@@ -9039,6 +9042,9 @@ a.navbar-brand {
   width: 50%;
   float: right;
   margin-left: 15px;
+  margin-bottom: 15px;
+}
+.ce-textpic.ce-above .ce-gallery {
   margin-bottom: 15px;
 }
 /* Slider */

@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 	$('.carousel').carousel({
-		interval: 3000,
+		interval: 6000,
 		wrap:true
 	});
 	lightbox.option({

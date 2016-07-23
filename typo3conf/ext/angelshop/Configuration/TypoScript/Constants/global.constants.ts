@@ -6,7 +6,6 @@ global {
     homePageUid = 1
     storage {
         navService = 23
-        news =
     }
 
     languageLabels {
@@ -16,24 +15,16 @@ global {
     }
 
     navigation {
-        footerStartPoint = 8
+        footerStartPoint = 11
         serviceStartPoint = 3
         metaStartPoint = 1
     }
 
     page {
+        offerPid = 12
+       redirectAfterMail = 962
         search {
-            pid = 12
-        }
-        news {
-            rss = 1460122875
+            pid = 960
         }
     }
 }
-
-[globalVar = GP:L = 1]
-    global.languageLabels {
-        current = English
-        availableLabels = Deutsch||Englisch
-    }
-[global]

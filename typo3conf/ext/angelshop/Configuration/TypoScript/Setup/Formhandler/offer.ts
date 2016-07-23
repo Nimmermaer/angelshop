@@ -48,7 +48,7 @@ plugin.Tx_Formhandler.settings.predef.kontakt {
 
         2 {
             class = Typoheads\Formhandler\Finisher\Redirect
-            config.redirectPage = 1
+            config.redirectPage = {$global.page.redirectAfterMail}
         }
     }
 }

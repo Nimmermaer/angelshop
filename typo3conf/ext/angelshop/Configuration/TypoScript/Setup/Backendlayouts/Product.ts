@@ -2,18 +2,12 @@ mod.web_layout.BackendLayouts.Product {
     title = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Product.title
     config {
         backend_layout {
-            colCount = 2
+            colCount = 1
             rowCount = 2
             rows {
                 1 {
                     columns {
-                        1 {
-                            name = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Product.col.1
-                            colPos = 1
-                            colspan = 2
-                        }
-
-                        2 {
+                       1 {
                             name = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Product.col.0
                             colPos = 0
                         }

@@ -59,6 +59,7 @@ class TraderRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			'',
 			'uid_foreign'
 		);
+		DebuggerUtility::var_dump($rawUids);
 		$trader = array();
 		if ( is_array( $rawUids ) && ! empty( $rawUids ) ) {
 			// after we fetched the uid from the raw contact entries on db level,

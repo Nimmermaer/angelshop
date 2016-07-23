@@ -44,6 +44,7 @@ config {
 
     index_enable = 1
     index_metatags = 1
+
     headerComment (
 ><(((('> ><(((('> ><(((('>
 

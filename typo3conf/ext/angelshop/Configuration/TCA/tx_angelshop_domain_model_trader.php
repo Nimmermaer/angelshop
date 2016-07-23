@@ -20,7 +20,7 @@ return array(
 			'endtime' => 'endtime',
 		),
 		'searchFields' => '',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('angelshop') . 'Resources/Public/Icons/tx_angelshop_domain_model_trader.gif'
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('angelshop') . 'Resources/Public/Icons/Svg/trader.svg'
 	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden,title,image,link ',
@@ -154,6 +154,11 @@ return array(
 				'image',
 				array('maxitems' => 1),
 				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+			),
+		),
+		'record'           => array(
+			'config' => array(
+				'type' => 'passthrough',
 			),
 		),
 	),

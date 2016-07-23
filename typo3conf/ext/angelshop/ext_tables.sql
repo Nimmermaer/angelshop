@@ -2,13 +2,35 @@
 # Table structure for table 'tt_content'
 #
 CREATE TABLE tt_content (
-	tx_angelshop_title text,
+
+	## Old angelshop_tables
+	tx_abatemplate_product_description text NOT NULL,
+	tx_abatemplate_product_additional_description text NOT NULL,
+	tx_abatemplate_product_price text NOT NULL,
+	tx_abatemplate_product_old_price text,
+	tx_abatemplate_product_stock int(11) DEFAULT '0' NOT NULL,
+	tx_abatemplate_product_image_id int(11) DEFAULT '0' NOT NULL,
+	tx_abatemplate_product_image_count int(11) DEFAULT '0' NOT NULL,
+	tx_abatemplate_product_image_name text,
+	tx_abatemplate_product_manufacturer_name text,
+	tx_abatemplate_product_category text,
+	tx_abatemplate_product int(11) DEFAULT '0' NOT NULL,
+
+	## New angelshop_tables
+	tx_angelshop_title varchar(255) DEFAULT '0' NOT NULL,
 	tx_angelshop_link int(11) DEFAULT '0' NOT NULL,
 	tx_angelshop_fontawesome varchar(255) DEFAULT '0' NOT NULL,
 	tx_angelshop_class varchar(255) DEFAULT '0' NOT NULL,
 	tx_angelshop_trader int(11) DEFAULT '0' NOT NULL,
 	tx_angelshop_tab int(11) DEFAULT '0' NOT NULL,
-	tx_angelshop_contact int(11) DEFAULT '0' NOT NULL
+	tx_angelshop_cognizance  varchar(255) DEFAULT '0' NOT NULL,
+	tx_angelshop_sales_tax_indicator  varchar(255) DEFAULT '0' NOT NULL,
+	tx_angelshop_opentime text,
+	tx_angelshop_address text,
+	tx_angelshop_phone  varchar(255) DEFAULT '0' NOT NULL,
+	tx_angelshop_email  varchar(255) DEFAULT '0' NOT NULL,
+	tx_angelshop_owner  varchar(255) DEFAULT '0' NOT NULL
+
 
 );
 #
@@ -107,6 +129,7 @@ CREATE TABLE tx_angelshop_domain_model_trader (
 	title varchar(255) DEFAULT '' NOT NULL,
 	link varchar(255) DEFAULT '' NOT NULL,
 	image int(11) DEFAULT '0' NOT NULL,
+	record int(11) DEFAULT '0' NOT NULL,
 
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

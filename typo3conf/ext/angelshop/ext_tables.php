@@ -40,6 +40,29 @@ $boot = function ( $extensionKey ) {
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['angelshop']
 		= \MB\Angelshop\Hooks\AngelshopPreviewRenderer::class;
 
+
+	$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+		\TYPO3\CMS\Core\Imaging\IconRegistry::class
+	);
+
+	$newIcons =  [
+		'map' => 'EXT:angelshop/Resources/Public/Icons/Svg/map.svg',
+		'business' => 'EXT:angelshop/Resources/Public/Icons/Svg/business.svg',
+		'gallery' => 'EXT:angelshop/Resources/Public/Icons/Svg/gallery.svg',
+		'service' => 'EXT:angelshop/Resources/Public/Icons/Svg/service.svg',
+		'tab' => 'EXT:angelshop/Resources/Public/Icons/Svg/tab.svg',
+	];
+
+	foreach($newIcons as  $key => $icon) {
+		$iconRegistry->registerIcon(
+			$key, // Icon-Identifier, z.B. tx-myext-action-preview
+			\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+			['source' => $icon]
+		);
+	}
+
+
+
 };
 $boot( $_EXTKEY );
 unset( $boot );

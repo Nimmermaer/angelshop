@@ -55,9 +55,36 @@
     </f:case>
     <f:case value="2">
         <div class="img-portfolio">
-            <v:link.typolink configuration="{parameter:'{data.header_link}'}">
-                <f:render partial="MediaGallery" arguments="{gallery:'{gallery}', class:'img-responsive img-hover'}"/>
-            </v:link.typolink>
+            <f:if condition="{data.image_zoom}">
+                <f:then>
+                    <f:for each="{files}" as="image" iteration="ImageIterator">
+                        <f:if condition="{ImageIterator.isFirst}">
+                            <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1)}"
+                               data-title='{column.media.title}' data-lightbox="gallery-{data.uid}">
+                                <f:media class="img-responsive img-hover"
+                                         file="{image}"
+                                         width="295"
+                                         height="170"
+                                        />
+                            </a>
+                        </f:if>
+                    </f:for>
+
+                </f:then>
+                <f:else>
+                    <f:for each="{files}" as="image" iteration="ImageIterator">
+                        <f:if condition="{ImageIterator.isFirst}">
+                            <v:link.typolink configuration="{parameter:'{data.header_link}'}">
+
+                                <img src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, width:295, height:170)}"
+                                     class="img-responsive {f:if(condition:'{data.header_link}',then:'img-hover')}"/>
+
+                            </v:link.typolink>
+                        </f:if>
+
+                    </f:for>
+                </f:else>
+            </f:if>
             <h3>
                 <v:link.typolink configuration="{parameter:'{data.header_link}'}">{data.header}</v:link.typolink>
             </h3>
