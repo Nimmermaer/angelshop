@@ -109,6 +109,20 @@ class ContentElementProcessor implements DataProcessorInterface
         return $repository->findByRecord($processedData['data']['uid']);
     }
 
+
+    /**
+     * @param $processedData
+     *
+     * @return string
+     */
+    public function processForTabs($processedData)
+    {
+        $objectManager =
+            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
+
+        return $repository->findByRecord($processedData['data']['uid']);
+    }
     /**
      * @param $processedData
      *
