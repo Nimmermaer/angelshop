@@ -26,12 +26,12 @@ mod {
                         CType = ce_product
                     }
                 }
-                tx_product_list {
+                angelshop_product {
                     iconIdentifier = productlist
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title
                     description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.description
                     tt_content_defValues {
-                        CType = tx_product_list
+                        CType = angelshop_product
                     }
                 }
             }

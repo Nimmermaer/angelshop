@@ -10,6 +10,14 @@ plugin.tx_angelshop {
     }
 }
 
+plugin.tx_product_list {
+    view {
+        templateRootPaths.0 = {$plugin.tx_angelshop.view.templateRootPath}
+        partialRootPaths.0 = {$plugin.tx_angelshop.view.partialRootPath}
+        layoutRootPaths.0 = {$plugin.tx_angelshop.view.layoutRootPath}
+    }
+}
+
 plugin.tx_angelshop_gallery {
     view {
         templateRootPaths.0 = {$plugin.tx_angelshop_gallery.view.templateRootPath}

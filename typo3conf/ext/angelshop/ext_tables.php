@@ -11,8 +11,8 @@ $boot = function ( $extensionKey ) {
 
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 		'MB.' . $extensionKey,
-		'Teaserrow',
-		'TeaserRow'
+		'Product',
+		'Product'
 	);
 
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(

@@ -20,18 +20,18 @@ $boot = function ( $extensionKey ) {
 
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 		'MB.' . $extensionKey,
-		'Teaserrow',
+		'Product',
 		array(
-			'TeaserRow' => 'list',
+			'Product' => 'list',
 
 		),
 		// non-cacheable actions
 		array(
-			'TeaserRow' => 'list',
+			'Product' => 'list',
 
-		)
+		),
+		\TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 	);
-
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 		'MB.' . $extensionKey,
 		'Fullwidthvideo',
