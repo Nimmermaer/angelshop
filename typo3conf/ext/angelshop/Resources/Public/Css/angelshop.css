@@ -9546,6 +9546,13 @@ ul.f3-widget-paginator li a {
   background-color: orange;
   color: white;
 }
+.panel-group .panel-heading {
+  padding: 0;
+}
+.panel-group a.accordion-toggle {
+  display: block;
+  padding: 10px 15px;
+}
 .trader-slider-outer {
   margin: 20px 0px 20px 0px;
   padding: 25px;
