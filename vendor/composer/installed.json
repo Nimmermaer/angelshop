@@ -1105,5 +1105,47 @@
             }
         ],
         "description": "Makes TYPO3 URLs search engine friendly. Donations are welcome to dmitry.dulepov@gmail.com. They help to support the extension!"
+    },
+    {
+        "name": "typo3-ter/html-minifier",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "dist": {
+            "type": "t3x",
+            "url": "https://typo3.org/extensions/repository/download/html_minifier/1.1.2/t3x/",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "php": ">= 5.4.0",
+            "typo3/cms-core": ">= 6.0.0, <= 7.9.99"
+        },
+        "replace": {
+            "html_minifier": "self.version",
+            "typo3-ter/html_minifier": "self.version"
+        },
+        "time": "2016-06-30 13:35:49",
+        "type": "typo3-cms-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                ""
+            ],
+            "exclude-from-classmap": [
+                "Migrations",
+                "Tests",
+                "tests",
+                "class.ext_update.php"
+            ]
+        },
+        "authors": [
+            {
+                "name": "Dominik Weber",
+                "email": "post@dominikweber.de",
+                "company": "www.dominikweber.de",
+                "username": "dominikweber"
+            }
+        ],
+        "description": "This extension minifies the output of TYPO3 generated pages."
     }
 ]

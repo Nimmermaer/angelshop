@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a5b6f74151c6739e091c037e2f211279",
-    "content-hash": "794316425620a34794e7f23f1ba565a2",
+    "hash": "cbe80e4603b2b80a4d841e783a3a20b8",
+    "content-hash": "a391aeecbb0bce480ac7cd39b1161d01",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -654,6 +654,46 @@
             ],
             "description": "This extension integrates the grid layout concept also to regular content elements - the grid elements.\r\nIt offers a lot of new features like advanced drag & drop or real references, that improve the usability of the page and list module to speed up the daily work with the backend.",
             "time": "2016-01-29 13:10:05"
+        },
+        {
+            "name": "typo3-ter/html-minifier",
+            "version": "1.1.2",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/html_minifier/1.1.2/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">= 5.4.0",
+                "typo3/cms-core": ">= 6.0.0, <= 7.9.99"
+            },
+            "replace": {
+                "html_minifier": "self.version",
+                "typo3-ter/html_minifier": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Dominik Weber",
+                    "email": "post@dominikweber.de",
+                    "company": "www.dominikweber.de",
+                    "username": "dominikweber"
+                }
+            ],
+            "description": "This extension minifies the output of TYPO3 generated pages.",
+            "time": "2016-06-30 13:35:49"
         },
         {
             "name": "typo3-ter/realurl",
