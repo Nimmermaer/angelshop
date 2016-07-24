@@ -270,10 +270,10 @@ return [
             'packagePath' => 'typo3conf/ext/angelshop/',
             'suggestions' => [],
         ],
-        'nc_staticfilecache' => [
-            'composerName' => 'nc_staticfilecache',
+        'html_minifier' => [
+            'composerName' => 'html_minifier',
             'state' => 'active',
-            'packagePath' => 'typo3conf/ext/nc_staticfilecache/',
+            'packagePath' => 'typo3conf/ext/html_minifier/',
             'suggestions' => [],
         ],
         'realurl' => [
