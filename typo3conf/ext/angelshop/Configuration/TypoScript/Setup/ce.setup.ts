@@ -98,6 +98,17 @@ tt_content {
         }
     }
 
+    tx_product_list < lib.fluidContent
+    tx_product_list {
+        templateName = Angelshop/ProductList
+        dataProcessing {
+            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
+            10 {
+                references.fieldName = tt_content
+            }
+        }
+    }
+
     tx_tab < lib.fluidContent
     tx_tab {
         templateName = Tabs

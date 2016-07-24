@@ -29,12 +29,3 @@ global {
     }
 }
 
-[applicationContext = Development]
-    global {
-        page {
-            search {
-                pid = 12
-            }
-        }
-    }
-[global]

@@ -8,7 +8,7 @@ if (!defined('TYPO3_MODE')) {
 $newTtContentColumns = array(
     'tx_abatemplate_product_stock' => array(
         'exclude' => 1,
-        'label' => 'LLL:EXT:aba_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_stock',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_stock',
         'config' => array(
             'type' => 'check',
             'default' => '0'
@@ -334,7 +334,8 @@ $contentelements = array(
     'project',
     'table',
     'sidebarList',
-    'gallery'
+    'gallery',
+    'product_list'
 
 
 );
@@ -382,6 +383,11 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_gallery'] = array(
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,image,' . $commonFields
+);
+$GLOBALS['TCA']['tt_content']['types'] ['tx_product_list'] = array(
+    'showitem' => '
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,pages,' . $commonFields
 );
 
 $GLOBALS['TCA']['tt_content']['types'] ['tx_trader_slider'] = array(

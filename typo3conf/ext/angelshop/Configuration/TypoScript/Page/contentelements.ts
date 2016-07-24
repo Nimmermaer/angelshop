@@ -19,11 +19,19 @@ mod {
                     }
                 }
                 ce_product {
-                    iconIdentifier = content-table
+                    iconIdentifier = product
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:ce_product.title
                     description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:ce_product.description
                     tt_content_defValues {
                         CType = ce_product
+                    }
+                }
+                tx_product_list {
+                    iconIdentifier = productlist
+                    title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title
+                    description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.description
+                    tt_content_defValues {
+                        CType = tx_product_list
                     }
                 }
             }

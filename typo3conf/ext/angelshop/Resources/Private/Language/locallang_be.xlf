@@ -172,6 +172,12 @@
             <trans-unit id="ce_product.description">
                 <source>Einzelne Produktbeschreibung</source>
             </trans-unit>
+            <trans-unit id="tx_product_list.title">
+                <source>Produktliste</source>
+            </trans-unit>
+            <trans-unit id="tx_product_list.description">
+                <source>Eine durchschaltbare Liste an Produkten</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

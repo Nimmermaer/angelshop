@@ -53,7 +53,7 @@
                 <source>Teaser</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_abatemplate_product_stock">
-                <source>Produkt vorhanden</source>
+                <source>Produkt nicht mehr auf Lager</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_abatemplate_product_price">
                 <source>Produkt Preis</source>

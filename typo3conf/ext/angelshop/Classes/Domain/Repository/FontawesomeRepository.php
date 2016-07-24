@@ -30,16 +30,6 @@ namespace MB\Angelshop\Domain\Repository;
 /**
  * The repository for Galleries
  */
-class FontawesomeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-	/**
-	 *
-	 */
-	public function initializeObject() {
-		/** @var $querySettings \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings */
-		$querySettings = $this->objectManager->get( 'TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings' );
-		$querySettings->setRespectStoragePage( false );
-		$querySettings->setRespectSysLanguage( false );
-		$this->setDefaultQuerySettings($querySettings);
+class FontawesomeRepository extends Repository {
 
-	}
 }

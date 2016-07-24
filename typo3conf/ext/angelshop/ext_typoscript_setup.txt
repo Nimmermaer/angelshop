@@ -1,0 +1,22 @@
+config.tx_extbase {
+	persistence{
+		enableAutomaticCacheClearing = 1
+		updateReferenceIndex = 0
+		classes {
+			MB\Angelshop\Domain\Model\Content {
+				mapping {
+					tableName = tt_content
+					columns {
+						uid.mapOnProperty = uid
+						pid.mapOnProperty = pid
+						sorting.mapOnProperty = sorting
+						CType.mapOnProperty = contentType
+						header.mapOnProperty = header
+						tx_abatemplate_product.mapOnProperty = product
+						tx_abatemplate_product_stock.mapOnProperty = stock
+					}
+				}
+			}
+		}
+	}
+}
