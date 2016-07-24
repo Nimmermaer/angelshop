@@ -366,7 +366,7 @@ $commonFields = '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_t
       --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
-      --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended';
+      --div--;Raster Elemente,tx_gridelements_container,tx_gridelements_columns';
 
 $GLOBALS['TCA']['tt_content']['types'] ['tx_impressum'] = array(
     'showitem' => '
