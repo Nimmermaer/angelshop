@@ -270,6 +270,12 @@ return [
             'packagePath' => 'typo3conf/ext/angelshop/',
             'suggestions' => [],
         ],
+        'nc_staticfilecache' => [
+            'composerName' => 'nc_staticfilecache',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/nc_staticfilecache/',
+            'suggestions' => [],
+        ],
         'realurl' => [
             'composerName' => 'dmitryd/typo3-realurl',
             'state' => 'active',
@@ -292,6 +298,12 @@ return [
             'composerName' => 'typo3/cms-dbal',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/dbal/',
+            'suggestions' => [],
+        ],
+        'extension_builder' => [
+            'composerName' => 'ebt/extension_builder',
+            'state' => 'inactive',
+            'packagePath' => 'typo3conf/ext/extension_builder/',
             'suggestions' => [],
         ],
         'feedit' => [
