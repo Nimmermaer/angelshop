@@ -22,9 +22,19 @@ global {
 
     page {
         offerPid = 12
-       redirectAfterMail = 962
+        redirectAfterMail = 962
         search {
             pid = 960
         }
     }
 }
+
+[applicationContext = Development]
+    global {
+        page {
+            search {
+                pid = 12
+            }
+        }
+    }
+[global]

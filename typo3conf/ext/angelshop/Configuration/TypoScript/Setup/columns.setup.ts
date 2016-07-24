@@ -24,18 +24,5 @@ lib {
                 20.wrap < temp.typo3searchWrap
             }
         }
-
-        before = COA
-        before {
-            stdWrap.required = 1
-            stdWrap.wrap = <div class="contentBefore">|</div>
-        }
-
-        after = COA
-        after {
-            stdWrap.required = 1
-            stdWrap.wrap = <div class="contentAfter">|</div>
-        }
-
-    }
+   }
 }

@@ -1,5 +1,5 @@
 <div class="tx-indexedsearch-searchbox">
-    <f:form action="search" method="post" id="tx_indexedsearch" class="form-inline" noCacheHash="true">
+    <f:form action="search" method="post" id="tx_indexedsearch" class="form-horizontal" noCacheHash="true">
         <div class="tx-indexedsearch-hidden-fields">
             <f:form.hidden name="search[_sections]" value="0"/>
             <f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_"/>
@@ -21,11 +21,14 @@
             </legend>
 
             <div class="tx-indexedsearch-form">
-                <label for="tx-indexedsearch-searchbox-sword">
+                <label class="control-label col-sm-2" for="tx-indexedsearch-searchbox-sword">
                     <f:translate key="form.searchFor"/>
                     :</label>
-                <f:form.textfield name="search[sword]" value="{sword}" id="tx-indexedsearch-searchbox-sword"
-                                  class="tx-indexedsearch-searchbox-sword form-control"/>
+
+                <div class="col-sm-10">
+                    <f:form.textfield name="search[sword]" value="{sword}" id="tx-indexedsearch-searchbox-sword"
+                                      class="tx-indexedsearch-searchbox-sword form-control"/>
+                </div>
             </div>
 
             <f:if condition="{showAdditionalKeywordSearch}">
@@ -168,33 +171,35 @@
                 </f:if>
             </f:if>
 
-            <div class="tx-indexedsearch-search-submit">
+
+            <f:if condition="{settings.displayAdvancedSearchLink}">
+                <p>
+
+                <div class="row">
+                    <f:if condition="{searchParams.extendedSearch}">
+                        <f:then>
+                            <f:link.action action="form" arguments="{search: {extendedSearch: 0}}">
+                                <f:translate key="form.linkToRegularSearch"/>
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <f:link.action action="form" arguments="{search: {extendedSearch: 1}}">
+                                <f:translate key="form.linkToAdvancedSearch"/>
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                </div>
+                </p>
+            </f:if>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
                 <f:form.submit name="search[submitButton]" value="{f:translate(key: 'form.submit')}"
                                id="tx-indexedsearch-searchbox-button-submit"
                                class="tx-indexedsearch-searchbox-button btn btn-default"/>
             </div>
         </div>
 
-
-        <f:if condition="{settings.displayAdvancedSearchLink}">
-            <p>
-
-            <div class="row">
-                <f:if condition="{searchParams.extendedSearch}">
-                    <f:then>
-                        <f:link.action action="form" arguments="{search: {extendedSearch: 0}}">
-                            <f:translate key="form.linkToRegularSearch"/>
-                        </f:link.action>
-                    </f:then>
-                    <f:else>
-                        <f:link.action action="form" arguments="{search: {extendedSearch: 1}}">
-                            <f:translate key="form.linkToAdvancedSearch"/>
-                        </f:link.action>
-                    </f:else>
-                </f:if>
-            </div>
-            </p>
-        </f:if>
     </f:form>
 </div>
 
