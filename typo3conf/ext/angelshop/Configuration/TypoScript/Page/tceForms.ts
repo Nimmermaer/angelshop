@@ -1,3 +1,3 @@
 TCEFORM.tt_content.CType {
-    removeItems := addToList(table,bullets,uploads,html,div,shortcut,mailform,login)
+    removeItems := addToList(table,bullets,uploads,div,shortcut,mailform,login)
 }
