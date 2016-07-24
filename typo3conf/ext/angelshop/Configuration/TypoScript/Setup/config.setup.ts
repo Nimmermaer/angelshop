@@ -38,7 +38,8 @@ config {
     compressJs = 1
     concatenateCss = 1
     concatenateJs = 1
-
+    removeDefaultCss = 1
+    removeDefaultJS = 1
     simulateStaticDocuments = 0
     tx_realurl_enable = 1
 
