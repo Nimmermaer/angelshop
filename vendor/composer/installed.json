@@ -1105,41 +1105,5 @@
             }
         ],
         "description": "Makes TYPO3 URLs search engine friendly. Donations are welcome to dmitry.dulepov@gmail.com. They help to support the extension!"
-    },
-    {
-        "name": "typo3-ter/nc-staticfilecache",
-        "version": "3.6.0",
-        "version_normalized": "3.6.0.0",
-        "dist": {
-            "type": "t3x",
-            "url": "https://typo3.org/extensions/repository/download/nc_staticfilecache/3.6.0/t3x/",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "php": ">= 5.5.0",
-            "typo3/cms-core": ">= 6.2.0, <= 7.99.99"
-        },
-        "replace": {
-            "nc_staticfilecache": "self.version",
-            "typo3-ter/nc_staticfilecache": "self.version"
-        },
-        "time": "2016-03-23 16:58:05",
-        "type": "typo3-cms-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "SFC\\NcStaticfilecache\\": "Classes"
-            }
-        },
-        "authors": [
-            {
-                "name": "Static File Cache team",
-                "email": "extensions@netcreators.com",
-                "company": "Netcreators",
-                "username": "netcreators"
-            }
-        ],
-        "description": "Transparent static file cache solution using mod_rewrite and mod_expires. Increase response times for static pages by a factor of 230!!"
     }
 ]
