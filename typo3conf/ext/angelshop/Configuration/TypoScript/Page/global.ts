@@ -10,6 +10,8 @@ TCEFORM {
         imageheight.disabled = 1
         imageborder.disabled = 1
         imagecols.disabled = 1
+        header_position.disabled = 1
+        date.disabled = 1
         imageorient {
             removeItems = 1,2,9,10,17,18
         }
@@ -23,11 +25,6 @@ TCEFORM {
                 4 =Teaser
             }
         }
-
-        header_position.disabled = 1
-        date.disabled = 1
-        layout.types.uploads.altLabels.1 = Zeige Icon
-        layout.types.uploads.altLabels.2 = Zeige Thumbnail
         header_layout {
             altLabels {
                 0 = Default
@@ -36,6 +33,7 @@ TCEFORM {
                 3 = H3
                 4 = H4
                 5 = H5
+                100 = Versteckt
             }
         }
     }

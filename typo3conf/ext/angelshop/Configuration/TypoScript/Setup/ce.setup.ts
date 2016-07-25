@@ -34,7 +34,7 @@ tt_content {
         templateName = Angelshop/Header
     }
 
-    ce_product  < lib.fluidContent
+    ce_product < lib.fluidContent
     ce_product {
         templateName = Angelshop/Product
         dataProcessing {
@@ -98,17 +98,6 @@ tt_content {
         }
     }
 
-    tx_product_list < lib.fluidContent
-    tx_product_list {
-        templateName = Angelshop/ProductList
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = tt_content
-            }
-        }
-    }
-
     tx_tab < lib.fluidContent
     tx_tab {
         templateName = Tabs
@@ -116,17 +105,6 @@ tt_content {
             100 = MB\Angelshop\DataProcessing\ContentElementProcessor
             100 {
                 references.fieldName = tx_angelshop_domain_model_tab
-            }
-        }
-    }
-
-    tx_serviceList < lib.fluidContent
-    tx_serviceList {
-        templateName = Angelshop/ServiceList
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
             }
         }
     }
@@ -152,39 +130,6 @@ tt_content {
     tx_project < lib.fluidContent
     tx_project {
         templateName = Angelshop/Project
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
-            }
-        }
-    }
-
-    tx_table < lib.fluidContent
-    tx_table {
-        templateName = Angelshop/Table
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
-            }
-        }
-    }
-
-    tx_accordion < lib.fluidContent
-    tx_accordion {
-        templateName = Angelshop/Accordion
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
-            }
-        }
-    }
-
-    tx_sidebarList < lib.fluidContent
-    tx_sidebarList {
-        templateName = Angelshop/SidebarList
         dataProcessing {
             10 = MB\Angelshop\DataProcessing\ContentElementProcessor
             10 {

@@ -175,6 +175,9 @@
             <trans-unit id="tx_product_list.title">
                 <source>Produktliste</source>
             </trans-unit>
+            <trans-unit id="angelshop_product.title">
+                <source>Produktliste</source>
+            </trans-unit>
             <trans-unit id="tx_product_list.description">
                 <source>Eine durchschaltbare Liste an Produkten</source>
             </trans-unit>

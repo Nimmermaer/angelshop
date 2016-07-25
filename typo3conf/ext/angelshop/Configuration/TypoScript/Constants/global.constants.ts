@@ -8,13 +8,7 @@ global {
         navService = 23
     }
 
-    languageLabels {
-        current = Deutsch
-        availableSysLanguageUids = 0,1
-        availableLabels = Deutsch||English
-    }
-
-    navigation {
+   navigation {
         footerStartPoint = 11
         serviceStartPoint = 3
         metaStartPoint = 1

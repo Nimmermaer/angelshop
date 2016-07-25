@@ -12,3 +12,5 @@ uploads
 typo3conf/node_modules
 /node_modules
 /fileadmin.tar.gz
+/typo3conf/LocalConfiguration.php
+/typo3conf/ext/angelshop/Classes/Service

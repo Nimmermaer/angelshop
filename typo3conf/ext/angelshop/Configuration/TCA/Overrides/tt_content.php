@@ -332,8 +332,6 @@ $contentelements = array(
     'serviceList',
     'impressum',
     'project',
-    'table',
-    'sidebarList',
     'gallery',
     'product_list'
 
@@ -357,6 +355,16 @@ foreach ($contentelements as $contentelement) {
     [
         'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:ce_product.title',
         'ce_product',
+    ],
+    'impressum',
+    'after'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:angelshop_product.title',
+        'angelshop_product',
     ],
     'impressum',
     'after'
@@ -415,11 +423,5 @@ $GLOBALS['TCA']['tt_content']['types']['ce_product'] = array(
 
 );
 
-
-$GLOBALS['TCA']['tt_content']['types'] ['tx_table'] = array(
-    'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,bodytext;;9;richtext:[*],
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
-);
 
 $GLOBALS['TCA']['tt_content']['ctrl']['requestUpdate'] = 'layout';
