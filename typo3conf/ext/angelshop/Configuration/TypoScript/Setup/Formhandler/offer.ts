@@ -55,6 +55,6 @@ plugin.Tx_Formhandler.settings.predef.kontakt {
     }
 }
 
-[applicationContext = "Development"]
+[applicationContext = Development]
     plugin.Tx_Formhandler.settings.predef.kontakt.finishers.1.config.admin.to_email = test@phth.de
 [global]

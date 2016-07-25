@@ -38,6 +38,7 @@ config {
     compressJs = 1
     concatenateCss = 1
     concatenateJs = 1
+
     removeDefaultCss = 1
     removeDefaultJS = 1
     simulateStaticDocuments = 0
@@ -46,7 +47,15 @@ config {
     index_enable = 1
     index_metatags = 1
 
-    headerComment (
+    sourceopt {
+        enabled = 1
+        enable_utf-8_support = 1
+
+        headerComment = 1
+
+        formatHtml = 1
+
+        headerComment (
 ><(((('> ><(((('> ><(((('>
 
      _    ____    _         _                     _     _
@@ -59,14 +68,7 @@ config {
 I' geh fisch'n in Berchtesgaden
 
 ><(((('> ><(((('> ><(((('>
-    )
-}
 
-[applicationContext = Development]
-    config {
-        compressCss = 0
-        compressJs = 0
-        concatenateCss = 0
-        concatenateJs = 0
+        )
     }
-[global]
+}

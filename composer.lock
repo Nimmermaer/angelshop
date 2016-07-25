@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cbe80e4603b2b80a4d841e783a3a20b8",
-    "content-hash": "a391aeecbb0bce480ac7cd39b1161d01",
+    "hash": "d82b16217e3038e3828be86b57788f4e",
+    "content-hash": "2fd28f7f953404cd1840abdde464e331",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -656,46 +656,6 @@
             "time": "2016-01-29 13:10:05"
         },
         {
-            "name": "typo3-ter/html-minifier",
-            "version": "1.1.2",
-            "dist": {
-                "type": "t3x",
-                "url": "https://typo3.org/extensions/repository/download/html_minifier/1.1.2/t3x/",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "php": ">= 5.4.0",
-                "typo3/cms-core": ">= 6.0.0, <= 7.9.99"
-            },
-            "replace": {
-                "html_minifier": "self.version",
-                "typo3-ter/html_minifier": "self.version"
-            },
-            "type": "typo3-cms-extension",
-            "autoload": {
-                "classmap": [
-                    ""
-                ],
-                "exclude-from-classmap": [
-                    "Migrations",
-                    "Tests",
-                    "tests",
-                    "class.ext_update.php"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "Dominik Weber",
-                    "email": "post@dominikweber.de",
-                    "company": "www.dominikweber.de",
-                    "username": "dominikweber"
-                }
-            ],
-            "description": "This extension minifies the output of TYPO3 generated pages.",
-            "time": "2016-06-30 13:35:49"
-        },
-        {
             "name": "typo3-ter/realurl",
             "version": "2.0.14",
             "dist": {
@@ -731,6 +691,38 @@
             ],
             "description": "Makes TYPO3 URLs search engine friendly. Donations are welcome to dmitry.dulepov@gmail.com. They help to support the extension!",
             "time": "2016-04-18 18:57:24"
+        },
+        {
+            "name": "typo3-ter/sourceopt",
+            "version": "0.9.3",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/sourceopt/0.9.3/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "typo3/cms-core": ">= 6.2.0, <= 7.99.99"
+            },
+            "replace": {
+                "sourceopt": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "HTML\\Sourceopt\\": "Classes/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Dr. Ronald P. Steiner, Boris Nicolai, Tim Lochmueller",
+                    "email": "ronald.steiner@googlemail.com, boris.nicolai@andavida.com, tim@fruit-lab.de",
+                    "company": "",
+                    "username": "spyker"
+                }
+            ],
+            "description": "Optimization of the final page: reformatting the (x)html output, removal of new lines, and quotes. Move development repository to https://github.com/lochmueller/sourceopt",
+            "time": "2016-06-15 23:03:34"
         },
         {
             "name": "typo3-ter/vhs",

@@ -63,6 +63,7 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'MB\\Angelshop\\' => array($baseDir . '/typo3conf/ext/angelshop/Classes'),
+    'HTML\\Sourceopt\\' => array($baseDir . '/typo3conf/ext/sourceopt/Classes'),
     'FluidTYPO3\\Vhs\\' => array($baseDir . '/typo3conf/ext/vhs/Classes'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DmitryDulepov\\Realurl\\' => array($baseDir . '/typo3conf/ext/realurl/Classes'),

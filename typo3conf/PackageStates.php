@@ -252,6 +252,12 @@ return [
             'packagePath' => 'typo3conf/ext/formhandler/',
             'suggestions' => [],
         ],
+        'gridelements' => [
+            'composerName' => 'GridElementsTeam/Gridelements',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/gridelements/',
+            'suggestions' => [],
+        ],
         'vhs' => [
             'composerName' => 'fluidtypo3/vhs',
             'state' => 'active',
@@ -264,22 +270,16 @@ return [
             'packagePath' => 'typo3conf/ext/angelshop/',
             'suggestions' => [],
         ],
-        'gridelements' => [
-            'composerName' => 'GridElementsTeam/Gridelements',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/gridelements/',
-            'suggestions' => [],
-        ],
-        'html_minifier' => [
-            'composerName' => 'html_minifier',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/html_minifier/',
-            'suggestions' => [],
-        ],
         'realurl' => [
             'composerName' => 'dmitryd/typo3-realurl',
             'state' => 'active',
             'packagePath' => 'typo3conf/ext/realurl/',
+            'suggestions' => [],
+        ],
+        'sourceopt' => [
+            'composerName' => 'lochmueller/sourceopt',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/sourceopt/',
             'suggestions' => [],
         ],
         'adodb' => [
@@ -316,6 +316,12 @@ return [
             'composerName' => 'typo3/cms-filemetadata',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/filemetadata/',
+            'suggestions' => [],
+        ],
+        'html_minifier' => [
+            'composerName' => 'html_minifier',
+            'state' => 'inactive',
+            'packagePath' => 'typo3conf/ext/html_minifier/',
             'suggestions' => [],
         ],
         'indexed_search_mysql' => [
