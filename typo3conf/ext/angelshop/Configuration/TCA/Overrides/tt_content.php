@@ -384,10 +384,10 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_gallery'] = array(
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,image,' . $commonFields
 );
-$GLOBALS['TCA']['tt_content']['types'] ['tx_product_list'] = array(
+$GLOBALS['TCA']['tt_content']['types'] ['angelshop_product'] = array(
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,pages,' . $commonFields
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,' . $commonFields
 );
 
 $GLOBALS['TCA']['tt_content']['types'] ['tx_trader_slider'] = array(
