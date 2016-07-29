@@ -46,6 +46,20 @@ lib.templates.base {
             wrap = &copy;  &nbsp; Aba-Angelshop &nbsp; |
         }
     }
+    settings {
+        opengraph {
+            type = offer
+            site_name = ABA - Angelshop, Laufen
+            admins = Angelika Anna Sailer
+            email =info@aba-angelshop.de
+            phone_number = 0 170 / 994 22 53
+            street-address  = Gartenstr. 10
+            locality = Laufen/Leobendorf
+            region = Bayern
+            postal-code = 83410
+            country-name = Deutschland
+        }
+    }
 }
 
 # Choose template file (based on backend_layout, respecting heredity)

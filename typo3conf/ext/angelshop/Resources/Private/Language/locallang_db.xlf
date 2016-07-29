@@ -67,6 +67,15 @@
             <trans-unit id="tt_content.tx_abatemplate_product_additional_description">
                 <source>Zusätzliche Beschreibung</source>
             </trans-unit>
+            <trans-unit id="pages.ce_whatsapp_text">
+                <source>Text für Whatsappnachricht</source>
+            </trans-unit>
+            <trans-unit id="pages.ce_whatsapp_button">
+                <source>Anzeige von Whatsapp Button (nur mobil)</source>
+            </trans-unit>
+            <trans-unit id="pages.ce_facebook_button">
+                <source>Anzeige von Facebook Button</source>
+            </trans-unit>
        </body>
     </file>
 </xliff>

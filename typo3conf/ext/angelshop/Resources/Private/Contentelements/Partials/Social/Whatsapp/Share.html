@@ -1,0 +1,9 @@
+{namespace n=MB\Angelshop\ViewHelpers}
+<f:if condition="{data.ce_whatsapp_button}">
+    <li class="social-share-item visible-xs">
+        <a href="{n:social.whatsapp.share(text:'{data.ce_whatsapp_text}')}">
+            <span class="fa fa-whatsapp fa-2x"></span>
+            <span class="social-share-text">Auf whatsapp teilen</span>
+        </a>
+    </li>
+</f:if>

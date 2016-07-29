@@ -1,4 +1,14 @@
 #
+# Table structure for table 'pages'
+#
+CREATE TABLE pages (
+	ce_whatsapp_text text,
+	ce_whatsapp_button int(11) DEFAULT '0' NOT NULL,
+	ce_facebook_button int(11) DEFAULT '0' NOT NULL,
+	ce_social_position int(11) DEFAULT '0' NOT NULL
+);
+
+#
 # Table structure for table 'tt_content'
 #
 CREATE TABLE tt_content (

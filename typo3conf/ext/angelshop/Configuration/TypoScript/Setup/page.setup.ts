@@ -27,10 +27,8 @@ page {
             ifEmpty.data = levelfield :-1, keywords, slide
         }
 
-        author {
-            data = page:author
-            ifEmpty.data = levelfield:-1, author, slide
-        }
+        author = Angelika Anna Sailer
+        author.override.field = author
 
         abstract {
             data = page:abstract

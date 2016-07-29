@@ -9553,6 +9553,13 @@ ul.f3-widget-paginator li a {
   display: block;
   padding: 10px 15px;
 }
+#Social {
+  list-style: none;
+  padding: 0;
+}
+#Social a:hover {
+  text-decoration: none;
+}
 .trader-slider-outer {
   margin: 20px 0px 20px 0px;
   padding: 25px;

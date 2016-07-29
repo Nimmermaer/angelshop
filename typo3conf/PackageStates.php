@@ -318,12 +318,6 @@ return [
             'packagePath' => 'typo3/sysext/filemetadata/',
             'suggestions' => [],
         ],
-        'html_minifier' => [
-            'composerName' => 'html_minifier',
-            'state' => 'inactive',
-            'packagePath' => 'typo3conf/ext/html_minifier/',
-            'suggestions' => [],
-        ],
         'indexed_search_mysql' => [
             'composerName' => 'typo3/cms-indexed-search-mysql',
             'state' => 'inactive',
