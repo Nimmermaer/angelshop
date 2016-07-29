@@ -12,7 +12,7 @@ tx_gridelements.setup.accordion {
        					name = LLL:EXT:angelshop/Resources/Private/Language/Gridelements/locallang.xlf:accordion.column
        					colPos = 20
        					allowedGridTypes = accordionItem
-       					allowed = ''
+
        				}
        			}
        		}
