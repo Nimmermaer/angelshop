@@ -3,18 +3,6 @@
 <!-- Page Content -->
 <div class="container">
     <f:render partial="Page/Breadcrumb" arguments="{_all}" />
-
-   <f:if condition="{files}">
-        <div class="row">
-            <div class="col-lg-12 file">
-                <f:for each="{files}" as="image">
-                    <img class="img-responsive" src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, width:1200, height:300c)}" alt="{image.name}">
-                </f:for>
-
-            </div>
-        </div>
-    </f:if>
-
      {columnMain ->f:format.raw()}
     <hr>
     <ul id="Social">
