@@ -84,6 +84,20 @@ return [
                 'rsaauth',
             ],
         ],
+        'taskcenter' => [
+            'composerName' => 'typo3/cms-taskcenter',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/taskcenter/',
+            'suggestions' => [
+                'sys_action',
+            ],
+        ],
+        'sys_action' => [
+            'composerName' => 'typo3/cms-sys-action',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/sys_action/',
+            'suggestions' => [],
+        ],
         'func' => [
             'composerName' => 'typo3/cms-func',
             'state' => 'active',
@@ -347,20 +361,6 @@ return [
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/scheduler/',
             'suggestions' => [],
-        ],
-        'sys_action' => [
-            'composerName' => 'typo3/cms-sys-action',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/sys_action/',
-            'suggestions' => [],
-        ],
-        'taskcenter' => [
-            'composerName' => 'typo3/cms-taskcenter',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/taskcenter/',
-            'suggestions' => [
-                'sys_action',
-            ],
         ],
         'version' => [
             'composerName' => 'typo3/cms-version',
