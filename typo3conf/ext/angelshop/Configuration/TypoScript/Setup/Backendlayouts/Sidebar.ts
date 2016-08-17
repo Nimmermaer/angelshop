@@ -2,7 +2,7 @@ mod.web_layout.BackendLayouts.Sidebar {
     title = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Sidebar.title
     config {
         backend_layout {
-            colCount = 2
+            colCount = 6
             rowCount = 1
             rows {
                 1 {
@@ -10,12 +10,13 @@ mod.web_layout.BackendLayouts.Sidebar {
                         1 {
                             name = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Sidebar.col.1
                             colPos = 1
-                            colspan = 1
+                            colspan = 2
                         }
 
                         2 {
                             name = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Sidebar.col.0
                             colPos = 0
+                            colspan = 4
                         }
                     }
                 }
