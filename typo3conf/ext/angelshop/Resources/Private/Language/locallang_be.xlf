@@ -181,6 +181,9 @@
             <trans-unit id="tx_product_list.description">
                 <source>Eine durchschaltbare Liste an Produkten</source>
             </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_map_small">
+                <source>Kleine Karte für Gridelemente</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

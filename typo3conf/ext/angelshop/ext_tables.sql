@@ -27,21 +27,20 @@ CREATE TABLE tt_content (
 	tx_abatemplate_product int(11) DEFAULT '0' NOT NULL,
 
 	## New angelshop_tables
-	tx_angelshop_title varchar(255) DEFAULT '0' NOT NULL,
-	tx_angelshop_link int(11) DEFAULT '0' NOT NULL,
-	tx_angelshop_fontawesome varchar(255) DEFAULT '0' NOT NULL,
-	tx_angelshop_class varchar(255) DEFAULT '0' NOT NULL,
-	tx_angelshop_trader int(11) DEFAULT '0' NOT NULL,
-	tx_angelshop_tab int(11) DEFAULT '0' NOT NULL,
-	tx_angelshop_cognizance  varchar(255) DEFAULT '0' NOT NULL,
-	tx_angelshop_sales_tax_indicator  varchar(255) DEFAULT '0' NOT NULL,
+	tx_angelshop_title varchar(255) DEFAULT ' ' NOT NULL,
+	tx_angelshop_link int(11) DEFAULT ' ' NOT NULL,
+	tx_angelshop_fontawesome varchar(255) DEFAULT ' ' NOT NULL,
+	tx_angelshop_class varchar(255) DEFAULT ' ' NOT NULL,
+	tx_angelshop_trader int(11) DEFAULT ' ' NOT NULL,
+	tx_angelshop_tab int(11) DEFAULT ' ' NOT NULL,
+	tx_angelshop_cognizance  varchar(255) DEFAULT ' ' NOT NULL,
+	tx_angelshop_sales_tax_indicator  varchar(255) DEFAULT ' ' NOT NULL,
 	tx_angelshop_opentime text,
 	tx_angelshop_address text,
-	tx_angelshop_phone  varchar(255) DEFAULT '0' NOT NULL,
-	tx_angelshop_email  varchar(255) DEFAULT '0' NOT NULL,
-	tx_angelshop_owner  varchar(255) DEFAULT '0' NOT NULL
-
-
+	tx_angelshop_phone  varchar(255) DEFAULT ' ' NOT NULL,
+	tx_angelshop_email  varchar(255) DEFAULT ' ' NOT NULL,
+	tx_angelshop_owner  varchar(255) DEFAULT ' ' NOT NULL,
+	tx_angelshop_map_small int(11) DEFAULT '0' NOT NULL
 );
 #
 # Table structure for table 'fe_users'

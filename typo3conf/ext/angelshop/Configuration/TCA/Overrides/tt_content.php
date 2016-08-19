@@ -197,6 +197,14 @@ $newTtContentColumns = array(
             'foreign_field' => 'record',
         )
     ),
+    'tx_angelshop_map_small' => array(
+        'exclude' => 0,
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small',
+        'config' => array(
+            'type' => 'check',
+            'default' => 0
+        )
+    ),
     'subheader' => array(
         'exclude' => 0,
         'displayCond' => array(
@@ -378,7 +386,10 @@ $commonFields = '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_t
 
 $GLOBALS['TCA']['tt_content']['types'] ['tx_impressum'] = array(
     'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,image;Logo, header;Name,tx_angelshop_owner,tx_angelshop_address,tx_angelshop_phone,subheader;Mobil,tx_angelshop_email,tx_angelshop_cognizance,tx_angelshop_sales_tax_indicator,tx_angelshop_opentime, tx_angelshop_fontawesome;Social Links,' . $commonFields
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,tx_angelshop_map_small,image;Logo,
+          header;Name,tx_angelshop_owner,tx_angelshop_address,tx_angelshop_phone,subheader;Mobil,tx_angelshop_email,
+          tx_angelshop_cognizance,tx_angelshop_sales_tax_indicator,tx_angelshop_opentime,
+          tx_angelshop_fontawesome;Social Links,' . $commonFields
 );
 
 $GLOBALS['TCA']['tt_content']['types'] ['tx_slider'] = array(
