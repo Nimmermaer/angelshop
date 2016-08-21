@@ -21,8 +21,6 @@
                     <img src="{f:uri.image(src:'{logo.uid}', treatIdAsReference:1, maxWidth:380, maxHeight:100c)}"/>
                 </f:if>
             </f:for>
-
-
                 <h3>{data.header}</h3>
                 <p>
                     {data.tx_angelshop_address->f:format.nl2br()}
@@ -61,24 +59,19 @@
                 </f:if>
                 <f:if condition="{data.tx_angelshop_opentime}">
                     <p><i class="fa fa-clock-o"></i>
-                        <abbr title="Öffnungszeit">Öffnungszeit</abbr>:<br/> {data.tx_angelshop_opentime
-                        ->f:format.nl2br()}
+                        <abbr title="Öffnungszeit">Öffnungszeit</abbr>:<br/> {data.tx_angelshop_opentime->f:format.nl2br()}
                     </p>
                 </f:if>
-
                 <ul class="list-unstyled list-inline list-social-icons">
                     <f:for each="{Impressum}" as="item">
                         <li>
                             <f:link.typolink parameter="{item.link}" title="{item.title}">
                                 <i class="fa {item.class} fa-2x"></i>
                             </f:link.typolink>
-
                         </li>
                     </f:for>
                 </ul>
-
         </address>
-
     </div>
     </f:if>
 </div>
