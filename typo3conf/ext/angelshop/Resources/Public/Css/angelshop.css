@@ -9576,3 +9576,6 @@ ul.f3-widget-paginator li a {
 .trader-slider-outer .slick-next:before {
   color: orange;
 }
+.border iframe {
+  border-radius: 4px;
+}
