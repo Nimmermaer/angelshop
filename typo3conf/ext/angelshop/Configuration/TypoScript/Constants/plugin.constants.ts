@@ -1,4 +1,3 @@
-
 plugin.tx_angelshop {
     view {
         # cat=plugin.tx_angelshop_gallery/file; type=string; label=Path to template root (FE)
@@ -8,6 +7,7 @@ plugin.tx_angelshop {
         # cat=plugin.tx_angelshop_gallery/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:angelshop/Resources/Private/Layouts/
     }
+
     persistence {
         # cat=plugin.tx_angelshop_gallery//a; type=string; label=Default storage PID
         storagePid =
@@ -23,6 +23,7 @@ plugin.tx_angelshop_gallery {
         # cat=plugin.tx_angelshop_gallery/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:angelshop/Resources/Private/Layouts/
     }
+
     persistence {
         # cat=plugin.tx_angelshop_gallery//a; type=string; label=Default storage PID
         storagePid =
@@ -38,6 +39,7 @@ plugin.tx_angelshop_teaserrow {
         # cat=plugin.tx_angelshop_teaserrow/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:angelshop/Resources/Private/Layouts/
     }
+
     persistence {
         # cat=plugin.tx_angelshop_teaserrow//a; type=string; label=Default storage PID
         storagePid =
@@ -53,6 +55,7 @@ plugin.tx_angelshop_fullwidthvideo {
         # cat=plugin.tx_angelshop_fullwidthvideo/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:angelshop/Resources/Private/Layouts/
     }
+
     persistence {
         # cat=plugin.tx_angelshop_fullwidthvideo//a; type=string; label=Default storage PID
         storagePid =

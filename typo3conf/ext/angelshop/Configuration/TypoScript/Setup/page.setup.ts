@@ -1,4 +1,3 @@
-
 # Initiate page
 page = PAGE
 page {
@@ -55,7 +54,6 @@ page {
         if.isGreaterThan.field = content_from_pid
     }
 
-
     # Body Tag Rendering
     bodyTagCObject = COA
     bodyTagCObject {
@@ -77,6 +75,7 @@ page {
             field = title
             noTrimWrap = |<title> | &#124; Aba-Angelshop Laufen</title>|
         }
+
         11 = TEXT
         11.value (
                 <meta name="theme-color" content="#FFA500">

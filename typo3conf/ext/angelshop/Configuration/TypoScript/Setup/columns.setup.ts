@@ -24,5 +24,5 @@ lib {
                 20.wrap < temp.typo3searchWrap
             }
         }
-   }
+    }
 }

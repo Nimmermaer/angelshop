@@ -2,10 +2,10 @@
 # Table structure for table 'pages'
 #
 CREATE TABLE pages (
-	ce_whatsapp_text text,
-	ce_whatsapp_button int(11) DEFAULT '0' NOT NULL,
-	ce_facebook_button int(11) DEFAULT '0' NOT NULL,
-	ce_social_position int(11) DEFAULT '0' NOT NULL
+  ce_whatsapp_text   TEXT,
+  ce_whatsapp_button INT(11) DEFAULT '0' NOT NULL,
+  ce_facebook_button INT(11) DEFAULT '0' NOT NULL,
+  ce_social_position INT(11) DEFAULT '0' NOT NULL
 );
 
 #
@@ -13,43 +13,43 @@ CREATE TABLE pages (
 #
 CREATE TABLE tt_content (
 
-	## Old angelshop_tables
-	tx_abatemplate_product_description text NOT NULL,
-	tx_abatemplate_product_additional_description text NOT NULL,
-	tx_abatemplate_product_price text NOT NULL,
-	tx_abatemplate_product_old_price text,
-	tx_abatemplate_product_stock int(11) DEFAULT '0' NOT NULL,
-	tx_abatemplate_product_image_id int(11) DEFAULT '0' NOT NULL,
-	tx_abatemplate_product_image_count int(11) DEFAULT '0' NOT NULL,
-	tx_abatemplate_product_image_name text,
-	tx_abatemplate_product_manufacturer_name text,
-	tx_abatemplate_product_category text,
-	tx_abatemplate_product int(11) DEFAULT '0' NOT NULL,
+  ## Old angelshop_tables
+  tx_abatemplate_product_description            TEXT                     NOT NULL,
+  tx_abatemplate_product_additional_description TEXT                     NOT NULL,
+  tx_abatemplate_product_price                  TEXT                     NOT NULL,
+  tx_abatemplate_product_old_price              TEXT,
+  tx_abatemplate_product_stock                  INT(11) DEFAULT '0'      NOT NULL,
+  tx_abatemplate_product_image_id               INT(11) DEFAULT '0'      NOT NULL,
+  tx_abatemplate_product_image_count            INT(11) DEFAULT '0'      NOT NULL,
+  tx_abatemplate_product_image_name             TEXT,
+  tx_abatemplate_product_manufacturer_name      TEXT,
+  tx_abatemplate_product_category               TEXT,
+  tx_abatemplate_product                        INT(11) DEFAULT '0'      NOT NULL,
 
-	## New angelshop_tables
-	tx_angelshop_title varchar(255) DEFAULT ' ' NOT NULL,
-	tx_angelshop_link int(11) DEFAULT ' ' NOT NULL,
-	tx_angelshop_fontawesome varchar(255) DEFAULT ' ' NOT NULL,
-	tx_angelshop_class varchar(255) DEFAULT ' ' NOT NULL,
-	tx_angelshop_trader int(11) DEFAULT ' ' NOT NULL,
-	tx_angelshop_tab int(11) DEFAULT ' ' NOT NULL,
-	tx_angelshop_cognizance  varchar(255) DEFAULT ' ' NOT NULL,
-	tx_angelshop_sales_tax_indicator  varchar(255) DEFAULT ' ' NOT NULL,
-	tx_angelshop_opentime text,
-	tx_angelshop_address text,
-	tx_angelshop_phone  varchar(255) DEFAULT ' ' NOT NULL,
-	tx_angelshop_email  varchar(255) DEFAULT ' ' NOT NULL,
-	tx_angelshop_owner  varchar(255) DEFAULT ' ' NOT NULL,
-	tx_angelshop_map_small int(11) DEFAULT '0' NOT NULL
+  ## New angelshop_tables
+  tx_angelshop_title                            VARCHAR(255) DEFAULT ' ' NOT NULL,
+  tx_angelshop_link                             INT(11) DEFAULT ' '      NOT NULL,
+  tx_angelshop_fontawesome                      VARCHAR(255) DEFAULT ' ' NOT NULL,
+  tx_angelshop_class                            VARCHAR(255) DEFAULT ' ' NOT NULL,
+  tx_angelshop_trader                           INT(11) DEFAULT ' '      NOT NULL,
+  tx_angelshop_tab                              INT(11) DEFAULT ' '      NOT NULL,
+  tx_angelshop_cognizance                       VARCHAR(255) DEFAULT ' ' NOT NULL,
+  tx_angelshop_sales_tax_indicator              VARCHAR(255) DEFAULT ' ' NOT NULL,
+  tx_angelshop_opentime                         TEXT,
+  tx_angelshop_address                          TEXT,
+  tx_angelshop_phone                            VARCHAR(255) DEFAULT ' ' NOT NULL,
+  tx_angelshop_email                            VARCHAR(255) DEFAULT ' ' NOT NULL,
+  tx_angelshop_owner                            VARCHAR(255) DEFAULT ' ' NOT NULL,
+  tx_angelshop_map_small                        INT(11) DEFAULT '0'      NOT NULL
 );
 #
 # Table structure for table 'fe_users'
 #
 CREATE TABLE fe_users (
-	feuser_cognizance varchar(255) DEFAULT '0' NOT NULL,
-	feuser_sales_tax_indicator varchar(255) DEFAULT '0' NOT NULL,
-	feuser_opentime varchar(255) DEFAULT '0' NOT NULL,
-	record int(11) DEFAULT '0' NOT NULL
+  feuser_cognizance          VARCHAR(255) DEFAULT '0' NOT NULL,
+  feuser_sales_tax_indicator VARCHAR(255) DEFAULT '0' NOT NULL,
+  feuser_opentime            VARCHAR(255) DEFAULT '0' NOT NULL,
+  record                     INT(11) DEFAULT '0'      NOT NULL
 
 );
 
@@ -58,35 +58,35 @@ CREATE TABLE fe_users (
 #
 CREATE TABLE tx_angelshop_domain_model_gallery (
 
-	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
+  uid              INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid              INT(11) DEFAULT '0'             NOT NULL,
 
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	starttime int(11) unsigned DEFAULT '0' NOT NULL,
-	endtime int(11) unsigned DEFAULT '0' NOT NULL,
+  tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
-	t3ver_oid int(11) DEFAULT '0' NOT NULL,
-	t3ver_id int(11) DEFAULT '0' NOT NULL,
-	t3ver_wsid int(11) DEFAULT '0' NOT NULL,
-	t3ver_label varchar(255) DEFAULT '' NOT NULL,
-	t3ver_state tinyint(4) DEFAULT '0' NOT NULL,
-	t3ver_stage int(11) DEFAULT '0' NOT NULL,
-	t3ver_count int(11) DEFAULT '0' NOT NULL,
-	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
-	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
+  t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
+  t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
+  t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
 
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l10n_parent int(11) DEFAULT '0' NOT NULL,
-	l10n_diffsource mediumblob,
+  sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
+  l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
+  l10n_diffsource  MEDIUMBLOB,
 
-	PRIMARY KEY (uid),
-	KEY parent (pid),
-	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
+  PRIMARY KEY (uid),
+  KEY parent (pid),
+  KEY t3ver_oid (t3ver_oid, t3ver_wsid),
+  KEY language (l10n_parent, sys_language_uid)
 
 );
 
@@ -95,35 +95,35 @@ CREATE TABLE tx_angelshop_domain_model_gallery (
 #
 CREATE TABLE tx_angelshop_domain_model_teaserrow (
 
-	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
+  uid              INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid              INT(11) DEFAULT '0'             NOT NULL,
 
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	starttime int(11) unsigned DEFAULT '0' NOT NULL,
-	endtime int(11) unsigned DEFAULT '0' NOT NULL,
+  tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
-	t3ver_oid int(11) DEFAULT '0' NOT NULL,
-	t3ver_id int(11) DEFAULT '0' NOT NULL,
-	t3ver_wsid int(11) DEFAULT '0' NOT NULL,
-	t3ver_label varchar(255) DEFAULT '' NOT NULL,
-	t3ver_state tinyint(4) DEFAULT '0' NOT NULL,
-	t3ver_stage int(11) DEFAULT '0' NOT NULL,
-	t3ver_count int(11) DEFAULT '0' NOT NULL,
-	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
-	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
+  t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
+  t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
+  t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
 
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l10n_parent int(11) DEFAULT '0' NOT NULL,
-	l10n_diffsource mediumblob,
+  sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
+  l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
+  l10n_diffsource  MEDIUMBLOB,
 
-	PRIMARY KEY (uid),
-	KEY parent (pid),
-	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
+  PRIMARY KEY (uid),
+  KEY parent (pid),
+  KEY t3ver_oid (t3ver_oid, t3ver_wsid),
+  KEY language (l10n_parent, sys_language_uid)
 
 );
 
@@ -132,41 +132,41 @@ CREATE TABLE tx_angelshop_domain_model_teaserrow (
 #
 CREATE TABLE tx_angelshop_domain_model_trader (
 
-	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
+  uid              INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid              INT(11) DEFAULT '0'             NOT NULL,
 
-	title varchar(255) DEFAULT '' NOT NULL,
-	link varchar(255) DEFAULT '' NOT NULL,
-	image int(11) DEFAULT '0' NOT NULL,
-	record int(11) DEFAULT '0' NOT NULL,
+  title            VARCHAR(255) DEFAULT ''         NOT NULL,
+  link             VARCHAR(255) DEFAULT ''         NOT NULL,
+  image            INT(11) DEFAULT '0'             NOT NULL,
+  record           INT(11) DEFAULT '0'             NOT NULL,
 
 
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	starttime int(11) unsigned DEFAULT '0' NOT NULL,
-	endtime int(11) unsigned DEFAULT '0' NOT NULL,
+  tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
-	t3ver_oid int(11) DEFAULT '0' NOT NULL,
-	t3ver_id int(11) DEFAULT '0' NOT NULL,
-	t3ver_wsid int(11) DEFAULT '0' NOT NULL,
-	t3ver_label varchar(255) DEFAULT '' NOT NULL,
-	t3ver_state tinyint(4) DEFAULT '0' NOT NULL,
-	t3ver_stage int(11) DEFAULT '0' NOT NULL,
-	t3ver_count int(11) DEFAULT '0' NOT NULL,
-	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
-	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
+  t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
+  t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
+  t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
 
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l10n_parent int(11) DEFAULT '0' NOT NULL,
-	l10n_diffsource mediumblob,
+  sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
+  l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
+  l10n_diffsource  MEDIUMBLOB,
 
-	PRIMARY KEY (uid),
-	KEY parent (pid),
-	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
+  PRIMARY KEY (uid),
+  KEY parent (pid),
+  KEY t3ver_oid (t3ver_oid, t3ver_wsid),
+  KEY language (l10n_parent, sys_language_uid)
 
 );
 
@@ -175,41 +175,41 @@ CREATE TABLE tx_angelshop_domain_model_trader (
 #
 CREATE TABLE tx_angelshop_domain_model_fontawesome (
 
-	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
+  uid              INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid              INT(11) DEFAULT '0'             NOT NULL,
 
-	class varchar(255) DEFAULT '0' NOT NULL,
-	title varchar(255) DEFAULT '0' NOT NULL,
-	link varchar(255) DEFAULT '0' NOT NULL,
+  class            VARCHAR(255) DEFAULT '0'        NOT NULL,
+  title            VARCHAR(255) DEFAULT '0'        NOT NULL,
+  link             VARCHAR(255) DEFAULT '0'        NOT NULL,
 
-	record int(11) unsigned DEFAULT '0' NOT NULL,
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	starttime int(11) unsigned DEFAULT '0' NOT NULL,
-	endtime int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  record           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  sorting          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
-	t3ver_oid int(11) DEFAULT '0' NOT NULL,
-	t3ver_id int(11) DEFAULT '0' NOT NULL,
-	t3ver_wsid int(11) DEFAULT '0' NOT NULL,
-	t3ver_label varchar(255) DEFAULT '' NOT NULL,
-	t3ver_state tinyint(4) DEFAULT '0' NOT NULL,
-	t3ver_stage int(11) DEFAULT '0' NOT NULL,
-	t3ver_count int(11) DEFAULT '0' NOT NULL,
-	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
-	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
+  t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
+  t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
+  t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
 
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l10n_parent int(11) DEFAULT '0' NOT NULL,
-	l10n_diffsource mediumblob,
+  sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
+  l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
+  l10n_diffsource  MEDIUMBLOB,
 
-	PRIMARY KEY (uid),
-	KEY parent (pid),
-	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
+  PRIMARY KEY (uid),
+  KEY parent (pid),
+  KEY t3ver_oid (t3ver_oid, t3ver_wsid),
+  KEY language (l10n_parent, sys_language_uid)
 
 );
 
@@ -218,42 +218,42 @@ CREATE TABLE tx_angelshop_domain_model_fontawesome (
 #
 CREATE TABLE tx_angelshop_domain_model_tab (
 
-	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
+  uid              INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid              INT(11) DEFAULT '0'             NOT NULL,
 
-	header varchar(255) DEFAULT '0' NOT NULL,
-	icon varchar(255) DEFAULT '0' NOT NULL,
-	text text,
-	image int(11) DEFAULT '0' NOT NULL,
+  header           VARCHAR(255) DEFAULT '0'        NOT NULL,
+  icon             VARCHAR(255) DEFAULT '0'        NOT NULL,
+  text             TEXT,
+  image            INT(11) DEFAULT '0'             NOT NULL,
 
-	record int(11) unsigned DEFAULT '0' NOT NULL,
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	starttime int(11) unsigned DEFAULT '0' NOT NULL,
-	endtime int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  record           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  sorting          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
-	t3ver_oid int(11) DEFAULT '0' NOT NULL,
-	t3ver_id int(11) DEFAULT '0' NOT NULL,
-	t3ver_wsid int(11) DEFAULT '0' NOT NULL,
-	t3ver_label varchar(255) DEFAULT '' NOT NULL,
-	t3ver_state tinyint(4) DEFAULT '0' NOT NULL,
-	t3ver_stage int(11) DEFAULT '0' NOT NULL,
-	t3ver_count int(11) DEFAULT '0' NOT NULL,
-	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
-	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
+  t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
+  t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
+  t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
+  t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
 
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l10n_parent int(11) DEFAULT '0' NOT NULL,
-	l10n_diffsource mediumblob,
+  sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
+  l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
+  l10n_diffsource  MEDIUMBLOB,
 
-	PRIMARY KEY (uid),
-	KEY parent (pid),
-	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
+  PRIMARY KEY (uid),
+  KEY parent (pid),
+  KEY t3ver_oid (t3ver_oid, t3ver_wsid),
+  KEY language (l10n_parent, sys_language_uid)
 
 );
 
@@ -262,13 +262,13 @@ CREATE TABLE tx_angelshop_domain_model_tab (
 #
 #
 CREATE TABLE tx_angelshop_trader_ttcontent_mm (
-  uid int(11) NOT NULL auto_increment,
-  uid_local int(11) DEFAULT '0' NOT NULL,
-  uid_foreign int(11) DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) DEFAULT '0' NOT NULL,
-  ident varchar(30) DEFAULT '' NOT NULL,
+  uid             INT(11)                NOT NULL AUTO_INCREMENT,
+  uid_local       INT(11) DEFAULT '0'    NOT NULL,
+  uid_foreign     INT(11) DEFAULT '0'    NOT NULL,
+  tablenames      VARCHAR(30) DEFAULT '' NOT NULL,
+  sorting         INT(11) DEFAULT '0'    NOT NULL,
+  sorting_foreign INT(11) DEFAULT '0'    NOT NULL,
+  ident           VARCHAR(30) DEFAULT '' NOT NULL,
 
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign),

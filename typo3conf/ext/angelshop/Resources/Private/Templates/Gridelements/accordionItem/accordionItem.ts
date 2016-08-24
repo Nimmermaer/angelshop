@@ -14,10 +14,8 @@ tt_content.gridelements_pi1.20.10.setup.accordionItem {
 
             )
             wrap.insertData = 1
-
         }
     }
 
-    wrap =    <div class="panel panel-default">|</div>
-
+    wrap = <div class="panel panel-default">|</div>
 }

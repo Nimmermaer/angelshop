@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z" product-name="angelshop">
+    <file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
+          product-name="angelshop">
         <header/>
         <body>
             <trans-unit id="tx_angelshop_domain_model_gallery">
@@ -10,7 +11,9 @@
                 <source>Link</source>
             </trans-unit>
             <trans-unit id="tca.tt_content.tx_angelshop_fontawesome">
-                <source>Fontawesome Icon <a href="http://fontawesome.io/icons/">Iconsuche</a> </source>
+                <source>Fontawesome Icon
+                    <a href="http://fontawesome.io/icons/">Iconsuche</a>
+                </source>
             </trans-unit>
             <trans-unit id="tca.tt_content.tx_angelshop_title">
                 <source>Titel</source>

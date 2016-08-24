@@ -1,27 +1,42 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cox
- * Date: 24.07.2016
- * Time: 12:41
- */
 
 namespace MB\Angelshop\Domain\Repository;
+
+    /***************************************************************
+     *  Copyright notice
+     *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
+     *  All rights reserved
+     *  This script is part of the TYPO3 project. The TYPO3 project is
+     *  free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *  This script is distributed in the hope that it will be useful,
+     *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+     *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     *  GNU General Public License for more details.
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
 
 /**
  * Class ContentRepository
  * @package MB\Angelshop\Domain\Repository
  */
 
-class ContentRepository extends Repository{
+class ContentRepository extends Repository
+{
 
-	/**
-	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-	 */
-	public function findProducts() {
-		$query = $this->createQuery();
-		$query->like('tx_abatemplate_product', 1);
-		return $query->execute();
-	}
+    /**
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findProducts()
+    {
+        $query = $this->createQuery();
+        $query->like('tx_abatemplate_product', 1);
+
+        return $query->execute();
+    }
 
 }

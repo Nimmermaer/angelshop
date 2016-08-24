@@ -2,7 +2,8 @@ page {
     includeCSS {
         style = EXT:angelshop/Resources/Public/Css/angelshop.css
     }
-   includeJSFooter {
+
+    includeJSFooter {
         jquery = EXT:angelshop/Resources/Public/Js/jquery.js
         bootstrap = EXT:angelshop/Resources/Public/Js/bootstrap.js
         analytics = EXT:angelshop/Resources/Public/Js/analytics.js
