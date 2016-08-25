@@ -1,4 +1,12 @@
 page {
+    headerData {
+        3425 = TEMPLATE
+        3425 {
+            stdWrap.wrap = <style type="text/css">|</style>
+            template = FILE
+            template.file = EXT:angelshop/Resources/Public/Css/above/css/bootstrap.min.css
+        }
+    }
     includeCSS {
         style = EXT:angelshop/Resources/Public/Css/angelshop.css
     }
