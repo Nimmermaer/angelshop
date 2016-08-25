@@ -1,7 +1,10 @@
 <!-- Navigation -->
-<f:render partial="Opengraph" arguments="{_all}" />
+<f:render partial="Opengraph" arguments="{_all}"/>
 <f:render partial="Page/Header" arguments="{_all}"/>
 <!-- Page Content -->
+<f:if condition="{files}">
+    <f:render partial="Page/ImageHeader" arguments="{_all}"/>
+</f:if>
 <div class="container">
     <!-- Page Heading/Breadcrumbs -->
     <f:render partial="Page/Breadcrumb" arguments="{_all}"/>

@@ -1,7 +1,10 @@
-<f:render partial="Opengraph" arguments="{_all}" />
+<f:render partial="Opengraph" arguments="{_all}"/>
 <!-- Navigation -->
 <f:render partial="Page/Header" arguments="{_all}"/>
 <!-- Page Content -->
+<f:if condition="{files}">
+    <f:render partial="Page/ImageHeader" arguments="{_all}"/>
+</f:if>
 <div class="container">
     <!-- Page Heading/Breadcrumbs -->
     <f:render partial="Page/Breadcrumb" arguments="{_all}"/>
@@ -20,8 +23,8 @@
     <!-- /.row -->
     <hr>
     <ul id="Social">
-        <f:render partial="Social/Facebook/Share" arguments="{_all}" />
-        <f:render partial="Social/Whatsapp/Share" arguments="{_all}" />
+        <f:render partial="Social/Facebook/Share" arguments="{_all}"/>
+        <f:render partial="Social/Whatsapp/Share" arguments="{_all}"/>
     </ul>
     <!-- Footer -->
     <f:render partial="Page/Footer" arguments="{_all}"/>

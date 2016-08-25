@@ -73,7 +73,7 @@
                 <source>Accordion Element</source>
             </trans-unit>
             <trans-unit id="accordionItem.description">
-                <source>Diese Elemente werden in das Grid gelegt für die einzelnen Aufklappbalken </source>
+                <source>Diese Elemente werden in das Grid gelegt für die einzelnen Aufklappbalken</source>
             </trans-unit>
             <trans-unit id="accordionItem.column">
                 <source>Accordion Item Content</source>

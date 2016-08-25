@@ -14,3 +14,4 @@ typo3conf/node_modules
 /fileadmin.tar.gz
 /typo3conf/LocalConfiguration.php
 /typo3conf/ext/angelshop/Classes/Service
+/typo3conf/l10n/*

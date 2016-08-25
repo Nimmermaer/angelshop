@@ -11,7 +11,6 @@ mod.web_layout.BackendLayouts.Default {
                             name = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Default.col.0
                             colPos = 0
                         }
-
                     }
                 }
             }

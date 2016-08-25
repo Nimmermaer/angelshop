@@ -3,7 +3,7 @@ mod {
         tx_slider = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Slider.html
         tx_impressum = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Impressum.html
         tx_tab = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Tab.html
-      }
+    }
 
     wizards.newContentElement.wizardItems {
         angelshop {
@@ -17,6 +17,7 @@ mod {
                         CType = tx_impressum
                     }
                 }
+
                 ce_product {
                     iconIdentifier = product
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:ce_product.title
@@ -25,6 +26,7 @@ mod {
                         CType = ce_product
                     }
                 }
+
                 angelshop_product {
                     iconIdentifier = productlist
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title
@@ -34,6 +36,7 @@ mod {
                     }
                 }
             }
+
             show = *
         }
 
@@ -74,6 +77,7 @@ mod {
                         CType = tx_tab
                     }
                 }
+
                 tx_gallery {
                     iconIdentifier = gallery
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_gallery.title
@@ -83,6 +87,7 @@ mod {
                     }
                 }
             }
+
             show = *
         }
     }

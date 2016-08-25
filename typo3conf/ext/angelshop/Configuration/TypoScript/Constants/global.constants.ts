@@ -8,7 +8,7 @@ global {
         navService = 23
     }
 
-   navigation {
+    navigation {
         footerStartPoint = 11
         serviceStartPoint = 3
         metaStartPoint = 1

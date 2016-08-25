@@ -64,10 +64,7 @@ module.exports = function (grunt) {
             ]
         },
         concat: {
-            options: {
-                banner: '<%= banner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>',
-                stripBanners: false
-            },
+
             bootstrap: {
                 src: [
                     'ext/angelshop/Resources/Private/Js/bootstrap/transition.js',
@@ -84,6 +81,15 @@ module.exports = function (grunt) {
                     'ext/angelshop/Resources/Private/Js/bootstrap/affix.js'
                 ],
                 dest: 'ext/angelshop/Resources/Public/Js/bootstrap.js'
+            },
+
+            custom: {
+                src: [
+                    'ext/angelshop/Resources/Private/Js/analytics.js',
+                    'ext/angelshop/Resources/Private/Js/lightbox.js',
+                    'ext/angelshop/Resources/Private/Js/script.js'
+                ],
+                dest: 'ext/angelshop/Resources/Public/Js/custom.js'
             },
 			angelshop: {
                 src: [

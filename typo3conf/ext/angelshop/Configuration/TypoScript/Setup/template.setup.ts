@@ -9,6 +9,7 @@ lib.templates.base {
             references.fieldName = media
         }
     }
+
     variables {
         columnMain =< lib.contents.columns.main
         columnBottom =< lib.contents.columns.bottom
@@ -46,6 +47,7 @@ lib.templates.base {
             wrap = &copy;  &nbsp; Aba-Angelshop &nbsp; |
         }
     }
+
     settings {
         opengraph {
             type =
@@ -53,7 +55,7 @@ lib.templates.base {
             admins =
             email = info@aba-angelshop.de
             phone_number = 0 170 / 994 22 53
-            street-address  = Gartenstr. 10
+            street-address = Gartenstr. 10
             locality = Laufen/Leobendorf
             region = Bayern
             postal-code = 83410

@@ -26,21 +26,29 @@
             <label index="page_submit">Nachricht absenden</label>
             <label index="page_reset">zurücksetzen</label>
 
-            <label index="user_data"> Ihre Daten </label>
+            <label index="user_data">Ihre Daten</label>
             <label index="check_question">Unverbindliche Anfrage</label>
             <label index="check_order">Verbindliche Bestellung</label>
-            <label index="mail_agb2">AGB </label>
-            <label index="mail_agb1"> Ich habe die </label>
-            <label index="mail_agb3"> und die </label>
+            <label index="mail_agb2">AGB</label>
+            <label index="mail_agb1">Ich habe die</label>
+            <label index="mail_agb3">und die</label>
             <label index="mail_conditions1">Widerrufsbelehrung</label>
-            <label index="mail_conditions2"> des Aba-Angelshop Angelika Sailer zur Kenntnis genommen.</label>
+            <label index="mail_conditions2">des Aba-Angelshop Angelika Sailer zur Kenntnis genommen.</label>
 
             <!-- Error -->
             <label index="error_first_name_required">Bitte einen Vornamen eingeben.</label>
-            <label index="mail_conditions">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der Widerrufsbelehrung.</label>
-            <label index="mail_agb">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der AGB.</label>
-            <label index="error_mail_agb_required">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der AGB.</label>
-            <label index="error_mail_conditions_required">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der Widerrufsbelehrung.</label>
+            <label index="mail_conditions">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die
+                Kenntnisnahme der Widerrufsbelehrung.
+            </label>
+            <label index="mail_agb">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die Kenntnisnahme der
+                AGB.
+            </label>
+            <label index="error_mail_agb_required">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie die
+                Kenntnisnahme der AGB.
+            </label>
+            <label index="error_mail_conditions_required">Bitte wählen Sie 'Unverbindliche Anfrage' oder bestätigen Sie
+                die Kenntnisnahme der Widerrufsbelehrung.
+            </label>
 
             <!-- Usermail -->
             <label index="user_details">Ihre Daten</label>
@@ -49,7 +57,7 @@
             <label index="mail_dear">Sehr geehrter Kunde</label>
             <label index="mail_status_1">Am</label>
             <label index="mail_status_2">ging folgende Anfrage/Bestellung an das</label>
-            <label index="mail_status_3">Aba-Angelshop Angelika Sailer: </label>
+            <label index="mail_status_3">Aba-Angelshop Angelika Sailer:</label>
             <label index="mail_sincerely">mit freundlichen Grüßen</label>
             <label index="mail_label">Aba-Angelshop Angelika Sailer</label>
             <label index="mail_company_details">Impressum</label>
@@ -58,7 +66,7 @@
             <label index="abb_phone">Tel.</label>
             <label index="abb_email">E-Mail</label>
             <label index="abb_internet">Internet</label>
-            <label index="abb_ust"> USt.-IdNr.</label>
+            <label index="abb_ust">USt.-IdNr.</label>
 
             <!--Adminmail-->
             <label index="user_details">Ihre Daten</label>
@@ -109,7 +117,7 @@
             <label index="mail_dear">Dear Customer</label>
             <label index="mail_status_1">On</label>
             <label index="mail_status_2">the following inquiry / order was given to the</label>
-            <label index="mail_status_3">Aba-Angelshop Angelika Sailer: </label>
+            <label index="mail_status_3">Aba-Angelshop Angelika Sailer:</label>
             <label index="mail_sincerely">yours sincerely</label>
             <label index="mail_label">Aba-Angelshop Angelika Sailer</label>
             <label index="mail_company_details">company details</label>
@@ -132,10 +140,18 @@
 
             <!-- Error -->
             <label index="error_first_name_required">Please enter a first name.</label>
-            <label index="mail_conditions">Please select 'Non-binding inquiry' or confirm the notice of the cancellation policy.</label>
-            <label index="mail_agb">Please select 'Non-binding inquiry' or confirm the acknowledgment of the terms and conditions.</label>
-            <label index="error_mail_agb_required">Please select 'Non-binding inquiry' or confirm the notice of the cancellation policy.</label>
-            <label index="error_mail_conditions_required">Please select 'Non-binding inquiry' or confirm the acknowledgment of the terms and conditions.</label>
+            <label index="mail_conditions">Please select 'Non-binding inquiry' or confirm the notice of the cancellation
+                policy.
+            </label>
+            <label index="mail_agb">Please select 'Non-binding inquiry' or confirm the acknowledgment of the terms and
+                conditions.
+            </label>
+            <label index="error_mail_agb_required">Please select 'Non-binding inquiry' or confirm the notice of the
+                cancellation policy.
+            </label>
+            <label index="error_mail_conditions_required">Please select 'Non-binding inquiry' or confirm the
+                acknowledgment of the terms and conditions.
+            </label>
             <label index="success">Thank you for your request</label>
 
 

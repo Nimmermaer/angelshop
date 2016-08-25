@@ -1,28 +1,29 @@
-<f:form class="navbar-form navbar-left" pageUid="{searchPid}" method="post" id="tx_indexedsearch" noCacheHash="true" absolute="0"
+<f:form class="navbar-form navbar-left" pageUid="{searchPid}" method="post" id="tx_indexedsearch" noCacheHash="true"
+        absolute="0"
         action="search" extensionName="IndexedSearch" pluginName="pi2" controller="Search">
     <div class="hidden tx-indexedsearch-hidden-fields">
-        <f:form.hidden name="search[_sections]" value="0" />
-        <f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_" />
-        <f:form.hidden name="search[pointer]" id="tx_indexedsearch_pointer" value="0" />
-        <f:form.hidden name="search[ext]" value="{searchParams.ext}" />
-        <f:form.hidden name="search[searchType]" value="{searchParams.searchType}" />
-        <f:form.hidden name="search[defaultOperand]" value="{searchParams.defaultOperand}" />
-        <f:form.hidden name="search[mediaType]" value="{searchParams.mediaType}" />
-        <f:form.hidden name="search[sortOrder]" value="{searchParams.sortOrder}" />
-        <f:form.hidden name="search[group]" value="{searchParams.group}" />
-        <f:form.hidden name="search[languageUid]" value="{searchParams.languageUid}" />
-        <f:form.hidden name="search[desc]" value="{searchParams.desc}" />
-        <f:form.hidden name="search[numberOfResults]" value="{searchParams.numberOfResults}" />
-        <f:form.hidden name="search[extendedSearch]" value="{searchParams.extendedSearch}" />
+        <f:form.hidden name="search[_sections]" value="0"/>
+        <f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_"/>
+        <f:form.hidden name="search[pointer]" id="tx_indexedsearch_pointer" value="0"/>
+        <f:form.hidden name="search[ext]" value="{searchParams.ext}"/>
+        <f:form.hidden name="search[searchType]" value="{searchParams.searchType}"/>
+        <f:form.hidden name="search[defaultOperand]" value="{searchParams.defaultOperand}"/>
+        <f:form.hidden name="search[mediaType]" value="{searchParams.mediaType}"/>
+        <f:form.hidden name="search[sortOrder]" value="{searchParams.sortOrder}"/>
+        <f:form.hidden name="search[group]" value="{searchParams.group}"/>
+        <f:form.hidden name="search[languageUid]" value="{searchParams.languageUid}"/>
+        <f:form.hidden name="search[desc]" value="{searchParams.desc}"/>
+        <f:form.hidden name="search[numberOfResults]" value="{searchParams.numberOfResults}"/>
+        <f:form.hidden name="search[extendedSearch]" value="{searchParams.extendedSearch}"/>
     </div>
     <div class="input-group">
-          <f:form.textfield name="search[sword]" value="" id="tx-indexedsearch-searchbox-sword"
-                              class="form-control"
-                              placeholder="Webseite durchsuchen..."/>
+        <f:form.textfield name="search[sword]" value="" id="tx-indexedsearch-searchbox-sword"
+                          class="form-control"
+                          placeholder="Webseite durchsuchen..."/>
         <span class="input-group-btn">
             <f:form.button type="submit" class="btn btn-secondary"
                            name="search[submitButton]" value="" id="tx-indexedsearch-searchbox-button-submit"><i
                     class="fa fa-search"></i></f:form.button>
             </span>
-        </div>
+    </div>
 </f:form>

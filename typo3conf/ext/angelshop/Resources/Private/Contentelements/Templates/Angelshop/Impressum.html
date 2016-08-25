@@ -4,8 +4,8 @@
       xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
 <!-- Map Column -->
-<div class="row">
-    <div class="col-md-8">
+<div class="{f:if(condition:'{data.tx_angelshop_map_small}',then:'border', else:'row')}">
+    <div class="{f:if(condition:'{data.tx_angelshop_map_small}',else:'col-md-8')}">
         <!-- Embedded Google Map -->
         <iframe src="https://maps.google.com/maps?q={a:map(name:'{data.header}', address:'{data.tx_angelshop_address}')}&h1=es;z=14&amp;output=embed"
                 width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
@@ -13,68 +13,68 @@
         </iframe>
     </div>
     <!-- Contact Details Column -->
-    <div class="col-md-4">
-        <address>
-            <f:for each="{files}" as="logo" iteration="imageIterator">
-                <f:if condition="{imageIterator.isFirst}">
-                    <img src="{f:uri.image(src:'{logo.uid}', treatIdAsReference:1, maxWidth:380, maxHeight:100c)}"/>
-                </f:if>
-            </f:for>
-
-            <h3>{data.header}</h3>
-
-            <p>
-                {data.tx_angelshop_address->f:format.nl2br()}
-            </p>
-            <f:if condition="{data.tx_angelshop_owner}">
-                <p><i class="fa  fa-user"></i>
-                    <abbr title="Phone">Inhaber</abbr>:{data.tx_angelshop_owner}
-                </p>
-            </f:if>
-            <f:if condition="{data.tx_angelshop_phone}">
-                <p><i class="fa fa-phone"></i>
-                    <abbr title="Phone">Telefon</abbr>:<a
-                            href="tel:{data.tx_angelshop_phone}">{data.tx_angelshop_phone}</a>
-                </p>
-            </f:if>
-            <f:if condition="{data.subheader}">
-                <p><i class="fa fa-mobile"></i>
-                    <abbr title="Handy">Mobil</abbr>:<a href="tel:{data.subheader}">{data.subheader}</a>
-                </p>
-            </f:if>
-            <f:if condition="{data.tx_angelshop_email}">
-                <p><i class="fa fa-envelope-o"></i>
-                    <abbr title="Email">E-Mail</abbr>: <a
-                            href="mailto:{data.tx_angelshop_email}">{data.tx_angelshop_email}</a>
-                </p>
-            </f:if>
-            <f:if condition="{data.tx_angelshop_cognizance}">
-                <p><i class="fa fa-university"></i>
-                    <abbr title="Cognizance">Gerichtsbarkeit</abbr>: {data.tx_angelshop_cognizance }
-                </p>
-            </f:if>
-            <f:if condition="{data.tx_angelshop_sales_tax_indicator}">
-                <p><i class="fa fa-money"></i>
-                    <abbr title="Sales_tax_indicator">USt-IdNr.</abbr>: {data.tx_angelshop_sales_tax_indicator}
-                </p>
-            </f:if>
-            <f:if condition="{data.tx_angelshop_opentime}">
-                <p><i class="fa fa-clock-o"></i>
-                    <abbr title="Öffnungszeit">Öffnungszeit</abbr>:<br/> {data.tx_angelshop_opentime ->f:format.nl2br()}
-                </p>
-            </f:if>
-
-            <ul class="list-unstyled list-inline list-social-icons">
-                <f:for each="{Impressum}" as="item">
-                    <li>
-                        <f:link.typolink parameter="{item.link}" title="{item.title}">
-                            <i class="fa {item.class} fa-2x"></i>
-                        </f:link.typolink>
-
-                    </li>
+    <f:if condition="{data.tx_angelshop_map_small} != 1">
+        <div class="col-md-4">
+            <address>
+                <f:for each="{files}" as="logo" iteration="imageIterator">
+                    <f:if condition="{imageIterator.isFirst}">
+                        <img src="{f:uri.image(src:'{logo.uid}', treatIdAsReference:1, maxWidth:380, maxHeight:100c)}"/>
+                    </f:if>
                 </f:for>
-            </ul>
-        </address>
-    </div>
+                <h3>{data.header}</h3>
+
+                <p>
+                    {data.tx_angelshop_address->f:format.nl2br()}
+                </p>
+                <f:if condition="{data.tx_angelshop_owner}">
+                    <p><i class="fa  fa-user"></i>
+                        <abbr title="Phone">Inhaber</abbr>:{data.tx_angelshop_owner}
+                    </p>
+                </f:if>
+                <f:if condition="{data.tx_angelshop_phone}">
+                    <p><i class="fa fa-phone"></i>
+                        <abbr title="Phone">Telefon</abbr>:<a
+                                href="tel:{data.tx_angelshop_phone}">{data.tx_angelshop_phone}</a>
+                    </p>
+                </f:if>
+                <f:if condition="{data.subheader}">
+                    <p><i class="fa fa-mobile"></i>
+                        <abbr title="Handy">Mobil</abbr>:<a href="tel:{data.subheader}">{data.subheader}</a>
+                    </p>
+                </f:if>
+                <f:if condition="{data.tx_angelshop_email}">
+                    <p><i class="fa fa-envelope-o"></i>
+                        <abbr title="Email">E-Mail</abbr>: <a
+                                href="mailto:{data.tx_angelshop_email}">{data.tx_angelshop_email}</a>
+                    </p>
+                </f:if>
+                <f:if condition="{data.tx_angelshop_cognizance}">
+                    <p><i class="fa fa-university"></i>
+                        <abbr title="Cognizance">Gerichtsbarkeit</abbr>: {data.tx_angelshop_cognizance }
+                    </p>
+                </f:if>
+                <f:if condition="{data.tx_angelshop_sales_tax_indicator}">
+                    <p><i class="fa fa-money"></i>
+                        <abbr title="Sales_tax_indicator">USt-IdNr.</abbr>: {data.tx_angelshop_sales_tax_indicator}
+                    </p>
+                </f:if>
+                <f:if condition="{data.tx_angelshop_opentime}">
+                    <p><i class="fa fa-clock-o"></i>
+                        <abbr title="Öffnungszeit">Öffnungszeit</abbr>:<br/>
+                        {data.tx_angelshop_opentime->f:format.nl2br()}
+                    </p>
+                </f:if>
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <f:for each="{Impressum}" as="item">
+                        <li>
+                            <f:link.typolink parameter="{item.link}" title="{item.title}">
+                                <i class="fa {item.class} fa-2x"></i>
+                            </f:link.typolink>
+                        </li>
+                    </f:for>
+                </ul>
+            </address>
+        </div>
+    </f:if>
 </div>
 </html>

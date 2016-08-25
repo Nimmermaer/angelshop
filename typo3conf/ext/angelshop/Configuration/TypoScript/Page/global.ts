@@ -15,16 +15,19 @@ TCEFORM {
         imageorient {
             removeItems = 1,2,9,10,17,18
         }
+
         layout {
             altLabels {
                 1 = Team
                 2 = Projekt
                 3 = Call-To-Action
             }
+
             addItems {
-                4 =Teaser
+                4 = Teaser
             }
         }
+
         header_layout {
             altLabels {
                 0 = Default
