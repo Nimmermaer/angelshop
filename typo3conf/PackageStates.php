@@ -314,12 +314,6 @@ return [
             'packagePath' => 'typo3/sysext/dbal/',
             'suggestions' => [],
         ],
-        'extension_builder' => [
-            'composerName' => 'ebt/extension_builder',
-            'state' => 'inactive',
-            'packagePath' => 'typo3conf/ext/extension_builder/',
-            'suggestions' => [],
-        ],
         'feedit' => [
             'composerName' => 'typo3/cms-feedit',
             'state' => 'inactive',
