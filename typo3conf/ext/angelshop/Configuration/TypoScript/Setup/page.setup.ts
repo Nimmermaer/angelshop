@@ -87,4 +87,12 @@ page {
         990 < temp.canonical
     }
 }
-
+[globalVar = TSFE:id = 1]
+page.headerData {
+    10 = TEXT
+    10 {
+        field = title
+        noTrimWrap = |<title> | Laufen</title>|
+    }
+}
+[global]
