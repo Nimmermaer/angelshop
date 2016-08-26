@@ -81,6 +81,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         array (
             'MB\\Angelshop\\' => 13,
         ),
+        'H' => 
+        array (
+            'HTML\\Sourceopt\\' => 15,
+        ),
         'F' => 
         array (
             'FluidTYPO3\\Vhs\\' => 15,
@@ -320,6 +324,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         'MB\\Angelshop\\' => 
         array (
             0 => __DIR__ . '/../..' . '/typo3conf/ext/angelshop/Classes',
+        ),
+        'HTML\\Sourceopt\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/typo3conf/ext/sourceopt/Classes',
         ),
         'FluidTYPO3\\Vhs\\' => 
         array (
