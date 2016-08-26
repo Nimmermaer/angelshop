@@ -76,7 +76,7 @@ page {
         10 = TEXT
         10 {
             field = title
-            noTrimWrap = |<title> | &#124; Aba-Angelshop Laufen</title>|
+            noTrimWrap = |<title> | &#124; Aba-Angelshop Laufen </title>|
         }
 
         11 = TEXT
@@ -92,7 +92,7 @@ page.headerData {
     10 = TEXT
     10 {
         field = title
-        noTrimWrap = |<title> | Laufen</title>|
+        noTrimWrap = |<title> | Laufen I'geh fisch'n</title>|
     }
 }
 [global]
