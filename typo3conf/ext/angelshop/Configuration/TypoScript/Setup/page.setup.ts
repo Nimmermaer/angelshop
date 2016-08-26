@@ -46,12 +46,15 @@ page {
     # Optional canonical tag if content_from_pid is set
     1391075690 = TEXT
     1391075690 {
-        typolink.parameter.field = content_from_pid
-        typolink.returnLast = url
-        typolink.forceAbsoluteUrl = 1
-        wrap = <link rel="canonical" href="/|" />
-        if.value = 0
-        if.isGreaterThan.field = content_from_pid
+        typolink {
+            parameter.data = TSFE:id
+            returnLast = url
+            forceAbsoluteUrl = 1
+            addQueryString = 1
+            addQueryString.method = GET
+            addQueryString.exclude = cHash,backPid
+        }
+        wrap = <link rel="canonical" href="|" />
     }
 
     # Body Tag Rendering
@@ -84,3 +87,4 @@ page {
         990 < temp.canonical
     }
 }
+
