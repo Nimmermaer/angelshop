@@ -473,16 +473,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.7.16",
+            "version": "v2.7.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "61a73eabb2cf16681eda784b8755c587a869ec42"
+                "reference": "cc3d188345b84d27a931db0969b0ff36272f451c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/61a73eabb2cf16681eda784b8755c587a869ec42",
-                "reference": "61a73eabb2cf16681eda784b8755c587a869ec42",
+                "url": "https://api.github.com/repos/symfony/console/zipball/cc3d188345b84d27a931db0969b0ff36272f451c",
+                "reference": "cc3d188345b84d27a931db0969b0ff36272f451c",
                 "shasum": ""
             },
             "require": {
@@ -528,20 +528,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-30 07:17:26"
+            "time": "2016-09-06 07:26:07"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.7.16",
+            "version": "v2.7.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "864a73cc1b5f7a597ce8f74ae31851ffc83d7353"
+                "reference": "2716347131481656cc613d98ec12228bae81c8c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/864a73cc1b5f7a597ce8f74ae31851ffc83d7353",
-                "reference": "864a73cc1b5f7a597ce8f74ae31851ffc83d7353",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/2716347131481656cc613d98ec12228bae81c8c3",
+                "reference": "2716347131481656cc613d98ec12228bae81c8c3",
                 "shasum": ""
             },
             "require": {
@@ -577,7 +577,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-26 04:40:54"
+            "time": "2016-08-23 19:36:25"
         },
         {
             "name": "typo3-ter/formhandler",
@@ -658,10 +658,10 @@
         },
         {
             "name": "typo3-ter/realurl",
-            "version": "2.0.14",
+            "version": "2.0.15",
             "dist": {
                 "type": "t3x",
-                "url": "https://typo3.org/extensions/repository/download/realurl/2.0.14/t3x/",
+                "url": "https://typo3.org/extensions/repository/download/realurl/2.0.15/t3x/",
                 "reference": null,
                 "shasum": null
             },
@@ -675,6 +675,9 @@
             },
             "replace": {
                 "realurl": "self.version"
+            },
+            "suggest": {
+                "typo3-ter/static-info-tables": ">= 6.2.0"
             },
             "type": "typo3-cms-extension",
             "autoload": {
@@ -691,7 +694,7 @@
                 }
             ],
             "description": "Makes TYPO3 URLs search engine friendly. Donations are welcome to dmitry.dulepov@gmail.com. They help to support the extension!",
-            "time": "2016-04-18 18:57:24"
+            "time": "2016-09-08 10:38:34"
         },
         {
             "name": "typo3-ter/sourceopt",
