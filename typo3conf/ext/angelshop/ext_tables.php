@@ -12,7 +12,7 @@ $boot = function ($extensionKey) {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
         'MB.' . $extensionKey,
         'Product',
-        'Product'
+        'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title'
     );
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(

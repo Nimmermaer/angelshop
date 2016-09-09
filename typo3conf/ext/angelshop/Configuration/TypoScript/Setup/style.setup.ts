@@ -1,16 +1,16 @@
+config.inlineStyle2TempFile = 0
 page {
-    headerData {
-        3425 = TEMPLATE
-        3425 {
-            stdWrap.wrap = <style type="text/css">|</style>
-            template = FILE
-            template.file = EXT:angelshop/Resources/Public/Css/above/css/bootstrap.min.css
-        }
-    }
+    includeJSlibs >
+    includeJS >
+    includeJSFooterlibs >
+    includeJSFooter >
+
+
+    includeCSS >
+    tx_felogin_pi1._CSS_DEFAULT_STYLE >
     includeCSS {
         style = EXT:angelshop/Resources/Public/Css/angelshop.css
     }
-
     includeJSFooter {
         jquery = EXT:angelshop/Resources/Public/Js/jquery.js
         bootstrap = EXT:angelshop/Resources/Public/Js/bootstrap.js

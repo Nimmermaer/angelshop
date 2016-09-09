@@ -345,8 +345,6 @@ $contentelements = array(
     'impressum',
     'project',
     'gallery',
-    'product_list'
-
 
 );
 foreach ($contentelements as $contentelement) {
@@ -368,7 +366,7 @@ foreach ($contentelements as $contentelement) {
         'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:ce_product.title',
         'ce_product',
     ],
-    'impressum',
+    'textmedia',
     'after'
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
@@ -378,7 +376,7 @@ foreach ($contentelements as $contentelement) {
         'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:angelshop_product.title',
         'angelshop_product',
     ],
-    'impressum',
+    'textmedia',
     'after'
 );
 $commonFields = '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
