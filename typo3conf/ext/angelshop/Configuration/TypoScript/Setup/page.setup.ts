@@ -84,6 +84,12 @@ page {
                 <meta name="theme-color" content="#FFA500">
         )
 
+        23 = TEXT
+        23 {
+            value = website
+            wrap = <meta property=”og:type” content=”|”>
+        }
+
         990 < temp.canonical
     }
 }
