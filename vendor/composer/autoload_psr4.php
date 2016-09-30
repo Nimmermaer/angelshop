@@ -61,6 +61,7 @@ return array(
     'TYPO3\\CMS\\About\\' => array($baseDir . '/typo3_src/typo3/sysext/about/Classes'),
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'MB\\Angelshop\\' => array($baseDir . '/typo3conf/ext/angelshop/Classes'),
     'HTML\\Sourceopt\\' => array($baseDir . '/typo3conf/ext/sourceopt/Classes'),
