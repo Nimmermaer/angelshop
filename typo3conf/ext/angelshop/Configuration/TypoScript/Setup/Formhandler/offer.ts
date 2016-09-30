@@ -32,7 +32,15 @@ plugin.Tx_Formhandler.settings.predef.kontakt {
             }
         }
     }
-
+    saveInterceptors {
+        10.class = Interceptor\AntiSpamFormTime
+        10.config {
+            # ID of a page to redirect SPAM bots to
+            redirectPage = 971
+            minTime.value = 3
+            minTime.unit = seconds
+        }
+    }
     finishers {
         1 {
             class = Typoheads\Formhandler\Finisher\Mail
