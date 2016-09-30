@@ -590,10 +590,10 @@
         },
         {
             "name": "typo3-ter/formhandler",
-            "version": "2.3.1",
+            "version": "2.4.0",
             "dist": {
                 "type": "t3x",
-                "url": "https://typo3.org/extensions/repository/download/formhandler/2.3.1/t3x/",
+                "url": "https://typo3.org/extensions/repository/download/formhandler/2.4.0/t3x/",
                 "reference": null,
                 "shasum": null
             },
@@ -622,7 +622,7 @@
                 }
             ],
             "description": "The swiss army knife for all kinds of mailforms, completely new written using the MVC concept. Result: Flexibility, Flexibility, Flexibility  :-).",
-            "time": "2016-05-27 09:41:17"
+            "time": "2016-09-29 15:42:07"
         },
         {
             "name": "typo3-ter/gridelements",

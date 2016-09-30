@@ -100,10 +100,15 @@ class ModuleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
                 $demand->setPid($this->id);
             }
         }
+
         $logDataRows = $this->logDataRepository->findDemanded($demand);
         $this->view->assign('demand', $demand);
         $this->view->assign('logDataRows', $logDataRows);
         $this->view->assign('settings', $this->settings);
+        if(!$this->gp['show']) {
+            $this->gp['show'] = 10;
+        }
+        $this->view->assign('showItems', $this->gp['show']);
         $permissions = [];
         if ($GLOBALS['BE_USER']->user['admin'] || intval($this->settings['enableClearLogs']) === 1) {
             $permissions['delete'] = TRUE;
@@ -160,17 +165,20 @@ class ModuleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
                 'custom' => []
             ];
             foreach ($logDataRows as $logDataRow) {
-                $rowFields = array_keys(unserialize($logDataRow->getParams()));
-                foreach ($rowFields as $idx => $rowField) {
-                    if (in_array($rowField, $fields['system'])) {
-                        unset($rowFields[$idx]);
-                    } elseif (substr($rowField, 0, 5) === 'step-') {
-                        unset($rowFields[$idx]);
-                        if (!in_array($rowField, $fields['system'])) {
-                            $fields['system'][] = $rowField;
+                $params = unserialize($logDataRow->getParams());
+                if(is_array($params)) {
+                    $rowFields = array_keys($params);
+                    foreach ($rowFields as $idx => $rowField) {
+                        if (in_array($rowField, $fields['system'])) {
+                            unset($rowFields[$idx]);
+                        } elseif (substr($rowField, 0, 5) === 'step-') {
+                            unset($rowFields[$idx]);
+                            if (!in_array($rowField, $fields['system'])) {
+                                $fields['system'][] = $rowField;
+                            }
+                        } elseif (!in_array($rowField, $fields['custom'])) {
+                            $fields['custom'][] = $rowField;
                         }
-                    } elseif (!in_array($rowField, $fields['custom'])) {
-                        $fields['custom'][] = $rowField;
                     }
                 }
             }

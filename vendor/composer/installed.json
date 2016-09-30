@@ -438,44 +438,6 @@
         "description": "This extension integrates the grid layout concept also to regular content elements - the grid elements.\r\nIt offers a lot of new features like advanced drag & drop or real references, that improve the usability of the page and list module to speed up the daily work with the backend."
     },
     {
-        "name": "typo3-ter/formhandler",
-        "version": "2.3.1",
-        "version_normalized": "2.3.1.0",
-        "dist": {
-            "type": "t3x",
-            "url": "https://typo3.org/extensions/repository/download/formhandler/2.3.1/t3x/",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "php": ">= 5.5.0",
-            "typo3/cms-core": ">= 7.6.0, <= 7.6.99"
-        },
-        "replace": {
-            "formhandler": "self.version"
-        },
-        "time": "2016-05-27 09:41:17",
-        "type": "typo3-cms-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Typoheads\\Formhandler\\": "Classes"
-            },
-            "classmap": [
-                "Resources/PHP/tcpdf/tcpdf.php"
-            ]
-        },
-        "authors": [
-            {
-                "name": "Dev-Team Typoheads",
-                "email": "dev@typoheads.at",
-                "company": "Typoheads GmbH",
-                "username": "typoheads"
-            }
-        ],
-        "description": "The swiss army knife for all kinds of mailforms, completely new written using the MVC concept. Result: Flexibility, Flexibility, Flexibility  :-)."
-    },
-    {
         "name": "typo3/cms-composer-installers",
         "version": "1.3.1",
         "version_normalized": "1.3.1.0",
@@ -1149,5 +1111,43 @@
             }
         ],
         "description": "Makes TYPO3 URLs search engine friendly. Donations are welcome to dmitry.dulepov@gmail.com. They help to support the extension!"
+    },
+    {
+        "name": "typo3-ter/formhandler",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "dist": {
+            "type": "t3x",
+            "url": "https://typo3.org/extensions/repository/download/formhandler/2.4.0/t3x/",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "php": ">= 5.5.0",
+            "typo3/cms-core": ">= 7.6.0, <= 7.6.99"
+        },
+        "replace": {
+            "formhandler": "self.version"
+        },
+        "time": "2016-09-29 15:42:07",
+        "type": "typo3-cms-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Typoheads\\Formhandler\\": "Classes"
+            },
+            "classmap": [
+                "Resources/PHP/tcpdf/tcpdf.php"
+            ]
+        },
+        "authors": [
+            {
+                "name": "Dev-Team Typoheads",
+                "email": "dev@typoheads.at",
+                "company": "Typoheads GmbH",
+                "username": "typoheads"
+            }
+        ],
+        "description": "The swiss army knife for all kinds of mailforms, completely new written using the MVC concept. Result: Flexibility, Flexibility, Flexibility  :-)."
     }
 ]

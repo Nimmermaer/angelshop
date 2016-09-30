@@ -426,7 +426,7 @@ class Form extends AbstractView
             $markers['###TIMESTAMP###'] = htmlspecialchars($this->gp['formtime']);
         }
         $markers['###RANDOM_ID###'] = htmlspecialchars($this->gp['randomID']);
-        $markers['###ABS_URL###'] = \TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl('') . $path;
+        $markers['###ABS_URL###'] = \TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl($path);
         $markers['###rel_url###'] = $markers['###REL_URL###'];
         $markers['###timestamp###'] = $markers['###TIMESTAMP###'];
         $markers['###abs_url###'] = $markers['###ABS_URL###'];
@@ -633,27 +633,23 @@ class Form extends AbstractView
      */
     protected function fillCaptchaMarkers(&$markers)
     {
-        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('captcha')) {
-            $captchaPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('captcha') . 'captcha/captcha.php?rand=' . rand();
-            if (substr($captchaPath, 0, 1) !== '/') {
-                $captchaPath = '/' . $captchaPath;
-            }
-            $markers['###CAPTCHA###'] = '<img src="' . $captchaPath . '" alt="" />';
+        if (stristr($this->template, '###CAPTCHA###') && \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('captcha')) {
+            $markers['###CAPTCHA###'] = \ThinkopenAt\Captcha\Utility::makeCaptcha();
             $markers['###captcha###'] = $markers['###CAPTCHA###'];
         }
-        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('sr_freecap')) {
+        if (stristr($this->template, '###SR_FREECAP_###') && \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('sr_freecap')) {
             require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('sr_freecap') . 'pi2/class.tx_srfreecap_pi2.php');
             $this->freeCap = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_srfreecap_pi2');
             $markers = array_merge($markers, $this->freeCap->makeCaptcha());
         }
-        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('jm_recaptcha')) {
+        if (stristr($this->template, '###RECAPTCHA###') && \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('jm_recaptcha')) {
             require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('jm_recaptcha') . 'class.tx_jmrecaptcha.php');
             $this->recaptcha = new \tx_jmrecaptcha();
             $markers['###RECAPTCHA###'] = $this->recaptcha->getReCaptcha();
             $markers['###recaptcha###'] = $markers['###RECAPTCHA###'];
         }
 
-        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('wt_calculating_captcha')) {
+        if (stristr($this->template, '###WT_CALCULATING_CAPTCHA###') && \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('wt_calculating_captcha')) {
             require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('wt_calculating_captcha') . 'class.tx_wtcalculatingcaptcha.php');
 
             $captcha = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_wtcalculatingcaptcha');
@@ -661,7 +657,7 @@ class Form extends AbstractView
             $markers['###wt_calculating_captcha###'] = $markers['###WT_CALCULATING_CAPTCHA###'];
         }
 
-        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('mathguard')) {
+        if (stristr($this->template, '###MATHGUARD###') && \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('mathguard')) {
             require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('mathguard') . 'class.tx_mathguard.php');
 
             $captcha = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_mathguard');
@@ -1037,9 +1033,6 @@ class Form extends AbstractView
                             $errorMessage = str_replace('###' . $key . '###', $value, $errorMessage);
                         }
                     }
-                    if (strlen($singleWrap) > 0 && strstr($singleWrap, '|')) {
-                        $errorMessage = str_replace('|', $errorMessage, $singleWrap);
-                    }
                     $errorMessage = $this->utilityFuncs->wrap($errorMessage, $this->settings['singleErrorTemplate.'], 'singleWrap');
                     $errorMessages[] = $errorMessage;
                 } else {
@@ -1050,7 +1043,7 @@ class Form extends AbstractView
             $errorMessage = $this->utilityFuncs->wrap($errorMessage, $this->settings['singleErrorTemplate.'], 'totalWrap');
             $clearErrorMessage = $errorMessage;
             if ($this->settings['addErrorAnchors']) {
-                $errorMessage = '<a name="' . $field . '">' . $errorMessage . '</a>';
+                $errorMessage = '<a name="' . $field . '-' . $this->globals->getRandomID() . '">' . $errorMessage . '</a>';
             }
             $langMarkers = $this->utilityFuncs->getFilledLangMarkers($errorMessage, $this->langFiles);
             $errorMessage = $this->cObj->substituteMarkerArray($errorMessage, $langMarkers);
@@ -1062,7 +1055,7 @@ class Form extends AbstractView
                 if ($this->globals->isAjaxMode()) {
                     $baseUrl = \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('HTTP_REFERER');
                 }
-                $errorMessage = '<a href="' . $baseUrl . '#' . $field . '">' . $errorMessage . '</a>';
+                $errorMessage = '<a href="' . $baseUrl . '#' . $field . '-' . $this->globals->getRandomID() . '">' . $errorMessage . '</a>';
             }
 
             //list settings
