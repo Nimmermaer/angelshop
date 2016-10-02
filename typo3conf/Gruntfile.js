@@ -5,10 +5,9 @@ module.exports = function (grunt) {
         watch: {
             javascript: {
                 files: [
-                    'ext/angelshop/Resources/Private/Js/*.js',
-					'ext/angelshop/Resources/Private/Js/*.js'
+                    'ext/angelshop/Resources/Private/Js/scripts.js'
                 ],
-                tasks: ['concat', 'jshint'],
+                tasks: ['jshint'],
                 options: {nospawn: true}
             },
             css: {
@@ -25,8 +24,7 @@ module.exports = function (grunt) {
             },
             src: {
                 files: [
-                    'ext/angelshop/Resources/Private/Js/*.js',
-                    'ext/angelshop/Resources/Private/Js/*.js',
+                    'ext/angelshop/Resources/Private/Js/scripts.js',
                     'ext/angelshop/Resources/Private/**/*.{less,scss,sass}',
                     'ext/angelshop/Resources/Private/**/*.{less,scss,sass}'
                 ],
@@ -59,12 +57,11 @@ module.exports = function (grunt) {
                 globals: ['_', 'jQuery', '$', 'undef']
             },
             all: [
-				'!ext/angelshop/Resources/Private/Js/*.js',
-                'ext/angelshop/Resources/Private/Js/*.js'
+                '!ext/angelshop/Resources/Private/Js/*.js',
+                'ext/angelshop/Resources/Private/Js/scripts.js'
             ]
         },
         concat: {
-
             bootstrap: {
                 src: [
                     'ext/angelshop/Resources/Private/Js/bootstrap/transition.js',
@@ -91,22 +88,56 @@ module.exports = function (grunt) {
                 ],
                 dest: 'ext/angelshop/Resources/Public/Js/custom.js'
             },
-			angelshop: {
+            angelshop: {
                 src: [
                     'ext/angelshop/Resources/Private/Js/*.js'
                 ],
                 dest: 'ext/angelshop/Resources/Public/Js/scripts.js'
             }
         },
-        sprite:{
-			angelshop: {
+        uglify: {
+            angelshop: {
+                files: {
+                    'ext/angelshop/Resources/Public/Js/scripts.min.js': ['ext/angelshop/Resources/Public/Js/scripts.js']
+                }
+            },
+            bootstrap: {
+                files: {
+                    'ext/angelshop/Resources/Public/Js/bootstrap.min.js': ['ext/angelshop/Resources/Public/Js/bootstrap.js']
+                }
+            },
+            jquery: {
+                files: {
+                    'ext/angelshop/Resources/Public/Js/jquery.min.js': ['ext/angelshop/Resources/Public/Js/jquery.js']
+                }
+            },
+            custom: {
+                files: {
+                    'ext/angelshop/Resources/Public/Js/custom.min.js': ['ext/angelshop/Resources/Public/Js/custom.js']
+                }
+            },
+            lightbox: {
+                files: {
+                    'ext/angelshop/Resources/Public/Js/lightbox.min.js': ['ext/angelshop/Resources/Public/Js/lightbox.js']
+                }
+            }
+        },
+        cssmin: {
+            compress: {
+                files: {
+                    'ext/angelshop/Resources/Public/Css/angelshop.min.css': ['ext/angelshop/Resources/Public/Css/angelshop.css']
+                }
+            }
+        },
+        sprite: {
+            angelshop: {
                 src: 'ext/angelshop/Resources/Public/Img/*.png',
                 dest: 'ext/angelshop/Resources/Public/Img/spritesheet.png',
                 destCss: 'ext/angelshop/Resources/Public/Css/sprites.css'
             }
         },
         less: {
-			angelshop: {
+            angelshop: {
                 options: {
                     strictMath: true,
                     sourceMap: false,
@@ -124,7 +155,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     //grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     //grunt.registerTask('default', ['less', 'jshint', 'concat', 'sprite']);
-    grunt.registerTask('default', ['less', 'jshint', 'concat']);
+    grunt.registerTask('default', ['less', 'jshint', 'concat', 'cssmin', 'uglify']);
 };

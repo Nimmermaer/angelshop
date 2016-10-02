@@ -9,16 +9,14 @@ page {
     includeCSS >
     tx_felogin_pi1._CSS_DEFAULT_STYLE >
     includeCSS {
-        style = EXT:angelshop/Resources/Public/Css/angelshop.css
+        style = EXT:angelshop/Resources/Public/Css/angelshop.min.css
     }
     includeJSFooter {
-        jquery = EXT:angelshop/Resources/Public/Js/jquery.js
-        bootstrap = EXT:angelshop/Resources/Public/Js/bootstrap.js
-        analytics = EXT:angelshop/Resources/Public/Js/analytics.js
-        lightbox = EXT:angelshop/Resources/Public/Js/lightbox.js
-        slick = EXT:angelshop/Resources/Public/Js/slick.js
-        height = EXT:angelshop/Resources/Public/Js/matchHeight.js
-        scripts = EXT:angelshop/Resources/Public/Js/scripts.js
+        jquery = EXT:angelshop/Resources/Public/Js/jquery.min.js
+        bootstrap = EXT:angelshop/Resources/Public/Js/bootstrap.min.js
+        lightbox = EXT:angelshop/Resources/Public/Js/lightbox.min.js
+        custom = EXT:angelshop/Resources/Public/Js/custom.min.js
+        scripts = EXT:angelshop/Resources/Public/Js/scripts.min.js
     }
 }
 
