@@ -9606,9 +9606,3 @@ ul.tx-indexedsearch-browsebox > li:first-child > strong a {
 .border iframe {
   border-radius: 4px;
 }
-.row.row-eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
