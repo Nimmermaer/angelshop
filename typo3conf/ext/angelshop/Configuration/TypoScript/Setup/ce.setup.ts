@@ -76,17 +76,6 @@ tt_content {
         }
     }
 
-    tx_teaser < lib.fluidContent
-    tx_teaser {
-        templateName = Angelshop/Teaser
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
-            }
-        }
-    }
-
     tx_service < lib.fluidContent
     tx_service {
         templateName = Angelshop/Service
