@@ -18,17 +18,17 @@
  *  Created by PhpStorm.
  ******************************************************************/
 
-if ( ! defined('TYPO3_MODE')) {
-    die ( 'Access denied.' );
+if (!defined('TYPO3_MODE')) {
+    die ('Access denied.');
 }
 
 
 $pagesColumns = array(
 
-    'ce_whatsapp_text'   => array(
+    'ce_whatsapp_text' => array(
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_whatsapp_text',
-        'config'  => array(
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_whatsapp_text',
+        'config' => array(
             'type' => 'text',
             'cols' => '30',
             'rows' => '5',
@@ -37,26 +37,26 @@ $pagesColumns = array(
     ),
     'ce_whatsapp_button' => array(
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_whatsapp_button',
-        'config'  => array(
-            'type'    => 'check',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_whatsapp_button',
+        'config' => array(
+            'type' => 'check',
             'default' => '0'
         )
     ),
     'ce_facebook_button' => array(
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_facebook_button',
-        'config'  => array(
-            'type'    => 'check',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_facebook_button',
+        'config' => array(
+            'type' => 'check',
             'default' => '0'
         )
     ),
     'ce_social_position' => array(
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_social_position',
-        'config'  => array(
-            'type'    => 'select',
-            'items'   => array(
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_social_position',
+        'config' => array(
+            'type' => 'select',
+            'items' => array(
                 array('Anfang des Inhalts', 1),
                 array('Ende des Inhalts', 0)
             ),

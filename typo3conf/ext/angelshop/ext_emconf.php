@@ -9,25 +9,25 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-    'title'            => 'angelshop',
-    'description'      => '',
-    'category'         => 'Provider Extension',
-    'author'           => 'Michael Blunck',
-    'author_email'     => 'mi.blunck@gmail.com',
-    'state'            => 'alpha',
-    'internal'         => '',
-    'uploadfolder'     => '0',
-    'createDirs'       => '',
+    'title' => 'angelshop',
+    'description' => '',
+    'category' => 'Provider Extension',
+    'author' => 'Michael Blunck',
+    'author_email' => 'mi.blunck@gmail.com',
+    'state' => 'alpha',
+    'internal' => '',
+    'uploadfolder' => '0',
+    'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version'          => '0.0.1',
-    'constraints'      => array(
-        'depends'   => array(
-            'typo3'        => '7.6.0-7.6.99',
-            'vhs'          => '3.0.0-3.4.99',
+    'version' => '0.0.1',
+    'constraints' => array(
+        'depends' => array(
+            'typo3' => '7.6.0-7.6.99',
+            'vhs' => '3.0.0-3.4.99',
             'gridelements' => '7.0.5-7.0.99',
-            'formhandler'  => '2.3.1-2.3.99',
+            'formhandler' => '2.3.1-2.3.99',
         ),
         'conflicts' => array(),
-        'suggests'  => array(),
+        'suggests' => array(),
     ),
 );

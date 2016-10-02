@@ -1,6 +1,6 @@
 <?php
-if ( ! defined('TYPO3_MODE')) {
-    die( 'Access denied.' );
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
 }
 $boot = function ($extensionKey) {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
@@ -46,13 +46,13 @@ $boot = function ($extensionKey) {
     );
 
     $newIcons = [
-        'map'         => 'EXT:angelshop/Resources/Public/Icons/Svg/map.svg',
-        'business'    => 'EXT:angelshop/Resources/Public/Icons/Svg/business.svg',
-        'gallery'     => 'EXT:angelshop/Resources/Public/Icons/Svg/gallery.svg',
-        'service'     => 'EXT:angelshop/Resources/Public/Icons/Svg/service.svg',
-        'tab'         => 'EXT:angelshop/Resources/Public/Icons/Svg/tab.svg',
+        'map' => 'EXT:angelshop/Resources/Public/Icons/Svg/map.svg',
+        'business' => 'EXT:angelshop/Resources/Public/Icons/Svg/business.svg',
+        'gallery' => 'EXT:angelshop/Resources/Public/Icons/Svg/gallery.svg',
+        'service' => 'EXT:angelshop/Resources/Public/Icons/Svg/service.svg',
+        'tab' => 'EXT:angelshop/Resources/Public/Icons/Svg/tab.svg',
         'productlist' => 'EXT:angelshop/Resources/Public/Icons/Svg/productlist.svg',
-        'product'     => 'EXT:angelshop/Resources/Public/Icons/Svg/product.svg',
+        'product' => 'EXT:angelshop/Resources/Public/Icons/Svg/product.svg',
     ];
 
     foreach ($newIcons as $key => $icon) {
@@ -64,4 +64,4 @@ $boot = function ($extensionKey) {
 
 };
 $boot($_EXTKEY);
-unset( $boot );
+unset($boot);

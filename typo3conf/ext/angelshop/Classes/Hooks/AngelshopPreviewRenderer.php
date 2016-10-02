@@ -31,10 +31,10 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
 
     /**
      * @param PageLayoutView $parentObject
-     * @param bool           $drawItem
-     * @param string         $headerContent
-     * @param string         $itemContent
-     * @param array          $row
+     * @param bool $drawItem
+     * @param string $headerContent
+     * @param string $itemContent
+     * @param array $row
      */
     public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row)
     {
@@ -61,19 +61,19 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
      */
     public function showTxTab($row)
     {
-        $addContent    = '';
-        $i             = 1;
+        $addContent = '';
+        $i = 1;
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository    = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
-        $tabs          = $repository->findByRecord($row['data']['uid']);
+        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
+        $tabs = $repository->findByRecord($row['data']['uid']);
         if ($tabs) {
             foreach ($tabs as $item) {
                 $addContent .= 'Tab-' . $i . '<br/>';
                 $addContent .= '<strong>' . $item->getHeader() . '</strong>';
                 $addContent .= '<p>' . substr($item->getText(), 0,
                         80) . '</p> <hr style="background-color:black; "  />';
-                $i ++;
+                $i++;
             };
         }
         $addContent .= '<h3>Tab</h3>';
@@ -112,7 +112,6 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         if ($row['data']['layout'] == 4) {
             $addContent = '<h3>Teaser Element</h3>';
         }
-
         return $addContent;
     }
 }

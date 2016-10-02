@@ -32,6 +32,7 @@ plugin.Tx_Formhandler.settings.predef.kontakt {
             }
         }
     }
+
     saveInterceptors {
         10.class = Interceptor\AntiSpamFormTime
         10.config {
@@ -41,6 +42,7 @@ plugin.Tx_Formhandler.settings.predef.kontakt {
             minTime.unit = seconds
         }
     }
+
     finishers {
         1 {
             class = Typoheads\Formhandler\Finisher\Mail

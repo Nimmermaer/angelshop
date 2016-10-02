@@ -40,7 +40,7 @@ class TeaserrowTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
     public function tearDown()
     {
-        unset( $this->subject );
+        unset($this->subject);
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
-if ( ! defined('TYPO3_MODE')) {
-    die( 'Access denied.' );
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
 }
 
 $boot = function ($extensionKey) {
@@ -49,7 +49,7 @@ $boot = function ($extensionKey) {
         $backendLayoutFileProviderDirectory = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName(
             'EXT:angelshop/Configuration/TypoScript/Setup/Backendlayouts'
         );
-        $beFiles                            = \TYPO3\CMS\Core\Utility\GeneralUtility::getFilesInDir($backendLayoutFileProviderDirectory,
+        $beFiles = \TYPO3\CMS\Core\Utility\GeneralUtility::getFilesInDir($backendLayoutFileProviderDirectory,
             'ts');
         foreach ($beFiles as $beLayoutFileName) {
             $beLayoutPath = $backendLayoutFileProviderDirectory . DIRECTORY_SEPARATOR . $beLayoutFileName;
@@ -60,4 +60,4 @@ $boot = function ($extensionKey) {
 };
 
 $boot($_EXTKEY);
-unset( $boot );
+unset($boot);

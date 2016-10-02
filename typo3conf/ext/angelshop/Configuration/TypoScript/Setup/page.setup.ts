@@ -54,6 +54,7 @@ page {
             addQueryString.method = GET
             addQueryString.exclude = cHash,backPid
         }
+
         wrap = <link rel="canonical" href="|" />
     }
 
@@ -93,12 +94,13 @@ page {
         990 < temp.canonical
     }
 }
+
 [globalVar = TSFE:id = 1]
-page.headerData {
-    10 = TEXT
-    10 {
-        field = title
-        noTrimWrap = |<title> | Laufen I'geh fisch'n</title>|
+    page.headerData {
+        10 = TEXT
+        10 {
+            field = title
+            noTrimWrap = |<title> | Laufen I'geh fisch'n</title>|
+        }
     }
-}
 [global]

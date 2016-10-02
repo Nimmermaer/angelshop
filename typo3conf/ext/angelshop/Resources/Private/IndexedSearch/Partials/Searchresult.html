@@ -12,7 +12,7 @@
 
     <f:if condition="{row.headerOnly} == 0">
         <p class="tx-indexedsearch-description">{row.description->f:format.raw()}</p>
-        <f:translate key="result.path" />
+        <f:translate key="result.path"/>
         <f:format.raw>{row.path}</f:format.raw>
 
     </f:if>
@@ -24,9 +24,9 @@
     <f:if condition="{row.subresults}">
         <p class="tx-indexedsearch-list">
             <f:for each="{row.subresults.items}" as="subrow">
-                <f:render partial="Searchresult" arguments="{row: subrow}" />
+                <f:render partial="Searchresult" arguments="{row: subrow}"/>
             </f:for>
         </p>
     </f:if>
 </div>
-<hr />
+<hr/>

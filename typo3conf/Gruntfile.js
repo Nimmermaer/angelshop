@@ -123,6 +123,9 @@ module.exports = function (grunt) {
             }
         },
         cssmin: {
+            options: {
+                'report': 'min'
+            },
             compress: {
                 files: {
                     'ext/angelshop/Resources/Public/Css/angelshop.min.css': ['ext/angelshop/Resources/Public/Css/angelshop.css']
