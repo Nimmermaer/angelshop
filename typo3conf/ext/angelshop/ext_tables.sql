@@ -28,11 +28,11 @@ CREATE TABLE tt_content (
 
   ## New angelshop_tables
   tx_angelshop_title                            VARCHAR(255) DEFAULT ' ' NOT NULL,
-  tx_angelshop_link                             INT(11) DEFAULT ' '      NOT NULL,
+  tx_angelshop_link                             INT(11) DEFAULT 0        NOT NULL,
   tx_angelshop_fontawesome                      VARCHAR(255) DEFAULT ' ' NOT NULL,
   tx_angelshop_class                            VARCHAR(255) DEFAULT ' ' NOT NULL,
-  tx_angelshop_trader                           INT(11) DEFAULT ' '      NOT NULL,
-  tx_angelshop_tab                              INT(11) DEFAULT ' '      NOT NULL,
+  tx_angelshop_trader                           INT(11) DEFAULT 0        NOT NULL,
+  tx_angelshop_tab                              INT(11) DEFAULT 0        NOT NULL,
   tx_angelshop_cognizance                       VARCHAR(255) DEFAULT ' ' NOT NULL,
   tx_angelshop_sales_tax_indicator              VARCHAR(255) DEFAULT ' ' NOT NULL,
   tx_angelshop_opentime                         TEXT,

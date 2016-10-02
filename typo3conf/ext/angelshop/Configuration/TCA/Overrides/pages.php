@@ -23,47 +23,47 @@ if (!defined('TYPO3_MODE')) {
 }
 
 
-$pagesColumns = array(
+$pagesColumns = [
 
-    'ce_whatsapp_text' => array(
+    'ce_whatsapp_text' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_whatsapp_text',
-        'config' => array(
+        'config' => [
             'type' => 'text',
             'cols' => '30',
             'rows' => '5',
             'eval' => 'trim',
-        )
-    ),
-    'ce_whatsapp_button' => array(
+        ]
+    ],
+    'ce_whatsapp_button' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_whatsapp_button',
-        'config' => array(
+        'config' => [
             'type' => 'check',
             'default' => '0'
-        )
-    ),
-    'ce_facebook_button' => array(
+        ]
+    ],
+    'ce_facebook_button' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_facebook_button',
-        'config' => array(
+        'config' => [
             'type' => 'check',
             'default' => '0'
-        )
-    ),
-    'ce_social_position' => array(
+        ]
+    ],
+    'ce_social_position' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.ce_social_position',
-        'config' => array(
+        'config' => [
             'type' => 'select',
-            'items' => array(
-                array('Anfang des Inhalts', 1),
-                array('Ende des Inhalts', 0)
-            ),
+            'items' => [
+                ['Anfang des Inhalts', 1],
+                ['Ende des Inhalts', 0]
+            ],
             'default' => 1
-        )
-    ),
-);
+        ]
+    ],
+];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $pagesColumns, 1);
 
