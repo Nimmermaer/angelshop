@@ -81,21 +81,26 @@
             </div></span>
             </div>
             <ul class="list-group">
-
-                <f:if condition="{data.tx_abatemplate_product_description}">
+                <f:if condition="{data.tx_abatemplate_product_manufacturer_name}">
                     <li class="list-group-item">
-                        <h3>Produkt Details</h3>
+                        <h3>Hersteller</h3>
             <span itemprop="description">
-            {data.tx_abatemplate_product_description}<br/>
+            {data.tx_abatemplate_product_manufacturer_name->f:format.html()}<br/>
             </span>
                     </li>
                 </f:if>
-
-
-                <f:if condition="{data.tx_abatemplate_product_description}">
+             <f:if condition="{data.bodytext}">
+                    <li class="list-group-item">
+                        <h3>Produkt Details</h3>
+            <span itemprop="description">
+            {data.bodytext->f:format.html()}<br/>
+            </span>
+                    </li>
+                </f:if>
+                <f:if condition="{data.bodytext}">
                     <li class="list-group-item">
                         <h3>Zusätzliche Informationen</h3>
-                        {data.tx_abatemplate_product_additional_description}<br/>
+                        {data.tx_abatemplate_product_additional_description->f:format.html()}<br/>
                     </li>
                 </f:if>
 
