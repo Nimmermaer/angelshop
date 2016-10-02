@@ -17,6 +17,7 @@ page {
         analytics = EXT:angelshop/Resources/Public/Js/analytics.js
         lightbox = EXT:angelshop/Resources/Public/Js/lightbox.js
         slick = EXT:angelshop/Resources/Public/Js/slick.js
+        height = EXT:angelshop/Resources/Public/Js/matchHeight.js
         scripts = EXT:angelshop/Resources/Public/Js/scripts.js
     }
 }
