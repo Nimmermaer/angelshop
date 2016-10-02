@@ -11,6 +11,6 @@ tt_content.gridelements_pi1.20.10.setup.grid-40-80 {
         }
     }
 
-    wrap = <div class="row">|</div>
+    wrap = <div class="row row-eq-height">|</div>
     prepend < lib.stdheader
 }
