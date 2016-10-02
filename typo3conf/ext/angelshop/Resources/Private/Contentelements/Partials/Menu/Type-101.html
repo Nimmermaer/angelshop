@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<ce:menu.directory pageUids="{pageUids}" as="pages">
+    <f:for each="{pages}" as="page">
+        <div class="row">
+            <f:link.page pageUid="{page.uid}">
+                <v:content.render column="0" limit="10" pageUid="{page.uid}" as="contentElements" render="0">
+                    <f:for each="{contentElements}" as="product">
+                        <div class="col-md-6">
+                            <f:link.page pageUid="{page.uid}">
+                                <v:resource.record.fal table="tt_content" field="image" uid="{product.uid}"
+                                                       as="imageFiles">
+                                    <f:for each="{imageFiles}" as="image" iteration="imageIterator">
+                                        <f:if condition="{imageIterator.isFirst}">
+
+                                            <f:image title="{image.title}" class="img-hover"
+                                                     src="{image.url}" width="200" />
+                                        </f:if>
+                                    </f:for>
+                                </v:resource.record.fal>
+                            </f:link.page>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>
+                                <f:link.page pageUid="{page.uid}">{page.title}</f:link.page>
+                            </h3>
+                            <f:format.html>{product.bodytext->f:format.crop(maxCharacters:'40')}</f:format.html>
+                            <f:link.page class="btn btn-primary" pageUid="{page.uid}">Zum Produkt <i
+                                    class="fa fa-angle-right"></i></f:link.page>
+                        </div>
+                    </f:for>
+                </v:content.render>
+            </f:link.page>
+        </div>
+        <hr />
+    </f:for>
+</ce:menu.directory>
+</html>

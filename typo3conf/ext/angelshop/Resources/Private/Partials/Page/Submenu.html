@@ -1,0 +1,12 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="list-group">
+    <ce:menu.directory pageUids="{uid:data.uid}" as="pages">
+        <f:for each="{pages}" as="item">
+            <f:link.page pageUid="{item.uid}" class="list-group-item">
+                {item.title}
+            </f:link.page>
+        </f:for>
+    </ce:menu.directory>
+</div>
+</html>
