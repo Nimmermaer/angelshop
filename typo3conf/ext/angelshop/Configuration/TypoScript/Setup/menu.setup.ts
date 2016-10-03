@@ -86,7 +86,6 @@ lib {
     breadcrumb = HMENU
     breadcrumb {
         special = rootline
-        special.range = 0|3
         entryLevel = 0
         wrap = <ol class="breadcrumb">|</ol>
         1 = TMENU
