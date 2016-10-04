@@ -187,6 +187,15 @@
             <trans-unit id="tca.tt_content.tx_angelshop_map_small">
                 <source>Kleine Karte für Gridelemente</source>
             </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_tab.movement">
+                <source>Bewegtes Icon</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_movement">
+                <source>Bewegtes Icon</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_domain_model_fontawesome.movement">
+                <source>Bewegtes Icon</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

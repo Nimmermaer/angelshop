@@ -11,7 +11,23 @@ if (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' 
 } elseif (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . $APPLICATION_ENV . '.php') == true) {
     include realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . $APPLICATION_ENV . '.php';
 }
+$GLOBALS['TYPO3_CONF_VARS']['ANIMATED'] = [
+    [
+        'Keine Bewegung',
+        0
 
+    ],
+    [
+        'Drehen',
+        'fa-spin'
+
+    ],
+    [
+        'Pulsieren',
+        'fa-pulse'
+
+    ]
+];
 $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'] = [
     [
         'Kein Icon',
@@ -100,6 +116,66 @@ $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'] = [
     [
         'Papierflieger',
         'fa-paper-plane-o'
+    ],
+    [
+        'Ausgefuelltes Herz',
+        'fa-heart'
+    ],
+    [
+        'Leeres Herz',
+        'fa-heart-o'
+    ],
+    [
+        'Youtube',
+        'fa-youtube'
+    ],
+    [
+        'Youtube',
+        'fa-youtube'
+    ],
+    [
+        'Vimeo',
+        'fa-vimeo'
+    ],
+    [
+        'Amazon',
+        'fa-amazon'
+    ],
+    [
+        'Lizard Hand',
+        'fa-hand-lizard-o'
+    ],
+    [
+        'Zeigende Hand nach unten',
+        'fa fa-hand-o-down'
+    ],
+    [
+        'Zeigende Hand nach links',
+        'fa-hand-o-left'
+    ],
+    [
+        'Zeigende Hand nach rechts',
+        'fa-hand-o-right'
+    ],
+    [
+        'Zeigende Hand nach oben',
+        'fa-hand-o-up'
+    ],
+    [
+        'Kreis mit Luecke',
+        'fa-circle-o-notch'
+    ],
+    [
+        'Kreis aus Punkten',
+        'fa-spinner'
+    ],
+    [
+        'Kreis aus Pfeilen',
+        'fa-refresh'
+    ],
+    [
+        'Zahnrad',
+        'fa-cog'
     ],
 ];
 ?> 

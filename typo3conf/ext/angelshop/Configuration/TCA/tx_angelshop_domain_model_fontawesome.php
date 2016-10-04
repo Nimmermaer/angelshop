@@ -32,10 +32,11 @@ return [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title,class,link,',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1,title,class,link, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1,title,;;fonts,link, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'palettes' => [
         '1' => ['showitem' => ''],
+        'fonts' => ['showitem' => 'class, movement'],
     ],
     'columns' => [
 
@@ -134,6 +135,14 @@ return [
             'config' => [
                 'type' => 'select',
                 'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
+            ],
+        ],
+        'movement' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_fontawesome.movement',
+            'config' => [
+                'type' => 'select',
+                'items' => $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'],
             ],
         ],
         'record' => [

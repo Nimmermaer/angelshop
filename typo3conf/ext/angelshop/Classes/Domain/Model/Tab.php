@@ -42,6 +42,11 @@ class Tab extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $icon = '';
 
     /**
+     * @var string
+     */
+    protected $movement = '';
+
+    /**
      * image
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
@@ -109,6 +114,22 @@ class Tab extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setIcon($icon)
     {
         $this->icon = $icon;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMovement()
+    {
+        return $this->movement;
+    }
+
+    /**
+     * @param string $movement
+     */
+    public function setMovement($movement)
+    {
+        $this->movement = $movement;
     }
 
 }

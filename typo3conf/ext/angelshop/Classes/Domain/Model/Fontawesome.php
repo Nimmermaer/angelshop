@@ -43,6 +43,11 @@ class Fontawesome extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $class = '';
 
     /**
+     * @var string
+     */
+    protected $movement = '';
+
+    /**
      * @return string
      */
     public function getTitle()
@@ -80,6 +85,22 @@ class Fontawesome extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function getLink()
     {
         return $this->link;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMovement()
+    {
+        return $this->movement;
+    }
+
+    /**
+     * @param string $movement
+     */
+    public function setMovement($movement)
+    {
+        $this->movement = $movement;
     }
 
     /**

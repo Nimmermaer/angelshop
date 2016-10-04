@@ -45,7 +45,7 @@
                     <f:for each="{Textmedia}" as="social">
                         <li>
                             <v:link.typolink configuration="{parameter:'{social.link}'}">
-                                <i class="fa fa-2x {social.class}"></i>
+                                <i class="fa fa-2x {social.class} {social.movement}"></i>
                             </v:link.typolink>
                         </li>
                     </f:for>
@@ -109,7 +109,7 @@
     <f:case value="4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="fa fa-fw {data.tx_angelshop_class}"></i>{data.header}</h4>
+                <h4><i class="fa fa-fw {data.tx_angelshop_class} {data.tx_angelshop_movement} "></i>{data.header}</h4>
             </div>
             <div class="panel-body">
                 <p>{data.bodytext->f:format.html()}</p>

@@ -239,11 +239,27 @@ $newTtContentColumns = [
             'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
         ],
     ],
+    'tx_angelshop_movement' => [
+        'exclude' => 0,
+        'displayCond' => [
+            'OR' => [
+                'FIELD:layout:=:4',
+                'FIELD:CType:=:tx_service',
+            ],
+        ],
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_movement',
+        'config' => [
+            'type' => 'select',
+            'items' => $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'],
+        ],
+    ],
 ];
+
+$GLOBALS['TCA']['tt_content']['palettes']['fonts']['showitem'] ='tx_angelshop_class,tx_angelshop_movement';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $newTtContentColumns);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'tx_angelshop_fontawesome', '',
     'after:header');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'tx_angelshop_class', '',
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--palette--;;fonts,', '',
     'after:header');
 
 $contentelements = [
@@ -290,6 +306,8 @@ foreach ($contentelements as $contentelement) {
     'textmedia',
     'after'
 );
+
+
 $commonFields = '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
       --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
@@ -331,7 +349,7 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_trader_slider'] = [
 $GLOBALS['TCA']['tt_content']['types'] ['tx_service'] = [
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-         header,subheader;Buttontext,header_link;Buttonlink,tx_angelshop_class,bodytext,' . $commonFields
+         header,subheader;Buttontext,header_link;Buttonlink,--palette--;;fonts,bodytext,' . $commonFields
 ];
 $GLOBALS['TCA']['tt_content']['types'] ['tx_tab'] = [
     'showitem' => '
