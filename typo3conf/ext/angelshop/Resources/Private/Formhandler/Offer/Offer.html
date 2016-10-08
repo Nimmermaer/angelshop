@@ -2,13 +2,15 @@
 <div class="row">
     <div class="col-md-8">
         <form role="form" action="###REL_URL###" name="sentMessage" method="post" id="contactForm">
+            <!-- ###IF_product###  -->
             <div class="control-group form-group">
                 <div class="controls">
-                    <label>###LLL:mail_product###*</label>
+                    <label>###LLL:mail_product###</label>
                     <input type="text" class="form-control" name="formhandler[product]" id="mail_product"
                            value="###value_product###"/>
                 </div>
             </div>
+            <!-- ###IF_product###  -->
             <div class="control-group form-group">
                 <div class="controls">
                     <label>###LLL:mail_name###*</label>
