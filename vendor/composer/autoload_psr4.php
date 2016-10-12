@@ -60,6 +60,7 @@ return array(
     'TYPO3\\CMS\\Aboutmodules\\' => array($baseDir . '/typo3_src/typo3/sysext/aboutmodules/Classes'),
     'TYPO3\\CMS\\About\\' => array($baseDir . '/typo3_src/typo3/sysext/about/Classes'),
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
+    'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
@@ -68,4 +69,5 @@ return array(
     'FluidTYPO3\\Vhs\\' => array($baseDir . '/typo3conf/ext/vhs/Classes'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DmitryDulepov\\Realurl\\' => array($baseDir . '/typo3conf/ext/realurl/Classes'),
+    'DirectMailTeam\\DirectMail\\' => array($baseDir . '/typo3conf/ext/direct_mail/Classes'),
 );

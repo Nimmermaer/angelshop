@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "be754e834c6c83ec1f6aa8b57d4742a0",
-    "content-hash": "534115da53369c9c8d7a8bd9e0721aec",
+    "hash": "5167ad55aae7c39fb8fab9f89fcabf8e",
+    "content-hash": "c5e2777af20f1725a066dd8a3cf6094e",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -57,6 +57,57 @@
                 "text"
             ],
             "time": "2014-05-19 10:25:02"
+        },
+        {
+            "name": "directmailteam/direct-mail",
+            "version": "5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartolo/direct_mail.git",
+                "reference": "5106dfa8b502048b48e3e950d62f4d255a4aa67f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartolo/direct_mail/zipball/5106dfa8b502048b48e3e950d62f4d255a4aa67f",
+                "reference": "5106dfa8b502048b48e3e950d62f4d255a4aa67f",
+                "shasum": ""
+            },
+            "require": {
+                "typo3-ter/jumpurl": ">=7.6",
+                "typo3/cms-core": ">=7.6,<8.0"
+            },
+            "replace": {
+                "direct_mail": "self.version",
+                "typo3-ter/direct_mail": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "DirectMailTeam\\DirectMail\\": "Classes"
+                }
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Kartolo",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Advanced Direct Mail/Newsletter mailer system with sophisticated options for personalization of emails including response statistics.",
+            "homepage": "https://github.com/kartolo/direct_mail",
+            "keywords": [
+                "TYPO3",
+                "directmail",
+                "extension",
+                "newsletter"
+            ],
+            "support": {
+                "issues": "https://forge.typo3.org/projects/extension-direct_mail",
+                "source": "https://github.com/kartolo/direct_mail/tree/5.1.0"
+            },
+            "time": "2016-02-28 21:34:49"
         },
         {
             "name": "doctrine/instantiator",
@@ -382,16 +433,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
             "require": {
@@ -425,7 +476,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-09-19 16:02:08"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -482,20 +533,21 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.7.18",
+            "version": "v2.7.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "cc3d188345b84d27a931db0969b0ff36272f451c"
+                "reference": "91a8fb9f91aeb00caaeab95818063e3a96bff9e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/cc3d188345b84d27a931db0969b0ff36272f451c",
-                "reference": "cc3d188345b84d27a931db0969b0ff36272f451c",
+                "url": "https://api.github.com/repos/symfony/console/zipball/91a8fb9f91aeb00caaeab95818063e3a96bff9e2",
+                "reference": "91a8fb9f91aeb00caaeab95818063e3a96bff9e2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.3.9",
+                "symfony/debug": "~2.7,>=2.7.2"
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -537,20 +589,77 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-06 07:26:07"
+            "time": "2016-09-27 17:33:51"
         },
         {
-            "name": "symfony/finder",
-            "version": "v2.7.18",
+            "name": "symfony/debug",
+            "version": "v2.8.12",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/finder.git",
-                "reference": "2716347131481656cc613d98ec12228bae81c8c3"
+                "url": "https://github.com/symfony/debug.git",
+                "reference": "8c29235936a47473af16fb91c7c4b7b193c5693c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/2716347131481656cc613d98ec12228bae81c8c3",
-                "reference": "2716347131481656cc613d98ec12228bae81c8c3",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/8c29235936a47473af16fb91c7c4b7b193c5693c",
+                "reference": "8c29235936a47473af16fb91c7c4b7b193c5693c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "psr/log": "~1.0"
+            },
+            "conflict": {
+                "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
+            },
+            "require-dev": {
+                "symfony/class-loader": "~2.2|~3.0.0",
+                "symfony/http-kernel": "~2.3.24|~2.5.9|~2.6,>=2.6.2|~3.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Debug\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Debug Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-09-06 10:55:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v2.7.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "be6a0cebb24ee147b21ce35952ed1b999cca3291"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/be6a0cebb24ee147b21ce35952ed1b999cca3291",
+                "reference": "be6a0cebb24ee147b21ce35952ed1b999cca3291",
                 "shasum": ""
             },
             "require": {
@@ -586,7 +695,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-23 19:36:25"
+            "time": "2016-09-16 16:53:37"
         },
         {
             "name": "typo3-ter/formhandler",
@@ -664,6 +773,44 @@
             ],
             "description": "This extension integrates the grid layout concept also to regular content elements - the grid elements.\r\nIt offers a lot of new features like advanced drag & drop or real references, that improve the usability of the page and list module to speed up the daily work with the backend.",
             "time": "2016-01-29 13:10:05"
+        },
+        {
+            "name": "typo3-ter/jumpurl",
+            "version": "7.6.0",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/jumpurl/7.6.0/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "typo3/cms-core": ">= 7.6.0, <= 7.99.99"
+            },
+            "replace": {
+                "jumpurl": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Friends of TYPO3",
+                    "email": "friendsof@typo3.org",
+                    "company": "",
+                    "username": "benni"
+                }
+            ],
+            "description": "Allows to modify links to create Jump URLs created in the frontend of the TYPO3 Core.",
+            "time": "2015-10-28 23:48:56"
         },
         {
             "name": "typo3-ter/realurl",

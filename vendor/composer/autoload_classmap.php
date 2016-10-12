@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\Autoload\\ClassMapGenerator' => $baseDir . '/typo3_src/typo3/sysext/core/Resources/PHP/ClassMapGenerator.php',
+    'FoT3\\Jumpurl\\JumpUrlHandler' => $baseDir . '/typo3conf/ext/jumpurl/Classes/JumpUrlHandler.php',
+    'FoT3\\Jumpurl\\JumpUrlProcessor' => $baseDir . '/typo3conf/ext/jumpurl/Classes/JumpUrlProcessor.php',
+    'FoT3\\Jumpurl\\JumpUrlUtility' => $baseDir . '/typo3conf/ext/jumpurl/Classes/JumpUrlUtility.php',
     'GridElementsTeam\\Gridelements\\Backend\\ClickMenuOptions' => $baseDir . '/typo3conf/ext/gridelements/Classes/Backend/ClickMenuOptions.php',
     'GridElementsTeam\\Gridelements\\Backend\\ItemsProcFuncs\\AbstractItemsProcFunc' => $baseDir . '/typo3conf/ext/gridelements/Classes/Backend/ItemsProcFuncs/AbstractItemsProcFunc.php',
     'GridElementsTeam\\Gridelements\\Backend\\ItemsProcFuncs\\CTypeList' => $baseDir . '/typo3conf/ext/gridelements/Classes/Backend/ItemsProcFuncs/CTypeList.php',

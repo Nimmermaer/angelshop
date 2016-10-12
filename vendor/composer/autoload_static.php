@@ -71,6 +71,7 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         'S' => 
         array (
             'Symfony\\Component\\Finder\\' => 25,
+            'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
         ),
         'P' => 
@@ -94,6 +95,7 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         array (
             'Doctrine\\Instantiator\\' => 22,
             'DmitryDulepov\\Realurl\\' => 22,
+            'DirectMailTeam\\DirectMail\\' => 26,
         ),
     );
 
@@ -314,6 +316,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
         ),
+        'Symfony\\Component\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
@@ -346,6 +352,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         array (
             0 => __DIR__ . '/../..' . '/typo3conf/ext/realurl/Classes',
         ),
+        'DirectMailTeam\\DirectMail\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/typo3conf/ext/direct_mail/Classes',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -374,6 +384,9 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
 
     public static $classMap = array (
         'Composer\\Autoload\\ClassMapGenerator' => __DIR__ . '/../..' . '/typo3_src/typo3/sysext/core/Resources/PHP/ClassMapGenerator.php',
+        'FoT3\\Jumpurl\\JumpUrlHandler' => __DIR__ . '/../..' . '/typo3conf/ext/jumpurl/Classes/JumpUrlHandler.php',
+        'FoT3\\Jumpurl\\JumpUrlProcessor' => __DIR__ . '/../..' . '/typo3conf/ext/jumpurl/Classes/JumpUrlProcessor.php',
+        'FoT3\\Jumpurl\\JumpUrlUtility' => __DIR__ . '/../..' . '/typo3conf/ext/jumpurl/Classes/JumpUrlUtility.php',
         'GridElementsTeam\\Gridelements\\Backend\\ClickMenuOptions' => __DIR__ . '/../..' . '/typo3conf/ext/gridelements/Classes/Backend/ClickMenuOptions.php',
         'GridElementsTeam\\Gridelements\\Backend\\ItemsProcFuncs\\AbstractItemsProcFunc' => __DIR__ . '/../..' . '/typo3conf/ext/gridelements/Classes/Backend/ItemsProcFuncs/AbstractItemsProcFunc.php',
         'GridElementsTeam\\Gridelements\\Backend\\ItemsProcFuncs\\CTypeList' => __DIR__ . '/../..' . '/typo3conf/ext/gridelements/Classes/Backend/ItemsProcFuncs/CTypeList.php',
