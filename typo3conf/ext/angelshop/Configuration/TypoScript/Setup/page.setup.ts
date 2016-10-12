@@ -90,7 +90,12 @@ page {
             value = website
             wrap = <meta property=”og:type” content=”|”>
         }
-
+        3422423424 = TEXT
+        3422423424 {
+            value (
+            	<meta name="google-site-verification" content="AOQ3Y0Tr2YEGxArXS_0qu7T_LHJt5d0sv2KIWlhAZZ4" />
+            )
+        }
         990 < temp.canonical
     }
 }
