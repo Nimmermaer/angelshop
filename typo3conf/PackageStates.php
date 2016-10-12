@@ -224,6 +224,12 @@ return [
             'packagePath' => 'typo3/sysext/reports/',
             'suggestions' => [],
         ],
+        'scheduler' => [
+            'composerName' => 'typo3/cms-scheduler',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/scheduler/',
+            'suggestions' => [],
+        ],
         'sv' => [
             'composerName' => 'typo3/cms-sv',
             'state' => 'active',
@@ -314,6 +320,12 @@ return [
             'packagePath' => 'typo3/sysext/dbal/',
             'suggestions' => [],
         ],
+        'extension_builder' => [
+            'composerName' => 'ebt/extension_builder',
+            'state' => 'inactive',
+            'packagePath' => 'typo3conf/ext/extension_builder/',
+            'suggestions' => [],
+        ],
         'feedit' => [
             'composerName' => 'typo3/cms-feedit',
             'state' => 'inactive',
@@ -348,12 +360,6 @@ return [
             'composerName' => 'typo3/cms-recycler',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/recycler/',
-            'suggestions' => [],
-        ],
-        'scheduler' => [
-            'composerName' => 'typo3/cms-scheduler',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/scheduler/',
             'suggestions' => [],
         ],
         'version' => [
