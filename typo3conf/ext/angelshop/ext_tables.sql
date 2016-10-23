@@ -1,6 +1,13 @@
 #
 # Table structure for table 'pages'
 #
+CREATE TABLE tt_address (
+  tx_angelshop_newsletter  tinyint(11) default '0' NOT NULL
+);
+
+#
+# Table structure for table 'pages'
+#
 CREATE TABLE pages (
   ce_whatsapp_text   text,
   ce_whatsapp_button int(11) default '0' NOT NULL,
@@ -41,7 +48,8 @@ CREATE TABLE tt_content (
   tx_angelshop_phone      varchar(255) default ' ' NOT NULL,
   tx_angelshop_email      varchar(255) default ' ' NOT NULL,
   tx_angelshop_owner      varchar(255) default ' ' NOT NULL,
-  tx_angelshop_map_small  int(11) default '0'      NOT NULL
+  tx_angelshop_map_small  int(11) default '0'      NOT NULL,
+  tx_angelshop_salutation  varchar(255) default '0' NOT NULL
 );
 #
 # Table structure for table 'fe_users'

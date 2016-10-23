@@ -290,6 +290,30 @@ return [
             'packagePath' => 'typo3conf/ext/angelshop/',
             'suggestions' => [],
         ],
+        'jumpurl' => [
+            'composerName' => 'friendsoftypo3/jumpurl',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/jumpurl/',
+            'suggestions' => [],
+        ],
+        'tt_address' => [
+            'composerName' => 'friendsoftypo3/tt-address',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/tt_address/',
+            'suggestions' => [],
+        ],
+        'direct_mail' => [
+            'composerName' => 'directmailteam/direct-mail',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/direct_mail/',
+            'suggestions' => [],
+        ],
+        'extender' => [
+            'composerName' => 'evoweb/extender',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/extender/',
+            'suggestions' => [],
+        ],
         'realurl' => [
             'composerName' => 'dmitryd/typo3-realurl',
             'state' => 'active',

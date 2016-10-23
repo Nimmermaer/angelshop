@@ -84,7 +84,8 @@ module.exports = function (grunt) {
                 src: [
                     'ext/angelshop/Resources/Private/Js/analytics.js',
                     'ext/angelshop/Resources/Private/Js/lightbox.js',
-                    'ext/angelshop/Resources/Private/Js/script.js'
+                    'ext/angelshop/Resources/Private/Js/script.js',
+                    'ext/angelshop/Resources/Private/Js/cookiebar.js'
                 ],
                 dest: 'ext/angelshop/Resources/Public/Js/custom.js'
             },

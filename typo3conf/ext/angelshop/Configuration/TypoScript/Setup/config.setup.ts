@@ -50,11 +50,8 @@ config {
     sourceopt {
         enabled = 1
         enable_utf-8_support = 1
-
         headerComment = 1
-
         formatHtml = 1
-
         headerComment (
 ><(((('> ><(((('> ><(((('>
 
@@ -68,11 +65,15 @@ config {
 I' geh fisch'n in Berchtesgaden
 
 ><(((('> ><(((('> ><(((('>
-    This website is powered by TYPO3 - inspiring people to share!
-	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
-	TYPO3 is copyright 1998-2016 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
-	Information and contribution at https://typo3.org/
-
         )
     }
 }
+
+[applicationContext = Development]
+ config {
+     compressCss = 0
+     compressJs = 0
+     concatenateCss = 0
+     concatenateJs = 0
+ }
+[end]

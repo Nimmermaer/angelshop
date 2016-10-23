@@ -76,6 +76,9 @@
             <trans-unit id="pages.ce_facebook_button">
                 <source>Anzeige von Facebook Button</source>
             </trans-unit>
+            <trans-unit id="tt_address.tx_angelshop_newsletter">
+                <source>Newsletteranmeldung</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

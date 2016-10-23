@@ -11,6 +11,17 @@ $boot = function ($extensionKey) {
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
         'MB.' . $extensionKey,
+        'Newsletter',
+        'Newsletter'
+    );
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        'MB.' . $extensionKey,
+        'Unsubscribe',
+        'Unsubscribe'
+    );
+
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        'MB.' . $extensionKey,
         'Product',
         'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title'
     );

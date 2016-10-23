@@ -5,46 +5,46 @@
         <header/>
         <body>
             <trans-unit id="Default.title">
-                <source>Default</source>
+                <target>Standard</target>
             </trans-unit>
             <trans-unit id="Default.col.0">
-                <source>Content</source>
+                <target>Inhalt</target>
             </trans-unit>
             <trans-unit id="Newsletter.title">
-                <source>Newsletter</source>
+                <target>Newsletter</target>
             </trans-unit>
             <trans-unit id="Newsletter.col.0">
-                <source>Content</source>
+                <target>Inhalt</target>
             </trans-unit>
             <trans-unit id="Slider.title">
-                <source>Slider</source>
+                <target>Großer Slider</target>
             </trans-unit>
             <trans-unit id="Slider.col.0">
-                <source>Content</source>
+                <target>Inhalt</target>
             </trans-unit>
             <trans-unit id="Slider.col.1">
-                <source>Slider</source>
+                <target>Slider</target>
             </trans-unit>
             <trans-unit id="Sidebar.title">
-                <source>Sidebar</source>
+                <target>Seitentemplate mit Seitennavigation (Unterseiten)</target>
             </trans-unit>
             <trans-unit id="Sidebar.col.0">
-                <source>Content</source>
+                <target>Inhalt</target>
             </trans-unit>
             <trans-unit id="Sidebar.col.1">
-                <source>Sidebar</source>
+                <target>Seitennavigation</target>
             </trans-unit>
             <trans-unit id="Product.title">
-                <source>Product</source>
+                <target>Produktseite</target>
             </trans-unit>
             <trans-unit id="Product.col.0">
-                <source>Content</source>
+                <target>Inhalt</target>
             </trans-unit>
             <trans-unit id="Product.col.1">
-                <source>Image</source>
+                <target>Bild</target>
             </trans-unit>
             <trans-unit id="Product.col.2">
-                <source>Footer</source>
+                <target>Fußleiste</target>
             </trans-unit>
         </body>
     </file>

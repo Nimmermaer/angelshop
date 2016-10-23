@@ -126,4 +126,29 @@ tt_content {
             }
         }
     }
+
+    tx_newsletter_image < lib.fluidContent
+    tx_newsletter_image {
+        templateName = Newsletter/Image
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+            }
+        }
+    }
+
+    tx_newsletter_textpic < lib.fluidContent
+    tx_newsletter_textpic {
+        templateName = Newsletter/TextImage
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+            }
+        }
+    }
+
+    tx_newsletter_text < lib.fluidContent
+    tx_newsletter_text.templateName = Newsletter/Text
 }

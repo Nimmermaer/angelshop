@@ -27,6 +27,8 @@
     "typo3-ter/vhs": "^3.0.0",
     "typo3-ter/realurl": "^2.0.14",
     "typo3-ter/sourceopt": "^0.9.3",
-    "directmailteam/direct-mail": "^5.1.0"
+    "directmailteam/direct-mail": "^5.1.0",
+    "friendsoftypo3/tt-address": "^3.0.0",
+    "typo3-ter/extender": "^6.3.0"
   }
 }

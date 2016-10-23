@@ -1,0 +1,72 @@
+<tr style="border-collapse: collapse !important;">
+    <td align="center" valign="top">
+        <!-- BEGIN COLUMNS // -->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns">
+            <tbody>
+            <tr mc:repeatable="">
+                <td align="center" valign="top" class="templateColumnContainer" style="padding-top:20px;    background-color: #F4F4F4;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;    border-collapse: collapse !important;">
+                    <table border="0" cellpadding="20" cellspacing="0" width="100%"
+                           style="border-collapse: collapse !important;">
+                        <tbody style="border-collapse: collapse !important;">
+                        <tr>
+                            <td style="color: #505050;
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 150%;
+    padding-top: 0;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-align: left;">
+                                <f:for each="{files}" as="image" iteration="imageIterator">
+                                    <f:if condition="{imageIterator.isFirst}">
+                                        <img src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1')}"
+                                             style="    max-width: 555px;;     display: inline;
+    height: auto;    border: 0;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;" class="columnImage" mc:label="left_column_image"
+                                             mc:edit="left_column_image">
+                                    </f:if>
+
+                                </f:for>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="leftColumnContent" mc:edit="left_column_content" style="    color: #505050;
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 150%;
+    padding-top: 0;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-align: left;">
+                                <h3 style="    color: #606060 !important;
+    display: block;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 100%;
+    letter-spacing: normal;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-left: 0;
+    text-align: left;">{data.header}</h3>
+                                {data.bodytext->f:format.html()}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+        <!-- // END COLUMNS -->
+    </td>
+</tr>

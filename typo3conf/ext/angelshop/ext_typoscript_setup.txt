@@ -17,6 +17,14 @@ config.tx_extbase {
                     }
                 }
             }
+            TYPO3\TtAddress\Domain\Model\Address {
+                mapping {
+                    tableName = tt_address
+                    columns {
+                        tx_angelshop_newsletter.mapOnProperty = newsletter
+                    }
+                }
+            }
         }
     }
 }

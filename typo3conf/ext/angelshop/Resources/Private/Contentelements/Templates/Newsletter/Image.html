@@ -1,0 +1,40 @@
+<tr>
+    <td align="center" valign="top"
+        style="mso-table-lspace:0pt; mso-table-rspace:0pt; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+        <!-- BEGIN HEADER // -->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader"
+               style="
+             background-color:#F4F4F4;
+             border-top:1px solid #FFFFFF;
+             border-bottom:1px solid #CCCCCC; border-collapse:collapse !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+            <tr>
+                <td valign="top" class="headerContent"
+                    style="
+            color:#505050;
+            font-family:Helvetica;
+            font-size:20px;
+            font-weight:bold;
+            line-height:100%;
+            padding-top:0;
+            padding-right:0;
+            padding-bottom:0;
+            padding-left:0;
+            text-align:left;
+            vertical-align:middle;mso-table-lspace:0pt; mso-table-rspace:0pt; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+                    <f:for each="{files}" as="image" iteration="imageIterator">
+                        <f:if condition="{imageIterator.isFirst}">
+                            <img src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1')}" style="   height:auto;
+            max-width:600px; border:0; height:auto; line-height:100%; outline:none; text-decoration:none;-ms-interpolation-mode:bicubic; max-width:600px;"
+                                 id="headerImage" mc:label="header_image" mc:edit="header_image"
+                                 mc:allowdesigner mc:allowtext/>
+                        </f:if>
+
+                    </f:for>
+
+
+                </td>
+            </tr>
+        </table>
+        <!-- // END HEADER -->
+    </td>
+</tr>

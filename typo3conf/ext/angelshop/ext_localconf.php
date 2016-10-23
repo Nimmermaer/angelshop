@@ -45,6 +45,30 @@ $boot = function ($extensionKey) {
 
         )
     );
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'MB.' . $extensionKey,
+        'Newsletter',
+        array(
+            'Newsletter' => 'subscription, new, create , show, list',
+
+        ),
+        array(
+            'Newsletter' => 'subscription, new, create , show, list',
+
+        )
+    );
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'MB.' . $extensionKey,
+        'Unsubscribe',
+        array(
+            'Newsletter' => 'unsubscribe',
+
+        ),
+        array(
+            'Newsletter' => 'unsubscribe',
+
+        )
+    );
     if (TYPO3_MODE === 'BE') {
         $backendLayoutFileProviderDirectory = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName(
             'EXT:angelshop/Configuration/TypoScript/Setup/Backendlayouts'
@@ -56,6 +80,8 @@ $boot = function ($extensionKey) {
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(file_get_contents($beLayoutPath));
         }
     }
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_address']['extender']['Address']['angelshop'] =
+        'EXT:angelshop/Classes/Domain/Model/Address.php';
 
 };
 

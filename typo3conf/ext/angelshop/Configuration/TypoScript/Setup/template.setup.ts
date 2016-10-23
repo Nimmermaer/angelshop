@@ -61,6 +61,7 @@ lib.templates.base {
             postal-code = 83410
             country-name = Deutschland
         }
+        logoutNewsletter = {$plugin.tx_angelshop.settings.logoutNewsletter}
     }
 }
 
@@ -72,6 +73,9 @@ lib.templates.base.file.stdWrap.cObject {
 
     pagets__Default = TEXT
     pagets__Default.value = EXT:angelshop/Resources/Private/Templates/Page/Default.html
+
+    pagets__Newsletter= TEXT
+    pagets__Newsletter.value = EXT:angelshop/Resources/Private/Templates/Page/Newsletter.html
 
     pagets__Sidebar = TEXT
     pagets__Sidebar.value = EXT:angelshop/Resources/Private/Templates/Page/Sidebar.html

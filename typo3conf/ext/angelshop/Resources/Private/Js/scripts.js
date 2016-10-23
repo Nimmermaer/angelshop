@@ -7,8 +7,10 @@ $(document).ready(function () {
         albumLabel: 'Bild %1 von %2'
     });
 
+    $('.datepicker').datepicker();
+
     $('.trader-slider').slick({
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 3000,
         slidesToShow: 4,
@@ -22,7 +24,7 @@ $(document).ready(function () {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
@@ -39,11 +41,23 @@ $(document).ready(function () {
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
     });
-
+    $.cookieBar({
+        declineButton: false,
+        message: 'Diese Website verwendet Cookies. Indem Sie fortfahren, akzeptieren Sie die Verwendung von Cookies.',
+        acceptButton: true,
+        acceptText: 'Danke Für die Info',
+        acceptFunction: true,
+        policyButton: true,
+        policyText: 'Ich möchte mehr wissen',
+        policyURL: 'https://aba-angelshop.de/impressum/#c1144',
+        autoEnable: true,
+        effect: 'slide',
+        element: 'body',
+        zindex: '',
+        domain: 'https://aba-angelshop.de/',
+        referrer: 'https://aba-angelshop.de/'
+    });
     $('.panel').matchHeight();
 });

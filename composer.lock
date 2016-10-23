@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5167ad55aae7c39fb8fab9f89fcabf8e",
-    "content-hash": "c5e2777af20f1725a066dd8a3cf6094e",
+    "hash": "8f6f686e5d8c2d73a6ef7fdad4e2cb52",
+    "content-hash": "6a66b76bf7c0b9226e1cef19bcc8cd8f",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -162,6 +162,45 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "friendsoftypo3/tt-address",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.typo3.org/TYPO3CMS/Extensions/tt_address.git",
+                "reference": "4458effd00789fe72812d34057cc28ce5f85e6bf"
+            },
+            "require": {
+                "typo3/cms-core": ">=6.2.2,<8.0"
+            },
+            "replace": {
+                "tt_address": "self.version",
+                "typo3-ter/tt-address": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\TtAddress\\": "Classes"
+                }
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "tt_address Development Team",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Displays a list of addresses from an address table on the page.",
+            "homepage": "https://forge.typo3.org/projects/extension-tt_address",
+            "keywords": [
+                "TYPO3",
+                "addresses",
+                "extension"
+            ],
+            "time": "2016-02-12 09:32:00"
         },
         {
             "name": "mso/idna-convert",
@@ -698,6 +737,43 @@
             "time": "2016-09-16 16:53:37"
         },
         {
+            "name": "typo3-ter/extender",
+            "version": "6.3.1",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/extender/6.3.1/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "typo3/cms-core": ">= 6.2.10, <= 7.9.99"
+            },
+            "replace": {
+                "extender": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Sebastian Fischer",
+                    "email": "typo3@evoweb.de",
+                    "company": "evoweb",
+                    "username": "sfischer"
+                }
+            ],
+            "time": "2015-10-31 16:29:07"
+        },
+        {
             "name": "typo3-ter/formhandler",
             "version": "2.4.0",
             "dist": {
@@ -883,16 +959,16 @@
         },
         {
             "name": "typo3-ter/vhs",
-            "version": "3.0.1",
+            "version": "3.1.0",
             "dist": {
                 "type": "t3x",
-                "url": "https://typo3.org/extensions/repository/download/vhs/3.0.1/t3x/",
+                "url": "https://typo3.org/extensions/repository/download/vhs/3.1.0/t3x/",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "php": ">= 5.5.0, <= 7.0.99",
-                "typo3/cms-core": ">= 7.6.0, <= 8.2.99"
+                "typo3/cms-core": ">= 7.6.0, <= 8.4.99"
             },
             "replace": {
                 "vhs": "self.version"
@@ -912,7 +988,7 @@
                 }
             ],
             "description": "A collection of ViewHelpers to perform rendering tasks which are not natively supported by Fluid - for example: advanced formatters, math calculators, specialized conditions and Iterator/Array calculators and processors",
-            "time": "2016-07-29 00:45:18"
+            "time": "2016-10-18 15:46:15"
         },
         {
             "name": "typo3/class-alias-loader",

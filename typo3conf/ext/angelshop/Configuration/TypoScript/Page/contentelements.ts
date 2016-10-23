@@ -90,5 +90,50 @@ mod {
 
             show = *
         }
+        newsletter {
+            header = Newsletter
+            elements {
+                tx_newsletter_image {
+                    iconIdentifier = content-image
+                    title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_newsletter_image.title
+                    description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_newsletter_image.description
+                    tt_content_defValues {
+                        CType = tx_newsletter_image
+                    }
+                }
+                tx_newsletter_text {
+                    iconIdentifier = content-text
+                    title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_newsletter_text.title
+                    description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_newsletter_text.description
+                    tt_content_defValues {
+                        CType = tx_newsletter_text
+                    }
+                }
+                tx_newsletter_textpic {
+                    iconIdentifier = content-textpic
+                    title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_newsletter_textpic.title
+                    description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_newsletter_textpic.description
+                    tt_content_defValues {
+                        CType = tx_newsletter_textpic
+                    }
+                }
+            }
+            show = *
+        }
     }
 }
+
+
+
+#[page|backend_layout=pagets__Newsletter]
+#    mod.wizards.newContentElement.wizardItems.newsletter.show = tx_newsletter_textpic, tx_newsletter_text, tx_newsletter_image
+#    mod.wizards.newContentElement.wizardItems.special.show =
+#    mod.wizards.newContentElement.wizardItems.common.show =
+#    mod.wizards.newContentElement.wizardItems.angelshop.show =
+#    mod.wizards.newContentElement.wizardItems.forms.show =
+#    TCEFORM.tt_content {
+#        CType {
+#            removeItems := addToList(list,indexed_search,tt_address)
+#        }
+#    }
+#[global]

@@ -239,6 +239,18 @@ $newTtContentColumns = [
             'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
         ],
     ],
+    'tx_angelshop_salutation' => [
+        'exclude' => 0,
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_salutation',
+        'config' => [
+            'type' => 'select',
+            'items' => [
+                0 => 'Eigene Überschrift',
+                1 => 'Hallo "Vorname"',
+                2 => 'Sehr geehrte/r Frau/Herr',
+            ]
+        ],
+    ],
     'tx_angelshop_movement' => [
         'exclude' => 0,
         'displayCond' => [
@@ -272,6 +284,9 @@ $contentelements = [
     'impressum',
     'project',
     'gallery',
+    'newsletter_textpic',
+    'newsletter_text',
+    'newsletter_image',
 
 ];
 foreach ($contentelements as $contentelement) {
@@ -282,7 +297,7 @@ foreach ($contentelements as $contentelement) {
             'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_' . $contentelement . '.title',
             'tx_' . $contentelement,
         ],
-        'textmedia',
+        '',
         'after'
     );
 }
@@ -365,5 +380,20 @@ $GLOBALS['TCA']['tt_content']['types']['ce_product'] = [
 
 ];
 
+$GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_image'] = [
+    'showitem' => '
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+        image,' . $commonFields
+];
+$GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_text'] = [
+    'showitem' => '
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+         header, subtitle ,bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],' . $commonFields
+];
+$GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_textpic'] = [
+    'showitem' => '
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+         header, tx_angelshop_salutation, image, bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],' . $commonFields
+];
 
 $GLOBALS['TCA']['tt_content']['ctrl']['requestUpdate'] = 'layout';

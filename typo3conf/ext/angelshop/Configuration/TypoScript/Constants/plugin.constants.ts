@@ -12,6 +12,9 @@ plugin.tx_angelshop {
         # cat=plugin.tx_angelshop_gallery//a; type=string; label=Default storage PID
         storagePid =
     }
+    settings {
+        logoutNewsletter = 1050
+    }
 }
 
 plugin.tx_angelshop_gallery {

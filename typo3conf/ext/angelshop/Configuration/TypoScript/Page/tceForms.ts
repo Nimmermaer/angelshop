@@ -1,6 +1,6 @@
 TCEFORM.tt_content {
     CType {
-        removeItems := addToList(table,bullets,uploads,div,shortcut,mailform)
+       removeItems := addToList(table,bullets,uploads,div,shortcut,mailform)
     }
 
     menu_type.addItems {

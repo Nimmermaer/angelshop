@@ -9,6 +9,9 @@ plugin {
         persistence {
             storagePid = {$plugin.tx_angelshop_gallery.persistence.storagePid}
         }
+        settings {
+            loginNewsletter = 1049
+        }
     }
 
     tx_product_list {
@@ -55,7 +58,17 @@ plugin {
         }
     }
 
+    tx_angelshop_newsletter {
+        view {
+            templateRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.templateRootPath}
+            partialRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.partialRootPath}
+            layoutRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.layoutRootPath}
+        }
+
+        persistence {
+            storagePid = {$plugin.tx_angelshop_fullwidthvideo.persistence.storagePid}
+        }
+    }
+
     tx_frontend._CSS_DEFAULT_STYLE >
 }
-
-
