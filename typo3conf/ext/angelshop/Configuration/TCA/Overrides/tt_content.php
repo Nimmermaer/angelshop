@@ -394,7 +394,7 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_image']   = [
 $GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_text']    = [
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-         header, subtitle ,bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],' . $commonFields
+         header,tx_angelshop_salutation, subtitle ,bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],' . $commonFields
 ];
 $GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_textpic'] = [
     'showitem' => '
