@@ -15,6 +15,7 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         'T' => 
         array (
             'Typoheads\\Formhandler\\' => 22,
+            'TYPO3\\TtAddress\\' => 16,
             'TYPO3\\ClassAliasLoader\\' => 23,
             'TYPO3\\CMS\\Workspaces\\' => 21,
             'TYPO3\\CMS\\WizardSortpages\\' => 26,
@@ -103,6 +104,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         'Typoheads\\Formhandler\\' => 
         array (
             0 => __DIR__ . '/../..' . '/typo3conf/ext/formhandler/Classes',
+        ),
+        'TYPO3\\TtAddress\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/typo3conf/ext/tt_address/Classes',
         ),
         'TYPO3\\ClassAliasLoader\\' => 
         array (
@@ -384,6 +389,9 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
 
     public static $classMap = array (
         'Composer\\Autoload\\ClassMapGenerator' => __DIR__ . '/../..' . '/typo3_src/typo3/sysext/core/Resources/PHP/ClassMapGenerator.php',
+        'Evoweb\\Extender\\Exception\\FileNotFoundException' => __DIR__ . '/../..' . '/typo3conf/ext/extender/Classes/Exception/FileNotFoundException.php',
+        'Evoweb\\Extender\\Utility\\ClassCacheManager' => __DIR__ . '/../..' . '/typo3conf/ext/extender/Classes/Utility/ClassCacheManager.php',
+        'Evoweb\\Extender\\Utility\\ClassLoader' => __DIR__ . '/../..' . '/typo3conf/ext/extender/Classes/Utility/ClassLoader.php',
         'FoT3\\Jumpurl\\JumpUrlHandler' => __DIR__ . '/../..' . '/typo3conf/ext/jumpurl/Classes/JumpUrlHandler.php',
         'FoT3\\Jumpurl\\JumpUrlProcessor' => __DIR__ . '/../..' . '/typo3conf/ext/jumpurl/Classes/JumpUrlProcessor.php',
         'FoT3\\Jumpurl\\JumpUrlUtility' => __DIR__ . '/../..' . '/typo3conf/ext/jumpurl/Classes/JumpUrlUtility.php',

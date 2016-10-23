@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Typoheads\\Formhandler\\' => array($baseDir . '/typo3conf/ext/formhandler/Classes'),
+    'TYPO3\\TtAddress\\' => array($baseDir . '/typo3conf/ext/tt_address/Classes'),
     'TYPO3\\ClassAliasLoader\\' => array($vendorDir . '/typo3/class-alias-loader/src'),
     'TYPO3\\CMS\\Workspaces\\' => array($baseDir . '/typo3_src/typo3/sysext/workspaces/Classes'),
     'TYPO3\\CMS\\WizardSortpages\\' => array($baseDir . '/typo3_src/typo3/sysext/wizard_sortpages/Classes'),

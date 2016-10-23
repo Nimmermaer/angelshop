@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\Autoload\\ClassMapGenerator' => $baseDir . '/typo3_src/typo3/sysext/core/Resources/PHP/ClassMapGenerator.php',
+    'Evoweb\\Extender\\Exception\\FileNotFoundException' => $baseDir . '/typo3conf/ext/extender/Classes/Exception/FileNotFoundException.php',
+    'Evoweb\\Extender\\Utility\\ClassCacheManager' => $baseDir . '/typo3conf/ext/extender/Classes/Utility/ClassCacheManager.php',
+    'Evoweb\\Extender\\Utility\\ClassLoader' => $baseDir . '/typo3conf/ext/extender/Classes/Utility/ClassLoader.php',
     'FoT3\\Jumpurl\\JumpUrlHandler' => $baseDir . '/typo3conf/ext/jumpurl/Classes/JumpUrlHandler.php',
     'FoT3\\Jumpurl\\JumpUrlProcessor' => $baseDir . '/typo3conf/ext/jumpurl/Classes/JumpUrlProcessor.php',
     'FoT3\\Jumpurl\\JumpUrlUtility' => $baseDir . '/typo3conf/ext/jumpurl/Classes/JumpUrlUtility.php',

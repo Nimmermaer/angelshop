@@ -676,41 +676,6 @@
         ]
     },
     {
-        "name": "typo3-ter/vhs",
-        "version": "3.0.1",
-        "version_normalized": "3.0.1.0",
-        "dist": {
-            "type": "t3x",
-            "url": "https://typo3.org/extensions/repository/download/vhs/3.0.1/t3x/",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "php": ">= 5.5.0, <= 7.0.99",
-            "typo3/cms-core": ">= 7.6.0, <= 8.2.99"
-        },
-        "replace": {
-            "vhs": "self.version"
-        },
-        "time": "2016-07-29 00:45:18",
-        "type": "typo3-cms-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "FluidTYPO3\\Vhs\\": "Classes/"
-            }
-        },
-        "authors": [
-            {
-                "name": "FluidTYPO3 Team",
-                "email": "claus@namelesscoder.net",
-                "company": "",
-                "username": "fluidtypo3"
-            }
-        ],
-        "description": "A collection of ViewHelpers to perform rendering tasks which are not natively supported by Fluid - for example: advanced formatters, math calculators, specialized conditions and Iterator/Array calculators and processors"
-    },
-    {
         "name": "typo3/cms",
         "version": "7.6.11",
         "version_normalized": "7.6.11.0",
@@ -1302,5 +1267,120 @@
             "issues": "https://forge.typo3.org/projects/extension-direct_mail",
             "source": "https://github.com/kartolo/direct_mail/tree/5.1.0"
         }
+    },
+    {
+        "name": "friendsoftypo3/tt-address",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.typo3.org/TYPO3CMS/Extensions/tt_address.git",
+            "reference": "4458effd00789fe72812d34057cc28ce5f85e6bf"
+        },
+        "require": {
+            "typo3/cms-core": ">=6.2.2,<8.0"
+        },
+        "replace": {
+            "tt_address": "self.version",
+            "typo3-ter/tt-address": "self.version"
+        },
+        "time": "2016-02-12 09:32:00",
+        "type": "typo3-cms-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "TYPO3\\TtAddress\\": "Classes"
+            }
+        },
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "tt_address Development Team",
+                "role": "Developer"
+            }
+        ],
+        "description": "Displays a list of addresses from an address table on the page.",
+        "homepage": "https://forge.typo3.org/projects/extension-tt_address",
+        "keywords": [
+            "TYPO3",
+            "addresses",
+            "extension"
+        ]
+    },
+    {
+        "name": "typo3-ter/vhs",
+        "version": "3.1.0",
+        "version_normalized": "3.1.0.0",
+        "dist": {
+            "type": "t3x",
+            "url": "https://typo3.org/extensions/repository/download/vhs/3.1.0/t3x/",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "php": ">= 5.5.0, <= 7.0.99",
+            "typo3/cms-core": ">= 7.6.0, <= 8.4.99"
+        },
+        "replace": {
+            "vhs": "self.version"
+        },
+        "time": "2016-10-18 15:46:15",
+        "type": "typo3-cms-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "FluidTYPO3\\Vhs\\": "Classes/"
+            }
+        },
+        "authors": [
+            {
+                "name": "FluidTYPO3 Team",
+                "email": "claus@namelesscoder.net",
+                "company": "",
+                "username": "fluidtypo3"
+            }
+        ],
+        "description": "A collection of ViewHelpers to perform rendering tasks which are not natively supported by Fluid - for example: advanced formatters, math calculators, specialized conditions and Iterator/Array calculators and processors"
+    },
+    {
+        "name": "typo3-ter/extender",
+        "version": "6.3.1",
+        "version_normalized": "6.3.1.0",
+        "dist": {
+            "type": "t3x",
+            "url": "https://typo3.org/extensions/repository/download/extender/6.3.1/t3x/",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "typo3/cms-core": ">= 6.2.10, <= 7.9.99"
+        },
+        "replace": {
+            "extender": "self.version"
+        },
+        "time": "2015-10-31 16:29:07",
+        "type": "typo3-cms-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                ""
+            ],
+            "exclude-from-classmap": [
+                "Migrations",
+                "Tests",
+                "tests",
+                "class.ext_update.php"
+            ]
+        },
+        "authors": [
+            {
+                "name": "Sebastian Fischer",
+                "email": "typo3@evoweb.de",
+                "company": "evoweb",
+                "username": "sfischer"
+            }
+        ]
     }
 ]
