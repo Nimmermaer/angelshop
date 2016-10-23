@@ -44,7 +44,9 @@
     padding-bottom: 20px;
     padding-left: 20px;
     text-align: left;">
-                                <h3 style="    color: #606060 !important;
+
+                                <f:switch expression="{data.tx_angelshop_salutation}">
+                                    <f:case value="1"> <h3 style="    color: #606060 !important;
     display: block;
     font-family: Helvetica;
     font-size: 16px;
@@ -56,7 +58,34 @@
     margin-right: 0;
     margin-bottom: 10px;
     margin-left: 0;
-    text-align: left;">{data.header}</h3>
+    text-align: left;">Hallo ###USER_firstname###</h3></f:case>
+                                    <f:case value="2"> <h3 style="    color: #606060 !important;
+    display: block;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 100%;
+    letter-spacing: normal;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-left: 0;
+    text-align: left;">Sehr geehrte/r Frau/Herr ###USER_lastname###</h3></f:case>
+                                    <f:case default="TRUE"> <h3 style="    color: #606060 !important;
+    display: block;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 100%;
+    letter-spacing: normal;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-left: 0;
+    text-align: left;">{data.header}</h3></f:case>
+                                </f:switch>
                                 {data.bodytext->f:format.html()}
                             </td>
                         </tr>
