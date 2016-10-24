@@ -13,7 +13,11 @@ plugin.tx_angelshop {
         storagePid =
     }
     settings {
-        logoutNewsletter = 1050
+        address {
+            newsletterStoragePid = 1051
+        }
+        logoutNewsletter = 1049
+        newsletterThankYouPid = 1052
     }
 }
 

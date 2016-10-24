@@ -10,7 +10,12 @@ plugin {
             storagePid = {$plugin.tx_angelshop_gallery.persistence.storagePid}
         }
         settings {
-            loginNewsletter = 1049
+            address {
+                newsletterStoragePid = {$plugin.tx_angelshop.settings.address.newsletterStoragePid}
+            }
+            loginNewsletter = {$plugin.tx_angelshop.settings.loginNewsletter}
+            newsletterThankYouPid = {$plugin.tx_angelshop.settings.newsletterThankYouPid}
+
         }
     }
 
