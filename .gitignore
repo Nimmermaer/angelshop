@@ -15,3 +15,12 @@ typo3conf/node_modules
 /typo3conf/LocalConfiguration.php
 /typo3conf/ext/angelshop/Classes/Service
 /typo3conf/l10n/*
+/typo3conf/ext/direct_mail
+/typo3conf/ext/extender
+/typo3conf/ext/formhandler
+/typo3conf/ext/gridelements
+/typo3conf/ext/jumpurl
+/typo3conf/ext/realurl
+/typo3conf/ext/sourceopt
+/typo3conf/ext/tt_address
+/typo3conf/ext/vhs
