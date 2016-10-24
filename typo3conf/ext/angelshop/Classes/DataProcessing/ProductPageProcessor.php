@@ -45,7 +45,6 @@ class ProductPageProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ) {
-        DebuggerUtility::var_dump($processedData);
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
 
