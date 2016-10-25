@@ -1,6 +1,24 @@
-page.headerData {
-    23234243 = TEXT
-    23234243.value (
+config {
+    prefixLocalAnchors = all
+    doctype = xhtml_trans
+    xhtml_cleaning = all
+    language = de
+    locale_all = de_DE
+    htmlTag_langkey = de
+    inlineStyle2TempFile = 1
+    removeDefaultJS = 1
+    htmlTag_langKey = de
+}
+
+page {
+    includeCSS >
+    includeJSFooter >
+
+    headerData {
+        11 >
+        23 >
+        23234243 = TEXT
+        23234243.value (
    <style type="text/css">
 
         /* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
@@ -431,5 +449,6 @@ page.headerData {
             .footerContent a{display:block !important;} /* Place footer social and utility links on their own lines, for easier access */
         }
     </style>
-    )
+        )
+    }
 }
