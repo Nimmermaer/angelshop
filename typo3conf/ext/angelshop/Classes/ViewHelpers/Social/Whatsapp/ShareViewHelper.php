@@ -25,9 +25,9 @@ class ShareViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelpe
             return null;
         }
 
-        $uri = empty($this->arguments['shareurl']) ? \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL') : $this->arguments['shareurl'];
+        $uri       = empty( $this->arguments['shareurl'] ) ? \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL') : $this->arguments['shareurl'];
         $urlEncode = rawurlencode($uri);
-        $content = 'whatsapp://send?text=' . $text . " " . $urlEncode;
+        $content   = 'whatsapp://send?text=' . $text . " " . $urlEncode;
 
         return $content;
     }

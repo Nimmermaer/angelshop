@@ -69,7 +69,7 @@ class MetaTagViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBase
         // prepend current domain
         if ($forceAbsoluteUrl) {
             $path = $this->arguments['content'];
-            if (!GeneralUtility::isFirstPartOfStr($path, GeneralUtility::getIndpEnv('TYPO3_SITE_URL'))) {
+            if ( ! GeneralUtility::isFirstPartOfStr($path, GeneralUtility::getIndpEnv('TYPO3_SITE_URL'))) {
                 $this->tag->addAttribute('content',
                     rtrim(GeneralUtility::getIndpEnv('TYPO3_SITE_URL'), '/')
                     . '/'
@@ -78,7 +78,7 @@ class MetaTagViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBase
             }
         }
 
-        if ($useCurrentDomain || (isset($this->arguments['content']) && !empty($this->arguments['content']))) {
+        if ($useCurrentDomain || ( isset( $this->arguments['content'] ) && ! empty( $this->arguments['content'] ) )) {
             $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
             $pageRenderer->addMetaTag($this->tag->render());
         }

@@ -38,14 +38,14 @@ class TabRepository extends Repository
         $rawUids = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
             'uid_foreign',
             'tx_angelshop_trader_ttcontent_mm',
-            'uid_local =' . (int)$uid,
+            'uid_local =' . (int) $uid,
             '',
             '',
             '',
             'uid_foreign'
         );
-        $trader = array();
-        if (is_array($rawUids) && !empty($rawUids)) {
+        $trader  = array();
+        if (is_array($rawUids) && ! empty( $rawUids )) {
             // after we fetched the uid from the raw contact entries on db level,
             // we now fetch the whole extbase object for each uid (extbase does the validity check for us)
             $query = $this->createQuery();

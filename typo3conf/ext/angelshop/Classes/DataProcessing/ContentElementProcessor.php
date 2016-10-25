@@ -42,9 +42,9 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * @param ContentObjectRenderer $cObj
-     * @param array $contentObjectConfiguration
-     * @param array $processorConfiguration
-     * @param array $processedData
+     * @param array                 $contentObjectConfiguration
+     * @param array                 $processorConfiguration
+     * @param array                 $processedData
      *
      * @return array
      */
