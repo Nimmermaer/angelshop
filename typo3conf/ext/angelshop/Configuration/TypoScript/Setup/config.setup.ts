@@ -48,6 +48,7 @@ config {
     index_metatags = 1
 
     sourceopt {
+        removeGenerator =1
         enabled = 1
         enable_utf-8_support = 1
         headerComment = 1
