@@ -51,6 +51,7 @@ config {
         enabled = 1
         enable_utf-8_support = 1
         headerComment = 1
+        removeComments.keep.10 = /^TYPO3SEARCH_/usi
         formatHtml = 1
         headerComment (
 ><(((('> ><(((('> ><(((('>
