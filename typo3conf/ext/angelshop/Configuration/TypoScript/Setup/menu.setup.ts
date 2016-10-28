@@ -69,7 +69,7 @@ lib {
             noBlur = 1
             NO = 1
             NO {
-                wrapItemAndSub = <li>&#149;&nbsp;|&nbsp;&#149;</li>|*|<li>|&nbsp;&#149;</li>|*|<li class="last" >&nbsp;|</li>
+                wrapItemAndSub = <li>&#149;&nbsp;|&nbsp;&#149;&nbsp;</li>|*|<li>|&nbsp;&#149;&nbsp;</li>|*|<li class="last" >|</li>
                 wrapItemAndSub.insertData = 1
                 linkWrap = |
                 ATagBeforeWrap = 1
