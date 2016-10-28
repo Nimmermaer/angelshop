@@ -12,7 +12,8 @@ CREATE TABLE pages (
   ce_whatsapp_text   text,
   ce_whatsapp_button int(11) default '0' NOT NULL,
   ce_facebook_button int(11) default '0' NOT NULL,
-  ce_social_position int(11) default '0' NOT NULL
+  ce_social_position int(11) default '0' NOT NULL,
+  tx_angelshop_facebook_image int(11) default '0' NOT NULL
 );
 
 #

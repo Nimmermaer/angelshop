@@ -63,9 +63,19 @@ $pagesColumns = [
             'default' => 1
         ]
     ],
+
+    'tx_angelshop_facebook_image' => [
+        'exclude' => 0,
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:pages.tx_angelshop_facebook_image',
+        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'tx_angelshop_facebook_image',
+            ['maxitems' => 1],
+            $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+        ),
+    ],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $pagesColumns, 1);
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages',
-    '--div--;Soziale Netzwerke, ce_facebook_button, ce_whatsapp_button, ce_whatsapp_text', '', 'after:categories');
+    '--div--;Soziale Netzwerke,tx_angelshop_facebook_image, ce_facebook_button, ce_whatsapp_button, ce_whatsapp_text', '', 'after:categories');

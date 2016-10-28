@@ -13,9 +13,9 @@
 
 <n:metaTag property="og:url" content="" useCurrentDomain="1"/>
 <n:metaTag property="og:site_name" content="{settings.opengraph.site_name}"/>
-<f:if condition="{files}">
+<f:if condition="{facebook}">
     <f:then>
-        <f:for each="{files}" as="image" iteration="imageIterator">
+        <f:for each="{facebook}" as="image" iteration="imageIterator">
             <f:if condition="{imageIterator.isFirst}">
                 <n:metaTag
                         property="og:image"

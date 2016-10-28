@@ -7,6 +7,12 @@ lib.templates.base {
         100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
         100 {
             references.fieldName = media
+            as = files
+        }
+        120 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        120 {
+            references.fieldName = tx_angelshop_facebook_image
+            as = facebook
         }
     }
 
@@ -61,6 +67,7 @@ lib.templates.base {
             postal-code = 83410
             country-name = Deutschland
         }
+
         logoutNewsletter = {$plugin.tx_angelshop.settings.logoutNewsletter}
     }
 }
@@ -74,7 +81,7 @@ lib.templates.base.file.stdWrap.cObject {
     pagets__Default = TEXT
     pagets__Default.value = EXT:angelshop/Resources/Private/Templates/Page/Default.html
 
-    pagets__Newsletter= TEXT
+    pagets__Newsletter = TEXT
     pagets__Newsletter.value = EXT:angelshop/Resources/Private/Templates/Page/Newsletter.html
 
     pagets__Sidebar = TEXT
