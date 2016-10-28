@@ -28,7 +28,7 @@ lib {
             IFSUB.allWrap = <a class="dropdown-toggle" data-toggle="dropdown" href="#" >|<b class="caret"></b></a>
 
             ACTIFSUB = 1
-            ACTIFSUB.wrapItemAndSub = <li class="dropdown">|</li>
+            ACTIFSUB.wrapItemAndSub = <li class="active dropdown">|</li>
             ACTIFSUB.doNotLinkIt = 1
             ACTIFSUB.allWrap = <a class="dropdown-toggle" data-toggle="dropdown" href="#" >|<b class="caret"></b></a>
         }
