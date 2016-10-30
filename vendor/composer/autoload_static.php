@@ -82,6 +82,7 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         ),
         'M' => 
         array (
+            'Metaseo\\Metaseo\\' => 16,
             'MB\\Angelshop\\' => 13,
         ),
         'H' => 
@@ -336,6 +337,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Metaseo\\Metaseo\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/typo3conf/ext/metaseo/Classes',
         ),
         'MB\\Angelshop\\' => 
         array (

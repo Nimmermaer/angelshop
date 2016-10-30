@@ -50,7 +50,7 @@ lib.templates.base {
         copyright {
             data = date:U
             strftime = %Y
-            wrap = &copy; &nbsp; | &nbsp; Aba-Angelshop 
+            wrap = &copy; &nbsp; | &nbsp; Aba-Angelshop
         }
     }
 
