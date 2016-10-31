@@ -314,6 +314,12 @@ return [
             'packagePath' => 'typo3conf/ext/extender/',
             'suggestions' => [],
         ],
+        'metaseo' => [
+            'composerName' => 'mblaschke/metaseo',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/metaseo/',
+            'suggestions' => [],
+        ],
         'realurl' => [
             'composerName' => 'dmitryd/typo3-realurl',
             'state' => 'active',
@@ -372,12 +378,6 @@ return [
             'composerName' => 'typo3/cms-linkvalidator',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/linkvalidator/',
-            'suggestions' => [],
-        ],
-        'metaseo' => [
-            'composerName' => 'mblaschke/metaseo',
-            'state' => 'inactive',
-            'packagePath' => 'typo3conf/ext/metaseo/',
             'suggestions' => [],
         ],
         'opendocs' => [
