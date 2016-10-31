@@ -50,7 +50,10 @@ lib {
                     20.field = subtitle
                 }
             }
-
+            ACT < .NO
+            ACT {
+                allWrap = <li class="active"> | </li>
+            }
             wrap = <ul class="dropdown-menu">|</ul>
         }
     }
