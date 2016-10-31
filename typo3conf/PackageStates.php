@@ -374,6 +374,12 @@ return [
             'packagePath' => 'typo3/sysext/linkvalidator/',
             'suggestions' => [],
         ],
+        'metaseo' => [
+            'composerName' => 'mblaschke/metaseo',
+            'state' => 'inactive',
+            'packagePath' => 'typo3conf/ext/metaseo/',
+            'suggestions' => [],
+        ],
         'opendocs' => [
             'composerName' => 'typo3/cms-opendocs',
             'state' => 'inactive',
