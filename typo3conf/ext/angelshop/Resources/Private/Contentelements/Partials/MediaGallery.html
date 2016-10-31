@@ -84,7 +84,7 @@
 </f:section>
 
 <f:section name="videoType">
-    <f:render section="media" arguments="{_all}"/>
+    <f:render section="mediaVideo" arguments="{_all}"/>
 </f:section>
 
 <f:section name="media">
@@ -121,4 +121,18 @@
                 />
     </a>
 </f:section>
+
+<f:section name="mediaVideo">
+    <div class="embed-responsive embed-responsive-16by9">
+        <f:media
+                class="embed-responsive-item"
+                file="{column.media}"
+                width="{column.dimensions.width}"
+                height="{column.dimensions.height}"
+                alt="{column.media.alternative}"
+                title="{column.media.title}"
+                />
+    </div>
+ </f:section>
+
 </html>
