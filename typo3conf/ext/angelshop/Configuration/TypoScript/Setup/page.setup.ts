@@ -96,7 +96,6 @@ page {
             	<meta name="google-site-verification" content="AOQ3Y0Tr2YEGxArXS_0qu7T_LHJt5d0sv2KIWlhAZZ4" />
             )
         }
-        990 < temp.canonical
     }
 }
 
