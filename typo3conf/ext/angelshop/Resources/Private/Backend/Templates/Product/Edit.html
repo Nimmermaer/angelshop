@@ -1,0 +1,19 @@
+<f:layout name="Default"/>
+<f:section name="content">
+    <f:form object="{product}" objectName="content" action="update">
+        <label for="tx_angelshop_web_angelshopproductlist[content][header]">Titel</label><br/>
+        <f:form.textfield
+                property="header" size="50"/>
+        <br/>
+        <label for="tx_angelshop_web_angelshopproductlist[content][bodytext]">Beschreibung</label><br/>
+        <f:form.textarea
+                property="bodytext" rows="15" cols="40"/>
+        <br/>
+        <label for="tx_angelshop_web_angelshopproductlist[content][stock]">Auf Lager</label><br/>
+        <f:form.checkbox property="stock" value="0"/><br/>
+        <f:form.submit value="Save"/>
+    </f:form>
+
+    <f:link.action action="list">Zurück</f:link.action>
+    <br/>
+</f:section>

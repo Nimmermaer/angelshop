@@ -1,0 +1,38 @@
+<f:layout name="Default"/>
+<f:section name="content">
+    <f:widget.autocomplete objects="{products}" for="foo" searchProperty="header">
+        <!-- tag content - may be ignored! -->
+    </f:widget.autocomplete>
+    <f:be.widget.paginate objects="{products}" as="paginatedProducts" configuration="{insertAbove:'true'}">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Uid</th>
+                <th>Bild</th>
+                <th>Titel</th>
+                <th>bodytext</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <f:for each="{paginatedProducts}" as="product">
+
+                <tr>
+                    <th >{product.uid}</th>
+                    <td><f:for each="{product.image}" as="image" iteration="imageIterator">
+                        <f:if condition="{imageIterator.isFirst}">
+                            <f:image src="{image.uid}" maxWidth="50" />
+                        </f:if>
+
+                    </f:for>
+                     </td>
+                    <td>{product.header}</td>
+                    <td><f:format.raw>{product.bodytext->f:format.crop(maxCharacters:'150')}</f:format.raw></td>
+                    <td><f:link.action action="edit" arguments="{product : '{product.uid}'}" class=""><button>Bearbeiten</button></f:link.action></td>
+                </tr>
+
+            </f:for>
+            </tbody>
+        </table>
+    </f:be.widget.paginate>
+</f:section>

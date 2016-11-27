@@ -31,6 +31,28 @@ $boot = function ($extensionKey) {
         'Fullwidthvideo',
         'Video'
     );
+    if (TYPO3_MODE === 'BE') {
+
+        /**
+         * Registers a Backend Module
+         */
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+            'MB.' . $extensionKey,
+            'web',	 // Make module a submodule of 'tools'
+            'Productlist',	// Submodule key
+            '',						// Position
+            array(
+                'Product' => 'list, edit, update',
+
+            ),
+            array(
+                'access' => 'user,group',
+                'icon'   => 'EXT:' . $extensionKey . '/ext_icon.gif',
+                'labels' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf',
+            )
+        );
+
+    }
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript',
         'angelshop');

@@ -81,7 +81,7 @@ lib {
 
             ACT < .NO
             ACT {
-                wrapItemAndSub = <li class="active " > | &nbsp;&#149;  </li>|*|<li class="active" >|&nbsp;&#149; </li>|*|<li class="active last" >&nbsp;| </li>
+                wrapItemAndSub = <li class="active" > | &nbsp;&#149;&nbsp;</li>|*|<li class="active" >|&nbsp;&#149;&nbsp;</li>|*|<li class="active last" >&nbsp;| </li>
             }
         }
     }

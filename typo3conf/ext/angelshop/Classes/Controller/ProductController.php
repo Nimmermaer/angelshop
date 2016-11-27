@@ -39,11 +39,40 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function listAction()
     {
-
         $products = $this->contentRepository->findByContentType('ce_product');
         $this->view->assignMultiple(array(
                 'products' => $products
             )
         );
+    }
+
+    /**
+     *
+     */
+    public function editAction() {
+        var_dump($this->request->getArguments());
+        $product = '';
+        $arguments = $this->request->getArguments('tx_angelshop_web_angelshopproductlist');
+
+        if((int)$arguments['product']) {
+            $product = $this->contentRepository->findByUid((int)$arguments['product']);
+        }
+        $this->view->assignMultiple(array(
+                'product' => $product
+            )
+        );
+    }
+
+    /**
+     * @param \MB\Angelshop\Domain\Model\Content $content
+     *
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException
+     */
+    public function updateAction(\MB\Angelshop\Domain\Model\Content $content)
+    {
+        $this->addFlashMessage('Das Produkt mit dem Title: '.$content->getHeader().' wurde aktualisiert!', 'Produktaktualisierung', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+        $this->contentRepository->update($content);
+        $this->redirect('list');
     }
 }
