@@ -1,76 +1,85 @@
-<header id="AngelshopCarousel-{data.uid}" class="carousel" >
-    <div class="full-width-slider">
-        <f:for each="{files}" as="file" iteration="fileIterator">
-            <div class="fill" title="{file.title}"
-                 style="background-image:url('{f:uri.image(src:'{file.uid}', treatIdAsReference:1,width:1900px)}');"></div>
+{namespace n=MB\Angelshop\ViewHelpers}
+    <header id="AngelshopCarousel-{data.uid}" class="carousel">
+        <div class="full-width-slider">
+            <f:for each="{files}" as="file" iteration="fileIterator">
+                <div class="fill" title="{file.title}"
+                     style="background-image:url('{f:uri.image(src:'{file.uid}', treatIdAsReference:1,width:1900px)}');">
 
-        </f:for>
-    </div>
-
-</header>
+                </div>
+            </f:for>
+        </div>
+        <div class="col-md-6 weather visible-xs">
+            <h2>Abtsdorfer See</h2>
+            <f:for each="{weather:'{n:weather(address:\'Abtsdorfer See, Saaldorf-Surheim\')}'}" as="weatherItem">
+                <span class="description">{weatherItem.weather.0.description}</span>
+                <span class="wind">Wind: {weatherItem.wind.speed} m/sec</span>
+                <span class="temp">{weatherItem.main.temp}&deg;</span>
+            </f:for>
+        </div>
+   </header>
 
 
 
 <f:comment>
 
-<header id="AngelshopCarousel-{data.uid}" class="carousel slide">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <f:for each="{files}" as="file" iteration="fileIterator">
-            <f:if condition="{fileIterator.isFirst}">
-                <f:else>
-                    <li data-target="#AngelshopCarousel-{data.uid}" data-slide-to="{fileIterator.index}"></li>
-                </f:else>
-                <f:then>
-                    <li data-target="#AngelshopCarousel-{data.uid}" data-slide-to="{fileIterator.index}"
-                        class="active"></li>
-                </f:then>
-            </f:if>
+    <header id="AngelshopCarousel-{data.uid}" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <f:for each="{files}" as="file" iteration="fileIterator">
+                <f:if condition="{fileIterator.isFirst}">
+                    <f:else>
+                        <li data-target="#AngelshopCarousel-{data.uid}" data-slide-to="{fileIterator.index}"></li>
+                    </f:else>
+                    <f:then>
+                        <li data-target="#AngelshopCarousel-{data.uid}" data-slide-to="{fileIterator.index}"
+                            class="active"></li>
+                    </f:then>
+                </f:if>
 
-        </f:for>
+            </f:for>
 
-    </ol>
+        </ol>
 
-    <!-- Wrapper for slides -->
+        <!-- Wrapper for slides -->
 
-    <div class="carousel-inner">
-        <f:for each="{files}" as="item" iteration="itemIterator">
-            <f:if condition="{itemIterator.isFirst}">
-                <f:then>
-                    <div class="item active">
-                        <div class="fill" title="{item.title}"
-                             style="background-image:url('{f:uri.image(src:'{item.uid}', treatIdAsReference:1,width:1900px)}');"></div>
-                        <f:if condition="{item.description}">
-                            <div class="carousel-caption">
-                                <h2>{item.description}</h2>
-                            </div>
-                        </f:if>
-                    </div>
-                </f:then>
-                <f:else>
-                    <div class="item">
-                        <div class="fill" title="{item.title}"
-                             style="background-image:url('{f:uri.image(src:'{item.uid}', treatIdAsReference:1, width:1900px)}');"></div>
-                        <f:if condition="{item.description}">
-                            <div class="carousel-caption">
-                                <h2>{item.description}</h2>
-                            </div>
-                        </f:if>
-                    </div>
-                </f:else>
-            </f:if>
+        <div class="carousel-inner">
+            <f:for each="{files}" as="item" iteration="itemIterator">
+                <f:if condition="{itemIterator.isFirst}">
+                    <f:then>
+                        <div class="item active">
+                            <div class="fill" title="{item.title}"
+                                 style="background-image:url('{f:uri.image(src:'{item.uid}', treatIdAsReference:1,width:1900px)}');"></div>
+                            <f:if condition="{item.description}">
+                                <div class="carousel-caption">
+                                    <h2>{item.description}</h2>
+                                </div>
+                            </f:if>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div class="item">
+                            <div class="fill" title="{item.title}"
+                                 style="background-image:url('{f:uri.image(src:'{item.uid}', treatIdAsReference:1, width:1900px)}');"></div>
+                            <f:if condition="{item.description}">
+                                <div class="carousel-caption">
+                                    <h2>{item.description}</h2>
+                                </div>
+                            </f:if>
+                        </div>
+                    </f:else>
+                </f:if>
 
-        </f:for>
-    </div>
+            </f:for>
+        </div>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#AngelshopCarousel-{data.uid}" data-slide="prev">
-        <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#AngelshopCarousel-{data.uid}" data-slide="next">
-        <span class="icon-next"></span>
-    </a>
-</header>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#AngelshopCarousel-{data.uid}" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#AngelshopCarousel-{data.uid}" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
 
 
 </f:comment>

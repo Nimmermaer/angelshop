@@ -16,6 +16,7 @@ plugin.tx_angelshop {
         address {
             newsletterStoragePid = 1051
         }
+        openweathermapApi = 9e31371905782f75d67d42ff929d711e
         logoutNewsletter = 1049
         newsletterThankYouPid = 1052
     }

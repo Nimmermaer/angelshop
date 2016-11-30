@@ -15,6 +15,8 @@ lib.fluidContent {
     settings {
         defaultHeaderType = {$styles.content.defaultHeaderType}
         offerPid = {$global.page.offerPid}
+        openweathermapApi = {$plugin.tx_angelshop.settings.openweathermapApi}
+
     }
 }
 
