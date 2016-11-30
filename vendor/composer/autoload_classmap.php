@@ -39,6 +39,8 @@ return array(
     'Net_URL2' => $vendorDir . '/pear/net_url2/Net/URL2.php',
     'RemoveXSS' => $baseDir . '/typo3_src/typo3/sysext/core/Resources/PHP/RemoveXSS.php',
     'TCPDF' => $baseDir . '/typo3conf/ext/formhandler/Resources/PHP/tcpdf/tcpdf.php',
+    'TYPO3Fluid\\Fluid\\Core\\ViewHelper\\Traits\\CompileWithContentArgumentAndRenderStatic' => $baseDir . '/typo3_src/typo3/sysext/fluid/Resources/PHP/Traits/CompileWithContentArgumentAndRenderStatic.php',
+    'TYPO3Fluid\\Fluid\\Core\\ViewHelper\\Traits\\CompileWithRenderStatic' => $baseDir . '/typo3_src/typo3/sysext/fluid/Resources/PHP/Traits/CompileWithRenderStatic.php',
     'idna_convert' => $vendorDir . '/mso/idna-convert/idna_convert.class.php',
     'uctc' => $vendorDir . '/mso/idna-convert/uctc.php',
 );

@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
 {
     public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '36b1231e1ea912ee05f8f4f652a17ca9' => __DIR__ . '/../..' . '/typo3_src/typo3/sysext/core/Resources/PHP/GlobalDebugFunctions.php',
     );
@@ -71,6 +72,7 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
@@ -318,6 +320,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         array (
             0 => __DIR__ . '/../..' . '/typo3_src/typo3/sysext/about/Classes',
         ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
@@ -426,6 +432,8 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         'Net_URL2' => __DIR__ . '/..' . '/pear/net_url2/Net/URL2.php',
         'RemoveXSS' => __DIR__ . '/../..' . '/typo3_src/typo3/sysext/core/Resources/PHP/RemoveXSS.php',
         'TCPDF' => __DIR__ . '/../..' . '/typo3conf/ext/formhandler/Resources/PHP/tcpdf/tcpdf.php',
+        'TYPO3Fluid\\Fluid\\Core\\ViewHelper\\Traits\\CompileWithContentArgumentAndRenderStatic' => __DIR__ . '/../..' . '/typo3_src/typo3/sysext/fluid/Resources/PHP/Traits/CompileWithContentArgumentAndRenderStatic.php',
+        'TYPO3Fluid\\Fluid\\Core\\ViewHelper\\Traits\\CompileWithRenderStatic' => __DIR__ . '/../..' . '/typo3_src/typo3/sysext/fluid/Resources/PHP/Traits/CompileWithRenderStatic.php',
         'idna_convert' => __DIR__ . '/..' . '/mso/idna-convert/idna_convert.class.php',
         'uctc' => __DIR__ . '/..' . '/mso/idna-convert/uctc.php',
     );

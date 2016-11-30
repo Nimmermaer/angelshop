@@ -13,7 +13,7 @@
  * @category  HTTP
  * @package   HTTP_Request2
  * @author    Alexey Borzov <avb@php.net>
- * @copyright 2008-2014 Alexey Borzov <avb@php.net>
+ * @copyright 2008-2016 Alexey Borzov <avb@php.net>
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause License
  * @link      http://pear.php.net/package/HTTP_Request2
  */
@@ -154,6 +154,38 @@ class HTTP_Request2_Adapter_SocketTest extends HTTP_Request2_Adapter_CommonNetwo
 
         $response = $this->request->send();
         $this->assertContains('upload bug_15305 application/octet-stream 16338', $response->getBody());
+    }
+
+    /**
+     * Socket adapter should not throw an exception (invalid chunk length '')
+     * if a buggy server doesn't send last zero-length chunk when using chunked encoding
+     *
+     * @link http://pear.php.net/bugs/bug.php?id=20228
+     */
+    public function testBug20228()
+    {
+        $events = array('receivedBodyPart', 'warning', 'receivedBody');
+        $this->request->setHeader('Accept-Encoding', 'identity')
+            ->attach($observer = new EventSequenceObserver($events));
+        $response = $this->request->send();
+        $this->assertEquals('This is a test', $response->getBody());
+        $this->assertEquals($events, $observer->sequence);
+    }
+
+    public function testHowsMySSL()
+    {
+        $this->request->setUrl('https://www.howsmyssl.com/a/check')
+            ->setConfig('ssl_verify_peer', false);
+
+        if (null === ($responseData = json_decode($this->request->send()->getBody(), true))) {
+            $this->fail('Cannot decode JSON from howsmyssl.com response');
+        }
+
+        $this->assertEmpty($responseData['insecure_cipher_suites']);
+
+        if (version_compare(phpversion(), '5.6', '>=')) {
+            $this->assertEquals('Probably Okay', $responseData['rating']);
+        }
     }
 }
 ?>

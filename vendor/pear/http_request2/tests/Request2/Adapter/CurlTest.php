@@ -13,7 +13,7 @@
  * @category  HTTP
  * @package   HTTP_Request2
  * @author    Alexey Borzov <avb@php.net>
- * @copyright 2008-2014 Alexey Borzov <avb@php.net>
+ * @copyright 2008-2016 Alexey Borzov <avb@php.net>
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause License
  * @link      http://pear.php.net/package/HTTP_Request2
  */
@@ -21,7 +21,21 @@
 /** Tests for HTTP_Request2 package that require a working webserver */
 require_once dirname(__FILE__) . '/CommonNetworkTest.php';
 
-/** Adapter for HTTP_Request2 wrapping around cURL extension */
+class UploadSizeObserver implements SplObserver
+{
+    public $size;
+
+    public function update(SplSubject $subject)
+    {
+        /* @var $subject HTTP_Request2 */
+        $event = $subject->getLastEvent();
+
+        if ('sentBody' == $event['name']) {
+            $this->size = $event['data'];
+        }
+    }
+
+}
 
 /**
  * Unit test for Curl Adapter of HTTP_Request2
@@ -58,6 +72,8 @@ class HTTP_Request2_Adapter_CurlTest extends HTTP_Request2_Adapter_CommonNetwork
     {
         if ($this->isRedirectSupportDisabled()) {
             $this->markTestSkipped('Redirect support in cURL is disabled by safe_mode or open_basedir setting');
+        } elseif (version_compare(phpversion(), '5.3.2', '<')) {
+            $this->markTestSkipped('CURLOPT_POSTREDIR required for strict redirects, available in PHP 5.3.2+');
         } else {
             parent::testRedirectsStrict();
         }
@@ -114,6 +130,50 @@ class HTTP_Request2_Adapter_CurlTest extends HTTP_Request2_Adapter_CommonNetwork
 
         } catch (HTTP_Request2_LogicException $e) {
             $this->assertEquals(HTTP_Request2_Exception::MISCONFIGURATION, $e->getCode());
+        }
+    }
+
+    public function testBug20440()
+    {
+        $this->request->setUrl($this->baseUrl . 'rawpostdata.php')
+            ->setMethod(HTTP_Request2::METHOD_PUT)
+            ->setHeader('Expect', '')
+            ->setBody('This is a test');
+
+        $noredirects = clone $this->request;
+        $noredirects->setConfig('follow_redirects', false)
+            ->attach($observer = new UploadSizeObserver());
+        $noredirects->send();
+        // Curl sends body with Transfer-encoding: chunked, so size can be larger
+        $this->assertGreaterThanOrEqual(14, $observer->size);
+
+        $redirects = clone $this->request;
+        $redirects->setConfig('follow_redirects', true)
+            ->attach($observer = new UploadSizeObserver());
+        $redirects->send();
+        $this->assertGreaterThanOrEqual(14, $observer->size);
+    }
+
+    /**
+     * An URL performing a redirect was used for storing cookies in a jar rather than target URL
+     *
+     * @link http://pear.php.net/bugs/bug.php?id=20561
+     */
+    public function testBug20561()
+    {
+        if ($this->isRedirectSupportDisabled()) {
+            $this->markTestSkipped('Redirect support in cURL is disabled by safe_mode or open_basedir setting');
+
+        } else {
+            $this->request->setUrl($this->baseUrl . 'redirects.php?special=youtube')
+                          ->setConfig(array(
+                                'follow_redirects' => true,
+                                'ssl_verify_peer'  => false
+                          ))
+                          ->setCookieJar(true);
+
+            $this->request->send();
+            $this->assertGreaterThan(0, count($this->request->getCookieJar()->getAll()));
         }
     }
 }

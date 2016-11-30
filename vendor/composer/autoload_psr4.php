@@ -60,6 +60,7 @@ return array(
     'TYPO3\\CMS\\Backend\\' => array($baseDir . '/typo3_src/typo3/sysext/backend/Classes'),
     'TYPO3\\CMS\\Aboutmodules\\' => array($baseDir . '/typo3_src/typo3/sysext/aboutmodules/Classes'),
     'TYPO3\\CMS\\About\\' => array($baseDir . '/typo3_src/typo3/sysext/about/Classes'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),

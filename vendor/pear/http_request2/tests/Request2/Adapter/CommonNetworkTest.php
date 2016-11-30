@@ -13,7 +13,7 @@
  * @category  HTTP
  * @package   HTTP_Request2
  * @author    Alexey Borzov <avb@php.net>
- * @copyright 2008-2014 Alexey Borzov <avb@php.net>
+ * @copyright 2008-2016 Alexey Borzov <avb@php.net>
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause License
  * @link      http://pear.php.net/package/HTTP_Request2
  */
@@ -25,6 +25,8 @@ require_once dirname(dirname(dirname(__FILE__))) . '/TestHelper.php';
 require_once 'HTTP/Request2.php';
 /** Class for building multipart/form-data request body */
 require_once 'HTTP/Request2/MultipartBody.php';
+/** An observer that saves response body to stream, possibly uncompressing it */
+require_once 'HTTP/Request2/Observer/UncompressingDownload.php';
 
 class SlowpokeBody extends HTTP_Request2_MultipartBody
 {
@@ -52,6 +54,7 @@ class HeaderObserver implements SplObserver
 
     public function update(SplSubject $subject)
     {
+        /* @var $subject HTTP_Request2 */
         $event = $subject->getLastEvent();
 
         // force a timeout when writing request body
@@ -60,6 +63,33 @@ class HeaderObserver implements SplObserver
         }
     }
 }
+
+class EventSequenceObserver implements SplObserver
+{
+    private $_watched = array();
+
+    public $sequence = array();
+
+    public function __construct(array $watchedEvents = array())
+    {
+        if (!empty($watchedEvents)) {
+            $this->_watched = $watchedEvents;
+        }
+    }
+
+    public function update(SplSubject $subject)
+    {
+        /* @var $subject HTTP_Request2 */
+        $event = $subject->getLastEvent();
+
+        if ($event['name'] !== end($this->sequence)
+            && (empty($this->_watched) || in_array($event['name'], $this->_watched, true))
+        ) {
+            $this->sequence[] = $event['name'];
+        }
+    }
+}
+
 
 /**
  * Tests for HTTP_Request2 package that require a working webserver
@@ -139,12 +169,19 @@ abstract class HTTP_Request2_Adapter_CommonNetworkTest extends PHPUnit_Framework
             'foo' => 'some value',
             'indexed' => array('first', 'second')
         );
+        $events = array(
+            'sentHeaders', 'sentBodyPart', 'sentBody', 'receivedHeaders', 'receivedBodyPart', 'receivedBody'
+        );
+        $observer = new EventSequenceObserver($events);
 
         $this->request->setMethod(HTTP_Request2::METHOD_POST)
-                      ->addPostParameter($data);
+                      ->setHeader('Accept-Encoding', 'identity')
+                      ->addPostParameter($data)
+                      ->attach($observer);
 
         $response = $this->request->send();
         $this->assertEquals(serialize($data), $response->getBody());
+        $this->assertEquals($events, $observer->sequence);
     }
 
     public function testUploads()
@@ -234,10 +271,16 @@ abstract class HTTP_Request2_Adapter_CommonNetworkTest extends PHPUnit_Framework
             'pass' => 'qwerty'
         ));
         $wrong = clone $this->request;
+        $observer = new EventSequenceObserver(array('sentHeaders', 'receivedHeaders'));
 
-        $this->request->setAuth('luser', 'qwerty', HTTP_Request2::AUTH_DIGEST);
+        $this->request->setAuth('luser', 'qwerty', HTTP_Request2::AUTH_DIGEST)
+            ->attach($observer);
         $response = $this->request->send();
         $this->assertEquals(200, $response->getStatus());
+        $this->assertEquals(
+            array('sentHeaders', 'receivedHeaders', 'sentHeaders', 'receivedHeaders'),
+            $observer->sequence
+        );
 
         $wrong->setAuth('luser', 'password', HTTP_Request2::AUTH_DIGEST);
         $response = $wrong->send();
@@ -246,27 +289,40 @@ abstract class HTTP_Request2_Adapter_CommonNetworkTest extends PHPUnit_Framework
 
     public function testRedirectsDefault()
     {
+        $observer = new EventSequenceObserver(array('sentHeaders', 'sentBodyPart', 'sentBody', 'receivedHeaders'));
         $this->request->setUrl($this->baseUrl . 'redirects.php')
                       ->setConfig(array('follow_redirects' => true, 'strict_redirects' => false))
                       ->setMethod(HTTP_Request2::METHOD_POST)
-                      ->addPostParameter('foo', 'foo value');
+                      ->addPostParameter('foo', 'foo value')
+                      ->attach($observer);
 
         $response = $this->request->send();
         $this->assertContains('Method=GET', $response->getBody());
         $this->assertNotContains('foo', $response->getBody());
         $this->assertEquals($this->baseUrl . 'redirects.php?redirects=0', $response->getEffectiveUrl());
+        $this->assertEquals(
+            array('sentHeaders', 'sentBodyPart', 'sentBody', 'receivedHeaders', 'sentHeaders', 'receivedHeaders'),
+            $observer->sequence
+        );
     }
 
     public function testRedirectsStrict()
     {
+        $observer = new EventSequenceObserver(array('sentHeaders', 'sentBodyPart', 'sentBody', 'receivedHeaders'));
         $this->request->setUrl($this->baseUrl . 'redirects.php')
                       ->setConfig(array('follow_redirects' => true, 'strict_redirects' => true))
                       ->setMethod(HTTP_Request2::METHOD_POST)
-                      ->addPostParameter('foo', 'foo value');
+                      ->addPostParameter('foo', 'foo value')
+                      ->attach($observer);
 
         $response = $this->request->send();
         $this->assertContains('Method=POST', $response->getBody());
         $this->assertContains('foo', $response->getBody());
+        $this->assertEquals(
+            array('sentHeaders', 'sentBodyPart', 'sentBody', 'receivedHeaders',
+                  'sentHeaders', 'sentBodyPart', 'sentBody', 'receivedHeaders'),
+            $observer->sequence
+        );
     }
 
     public function testRedirectsLimit()
@@ -382,6 +438,75 @@ abstract class HTTP_Request2_Adapter_CommonNetworkTest extends PHPUnit_Framework
         $response = $this->request->send();
         $this->assertNotContains('Expect:', $observer->headers);
         $this->assertContains('upload bug_15305 application/octet-stream 16338', $response->getBody());
+    }
+
+    public function testDownloadObserverWithPlainBody()
+    {
+        $fp       = fopen('php://memory', 'r+');
+        $observer = new HTTP_Request2_Observer_UncompressingDownload($fp);
+
+        $this->request->setConfig('store_body', false)
+                      ->setUrl($this->baseUrl . 'download.php')
+                      ->attach($observer);
+
+        $this->request->send();
+        rewind($fp);
+        $this->assertEquals(str_repeat('0123456789abcdef', 128), fread($fp, 8192));
+    }
+
+    public function testDownloadObserverWithGzippedBody()
+    {
+        $fp       = fopen('php://memory', 'r+');
+        $observer = new HTTP_Request2_Observer_UncompressingDownload($fp);
+
+        $this->request->setConfig('store_body', false)
+                      ->attach($observer);
+
+        $normal = clone $this->request;
+        $normal->setUrl($this->baseUrl . 'download.php?gzip')
+               ->send();
+
+        $slow = clone $this->request;
+        $slow->setUrl($this->baseUrl . 'download.php?gzip&slowpoke')
+             ->send();
+
+        rewind($fp);
+        $this->assertEquals(str_repeat('0123456789abcdef', 256), fread($fp, 8192));
+    }
+
+    /**
+     * @expectedException HTTP_Request2_MessageException
+     * @expectedExceptionMessage Body length limit
+     */
+    public function testDownloadObserverEnforcesSizeLimit()
+    {
+        $fp       = fopen('php://memory', 'r+');
+        $observer = new HTTP_Request2_Observer_UncompressingDownload($fp, 1000);
+
+        $this->request->setConfig('store_body', false)
+                      ->setUrl($this->baseUrl . 'download.php?gzip')
+                      ->attach($observer);
+
+        $this->request->send();
+    }
+
+    public function testIncompleteBody()
+    {
+        $events = array('receivedBodyPart', 'warning', 'receivedBody');
+        $this->request->setHeader('Accept-Encoding', 'identity');
+
+        $plain = clone $this->request;
+        $plain->attach($observer = new EventSequenceObserver($events));
+        $response = $plain->send();
+        $this->assertEquals('This is a test', $response->getBody());
+        $this->assertEquals($events, $observer->sequence);
+
+        $chunked = clone $this->request;
+        $chunked->getUrl()->setQueryVariable('chunked', 'yep');
+        $chunked->attach($observer = new EventSequenceObserver($events));
+        $response = $chunked->send();
+        $this->assertEquals('This is a test', $response->getBody());
+        $this->assertEquals($events, $observer->sequence);
     }
 }
 ?>

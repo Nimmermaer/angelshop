@@ -7,6 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     $vendorDir . '/pear/pear_exception',
-    $baseDir . '/typo3_src/vendor/pear/http_request2',
-    $baseDir . '/typo3_src/vendor/pear/net_url2',
+    $vendorDir . '/pear/http_request2',
 );

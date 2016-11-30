@@ -13,7 +13,7 @@
  * @category  HTTP
  * @package   HTTP_Request2
  * @author    Alexey Borzov <avb@php.net>
- * @copyright 2008-2014 Alexey Borzov <avb@php.net>
+ * @copyright 2008-2016 Alexey Borzov <avb@php.net>
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause License
  * @link      http://pear.php.net/package/HTTP_Request2
  */
@@ -78,6 +78,6 @@ if (!$validAuth || empty($_SERVER['PHP_AUTH_DIGEST'])) {
            '",qop="auth",nonce="' . uniqid() . '"', true, 401);
     echo "Login required";
 } else {
-    echo "Username={$user}";
+    echo "Username={$data['username']}";
 }
 ?>

@@ -13,7 +13,7 @@
  * @category  HTTP
  * @package   HTTP_Request2
  * @author    Alexey Borzov <avb@php.net>
- * @copyright 2008-2014 Alexey Borzov <avb@php.net>
+ * @copyright 2008-2016 Alexey Borzov <avb@php.net>
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause License
  * @link      http://pear.php.net/package/HTTP_Request2
  */
@@ -22,6 +22,8 @@
 require_once dirname(dirname(__FILE__)) . '/TestHelper.php';
 /** Stores cookies and passes them between HTTP requests */
 require_once 'HTTP/Request2/CookieJar.php';
+/** Mock adapter intended for testing */
+require_once 'HTTP/Request2/Adapter/Mock.php';
 
 /**
  * Unit test for HTTP_Request2_CookieJar class
@@ -49,6 +51,37 @@ class HTTP_Request2_CookieJarTest extends PHPUnit_Framework_TestCase
     {
         $this->jar->store($cookie);
     }
+
+    /**
+     * Per feature requests, allow to ignore invalid cookies rather than throw exceptions
+     *
+     * @link http://pear.php.net/bugs/bug.php?id=19937
+     * @link http://pear.php.net/bugs/bug.php?id=20401
+     * @dataProvider invalidCookieProvider
+     */
+    public function testCanIgnoreInvalidCookies($cookie)
+    {
+        $this->jar->ignoreInvalidCookies(true);
+        $this->assertFalse($this->jar->store($cookie));
+    }
+
+    /**
+     * Ignore setting a cookie from "parallel" subdomain when relevant option is on
+     *
+     * @link http://pear.php.net/bugs/bug.php?id=20401
+     */
+    public function testRequest20401()
+    {
+        $this->jar->ignoreInvalidCookies(true);
+        $response = HTTP_Request2_Adapter_Mock::createResponseFromFile(
+            fopen(dirname(dirname(__FILE__)) . '/_files/response_cookies', 'rb')
+        );
+        $setter   = new Net_URL2('http://pecl.php.net/');
+
+        $this->assertFalse($this->jar->addCookiesFromResponse($response, $setter));
+        $this->assertCount(3, $this->jar->getAll());
+    }
+
 
    /**
     *
@@ -279,7 +312,7 @@ class HTTP_Request2_CookieJarTest extends PHPUnit_Framework_TestCase
             array('anotherexample.com', 'example.com', false),
             array('whatever.msk.ru', '.msk.ru', true),
             array('whatever.co.uk', '.co.uk', true),
-            array('whatever.uk', '.whatever.uk', true),
+            array('whatever.bd', '.whatever.bd', true),
             array('whatever.tokyo.jp', '.whatever.tokyo.jp', true),
             array('metro.tokyo.jp', '.metro.tokyo.jp', true),
             array('foo.bar', '.foo.bar', true)
@@ -299,8 +332,8 @@ class HTTP_Request2_CookieJarTest extends PHPUnit_Framework_TestCase
             array('anotherexample.com', 'example.com', false),
             array('whatever.msk.ru', '.msk.ru', false),
             array('whatever.co.uk', '.co.uk', false),
-            array('whatever.uk', '.whatever.uk', false),
-            array('whatever.tr', '.whatever.tr', false),
+            array('whatever.bd', '.whatever.bd', false),
+            array('whatever.bn', '.whatever.bn', false),
             array('nic.tr', '.nic.tr', true),
             array('foo.bar', '.foo.bar', true)
         );

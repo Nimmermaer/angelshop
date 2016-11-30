@@ -273,8 +273,6 @@ class ProgressBarTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     */
     public function testSetCurrentBeforeStarting()
     {
         $bar = new ProgressBar($this->getOutputStream());
@@ -327,9 +325,6 @@ class ProgressBarTest extends \PHPUnit_Framework_TestCase
         $bar->advance();
     }
 
-    /**
-     * @requires extension mbstring
-     */
     public function testMultiByteSupport()
     {
         $bar = new ProgressBar($output = $this->getOutputStream());
@@ -561,9 +556,6 @@ class ProgressBarTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @requires extension mbstring
-     */
     public function testAnsiColorsAndEmojis()
     {
         $bar = new ProgressBar($output = $this->getOutputStream(), 15);
@@ -588,7 +580,6 @@ class ProgressBarTest extends \PHPUnit_Framework_TestCase
 
         rewind($output->getStream());
         $this->assertEquals(
-
                 " \033[44;37m Starting the demo... fingers crossed  \033[0m\n".
                 '  0/15 '.$progress.str_repeat($empty, 26)."   0%\n".
                 " \xf0\x9f\x8f\x81  < 1 sec                        \033[44;37m 0 B \033[0m"

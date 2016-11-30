@@ -13,7 +13,7 @@
  * @category  HTTP
  * @package   HTTP_Request2
  * @author    Alexey Borzov <avb@php.net>
- * @copyright 2008-2014 Alexey Borzov <avb@php.net>
+ * @copyright 2008-2016 Alexey Borzov <avb@php.net>
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause License
  * @link      http://pear.php.net/package/HTTP_Request2
  */
@@ -24,6 +24,9 @@ $special   = isset($_GET['special'])? $_GET['special']: null;
 
 if ('ftp' == $special) {
     header('Location: ftp://localhost/pub/exploit.exe', true, 301);
+
+} elseif ('youtube' == $special) {
+    header('Location: https://youtube.com/', true, 301);
 
 } elseif ('relative' == $special) {
     header('Location: ./getparameters.php?msg=did%20relative%20redirect', true, 302);

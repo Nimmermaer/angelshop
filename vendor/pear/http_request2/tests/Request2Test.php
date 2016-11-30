@@ -13,7 +13,7 @@
  * @category  HTTP
  * @package   HTTP_Request2
  * @author    Alexey Borzov <avb@php.net>
- * @copyright 2008-2014 Alexey Borzov <avb@php.net>
+ * @copyright 2008-2016 Alexey Borzov <avb@php.net>
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause License
  * @link      http://pear.php.net/package/HTTP_Request2
  */
@@ -190,10 +190,10 @@ class HTTP_Request2Test extends PHPUnit_Framework_TestCase
         $req->addCookie('invalid cookie', 'value');
     }
 
-   /**
-    *
-    * @expectedException HTTP_Request2_LogicException
-    */
+    /**
+     *
+     * @expectedException HTTP_Request2_LogicException
+     */
     public function testPlainBody()
     {
         $req = new HTTP_Request2();
@@ -275,7 +275,8 @@ class HTTP_Request2Test extends PHPUnit_Framework_TestCase
 
         $req->setConfig('use_brackets', true)->setUrl('http://php.example.com/');
         $req->getUrl()->setQueryVariable('foo', array('bar', 'baz'));
-        $this->assertEquals('http://php.example.com/?foo[0]=bar&foo[1]=baz', $req->getUrl()->__toString());
+
+        $this->assertEquals('http://php.example.com/?foo[]=bar&foo[]=baz', $req->getUrl()->__toString());
     }
 
     public function testSetBodyRemovesPostParameters()

@@ -13,13 +13,17 @@
  * @category  HTTP
  * @package   HTTP_Request2
  * @author    Alexey Borzov <avb@php.net>
- * @copyright 2008-2014 Alexey Borzov <avb@php.net>
+ * @copyright 2008-2016 Alexey Borzov <avb@php.net>
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause License
  * @link      http://pear.php.net/package/HTTP_Request2
  */
 
 if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Request2_Adapter_AllTests::main');
+    if (strpos($_SERVER['argv'][0], 'phpunit') === false) {
+        define('PHPUnit_MAIN_METHOD', 'Request2_Adapter_AllTests::main');
+    } else {
+        define('PHPUnit_MAIN_METHOD', false);
+    }
 }
 
 require_once dirname(__FILE__) . '/MockTest.php';
@@ -32,6 +36,9 @@ class Request2_Adapter_AllTests
 {
     public static function main()
     {
+        if (!class_exists('PHPUnit_TextUI_TestRunner', true)) {
+            require_once 'PHPUnit/TextUI/TestRunner.php';
+        }
         PHPUnit_TextUI_TestRunner::run(self::suite());
     }
 
