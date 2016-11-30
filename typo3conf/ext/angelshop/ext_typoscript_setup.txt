@@ -1,5 +1,7 @@
 config.tx_extbase {
     persistence {
+        # Enable this if you need the reference index to be updated
+        #updateReferenceIndex = 1
         enableAutomaticCacheClearing = 1
         updateReferenceIndex = 0
         classes {
@@ -8,15 +10,30 @@ config.tx_extbase {
                     tableName = tt_content
                     columns {
                         uid.mapOnProperty = uid
+                        hidden.mapOnProperty = hidden
                         pid.mapOnProperty = pid
                         sorting.mapOnProperty = sorting
                         CType.mapOnProperty = contentType
                         header.mapOnProperty = header
                         tx_abatemplate_product.mapOnProperty = product
                         tx_abatemplate_product_stock.mapOnProperty = stock
+                        tx_abatemplate_product_additional_description.mapOnProperty = additionalDescription
+                        tx_abatemplate_product_price.mapOnProperty = price
+                        tx_abatemplate_product_old_price.mapOnProperty = oldPrice
+                        tx_abatemplate_product_manufacturer_name.mapOnProperty = manufacturer
+                        tx_angelshop_image_collection.mapOnProperty = imageCollection
                     }
                 }
             }
+            MB\Angelshop\Domain\Model\FileReference {
+                mapping {
+                    tableName = sys_file_reference
+                    columns {
+                        uid_local.mapOnProperty = originalFileIdentifier
+                    }
+                }
+            }
+
             TYPO3\TtAddress\Domain\Model\Address {
                 mapping {
                     tableName = tt_address
@@ -26,5 +43,9 @@ config.tx_extbase {
                 }
             }
         }
+    }
+
+    objects {
+        TYPO3\CMS\Extbase\Domain\Model\FileReference.className = MB\Angelshop\Domain\Model\FileReference
     }
 }

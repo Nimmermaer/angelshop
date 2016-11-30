@@ -42,7 +42,7 @@ $boot = function ($extensionKey) {
             'Productlist',	// Submodule key
             '',						// Position
             array(
-                'Product' => 'list, edit, update',
+                'Product' => 'list, edit, update, search',
 
             ),
             array(

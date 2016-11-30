@@ -19,6 +19,7 @@ namespace MB\Angelshop\Domain\Model;
      *  GNU General Public License for more details.
      *  This copyright notice MUST APPEAR in all copies of the script!
      ***************************************************************/
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Class Content
@@ -32,6 +33,12 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $uid = '';
+
+    /**
+     * uid
+     * @var boolean
+     */
+    protected $hidden;
 
     /**
      * image
@@ -53,9 +60,9 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * stock
-     * @var string
+     * @var boolean
      */
-    protected $stock = '';
+    protected $stock;
 
     /**
      * pid
@@ -74,6 +81,11 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $sorting = '';
+    /**
+     * sorting
+     * @var string
+     */
+    protected $additionalDescription = '';
 
     /**
      * contentType
@@ -82,6 +94,49 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $contentType = '';
 
     /**
+     * price
+     * @var float
+     */
+    protected $price = '';
+
+    /**
+     * oldPrice
+     * @var float
+     */
+    protected $oldPrice = '';
+
+    /**
+     * manufacturer
+     * @var string
+     */
+    protected $manufacturer = '';
+
+    /**
+     * Image
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     */
+    protected $imageCollection;
+    public function __construct()
+    {
+        $this->imageCollection = new ObjectStorage();
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $imageCollection
+     */
+    public function setImageCollection($imageCollection)
+    {
+        $this->imageCollection = $imageCollection;
+    }
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getImageCollection()
+    {
+        return $this->imageCollection;
+    }
+    /**
      * Gets the uid
      * @return string $uid
      */
@@ -89,6 +144,40 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->uid;
     }
+
+    /**
+     * @return boolean
+     */
+    public function isHidden()
+    {
+        return $this->hidden;
+    }
+
+    /**
+     * @param boolean $hidden
+     */
+    public function setHidden($hidden)
+    {
+        $this->hidden = $hidden;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isStock()
+    {
+        return $this->stock;
+    }
+
+    /**
+     * @param boolean $stock
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+    }
+
+
 
     /**
      * Gets the pid
@@ -213,16 +302,65 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getStock()
+    public function getAdditionalDescription()
     {
-        return $this->stock;
+        return $this->additionalDescription;
     }
 
     /**
-     * @param string $stock
+     * @param string $additionalDescription
      */
-    public function setStock($stock)
+    public function setAdditionalDescription($additionalDescription)
     {
-        $this->stock = $stock;
+        $this->additionalDescription = $additionalDescription;
     }
+
+    /**
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return float
+     */
+    public function getOldPrice()
+    {
+        return $this->oldPrice;
+    }
+
+    /**
+     * @param float $oldPrice
+     */
+    public function setOldPrice($oldPrice)
+    {
+        $this->oldPrice = $oldPrice;
+    }
+
+    /**
+     * @return string
+     */
+    public function getManufacturer()
+    {
+        return $this->manufacturer;
+    }
+
+    /**
+     * @param string $manufacturer
+     */
+    public function setManufacturer($manufacturer)
+    {
+        $this->manufacturer = $manufacturer;
+    }
+
 }

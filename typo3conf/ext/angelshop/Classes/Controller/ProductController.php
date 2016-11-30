@@ -19,6 +19,9 @@ namespace MB\Angelshop\Controller;
      *  GNU General Public License for more details.
      *  This copyright notice MUST APPEAR in all copies of the script!
      ***************************************************************/
+use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
+use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
+
 /**
  * Class ProductController
  * @package MB\Angelshop\Controller
@@ -26,6 +29,15 @@ namespace MB\Angelshop\Controller;
 class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
+
+
+    /**
+     * Set TypeConverter option for image upload
+     */
+    public function initializeCreateAction()
+    {
+        $this->setTypeConverterConfigurationForImageUpload('content');
+    }
     /**
      * contentRepository
      * @var \MB\Angelshop\Domain\Repository\ContentRepository
@@ -46,21 +58,56 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         );
     }
 
+
     /**
+     * @var \TYPO3\CMS\Extbase\Persistence\Generic\Session
+     * @inject
+     */
+    protected $session;
+
+    /**
+     * @param $argumentName
      *
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
+     */
+    protected function registerContentFromRequest($argumentName)
+    {
+        $argument = $this->request->getArgument($argumentName);
+        if ($argument) {
+            $content = $this->contentRepository->findHiddenEntryByUid($argument);
+            $this->session->registerObject($content, $content->getUid());
+        }
+    }
+
+
+    /**
+     *  initialized edit Action
+     */
+    public function initializeEditAction() {
+        $this->registerContentFromRequest('product');
+    }
+    /**
+     *  edit Action
      */
     public function editAction() {
-        var_dump($this->request->getArguments());
         $product = '';
-        $arguments = $this->request->getArguments('tx_angelshop_web_angelshopproductlist');
 
+        $arguments = $this->request->getArguments();
         if((int)$arguments['product']) {
-            $product = $this->contentRepository->findByUid((int)$arguments['product']);
+            $product = $this->contentRepository->findByIdentifier($arguments['product']);
         }
         $this->view->assignMultiple(array(
                 'product' => $product
             )
         );
+    }
+
+    /**
+     * Set TypeConverter option for image upload
+     */
+    public function initializeUpdateAction()
+    {
+        $this->setTypeConverterConfigurationForImageUpload('content');
     }
 
     /**
@@ -74,5 +121,50 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->addFlashMessage('Das Produkt mit dem Title: '.$content->getHeader().' wurde aktualisiert!', 'Produktaktualisierung', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
         $this->contentRepository->update($content);
         $this->redirect('list');
+    }
+    /**
+     * @param \MB\Angelshop\Domain\Model\Content $content
+     *
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException
+     */
+    public function searchAction()
+    {
+        $argument = '';
+        $argument = $this->request->getArguments('tx_angelshop_web_angelshopproductlist');
+
+        if($argument['searchword']) {
+            $products = $this->contentRepository->findByIndex($argument['searchword']);
+        }else{
+            $products = $this->contentRepository->findByContentType('ce_product');
+        }
+        $this->view->assignMultiple(array(
+                'products' => $products,
+                'searchword' => $argument['searchword']
+            )
+        );
+    }
+
+    /**
+     * @param $argumentName
+     */
+    protected function setTypeConverterConfigurationForImageUpload($argumentName)
+    {
+        $uploadConfiguration = [
+            UploadedFileReferenceConverter::CONFIGURATION_ALLOWED_FILE_EXTENSIONS => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+            UploadedFileReferenceConverter::CONFIGURATION_UPLOAD_FOLDER           => '1:/content/',
+        ];
+        /** @var PropertyMappingConfiguration $newProductConfiguration */
+        $newProductConfiguration = $this->arguments[$argumentName]->getPropertyMappingConfiguration();
+        $newProductConfiguration->forProperty('image')
+                                ->setTypeConverterOptions(
+                                    'MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter',
+                                    $uploadConfiguration
+                                );
+        $newProductConfiguration->forProperty('imageCollection.0')
+                                ->setTypeConverterOptions(
+                                    'MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter',
+                                    $uploadConfiguration
+                                );
     }
 }

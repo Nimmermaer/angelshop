@@ -50,7 +50,8 @@ CREATE TABLE tt_content (
   tx_angelshop_email      varchar(255) default ' ' NOT NULL,
   tx_angelshop_owner      varchar(255) default ' ' NOT NULL,
   tx_angelshop_map_small  int(11) default '0'      NOT NULL,
-  tx_angelshop_salutation  varchar(255) default '0' NOT NULL
+  tx_angelshop_salutation  varchar(255) default '0' NOT NULL,
+  tx_angelshop_image_collection int(11) unsigned DEFAULT '0'
 );
 #
 # Table structure for table 'fe_users'

@@ -1,19 +1,90 @@
-<f:layout name="Default"/>
-<f:section name="content">
-    <f:form object="{product}" objectName="content" action="update">
-        <label for="tx_angelshop_web_angelshopproductlist[content][header]">Titel</label><br/>
-        <f:form.textfield
-                property="header" size="50"/>
-        <br/>
-        <label for="tx_angelshop_web_angelshopproductlist[content][bodytext]">Beschreibung</label><br/>
-        <f:form.textarea
-                property="bodytext" rows="15" cols="40"/>
-        <br/>
-        <label for="tx_angelshop_web_angelshopproductlist[content][stock]">Auf Lager</label><br/>
-        <f:form.checkbox property="stock" value="0"/><br/>
-        <f:form.submit value="Save"/>
-    </f:form>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://xsd.helmut-hummel.de/ns/TYPO3/CMS/Fluid/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:n="http://typo3.org/ns/MB/Angelshop/ViewHelpers"
+        >
+    <f:layout name="Default"/>
+    <f:section name="content">
+        <div class="container">
+            <div class="row">
+                <blockquote class="blockquote-reverse">
+                    <p>Detailansicht</p>
+                </blockquote>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <f:form enctype="multipart/form-data" class="form-horizontal" object="{product}"
+                            objectName="content" action="update">
+                        <label class="control-label"
+                               for="tx_angelshop_web_angelshopproductlist[content][header]">Titel</label>
+                        <f:form.textfield
+                                property="header" required="1" class="form-control col-lg-10" size="50"/>
+                        <br/>
 
-    <f:link.action action="list">Zurück</f:link.action>
-    <br/>
-</f:section>
+                        <div class="input-group">
+                            <n:form.upload property="image.0">
+                                <f:if condition="{resource}">
+                                    <f:image image="{resource}" alt="" width="50"/>
+                                </f:if>
+                            </n:form.upload>
+                        </div>
+                        <label class="control-label">Preis</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon">€</span>
+                            <f:form.textfield
+                                    property="price" required="1" class="form-control col-lg-10" size="50"/>
+                        </div>
+                        <label class="control-label">Alter Preis (optional)</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon">€</span>
+                            <f:form.textfield
+                                    property="oldPrice" class="form-control col-lg-10" size="50"/>
+                        </div>
+                        <br/>
+                        <label class="control-label"
+                                >Hersteller</label>
+                        <f:form.textfield
+                                property="manufacturer" class="form-control col-lg-10" size="50"/>
+                        <br/>
+
+                        <div class="checkbox">
+                            <label for="tx_angelshop_web_angelshopproductlist[content][stock]">
+                                <f:form.checkbox property="stock"  value="false" />
+                                Auf Lager
+                            </label>
+                        </div>
+                        <div class="checkbox">
+
+                            <label for="tx_angelshop_web_angelshopproductlist[content][hidden]">
+                                <f:form.checkbox property="hidden" value="false" />
+                                Ausblenden
+                            </label>
+                        </div>
+                        <br/>
+                        <label for="tx_angelshop_web_angelshopproductlist[content][bodytext]">Beschreibung</label><br/>
+                        <f:form.textfield
+                                property="bodytext" type="hidden" size="50"/>
+                        <div id="bodytext-container">
+                            {product.bodytext->f:format.html()}
+                        </div>
+                        <br/>
+                        <label for="tx_angelshop_web_angelshopproductlist[content][additionalDescription]">Zusätzliche
+                            Beschreibung</label>
+                        <f:form.textfield
+                                property="additionalDescription" type="hidden" size="50"/>
+                        <div id="description-container">
+                            {product.additionalDescription->f:format.html()}
+                        </div>
+                        <br/>
+
+                        <f:form.submit class="btn btn-success" value="Speichern"/>
+                    </f:form>
+                    <f:link.action action="list"> < Zurück</f:link.action>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </f:section>
+</div>
