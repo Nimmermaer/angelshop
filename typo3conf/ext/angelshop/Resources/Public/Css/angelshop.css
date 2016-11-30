@@ -9483,7 +9483,7 @@ ul.slick-dots li button:before {
 }
 @media (max-width: 767px) {
   header.carousel {
-    height: 25%;
+    height: 100%;
   }
 }
 /* Slider */
