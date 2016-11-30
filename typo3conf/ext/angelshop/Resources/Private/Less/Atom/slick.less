@@ -101,18 +101,25 @@
   display: none;
 }
 
-@media (max-width: 767px) {
- .slick-slide img {
-   max-width: 350vw;
-   max-height: 45vh;
-  }
-}
-
 ul.slick-dots {
   bottom: 0;
   li button:before {
     font-size: 15px;
     color: #fff;
     opacity: .25;
+  }
+}
+.slick-slider {
+  height: 100%;
+  .slick-list,
+  .slick-track {
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 767px) {
+  header.carousel {
+    height: 25%;
   }
 }

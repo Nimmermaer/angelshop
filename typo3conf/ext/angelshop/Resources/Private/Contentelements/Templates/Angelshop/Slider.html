@@ -1,8 +1,10 @@
-<header id="AngelshopCarousel-{data.uid}" >
+<header id="AngelshopCarousel-{data.uid}" class="carousel" >
     <div class="full-width-slider">
         <f:for each="{files}" as="file" iteration="fileIterator">
-            <div><f:image src="{file.uid}" treatIdAsReference="1" width="1900" height="300c" /></div>
-       </f:for>
+            <div class="fill" title="{file.title}"
+                 style="background-image:url('{f:uri.image(src:'{file.uid}', treatIdAsReference:1,width:1900px)}');"></div>
+
+        </f:for>
     </div>
 
 </header>

@@ -2374,10 +2374,6 @@ ga('send', 'pageview', {
 });
 
 $(document).ready(function () {
-    $('.carousel').carousel({
-        interval: 6000,
-        wrap: true
-    });
 
     $('.full-width-slider').slick({
         dots: true,
