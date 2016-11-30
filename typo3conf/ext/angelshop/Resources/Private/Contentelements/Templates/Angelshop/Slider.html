@@ -1,3 +1,16 @@
+<header id="AngelshopCarousel-{data.uid}" >
+    <div class="full-width-slider">
+        <f:for each="{files}" as="file" iteration="fileIterator">
+            <div><f:image src="{file.uid}" treatIdAsReference="1" width="1900" height="300c" /></div>
+       </f:for>
+    </div>
+
+</header>
+
+
+
+<f:comment>
+
 <header id="AngelshopCarousel-{data.uid}" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -56,3 +69,6 @@
         <span class="icon-next"></span>
     </a>
 </header>
+
+
+</f:comment>

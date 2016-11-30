@@ -3,6 +3,52 @@ $(document).ready(function () {
         interval: 6000,
         wrap: true
     });
+
+    $('.full-width-slider').slick({
+        dots: true,
+        infinite: true,
+        autoplaySpeed: 2000,
+        autoplay:true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay:true,
+                    autoplaySpeed: 2000,
+                    infinite: true,
+                    dots: true,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    autoplay:true,
+                    autoplaySpeed: 2000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    dots: true,
+                    autoplay:true,
+                    autoplaySpeed: 2000,
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
     lightbox.option({
         albumLabel: 'Bild %1 von %2'
     });

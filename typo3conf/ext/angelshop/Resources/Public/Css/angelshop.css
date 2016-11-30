@@ -9466,6 +9466,20 @@ ul.footer-nav li {
 .slick-arrow.slick-hidden {
   display: none;
 }
+@media (max-width: 767px) {
+  .slick-slide img {
+    max-width: 350vw;
+    max-height: 45vh;
+  }
+}
+ul.slick-dots {
+  bottom: 0;
+}
+ul.slick-dots li button:before {
+  font-size: 15px;
+  color: #fff;
+  opacity: .25;
+}
 /* Slider */
 .slick-loading .slick-list {
   background: #fff url('../Icons/ajax-loader.gif') center center no-repeat;
