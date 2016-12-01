@@ -453,3 +453,4 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_textpic'] = [
 ];
 
 $GLOBALS['TCA']['tt_content']['ctrl']['requestUpdate'] = 'layout';
+

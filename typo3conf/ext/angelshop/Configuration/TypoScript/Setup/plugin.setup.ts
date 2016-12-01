@@ -9,13 +9,14 @@ plugin {
         persistence {
             storagePid = {$plugin.tx_angelshop_gallery.persistence.storagePid}
         }
+
         settings {
             address {
                 newsletterStoragePid = {$plugin.tx_angelshop.settings.address.newsletterStoragePid}
             }
+
             loginNewsletter = {$plugin.tx_angelshop.settings.loginNewsletter}
             newsletterThankYouPid = {$plugin.tx_angelshop.settings.newsletterThankYouPid}
-
         }
     }
 
@@ -76,4 +77,27 @@ plugin {
     }
 
     tx_frontend._CSS_DEFAULT_STYLE >
+}
+
+lib.weatherView = USER_INT
+lib.weatherView {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = Angelshop
+    pluginName = Weather
+    vendorName = MB
+    controller = Weather
+    action = show
+    view < plugin.tx_angelshop.view
+    view {
+        templateRootPaths.10 = EXT:angelshop/Resources/Private/Plugins/Templates
+    }
+    persistence < plugin.tx_angelshop.persistence
+    settings < plugin.tx_angelshop.settings
+    settings {
+        arguments {
+            title = Abtsdorfer See
+            address = Abtsdorfer See, Saaldorf-Surheim
+            appid = 9e31371905782f75d67d42ff929d711e
+        }
+    }
 }

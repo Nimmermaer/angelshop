@@ -1,0 +1,31 @@
+<f:for each="{forecast.list}" as="item">
+    <div class="row">
+        Datum<br/>
+        <span class="label label-warning"><f:format.date format="%d. %B .%Y">@{item.dt}</f:format.date></span><br/>
+        <button class="btn btn-primary" type="button">
+            Wetter <span class="badge">{item.weather.0.main}</span>
+        </button><br/><br/>
+        <button class="btn btn-primary" type="button">
+            Aussicht <span class="badge">{item.weather.0.description}</span>
+        </button><br/><br/>
+        <button class="btn btn-primary" type="button">
+            Luftdruck <span class="badge">{item.pressure}</span>
+        </button><br/><br/>
+        <f:if condition="{item.humidity}">
+            <div class="form-group">
+                Luftfeuchtigkeit
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar"
+                         aria-valuenow="{item.humidity}"
+                         aria-valuemin="0" aria-valuemax="100" style="width:{item.humidity}%">
+                        {item.humidity}%
+                    </div>
+                </div>
+            </div>
+        </f:if>
+        <a href="#">Mindestemperatur <span class="badge">{item.temp.min}</span></a><br/><br/>
+        <a href="#">Höchsttemperatur <span class="badge">{item.temp.max}</span></a><br/><br/>
+        <span class="label label-default">{item.wind.speed}</span><br/><br/>
+        <span class="label label-primary">{item.wind.deg}</span><br/><br/>
+    </div>
+</f:for>

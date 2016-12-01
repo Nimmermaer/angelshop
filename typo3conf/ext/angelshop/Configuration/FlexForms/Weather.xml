@@ -1,0 +1,62 @@
+<T3DataStructure>
+    <meta>
+        <langChildren>1</langChildren>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Wetteranzeige</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>Ansicht</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Tageswetter</numIndex>
+                                        <numIndex index="1">Weather->show</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">Wetterbericht</numIndex>
+                                        <numIndex index="1">Weather->forecast</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">Letzte Tagesansicht</numIndex>
+                                        <numIndex index="1">Weather->list</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                    <settings.arguments.address>
+                        <TCEforms>
+                            <label>Adresse</label>
+                            <config>
+                                <type>text</type>
+                                <cols>24</cols>
+                                <rows>3</rows>
+                            </config>
+                        </TCEforms>
+                    </settings.arguments.address>
+                    <settings.arguments.appid>
+                        <TCEforms>
+                            <label>Appid</label>
+                            <config>
+                                <type>input</type>
+                                <size>45</size>
+                                <max>50</max>
+                                <eval>trim</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.arguments.appid>
+                  </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

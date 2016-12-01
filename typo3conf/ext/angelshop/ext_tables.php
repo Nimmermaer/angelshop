@@ -25,6 +25,11 @@ $boot = function ($extensionKey) {
         'Product',
         'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title'
     );
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        'MB.' . $extensionKey,
+        'Weather',
+        'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_weather.title'
+    );
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
         'MB.' . $extensionKey,
@@ -94,6 +99,14 @@ $boot = function ($extensionKey) {
             ['source' => $icon]
         );
     }
+    $pluginSignature = 'Weather';
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        $extensionKey,
+        $pluginSignature,
+        'Wetter'
+    );
+    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$extensionKey.'_'.strtolower($pluginSignature)]='pi_flexform';
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($extensionKey.'_'.strtolower($pluginSignature), 'FILE:EXT:'.$extensionKey.'/Configuration/FlexForms/'.$pluginSignature.'.xml');
 
 };
 $boot($_EXTKEY);

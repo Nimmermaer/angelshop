@@ -1,0 +1,27 @@
+<button class="btn btn-primary" type="button">
+    Wetter <span class="badge">{weather.weather.0.main}</span>
+</button>
+<button class="btn btn-primary" type="button">
+    Aussicht <span class="badge">{weather.weather.0.description}</span>
+</button>
+<button class="btn btn-primary" type="button">
+    Luftdruck <span class="badge">{weather.main.pressure}</span>
+</button>
+<div class="form-group">
+    Luftfeuchtigkeit
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{weather.main.humidity}"
+             aria-valuemin="0" aria-valuemax="100" style="width:{weather.main.humidity}%">
+            {weather.main.humidity}%
+        </div>
+    </div>
+</div>
+<a href="#">Mindestemperatur <span class="badge">{weather.main.temp_min}</span></a>
+<a href="#">Höchsttemperatur <span class="badge">{weather.main.temp_max}</span></a>
+<span class="label label-default">{weather.wind.speed}</span>
+<span class="label label-primary">{weather.wind.deg}</span>
+
+<f:debug>{_all}</f:debug>
+
+
+

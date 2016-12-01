@@ -27,6 +27,9 @@
             <trans-unit id="tx_sidebarList.description">
                 <source>Ermöglicht eine Seitenleiste</source>
             </trans-unit>
+            <trans-unit id="tx_weather.title">
+                <source>Wetter</source>
+            </trans-unit>
 
             <trans-unit id="tx_accordion.title">
                 <source>Accordion</source>

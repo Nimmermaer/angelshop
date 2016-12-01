@@ -69,6 +69,18 @@ $boot = function ($extensionKey) {
 
         )
     );
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'MB.' . $extensionKey,
+        'Weather',
+        array(
+            'Weather' => 'show, list, forecast',
+
+        ),
+        array(
+            'Weather' => 'show, list, forecast',
+
+        )
+    );
     if (TYPO3_MODE === 'BE') {
         $backendLayoutFileProviderDirectory = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName(
             'EXT:angelshop/Configuration/TypoScript/Setup/Backendlayouts'

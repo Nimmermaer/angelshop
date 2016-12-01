@@ -9481,6 +9481,9 @@ ul.slick-dots li button:before {
 .slick-slider .slick-track {
   height: 100%;
 }
+header.carousel {
+  height: 57%;
+}
 @media (max-width: 767px) {
   header.carousel {
     height: 100%;
