@@ -77,7 +77,7 @@ $boot = function ($extensionKey) {
 
         ),
         array(
-            'Weather' => 'show, list, forecast',
+            'Weather' => '',
 
         )
     );

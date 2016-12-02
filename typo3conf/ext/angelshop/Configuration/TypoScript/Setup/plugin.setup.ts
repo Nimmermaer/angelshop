@@ -79,7 +79,7 @@ plugin {
     tx_frontend._CSS_DEFAULT_STYLE >
 }
 
-lib.weatherView = USER_INT
+lib.weatherView = USER
 lib.weatherView {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
     extensionName = Angelshop
