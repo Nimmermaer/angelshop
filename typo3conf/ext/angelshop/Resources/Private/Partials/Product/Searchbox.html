@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:form action="search">
+    <div class="form-group">
+        <label class="control-label">Was suchen Sie?</label>
+       <div class="input-group">
+            <f:form.textfield class="form-control" name="searchword" value="{searchword}"/>
+            <span class="input-group-btn">
+            <f:form.submit class="btn btn-default" name="suche" value="Suche starten"/>
+            </span>
+        </div>
+    </div>
+</f:form>
+</html>

@@ -22,12 +22,12 @@ $boot = function ($extensionKey) {
         'MB.' . $extensionKey,
         'Product',
         array(
-            'Product' => 'list',
+            'Product' => 'list, search',
 
         ),
         // non-cacheable actions
         array(
-            'Product' => 'list',
+            'Product' => 'list, search',
 
         ),
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT

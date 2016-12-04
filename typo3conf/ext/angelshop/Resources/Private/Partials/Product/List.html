@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:widget.paginate objects="{products}" as="productlist" configuration="{itemsPerPage:10, addQueryStringMethod: 'POST,GET'}">
+    <f:for each="{productlist}" as="product">
+        <f:if condition="{product.stock} != 1">
+            <div class="row">
+                <v:link.typolink configuration="{parameter:'{product.pid}'}">
+                    <div class="col-md-4">
+                        <f:for each="{product.image}" as="item" iteration="imageIterator">
+                            <f:if condition="{imageIterator.isFirst}">
+                                <img src="{f:uri.image(src:'{item.uid}', treatIdAsReference:1, maxWidth:150, maxHeight:150)}"/>
+                            </f:if>
+                        </f:for>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>{product.header}</h2>
+                        <f:format.crop maxCharacters="100">{product.bodytext->f:format.raw()}</f:format.crop>
+                    </div>
+                    <div class="col-md-12">
+                        <hr/>
+                    </div>
+                </v:link.typolink>
+            </div>
+        </f:if>
+    </f:for>
+</f:widget.paginate>
+</html>
