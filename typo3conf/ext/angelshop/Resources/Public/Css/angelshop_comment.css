@@ -6985,14 +6985,14 @@ button.close {
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-/* Global Styles */
+
 html,
 body {
   height: 100%;
 }
 body {
   padding-top: 50px;
-  /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  
 }
 .img-portfolio {
   margin-bottom: 30px;
@@ -7000,7 +7000,7 @@ body {
 .img-hover:hover {
   opacity: 0.8;
 }
-/* Home Page Carousel */
+
 header.carousel {
   height: 50%;
 }
@@ -7015,11 +7015,11 @@ header.carousel .fill {
   background-position: center;
   background-size: cover;
 }
-/* 404 Page Styles */
+
 .error-404 {
   font-size: 100px;
 }
-/* Pricing Page Styles */
+
 .price {
   display: block;
   font-size: 50px;
@@ -7034,11 +7034,11 @@ header.carousel .fill {
   display: block;
   font-style: italic;
 }
-/* Footer Styles */
+
 footer {
   margin: 50px 0;
 }
-/* Responsive Styles */
+
 @media (max-width: 991px) {
   .customer-img,
   .img-related {
@@ -7057,8 +7057,7 @@ footer {
  *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
-/* FONT PATH
- * -------------------------- */
+
 @font-face {
   font-family: 'FontAwesome';
   src: url('../Fonts/fontawesome-webfont.eot?v=4.6.3');
@@ -7074,7 +7073,7 @@ footer {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* makes the font 33% larger relative to the icon container */
+
 .fa-lg {
   font-size: 1.33333333em;
   line-height: 0.75em;
@@ -7131,7 +7130,7 @@ footer {
 .fa.fa-pull-right {
   margin-left: .3em;
 }
-/* Deprecated as of 4.4.0 */
+
 .pull-right {
   float: right;
 }
@@ -7233,8 +7232,7 @@ footer {
 .fa-inverse {
   color: #fff;
 }
-/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-   readers do not read off random characters that represent icons */
+
 .fa-glass:before {
   content: "\f000";
 }
@@ -9374,7 +9372,7 @@ ul.footer-nav li {
 .datepicker.datepicker-inline td {
   padding: 0px 5px;
 }
-/* Slider */
+
 .slick-slider {
   position: relative;
   display: block;
@@ -9505,11 +9503,11 @@ header.carousel {
   font-size: 63px;
   font-weight: lighter;
 }
-/* Slider */
+
 .slick-loading .slick-list {
   background: #fff url('../Icons/ajax-loader.gif') center center no-repeat;
 }
-/* Icons */
+
 @font-face {
   font-family: 'slick';
   font-weight: normal;
@@ -9517,7 +9515,7 @@ header.carousel {
   src: url('../Fonts/slick.eot');
   src: url('../Fonts/slick.eot?#iefix') format('embedded-opentype'), url('../Fonts/slick.woff') format('woff'), url('../Fonts/slick.ttf') format('truetype'), url('../Fonts/slick.svg#slick') format('svg');
 }
-/* Arrows */
+
 .slick-prev,
 .slick-next {
   position: absolute;
@@ -9591,7 +9589,7 @@ header.carousel {
 .slick-next:before[dir="rtl"] {
   content: "←";
 }
-/* Dots */
+
 .slick-dotted .slick-slider {
   margin-bottom: 30px;
 }
@@ -9663,7 +9661,7 @@ header.carousel {
     -webkit-box-shadow: none;
   }
 }
-/* Preload Images */
+
 body:after {
   content: url(../Images/close.png) url(../Images/loading.gif) url(../Images/prev.png) url(../Images/next.png);
   display: none;

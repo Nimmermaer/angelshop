@@ -123,13 +123,23 @@ module.exports = function (grunt) {
                 }
             }
         },
+        stripCssComments: {
+            dist: {
+                files: {
+                    'ext/angelshop/Resources/Public/Css/angelshop_comment.css': 'ext/angelshop/Resources/Public/Css/angelshop.css'
+                }
+            }
+        },
         cssmin: {
             options: {
-                'report': 'min'
+                shorthandCompacting: false,
+                roundingPrecision: -1,
+                report: 'min'
             },
             compress: {
                 files: {
-                    'ext/angelshop/Resources/Public/Css/angelshop.min.css': ['ext/angelshop/Resources/Public/Css/angelshop.css']
+                    'ext/angelshop/Resources/Public/Css/angelshop.min.css': ['ext/angelshop/Resources/Public/Css/angelshop_comment.css'],
+                    'ext/angelshop/Resources/Public/Css/angelshop_critical.min.css': ['ext/angelshop/Resources/Public/Css/angelshop_critical.css']
                 }
             }
         },
@@ -150,6 +160,16 @@ module.exports = function (grunt) {
                 src: 'ext/angelshop/Resources/Private/Less/angelshop.less',
                 dest: 'ext/angelshop/Resources/Public/Css/angelshop.css'
             }
+        },
+        penthouse: {
+            extract : {
+                outfile : 'ext/angelshop/Resources/Public/Css/angelshop_critical.css',
+                css : 'ext/angelshop/Resources/Public/Css/angelshop.min.css',
+                url : 'http://angelshop.local/',
+                width : 1300,
+                height : 900,
+                skipErrors : false // this is the default
+            }
         }
     });
 
@@ -160,7 +180,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     //grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-strip-css-comments');
+    grunt.loadNpmTasks('grunt-penthouse');
 
     //grunt.registerTask('default', ['less', 'jshint', 'concat', 'sprite']);
-    grunt.registerTask('default', ['less', 'jshint', 'concat', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['less', 'jshint', 'concat', 'uglify','stripCssComments', 'cssmin','penthouse']);
 };
