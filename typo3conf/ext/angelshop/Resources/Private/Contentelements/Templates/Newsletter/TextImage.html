@@ -22,7 +22,7 @@
     text-align: left;">
                                 <f:for each="{files}" as="image" iteration="imageIterator">
                                     <f:if condition="{imageIterator.isFirst}">
-                                        <img src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1')}"
+                                        <img src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1', width:600, maxHeight:450)}"
                                              style="    max-width: 555px;;     display: inline;
     height: auto;    border: 0;
     line-height: 100%;

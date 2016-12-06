@@ -23,7 +23,7 @@
             vertical-align:middle;mso-table-lspace:0pt; mso-table-rspace:0pt; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
                     <f:for each="{files}" as="image" iteration="imageIterator">
                         <f:if condition="{imageIterator.isFirst}">
-                            <img src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1')}" style="   height:auto;
+                            <img src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1', width:600, maxHeight:450)}" style="   height:auto;
             max-width:600px; border:0; height:auto; line-height:100%; outline:none; text-decoration:none;-ms-interpolation-mode:bicubic; max-width:600px;"
                                  id="headerImage" mc:label="header_image" mc:edit="header_image"
                                  mc:allowdesigner mc:allowtext/>
