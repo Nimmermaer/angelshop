@@ -20,10 +20,15 @@ page {
 
     includeJSFooter {
         jquery = EXT:angelshop/Resources/Public/Js/jquery.min.js
+        jquery.async = 1
         bootstrap = EXT:angelshop/Resources/Public/Js/bootstrap.min.js
+        bootstrap.async = 1
         lightbox = EXT:angelshop/Resources/Public/Js/lightbox.min.js
+        lightbox.async = 1
         custom = EXT:angelshop/Resources/Public/Js/custom.min.js
+        custom.async = 1
         scripts = EXT:angelshop/Resources/Public/Js/scripts.min.js
+        scripts.async = 1
     }
 }
 

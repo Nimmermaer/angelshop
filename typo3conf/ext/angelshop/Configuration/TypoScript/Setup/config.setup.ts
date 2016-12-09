@@ -38,6 +38,7 @@ config {
     compressJs = 1
     concatenateCss = 1
     concatenateJs = 1
+    concatenateJsAndCss = 1
 
     removeDefaultCss = 1
     removeDefaultJS = 1
@@ -78,5 +79,6 @@ I' geh fisch'n in Berchtesgaden
      compressJs = 0
      concatenateCss = 0
      concatenateJs = 0
+     concatenateJsAndCss = 0
  }
 [end]
