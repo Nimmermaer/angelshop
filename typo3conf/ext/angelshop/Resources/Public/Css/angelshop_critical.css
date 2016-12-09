@@ -149,6 +149,10 @@ h4 {
   font-size: 18px;
 }
 
+p {
+  margin: 0 0 10px;
+}
+
 small {
   font-size: 85%;
 }
@@ -672,6 +676,24 @@ ul {
   border-color: #101010;
 }
 
+.badge {
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #777;
+  border-radius: 10px;
+}
+
 .panel {
   margin-bottom: 20px;
   background-color: #fff;
@@ -775,6 +797,10 @@ header.carousel .fill {
   -webkit-font-smoothing: antialiased;
 }
 
+.fa-2x {
+  font-size: 2em;
+}
+
 .fa-fw {
   width: 1.28571429em;
   text-align: center;
@@ -782,6 +808,22 @@ header.carousel .fill {
 
 .fa-search:before {
   content: "\f002";
+}
+
+.fa-compass:before {
+  content: "\f14e";
+}
+
+.fa-car:before {
+  content: "\f1b9";
+}
+
+.fa-whatsapp:before {
+  content: "\f232";
+}
+
+.fa-shopping-bag:before {
+  content: "\f290";
 }
 
 .sr-only {
@@ -859,4 +901,9 @@ header.carousel {
 body:after {
   content: url(../Images/close.png) url(../Images/loading.gif) url(../Images/prev.png) url(../Images/next.png);
   display: none;
+}
+
+.basket .fa {
+  color: #fff;
+  padding: 15px 10px 0 0;
 }
