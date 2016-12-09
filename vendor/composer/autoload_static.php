@@ -76,6 +76,7 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
+            'SFC\\NcStaticfilecache\\' => 22,
         ),
         'P' => 
         array (
@@ -90,6 +91,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         'H' => 
         array (
             'HTML\\Sourceopt\\' => 15,
+        ),
+        'G' => 
+        array (
+            'GeorgRinger\\News\\' => 17,
         ),
         'F' => 
         array (
@@ -336,6 +341,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'SFC\\NcStaticfilecache\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/typo3conf/ext/nc_staticfilecache/Classes',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -355,6 +364,10 @@ class ComposerStaticInit586a259e99b2b3222e589e2cda5ee5f8
         'HTML\\Sourceopt\\' => 
         array (
             0 => __DIR__ . '/../..' . '/typo3conf/ext/sourceopt/Classes',
+        ),
+        'GeorgRinger\\News\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/typo3conf/ext/news/Classes',
         ),
         'FluidTYPO3\\Vhs\\' => 
         array (
