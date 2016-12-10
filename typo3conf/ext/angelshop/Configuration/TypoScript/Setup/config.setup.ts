@@ -47,12 +47,14 @@ config {
 
     index_enable = 1
     index_metatags = 1
-
+    xhtml_cleaning = all
+    removeDefaultJS = 1
     sourceopt {
         removeGenerator =1
         enabled = 1
+        removeBlurScript= 1
         enable_utf-8_support = 1
-        headerComment = 1
+        headerComment = 0
         removeComments = 1
         removeComments.keep.10 = /^TYPO3SEARCH_/usi
         formatHtml = 1
