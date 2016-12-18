@@ -2,23 +2,23 @@
 
 namespace MB\Angelshop\Domain\Repository;
 
-/***************************************************************
- *  Copyright notice
- *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
- *  All rights reserved
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+    /***************************************************************
+     *  Copyright notice
+     *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
+     *  All rights reserved
+     *  This script is part of the TYPO3 project. The TYPO3 project is
+     *  free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *  This script is distributed in the hope that it will be useful,
+     *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+     *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     *  GNU General Public License for more details.
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
 
 
 /**
@@ -27,6 +27,13 @@ namespace MB\Angelshop\Domain\Repository;
  */
 class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    /**
+     * Repository for tt_content objects
+
+     */
+    protected $objectType = '\MB\Angelshop\Domain\Model\Content';
+
+
     // Example for repository wide settings
     public function initializeObject()
     {
@@ -34,7 +41,10 @@ class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
         $querySettings->setRespectStoragePage(false);
         $querySettings->setIgnoreEnableFields(true);
-        $querySettings->setEnableFieldsToBeIgnored(['hidden', 'starttime']);
+        $querySettings->setEnableFieldsToBeIgnored([
+            'hidden',
+            'starttime'
+        ]);
         $this->setDefaultQuerySettings($querySettings);
     }
 
@@ -49,11 +59,16 @@ class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return $query->execute();
     }
 
-    public function findHiddenEntryByUid($uid) {
+    public function findHiddenEntryByUid($uid)
+    {
+        if(array_key_exists('__identity',$uid)) {
+            $uid = $uid['__identity'];
+        }
         $query = $this->createQuery();
-        $query->getQuerySettings()->setIgnoreEnableFields(TRUE);
-        $query->getQuerySettings()->setEnableFieldsToBeIgnored(array('hidden'));
-        return $query->matching($query->equals('uid', (int)$uid))->execute()->getFirst();
+        $query->getQuerySettings()->setIgnoreEnableFields(true);
+        $query->getQuerySettings()->setEnableFieldsToBeIgnored(['hidden']);
+
+        return $query->matching($query->equals('uid', (int) $uid))->execute()->getFirst();
     }
     /**
      * @param $term

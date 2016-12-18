@@ -107,6 +107,7 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function initializeUpdateAction()
     {
+        $this->registerContentFromRequest('content');
         $this->setTypeConverterConfigurationForImageUpload('content');
     }
 
