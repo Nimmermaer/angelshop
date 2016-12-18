@@ -4,14 +4,14 @@ page {
     includeJS >
     includeJSFooterlibs >
     includeJSFooter >
-    headerData {
-        1481056515  = TEMPLATE
-        1481056515 {
-            stdWrap.wrap = <style type="text/css">|</style>
-            template = FILE
-            template.file = EXT:angelshop/Resources/Public/Css/angelshop_critical.min.css
-        }
-    }
+  #  headerData {
+   #     1481056515  = TEMPLATE
+  #     1481056515 {
+  #          stdWrap.wrap = <style type="text/css">|</style>
+  #          template = FILE
+  #          template.file = EXT:angelshop/Resources/Public/Css/angelshop_critical.min.css
+  #      }
+  #  }
     includeCSS >
     tx_felogin_pi1._CSS_DEFAULT_STYLE >
     includeCSS {
