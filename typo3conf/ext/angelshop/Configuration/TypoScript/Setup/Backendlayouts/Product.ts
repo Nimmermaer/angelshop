@@ -19,7 +19,6 @@ mod.web_layout.BackendLayouts.Product {
                         1 {
                             name = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Product.col.2
                             colPos = 2
-                            colspan = 3
                         }
                     }
                 }
