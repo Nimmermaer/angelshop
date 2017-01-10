@@ -204,16 +204,16 @@
         },
         {
             "name": "mblaschke/metaseo",
-            "version": "2.0.1",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mblaschke/TYPO3-metaseo.git",
-                "reference": "0ec1234751f633874a93f98b33cf54cf01d8edd5"
+                "reference": "7c749b5c9321e67c7258bc9100d9272eacacf3ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mblaschke/TYPO3-metaseo/zipball/0ec1234751f633874a93f98b33cf54cf01d8edd5",
-                "reference": "0ec1234751f633874a93f98b33cf54cf01d8edd5",
+                "url": "https://api.github.com/repos/mblaschke/TYPO3-metaseo/zipball/7c749b5c9321e67c7258bc9100d9272eacacf3ed",
+                "reference": "7c749b5c9321e67c7258bc9100d9272eacacf3ed",
                 "shasum": ""
             },
             "require": {
@@ -240,9 +240,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mblaschke/TYPO3-metaseo/issues",
-                "source": "https://github.com/mblaschke/TYPO3-metaseo/tree/2.0.1"
+                "source": "https://github.com/mblaschke/TYPO3-metaseo/tree/2.0.3"
             },
-            "time": "2016-11-06 19:29:28"
+            "time": "2016-12-31 11:33:57"
         },
         {
             "name": "mso/idna-convert",
@@ -568,23 +568,24 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.4",
+            "version": "v5.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756"
+                "reference": "cd142238a339459b10da3d8234220963f392540c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/545ce9136690cea74f98f86fbb9c92dd9ab1a756",
-                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/cd142238a339459b10da3d8234220963f392540c",
+                "reference": "cd142238a339459b10da3d8234220963f392540c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1"
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.2"
             },
             "type": "library",
             "extra": {
@@ -617,20 +618,20 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-11-24 01:01:23"
+            "time": "2016-12-29 10:02:40"
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.14",
+            "version": "v2.8.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "a871ba00e0f604dceac64c56c27f99fbeaf4854e"
+                "reference": "d5643cd095e5e37d31e004bb2606b5dd7e96602f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/a871ba00e0f604dceac64c56c27f99fbeaf4854e",
-                "reference": "a871ba00e0f604dceac64c56c27f99fbeaf4854e",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d5643cd095e5e37d31e004bb2606b5dd7e96602f",
+                "reference": "d5643cd095e5e37d31e004bb2606b5dd7e96602f",
                 "shasum": ""
             },
             "require": {
@@ -678,7 +679,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-15 23:02:12"
+            "time": "2016-12-06 11:59:35"
         },
         {
             "name": "symfony/debug",
@@ -739,16 +740,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.14",
+            "version": "v2.8.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "0023b024363dfc0cd21262e556f25a291fe8d7fd"
+                "reference": "c0f10576335743b881ac1ed39d18c0fa66048775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/0023b024363dfc0cd21262e556f25a291fe8d7fd",
-                "reference": "0023b024363dfc0cd21262e556f25a291fe8d7fd",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/c0f10576335743b881ac1ed39d18c0fa66048775",
+                "reference": "c0f10576335743b881ac1ed39d18c0fa66048775",
                 "shasum": ""
             },
             "require": {
@@ -784,7 +785,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-03 07:52:58"
+            "time": "2016-12-13 09:38:12"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1229,16 +1230,16 @@
         },
         {
             "name": "typo3/cms",
-            "version": "7.6.14",
+            "version": "7.6.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/TYPO3.CMS.git",
-                "reference": "9de61953bd98bebfbf7cc985896009db4245c24b"
+                "reference": "83c94ad5ee39aa4faeebfdd8d0eb66a7450f2ab1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/9de61953bd98bebfbf7cc985896009db4245c24b",
-                "reference": "9de61953bd98bebfbf7cc985896009db4245c24b",
+                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/83c94ad5ee39aa4faeebfdd8d0eb66a7450f2ab1",
+                "reference": "83c94ad5ee39aa4faeebfdd8d0eb66a7450f2ab1",
                 "shasum": ""
             },
             "require": {
@@ -1253,7 +1254,7 @@
                 "php": ">=5.5.0",
                 "psr/http-message": "~1.0",
                 "psr/log": "~1.0.0",
-                "swiftmailer/swiftmailer": "~5.4.1",
+                "swiftmailer/swiftmailer": "~5.4.5",
                 "symfony/console": "^2.7",
                 "symfony/finder": "^2.7",
                 "typo3/class-alias-loader": "^1.0",
@@ -1423,7 +1424,7 @@
                 "extbase",
                 "typo3"
             ],
-            "time": "2016-11-29 09:44:43"
+            "time": "2017-01-03 11:24:12"
         },
         {
             "name": "typo3/cms-base-distribution",
