@@ -1,11 +1,11 @@
 #
-# Table structure for table 'pages'
+# Table structure for table 'tt_address'
 #
 CREATE TABLE tt_address (
   tx_angelshop_newsletter  tinyint(11) default '0' NOT NULL
 );
 #
-# Table structure for table 'pages'
+# Table structure for table 'tx_news_domain_model_news'
 #
 CREATE TABLE tx_news_domain_model_news (
   tx_angelshop_news_recipe  tinyint(11) default '0' NOT NULL,
