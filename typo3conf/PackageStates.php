@@ -266,30 +266,6 @@ return [
             'packagePath' => 'typo3/sysext/viewpage/',
             'suggestions' => [],
         ],
-        'formhandler' => [
-            'composerName' => 'typoheads/formhandler',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/formhandler/',
-            'suggestions' => [],
-        ],
-        'gridelements' => [
-            'composerName' => 'GridElementsTeam/Gridelements',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/gridelements/',
-            'suggestions' => [],
-        ],
-        'vhs' => [
-            'composerName' => 'fluidtypo3/vhs',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/vhs/',
-            'suggestions' => [],
-        ],
-        'angelshop' => [
-            'composerName' => 'MB/Angelshop',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/angelshop/',
-            'suggestions' => [],
-        ],
         'jumpurl' => [
             'composerName' => 'friendsoftypo3/jumpurl',
             'state' => 'active',
@@ -308,6 +284,36 @@ return [
             'packagePath' => 'typo3conf/ext/direct_mail/',
             'suggestions' => [],
         ],
+        'formhandler' => [
+            'composerName' => 'typoheads/formhandler',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/formhandler/',
+            'suggestions' => [],
+        ],
+        'gridelements' => [
+            'composerName' => 'GridElementsTeam/Gridelements',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/gridelements/',
+            'suggestions' => [],
+        ],
+        'sourceopt' => [
+            'composerName' => 'lochmueller/sourceopt',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/sourceopt/',
+            'suggestions' => [],
+        ],
+        'vhs' => [
+            'composerName' => 'fluidtypo3/vhs',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/vhs/',
+            'suggestions' => [],
+        ],
+        'angelshop' => [
+            'composerName' => 'MB/Angelshop',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/angelshop/',
+            'suggestions' => [],
+        ],
         'extender' => [
             'composerName' => 'evoweb/extender',
             'state' => 'active',
@@ -320,16 +326,22 @@ return [
             'packagePath' => 'typo3conf/ext/metaseo/',
             'suggestions' => [],
         ],
+        'nc_staticfilecache' => [
+            'composerName' => 'nc_staticfilecache',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/nc_staticfilecache/',
+            'suggestions' => [],
+        ],
+        'news' => [
+            'composerName' => 'georgringer/news',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/news/',
+            'suggestions' => [],
+        ],
         'realurl' => [
             'composerName' => 'dmitryd/typo3-realurl',
             'state' => 'active',
             'packagePath' => 'typo3conf/ext/realurl/',
-            'suggestions' => [],
-        ],
-        'sourceopt' => [
-            'composerName' => 'lochmueller/sourceopt',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/sourceopt/',
             'suggestions' => [],
         ],
         'adodb' => [
@@ -348,12 +360,6 @@ return [
             'composerName' => 'typo3/cms-dbal',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/dbal/',
-            'suggestions' => [],
-        ],
-        'extension_builder' => [
-            'composerName' => 'ebt/extension_builder',
-            'state' => 'inactive',
-            'packagePath' => 'typo3conf/ext/extension_builder/',
             'suggestions' => [],
         ],
         'feedit' => [
@@ -390,6 +396,12 @@ return [
             'composerName' => 'typo3/cms-recycler',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/recycler/',
+            'suggestions' => [],
+        ],
+        'theme_white' => [
+            'composerName' => 'theme_white',
+            'state' => 'inactive',
+            'packagePath' => 'typo3conf/ext/theme_white/',
             'suggestions' => [],
         ],
         'version' => [
