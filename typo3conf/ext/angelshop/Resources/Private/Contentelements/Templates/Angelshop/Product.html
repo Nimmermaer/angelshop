@@ -71,7 +71,7 @@
 
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="panel panel-primary text-center">
             <div class="panel-heading">
-                <h3 class="panel-title" itemprop="name">{data.header}</h3>
+                <h3 id="Product-title" class="panel-title" itemprop="name" data-uid="{data.uid}">{data.header}</h3>
             </div>
             <div class="panel-body">
                 <meta itemprop="priceCurrency" content="EUR"/>
@@ -107,7 +107,7 @@
                 <li class="list-group-item">
                     <f:link.page pageUid="12" class="btn btn-success" additionalParams="{order:'{data.header}'}"
                                  noCacheHash="1">
-                        Interesse Am Produkt &raquo;
+                        Interesse am Produkt &raquo;
                     </f:link.page>
                 </li>
                 <li class="list-group-item">
