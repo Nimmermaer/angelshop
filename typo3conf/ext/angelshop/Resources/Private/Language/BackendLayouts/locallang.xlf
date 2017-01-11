@@ -46,6 +46,24 @@
             <trans-unit id="Product.col.2">
                 <source>Footer</source>
             </trans-unit>
+            <trans-unit id="News.title">
+                <source>News Layout</source>
+            </trans-unit>
+            <trans-unit id="News.col.1">
+                <source>Sidebar</source>
+            </trans-unit>
+            <trans-unit id="News.col.0">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="Footer.col.0">
+                <source>Footer Left</source>
+            </trans-unit>
+            <trans-unit id="Footer.col.1">
+                <source>Footer Middle</source>
+            </trans-unit>
+            <trans-unit id="Footer.col.2">
+                <source>Footer Right</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

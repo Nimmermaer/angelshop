@@ -46,6 +46,24 @@
             <trans-unit id="Product.col.2">
                 <target>Fußleiste</target>
             </trans-unit>
+            <trans-unit id="News.title">
+                <target>Artikel Layout</target>
+            </trans-unit>
+            <trans-unit id="News.col.1">
+                <target>Seitenleiste</target>
+            </trans-unit>
+            <trans-unit id="News.col.0">
+                <target>Inhalt</target>
+            </trans-unit>
+            <trans-unit id="Footer.col.0">
+                <target>Footer Links</target>
+            </trans-unit>
+            <trans-unit id="Footer.col.1">
+                <target>Footer Mitte</target>
+            </trans-unit>
+            <trans-unit id="Footer.col.2">
+                <target>Footer Rechts</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
