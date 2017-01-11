@@ -7036,7 +7036,7 @@ header.carousel .fill {
 }
 
 footer {
-  margin: 50px 0;
+  margin-top: 50px;
 }
 
 @media (max-width: 991px) {
@@ -9304,8 +9304,10 @@ a.navbar-brand {
   border-radius: 5px;
 }
 ul.footer-nav {
+  margin-top: 15px;
+  text-align: center;
   list-style: none;
-  padding-left: 0px;
+  padding-left: 0;
 }
 ul.footer-nav li {
   display: inline-block;
@@ -9890,22 +9892,23 @@ ul.f3-widget-paginator > li > span {
   line-height: 1.42857143;
   color: #fff;
   text-decoration: none;
-  background-color: #000;
-  border: 1px solid #000;
+  background-color: #337ab7;
+  border: 1px solid #ddd;
 }
 ul.f3-widget-paginator li {
   display: inline;
 }
 ul.f3-widget-paginator li a {
   display: block;
-  border: 1px solid grey;
-  background-color: orange;
-  color: white;
+  border: 1px solid #ddd;
+  background-color: #fff ;
+  color: #337ab7;
   border-radius: 0;
 }
 ul.f3-widget-paginator li:hover a {
-  background-color: #000;
-  color: #fff;
+  background-color: #eee;
+  border-color: #ddd;
+  color: #23527c;
 }
 ul.tx-indexedsearch-browsebox {
   display: inline-block;
@@ -11809,4 +11812,12 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
 }
 .panel-primary {
   border-color: #337ab7 !important;
+}
+#Footer {
+  background-color: #222;
+  color: #fff;
+}
+#Footer .page-header {
+  margin: 20px 0 0px;
+  border: none;
 }

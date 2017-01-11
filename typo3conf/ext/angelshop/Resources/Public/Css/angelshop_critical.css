@@ -35,16 +35,15 @@ h1 {
   margin: .67em 0;
 }
 
-img {
-  border: 0;
-  vertical-align: middle;
-}
-
 button,
 input {
   color: inherit;
   font: inherit;
   margin: 0;
+}
+
+address {
+  font-style: normal;
 }
 
 button {
@@ -100,15 +99,9 @@ a {
   text-decoration: none;
 }
 
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  width: 100%;
-}
-
 h1,
 h2,
+h3,
 h4 {
   font-family: inherit;
   font-weight: 500;
@@ -123,7 +116,8 @@ h1 small {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -145,12 +139,20 @@ h2 {
   font-size: 30px;
 }
 
+h3 {
+  font-size: 24px;
+}
+
 h4 {
   font-size: 18px;
 }
 
 p {
   margin: 0 0 10px;
+}
+
+address {
+  line-height: 1.42857143;
 }
 
 small {
@@ -171,6 +173,10 @@ ul ul {
   margin-bottom: 0;
 }
 
+address {
+  margin-bottom: 20px;
+}
+
 ul {
   margin-bottom: 10px;
 }
@@ -189,6 +195,10 @@ ul {
 .panel-body:after,
 .row:after {
   clear: both;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted #777;
 }
 
 .container {
@@ -808,6 +818,18 @@ header.carousel .fill {
 
 .fa-search:before {
   content: "\f002";
+}
+
+.fa-user:before {
+  content: "\f007";
+}
+
+.fa-phone:before {
+  content: "\f095";
+}
+
+.fa-mobile:before {
+  content: "\f10b";
 }
 
 .fa-compass:before {

@@ -4,7 +4,7 @@ $(document).ready(function () {
         dots: true,
         infinite: true,
         autoplaySpeed: 2000,
-        autoplay:true,
+        autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -14,7 +14,7 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    autoplay:true,
+                    autoplay: true,
                     autoplaySpeed: 2000,
                     infinite: true,
                     dots: true,
@@ -24,7 +24,7 @@ $(document).ready(function () {
             {
                 breakpoint: 600,
                 settings: {
-                    autoplay:true,
+                    autoplay: true,
                     autoplaySpeed: 2000,
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -36,7 +36,7 @@ $(document).ready(function () {
                 breakpoint: 480,
                 settings: {
                     dots: true,
-                    autoplay:true,
+                    autoplay: true,
                     autoplaySpeed: 2000,
                     arrows: false,
                     slidesToShow: 1,
@@ -102,4 +102,27 @@ $(document).ready(function () {
         referrer: 'https://aba-angelshop.de/'
     });
     $('.panel').matchHeight();
+
+
+    $('#SubmitButton').on('click', function () {
+        var title = $('#Product-title').text();
+        var uid = $('#Product-title').attr('data-uid');
+        var counter = $('#Basket-Button .badge').text();
+        console.log(counter);
+        if ($('#Basket ul li').length) {
+            $.each($('#Basket ul li'), function (index, value) {
+                if($(this).attr('data-uid') !== uid) {
+                    $('#Basket ul').append('<li data-uid=' + uid + ' >' + title + '</li>');
+                    $('#Basket-Button .badge').empty();
+                    $('#Basket-Button .badge').text( parseInt(counter) + parseInt(1));
+                }
+            });
+        } else {
+
+            $('#Basket ul').append('<li data-uid=' + uid + ' >' + title + '</li>');
+            $('#Basket-Button .badge').empty();
+            $('#Basket-Button .badge').text( parseInt(counter) + parseInt(1));
+        }
+
+    });
 });

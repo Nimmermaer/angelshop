@@ -191,7 +191,19 @@
                 <source>Eine durchschaltbare Liste an Produkten</source>
             </trans-unit>
             <trans-unit id="tca.tt_content.tx_angelshop_map_small">
-                <source>Kleine Karte für Gridelemente</source>
+                <source>Kleines Impressum</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_map_small.0">
+                <source>Ohne Auswahl</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_map_small.1">
+                <source>Kleine Karte</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_map_small.2">
+                <source>Kleines Impressum mit Rahmen</source>
+            </trans-unit>
+            <trans-unit id="tca.tt_content.tx_angelshop_map_small.3">
+                <source>Kleines Impressum</source>
             </trans-unit>
             <trans-unit id="tx_angelshop_domain_model_tab.movement">
                 <source>Bewegtes Icon</source>
@@ -210,6 +222,12 @@
             </trans-unit>
             <trans-unit id="tx_newsletter_image.title">
                 <source>Newsletter Bild über die ganze Breite</source>
+            </trans-unit>
+            <trans-unit id="tx_contact.title">
+                <source>Kontaktelement</source>
+            </trans-unit>
+            <trans-unit id="tx_contact.description">
+                <source>Seitenlink zur Kontaktseite pflegbar</source>
             </trans-unit>
         </body>
     </file>
