@@ -35,6 +35,14 @@ mod {
                         CType = angelshop_product
                     }
                 }
+                tx_contact {
+                    iconIdentifier = mimetypes-x-content-form
+                    title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_contact.title
+                    description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_contact.description
+                    tt_content_defValues {
+                        CType = tx_contact
+                    }
+                }
             }
 
             show = *

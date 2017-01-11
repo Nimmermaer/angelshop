@@ -29,6 +29,8 @@ plugin.Tx_Formhandler.settings.predef.kontakt {
             1 {
                 product.defaultValue = TEXT
                 product.defaultValue.data = GP:order
+                email.defaultValue = TEXT
+                email.defaultValue.data = GP:email
             }
         }
     }

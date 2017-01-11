@@ -150,6 +150,8 @@ tt_content {
             }
         }
     }
+    tx_contact < lib.fluidContent
+    tx_contact.templateName = Angelshop/Widget/Contact
 
     tx_newsletter_text < lib.fluidContent
     tx_newsletter_text.templateName = Newsletter/Text
