@@ -3,9 +3,11 @@
         <f:form object="{address}" objectName="address" action="new">
 
             <f:form.validationResults for="address">
-                <div class="error">
-                    <strong>{error.address}</strong>: <f:for each="{error.errors}" as="errorDetail">{errorDetail.message}</f:for>
-                </div>
+                <f:if condition="{error}" >
+                    <div class="error">
+                        <strong>{error.address}</strong>: <f:for each="{error.errors}" as="errorDetail">{errorDetail.message}</f:for>
+                    </div>
+                </f:if>
             </f:form.validationResults>
             <div class="control-group form-group">
                 <div class="controls">
