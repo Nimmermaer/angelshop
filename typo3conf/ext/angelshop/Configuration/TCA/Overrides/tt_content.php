@@ -251,12 +251,33 @@ $newTtContentColumns = [
             'foreign_field' => 'record',
         ]
     ],
-    'tx_angelshop_map_small'                        => [
+    'tx_angelshop_map_small' => [
         'exclude' => 0,
         'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small',
         'config'  => [
-            'type'    => 'check',
-            'default' => 0
+            'type'                => 'select',
+            'renderType'          => 'selectSingle',
+            'items' => [
+                [
+                    'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.0',
+                    0
+                ],
+                [
+                    'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.1',
+                    1
+                ],
+                [
+                    'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.2',
+                    2
+                ],
+                [
+                    'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.3',
+                    3
+                ]
+            ],
+            'size'                => 1,
+            'minitems'            => 0,
+            'maxitems'            => 1
         ]
     ],
     'subheader'                                     => [
@@ -343,7 +364,7 @@ $contentelements = [
     'newsletter_textpic',
     'newsletter_text',
     'newsletter_image',
-
+    'contact'
 ];
 foreach ($contentelements as $contentelement) {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
@@ -426,6 +447,11 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_tab']           = [
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_angelshop_tab,' . $commonFields
+];
+
+$GLOBALS['TCA']['tt_content']['types'] ['tx_contact']           = [
+    'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+    header, header_layout, header_link;Kontaktseite'
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['ce_product'] = [
