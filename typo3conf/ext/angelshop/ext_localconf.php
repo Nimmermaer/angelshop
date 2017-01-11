@@ -94,6 +94,8 @@ $boot = function ($extensionKey) {
     }
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_address']['extender']['Address']['angelshop'] =
         'EXT:angelshop/Classes/Domain/Model/Address.php';
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['news']['extender']['News']['angelshop'] =
+        'EXT:angelshop/Classes/Domain/Model/News.php';
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter');
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\ObjectStorageConverter');

@@ -82,6 +82,15 @@
             <trans-unit id="tt_address.tx_angelshop_newsletter">
                 <source>Newsletteranmeldung</source>
             </trans-unit>
+            <trans-unit id="news.tx_angelshop_news_recipe">
+                <source>Rezept</source>
+            </trans-unit>
+            <trans-unit id="news.tx_angelshop_news_ingredient">
+                <source>Zutaten</source>
+            </trans-unit>
+            <trans-unit id="news.tx_angelshop_news_icon">
+                <source>Symbol</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

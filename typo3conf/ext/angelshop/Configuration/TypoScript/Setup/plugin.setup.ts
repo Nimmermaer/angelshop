@@ -18,6 +18,13 @@ plugin {
             loginNewsletter = {$plugin.tx_angelshop.settings.loginNewsletter}
             newsletterThankYouPid = {$plugin.tx_angelshop.settings.newsletterThankYouPid}
         }
+
+        contentElementRendering = RECORDS
+        contentElementRendering {
+            tables = tt_content
+            source.current = 1
+            dontCheckPid = 1
+        }
     }
 
     tx_product_list {
@@ -99,5 +106,45 @@ lib.weatherView {
             address = Abtsdorfer See, Saaldorf-Surheim
             appid = 9e31371905782f75d67d42ff929d711e
         }
+    }
+}
+
+lib.newsHeader = USER
+lib.newsHeader {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = News
+    pluginName = Pi1
+    vendorName = GeorgRinger
+    controller = News
+    action = detail
+    view < plugin.tx_news.view
+    view {
+        templateRootPaths.10 = EXT:angelshop/Resources/Private/Plugins/Templates
+    }
+
+    persistence < plugin.tx_news.persistence
+    settings < plugin.tx_news.settings
+}
+
+lib.newsList = USER
+lib.newsList {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = News
+    pluginName = Pi1
+    vendorName = GeorgRinger
+    switchableControllerActions {
+        News {
+            1 = list
+        }
+    }
+
+    settings < plugin.tx_news.settings
+    settings {
+        templateLayout = 10
+        //categories = 49
+        limit = 30
+        detailPid = 31
+        overrideFlexformSettingsIfEmpty := addToList(detailPid)
+        startingpoint = 984
     }
 }

@@ -42,6 +42,17 @@ config.tx_extbase {
                     }
                 }
             }
+
+            GeorgRinger\News\Domain\Model\News {
+                mapping {
+                    tableName = tx_news_domain_model_news
+                    columns {
+                        tx_angelshop_news_recipe.mapOnProperty = recipe
+                        tx_angelshop_news_icon.mapOnProperty = icon
+                        tx_angelshop_news_ingredient.mapOnProperty = ingredient
+                    }
+                }
+            }
         }
     }
 

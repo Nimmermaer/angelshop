@@ -18,8 +18,10 @@ lib.templates.base {
 
     variables {
         columnMain =< lib.contents.columns.main
-        columnBottom =< lib.contents.columns.bottom
         columnSpecial =< lib.contents.columns.special
+        columnFooterLeft =< lib.contents.columns.footerLeft
+        columnFooterMiddle =< lib.contents.columns.footerMiddle
+        columnFooterRight =< lib.contents.columns.footerRight
 
         homePagePid = TEXT
         homePagePid {
@@ -92,4 +94,7 @@ lib.templates.base.file.stdWrap.cObject {
 
     pagets__Product = TEXT
     pagets__Product.value = EXT:angelshop/Resources/Private/Templates/Page/Product.html
+
+    pagets__News = TEXT
+    pagets__News.value = EXT:angelshop/Resources/Private/Templates/Page/News.html
 }

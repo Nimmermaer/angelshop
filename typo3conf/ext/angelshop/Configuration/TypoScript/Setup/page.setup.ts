@@ -99,6 +99,21 @@ page {
     }
 }
 
+[globalVar = GP:tx_news_pi1|news > 0]
+    page.headerData{
+        10 = RECORDS
+        10 {
+            source = {GP:tx_news_pi1|news}
+            source.insertData = 1
+            tables = tx_news_domain_model_news
+            conf.tx_news_domain_model_news >
+            conf.tx_news_domain_model_news = TEXT
+            conf.tx_news_domain_model_news.field = title
+            wrap = <title> |&nbsp; &#124; Aba-Angelshop Laufen </title>
+
+        }
+    }
+[end]
 [globalVar = TSFE:id = 1]
     page.headerData {
         10 = TEXT

@@ -86,18 +86,43 @@ lib {
         }
     }
 
-    breadcrumb = HMENU
+
+    breadcrumb = COA
     breadcrumb {
-        special = rootline
-        entryLevel = 0
+
         wrap = <ol class="breadcrumb">|</ol>
-        1 = TMENU
-        1 {
-            noBlur = 1
-            NO {
-                allWrap = <li> | </li>    |*| <li> | </li>     |*| <li> | </li>
-                stdWrap.htmlSpecialChars = 1
+
+        # Breadcrumbs
+        10 = HMENU
+        10 {
+            special = rootline
+            special.range = 0|-1
+
+            1 = TMENU
+            1 {
+                NO = 1
+                NO.doNotLinkIt = |*| 0 |*| 1
+                NO.allWrap = <li> | </li>    |*| <li> | </li>     |*| <li> | </li>
+                NO.stdWrap.htmlSpecialChars = 1
             }
         }
     }
 }
+
+[globalVar = GP:tx_news_pi1|news > 0]
+    lib.breadcrumb {
+        10.1.NO.doNotLinkIt = 0
+        10.1.NO.allWrap = <li>|</li>
+        20 = RECORDS
+       20 {
+            dontCheckPid = 1
+            tables = tx_news_domain_model_news
+            source.data = GP:tx_news_pi1|news
+            source.intval = 1
+            conf.tx_news_domain_model_news = TEXT
+            conf.tx_news_domain_model_news.field = title
+            conf.tx_news_domain_model_news.htmlSpecialChars = 1
+            wrap = <li>|</li>
+        }
+    }
+[end]
