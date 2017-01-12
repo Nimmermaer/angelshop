@@ -70,3 +70,6 @@ plugin.tx_angelshop_fullwidthvideo {
         storagePid =
     }
 }
+plugin.metaseo {
+    metaTags.opengraph =0
+}
