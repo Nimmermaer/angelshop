@@ -102,7 +102,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
             )
         ),
         '987' => 'newsDetailConfiguration',
-        //'701' => 'newsDetailConfiguration', // For additional detail pages, add their uid as well
+        '1068' => 'newsDetailConfiguration', // For additional detail pages, add their uid as well
         '71' => 'newsTagConfiguration',
         '72' => 'newsCategoryConfiguration',
 
