@@ -49,9 +49,9 @@ plugin.tx_news {
 
         analytics {
             social {
-                facebookLike = 1
-                facebookShare = 1
-                twitter = 1
+                facebookLike = 0
+                facebookShare = 0
+                twitter = 0
             }
         }
 

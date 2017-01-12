@@ -8,5 +8,5 @@ plugin.tx_news {
         layoutRootPath = EXT:angelshop/Resources/Private/News/Layouts/
 
     }
-
+    settings.opengraph.site_name = ABA-Angelshop I'geh fisch'n
 }
