@@ -137,14 +137,12 @@ lib.newsList {
             1 = list
         }
     }
-
     settings < plugin.tx_news.settings
     settings {
         templateLayout = 10
-        //categories = 49
-        limit = 30
-        detailPid = 31
+        categories = 1067
+        detailPid = 1068
         overrideFlexformSettingsIfEmpty := addToList(detailPid)
-        startingpoint = 984
+        startingpoint = 1067
     }
 }
