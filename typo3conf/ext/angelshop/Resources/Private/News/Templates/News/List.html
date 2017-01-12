@@ -1,0 +1,157 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="General"/>
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+    <!--TYPO3SEARCH_end-->
+    <f:if condition="{news}">
+        <f:then>
+            <f:switch expression="{settings.templateLayout}">
+                <f:case value="2">
+                    <f:render section="newsImage"
+                              arguments="{_all}"/>
+                </f:case>
+                <f:case value="3">
+                    <f:if condition="{settings.hidePagination}">
+                        <f:then>
+                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                <f:render section="newsIcon"
+                                          arguments="{_all}"/>
+                            </f:for>
+                        </f:then>
+                        <f:else>
+                            <n:widget.paginate objects="{news}" as="paginatedNews"
+                                               configuration="{settings.list.paginate}"
+                                               initial="{offset:settings.offset,limit:settings.limit}">
+                                <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                    <f:render section="newsIcon"
+                                              arguments="{_all}"/>
+                                </f:for>
+                            </n:widget.paginate>
+                        </f:else>
+                    </f:if>
+
+                </f:case>
+                <f:case value="6">
+                    <f:render section="newsWidget"
+                              arguments="{_all}"/>
+                </f:case>
+                <f:case value="7">
+
+                </f:case>
+                <f:case value="10">
+                      <div class="list-group">
+                        <f:for each="{news}" as="newsItem" iteration="iterator">
+                            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}"
+                                    class="list-group-item">
+                                <div class="media-body">
+                                    <h4 class="media-heading" itemprop="headline">{newsItem.title}</h4>
+                                    {newsItem.teaser->f:format.raw()}
+                                </div>
+                            </n:link>
+                        </f:for>
+                    </div>
+                </f:case>
+                <f:case default="TRUE">
+                    <f:render section="newsDefault" arguments="{_all}"/>
+                </f:case>
+            </f:switch>
+        </f:then>
+        <f:else>
+            <div class="no-news-found">
+                <f:translate key="list_nonewsfound"/>
+            </div>
+        </f:else>
+    </f:if>
+    <!--TYPO3SEARCH_begin-->
+</f:section>
+
+<f:section name="newsWidget">
+
+</f:section>
+
+<f:section name="newsDefault">
+    <div class="news-list-view">
+        <f:if condition="{settings.hidePagination}">
+            <f:then>
+                <f:for each="{news}" as="newsItem" iteration="iterator">
+                    <f:render partial="List/Item"
+                              arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                </f:for>
+            </f:then>
+            <f:else>
+                <n:widget.paginate objects="{news}" as="paginatedNews"
+                                   configuration="{settings.list.paginate}"
+                                   initial="{offset:settings.offset,limit:settings.limit}">
+                    <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                        <f:render partial="List/Item"
+                                  arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                    </f:for>
+                </n:widget.paginate>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+
+<f:section name="newsIcon">
+    <div class="row">
+        <div class="col-md-1 text-center">
+            <f:if condition="{newsItem.icon}">
+                <f:then>
+                    <p><i class="fa {newsItem.icon} fa-4x"></i>
+                    </p>
+                </f:then>
+                <f:else>
+                    <p><i class="fa fa-camera fa-4x"></i>
+                    </p>
+                </f:else>
+            </f:if>
+            <p>{newsItem.datetime -> f:format.date(format: '%B %d, %Y')}</p>
+        </div>
+        <div class="col-md-5">
+
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                <f:alias map="{mediaElement: '{newsItem.falMedia.0}'}">
+
+                    <f:if condition="{mediaElement.originalResource.type} == 2">
+                        <f:image class="img-responsive img-hover" image="{mediaElement}"
+                                 title="{mediaElement.originalResource.title}"
+                                 alt="{mediaElement.originalResource.alternative}" width="600" height="300c"/>
+                    </f:if>
+                    <f:if condition="{mediaElement.originalResource.type} == 4">
+                        <f:render partial="Detail/FalMediaVideo" arguments="{mediaElement: mediaElement}"/>
+                    </f:if>
+                    <f:if condition="{mediaElement.originalResource.type} == 5">
+                        <f:image class="img-responsive img-hover" image="{mediaElement}"
+                                 title="{mediaElement.originalResource.title}"
+                                 alt="{mediaElement.originalResource.alternative}" width="600" height="300c"/>
+                    </f:if>
+                </f:alias>
+            </n:link>
+        </div>
+        <div class="col-md-6">
+            <h3>
+                <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                    {newsItem.title}
+                </n:link>
+            </h3>
+            <f:if condition="{newsItem.author}">
+                <p>von <a href="mailto:{newsItem.authorEmail}">{newsItem.author}</a>
+                </p>
+            </f:if>
+
+            <f:format.html>{newsItem.bodytext->f:format.crop(maxCharacters:'200',respectWordBoundaries:'TRUE')}
+            </f:format.html>
+            <n:link class="btn btn-primary" newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                Mehr lesen <i class="fa fa-angle-right"></i>
+            </n:link>
+        </div>
+    </div>
+    <hr/>
+</f:section>
+</html>
