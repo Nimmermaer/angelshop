@@ -36,7 +36,7 @@ plugin.tx_news {
         cssFile = {$plugin.tx_news.settings.cssFile}
 
         #Displays a dummy image if the news have no media items
-        displayDummyIfNoMedia = 1
+        displayDummyIfNoMedia = 0
 
         # Output format
         format = html
@@ -78,9 +78,9 @@ plugin.tx_news {
         topNewsFirst = 0
         orderByAllowed = sorting,author,uid,title,teaser,author,tstamp,crdate,datetime,categories.title
 
-        facebookLocale = en_US
-        googlePlusLocale = en
-        disqusLocale = en
+        facebookLocale = de_DE
+        googlePlusLocale = de
+        disqusLocale = de
 
         demandClass =
 
@@ -164,7 +164,7 @@ plugin.tx_news {
 
         # Opengraph implementation
         opengraph {
-            site_name = {$plugin.tx_news.opengraph.site_name}
+            site_name = ABA-Angelshop
             type = article
             admins =
             email =
