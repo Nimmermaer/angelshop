@@ -22,7 +22,6 @@ if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
 
-
 $pagesColumns = [
 
     'ce_whatsapp_text' => [

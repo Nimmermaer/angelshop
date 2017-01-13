@@ -1,13 +1,15 @@
 <?php
 namespace MB\Angelshop\ViewHelpers\Form;
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+    /*  | This extension is part of the TYPO3 project. The TYPO3 project is
+     *  | free software and is licensed under GNU General Public License.
+     *  |
+     *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>
+     */
 
 /**
- * Created by PhpStorm.
- * User: Cox
- * Date: 28.11.2016
- * Time: 23:26
+ * Class UploadViewHelper
+ * @package MB\Angelshop\ViewHelpers\Form
  */
 class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelper
 {
