@@ -11821,3 +11821,10 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
   margin: 20px 0 0px;
   border: none;
 }
+#Footer .ce-menu.ce-menu-1 {
+  padding: 0;
+  list-style: none;
+}
+#Footer .ce-menu.ce-menu-1 li {
+  padding: 10px 0 0 0;
+}

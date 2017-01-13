@@ -686,24 +686,6 @@ abbr[title] {
   border-color: #101010;
 }
 
-.badge {
-  font-weight: 700;
-  line-height: 1;
-  white-space: nowrap;
-  text-align: center;
-}
-
-.badge {
-  display: inline-block;
-  min-width: 10px;
-  padding: 3px 7px;
-  font-size: 12px;
-  color: #fff;
-  vertical-align: middle;
-  background-color: #777;
-  border-radius: 10px;
-}
-
 .panel {
   margin-bottom: 20px;
   background-color: #fff;
@@ -844,10 +826,6 @@ header.carousel .fill {
   content: "\f232";
 }
 
-.fa-shopping-bag:before {
-  content: "\f290";
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -923,9 +901,4 @@ header.carousel {
 body:after {
   content: url(../Images/close.png) url(../Images/loading.gif) url(../Images/prev.png) url(../Images/next.png);
   display: none;
-}
-
-.basket .fa {
-  color: #fff;
-  padding: 15px 10px 0 0;
 }

@@ -42,7 +42,24 @@
                               arguments="{_all}"/>
                 </f:case>
                 <f:case value="7">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><i class="fa fa-fw fa-book"></i>{contentObjectData.header}</h4>
+                        </div>
+                            <ul class="list-group">
+                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                <n:link newsItem="{newsItem}" settings="{settings}" class="list-group-item" title="{newsItem.title}">
+                                        {newsItem.title}
+                                </n:link>
+                            </f:for>
+                                <f:if condition="{settings.listPid}">
+                                    <f:link.page pageUid="{settings.listPid}" class="list-group-item default">
+                                        Alle Rezepte &raquo;
+                                    </f:link.page>
+                                </f:if>
 
+                            </ul>
+                        </div>
                 </f:case>
                 <f:case value="10">
                       <div class="list-group">
