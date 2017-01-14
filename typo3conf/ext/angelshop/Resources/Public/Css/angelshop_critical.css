@@ -42,10 +42,6 @@ input {
   margin: 0;
 }
 
-address {
-  font-style: normal;
-}
-
 button {
   overflow: visible;
 }
@@ -101,7 +97,6 @@ a {
 
 h1,
 h2,
-h3,
 h4 {
   font-family: inherit;
   font-weight: 500;
@@ -116,8 +111,7 @@ h1 small {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -139,20 +133,12 @@ h2 {
   font-size: 30px;
 }
 
-h3 {
-  font-size: 24px;
-}
-
 h4 {
   font-size: 18px;
 }
 
 p {
   margin: 0 0 10px;
-}
-
-address {
-  line-height: 1.42857143;
 }
 
 small {
@@ -173,10 +159,6 @@ ul ul {
   margin-bottom: 0;
 }
 
-address {
-  margin-bottom: 20px;
-}
-
 ul {
   margin-bottom: 10px;
 }
@@ -195,10 +177,6 @@ ul {
 .panel-body:after,
 .row:after {
   clear: both;
-}
-
-abbr[title] {
-  border-bottom: 1px dotted #777;
 }
 
 .container {
@@ -686,6 +664,35 @@ abbr[title] {
   border-color: #101010;
 }
 
+.list-group {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+a.list-group-item {
+  color: #555;
+}
+
 .panel {
   margin-bottom: 20px;
   background-color: #fff;
@@ -694,6 +701,10 @@ abbr[title] {
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.panel>.list-group {
+  margin-bottom: 0;
 }
 
 .panel-body {
@@ -705,6 +716,21 @@ abbr[title] {
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
+}
+
+.panel>.list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+.panel>.list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.panel-heading+.list-group .list-group-item:first-child {
+  border-top-width: 0;
 }
 
 .panel-default {
@@ -802,16 +828,8 @@ header.carousel .fill {
   content: "\f002";
 }
 
-.fa-user:before {
-  content: "\f007";
-}
-
-.fa-phone:before {
-  content: "\f095";
-}
-
-.fa-mobile:before {
-  content: "\f10b";
+.fa-book:before {
+  content: "\f02d";
 }
 
 .fa-compass:before {

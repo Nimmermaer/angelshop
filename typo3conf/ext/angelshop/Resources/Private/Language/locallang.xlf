@@ -19,6 +19,53 @@
             <trans-unit id="search-start">
                 <source>Rezeptsuche</source>
             </trans-unit>
+            <trans-unit id="company_name">
+                <source>ABA-Angelshop</source>
+            </trans-unit>
+            <trans-unit id="dropdown_navigation">
+                <source>Aufklapp Navigation</source>
+            </trans-unit>
+            <trans-unit id="search_website">
+                <source>Webseite durchsuchen...</source>
+            </trans-unit>
+            <trans-unit id="what_you_search">
+                <source>Was suchen Sie?</source>
+            </trans-unit>
+            <trans-unit id="facebook_search">
+                <source>Auf Facebook teilen</source>
+            </trans-unit>
+            <trans-unit id="whatsapp_share">
+                <source>Auf Whatsapp teilen</source>
+            </trans-unit>
+            <trans-unit id="first_name">
+                <source>Vorname</source>
+            </trans-unit>
+            <trans-unit id="last_name">
+                <source>Nachname</source>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>E-Mail</source>
+            </trans-unit>
+            <trans-unit id="phone">
+                <source>Telefon</source>
+            </trans-unit>
+            <trans-unit id="address">
+                <source>Adresse</source>
+            </trans-unit>
+            <trans-unit id="subscripe_newsletter">
+                <source>Ich möchte den Newsletter abonnieren</source>
+            </trans-unit>
+            <trans-unit id="subscripe_here">
+                <source>hier</source>
+            </trans-unit>
+            <trans-unit id="subscripe_again">
+                <source>wieder anmelden.</source>
+            </trans-unit>
+            <trans-unit id="unsubscripe_newsletter">
+                <source><![CDATA[Schade das Sie sich abgemeldet haben. <br/>
+                    Sollte es aus Versehen passiert sein kannst du dich]]]]>
+                </source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

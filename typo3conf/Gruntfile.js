@@ -134,7 +134,7 @@ module.exports = function (grunt) {
             options: {
                 shorthandCompacting: false,
                 roundingPrecision: -1,
-                report: 'min'
+                report: 'gzip'
             },
             compress: {
                 files: {

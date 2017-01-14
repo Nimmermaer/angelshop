@@ -11,36 +11,36 @@
             </f:form.validationResults>
             <div class="control-group form-group">
                 <div class="controls">
-                    <label for="mail_name">Vorname *</label>
+                    <label for="mail_name"><f:translate key="first_name" extensionName="angelshop"/> *</label>
                     <f:form.textfield id="mail_name" class="form-control" property="firstName" additionalAttributes="{required:required}" />
 
                 </div>
             </div>
             <div class="control-group form-group">
                 <div class="controls">
-                    <label for="mail_last_name">Nachname *</label>
+                    <label for="mail_last_name"><f:translate key="last_name" extensionName="angelshop"/> *</label>
                     <f:form.textfield id="mail_last_name" class="form-control" property="lastName" additionalAttributes="{required:required}"/>
                 </div>
             </div>
-            <label for="email">E-Mail*</label>
+            <label for="email"><f:translate key="email" extensionName="angelshop"/> *</label>
             <div class="control-group form-group input-group">
                 <f:form.textfield id="email" class=" form-control" property="email" additionalAttributes="{required:required}"/>
                 <span class="input-group-addon" ><i class="fa fa-envelope" aria-hidden="true"></i></span>
             </div>
-            <label for="phone">Telefon</label>
+            <label for="phone"><f:translate key="phone" extensionName="angelshop"/> </label>
             <div class="control-group form-group input-group">
                 <f:form.textfield id="phone" class=" form-control" property="phone"/>
                 <span class="input-group-addon" ><i class="fa fa-phone" aria-hidden="true"></i></span>
             </div>
             <div class="control-group form-group">
                 <div class="controls">
-                    <label for="address">Adresse</label>
+                    <label for="address"><f:translate key="address" extensionName="angelshop"/> </label>
                     <f:form.textarea class="form-control"  id="address" property="address"/>
                 </div>
             </div>
             <div class="checkbox">
                 <label>
-                    <f:form.checkbox property="newsletter" value="1"/> Ich möchte den Newsletter abonnieren
+                    <f:form.checkbox property="newsletter" value="1"/><f:translate key="subscripe_newsletter" extensionName="angelshop"/>
                 </label>
             </div>
             <f:form.submit class="btn btn-success" value="Absenden" />
