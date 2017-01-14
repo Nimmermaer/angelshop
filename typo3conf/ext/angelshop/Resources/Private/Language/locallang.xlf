@@ -31,7 +31,7 @@
             <trans-unit id="what_you_search">
                 <source>Was suchen Sie?</source>
             </trans-unit>
-            <trans-unit id="facebook_search">
+            <trans-unit id="facebook_share">
                 <source>Auf Facebook teilen</source>
             </trans-unit>
             <trans-unit id="whatsapp_share">
