@@ -2,7 +2,7 @@ config {
     additionalHeaders = Content-Type:text/html;charset=utf-8
     doctype = html5
     disableAllHeaderCode = 0
-
+    spamProtectEmailAddresses = 1
     sendCacheHeaders = 1
 
     renderCharset = utf-8
