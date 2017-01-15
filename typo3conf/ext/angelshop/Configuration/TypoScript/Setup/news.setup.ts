@@ -53,6 +53,9 @@ plugin.tx_news {
             registerProperties = keywords,title
             showSocialShareButtons = 0
         }
+        search {
+            fields = teaser,title,bodytext
+        }
 
         # Opengraph implementation
         opengraph {
