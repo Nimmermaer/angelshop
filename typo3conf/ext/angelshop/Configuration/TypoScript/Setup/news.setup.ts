@@ -54,7 +54,7 @@ plugin.tx_news {
             showSocialShareButtons = 0
         }
         search {
-            fields = teaser,title,bodytext
+            fields = teaser,title,bodytext,ingredient
         }
 
         # Opengraph implementation
