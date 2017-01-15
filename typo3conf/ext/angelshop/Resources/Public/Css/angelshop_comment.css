@@ -9944,10 +9944,18 @@ ul.tx-indexedsearch-browsebox > li:first-child > strong a {
   display: block;
   padding: 10px 15px;
 }
-.panel-default > .panel-heading:hover {
+.panel-group .panel-default > .panel-heading:hover {
   background-color: #fff;
 }
-.panel-default > .panel-heading:hover a {
+.panel-group .panel-default > .panel-heading:hover a {
+  text-decoration: none;
+}
+.panel-group .panel-group a:hover,
+.panel-group .panel-group a.accordion-toggle:focus {
+  text-decoration: none;
+}
+.panel-group .panel-title a:hover,
+.panel-group .panel-title a:focus {
   text-decoration: none;
 }
 #Social {

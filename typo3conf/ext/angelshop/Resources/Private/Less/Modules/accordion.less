@@ -11,11 +11,26 @@
     }
   }
 }
-.panel-default {
-  &>.panel-heading:hover {
-    background-color: #fff;
-    a {
-      text-decoration: none;
+.panel-group {
+  .panel-default {
+    &>.panel-heading:hover {
+      background-color: #fff;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .panel-group a{
+      &:hover,
+      &.accordion-toggle:focus {
+      text-decoration:none;
+    }
+
+  }
+  .panel-title a{
+    &:hover,
+    &:focus {
+      text-decoration:none;
     }
   }
 }
