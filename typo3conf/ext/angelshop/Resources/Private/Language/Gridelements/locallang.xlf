@@ -32,7 +32,7 @@
                 <source>40:40:40</source>
             </trans-unit>
             <trans-unit id="grid-40-40-40.description">
-                <source>Vierspalter</source>
+                <source>Dreispalter</source>
             </trans-unit>
 
             <trans-unit id="grid-fullwidth.title">
