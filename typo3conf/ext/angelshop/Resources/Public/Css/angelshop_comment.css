@@ -9263,6 +9263,18 @@ footer {
   font-family: 'Bart';
   src: url('../Fonts/ufonts.com_bart-normal.ttf') format('truetype');
 }
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+.align-justify {
+  text-align: justify;
+}
 html {
   overflow-y: scroll;
 }

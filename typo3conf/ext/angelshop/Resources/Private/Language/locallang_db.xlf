@@ -91,6 +91,9 @@
             <trans-unit id="news.tx_angelshop_news_icon">
                 <source>Symbol</source>
             </trans-unit>
+            <trans-unit id="pages.ce_social_position">
+                <source>Postion des Social Links</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
