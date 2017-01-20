@@ -26,6 +26,7 @@
             <f:render partial="Footer" arguments="{_all}"/>
         </div>
     </f:case>
+   <!--Team Element -->
     <f:case value="1">
         <div class="thumbnail text-center">
 
@@ -53,6 +54,7 @@
             </div>
         </div>
     </f:case>
+    <!--Projekt Element -->
     <f:case value="2">
         <div class="img-portfolio">
             <f:if condition="{data.image_zoom}">
@@ -91,6 +93,7 @@
             <p>{data.bodytext->f:format.raw()}</p>
         </div>
     </f:case>
+    <!--Call-To-Action Element -->
     <f:case value="3">
         <div class="well">
             <div class="row">
@@ -106,6 +109,7 @@
             </div>
         </div>
     </f:case>
+    <!--Teaser Element-->
     <f:case value="4">
         <div class="panel panel-default">
             <div class="panel-heading">

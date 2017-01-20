@@ -14,8 +14,8 @@ config {
 
     formMailCharset = utf-8
 
-    spamProtectEmailAddresses = 2
-    spamProtectEmailAddresses_atSubst = (at)
+    spamProtectEmailAddresses = -2
+    #spamProtectEmailAddresses_atSubst = (at)
 
     disablePrefixComment = 1
 

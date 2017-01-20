@@ -1,6 +1,5 @@
 mod {
     web_layout.tt_content.preview {
-        tx_slider = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Slider.html
         tx_impressum = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Impressum.html
         tx_tab = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Tab.html
     }

@@ -2,8 +2,8 @@ tt_content.gridelements_pi1.20.10.setup.accordion {
     columns {
         20 {
             renderObj =< tt_content
-            dataWrap = <div class="panel-group" id="accordion-{field:uid}">|</div>
-            insertData=1
+            dataWrap = <div class="panel-group" id="Accordion-{field:uid}">|</div>
+            insertData= 1
         }
     }
 
