@@ -15,7 +15,7 @@ config {
     formMailCharset = utf-8
 
     spamProtectEmailAddresses = -2
-    #spamProtectEmailAddresses_atSubst = (at)
+    spamProtectEmailAddresses_atSubst = (at)
 
     disablePrefixComment = 1
 
@@ -45,8 +45,11 @@ config {
     simulateStaticDocuments = 0
     tx_realurl_enable = 1
 
+    #indexed_search configuration
+    index_externals = 1
     index_enable = 1
     index_metatags = 1
+
     xhtml_cleaning = all
     removeDefaultJS = 1
     sourceopt {
@@ -58,20 +61,6 @@ config {
         removeComments = 1
         removeComments.keep.10 = /^TYPO3SEARCH_/usi
         formatHtml = 1
-#        headerComment (
-#><(((('> ><(((('> ><(((('>
-#
-#     _    ____    _         _                     _     _
-#    / \  | __ )  / \       / \   _ __   __ _  ___| |___| |__   ___  _ __
-#   / _ \ |  _ \ / _ \     / _ \ | '_ \ / _` |/ _ \ / __| '_ \ / _ \| '_ \
-#  / ___ \| |_) / ___ \   / ___ \| | | | (_| |  __/ \__ \ | | | (_) | |_) |
-# /_/   \_\____/_/   \_\ /_/   \_\_| |_|\__, |\___|_|___/_| |_|\___/| .__/
-#                                       |___/                       |_|
-#
-#I' geh fisch'n in Berchtesgaden
-#
-#><(((('> ><(((('> ><(((('>
-#        )
     }
 }
 

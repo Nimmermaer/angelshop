@@ -1,7 +1,3 @@
-config.index_enable = 1
-config.index_externals = 1
-config.index_metatags = 1
-
 # Plugin configuration
 plugin.tx_indexedsearch {
     settings {
