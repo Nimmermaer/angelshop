@@ -37,6 +37,14 @@ $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'] = [
         'fa-facebook-square'
     ],
     [
+        'Messer und Gabel',
+        'fa-cutlery'
+    ],
+    [
+        'Zitrone',
+        'fa-lemon-o'
+    ],
+    [
         'Xing',
         'fa-xing-square'
     ],
@@ -135,6 +143,10 @@ $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'] = [
     [
         'Vimeo',
         'fa-vimeo'
+    ],
+    [
+        'Zahnrad',
+        'fa-cog'
     ],
     [
         'Amazon',
