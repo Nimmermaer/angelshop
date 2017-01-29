@@ -9,6 +9,7 @@ lib.templates.base {
             references.fieldName = media
             as = files
         }
+
         120 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
         120 {
             references.fieldName = tx_angelshop_facebook_image

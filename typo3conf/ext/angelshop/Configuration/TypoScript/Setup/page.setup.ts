@@ -90,6 +90,7 @@ page {
             value = website
             wrap = <meta property=”og:type” content=”|”>
         }
+
         3422423424 = TEXT
         3422423424 {
             value (
@@ -100,7 +101,7 @@ page {
 }
 
 [globalVar = GP:tx_news_pi1|news > 0]
-    page.headerData{
+    page.headerData {
         10 = RECORDS
         10 {
             source = {GP:tx_news_pi1|news}
@@ -110,10 +111,10 @@ page {
             conf.tx_news_domain_model_news = TEXT
             conf.tx_news_domain_model_news.field = title
             wrap = <title> |&nbsp; &#124; Aba-Angelshop Laufen </title>
-
         }
     }
 [end]
+
 [globalVar = TSFE:id = 1]
     page.headerData {
         10 = TEXT

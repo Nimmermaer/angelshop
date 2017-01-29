@@ -98,6 +98,7 @@ lib.weatherView {
     view {
         templateRootPaths.10 = EXT:angelshop/Resources/Private/Plugins/Templates
     }
+
     persistence < plugin.tx_angelshop.persistence
     settings < plugin.tx_angelshop.settings
     settings {
@@ -137,6 +138,7 @@ lib.newsList {
             1 = list
         }
     }
+
     settings < plugin.tx_news.settings
     settings {
         templateLayout = 10

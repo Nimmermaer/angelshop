@@ -53,9 +53,9 @@ config {
     xhtml_cleaning = all
     removeDefaultJS = 1
     sourceopt {
-        removeGenerator =1
+        removeGenerator = 1
         enabled = 1
-        removeBlurScript= 1
+        removeBlurScript = 1
         enable_utf-8_support = 1
         headerComment = 0
         removeComments = 1
@@ -65,11 +65,11 @@ config {
 }
 
 [applicationContext = Development]
- config {
-     compressCss = 0
-     compressJs = 0
-     concatenateCss = 0
-     concatenateJs = 0
-     concatenateJsAndCss = 0
- }
+    config {
+        compressCss = 0
+        compressJs = 0
+        concatenateCss = 0
+        concatenateJs = 0
+        concatenateJsAndCss = 0
+    }
 [end]

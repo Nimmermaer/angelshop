@@ -34,12 +34,14 @@ plugin.Tx_Formhandler.settings.predef.kontakt {
             }
         }
     }
+
     loggers {
         1.class = Logger\DB
         1.config {
             pid = 1070
         }
     }
+
     saveInterceptors {
         10.class = Interceptor\AntiSpamFormTime
         10.config {

@@ -16,7 +16,6 @@ lib.fluidContent {
         defaultHeaderType = {$styles.content.defaultHeaderType}
         offerPid = {$global.page.offerPid}
         openweathermapApi = {$plugin.tx_angelshop.settings.openweathermapApi}
-
     }
 }
 
@@ -150,6 +149,7 @@ tt_content {
             }
         }
     }
+
     tx_contact < lib.fluidContent
     tx_contact.templateName = Angelshop/Widget/Contact
 

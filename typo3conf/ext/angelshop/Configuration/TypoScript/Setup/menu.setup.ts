@@ -50,10 +50,12 @@ lib {
                     20.field = subtitle
                 }
             }
+
             ACT < .NO
             ACT {
                 allWrap = <li class="active"> | </li>
             }
+
             wrap = <ul class="dropdown-menu">|</ul>
         }
     }
@@ -86,10 +88,8 @@ lib {
         }
     }
 
-
     breadcrumb = COA
     breadcrumb {
-
         wrap = <ol class="breadcrumb">|</ol>
 
         # Breadcrumbs
@@ -114,7 +114,7 @@ lib {
         10.1.NO.doNotLinkIt = 0
         10.1.NO.allWrap = <li>|</li>
         20 = RECORDS
-       20 {
+        20 {
             dontCheckPid = 1
             tables = tx_news_domain_model_news
             source.data = GP:tx_news_pi1|news

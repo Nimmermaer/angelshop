@@ -34,6 +34,7 @@ mod {
                         CType = angelshop_product
                     }
                 }
+
                 tx_contact {
                     iconIdentifier = mimetypes-x-content-form
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_contact.title
@@ -97,6 +98,7 @@ mod {
 
             show = *
         }
+
         newsletter {
             header = Newsletter
             elements {
@@ -108,6 +110,7 @@ mod {
                         CType = tx_newsletter_image
                     }
                 }
+
                 tx_newsletter_text {
                     iconIdentifier = content-text
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_newsletter_text.title
@@ -116,6 +119,7 @@ mod {
                         CType = tx_newsletter_text
                     }
                 }
+
                 tx_newsletter_textpic {
                     iconIdentifier = content-textpic
                     title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_newsletter_textpic.title
@@ -125,12 +129,11 @@ mod {
                     }
                 }
             }
+
             show = *
         }
     }
 }
-
-
 
 #[page|backend_layout=pagets__Newsletter]
 #    mod.wizards.newContentElement.wizardItems.newsletter.show = tx_newsletter_textpic, tx_newsletter_text, tx_newsletter_image

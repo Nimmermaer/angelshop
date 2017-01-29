@@ -12,10 +12,12 @@ plugin.tx_angelshop {
         # cat=plugin.tx_angelshop_gallery//a; type=string; label=Default storage PID
         storagePid =
     }
+
     settings {
         address {
             newsletterStoragePid = 1051
         }
+
         openweathermapApi = 9e31371905782f75d67d42ff929d711e
         logoutNewsletter = 1049
         loginNewsletter = 1049
@@ -70,6 +72,8 @@ plugin.tx_angelshop_fullwidthvideo {
         storagePid =
     }
 }
+
 plugin.metaseo {
-    metaTags.opengraph =0
+    metaTags.opengraph = 0
+    social.googleplus.profilePageId = 101637966309914323974
 }
