@@ -124,7 +124,7 @@
 				</n:link>
 			</h3>
 			<f:if condition="{newsItem.author}">
-				<p>von <a href="mailto:{newsItem.authorEmail}">{newsItem.author}</a>
+				<p>von <f:link.typolink parameter="{newsItem.authorEmail}" >{newsItem.author}</f:link.typolink>
 				</p>
 			</f:if>
 

@@ -71,8 +71,8 @@
         </f:if>
         <f:if condition="{data.tx_angelshop_email}">
             <p><i class="fa fa-envelope-o"></i>
-                <abbr title="{f:translate(key:'email', extensionName:'angelshop')}"><f:translate key="email" extensionName="angelshop"/></abbr>: <a
-                        href="mailto:{data.tx_angelshop_email}">{data.tx_angelshop_email}</a>
+                <abbr title="{f:translate(key:'email', extensionName:'angelshop')}"><f:translate key="email" extensionName="angelshop"/></abbr>:
+                <f:link.typolink parameter="{data.tx_angelshop_email}" />
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_cognizance}">

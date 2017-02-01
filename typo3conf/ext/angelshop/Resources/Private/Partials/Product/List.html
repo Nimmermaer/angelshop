@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
-<f:widget.paginate objects="{products}" as="productlist" configuration="{itemsPerPage:10, addQueryStringMethod: 'POST,GET'}">
+<f:widget.paginate objects="{products}" as="productlist" configuration="{searchword:'{searchword}',itemsPerPage:10, addQueryStringMethod: 'POST,GET'}">
     <f:for each="{productlist}" as="product">
         <f:if condition="{product.stock} != 1">
             <div class="row">

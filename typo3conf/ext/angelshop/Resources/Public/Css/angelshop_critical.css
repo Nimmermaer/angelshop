@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+.page-header {
+  word-break: break-all;
+}
+
 .navbar-fixed-top .navbar-collapse {
   max-height: 340px;
 }
@@ -33,6 +37,11 @@ b {
 
 h1 {
   margin: .67em 0;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
 }
 
 button,
@@ -93,6 +102,13 @@ input {
 a {
   color: #337ab7;
   text-decoration: none;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 h1,
@@ -207,7 +223,7 @@ ul {
 }
 
 .col-lg-12,
-.col-md-4,
+.col-md-3,
 .col-md-6 {
   position: relative;
   min-height: 1px;
@@ -216,7 +232,7 @@ ul {
 }
 
 @media (min-width:992px) {
-  .col-md-4,
+  .col-md-3,
   .col-md-6 {
     float: left;
   }
@@ -225,8 +241,8 @@ ul {
     width: 50%;
   }
 
-  .col-md-4 {
-    width: 33.33333333%;
+  .col-md-3 {
+    width: 25%;
   }
 }
 
@@ -683,12 +699,6 @@ ul {
   border-top-left-radius: 4px;
 }
 
-.list-group-item:last-child {
-  margin-bottom: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
 a.list-group-item {
   color: #555;
 }
@@ -721,12 +731,6 @@ a.list-group-item {
 .panel>.list-group .list-group-item {
   border-width: 1px 0;
   border-radius: 0;
-}
-
-.panel>.list-group:last-child .list-group-item:last-child {
-  border-bottom: 0;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
 }
 
 .panel-heading+.list-group .list-group-item:first-child {
@@ -838,6 +842,10 @@ header.carousel .fill {
 
 .fa-car:before {
   content: "\f1b9";
+}
+
+.fa-ship:before {
+  content: "\f21a";
 }
 
 .fa-whatsapp:before {

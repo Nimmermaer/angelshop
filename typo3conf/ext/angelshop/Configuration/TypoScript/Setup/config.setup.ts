@@ -2,7 +2,6 @@ config {
     additionalHeaders = Content-Type:text/html;charset=utf-8
     doctype = html5
     disableAllHeaderCode = 0
-    spamProtectEmailAddresses = 1
     sendCacheHeaders = 1
 
     renderCharset = utf-8
@@ -14,8 +13,8 @@ config {
 
     formMailCharset = utf-8
 
-    spamProtectEmailAddresses = -2
-    spamProtectEmailAddresses_atSubst = (at)
+    spamProtectEmailAddresses = 2
+    spamProtectEmailAddresses_atSubst = &#64;
 
     disablePrefixComment = 1
 
@@ -41,7 +40,6 @@ config {
     concatenateJsAndCss = 1
 
     removeDefaultCss = 1
-    removeDefaultJS = 1
     simulateStaticDocuments = 0
     tx_realurl_enable = 1
 
@@ -51,7 +49,6 @@ config {
     index_metatags = 1
 
     xhtml_cleaning = all
-    removeDefaultJS = 1
     sourceopt {
         removeGenerator = 1
         enabled = 1
