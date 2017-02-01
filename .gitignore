@@ -17,4 +17,4 @@ typo3conf/node_modules
 /typo3conf/l10n/*
 /typo3conf/ext/**
 !/typo3conf/ext/angelshop
-vendor
+/vendor
