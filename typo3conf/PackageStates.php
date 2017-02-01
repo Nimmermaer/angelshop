@@ -398,12 +398,6 @@ return [
             'packagePath' => 'typo3/sysext/recycler/',
             'suggestions' => [],
         ],
-        'theme_white' => [
-            'composerName' => 'theme_white',
-            'state' => 'inactive',
-            'packagePath' => 'typo3conf/ext/theme_white/',
-            'suggestions' => [],
-        ],
         'version' => [
             'composerName' => 'typo3/cms-version',
             'state' => 'inactive',
