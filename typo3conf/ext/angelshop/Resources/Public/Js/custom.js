@@ -29,6 +29,14 @@ ga('send', 'pageview', {
     'anonymizeIp': true
 });
 
+if(ga) {
+   $('.call-to-action-1299').click(function(){
+       ga('send', 'event', 'fischerpruefung', 'klick on start page');
+   });
+   $('#c1297 .ce-textpic a').click(function(){
+       ga('send', 'event', 'fischerpruefung', 'klick on start page');
+   });
+ }
 /*
  * Copyright (C) 2012 PrimeBox
  * 

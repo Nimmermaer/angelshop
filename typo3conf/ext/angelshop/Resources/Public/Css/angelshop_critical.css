@@ -836,10 +836,6 @@ header.carousel .fill {
   content: "\f02d";
 }
 
-.fa-compass:before {
-  content: "\f14e";
-}
-
 .fa-car:before {
   content: "\f1b9";
 }
@@ -877,6 +873,10 @@ a.navbar-brand {
   color: orange!important;
   font-size: 25px;
   font-weight: 700;
+}
+
+.ce-textpic.ce-above .ce-gallery {
+  margin-bottom: 15px;
 }
 
 header.carousel {
