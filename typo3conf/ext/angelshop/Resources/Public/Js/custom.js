@@ -31,11 +31,16 @@ ga('send', 'pageview', {
 
 if(ga) {
    $('.call-to-action-1299').click(function(){
-       ga('send', 'event', 'fischerpruefung', 'klick on start page');
+       ga('send', 'event', 'fischerpruefung', 'start page');
    });
-   $('#c1297 .ce-textpic a').click(function(){
-       ga('send', 'event', 'fischerpruefung', 'klick on start page');
+   $('#c1297 .ce-textpic li a').click(function(){
+       ga('send', 'event', 'fischerpruefung', 'email');
    });
+
+   $('#c1297 .ce-textpic .ce-bodytext a.external-link').click(function(){
+       ga('send', 'event', 'fischerpruefung', 'infopage');
+   });
+
  }
 /*
  * Copyright (C) 2012 PrimeBox
