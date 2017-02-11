@@ -28,13 +28,13 @@
     </f:case>
    <!--Team Element -->
     <f:case value="1">
-        <div class="thumbnail text-center">
+        <div class="thumbnail">
 
             <f:render partial="MediaGallery" arguments="{gallery:'{gallery}', class:'img-responsive'}"/>
             <div class="caption">
 
                 <f:if condition="{data.header}">
-                    <h3>{data.header}<br>
+                    <h3 class="text-center">{data.header}<br>
                         <f:if condition="{data.rowDescription}">
                             <small>{data.rowDescription}</small>
                         </f:if>

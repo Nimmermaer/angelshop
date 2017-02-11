@@ -69,11 +69,11 @@
     </div>
     <div class="col-md-4">
 
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="panel panel-primary text-center">
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="panel panel-primary">
             <div class="panel-heading">
                 <h3 id="Product-title" class="panel-title" itemprop="name" data-uid="{data.uid}">{data.header}</h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body  text-center">
                 <meta itemprop="priceCurrency" content="EUR"/>
             <span class="price"><div itemprop="price"
                                      content="{data.tx_abatemplate_product_price-> f:format.currency(thousandsSeparator: ',')}">
@@ -90,7 +90,7 @@
                     </li>
                 </f:if>
                 <f:if condition="{data.bodytext}">
-                    <li class="list-group-item">
+                    <li class="list-group-item  text-center">
                         <h3>Produkt Details</h3>
             <span itemprop="description">
             {data.bodytext->f:format.html()}<br/>
@@ -111,7 +111,7 @@
                     </f:link.page>
                 </li>
                 <li class="list-group-item">
-                    <button class="btn btn-default" onclick=" window.history.back()">Zurück</button>
+                    <button class="btn btn-default" onclick=" window.history.back()">&laquo; Zurück</button>
                 </li>
             </ul>
         </div>
