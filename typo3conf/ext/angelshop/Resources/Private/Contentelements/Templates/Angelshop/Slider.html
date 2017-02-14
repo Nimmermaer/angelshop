@@ -1,5 +1,7 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 <header id="AngelshopCarousel-{data.uid}" class="carousel">
-    <div class="full-width-slider">
+    <div id="c{data.uid}" class="full-width-slider">
         <f:for each="{files}" as="file" iteration="fileIterator">
             <div class="fill" title="{file.title}"
                  style="background-image:url('{f:uri.image(src:'{file.uid}', treatIdAsReference:1,width:1900px)}');">
@@ -8,3 +10,4 @@
     </div>
     <f:cObject typoscriptObjectPath="lib.weatherView"/>
 </header>
+</html>

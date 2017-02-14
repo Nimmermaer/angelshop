@@ -1,6 +1,9 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
 <div itemscope itemtype="http://schema.org/Product" class="row">
-    <div class="col-md-8">
+    <div id="c{data.uid}" class="col-md-8">
         <div itemprop="name" class="hidden">{data.header}</div>
         <div id="Carousel-{data.uid}" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->

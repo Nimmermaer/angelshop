@@ -3,7 +3,7 @@
 <f:widget.paginate objects="{ProductList}" as="products">
     <f:for each="{products}" as="product">
         <f:if condition="{product.stock} != 1">
-            <div class="row">
+            <div id="c{data.uid}" class="row">
                 <v:link.typolink configuration="{parameter:'{product.pid}'}">
                     <div class="col-md-4">
                         <f:for each="{product.image}" as="item" iteration="imageIterator">

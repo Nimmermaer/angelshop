@@ -3,6 +3,7 @@
       xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers"
       xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
+<div id="c{data.uid}">
 <f:switch expression="{data.tx_angelshop_map_small}">
     <f:case value="0">
         <div class="row">
@@ -34,6 +35,7 @@
             <f:render section="Impressum" arguments="{_all}"/>
         </f:case>
 </f:switch>
+    </div>
 </html>
 
 <f:section name="Map">
