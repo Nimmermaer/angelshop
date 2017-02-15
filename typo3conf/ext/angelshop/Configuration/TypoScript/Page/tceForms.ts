@@ -8,6 +8,11 @@ TCEFORM.tt_content {
     }
 }
 
+TCAdefaults {
+    fe_users.module_sys_dmail_html = 1
+    tt_address.module_sys_dmail_html = 1
+}
+
 tx_news.templateLayouts {
     1 = Detail : News
     6 = Liste : News Widget
