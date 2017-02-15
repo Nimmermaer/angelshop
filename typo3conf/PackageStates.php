@@ -26,12 +26,6 @@ return [
             'packagePath' => 'typo3/sysext/fluid/',
             'suggestions' => [],
         ],
-        'documentation' => [
-            'composerName' => 'typo3/cms-documentation',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/documentation/',
-            'suggestions' => [],
-        ],
         'info' => [
             'composerName' => 'typo3/cms-info',
             'state' => 'active',
@@ -158,12 +152,6 @@ return [
             'packagePath' => 'typo3/sysext/cshmanual/',
             'suggestions' => [],
         ],
-        'felogin' => [
-            'composerName' => 'typo3/cms-felogin',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/felogin/',
-            'suggestions' => [],
-        ],
         'filelist' => [
             'composerName' => 'typo3/cms-filelist',
             'state' => 'active',
@@ -174,12 +162,6 @@ return [
             'composerName' => 'typo3/cms-fluid-styled-content',
             'state' => 'active',
             'packagePath' => 'typo3/sysext/fluid_styled_content/',
-            'suggestions' => [],
-        ],
-        'form' => [
-            'composerName' => 'typo3/cms-form',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/form/',
             'suggestions' => [],
         ],
         'frontend' => [
@@ -362,16 +344,34 @@ return [
             'packagePath' => 'typo3/sysext/dbal/',
             'suggestions' => [],
         ],
+        'documentation' => [
+            'composerName' => 'typo3/cms-documentation',
+            'state' => 'inactive',
+            'packagePath' => 'typo3/sysext/documentation/',
+            'suggestions' => [],
+        ],
         'feedit' => [
             'composerName' => 'typo3/cms-feedit',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/feedit/',
             'suggestions' => [],
         ],
+        'felogin' => [
+            'composerName' => 'typo3/cms-felogin',
+            'state' => 'inactive',
+            'packagePath' => 'typo3/sysext/felogin/',
+            'suggestions' => [],
+        ],
         'filemetadata' => [
             'composerName' => 'typo3/cms-filemetadata',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/filemetadata/',
+            'suggestions' => [],
+        ],
+        'form' => [
+            'composerName' => 'typo3/cms-form',
+            'state' => 'inactive',
+            'packagePath' => 'typo3/sysext/form/',
             'suggestions' => [],
         ],
         'indexed_search_mysql' => [
