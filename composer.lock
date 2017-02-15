@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "41ba1cc7d4e6c5f8a3d33d2bd2074508",
-    "content-hash": "24eb2ca08461b28eeca4b9bb844be605",
+    "hash": "739c2ac3ad61ca227b08b5a9f754dfed",
+    "content-hash": "193cc680eb8b6556f1977b825a29089e",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -165,14 +165,20 @@
         },
         {
             "name": "friendsoftypo3/tt-address",
-            "version": "3.0.0",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/tt_address.git",
-                "reference": "4458effd00789fe72812d34057cc28ce5f85e6bf"
+                "url": "https://github.com/FriendsOfTYPO3/tt_address.git",
+                "reference": "b09069c719173571819c8296204974abfda9b5db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/tt_address/zipball/b09069c719173571819c8296204974abfda9b5db",
+                "reference": "b09069c719173571819c8296204974abfda9b5db",
+                "shasum": ""
             },
             "require": {
-                "typo3/cms-core": ">=6.2.2,<8.0"
+                "typo3/cms-core": ">=6.2.2"
             },
             "replace": {
                 "tt_address": "self.version",
@@ -184,6 +190,7 @@
                     "TYPO3\\TtAddress\\": "Classes"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0+"
             ],
@@ -194,13 +201,13 @@
                 }
             ],
             "description": "Displays a list of addresses from an address table on the page.",
-            "homepage": "https://forge.typo3.org/projects/extension-tt_address",
+            "homepage": "https://github.com/FriendsOfTYPO3/tt_address",
             "keywords": [
-                "TYPO3",
                 "addresses",
-                "extension"
+                "extension",
+                "typo3"
             ],
-            "time": "2016-02-12 09:32:00"
+            "time": "2016-04-18 19:07:18"
         },
         {
             "name": "mblaschke/metaseo",
@@ -622,16 +629,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.16",
+            "version": "v2.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "2e18b8903d9c498ba02e1dfa73f64d4894bb6912"
+                "reference": "f3c234cd8db9f7e520a91d695db7d8bb5daeb7a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/2e18b8903d9c498ba02e1dfa73f64d4894bb6912",
-                "reference": "2e18b8903d9c498ba02e1dfa73f64d4894bb6912",
+                "url": "https://api.github.com/repos/symfony/console/zipball/f3c234cd8db9f7e520a91d695db7d8bb5daeb7a4",
+                "reference": "f3c234cd8db9f7e520a91d695db7d8bb5daeb7a4",
                 "shasum": ""
             },
             "require": {
@@ -679,7 +686,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-08 20:43:03"
+            "time": "2017-02-06 12:04:06"
         },
         {
             "name": "symfony/debug",
@@ -740,7 +747,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.16",
+            "version": "v2.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
