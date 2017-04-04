@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "739c2ac3ad61ca227b08b5a9f754dfed",
-    "content-hash": "193cc680eb8b6556f1977b825a29089e",
+    "content-hash": "6d47a4554839111e09b8c79b93f9ba2d",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -56,20 +55,20 @@
                 "string",
                 "text"
             ],
-            "time": "2014-05-19 10:25:02"
+            "time": "2014-05-19T10:25:02+00:00"
         },
         {
             "name": "directmailteam/direct-mail",
-            "version": "5.1.0",
+            "version": "v5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartolo/direct_mail.git",
-                "reference": "5106dfa8b502048b48e3e950d62f4d255a4aa67f"
+                "reference": "837375b4363c13aacda55c7124a469046e257456"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartolo/direct_mail/zipball/5106dfa8b502048b48e3e950d62f4d255a4aa67f",
-                "reference": "5106dfa8b502048b48e3e950d62f4d255a4aa67f",
+                "url": "https://api.github.com/repos/kartolo/direct_mail/zipball/837375b4363c13aacda55c7124a469046e257456",
+                "reference": "837375b4363c13aacda55c7124a469046e257456",
                 "shasum": ""
             },
             "require": {
@@ -78,9 +77,16 @@
             },
             "replace": {
                 "direct_mail": "self.version",
-                "typo3-ter/direct_mail": "self.version"
+                "typo3-ter/direct-mail": "self.version"
             },
             "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/class-alias-loader": {
+                    "class-alias-maps": [
+                        "Migrations/Code/ClassAliasMap.php"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "DirectMailTeam\\DirectMail\\": "Classes"
@@ -105,9 +111,9 @@
             ],
             "support": {
                 "issues": "https://forge.typo3.org/projects/extension-direct_mail",
-                "source": "https://github.com/kartolo/direct_mail/tree/5.1.0"
+                "source": "https://github.com/kartolo/direct_mail/tree/v5.1.1"
             },
-            "time": "2016-02-28 21:34:49"
+            "time": "2017-03-03T09:37:08+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -161,20 +167,20 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14 21:17:01"
+            "time": "2015-06-14T21:17:01+00:00"
         },
         {
             "name": "friendsoftypo3/tt-address",
-            "version": "3.0.3",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfTYPO3/tt_address.git",
-                "reference": "b09069c719173571819c8296204974abfda9b5db"
+                "reference": "519acb78e4b1ed9bd55139000ab5107ff6090d25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfTYPO3/tt_address/zipball/b09069c719173571819c8296204974abfda9b5db",
-                "reference": "b09069c719173571819c8296204974abfda9b5db",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/tt_address/zipball/519acb78e4b1ed9bd55139000ab5107ff6090d25",
+                "reference": "519acb78e4b1ed9bd55139000ab5107ff6090d25",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +213,7 @@
                 "extension",
                 "typo3"
             ],
-            "time": "2016-04-18 19:07:18"
+            "time": "2016-11-16T05:45:41+00:00"
         },
         {
             "name": "mblaschke/metaseo",
@@ -249,7 +255,7 @@
                 "issues": "https://github.com/mblaschke/TYPO3-metaseo/issues",
                 "source": "https://github.com/mblaschke/TYPO3-metaseo/tree/2.0.3"
             },
-            "time": "2016-12-31 11:33:57"
+            "time": "2016-12-31T11:33:57+00:00"
         },
         {
             "name": "mso/idna-convert",
@@ -299,7 +305,7 @@
                 "idna",
                 "php"
             ],
-            "time": "2016-01-06 21:05:46"
+            "time": "2016-01-06T21:05:46+00:00"
         },
         {
             "name": "pear/http_request2",
@@ -358,7 +364,7 @@
                 "http",
                 "request"
             ],
-            "time": "2016-02-13 20:20:39"
+            "time": "2016-02-13T20:20:39+00:00"
         },
         {
             "name": "pear/net_url2",
@@ -419,7 +425,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-04-18 22:24:01"
+            "time": "2016-04-18T22:24:01+00:00"
         },
         {
             "name": "pear/pear_exception",
@@ -474,7 +480,7 @@
             "keywords": [
                 "exception"
             ],
-            "time": "2015-02-10 20:07:52"
+            "time": "2015-02-10T20:07:52+00:00"
         },
         {
             "name": "psr/http-message",
@@ -524,7 +530,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -571,20 +577,20 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.5",
+            "version": "v5.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "cd142238a339459b10da3d8234220963f392540c"
+                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/cd142238a339459b10da3d8234220963f392540c",
-                "reference": "cd142238a339459b10da3d8234220963f392540c",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
+                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
                 "shasum": ""
             },
             "require": {
@@ -625,25 +631,25 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-12-29 10:02:40"
+            "time": "2017-02-13T07:52:53+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.17",
+            "version": "v2.8.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "f3c234cd8db9f7e520a91d695db7d8bb5daeb7a4"
+                "reference": "81508e6fac4476771275a3f4f53c3fee9b956bfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/f3c234cd8db9f7e520a91d695db7d8bb5daeb7a4",
-                "reference": "f3c234cd8db9f7e520a91d695db7d8bb5daeb7a4",
+                "url": "https://api.github.com/repos/symfony/console/zipball/81508e6fac4476771275a3f4f53c3fee9b956bfa",
+                "reference": "81508e6fac4476771275a3f4f53c3fee9b956bfa",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9",
-                "symfony/debug": "~2.7,>=2.7.2|~3.0.0",
+                "symfony/debug": "^2.7.2|~3.0.0",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
@@ -686,7 +692,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-06 12:04:06"
+            "time": "2017-03-04T11:00:12+00:00"
         },
         {
             "name": "symfony/debug",
@@ -743,20 +749,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-30 07:22:48"
+            "time": "2016-07-30T07:22:48+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.17",
+            "version": "v2.8.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "355fccac526522dc5fca8ecf0e62749a149f3b8b"
+                "reference": "5fc4b5cab38b9d28be318fcffd8066988e7d9451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/355fccac526522dc5fca8ecf0e62749a149f3b8b",
-                "reference": "355fccac526522dc5fca8ecf0e62749a149f3b8b",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/5fc4b5cab38b9d28be318fcffd8066988e7d9451",
+                "reference": "5fc4b5cab38b9d28be318fcffd8066988e7d9451",
                 "shasum": ""
             },
             "require": {
@@ -792,7 +798,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-02 20:30:24"
+            "time": "2017-02-21T08:33:48+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -851,7 +857,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "typo3-ter/extender",
@@ -888,7 +894,7 @@
                     "username": "sfischer"
                 }
             ],
-            "time": "2015-10-31 16:29:07"
+            "time": "2015-10-31T16:29:07+00:00"
         },
         {
             "name": "typo3-ter/formhandler",
@@ -924,7 +930,7 @@
                 }
             ],
             "description": "The swiss army knife for all kinds of mailforms, completely new written using the MVC concept. Result: Flexibility, Flexibility, Flexibility  :-).",
-            "time": "2016-09-29 15:42:07"
+            "time": "2016-09-29T15:42:07+00:00"
         },
         {
             "name": "typo3-ter/gridelements",
@@ -965,7 +971,7 @@
                 }
             ],
             "description": "This extension integrates the grid layout concept also to regular content elements - the grid elements.\r\nIt offers a lot of new features like advanced drag & drop or real references, that improve the usability of the page and list module to speed up the daily work with the backend.",
-            "time": "2016-01-29 13:10:05"
+            "time": "2016-01-29T13:10:05+00:00"
         },
         {
             "name": "typo3-ter/jumpurl",
@@ -1003,7 +1009,7 @@
                 }
             ],
             "description": "Allows to modify links to create Jump URLs created in the frontend of the TYPO3 Core.",
-            "time": "2015-10-28 23:48:56"
+            "time": "2015-10-28T23:48:56+00:00"
         },
         {
             "name": "typo3-ter/nc-staticfilecache",
@@ -1037,7 +1043,7 @@
                 }
             ],
             "description": "Transparent static file cache solution using mod_rewrite and mod_expires. Increase response times for static pages by a factor of 230!!",
-            "time": "2016-03-23 16:58:05"
+            "time": "2016-03-23T16:58:05+00:00"
         },
         {
             "name": "typo3-ter/news",
@@ -1073,20 +1079,20 @@
                 }
             ],
             "description": "Versatile news extension, based on extbase & fluid. Editor friendly, default integration of social sharing and many other features",
-            "time": "2017-01-21 21:34:22"
+            "time": "2017-01-21T21:34:22+00:00"
         },
         {
             "name": "typo3-ter/realurl",
-            "version": "2.1.5",
+            "version": "2.1.9",
             "dist": {
                 "type": "t3x",
-                "url": "https://typo3.org/extensions/repository/download/realurl/2.1.5/t3x/",
+                "url": "https://typo3.org/extensions/repository/download/realurl/2.1.9/t3x/",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "php": ">= 5.4.0, <= 7.0.999",
-                "typo3/cms-core": ">= 6.2.0, <= 8.4.999"
+                "typo3/cms-core": ">= 6.2.0, <= 8.6.999"
             },
             "conflict": {
                 "typo3-ter/cooluri": "*",
@@ -1110,7 +1116,7 @@
                 }
             ],
             "description": "Makes TYPO3 URLs search engine friendly. Donations are welcome to dmitry.dulepov@gmail.com. They help to support the extension!",
-            "time": "2016-11-03 15:50:58"
+            "time": "2017-03-09T13:53:52+00:00"
         },
         {
             "name": "typo3-ter/sourceopt",
@@ -1142,7 +1148,7 @@
                 }
             ],
             "description": "Optimization of the final page: reformatting the (x)html output, removal of new lines, and quotes. Move development repository to https://github.com/lochmueller/sourceopt",
-            "time": "2016-06-15 23:03:34"
+            "time": "2016-06-15T23:03:34+00:00"
         },
         {
             "name": "typo3-ter/vhs",
@@ -1175,7 +1181,7 @@
                 }
             ],
             "description": "A collection of ViewHelpers to perform rendering tasks which are not natively supported by Fluid - for example: advanced formatters, math calculators, specialized conditions and Iterator/Array calculators and processors",
-            "time": "2016-10-18 15:46:15"
+            "time": "2016-10-18T15:46:15+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -1233,20 +1239,20 @@
                 "classloader",
                 "composer"
             ],
-            "time": "2015-10-06 10:25:44"
+            "time": "2015-10-06T10:25:44+00:00"
         },
         {
             "name": "typo3/cms",
-            "version": "7.6.15",
+            "version": "7.6.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/TYPO3.CMS.git",
-                "reference": "83c94ad5ee39aa4faeebfdd8d0eb66a7450f2ab1"
+                "reference": "4cf10b1d32c1c4c074d14cacba64890640937015"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/83c94ad5ee39aa4faeebfdd8d0eb66a7450f2ab1",
-                "reference": "83c94ad5ee39aa4faeebfdd8d0eb66a7450f2ab1",
+                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/4cf10b1d32c1c4c074d14cacba64890640937015",
+                "reference": "4cf10b1d32c1c4c074d14cacba64890640937015",
                 "shasum": ""
             },
             "require": {
@@ -1324,6 +1330,7 @@
                 "typo3/cms-workspaces": "self.version"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
                 "mikey179/vfsstream": "1.6.0",
                 "phpunit/phpunit": "~4.8.0",
                 "symfony/polyfill-mbstring": "~1.0"
@@ -1431,7 +1438,7 @@
                 "extbase",
                 "typo3"
             ],
-            "time": "2017-01-03 11:24:12"
+            "time": "2017-02-28T10:42:40+00:00"
         },
         {
             "name": "typo3/cms-base-distribution",
@@ -1456,7 +1463,7 @@
                 "GPL-2.0+"
             ],
             "description": "TYPO3 CMS Base Distribution",
-            "time": "2016-07-21 13:32:33"
+            "time": "2016-07-21T13:32:33+00:00"
         },
         {
             "name": "typo3/cms-composer-installers",
@@ -1524,7 +1531,7 @@
                 "installer",
                 "typo3"
             ],
-            "time": "2016-07-05 09:38:42"
+            "time": "2016-07-05T09:38:42+00:00"
         }
     ],
     "packages-dev": [],
