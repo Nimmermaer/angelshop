@@ -11,9 +11,9 @@
         <h4>{data.header}</h4>
 
         <p>{data.bodytext->f:format.nl2br()}</p>
-        <v:link.typolink configuration="{parameter:'{data.header_link}', class:'btn btn-primary'}">
+        <f:link.typolink parameter="{data.header_link}" class="btn btn-primary">
             {data.subheader}
-        </v:link.typolink>
+        </f:link.typolink>
     </div>
 </div>
 </html>

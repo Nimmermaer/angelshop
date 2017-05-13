@@ -1,4 +1,4 @@
-lib.fluidContent {
+lib.contentElement {
     templateName = Angelshop
     templateRootPaths {
         1 = EXT:angelshop/Resources/Private/Contentelements/Templates
@@ -20,7 +20,7 @@ lib.fluidContent {
 }
 
 tt_content {
-    tx_slider < lib.fluidContent
+    tx_slider < lib.contentElement
     tx_slider {
         templateName = Angelshop/Slider
         dataProcessing {
@@ -35,7 +35,7 @@ tt_content {
         templateName = Angelshop/Header
     }
 
-    ce_product < lib.fluidContent
+    ce_product < lib.contentElement
     ce_product {
         templateName = Angelshop/Product
         dataProcessing {
@@ -55,7 +55,7 @@ tt_content {
         }
     }
 
-    tx_trader_slider < lib.fluidContent
+    tx_trader_slider < lib.contentElement
     tx_trader_slider {
         templateName = TraderSlider
         dataProcessing {
@@ -66,7 +66,7 @@ tt_content {
         }
     }
 
-    tx_gallery < lib.fluidContent
+    tx_gallery < lib.contentElement
     tx_gallery {
         templateName = Angelshop/Gallery
         dataProcessing {
@@ -77,7 +77,7 @@ tt_content {
         }
     }
 
-    tx_service < lib.fluidContent
+    tx_service < lib.contentElement
     tx_service {
         templateName = Angelshop/Service
         dataProcessing {
@@ -88,7 +88,7 @@ tt_content {
         }
     }
 
-    tx_tab < lib.fluidContent
+    tx_tab < lib.contentElement
     tx_tab {
         templateName = Tabs
         dataProcessing {
@@ -99,7 +99,7 @@ tt_content {
         }
     }
 
-    tx_impressum < lib.fluidContent
+    tx_impressum < lib.contentElement
     tx_impressum {
         templateName = Angelshop/Impressum
         dataProcessing {
@@ -117,7 +117,7 @@ tt_content {
         }
     }
 
-    tx_project < lib.fluidContent
+    tx_project < lib.contentElement
     tx_project {
         templateName = Angelshop/Project
         dataProcessing {
@@ -128,7 +128,7 @@ tt_content {
         }
     }
 
-    tx_newsletter_image < lib.fluidContent
+    tx_newsletter_image < lib.contentElement
     tx_newsletter_image {
         templateName = Newsletter/Image
         dataProcessing {
@@ -139,7 +139,7 @@ tt_content {
         }
     }
 
-    tx_newsletter_textpic < lib.fluidContent
+    tx_newsletter_textpic < lib.contentElement
     tx_newsletter_textpic {
         templateName = Newsletter/TextImage
         dataProcessing {
@@ -150,9 +150,9 @@ tt_content {
         }
     }
 
-    tx_contact < lib.fluidContent
+    tx_contact < lib.contentElement
     tx_contact.templateName = Angelshop/Widget/Contact
 
-    tx_newsletter_text < lib.fluidContent
+    tx_newsletter_text < lib.contentElement
     tx_newsletter_text.templateName = Newsletter/Text
 }

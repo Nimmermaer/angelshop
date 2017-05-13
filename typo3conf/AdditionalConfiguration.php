@@ -5,6 +5,10 @@ if ((PHP_SAPI == 'cli') && ($_SERVER['argc'] >= 3)) {
 } else {
     $APPLICATION_ENV = getenv("APPLICATION_ENV");
 }
+if(!$APPLICATION_ENV) {
+    $APPLICATION_ENV = str_replace('/', '.',getenv('TYPO3_CONTEXT'));
+}
+
 if (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' . $APPLICATION_ENV . '.php') == true) {
     include realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' . $APPLICATION_ENV . '.php';
 } elseif (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . $APPLICATION_ENV . '.php') == true) {

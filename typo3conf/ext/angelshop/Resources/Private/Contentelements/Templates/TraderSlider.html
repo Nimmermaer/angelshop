@@ -7,9 +7,9 @@
             <div class="trader-slider">
                 <f:for each="{TraderSlider}" as="item">
                     <div>
-                        <v:link.typolink configuration="{parameter:item.link}">
-                            <img src="{f:uri.image(src:'{item.image.uid}', treatIdAsReference:1,width:165, height:100c)}"/>
-                        </v:link.typolink>
+                        <f:link.typolink parameter="{item.link}">
+                            <img src="{f:uri.image(src:'{item.image.uid}', treatIdAsReference:1,width:'165', height:'100')}"/>
+                        </f:link.typolink>
                     </div>
                 </f:for>
             </div>
