@@ -8,7 +8,7 @@
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
-            <f:cObject typoscriptObjectPath="lib.newsHeader"/>
+            {newsHeader->f:format.raw()}
             <f:cObject typoscriptObjectPath="lib.breadcrumb"/>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <!-- Sidebar  Column -->
         <div class="col-md-3">
             {columnSpecial->f:format.raw()}
-            <f:cObject typoscriptObjectPath="lib.newsList"/>
+            {newsList->f:format.raw()}
         </div>
     </div>
     <ul id="Social">

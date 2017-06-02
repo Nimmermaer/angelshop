@@ -11,6 +11,7 @@
 -->
 
 <f:section name="content">
+
     <f:if condition="{newsItem}">
         <f:then>
             <f:switch expression="{settings.templateLayout}">
@@ -18,16 +19,9 @@
                     <f:render section="newsBootstrap"
                               arguments="{_all}"/>
                 </f:case>
-                <f:case value="2">
+                <f:defaultCase>
                     <f:render section="newsDefault"
                               arguments="{_all}"/>
-                </f:case>
-                <f:defaultCase>
-                    <h1 class="page-header">{newsItem.title}
-                        <f:if condition="{newsItem.subtitle}">
-                            <small>{newsItem.subtitle}</small>
-                        </f:if>
-                    </h1>
                 </f:defaultCase>
             </f:switch>
         </f:then>

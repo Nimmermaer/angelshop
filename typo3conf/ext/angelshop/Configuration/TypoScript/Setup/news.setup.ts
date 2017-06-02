@@ -107,6 +107,7 @@ lib.newsHeader {
         }
     }
     view {
+    settings.templateLayout = 99
         templateRootPaths >
         templateRootPaths.1 = EXT:angelshop/Resources/Private/Plugins/Templates/
     }

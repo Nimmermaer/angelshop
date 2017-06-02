@@ -33,8 +33,9 @@ lib.templates.base {
         footerStartPid {
             value = {$global.navigation.footerStartPoint}
         }
-
-        serviceStartPid = TEXT
+        newsHeader =< lib.newsHeader
+        newsList =< lib.newsList
+            serviceStartPid = TEXT
         serviceStartPid {
             value = {$global.navigation.serviceStartPoint}
         }
