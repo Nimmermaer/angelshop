@@ -110,41 +110,5 @@ lib.weatherView {
     }
 }
 
-lib.newsHeader = USER
-lib.newsHeader {
-    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-    extensionName = News
-    pluginName = Pi1
-    vendorName = GeorgRinger
-    controller = News
-    action = detail
-    view < plugin.tx_news.view
-    view {
-        templateRootPaths.10 = EXT:angelshop/Resources/Private/Plugins/Templates
-    }
 
-    persistence < plugin.tx_news.persistence
-    settings < plugin.tx_news.settings
-}
 
-lib.newsList = USER
-lib.newsList {
-    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-    extensionName = News
-    pluginName = Pi1
-    vendorName = GeorgRinger
-    switchableControllerActions {
-        News {
-            1 = list
-        }
-    }
-
-    settings < plugin.tx_news.settings
-    settings {
-        templateLayout = 10
-        categories = 1067
-        detailPid = 1068
-        overrideFlexformSettingsIfEmpty := addToList(detailPid)
-        startingpoint = 1067
-    }
-}

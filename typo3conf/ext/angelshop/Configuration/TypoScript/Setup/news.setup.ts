@@ -2,18 +2,20 @@
 # FE-Plugin configuration for EXT:news
 # ==============================================
 plugin.tx_news {
-    mvc.callDefaultActionIfActionCantBeResolved = 1
     view {
+        templateRootPaths>
         templateRootPaths {
-            0 = EXT:news/Resources/Private/Templates/
-            1 = {$plugin.tx_news.view.templateRootPath}
+            0 = {$plugin.tx_news.view.templateRootPath}
+            1 >
         }
 
+        partialRootPaths >
         partialRootPaths {
             0 = EXT:news/Resources/Private/Partials/
             1 = {$plugin.tx_news.view.partialRootPath}
         }
 
+        layoutRootPaths >
         layoutRootPaths {
             0 = EXT:news/Resources/Private/Layouts/
             1 = {$plugin.tx_news.view.layoutRootPath}
@@ -67,4 +69,46 @@ plugin.tx_news {
             country-name = Germany
         }
     }
+}
+
+lib.newsList = USER
+lib.newsList {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = News
+    pluginName = Pi1
+    vendorName = GeorgRinger
+    switchableControllerActions {
+        News {
+            1 = list
+        }
+    }
+    settings < plugin.tx_news.settings
+    settings {
+        templateLayout = 10
+        categories = 1067
+        detailPid = 1068
+        overrideFlexformSettingsIfEmpty := addToList(detailPid)
+        startingpoint = 1067
+    }
+}
+
+
+lib.newsHeader = USER
+lib.newsHeader {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = News
+    pluginName = Pi1
+    vendorName = GeorgRinger
+    controller = News
+    action = detail
+    switchableControllerActions {
+        News {
+            1 = detail
+        }
+    }
+    view {
+        templateRootPaths >
+        templateRootPaths.1 = EXT:angelshop/Resources/Private/Plugins/Templates/
+    }
+
 }
