@@ -75,6 +75,20 @@ page {
         #            value = website
         #            wrap = <meta property=”og:type” content=”|”>
         #        }
+
+        12 = TEXT
+        12.value (
+        <script type="application/ld+json">
+              {
+                "@context": "http://schema.org",
+                "@type": "LocalBusiness",
+                "url": "https://aba-angelshop.de/",
+                "logo": "https://aba-angelshop.de/fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg"
+              }
+              </script>
+
+        )
+
         1391075691 = TEXT
         1391075691 {
             typolink {
