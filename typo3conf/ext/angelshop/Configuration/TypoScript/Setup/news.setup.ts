@@ -8,7 +8,6 @@ plugin.tx_news {
         templateRootPaths {
             0 = EXT:news/Resources/Private/Templates/
             1 = {$plugin.tx_news.view.templateRootPath}
-            1 >
         }
 
         partialRootPaths >
