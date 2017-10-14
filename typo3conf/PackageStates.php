@@ -9,407 +9,149 @@
 return [
     'packages' => [
         'core' => [
-            'composerName' => 'typo3/cms-core',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/core/',
-            'suggestions' => [],
         ],
         'extbase' => [
-            'composerName' => 'typo3/cms-extbase',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/extbase/',
-            'suggestions' => [],
         ],
         'fluid' => [
-            'composerName' => 'typo3/cms-fluid',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/fluid/',
-            'suggestions' => [],
-        ],
-        'info' => [
-            'composerName' => 'typo3/cms-info',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/info/',
-            'suggestions' => [],
-        ],
-        'info_pagetsconfig' => [
-            'composerName' => 'typo3/cms-info-pagetsconfig',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/info_pagetsconfig/',
-            'suggestions' => [],
-        ],
-        'extensionmanager' => [
-            'composerName' => 'typo3/cms-extensionmanager',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/extensionmanager/',
-            'suggestions' => [],
-        ],
-        'lang' => [
-            'composerName' => 'typo3/cms-lang',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/lang/',
-            'suggestions' => [],
-        ],
-        'setup' => [
-            'composerName' => 'typo3/cms-setup',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/setup/',
-            'suggestions' => [],
-        ],
-        'rtehtmlarea' => [
-            'composerName' => 'typo3/cms-rtehtmlarea',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/rtehtmlarea/',
-            'suggestions' => [
-                'setup',
-            ],
-        ],
-        'rsaauth' => [
-            'composerName' => 'typo3/cms-rsaauth',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/rsaauth/',
-            'suggestions' => [],
-        ],
-        'saltedpasswords' => [
-            'composerName' => 'typo3/cms-saltedpasswords',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/saltedpasswords/',
-            'suggestions' => [
-                'rsaauth',
-            ],
-        ],
-        'taskcenter' => [
-            'composerName' => 'typo3/cms-taskcenter',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/taskcenter/',
-            'suggestions' => [
-                'sys_action',
-            ],
-        ],
-        'sys_action' => [
-            'composerName' => 'typo3/cms-sys-action',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/sys_action/',
-            'suggestions' => [],
-        ],
-        'func' => [
-            'composerName' => 'typo3/cms-func',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/func/',
-            'suggestions' => [],
-        ],
-        'wizard_crpages' => [
-            'composerName' => 'typo3/cms-wizard-crpages',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/wizard_crpages/',
-            'suggestions' => [],
-        ],
-        'wizard_sortpages' => [
-            'composerName' => 'typo3/cms-wizard-sortpages',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/wizard_sortpages/',
-            'suggestions' => [],
-        ],
-        'about' => [
-            'composerName' => 'typo3/cms-about',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/about/',
-            'suggestions' => [],
-        ],
-        'aboutmodules' => [
-            'composerName' => 'typo3/cms-aboutmodules',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/aboutmodules/',
-            'suggestions' => [],
-        ],
-        'backend' => [
-            'composerName' => 'typo3/cms-backend',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/backend/',
-            'suggestions' => [],
-        ],
-        'belog' => [
-            'composerName' => 'typo3/cms-belog',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/belog/',
-            'suggestions' => [],
-        ],
-        'beuser' => [
-            'composerName' => 'typo3/cms-beuser',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/beuser/',
-            'suggestions' => [],
-        ],
-        'context_help' => [
-            'composerName' => 'typo3/cms-context-help',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/context_help/',
-            'suggestions' => [],
-        ],
-        'cshmanual' => [
-            'composerName' => 'typo3/cms-cshmanual',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/cshmanual/',
-            'suggestions' => [],
-        ],
-        'filelist' => [
-            'composerName' => 'typo3/cms-filelist',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/filelist/',
-            'suggestions' => [],
-        ],
-        'fluid_styled_content' => [
-            'composerName' => 'typo3/cms-fluid-styled-content',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/fluid_styled_content/',
-            'suggestions' => [],
-        ],
-        'frontend' => [
-            'composerName' => 'typo3/cms-frontend',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/frontend/',
-            'suggestions' => [],
-        ],
-        'impexp' => [
-            'composerName' => 'typo3/cms-impexp',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/impexp/',
-            'suggestions' => [],
-        ],
-        'indexed_search' => [
-            'composerName' => 'typo3/cms-indexed-search',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/indexed_search/',
-            'suggestions' => [],
         ],
         'install' => [
-            'composerName' => 'typo3/cms-install',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/install/',
-            'suggestions' => [],
+        ],
+        'frontend' => [
+            'packagePath' => 'typo3/sysext/frontend/',
+        ],
+        'fluid_styled_content' => [
+            'packagePath' => 'typo3/sysext/fluid_styled_content/',
+        ],
+        'info' => [
+            'packagePath' => 'typo3/sysext/info/',
+        ],
+        'info_pagetsconfig' => [
+            'packagePath' => 'typo3/sysext/info_pagetsconfig/',
+        ],
+        'extensionmanager' => [
+            'packagePath' => 'typo3/sysext/extensionmanager/',
+        ],
+        'lang' => [
+            'packagePath' => 'typo3/sysext/lang/',
+        ],
+        'setup' => [
+            'packagePath' => 'typo3/sysext/setup/',
+        ],
+        'rte_ckeditor' => [
+            'packagePath' => 'typo3/sysext/rte_ckeditor/',
+        ],
+        'rsaauth' => [
+            'packagePath' => 'typo3/sysext/rsaauth/',
+        ],
+        'saltedpasswords' => [
+            'packagePath' => 'typo3/sysext/saltedpasswords/',
+        ],
+        'taskcenter' => [
+            'packagePath' => 'typo3/sysext/taskcenter/',
+        ],
+        'sys_action' => [
+            'packagePath' => 'typo3/sysext/sys_action/',
+        ],
+        'func' => [
+            'packagePath' => 'typo3/sysext/func/',
+        ],
+        'wizard_crpages' => [
+            'packagePath' => 'typo3/sysext/wizard_crpages/',
+        ],
+        'wizard_sortpages' => [
+            'packagePath' => 'typo3/sysext/wizard_sortpages/',
+        ],
+        'about' => [
+            'packagePath' => 'typo3/sysext/about/',
+        ],
+        'backend' => [
+            'packagePath' => 'typo3/sysext/backend/',
+        ],
+        'belog' => [
+            'packagePath' => 'typo3/sysext/belog/',
+        ],
+        'beuser' => [
+            'packagePath' => 'typo3/sysext/beuser/',
+        ],
+        'context_help' => [
+            'packagePath' => 'typo3/sysext/context_help/',
+        ],
+        'cshmanual' => [
+            'packagePath' => 'typo3/sysext/cshmanual/',
+        ],
+        'filelist' => [
+            'packagePath' => 'typo3/sysext/filelist/',
+        ],
+        'impexp' => [
+            'packagePath' => 'typo3/sysext/impexp/',
+        ],
+        'indexed_search' => [
+            'packagePath' => 'typo3/sysext/indexed_search/',
         ],
         'lowlevel' => [
-            'composerName' => 'typo3/cms-lowlevel',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/lowlevel/',
-            'suggestions' => [],
         ],
         'recordlist' => [
-            'composerName' => 'typo3/cms-recordlist',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/recordlist/',
-            'suggestions' => [],
         ],
         'reports' => [
-            'composerName' => 'typo3/cms-reports',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/reports/',
-            'suggestions' => [],
         ],
         'scheduler' => [
-            'composerName' => 'typo3/cms-scheduler',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/scheduler/',
-            'suggestions' => [],
         ],
         'sv' => [
-            'composerName' => 'typo3/cms-sv',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/sv/',
-            'suggestions' => [],
         ],
         'sys_note' => [
-            'composerName' => 'typo3/cms-sys-note',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/sys_note/',
-            'suggestions' => [],
         ],
         't3editor' => [
-            'composerName' => 'typo3/cms-t3editor',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/t3editor/',
-            'suggestions' => [],
-        ],
-        't3skin' => [
-            'composerName' => 'typo3/cms-t3skin',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/t3skin/',
-            'suggestions' => [],
         ],
         'tstemplate' => [
-            'composerName' => 'typo3/cms-tstemplate',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/tstemplate/',
-            'suggestions' => [],
         ],
         'viewpage' => [
-            'composerName' => 'typo3/cms-viewpage',
-            'state' => 'active',
             'packagePath' => 'typo3/sysext/viewpage/',
-            'suggestions' => [],
         ],
         'jumpurl' => [
-            'composerName' => 'friendsoftypo3/jumpurl',
-            'state' => 'active',
             'packagePath' => 'typo3conf/ext/jumpurl/',
-            'suggestions' => [],
         ],
         'tt_address' => [
-            'composerName' => 'friendsoftypo3/tt-address',
-            'state' => 'active',
             'packagePath' => 'typo3conf/ext/tt_address/',
-            'suggestions' => [],
         ],
         'direct_mail' => [
-            'composerName' => 'directmailteam/direct-mail',
-            'state' => 'active',
             'packagePath' => 'typo3conf/ext/direct_mail/',
-            'suggestions' => [],
         ],
         'formhandler' => [
-            'composerName' => 'typoheads/formhandler',
-            'state' => 'active',
             'packagePath' => 'typo3conf/ext/formhandler/',
-            'suggestions' => [],
-        ],
-        'gridelements' => [
-            'composerName' => 'GridElementsTeam/Gridelements',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/gridelements/',
-            'suggestions' => [],
-        ],
-        'sourceopt' => [
-            'composerName' => 'lochmueller/sourceopt',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/sourceopt/',
-            'suggestions' => [],
-        ],
-        'vhs' => [
-            'composerName' => 'fluidtypo3/vhs',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/vhs/',
-            'suggestions' => [],
-        ],
-        'angelshop' => [
-            'composerName' => 'MB/Angelshop',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/angelshop/',
-            'suggestions' => [],
-        ],
-        'extender' => [
-            'composerName' => 'evoweb/extender',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/extender/',
-            'suggestions' => [],
-        ],
-        'metaseo' => [
-            'composerName' => 'mblaschke/metaseo',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/metaseo/',
-            'suggestions' => [],
-        ],
-        'nc_staticfilecache' => [
-            'composerName' => 'nc_staticfilecache',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/nc_staticfilecache/',
-            'suggestions' => [],
         ],
         'news' => [
-            'composerName' => 'georgringer/news',
-            'state' => 'active',
             'packagePath' => 'typo3conf/ext/news/',
-            'suggestions' => [],
+        ],
+        'sourceopt' => [
+            'packagePath' => 'typo3conf/ext/sourceopt/',
+        ],
+        'vhs' => [
+            'packagePath' => 'typo3conf/ext/vhs/',
+        ],
+        'angelshop' => [
+            'packagePath' => 'typo3conf/ext/angelshop/',
+        ],
+        'gridelements' => [
+            'packagePath' => 'typo3conf/ext/gridelements/',
+        ],
+        'metaseo' => [
+            'packagePath' => 'typo3conf/ext/metaseo/',
         ],
         'realurl' => [
-            'composerName' => 'dmitryd/typo3-realurl',
-            'state' => 'active',
             'packagePath' => 'typo3conf/ext/realurl/',
-            'suggestions' => [],
-        ],
-        'adodb' => [
-            'composerName' => 'typo3/cms-adodb',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/adodb/',
-            'suggestions' => [],
-        ],
-        'css_styled_content' => [
-            'composerName' => 'typo3/cms-css-styled-content',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/css_styled_content/',
-            'suggestions' => [],
-        ],
-        'dbal' => [
-            'composerName' => 'typo3/cms-dbal',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/dbal/',
-            'suggestions' => [],
-        ],
-        'documentation' => [
-            'composerName' => 'typo3/cms-documentation',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/documentation/',
-            'suggestions' => [],
-        ],
-        'feedit' => [
-            'composerName' => 'typo3/cms-feedit',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/feedit/',
-            'suggestions' => [],
-        ],
-        'felogin' => [
-            'composerName' => 'typo3/cms-felogin',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/felogin/',
-            'suggestions' => [],
-        ],
-        'filemetadata' => [
-            'composerName' => 'typo3/cms-filemetadata',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/filemetadata/',
-            'suggestions' => [],
-        ],
-        'form' => [
-            'composerName' => 'typo3/cms-form',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/form/',
-            'suggestions' => [],
-        ],
-        'indexed_search_mysql' => [
-            'composerName' => 'typo3/cms-indexed-search-mysql',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/indexed_search_mysql/',
-            'suggestions' => [],
-        ],
-        'linkvalidator' => [
-            'composerName' => 'typo3/cms-linkvalidator',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/linkvalidator/',
-            'suggestions' => [],
-        ],
-        'opendocs' => [
-            'composerName' => 'typo3/cms-opendocs',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/opendocs/',
-            'suggestions' => [],
-        ],
-        'recycler' => [
-            'composerName' => 'typo3/cms-recycler',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/recycler/',
-            'suggestions' => [],
-        ],
-        'version' => [
-            'composerName' => 'typo3/cms-version',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/version/',
-            'suggestions' => [],
-        ],
-        'workspaces' => [
-            'composerName' => 'typo3/cms-workspaces',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/workspaces/',
-            'suggestions' => [],
         ],
     ],
-    'version' => 4,
+    'version' => 5,
 ];
