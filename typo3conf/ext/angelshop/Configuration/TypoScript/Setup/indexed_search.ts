@@ -2,6 +2,7 @@
 plugin.tx_indexedsearch {
     settings {
         searchPid = {$global.page.search.pid}
+        targetPid = {$global.page.search.pid}
         # show the rules
         displayRules = 0
 
