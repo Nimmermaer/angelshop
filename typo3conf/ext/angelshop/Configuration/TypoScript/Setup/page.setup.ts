@@ -88,7 +88,7 @@ page {
                 "name": "Aba-Angelshop",
                 "telephone": "08682953918",
                 "address": "Gartenstr. 10, 83410 Laufen/Leobendorf",
-                "priceRange": "$$",
+                "priceRange": "$$"
               }
               </script>
 
