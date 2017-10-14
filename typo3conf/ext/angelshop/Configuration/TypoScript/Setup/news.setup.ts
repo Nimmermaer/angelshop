@@ -77,6 +77,8 @@ lib.newsList {
     extensionName = News
     pluginName = Pi1
     vendorName = GeorgRinger
+    controller = News
+    action = detail
     switchableControllerActions {
         News {
             1 = list

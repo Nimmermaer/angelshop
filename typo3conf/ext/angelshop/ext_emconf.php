@@ -27,7 +27,8 @@ $EM_CONF[$_EXTKEY] = array(
             'formhandler' => '2.3.1-2.4.99',
             'direct_mail' => '5.1.0-5.2.99',
             'tt_address' => '3.2.1',
-            'sourceopt' => '0.9.3-1.0.0'
+            'sourceopt' => '0.9.3-1.0.0',
+            'news' => '6.0.0 - 6.99.99'
         ),
         'conflicts' => array(),
         'suggests' => array(),
