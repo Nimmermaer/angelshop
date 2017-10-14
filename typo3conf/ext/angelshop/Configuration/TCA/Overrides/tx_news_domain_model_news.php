@@ -27,6 +27,7 @@ $newsColumns = [
     'tx_angelshop_news_recipe' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_recipe',
+        'onChange' => 'reload',
         'config' => [
             'type' => 'check',
             'default' => '0'
@@ -39,15 +40,17 @@ $newsColumns = [
         'config' => array(
             'type' => 'text',
             'cols' => 40,
-            'rows' => 6
+            'rows' => 6,
+            'enableRichtext' => true,
         ),
-        'defaultExtras' => 'richtext[]'
+
     ],
     'tx_angelshop_news_icon'                            => [
         'exclude'     => 1,
         'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_icon',
         'config'      => [
             'type'  => 'select',
+            'renderType' => 'selectSingle',
             'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
         ],
     ],
@@ -60,5 +63,3 @@ $newsColumns = [
     'tx_angelshop_news_ingredient', '', 'before:bodytext');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news',
     'tx_angelshop_news_icon', '', 'before:tags');
-
-$GLOBALS['TCA']['tx_news_domain_model_news']['ctrl']['requestUpdate'] = 'tx_angelshop_news_recipe';

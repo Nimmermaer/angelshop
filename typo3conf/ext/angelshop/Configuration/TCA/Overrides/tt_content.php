@@ -102,9 +102,9 @@ $newTtContentColumns = [
         'config'        => [
             'type' => 'text',
             'cols' => '40',
-            'rows' => '6'
+            'rows' => '6',
+            'enableRichtext' => true,
         ],
-        'defaultExtras' => 'richtext[]'
     ],
     'tx_angelshop_cognizance'                       => [
         'exclude' => 1,
@@ -167,23 +167,9 @@ $newTtContentColumns = [
         'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_email',
         'config'  => [
             'type'    => 'input',
+            'renderType' => 'inputLink',
             'size'    => '30',
             'eval'    => 'trim',
-            'wizards' => [
-                'link' => [
-                    'type'         => 'popup',
-                    'title'        => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
-                    'icon'         => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_link.gif',
-                    'module'       => [
-                        'name' => 'wizard_link',
-                    ],
-                    'params'       => [
-                        'blindLinkOptions' => 'url,spec,folder,media,page,file',
-                        'blindLinkFields'  => 'class,params,title'
-                    ],
-                    'JSopenParams' => 'height=800,width=600,status=0,menubar=0,scrollbars=1'
-                ]
-            ],
             'softref' => 'typolink'
         ],
     ],
@@ -201,20 +187,10 @@ $newTtContentColumns = [
         'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_link',
         'config'  => [
             'type'    => 'input',
+            'renderType' => 'inputLink',
             'size'    => 50,
             'max'     => 1024,
             'eval'    => 'trim',
-            'wizards' => [
-                'link' => [
-                    'type'         => 'popup',
-                    'title'        => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
-                    'icon'         => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_link.gif',
-                    'module'       => [
-                        'name' => 'wizard_link',
-                    ],
-                    'JSopenParams' => 'width=800,height=600,status=0,menubar=0,scrollbars=1'
-                ]
-            ],
             'softref' => 'typolink'
         ]
     ],
@@ -307,6 +283,7 @@ $newTtContentColumns = [
         'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_class',
         'config'      => [
             'type'  => 'select',
+            'renderType' => 'selectSingle',
             'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
         ],
     ],
@@ -315,6 +292,7 @@ $newTtContentColumns = [
         'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_salutation',
         'config'  => [
             'type'  => 'select',
+            'renderType' => 'selectSingle',
             'items' => [
                 [
                     'Eigene Überschrift', 0
@@ -339,6 +317,7 @@ $newTtContentColumns = [
         'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_movement',
         'config'      => [
             'type'  => 'select',
+            'renderType' => 'selectSingle',
             'items' => $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'],
         ],
     ],
@@ -364,7 +343,8 @@ $contentelements = [
     'newsletter_textpic',
     'newsletter_text',
     'newsletter_image',
-    'contact'
+    'contact',
+    'angelshop_menu'
 ];
 foreach ($contentelements as $contentelement) {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
@@ -477,6 +457,8 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_textpic'] = [
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          header, tx_angelshop_salutation, image, bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],' . $commonFields
 ];
+
+$GLOBALS['TCA']['tt_content']['types'] ['tx_angelshop_menu'] = $GLOBALS['TCA']['tt_content']['types'] ['menu_pages'];
 
 $GLOBALS['TCA']['tt_content']['ctrl']['requestUpdate'] = 'layout';
 

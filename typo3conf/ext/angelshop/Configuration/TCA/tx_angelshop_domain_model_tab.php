@@ -14,8 +14,7 @@ return [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'dividers2tabs' => true,
-        'versioningWS' => 2,
-        'versioning_followPages' => true,
+        'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -26,20 +25,19 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => '',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('angelshop') . 'Resources/Public/Icons/Svg/tab.svg'
+        'iconfile' => 'EXT:angelshop/Resources/Public/Icons/Svg/tab.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, header, icon, text, image',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, header,;;fonts, text, image,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden,--palette--;;1, header, --palette--;;fonts, text, image,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'palettes' => [
         '1' => ['showitem' => ''],
         'fonts' => ['showitem' => 'icon, movement'],
     ],
     'columns' => [
-
         'sys_language_uid' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -90,12 +88,14 @@ return [
         ],
         'starttime' => [
             'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
+            'behaviour'=> [
+                'allowLanguageSynchronization'=> true
+            ],
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'input',
+                'renderType' => 'inputDateTime',
                 'size' => 13,
-                'max' => 20,
                 'eval' => 'datetime',
                 'checkbox' => 0,
                 'default' => 0,
@@ -106,12 +106,14 @@ return [
         ],
         'endtime' => [
             'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
+            'behaviour'=> [
+                'allowLanguageSynchronization'=> true
+            ],
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'input',
+                'renderType' => 'inputDateTime',
                 'size' => 13,
-                'max' => 20,
                 'eval' => 'datetime',
                 'checkbox' => 0,
                 'default' => 0,
@@ -125,9 +127,9 @@ return [
             'config' => [
                 'type' => 'text',
                 'cols' => '40',
-                'rows' => '6'
+                'rows' => '6',
+                'enableRichtext' => true,
             ],
-            'defaultExtras' => 'richtext[]'
         ],
         'header' => [
             'exclude' => 1,
@@ -152,6 +154,7 @@ return [
             'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.icon',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
             ],
         ],
@@ -160,6 +163,7 @@ return [
             'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.movement',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'],
             ],
         ],
