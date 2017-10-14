@@ -6,7 +6,7 @@ TCEFORM {
         }
     tt_content {
          CType {
-              removeItems := addToList(div,formhandler_pi1, list, form_formframework,header,text,textpic,image,bullets,table,uploads,splash,login, shortcut,script,menu,html,mailform,menu_abstract,menu_categorized_content,menu_categorized_pages,menu_pages,menu_subpages,menu_recently_updated,menu_related_pages,menu_section,menu_section_pages,menu_sitemap_pages)
+              removeItems := addToList(div,formhandler_pi1, form_formframework,header,text,textpic,image,bullets,table,uploads,splash,login, shortcut,script,menu,html,mailform,menu_abstract,menu_categorized_content,menu_categorized_pages,menu_pages,menu_subpages,menu_recently_updated,menu_related_pages,menu_section,menu_section_pages,menu_sitemap_pages)
             }
         imagewidth.disabled = 1
         imageheight.disabled = 1
