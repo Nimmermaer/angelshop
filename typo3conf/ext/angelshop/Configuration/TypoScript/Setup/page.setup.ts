@@ -113,6 +113,28 @@ page {
             }
             wrap = <link rel="canonical" href="|"/>
         }
+        13910 = TEXT
+        13910 {
+            typolink {
+                parameter.data = TSFE:id
+                returnLast = url
+                forceAbsoluteUrl = 1
+                forceAbsoluteUrl.scheme = https
+            }
+            wrap = <link rel="dns-prefetch" href="|">
+
+        }
+        139101 = TEXT
+        139101 {
+            typolink {
+                parameter.data = TSFE:id
+                returnLast = url
+                forceAbsoluteUrl = 1
+                forceAbsoluteUrl.scheme = https
+            }
+            wrap = <link rel="preconnect" href="|">
+
+        }
         3422423424 = TEXT
         3422423424 {
             value (
