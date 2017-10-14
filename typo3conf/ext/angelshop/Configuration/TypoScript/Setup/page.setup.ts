@@ -84,11 +84,20 @@ page {
                 "@type": "LocalBusiness",
                 "url": "https://aba-angelshop.de/",
                 "logo": "https://aba-angelshop.de/fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg",
-                "image": "https://aba-angelshop.de/fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg",
+                "image": "https://aba-angelshop.de/fileadmin/aktuelle_bilder/20150712_Friedfischen.Abtsee.jpg",
                 "name": "Aba-Angelshop",
                 "telephone": "08682953918",
                 "address": "Gartenstr. 10, 83410 Laufen/Leobendorf",
-                "priceRange": "$$"
+                "priceRange": "$$",
+                "email":"info@aba-angelshop.de",
+                "publicAccess":true,
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "47.9229236",
+                    "longitude": "12.8937513"
+                  },
+                 "openingHours": "We,Th,Fr 14:00-18:00 ,Sa 08:30-12:00",
+                 "description": "Angeln und Zubehör für Angler und Angelsport. Riesige Auswahl an Angelruten, Angelhaken, Angelrollen, Ködern, Blei und vieles mehr!"
               }
               </script>
 
