@@ -91,7 +91,7 @@
                 <h3>
                     <f:link.typolink parameter="{data.header_link}">{data.header}</f:link.typolink>
                 </h3>
-                <p>{data.bodytext->f:format.raw()}</p>
+                {data.bodytext->f:format.html()}
             </div>
         </f:case>
         <!--Call-To-Action Element -->
