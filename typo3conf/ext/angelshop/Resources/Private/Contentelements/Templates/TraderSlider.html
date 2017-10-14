@@ -1,19 +1,28 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
-      data-namespace-typo3-fluid="true">
-<div  id="c{data.uid}" class="row">
-    <div class="col-md-12">
-        <div class="trader-slider-outer">
-            <div class="trader-slider">
-                <f:for each="{TraderSlider}" as="item">
-                    <div>
-                        <f:link.typolink parameter="{item.link}">
-                            <img src="{f:uri.image(src:'{item.image.uid}', treatIdAsReference:1,width:'165', height:'100')}"/>
-                        </f:link.typolink>
-                    </div>
-                </f:for>
-            </div>
-        </div>
-    </div>
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	data-namespace-typo3-fluid="true">
+<div id="c{data.uid}" class="row">
+	<div class="col-md-12">
+		<div class="trader-slider-outer">
+			<div class="trader-slider">
+				<f:for each="{TraderSlider}" as="item">
+					<div>
+						<f:link.typolink parameter="{item.link}">
+							<f:if condition="{item.image.uid}">
+								<f:then>
+									<img
+										src="{f:uri.image(image:item.image, treatIdAsReference:1)}"
+										alt="{item.title}" />
+								</f:then>
+								<f:else>
+									<h2>{item.title}</h2>
+								</f:else>
+							</f:if>
+						</f:link.typolink>
+					</div>
+				</f:for>
+			</div>
+		</div>
+	</div>
 </div>
 </html>

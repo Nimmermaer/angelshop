@@ -120,7 +120,7 @@ plugin.metaseo {
     metaTags.useLastUpdate = 1
 
     # cat=plugin.metaseo.metaTags/enable/22; type=boolean; label= Canonical Tag: Autogenerate Canonical-Metatag if possible.
-    metaTags.canonicalUrl = 1
+    metaTags.canonicalUrl = 0
 
     # cat=plugin.metaseo.metaTags/enable/23; type=string; label= Protocol for Canonical Url: Fallback if protocol is not specified in page properties. Valid entries are 'http' or 'https'. Else the default protocol is used
     metaTags.canonicalUrl.fallbackProtocol =

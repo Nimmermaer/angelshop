@@ -9,7 +9,9 @@
     <f:switch expression="{settings.templateLayout}">
         <f:case value="5">
             <div class="well">
-                <h4>{contentObjectData.header}</h4>
+               <f:if condition="{contentObjectData.header}">
+                    <h4>{contentObjectData.header}</h4>
+                </f:if>
                 <f:form object="{search}" name="search" pageUid="{settings.listPid}">
                     <div class="input-group">
                         <f:form.textfield id="news-subject" property="subject" class="form-control"/>

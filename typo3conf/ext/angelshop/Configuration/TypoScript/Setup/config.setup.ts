@@ -30,7 +30,7 @@ config {
 
     noPageTitle = 2
 
-    absRefPrefix = /
+    absRefPrefix = https://aba-angelshop.de/
     # prefixLocalAnchors = all
 
     compressCss = 1

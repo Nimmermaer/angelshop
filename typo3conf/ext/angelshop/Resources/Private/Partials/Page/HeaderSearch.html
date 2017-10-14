@@ -1,6 +1,16 @@
+<div itemscope itemtype="http://schema.org/WebSite">
+<meta itemprop="url" content="{f:uri.page(pageUid:homePagePid, absolute:1)}" />
 <f:form class="navbar-form navbar-left" pageUid="{searchPid}" method="post" id="tx_indexedsearch-header" noCacheHash="true"
-        absolute="0"
-        action="search" extensionName="IndexedSearch" pluginName="pi2" controller="Search">
+	        absolute="0"
+	        action="search" 
+	        extensionName="IndexedSearch"
+	         pluginName="pi2" 
+	         controller="Search"
+	         additionalAttributes="{itemprop:'potentialAction', 
+	         itemscope:'', 
+	         role:'search',
+	         itemtype:'http://schema.org/SearchAction'}"
+         >
     <div class="hidden tx-indexedsearch-hidden-fields">
         <f:form.hidden name="search[_sections]" value="0"/>
         <f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_"/>
@@ -15,6 +25,9 @@
         <f:form.hidden name="search[numberOfResults]" value="{searchParams.numberOfResults}"/>
         <f:form.hidden name="search[extendedSearch]" value="{searchParams.extendedSearch}"/>
     </div>
+      <meta itemprop="target"
+              content="{f:uri.page(pageUid:searchPid,absolute:1)}?L=0&amp;tx_indexedsearch_pi2%5Baction%5D=search&amp;tx_indexedsearch_pi2%5Bcontroller%5D=Search<![CDATA[{search_term_string}]]>">
+        <input itemprop="query-input" name="search_term_string" type="text" style="display: none;">
     <div class="input-group">
         <f:form.textfield name="search[sword]" value="" id="tx-indexedsearch-searchbox-sword"
                           class="form-control"
@@ -26,3 +39,7 @@
             </span>
     </div>
 </f:form>
+</div>
+
+
+      

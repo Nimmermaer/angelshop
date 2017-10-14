@@ -2,10 +2,12 @@
 # FE-Plugin configuration for EXT:news
 # ==============================================
 plugin.tx_news {
+    mvc.callDefaultActionIfActionCantBeResolved = 1
     view {
         templateRootPaths>
         templateRootPaths {
-            0 = {$plugin.tx_news.view.templateRootPath}
+            0 = EXT:news/Resources/Private/Templates/
+            1 = {$plugin.tx_news.view.templateRootPath}
             1 >
         }
 
@@ -70,7 +72,6 @@ plugin.tx_news {
         }
     }
 }
-
 lib.newsList = USER
 lib.newsList {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run

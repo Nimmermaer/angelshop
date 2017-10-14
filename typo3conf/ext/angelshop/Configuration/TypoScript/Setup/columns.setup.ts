@@ -6,39 +6,49 @@ lib {
             main = COA
             main {
                 20 < styles.content.get
-                20.select.where = colPos=0
-                20.wrap < temp.typo3searchWrap
+                20 {
+	                select.where = colPos=0
+	                wrap < temp.typo3searchWrap
+                }
             }
 
             special = COA
             special {
                 20 < styles.content.get
-                20.select.where = colPos=1
-                20.wrap < temp.typo3searchWrap
+                20{
+	                select.where = colPos=1
+	                wrap < temp.typo3searchWrap
+                }
             }
 
             footerLeft = COA
             footerLeft {
                 20 < styles.content.get
-                20.select.where = colPos=2
-                20.wrap < temp.typo3searchWrap
-                20.slide = -1
+                20{
+	                select.where = colPos=2
+	                slide = -1
+	                wrap = <!--TYPO3SEARCH_end-->|
+                }
             }
 
             footerMiddle = COA
             footerMiddle {
                 20 < styles.content.get
-                20.select.where = colPos=3
-                20.wrap < temp.typo3searchWrap
-                20.slide = -1
+                20{
+	                select.where = colPos=3
+	                slide = -1
+	                wrap = <!--TYPO3SEARCH_end-->|
+                }
             }
 
             footerRight = COA
             footerRight {
                 20 < styles.content.get
-                20.select.where = colPos=4
-                20.wrap < temp.typo3searchWrap
-                20.slide = -1
+                20{
+	                select.where = colPos=4
+	                slide = -1
+	                wrap = <!--TYPO3SEARCH_end-->|
+                }
             }
         }
     }

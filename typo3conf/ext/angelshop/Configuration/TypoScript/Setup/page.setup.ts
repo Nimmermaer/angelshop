@@ -16,10 +16,10 @@ page {
         language = de,en
         imagetoolbar = false
         viewport = width=device-width, initial-scale=1
-        description {
-            data = page:description
-            ifEmpty.data = levelfield :-1, description, slide
-        }
+        #        description {
+        #            data = page:description
+        #            ifEmpty.data = levelfield :-1, description, slide
+        #        }
 
         keywords {
             data = page:keywords
@@ -40,22 +40,7 @@ page {
         }
 
         robots = INDEX,FOLLOW
-        viewport = width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no
-    }
-
-    # Optional canonical tag if content_from_pid is set
-    1391075690 = TEXT
-    1391075690 {
-        typolink {
-            parameter.data = TSFE:id
-            returnLast = url
-            forceAbsoluteUrl = 1
-            addQueryString = 1
-            addQueryString.method = GET
-            addQueryString.exclude = cHash,backPid
-        }
-
-        wrap = <link rel="canonical" href="|" />
+        viewport = width=device-width, initial-scale=1.0
     }
 
     # Body Tag Rendering
@@ -69,15 +54,15 @@ page {
 
         stdWrap {
             trim = 1
-            dataWrap = <body class="|" data-languid="{TSFE:sys_language_uid}">
+            dataWrap = <body class="|" data-languid="{TSFE:sys_language_uid}" itemscope itemtype="https://schema.org/WebPage">
         }
     }
-
+    headTag = <head itemscope itemtype="http://schema.org/WebSite">
     headerData {
         10 = TEXT
         10 {
             field = title
-            noTrimWrap = |<title> | &#124; Aba-Angelshop Laufen </title>|
+            noTrimWrap = |<title itemprop="name"> | &#124; Aba-Angelshop Laufen </title>|
         }
 
         11 = TEXT
@@ -85,12 +70,21 @@ page {
                 <meta name="theme-color" content="#FFA500">
         )
 
-        23 = TEXT
-        23 {
-            value = website
-            wrap = <meta property=”og:type” content=”|”>
+        #        23 = TEXT
+        #        23 {
+        #            value = website
+        #            wrap = <meta property=”og:type” content=”|”>
+        #        }
+        1391075691 = TEXT
+        1391075691 {
+            typolink {
+                parameter.data = TSFE:id
+                returnLast = url
+                forceAbsoluteUrl = 1
+                forceAbsoluteUrl.scheme = https
+            }
+            wrap = <link rel="canonical" href="|"/>
         }
-
         3422423424 = TEXT
         3422423424 {
             value (
@@ -110,9 +104,22 @@ page {
             conf.tx_news_domain_model_news >
             conf.tx_news_domain_model_news = TEXT
             conf.tx_news_domain_model_news.field = title
-            wrap = <title> |&nbsp; &#124; Aba-Angelshop Laufen </title>
+            wrap = <title  itemprop="name"> |&nbsp; &#124; Aba-Angelshop Laufen </title>
         }
     }
+       page.headerData.1391075691 >
+       page.headerData.1391075691 = TEXT
+       page.headerData.1391075691 {
+           typolink {
+               parameter.data = TSFE:id
+               returnLast = url
+               forceAbsoluteUrl = 1
+               forceAbsoluteUrl.scheme = https
+               addQueryString = 1
+               addQueryString.exclude = id
+                   }
+           wrap =  <link rel="canonical" href="|"/>
+        }
 [end]
 
 [globalVar = TSFE:id = 1]
@@ -120,7 +127,7 @@ page {
         10 = TEXT
         10 {
             field = title
-            noTrimWrap = |<title> | Laufen I'geh fisch'n</title>|
+            noTrimWrap = |<title  itemprop="name"> | Laufen I'geh fisch'n</title>|
         }
     }
 [global]

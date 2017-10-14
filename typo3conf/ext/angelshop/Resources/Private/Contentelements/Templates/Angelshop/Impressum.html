@@ -39,19 +39,21 @@
 </html>
 
 <f:section name="Map">
-    <iframe src="https://maps.google.com/maps?q={a:map(name:'{data.header}', address:'{data.tx_angelshop_address}')}&h1=es;z=14&amp;output=embed"
-            width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-            allowfullscreen="">
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://maps.google.com/maps?q={a:map(name:'{data.header}', address:'{data.tx_angelshop_address}')}&h1=es;z=14&amp;output=embed"
+         >
     </iframe>
+    </div>
 </f:section>
 <f:section name="Impressum">
+<h3>{data.header}</h3>
    <address>
         <f:for each="{files}" as="logo" iteration="imageIterator">
             <f:if condition="{imageIterator.isFirst}">
-                <img src="{f:uri.image(src:'{logo.uid}', treatIdAsReference:1, maxWidth:380, maxHeight:100c)}"/>
+                <img src="{f:uri.image(src:'{logo.uid}', treatIdAsReference:1, maxWidth:380, maxHeight:100c)}" alt="data.header"/>
             </f:if>
         </f:for>
-        <h3>{data.header}</h3>
+        
         <p>
             {data.tx_angelshop_address->f:format.nl2br()}
         </p>
@@ -63,12 +65,12 @@
         <f:if condition="{data.tx_angelshop_phone}">
             <p><i class="fa fa-phone"></i>
                 <abbr title="{f:translate(key:'phone', extensionName:'angelshop')}"><f:translate key="phone" extensionName="angelshop"/></abbr>: <a
-                        href="tel:{data.tx_angelshop_phone}">{data.tx_angelshop_phone}</a>
+                        href="tel:{data.tx_angelshop_phone->a:trim()}">{data.tx_angelshop_phone}</a>
             </p>
         </f:if>
         <f:if condition="{data.subheader}">
             <p><i class="fa fa-mobile"></i>
-                <abbr title="{f:translate(key:'mobile', extensionName:'angelshop')}"><f:translate key="mobile" extensionName="angelshop"/></abbr>: <a href="tel:{data.subheader}">{data.subheader}</a>
+                <abbr title="{f:translate(key:'mobile', extensionName:'angelshop')}"><f:translate key="mobile" extensionName="angelshop"/></abbr>: <a href="tel:{data.subheader->a:trim()}">{data.subheader}</a>
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_email}">
