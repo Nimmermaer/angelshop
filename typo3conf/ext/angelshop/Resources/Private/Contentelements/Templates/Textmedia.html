@@ -42,7 +42,7 @@
 
                         </h3>
                     </f:if>
-                    <p>{data.bodytext->f:format.raw()}</p>
+                    {data.bodytext->f:format.html()}
                     <ul class="list-inline">
                         <f:for each="{Textmedia}" as="social">
                             <li>
