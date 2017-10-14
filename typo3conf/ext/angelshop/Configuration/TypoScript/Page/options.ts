@@ -5,4 +5,5 @@ options {
         backgroundColor.18 = rgba(51, 153, 255, 0.1)
         backgroundColor.11 = rgba(255, 255, 102, 0.1)
     }
+    clearCache.pages  = 1
 }
