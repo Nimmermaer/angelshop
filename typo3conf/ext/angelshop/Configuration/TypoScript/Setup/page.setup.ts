@@ -83,7 +83,12 @@ page {
                 "@context": "http://schema.org",
                 "@type": "LocalBusiness",
                 "url": "https://aba-angelshop.de/",
-                "logo": "https://aba-angelshop.de/fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg"
+                "logo": "https://aba-angelshop.de/fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg",
+                "image": "https://aba-angelshop.de/fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg",
+                "name": "Aba-Angelshop",
+                "telephone": "08682953918",
+                "address": "Gartenstr. 10, 83410 Laufen/Leobendorf",
+                "priceRange": "$$",
               }
               </script>
 
