@@ -42,6 +42,7 @@
   ],
   "autoload": {
     "psr-4": {
+      "MB\\Angelshop\\": "typo3conf/ext/angelshop/Classes",
       "Ka\\Http2Push\\": "typo3conf/ext/http2_push/Classes"
     }
   },
@@ -58,7 +59,6 @@
     "lochmueller/sourceopt": "^1.0.0",
     "friendsoftypo3/jumpurl": "~7.7.0",
     "directmailteam/direct-mail": "dev-develop",
-    "evoweb/extender": "6.4.6",
-    "mb/angelshop": "^1.0.0"
+    "evoweb/extender": "6.4.6"
   }
 }
