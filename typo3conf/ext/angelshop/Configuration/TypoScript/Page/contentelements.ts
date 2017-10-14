@@ -5,7 +5,7 @@ mod {
     }
 
     wizards.newContentElement.wizardItems {
-        angelshop {
+        provider {
             header = Angelshop
             elements {
                 tx_impressum {
@@ -43,11 +43,24 @@ mod {
                         CType = tx_contact
                     }
                 }
+
             }
 
             show = *
         }
-
+        menu {
+            elements {
+                tx_angelshop_menu {
+                    iconIdentifier = productlist
+                    title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_menu.title
+                    description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_menu.description
+                    tt_content_defValues {
+                        CType = tx_angelshop_menu
+                    }
+                }
+            }
+            show = *
+        }
         common {
             elements {
                 tx_slider {

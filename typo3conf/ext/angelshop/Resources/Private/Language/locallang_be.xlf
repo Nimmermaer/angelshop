@@ -229,6 +229,12 @@
             <trans-unit id="tx_contact.description">
                 <source>Seitenlink zur Kontaktseite pflegbar</source>
             </trans-unit>
+            <trans-unit id="tx_angelshop_menu.title">
+                <source>ABA-Angelshop Produktliste</source>
+            </trans-unit>
+            <trans-unit id="tx_angelshop_menu.description">
+                <source>Produktliste der Unterseiten</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

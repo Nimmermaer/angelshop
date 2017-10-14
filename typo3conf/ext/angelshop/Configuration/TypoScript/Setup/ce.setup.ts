@@ -34,6 +34,10 @@ tt_content {
     header {
         templateName = Angelshop/Header
     }
+    tx_angelshop_menu < tt_content.menu_pages
+    tx_angelshop_menu {
+        templateName = Angelshop/Type-101.html
+    }
 
     ce_product < lib.contentElement
     ce_product {
