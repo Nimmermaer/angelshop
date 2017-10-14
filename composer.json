@@ -1,7 +1,8 @@
 {
-  "name": "MB/Angelshop",
+  "name": "mb/angelshop",
   "description": "description_text",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "license": "proprietary",
   "authors": [
     {
@@ -25,14 +26,35 @@
     {
       "type": "composer",
       "url": "https://packagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/Nimmermaer/direct_mail/"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/PHORAX/formhandler"
     }
   ],
   "autoload": {
     "psr-4": {
-      "MB\\Angelshop\\": "typo3conf/ext/angelshop/Classes"
+      "MB\\Angelshop\\": "typo3conf/ext/angelshop/Classes",
+      "Ka\\Http2Push\\": "typo3conf/ext/http2_push/Classes"
     }
   },
   "require": {
-    "typo3/cms": "^8.7.0"
+    "typo3/cms": "^8.7.0",
+    "lochmueller/staticfilecache": "~5.1.2",
+    "webdevops/metaseo": "~3.0.0",
+    "georgringer/news": "~6.0.0",
+    "dmitryd/typo3-realurl": "^2.0.0",
+    "gridelementsteam/gridelements": "dev-master",
+    "friendsoftypo3/tt-address": "3.2.2",
+    "fluidtypo3/vhs": "~4.2.0",
+    "PHORAX/formhandler": "dev-master",
+    "lochmueller/sourceopt": "^1.0.0",
+    "friendsoftypo3/jumpurl": "~7.7.0",
+    "directmailteam/direct-mail": "dev-develop",
+    "evoweb/extender": "6.4.6"
   }
 }
