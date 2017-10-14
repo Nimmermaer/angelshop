@@ -1,8 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
 <div id="c{data.uid}">
-<f:switch expression="{data.layout}">
-    <f:case value="0">
+    <f:switch expression="{data.layout}">
+        <f:case value="0">
 
             <f:if condition="{gallery.position.noWrap} != 1">
                 <f:render partial="Header/All" arguments="{_all}"/>
@@ -26,112 +26,112 @@
             </div>
             <f:render partial="Footer/All" arguments="{_all}"/>
 
-    </f:case>
-   <!--Team Element -->
-    <f:case value="1">
-        <div class="thumbnail">
+        </f:case>
+        <!--Team Element -->
+        <f:case value="1">
+            <div class="thumbnail">
 
-            <f:render partial="MediaGallery" arguments="{gallery:'{gallery}', class:'img-responsive'}"/>
-            <div class="caption">
+                <f:render partial="MediaGallery" arguments="{gallery:'{gallery}', class:'img-responsive'}"/>
+                <div class="caption">
 
-                <f:if condition="{data.header}">
-                    <h3 class="text-center">{data.header}<br>
-                        <f:if condition="{data.rowDescription}">
-                            <small>{data.rowDescription}</small>
-                        </f:if>
+                    <f:if condition="{data.header}">
+                        <h3 class="text-center">{data.header}<br>
+                            <f:if condition="{data.rowDescription}">
+                                <small>{data.rowDescription}</small>
+                            </f:if>
 
-                    </h3>
-                </f:if>
-                <p>{data.bodytext->f:format.raw()}</p>
-                <ul class="list-inline">
-                    <f:for each="{Textmedia}" as="social">
-                        <li>
-                            <f:link.typolink parameter="{social.link}">
-                                <i class="fa fa-2x {social.class} {social.movement}"></i>
-                            </f:link.typolink>
-                        </li>
-                    </f:for>
-                </ul>
-            </div>
-        </div>
-    </f:case>
-    <!--Projekt Element -->
-    <f:case value="2">
-        <div class="img-portfolio">
-            <f:if condition="{data.image_zoom}">
-                <f:then>
-                    <f:for each="{files}" as="image" iteration="ImageIterator">
-                        <f:if condition="{ImageIterator.isFirst}">
-                            <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1)}"
-                               data-title='{column.media.title}' data-lightbox="gallery-{data.uid}">
-                                <f:media class="img-responsive img-hover"
-                                         file="{image}"
-                                         width="295"
-                                         height="170"
-                                        />
-                            </a>
-                        </f:if>
-                    </f:for>
-
-                </f:then>
-                <f:else>
-                    <f:for each="{files}" as="image" iteration="ImageIterator">
-                        <f:if condition="{ImageIterator.isFirst}">
-                            <f:link.typolink parameter="{data.header_link}">
-
-                                <img src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, width:'295', height:'170')}"
-                                     class="img-responsive {f:if(condition:'{data.header_link}',then:'img-hover')}"/>
-
-                            </f:link.typolink>
-                        </f:if>
-
-                    </f:for>
-                </f:else>
-            </f:if>
-            <h3>
-                <f:link.typolink parameter="{data.header_link}">{data.header}</f:link.typolink>
-            </h3>
-            <p>{data.bodytext->f:format.raw()}</p>
-        </div>
-    </f:case>
-    <!--Call-To-Action Element -->
-    <f:case value="3">
-        <div class="well">
-            <div class="row">
-                <div class="col-md-8">
+                        </h3>
+                    </f:if>
                     <p>{data.bodytext->f:format.raw()}</p>
-                </div>
-                <div class="col-md-4">
-                    <f:link.typolink
-                           parameter="{data.header_link}" class="btn btn-lg call-to-action-{data.uid} btn-default btn-block" >
-                        {data.header}
-                    </f:link.typolink>
+                    <ul class="list-inline">
+                        <f:for each="{Textmedia}" as="social">
+                            <li>
+                                <f:link.typolink parameter="{social.link}">
+                                    <i class="fa fa-2x {social.class} {social.movement}"></i>
+                                </f:link.typolink>
+                            </li>
+                        </f:for>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </f:case>
-    <!--Teaser Element-->
-    <f:case value="4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4><i class="fa fa-fw {data.tx_angelshop_class} {data.tx_angelshop_movement} "></i>{data.header}</h4>
-            </div>
-            <div class="panel-body">
-                <f:if condition="{data.assets}">
+        </f:case>
+        <!--Projekt Element -->
+        <f:case value="2">
+            <div class="img-portfolio">
+                <f:if condition="{data.image_zoom}">
                     <f:then>
-                        <f:render partial="MediaGallery" arguments="{_all}" />
+                        <f:for each="{files}" as="image" iteration="ImageIterator">
+                            <f:if condition="{ImageIterator.isFirst}">
+                                <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1)}"
+                                   data-title='{column.media.title}' data-lightbox="gallery-{data.uid}">
+                                    <f:media class="img-responsive img-hover"
+                                             file="{image}"
+                                             width="295"
+                                             height="170"
+                                            />
+                                </a>
+                            </f:if>
+                        </f:for>
+
                     </f:then>
                     <f:else>
-                        <p>{data.bodytext->f:format.html()}</p>
-                        <f:link.typolink parameter="{data.header_link}" class="btn btn-default">
-                            {data.rowDescription->f:format.nl2br()}
-                        </f:link.typolink>
+                        <f:for each="{files}" as="image" iteration="ImageIterator">
+                            <f:if condition="{ImageIterator.isFirst}">
+                                <f:link.typolink parameter="{data.header_link}">
+
+                                    <img src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, width:'295', height:'170')}"
+                                         class="img-responsive {f:if(condition:'{data.header_link}',then:'img-hover')}"/>
+
+                                </f:link.typolink>
+                            </f:if>
+
+                        </f:for>
                     </f:else>
                 </f:if>
-
+                <h3>
+                    <f:link.typolink parameter="{data.header_link}">{data.header}</f:link.typolink>
+                </h3>
+                <p>{data.bodytext->f:format.raw()}</p>
             </div>
-        </div>
-    </f:case>
-</f:switch>
+        </f:case>
+        <!--Call-To-Action Element -->
+        <f:case value="3">
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-8">
+                        {data.bodytext->f:format.html()}
+                    </div>
+                    <div class="col-md-4">
+                        <f:link.typolink
+                                parameter="{data.header_link}" class="btn btn-lg call-to-action-{data.uid} btn-default btn-block" >
+                            {data.header}
+                        </f:link.typolink>
+                    </div>
+                </div>
+            </div>
+        </f:case>
+        <!--Teaser Element-->
+        <f:case value="4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw {data.tx_angelshop_class} {data.tx_angelshop_movement} "></i>{data.header}</h4>
+                </div>
+                <div class="panel-body">
+                    <f:if condition="{data.assets}">
+                        <f:then>
+                            <f:render partial="MediaGallery" arguments="{_all}" />
+                        </f:then>
+                        <f:else>
+                            {data.bodytext->f:format.html()}
+                            <f:link.typolink parameter="{data.header_link}" class="btn btn-default">
+                                {data.rowDescription->f:format.nl2br()}
+                            </f:link.typolink>
+                        </f:else>
+                    </f:if>
+
+                </div>
+            </div>
+        </f:case>
+    </f:switch>
 </div>
 </html>
