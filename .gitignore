@@ -18,3 +18,4 @@ typo3conf/node_modules
 /typo3conf/ext/**
 !/typo3conf/ext/angelshop
 /vendor
+/typo3conf/AdditionalConfiguration.server.Production.Live.php
