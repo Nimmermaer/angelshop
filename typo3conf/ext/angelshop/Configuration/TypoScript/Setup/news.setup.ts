@@ -4,7 +4,7 @@
 plugin.tx_news {
     mvc.callDefaultActionIfActionCantBeResolved = 1
     view {
-        templateRootPaths>
+        templateRootPaths >
         templateRootPaths {
             0 = EXT:news/Resources/Private/Templates/
             1 = {$plugin.tx_news.view.templateRootPath}
@@ -71,6 +71,7 @@ plugin.tx_news {
         }
     }
 }
+
 lib.newsList = USER
 lib.newsList {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
@@ -84,6 +85,7 @@ lib.newsList {
             1 = list
         }
     }
+
     settings < plugin.tx_news.settings
     settings {
         templateLayout = 10
@@ -93,7 +95,6 @@ lib.newsList {
         startingpoint = 1067
     }
 }
-
 
 lib.newsHeader = USER
 lib.newsHeader {
@@ -108,10 +109,36 @@ lib.newsHeader {
             1 = detail
         }
     }
+
     view {
-    settings.templateLayout = 99
+        settings.templateLayout = 99
         templateRootPaths >
         templateRootPaths.1 = EXT:angelshop/Resources/Private/Plugins/Templates/
     }
+}
 
+plugin.tx_news {
+    persistence {
+        classes {
+            GeorgRinger\News\Domain\Model\News {
+                subclasses {
+                    # three different classes are used for each news type
+                    # 0 == default news
+                    0 = MB\Angelshop\Domain\Model\News
+                }
+            }
+
+            MB\Angelshop\Domain\Model\News {
+                mapping {
+                    recordType = 0
+                    tableName = tx_news_domain_model_news
+                    columns {
+                        tx_angelshop_news_recipe.mapOnProperty = recipe
+                        tx_angelshop_news_icon.mapOnProperty = icon
+                        tx_angelshop_news_ingredient.mapOnProperty = ingredient
+                    }
+                }
+            }
+        }
+    }
 }

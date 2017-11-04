@@ -13,6 +13,9 @@ TCEFORM {
         imageborder.disabled = 1
         imagecols.disabled = 1
         header_position.disabled = 1
+        frame_class.disabled = 1
+        space_before_class.disabled = 1
+        space_after_class.disablded = 1
         date.disabled = 1
         imageorient {
             removeItems = 1,2,9,10,17,18

@@ -1,0 +1,43 @@
+####
+# Example of what CKEditor can all bring
+###
+
+# Load default processing options
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    # can be "default", but a custom stylesSet can be defined here, which fits TYPO3 best
+    stylesSet: []
+
+    format_tags: "p;h2;h3"
+
+    toolbarGroups:
+      - { name: clipboard, groups: [clipboard, undo] }
+      - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
+      - { name: links }
+      - { name: tools }
+      - { name: styles }
+      - { name: paragraph,   groups: [ list, align ] }
+
+    removePlugins:
+      - image
+
+    removeButtons:
+     - Anchor
+     - Superscript
+     - Subscript
+     - Strike
+     - Styles
+
+  externalPlugins:
+    typo3link: { resource: "EXT:rte_ckeditor/Resources/Public/JavaScript/Plugins/typo3link.js", route: "rteckeditor_wizard_browse_links" }
+processing:
+  allowTags:
+    - s
+    - u

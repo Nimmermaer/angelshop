@@ -1,1 +1,1 @@
-RTE.default.preset = default
+RTE.default.preset = angelshop

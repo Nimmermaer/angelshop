@@ -97,8 +97,11 @@ $boot = function ($extensionKey) {
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['news']['extender']['News']['angelshop'] =
         'EXT:angelshop/Classes/Domain/Model/News.php';
 
+    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['angelshop'] = 'EXT:angelshop/Configuration/RTE/Custom.yaml';
+
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter');
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\ObjectStorageConverter');
+
 
 };
 
