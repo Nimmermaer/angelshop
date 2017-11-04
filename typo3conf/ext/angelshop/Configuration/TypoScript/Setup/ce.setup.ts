@@ -37,6 +37,13 @@ tt_content {
     tx_angelshop_menu < tt_content.menu_pages
     tx_angelshop_menu {
         templateName = Angelshop/Type-101.html
+        dataProcessing {
+              10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+              10 {
+                   special = directory
+                   special.value.field = pages
+                  }
+          }
     }
 
     ce_product < lib.contentElement

@@ -9,7 +9,13 @@ lib.templates.base {
             references.fieldName = media
             as = files
         }
-
+ 		110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        110 {
+               special = directory
+               special.value.data = TSFE:id
+               special.entryLevel = -1
+               as = sidebar
+          }
         120 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
         120 {
             references.fieldName = tx_angelshop_facebook_image
