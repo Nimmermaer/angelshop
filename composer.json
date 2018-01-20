@@ -52,13 +52,13 @@
     "webdevops/metaseo": "~3.0.0",
     "georgringer/news": "~6.0.0",
     "dmitryd/typo3-realurl": "^2.0.0",
-    "gridelementsteam/gridelements": "dev-master",
+    "gridelementsteam/gridelements": "~8.0.0",
     "friendsoftypo3/tt-address": "3.2.2",
     "fluidtypo3/vhs": "~4.2.0",
     "PHORAX/formhandler": "dev-master",
     "lochmueller/sourceopt": "^1.0.0",
     "friendsoftypo3/jumpurl": "~7.7.0",
-    "directmailteam/direct-mail": "dev-develop",
+    "directmailteam/direct-mail": "~5.2.2",
     "evoweb/extender": "6.4.6"
   }
 }
