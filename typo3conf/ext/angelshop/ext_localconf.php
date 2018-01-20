@@ -92,7 +92,7 @@ $boot = function ($extensionKey) {
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(file_get_contents($beLayoutPath));
         }
     }
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_address']['extender']['Address']['angelshop'] =
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_address']['extender']['TYPO3\TtAddress\Domain\Model\Address']['angelshop'] =
         'EXT:angelshop/Classes/Domain/Model/Address.php';
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['news']['extender']['News']['angelshop'] =
         'EXT:angelshop/Classes/Domain/Model/News.php';
