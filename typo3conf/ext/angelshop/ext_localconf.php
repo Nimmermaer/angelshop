@@ -94,7 +94,7 @@ $boot = function ($extensionKey) {
     }
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_address']['extender']['TYPO3\TtAddress\Domain\Model\Address']['angelshop'] =
         'EXT:angelshop/Classes/Domain/Model/Address.php';
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['news']['extender']['News']['angelshop'] =
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['news']['extender']['GeorgRinger\News\Domain\Model\News']['angelshop'] =
         'EXT:angelshop/Classes/Domain/Model/News.php';
 
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['angelshop'] = 'EXT:angelshop/Configuration/RTE/Custom.yaml';
