@@ -42,8 +42,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "MB\\Angelshop\\": "typo3conf/ext/angelshop/Classes",
-      "Ka\\Http2Push\\": "typo3conf/ext/http2_push/Classes"
+      "MB\\Angelshop\\": "typo3conf/ext/angelshop/Classes"
     }
   },
   "require": {
