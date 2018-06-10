@@ -152,6 +152,9 @@ return [
         'realurl' => [
             'packagePath' => 'typo3conf/ext/realurl/',
         ],
+        'staticfilecache' => [
+            'packagePath' => 'typo3conf/ext/staticfilecache/',
+        ],
     ],
     'version' => 5,
 ];
