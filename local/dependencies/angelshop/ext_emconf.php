@@ -22,13 +22,9 @@ $EM_CONF[$_EXTKEY] = array(
     'version' => '1.0.0',
     'constraints' => array(
         'depends' => array(
-            'typo3' => '7.6.0-8.9.99',
-            'vhs' => '3.0.0-4.2.99',
-            'formhandler' => '2.3.1-2.4.99',
-            'direct_mail' => '5.1.0-5.2.99',
-            'tt_address' => '3.2.1',
-            'sourceopt' => '0.9.3-1.0.0',
-            'news' => '6.0.0 - 6.99.99'
+            'typo3' => '7.6.0-9.9.99',
+            'news' => '7.2.0-7.99.99',
+            'tt_address' => '4.3.0-4.99.99',
         ),
         'conflicts' => array(),
         'suggests' => array(),
