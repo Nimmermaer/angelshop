@@ -35,7 +35,7 @@ class ContentElementProcessor implements DataProcessorInterface
     /**
      * fontAwesomeRepository
      * @var \MB\Angelshop\Domain\Repository\FontawesomeRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $fontawesomeRepository = null;
 
