@@ -104,7 +104,7 @@ lib.weatherView {
     settings {
         arguments {
             title = Abtsdorfer See
-            address = Abtsdorfer See, Saaldorf-Surheim
+            address = Waging am See
             appid = 9e31371905782f75d67d42ff929d711e
         }
     }

@@ -1,5 +1,6 @@
 mod.web_layout.BackendLayouts.Sidebar {
     title = LLL:EXT:angelshop/Resources/Private/Language/BackendLayouts/locallang.xlf:Sidebar.title
+    icon = EXT:angelshop/Resources/Public/Images/sidebar.JPG
     config {
         backend_layout {
             colCount = 6
