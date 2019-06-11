@@ -20,9 +20,9 @@
 
 (function(factory){
     if (typeof define === "function" && define.amd) {
-        define(["jquery"], factory);
+        define(["local/dependencies/angelshop/Resources/Public/Js/jquery"], factory);
     } else if (typeof exports === 'object') {
-        factory(require('jquery'));
+        factory(require('local/dependencies/angelshop/Resources/Public/Js/jquery'));
     } else {
         factory(jQuery);
     }
@@ -2397,7 +2397,7 @@
  */
 !function (t) {
     "use strict";
-    "function" == typeof define && define.amd ? define(["jquery"], t) : "undefined" != typeof module && module.exports ? module.exports = t(require("jquery")) : t(jQuery)
+    "function" == typeof define && define.amd ? define(["local/dependencies/angelshop/Resources/Public/Js/jquery"], t) : "undefined" != typeof module && module.exports ? module.exports = t(require("local/dependencies/angelshop/Resources/Public/Js/jquery")) : t(jQuery)
 }(function (t) {
     var e = -1, o = -1, i = function (t) {
         return parseFloat(t) || 0
@@ -2648,9 +2648,9 @@ $(document).ready(function () {
 (function (factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+        define(['local/dependencies/angelshop/Resources/Public/Js/jquery'], factory);
     } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
+        module.exports = factory(require('local/dependencies/angelshop/Resources/Public/Js/jquery'));
     } else {
         factory(jQuery);
     }
