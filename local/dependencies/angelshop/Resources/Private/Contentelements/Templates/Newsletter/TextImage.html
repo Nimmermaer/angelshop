@@ -72,7 +72,7 @@
     margin-bottom: 10px;
     margin-left: 0;
     text-align: left;">Sehr geehrte/r Frau/Herr ###USER_lastname###</h3></f:case>
-                                    <f:case default="TRUE"> <h3 style="    color: #606060 !important;
+                                    <f:defaultCase> <h3 style="    color: #606060 !important;
     display: block;
     font-family: Helvetica;
     font-size: 16px;
@@ -84,7 +84,7 @@
     margin-right: 0;
     margin-bottom: 10px;
     margin-left: 0;
-    text-align: left;">{data.header}</h3></f:case>
+    text-align: left;">{data.header}</h3></f:defaultCase>
                                 </f:switch>
                                 {data.bodytext->f:format.html()}
                             </td>

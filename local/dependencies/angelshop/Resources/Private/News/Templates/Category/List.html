@@ -15,10 +15,10 @@
                     <f:render section="categoryTreeBootstrap"
                               arguments="{categories:categories,overwriteDemand:overwriteDemand,data:contentObjectData}"/>
                 </f:case>
-                <f:case default="TRUE">
+                <f:defaultCase>
                     <f:render section="categoryTree"
                               arguments="{categories:categories,overwriteDemand:overwriteDemand}"/>
-                </f:case>
+                </f:defaultCase>
             </f:switch>
 
 

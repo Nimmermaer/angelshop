@@ -1,4 +1,6 @@
-{namespace n=MB\Angelshop\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 <f:if condition="{data.seo_title}">
     <f:then>
         <n:metaTag property="og:title" content="{data.seo_title}"/>
@@ -36,3 +38,4 @@
 </f:if>
 <n:metaTag name="keywords" content="{data.keywords}"/>
 <n:metaTag property="og:site_name" content="Aba-Angelshop"/>
+</html>

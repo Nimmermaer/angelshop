@@ -1,4 +1,6 @@
-{namespace n=MB\Angelshop\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 <f:if condition="{data.seo_title}">
     <f:then>
         <n:metaTag property="og:title" content="{data.seo_title}"/>
@@ -42,3 +44,4 @@
 <n:metaTag property="og:region" content="{settings.opengraph.region}"/>
 <n:metaTag property="og:postal-code" content="{settings.opengraph.postal-code}"/>
 <n:metaTag property="og:country-name" content="{settings.opengraph.country-name}"/>
+</html>

@@ -18,10 +18,10 @@
 					<f:render section="newsBootstrap"
 							  arguments="{_all}"/>
 				</f:case>
-				<f:case default="TRUE">
+				<f:defaultCase>
 					<f:render section="newsDefault"
 							  arguments="{_all}"/>
-				</f:case>
+				</f:defaultCase>
 			</f:switch>
 		</f:then>
 		<f:else>
