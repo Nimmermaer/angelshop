@@ -1,18 +1,12 @@
 <?php
-if ((PHP_SAPI == 'cli') && ($_SERVER['argc'] >= 3)) {
-    $APPLICATION_ENV = $_SERVER['argv'][2];
-    unset($_SERVER['argv'][2]);
-} else {
-    $APPLICATION_ENV = getenv("APPLICATION_ENV");
-}
-if(!$APPLICATION_ENV) {
-    $APPLICATION_ENV = str_replace('/', '.',getenv('TYPO3_CONTEXT'));
-}
 
-if (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' . $APPLICATION_ENV . '.php') == true) {
-    include realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' . $APPLICATION_ENV . '.php';
-} elseif (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . $APPLICATION_ENV . '.php') == true) {
-    include realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . $APPLICATION_ENV . '.php';
+$currentApplicationContext = \TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext();
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] .= ' (' . (string)$currentApplicationContext . ')';
+
+if (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' . str_replace('/', '.',$currentApplicationContext) . '.php') == true) {
+    include realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' . str_replace('/', '.',$currentApplicationContext) . '.php';
+} elseif (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . str_replace('/', '.',$currentApplicationContext) . '.php') == true) {
+    include realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . str_replace('/', '.',$currentApplicationContext) . '.php';
 }
 $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'] = [
     [
@@ -193,4 +187,3 @@ $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'] = [
         'fa-cog'
     ],
 ];
-?> 
