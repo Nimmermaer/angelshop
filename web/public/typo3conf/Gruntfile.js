@@ -161,16 +161,6 @@ module.exports = function (grunt) {
                 dest: 'ext/angelshop/Resources/Public/Css/angelshop.css'
             }
         },
-        penthouse: {
-            extract : {
-                outfile : 'ext/angelshop/Resources/Public/Css/angelshop_critical.css',
-                css : 'ext/angelshop/Resources/Public/Css/angelshop.min.css',
-                url : 'http://angelshop.local/',
-                width : 1300,
-                height : 900,
-                skipErrors : false // this is the default
-            }
-        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -181,8 +171,7 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-strip-css-comments');
-    grunt.loadNpmTasks('grunt-penthouse');
 
     //grunt.registerTask('default', ['less', 'jshint', 'concat', 'sprite']);
-    grunt.registerTask('default', ['less', 'jshint', 'concat', 'uglify','stripCssComments', 'cssmin','penthouse']);
+    grunt.registerTask('default', ['less', 'jshint', 'concat', 'uglify','stripCssComments', 'cssmin']);
 };
