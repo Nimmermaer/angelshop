@@ -111,4 +111,40 @@ lib.weatherView {
 }
 
 
+plugin.tx_seo {
+    config {
+        xmlSitemap {
+            sitemaps {
+                pages {
+                    config {
+                        excludedDoktypes = 254,255,199
+                        additionalWhere = AND (no_index = 0 OR no_follow = 0)
+                    }
+                }
+                news {
+                    provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                    config {
+                        table = tx_news_domain_model_news
+                        sortField = sorting
+                        lastModifiedField = tstamp
+                        pid = 1067
+                        recursive = <number of subpage levels taken into account beyond the pid page. (default: 0)>
+                        url {
+                            pageId = 1068
+                            fieldToParameterMap {
+                                uid = tx_news_pi1[news]
+                            }
 
+                            additionalGetParameters {
+                                tx_news_pi1.controller = News
+                                tx_news_pi1.action = detail
+                            }
+
+                            useCacheHash = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

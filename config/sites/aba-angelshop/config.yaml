@@ -26,7 +26,11 @@ errorHandling:
     errorCode: '404'
     errorHandler: Page
     errorContentSource: 't3://page?uid=37'
-routes: {  }
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
 routeEnhancers:
   PageTypeSuffix:
     type: PageType
@@ -35,19 +39,24 @@ routeEnhancers:
     index: ''
     map:
       /: 0
+      'sitemap.xml': 1533906435
   NewsPlugin:
     type: Extbase
     limitToPages: 1068
     extension: News
     plugin: Pi1
     routes:
-      - { routePath: '/{news_title}', _controller: 'News::detail', _arguments: {'news_title': 'news'} }
+      -
+        routePath: '/{news_title}'
+        _controller: 'News::detail'
+        _arguments:
+          news_title: news
     defaultController: 'News::detail'
     aspects:
       news_title:
         type: PersistedAliasMapper
-        tableName: 'tx_news_domain_model_news'
-        routeFieldName: 'path_segment'
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
   SearchPlugin:
     type: Plugin
     limitTopages: 960
