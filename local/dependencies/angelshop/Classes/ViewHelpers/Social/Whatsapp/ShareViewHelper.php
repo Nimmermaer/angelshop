@@ -11,24 +11,32 @@ namespace MB\Angelshop\ViewHelpers\Social\Whatsapp;
  * Class ShareViewHelper
  * @package MB\Angelshop\ViewHelpers\Social\Whatsapp
  */
-class ShareViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
+class ShareViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
 {
+    /**
+     * Arguments initialization
+     * @return void
+     */
+    public function initializeArguments()
+    {
+        $this->registerArgument('text', 'string', 'text');
+    }
 
     /**
      * @param string $text
      *
      * @return string|null
      */
-    public function render($text)
+    public function render()
     {
-        if (is_null($text)) {
+        if (is_null($this->arguments['text'])) {
             return null;
         }
 
         $uri       = empty( $this->arguments['shareurl'] ) ? \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL') : $this->arguments['shareurl'];
         $urlEncode = rawurlencode($uri);
-        $text = rawurlencode($text. " "); 
-        $content   = 'whatsapp://send?text=' . $text  . $urlEncode;
+        $text = rawurlencode($this->arguments['text']. " ");
+        $content   = 'whatsapp://send?text=' . $this->arguments['text']  . $urlEncode;
 
         return $content;
     }

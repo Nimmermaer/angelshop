@@ -1,32 +1,42 @@
 <?php
+
 namespace MB\Angelshop\ViewHelpers\Social\Facebook;
 
-    /*  | This extension is part of the TYPO3 project. The TYPO3 project is
-     *  | free software and is licensed under GNU General Public License.
-     *  |
-     *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>
-     */
+/*  | This extension is part of the TYPO3 project. The TYPO3 project is
+ *  | free software and is licensed under GNU General Public License.
+ *  |
+ *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>
+ */
 
 /**
  * Class ShareViewHelper
  * @package MB\Angelshop\ViewHelpers\Social\Facebook
  */
-class ShareViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
+class ShareViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
 {
+    /**
+     * Arguments initialization
+     * @return void
+     */
+    public function initializeArguments()
+    {
+        $this->registerArgument('text', 'string', 'text');
+    }
+
     /**
      * @param string $text
      *
      * @return string|null
      */
-    public function render($text)
+    public function render()
     {
-        if (is_null($text)) {
+        if (is_null($this->arguments['text'])) {
             return null;
         }
 
-        $uri       = empty( $this->arguments['shareurl'] ) ? \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL') : $this->arguments['shareurl'];
+        $uri = empty($this->arguments['shareurl']) ? \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL') : $this->arguments['shareurl'];
         $urlEncode = rawurlencode($uri);
-        $content   = 'https://www.facebook.com/sharer.php?u=' . $urlEncode . '&t=' . $text;
+        $content = 'https://www.facebook.com/sharer.php?u=' . $urlEncode . '&t=' . $this->arguments['text'];
 
         return $content;
     }

@@ -8,23 +8,37 @@
 
 namespace MB\Angelshop\ViewHelpers;
 
-
-class TrimViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+/**
+ * Class TrimViewHelper
+ * @package MB\Angelshop\ViewHelpers
+ */
+class TrimViewHelper extends AbstractViewHelper
+{
 
     /**
-     * @param mixed $value The value to output
+     * Arguments initialization
+     * @return void
+     */
+    public function initializeArguments()
+    {
+        $this->registerArgument('value', 'string', 'The value to output');
+    }
+
+    /**
      * @return string
      */
-    public function render($value = NULL) {
-        if ($value === NULL) {
-            $value =  $this->renderChildren();
+    public function render()
+    {
+        if ($this->arguments['value'] === NULL) {
+            $this->arguments['value'] = $this->renderChildren();
         }
         // remove new line - does not matter in html anyway
-        $value = str_replace(chr(10), '', $value);
-        $value = str_replace(' ', '', $value);
-        $value = str_replace('/', '', $value);
+        $this->arguments['value'] = str_replace(chr(10), '', $this->arguments['value']);
+        $this->arguments['value'] = str_replace(' ', '', $this->arguments['value']);
+        $this->arguments['value'] = str_replace('/', '', $this->arguments['value']);
         // remove multiple whitespaces
-        $value = preg_replace ('#\s+#' , '' , $value);
-        return trim($value);
+        $this->arguments['value'] = preg_replace('#\s+#', '', $this->arguments['value']);
+        return trim($this->arguments['value']);
     }
 }
