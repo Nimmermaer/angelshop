@@ -11,14 +11,14 @@ return [
         'core' => [
             'packagePath' => 'typo3/sysext/core/',
         ],
+        'scheduler' => [
+            'packagePath' => 'typo3/sysext/scheduler/',
+        ],
         'extbase' => [
             'packagePath' => 'typo3/sysext/extbase/',
         ],
         'fluid' => [
             'packagePath' => 'typo3/sysext/fluid/',
-        ],
-        'install' => [
-            'packagePath' => 'typo3/sysext/install/',
         ],
         'frontend' => [
             'packagePath' => 'typo3/sysext/frontend/',
@@ -26,17 +26,32 @@ return [
         'fluid_styled_content' => [
             'packagePath' => 'typo3/sysext/fluid_styled_content/',
         ],
-        'info' => [
-            'packagePath' => 'typo3/sysext/info/',
+        'filelist' => [
+            'packagePath' => 'typo3/sysext/filelist/',
         ],
-        'info_pagetsconfig' => [
-            'packagePath' => 'typo3/sysext/info_pagetsconfig/',
+        'impexp' => [
+            'packagePath' => 'typo3/sysext/impexp/',
         ],
-        'extensionmanager' => [
-            'packagePath' => 'typo3/sysext/extensionmanager/',
+        'form' => [
+            'packagePath' => 'typo3/sysext/form/',
         ],
-        'lang' => [
-            'packagePath' => 'typo3/sysext/lang/',
+        'install' => [
+            'packagePath' => 'typo3/sysext/install/',
+        ],
+        'recordlist' => [
+            'packagePath' => 'typo3/sysext/recordlist/',
+        ],
+        'backend' => [
+            'packagePath' => 'typo3/sysext/backend/',
+        ],
+        'indexed_search' => [
+            'packagePath' => 'typo3/sysext/indexed_search/',
+        ],
+        'recycler' => [
+            'packagePath' => 'typo3/sysext/recycler/',
+        ],
+        'reports' => [
+            'packagePath' => 'typo3/sysext/reports/',
         ],
         'setup' => [
             'packagePath' => 'typo3/sysext/setup/',
@@ -44,32 +59,11 @@ return [
         'rte_ckeditor' => [
             'packagePath' => 'typo3/sysext/rte_ckeditor/',
         ],
-        'rsaauth' => [
-            'packagePath' => 'typo3/sysext/rsaauth/',
-        ],
-        'saltedpasswords' => [
-            'packagePath' => 'typo3/sysext/saltedpasswords/',
-        ],
-        'taskcenter' => [
-            'packagePath' => 'typo3/sysext/taskcenter/',
-        ],
-        'sys_action' => [
-            'packagePath' => 'typo3/sysext/sys_action/',
-        ],
-        'func' => [
-            'packagePath' => 'typo3/sysext/func/',
-        ],
-        'wizard_crpages' => [
-            'packagePath' => 'typo3/sysext/wizard_crpages/',
-        ],
-        'wizard_sortpages' => [
-            'packagePath' => 'typo3/sysext/wizard_sortpages/',
-        ],
         'about' => [
             'packagePath' => 'typo3/sysext/about/',
         ],
-        'backend' => [
-            'packagePath' => 'typo3/sysext/backend/',
+        'adminpanel' => [
+            'packagePath' => 'typo3/sysext/adminpanel/',
         ],
         'belog' => [
             'packagePath' => 'typo3/sysext/belog/',
@@ -77,41 +71,23 @@ return [
         'beuser' => [
             'packagePath' => 'typo3/sysext/beuser/',
         ],
-        'context_help' => [
-            'packagePath' => 'typo3/sysext/context_help/',
+        'extensionmanager' => [
+            'packagePath' => 'typo3/sysext/extensionmanager/',
         ],
-        'cshmanual' => [
-            'packagePath' => 'typo3/sysext/cshmanual/',
-        ],
-        'filelist' => [
-            'packagePath' => 'typo3/sysext/filelist/',
-        ],
-        'impexp' => [
-            'packagePath' => 'typo3/sysext/impexp/',
-        ],
-        'indexed_search' => [
-            'packagePath' => 'typo3/sysext/indexed_search/',
+        'info' => [
+            'packagePath' => 'typo3/sysext/info/',
         ],
         'lowlevel' => [
             'packagePath' => 'typo3/sysext/lowlevel/',
         ],
-        'recordlist' => [
-            'packagePath' => 'typo3/sysext/recordlist/',
+        'opendocs' => [
+            'packagePath' => 'typo3/sysext/opendocs/',
         ],
-        'reports' => [
-            'packagePath' => 'typo3/sysext/reports/',
+        'redirects' => [
+            'packagePath' => 'typo3/sysext/redirects/',
         ],
-        'scheduler' => [
-            'packagePath' => 'typo3/sysext/scheduler/',
-        ],
-        'sv' => [
-            'packagePath' => 'typo3/sysext/sv/',
-        ],
-        'sys_note' => [
-            'packagePath' => 'typo3/sysext/sys_note/',
-        ],
-        't3editor' => [
-            'packagePath' => 'typo3/sysext/t3editor/',
+        'seo' => [
+            'packagePath' => 'typo3/sysext/seo/',
         ],
         'tstemplate' => [
             'packagePath' => 'typo3/sysext/tstemplate/',
@@ -119,41 +95,32 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
-        'jumpurl' => [
-            'packagePath' => 'typo3conf/ext/jumpurl/',
+        'news' => [
+            'packagePath' => 'typo3conf/ext/news/',
         ],
         'tt_address' => [
             'packagePath' => 'typo3conf/ext/tt_address/',
         ],
-        'direct_mail' => [
-            'packagePath' => 'typo3conf/ext/direct_mail/',
+        'angelshop' => [
+            'packagePath' => 'typo3conf/ext/angelshop/',
+        ],
+        'typo3db_legacy' => [
+            'packagePath' => 'typo3conf/ext/typo3db_legacy/',
         ],
         'formhandler' => [
             'packagePath' => 'typo3conf/ext/formhandler/',
         ],
-        'news' => [
-            'packagePath' => 'typo3conf/ext/news/',
-        ],
-        'sourceopt' => [
-            'packagePath' => 'typo3conf/ext/sourceopt/',
-        ],
-        'vhs' => [
-            'packagePath' => 'typo3conf/ext/vhs/',
-        ],
-        'angelshop' => [
-            'packagePath' => 'typo3conf/ext/angelshop/',
+        'extender' => [
+            'packagePath' => 'typo3conf/ext/extender/',
         ],
         'gridelements' => [
             'packagePath' => 'typo3conf/ext/gridelements/',
         ],
-        'metaseo' => [
-            'packagePath' => 'typo3conf/ext/metaseo/',
-        ],
-        'realurl' => [
-            'packagePath' => 'typo3conf/ext/realurl/',
-        ],
         'staticfilecache' => [
             'packagePath' => 'typo3conf/ext/staticfilecache/',
+        ],
+        'vhs' => [
+            'packagePath' => 'typo3conf/ext/vhs/',
         ],
     ],
     'version' => 5,
