@@ -1,4 +1,5 @@
 <?php
+
 namespace MB\Angelshop\DataProcessing;
 
 
@@ -33,9 +34,9 @@ class ProductPageProcessor implements DataProcessorInterface
 
     /**
      * @param ContentObjectRenderer $cObj
-     * @param array                 $contentObjectConfiguration
-     * @param array                 $processorConfiguration
-     * @param array                 $processedData
+     * @param array $contentObjectConfiguration
+     * @param array $processorConfiguration
+     * @param array $processedData
      *
      * @return array
      */
@@ -44,7 +45,8 @@ class ProductPageProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ) {
+    )
+    {
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
 

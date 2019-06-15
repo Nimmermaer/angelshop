@@ -19,6 +19,7 @@ namespace MB\Angelshop\Domain\Model;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
@@ -211,19 +212,19 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $imageCollection
-     */
-    public function setImageCollection($imageCollection)
-    {
-        $this->imageCollection = $imageCollection;
-    }
-
-    /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
     public function getImageCollection()
     {
         return $this->imageCollection;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $imageCollection
+     */
+    public function setImageCollection($imageCollection)
+    {
+        $this->imageCollection = $imageCollection;
     }
 
     /**

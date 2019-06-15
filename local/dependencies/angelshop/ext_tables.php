@@ -43,16 +43,16 @@ $boot = function ($extensionKey) {
          */
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
             'MB.' . $extensionKey,
-            'web',	 // Make module a submodule of 'tools'
-            'Productlist',	// Submodule key
-            '',						// Position
+            'web',     // Make module a submodule of 'tools'
+            'Productlist',    // Submodule key
+            '',                        // Position
             array(
                 'Product' => 'list, edit, update, search',
 
             ),
             array(
                 'access' => 'user,group',
-                'icon'   => 'EXT:' . $extensionKey . '/ext_icon.gif',
+                'icon' => 'EXT:' . $extensionKey . '/ext_icon.gif',
                 'labels' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf',
             )
         );
@@ -105,8 +105,8 @@ $boot = function ($extensionKey) {
         $pluginSignature,
         'Wetter'
     );
-    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$extensionKey.'_'.strtolower($pluginSignature)]='pi_flexform';
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($extensionKey.'_'.strtolower($pluginSignature), 'FILE:EXT:'.$extensionKey.'/Configuration/FlexForms/'.$pluginSignature.'.xml');
+    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$extensionKey . '_' . strtolower($pluginSignature)] = 'pi_flexform';
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($extensionKey . '_' . strtolower($pluginSignature), 'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginSignature . '.xml');
 
 };
 $boot($_EXTKEY);

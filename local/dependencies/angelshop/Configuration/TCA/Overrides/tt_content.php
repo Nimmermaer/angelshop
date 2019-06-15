@@ -6,36 +6,36 @@
  *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>,
  */
 
-if ( ! defined('TYPO3_MODE')) {
-    die( 'Access denied.' );
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
 }
 
 
 $newTtContentColumns = [
-    'tx_abatemplate_product_stock'                  => [
+    'tx_abatemplate_product_stock' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_stock',
-        'config'  => [
-            'type'    => 'check',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_stock',
+        'config' => [
+            'type' => 'check',
             'default' => '0'
         ]
     ],
-    'tx_abatemplate_product_price'                  => [
+    'tx_abatemplate_product_price' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_price',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_price',
+        'config' => [
             'type' => 'input',
             'size' => '20',
 
         ]
     ],
-    'tx_abatemplate_product_manufacturer_name'      => [
+    'tx_abatemplate_product_manufacturer_name' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_manufacturer_name',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_manufacturer_name',
+        'config' => [
             'type' => 'input',
             'size' => '40',
-            'eval' =>'double2'
+            'eval' => 'double2'
 
         ]
     ],
@@ -87,152 +87,152 @@ $newTtContentColumns = [
             ]
         ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
     ],
-    'tx_abatemplate_product_old_price'              => [
+    'tx_abatemplate_product_old_price' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_old_price',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_old_price',
+        'config' => [
             'type' => 'input',
             'size' => '20',
-            'eval' =>'double2'
+            'eval' => 'double2'
         ]
     ],
     'tx_abatemplate_product_additional_description' => [
-        'exclude'       => 1,
-        'label'         => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_additional_description',
-        'config'        => [
+        'exclude' => 1,
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_additional_description',
+        'config' => [
             'type' => 'text',
             'cols' => '40',
             'rows' => '6',
             'enableRichtext' => true,
         ],
     ],
-    'tx_angelshop_cognizance'                       => [
+    'tx_angelshop_cognizance' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_cognizance',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_cognizance',
+        'config' => [
             'type' => 'input',
             'size' => '30',
             'eval' => 'trim',
         ],
     ],
-    'tx_angelshop_owner'                            => [
+    'tx_angelshop_owner' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_owner',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_owner',
+        'config' => [
             'type' => 'input',
             'size' => '30',
             'eval' => 'trim',
         ],
     ],
-    'tx_angelshop_sales_tax_indicator'              => [
+    'tx_angelshop_sales_tax_indicator' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_sales_tax_indicator',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_sales_tax_indicator',
+        'config' => [
             'type' => 'input',
             'size' => '30',
             'eval' => 'trim',
         ],
     ],
-    'tx_angelshop_opentime'                         => [
+    'tx_angelshop_opentime' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_opentime',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_opentime',
+        'config' => [
             'type' => 'text',
-            'row'  => '5',
+            'row' => '5',
             'cols' => '30',
             'eval' => 'trim',
         ],
     ],
-    'tx_angelshop_address'                          => [
+    'tx_angelshop_address' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_address',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_address',
+        'config' => [
             'type' => 'text',
-            'row'  => '5',
+            'row' => '5',
             'cols' => '30',
             'eval' => 'trim',
         ],
     ],
-    'tx_angelshop_phone'                            => [
+    'tx_angelshop_phone' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_phone',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_phone',
+        'config' => [
             'type' => 'input',
             'size' => '30',
             'eval' => 'trim',
         ],
     ],
-    'tx_angelshop_email'                            => [
+    'tx_angelshop_email' => [
         'exclude' => 1,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_email',
-        'config'  => [
-            'type'    => 'input',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_email',
+        'config' => [
+            'type' => 'input',
             'renderType' => 'inputLink',
-            'size'    => '30',
-            'eval'    => 'trim',
+            'size' => '30',
+            'eval' => 'trim',
             'softref' => 'typolink'
         ],
     ],
-    'tx_angelshop_title'                            => [
+    'tx_angelshop_title' => [
         'exclude' => 0,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_title',
-        'config'  => [
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_title',
+        'config' => [
             'type' => 'input',
             'size' => '30',
             'eval' => 'trim',
         ],
     ],
-    'tx_angelshop_link'                             => [
+    'tx_angelshop_link' => [
         'exclude' => 0,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_link',
-        'config'  => [
-            'type'    => 'input',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_link',
+        'config' => [
+            'type' => 'input',
             'renderType' => 'inputLink',
-            'size'    => 50,
-            'max'     => 1024,
-            'eval'    => 'trim',
+            'size' => 50,
+            'max' => 1024,
+            'eval' => 'trim',
             'softref' => 'typolink'
         ]
     ],
-    'tx_angelshop_fontawesome'                      => [
-        'exclude'     => 0,
+    'tx_angelshop_fontawesome' => [
+        'exclude' => 0,
         'displayCond' => [
             'OR' => [
                 'FIELD:layout:=:1',
                 'FIELD:CType:=:tx_impressum',
             ],
         ],
-        'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_fontawesome',
-        'config'      => [
-            'type'          => 'inline',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_fontawesome',
+        'config' => [
+            'type' => 'inline',
             'foreign_table' => 'tx_angelshop_domain_model_fontawesome',
             'foreign_field' => 'record',
         ]
     ],
-    'tx_angelshop_trader'                           => [
+    'tx_angelshop_trader' => [
         'exclude' => 0,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_trader',
-        'config'  => [
-            'type'          => 'inline',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_trader',
+        'config' => [
+            'type' => 'inline',
             'foreign_table' => 'tx_angelshop_domain_model_trader',
             'foreign_field' => 'record',
         ]
     ],
-    'tx_angelshop_tab'                              => [
+    'tx_angelshop_tab' => [
         'exclude' => 0,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_tab',
-        'config'  => [
-            'type'          => 'inline',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_tab',
+        'config' => [
+            'type' => 'inline',
             'foreign_table' => 'tx_angelshop_domain_model_tab',
             'foreign_field' => 'record',
         ]
     ],
     'tx_angelshop_map_small' => [
         'exclude' => 0,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small',
-        'config'  => [
-            'type'                => 'select',
-            'renderType'          => 'selectSingle',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
             'items' => [
                 [
                     'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.0',
@@ -251,72 +251,72 @@ $newTtContentColumns = [
                     3
                 ]
             ],
-            'size'                => 1,
-            'minitems'            => 0,
-            'maxitems'            => 1
+            'size' => 1,
+            'minitems' => 0,
+            'maxitems' => 1
         ]
     ],
-    'subheader'                                     => [
-        'exclude'     => 0,
+    'subheader' => [
+        'exclude' => 0,
         'displayCond' => [
             'OR' => [
                 'FIELD:CType:=:tx_impressum',
                 'FIELD:CType:=:tx_service',
             ],
         ],
-        'label'       => 'LLL:EXT:lang/locallang_general.xlf:LGL.subheader',
-        'config'      => [
-            'type'    => 'input',
-            'size'    => '50',
-            'max'     => '255',
+        'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.subheader',
+        'config' => [
+            'type' => 'input',
+            'size' => '50',
+            'max' => '255',
             'softref' => 'email[subst]'
         ]
     ],
-    'tx_angelshop_class'                            => [
-        'exclude'     => 0,
+    'tx_angelshop_class' => [
+        'exclude' => 0,
         'displayCond' => [
             'OR' => [
                 'FIELD:layout:=:4',
                 'FIELD:CType:=:tx_service',
             ],
         ],
-        'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_class',
-        'config'      => [
-            'type'  => 'select',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_class',
+        'config' => [
+            'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
         ],
     ],
-    'tx_angelshop_salutation'                       => [
+    'tx_angelshop_salutation' => [
         'exclude' => 0,
-        'label'   => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_salutation',
-        'config'  => [
-            'type'  => 'select',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_salutation',
+        'config' => [
+            'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
                 [
                     'Eigene Überschrift', 0
                 ],
                 [
-                    'Hallo "Vorname"',1
+                    'Hallo "Vorname"', 1
                 ],
                 [
-                    'Sehr geehrte/r Frau/Herr',2
+                    'Sehr geehrte/r Frau/Herr', 2
                 ]
             ]
         ],
     ],
-    'tx_angelshop_movement'                         => [
-        'exclude'     => 0,
+    'tx_angelshop_movement' => [
+        'exclude' => 0,
         'displayCond' => [
             'OR' => [
                 'FIELD:layout:=:4',
                 'FIELD:CType:=:tx_service',
             ],
         ],
-        'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_movement',
-        'config'      => [
-            'type'  => 'select',
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_movement',
+        'config' => [
+            'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'],
         ],
@@ -401,7 +401,7 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_slider'] = [
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,image,' . $commonFields
 ];
 
-$GLOBALS['TCA']['tt_content']['types'] ['tx_gallery']        = [
+$GLOBALS['TCA']['tt_content']['types'] ['tx_gallery'] = [
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,image,' . $commonFields
@@ -418,18 +418,18 @@ $GLOBALS['TCA']['tt_content']['types'] ['tx_trader_slider'] = [
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_angelshop_trader,' . $commonFields
 
 ];
-$GLOBALS['TCA']['tt_content']['types'] ['tx_service']       = [
+$GLOBALS['TCA']['tt_content']['types'] ['tx_service'] = [
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          header,subheader;Buttontext,header_link;Buttonlink,--palette--;;fonts,bodytext,' . $commonFields
 ];
-$GLOBALS['TCA']['tt_content']['types'] ['tx_tab']           = [
+$GLOBALS['TCA']['tt_content']['types'] ['tx_tab'] = [
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_angelshop_tab,' . $commonFields
 ];
 
-$GLOBALS['TCA']['tt_content']['types'] ['tx_contact']           = [
+$GLOBALS['TCA']['tt_content']['types'] ['tx_contact'] = [
     'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
     header, header_layout, header_link;Kontaktseite'
 ];
@@ -442,12 +442,12 @@ $GLOBALS['TCA']['tt_content']['types']['ce_product'] = [
 
 ];
 
-$GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_image']   = [
+$GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_image'] = [
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
         image,' . $commonFields
 ];
-$GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_text']    = [
+$GLOBALS['TCA']['tt_content']['types'] ['tx_newsletter_text'] = [
     'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          header,tx_angelshop_salutation, subtitle ,bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],' . $commonFields

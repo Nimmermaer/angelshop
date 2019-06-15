@@ -1,4 +1,5 @@
 <?php
+
 namespace MB\Angelshop\ViewHelpers;
 
 /**
@@ -10,6 +11,7 @@ namespace MB\Angelshop\ViewHelpers;
  * LICENSE.txt file that was distributed with this source code.
  * The TYPO3 project - inspiring people to share!
  */
+
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
@@ -68,7 +70,7 @@ class MetaTagViewHelper extends AbstractTagBasedViewHelper
         // prepend current domain
         if ($forceAbsoluteUrl) {
             $path = $this->arguments['content'];
-            if ( ! GeneralUtility::isFirstPartOfStr($path, GeneralUtility::getIndpEnv('TYPO3_SITE_URL'))) {
+            if (!GeneralUtility::isFirstPartOfStr($path, GeneralUtility::getIndpEnv('TYPO3_SITE_URL'))) {
                 $this->tag->addAttribute('content',
                     rtrim(GeneralUtility::getIndpEnv('TYPO3_SITE_URL'), '/')
                     . '/'
@@ -77,7 +79,7 @@ class MetaTagViewHelper extends AbstractTagBasedViewHelper
             }
         }
 
-        if ($useCurrentDomain || ( isset( $this->arguments['content'] ) && ! empty( $this->arguments['content'] ) )) {
+        if ($useCurrentDomain || (isset($this->arguments['content']) && !empty($this->arguments['content']))) {
             $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
             $pageRenderer->addMetaTag($this->tag->render());
         }

@@ -88,8 +88,8 @@ return [
         ],
         'starttime' => [
             'exclude' => 1,
-            'behaviour'=> [
-                'allowLanguageSynchronization'=> true
+            'behaviour' => [
+                'allowLanguageSynchronization' => true
             ],
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
             'config' => [
@@ -106,8 +106,8 @@ return [
         ],
         'endtime' => [
             'exclude' => 1,
-            'behaviour'=> [
-                'allowLanguageSynchronization'=> true
+            'behaviour' => [
+                'allowLanguageSynchronization' => true
             ],
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
             'config' => [

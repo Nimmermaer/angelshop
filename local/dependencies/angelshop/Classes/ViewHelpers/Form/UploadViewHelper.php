@@ -1,11 +1,12 @@
 <?php
+
 namespace MB\Angelshop\ViewHelpers\Form;
 
-    /*  | This extension is part of the TYPO3 project. The TYPO3 project is
-     *  | free software and is licensed under GNU General Public License.
-     *  |
-     *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>
-     */
+/*  | This extension is part of the TYPO3 project. The TYPO3 project is
+ *  | free software and is licensed under GNU General Public License.
+ *  |
+ *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>
+ */
 
 /**
  * Class UploadViewHelper

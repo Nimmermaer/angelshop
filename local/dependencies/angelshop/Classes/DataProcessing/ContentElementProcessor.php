@@ -1,4 +1,5 @@
 <?php
+
 namespace MB\Angelshop\DataProcessing;
 
 
@@ -42,9 +43,9 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * @param ContentObjectRenderer $cObj
-     * @param array                 $contentObjectConfiguration
-     * @param array                 $processorConfiguration
-     * @param array                 $processedData
+     * @param array $contentObjectConfiguration
+     * @param array $processorConfiguration
+     * @param array $processedData
      *
      * @return array
      */
@@ -53,7 +54,8 @@ class ContentElementProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ) {
+    )
+    {
 
         $function = 'processFor' . str_replace(' ', '',
                 ucwords(str_replace("_", " ", $contentObjectConfiguration['templateName'])));
@@ -87,7 +89,7 @@ class ContentElementProcessor implements DataProcessorInterface
     {
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository    = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
+        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
 
         return $repository->findByRecord($processedData['data']['uid']);
     }
@@ -101,7 +103,7 @@ class ContentElementProcessor implements DataProcessorInterface
     {
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository    = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
+        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
 
         return $repository->findByRecord($processedData['data']['uid']);
     }
@@ -115,7 +117,7 @@ class ContentElementProcessor implements DataProcessorInterface
     {
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository    = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TraderRepository');
+        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TraderRepository');
 
         return $repository->findByRecord($processedData['data']['uid']);
     }
@@ -130,7 +132,7 @@ class ContentElementProcessor implements DataProcessorInterface
     {
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository    = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
+        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
 
         return $repository->findByRecord($processedData['data']['uid']);
     }
@@ -144,7 +146,7 @@ class ContentElementProcessor implements DataProcessorInterface
     {
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository    = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\ContentRepository');
+        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\ContentRepository');
 
         return $repository->findByContentType('ce_product');
     }

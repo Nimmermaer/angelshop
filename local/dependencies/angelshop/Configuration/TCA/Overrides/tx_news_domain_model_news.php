@@ -45,11 +45,11 @@ $newsColumns = [
         ),
 
     ],
-    'tx_angelshop_news_icon'                            => [
-        'exclude'     => 1,
-        'label'       => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_icon',
-        'config'      => [
-            'type'  => 'select',
+    'tx_angelshop_news_icon' => [
+        'exclude' => 1,
+        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_icon',
+        'config' => [
+            'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
         ],

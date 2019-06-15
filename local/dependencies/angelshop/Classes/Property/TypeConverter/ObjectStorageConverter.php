@@ -1,4 +1,5 @@
 <?php
+
 namespace MB\Angelshop\Property\TypeConverter;
 
 /**
@@ -17,6 +18,7 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
      * @var int
      */
     protected $priority = 2;
+
     /**
      * Return the source, if it is an array, otherwise an empty array.
      * Filter out empty uploads
@@ -40,6 +42,7 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
         }
         return $propertiesToConvert;
     }
+
     /**
      * Check if this is an upload type
      *

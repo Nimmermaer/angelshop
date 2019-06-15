@@ -1,4 +1,5 @@
 <?php
+
 namespace MB\Angelshop\Domain\Model;
 
 /*

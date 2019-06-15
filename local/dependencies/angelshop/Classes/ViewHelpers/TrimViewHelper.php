@@ -9,6 +9,7 @@
 namespace MB\Angelshop\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * Class TrimViewHelper
  * @package MB\Angelshop\ViewHelpers

@@ -1,4 +1,5 @@
 <?php
+
 namespace MB\Angelshop\Controller;
 
 /***************************************************************
@@ -53,11 +54,11 @@ class NewsletterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function unsubscribeAction()
     {
-        $uid   = GeneralUtility::_GP('tx_angelshop_newsletter_uid');
+        $uid = GeneralUtility::_GP('tx_angelshop_newsletter_uid');
         $email = GeneralUtility::_GP('tx_angelshop_newsletter_email');
-        if ((int) $uid) {
+        if ((int)$uid) {
             $frontendUser = $this->frontendUserRepository->findOneByEmail($email);
-            $addressUser  = $this->addressRepository->findOneByEmail($email);
+            $addressUser = $this->addressRepository->findOneByEmail($email);
             if ($frontendUser) {
                 $this->frontendUserRepository->remove($frontendUser);
             }
@@ -80,8 +81,8 @@ class NewsletterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
 
         $link = $this->uriBuilder->setCreateAbsoluteUri(1)
-                                 ->setTargetPageUid($this->settings['newsletterThankYouPid'])
-                                 ->build();
+            ->setTargetPageUid($this->settings['newsletterThankYouPid'])
+            ->build();
 
         $this->redirectToUri($link);
 
