@@ -32,13 +32,13 @@ class NewsletterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
     /**
      * @var \TYPO3\TtAddress\Domain\Repository\AddressRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $addressRepository;
 
     /**
      * @var  \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $frontendUserRepository;
 

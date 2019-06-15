@@ -32,8 +32,9 @@ class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      */
     protected $objectType = '\MB\Angelshop\Domain\Model\Content';
 
-
-    // Example for repository wide settings
+    /**
+     *
+     */
     public function initializeObject()
     {
         /** @var $querySettings \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings */
@@ -49,6 +50,7 @@ class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
     /**
      * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
     public function findProducts()
     {
@@ -58,6 +60,10 @@ class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return $query->execute();
     }
 
+    /**
+     * @param $uid
+     * @return object
+     */
     public function findHiddenEntryByUid($uid)
     {
         if (array_key_exists('__identity', $uid)) {
@@ -72,8 +78,8 @@ class ContentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
     /**
      * @param $term
-     *
      * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
     public function findByIndex($term)
     {

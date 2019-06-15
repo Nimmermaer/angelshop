@@ -35,12 +35,12 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * contentRepository
      * @var \MB\Angelshop\Domain\Repository\ContentRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $contentRepository = null;
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\Generic\Session
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $session;
 
