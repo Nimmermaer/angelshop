@@ -1,32 +1,28 @@
-<f:render partial="Opengraph" arguments="{_all}"/>
-<!-- Navigation -->
-<f:render partial="Page/Header" arguments="{_all}"/>
-<!-- Page Content -->
-<f:if condition="{files}">
-    <f:render partial="Page/ImageHeader" arguments="{_all}"/>
-</f:if>
-<div class="container">
-    <!-- Page Heading/Breadcrumbs -->
-    <f:render partial="Page/Breadcrumb" arguments="{_all}"/>
-    <!-- /.row -->
-    <!-- Content Row -->
-    <div class="row">
-        <!-- Sidebar Column -->
-        <div class="col-md-3">
-
-            <f:render partial="Page/Submenu" arguments="{_all}"/>
-            {columnSpecial->f:format.raw()}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Page/Default"/>
+<f:section name="main">
+    <f:render partial="Opengraph" arguments="{_all}"/>
+    <f:render partial="Page/Header" arguments="{_all}"/>
+    <f:if condition="{files}">
+        <f:render partial="Page/ImageHeader" arguments="{_all}"/>
+    </f:if>
+    <div class="container">
+        <f:render partial="Page/Breadcrumb" arguments="{_all}"/>
+        <div class="row">
+            <div class="col-md-3">
+                <f:render partial="Page/Submenu" arguments="{_all}"/>
+                {columnSpecial->f:format.raw()}
+            </div>
+            <div class="col-md-9">
+                {columnMain->f:format.raw()}
+            </div>
         </div>
-        <!-- Content Column -->
-        <div class="col-md-9">
-            {columnMain->f:format.raw()}
-        </div>
+        <hr>
+        <ul id="Social">
+            <f:render partial="Social/Facebook/Share" arguments="{_all}"/>
+            <f:render partial="Social/Whatsapp/Share" arguments="{_all}"/>
+        </ul>
     </div>
-    <hr>
-    <ul id="Social">
-        <f:render partial="Social/Facebook/Share" arguments="{_all}"/>
-        <f:render partial="Social/Whatsapp/Share" arguments="{_all}"/>
-    </ul>
-
-</div>
-<f:render partial="Page/Footer" arguments="{_all}"/>
+    <f:render partial="Page/Footer" arguments="{_all}"/>
+</f:section>
+</html>
