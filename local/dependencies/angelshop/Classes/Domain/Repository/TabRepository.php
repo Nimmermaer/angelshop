@@ -31,30 +31,4 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class TabRepository extends Repository
 {
 
-    /**
-     * @param $uid
-     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
-     */
-    public function findByContentelementUid($uid)
-    {
-        /** @var QueryBuilder $querBuilder */
-        $querBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_angelshop_trader_ttcontent_mm');
-        $rawUids = $querBuilder->from('tx_angelshop_trader_ttcontent_mm')
-            ->select('uid_foreign')
-            ->where(
-                $querBuilder->expr()->eq('uid_local', (int)$uid)
-            )
-            ->execute()->fetchAll();
-        $trader = array();
-        if (is_array($rawUids) && !empty($rawUids)) {
-            // after we fetched the uid from the raw contact entries on db level,
-            // we now fetch the whole extbase object for each uid (extbase does the validity check for us)
-            $query = $this->createQuery();
-            $query->matching($query->in('uid', array_keys($rawUids)));
-            $trader = $query->execute();
-        }
-
-        return $trader;
-    }
 }

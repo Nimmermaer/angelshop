@@ -40,4 +40,29 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $this->setDefaultQuerySettings($querySettings);
 
     }
+
+    /**
+     * @param $uid
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     */
+    public function findByContentelementUid($uid, $table = 'tx_angelshop_trader_ttcontent_mm')
+    {
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+        $rawUids = $queryBuilder->from($table)
+            ->select('uid_foreign')
+            ->where(
+                $queryBuilder->expr()->eq('uid_local', (int)$uid)
+            )->execute()
+            ->fetchAll();
+
+        $trader = array();
+        if (is_array($rawUids) && !empty($rawUids)) {
+            $query = $this->createQuery();
+            $query->matching($query->in('uid', array_keys($rawUids)));
+            $trader = $query->execute();
+        }
+
+        return $trader;
+    }
 }

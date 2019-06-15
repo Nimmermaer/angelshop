@@ -2,6 +2,9 @@
 
 namespace MB\Angelshop\Domain\Repository;
 
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -28,33 +31,4 @@ class TraderRepository extends Repository
 {
 
 
-    /**
-     * Find by content element uid
-     *
-     * @param int $uid
-     *
-     * @return mixed
-     */
-    public function findByContentelementUid($uid)
-    {
-        $rawUids = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-            'uid_foreign',
-            'tx_angelshop_trader_ttcontent_mm',
-            'uid_local =' . (int)$uid,
-            '',
-            '',
-            '',
-            'uid_foreign'
-        );
-        $trader = array();
-        if (is_array($rawUids) && !empty($rawUids)) {
-            // after we fetched the uid from the raw contact entries on db level,
-            // we now fetch the whole extbase object for each uid (extbase does the validity check for us)
-            $query = $this->createQuery();
-            $query->matching($query->in('uid', array_keys($rawUids)));
-            $trader = $query->execute();
-        }
-
-        return $trader;
-    }
 }
