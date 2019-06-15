@@ -131,7 +131,8 @@ page {
     }
 }
 
-[globalVar = GP:tx_news_pi1|news > 0]
+
+[(request.getQueryParams()['tx_news_pi1'])['news'] > 0 || (request.getParsedBody()['tx_news_pi1'])['news'] > 0]
     page.headerData {
         10 = RECORDS
         10 {
