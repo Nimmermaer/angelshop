@@ -59,6 +59,12 @@ return [
         'rte_ckeditor' => [
             'packagePath' => 'typo3/sysext/rte_ckeditor/',
         ],
+        'taskcenter' => [
+            'packagePath' => 'typo3/sysext/taskcenter/',
+        ],
+        'sys_action' => [
+            'packagePath' => 'typo3/sysext/sys_action/',
+        ],
         'about' => [
             'packagePath' => 'typo3/sysext/about/',
         ],
