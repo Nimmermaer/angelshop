@@ -1,4 +1,3 @@
-# Initiate page
 page = PAGE
 page {
     typeNum = 0
@@ -6,7 +5,6 @@ page {
 
     shortcutIcon = EXT:angelshop/Resources/Public/Icons/angelshop.ico
 
-    # META Tag definitions
     meta {
         X-UA-Compatible = IE=edge
         X-UA-Compatible.httpEquivalent = 1
@@ -16,10 +14,6 @@ page {
         language = de,en
         imagetoolbar = false
         viewport = width=device-width, initial-scale=1
-        #        description {
-        #            data = page:description
-        #            ifEmpty.data = levelfield :-1, description, slide
-        #        }
 
         keywords {
             data = page:keywords
@@ -69,13 +63,6 @@ page {
         11.value (
                 <meta name="theme-color" content="#FFA500">
         )
-
-        #        23 = TEXT
-        #        23 {
-        #            value = website
-        #            wrap = <meta property=”og:type” content=”|”>
-        #        }
-
         12 = TEXT
         12.value (
         <script type="application/ld+json">
