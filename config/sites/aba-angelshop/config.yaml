@@ -1,0 +1,58 @@
+rootPageId: 1
+base: /
+baseVariants:
+  -
+    base: 'https://aba-angelshop.de/'
+    condition: 'applicationContext == "Production\Live"'
+  -
+    base: 'http://localhost:41199/'
+    condition: 'applicationContext == "Development\Vagrant"'
+disableStaticFileCache: false
+languages:
+  -
+    title: deutsch
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: default
+    locale: de_DE
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-DE
+    direction: ltr
+    flag: de
+errorHandling:
+  -
+    errorCode: '404'
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=37'
+routes: {  }
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    default: /
+    suffix: /
+    index: ''
+    map:
+      /: 0
+  NewsPlugin:
+    type: Extbase
+    limitToPages: 1068
+    extension: News
+    plugin: Pi1
+    routes:
+      - { routePath: '/{news_title}', _controller: 'News::detail', _arguments: {'news_title': 'news'} }
+    defaultController: 'News::detail'
+    aspects:
+      news_title:
+        type: PersistedAliasMapper
+        tableName: 'tx_news_domain_model_news'
+        routeFieldName: 'path_segment'
+  SearchPlugin:
+    type: Plugin
+    limitTopages: 960
+    namespace: tx_indexedsearch_pi2
+    routePath: '/{chash}'
+    requirements:
+      search: '[0-9]{1..3}'
+      hash: '^[a-zA-Z0-9]{32}$'
