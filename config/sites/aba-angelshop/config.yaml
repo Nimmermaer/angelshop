@@ -3,7 +3,7 @@ base: /
 baseVariants:
   -
     base: 'https://aba-angelshop.de/'
-    condition: 'applicationContext == "Production\Live"'
+    condition: 'applicationContext == "Production"'
   -
     base: 'http://localhost:41199/'
     condition: 'applicationContext == "Development\Vagrant"'
@@ -25,7 +25,7 @@ errorHandling:
   -
     errorCode: '404'
     errorHandler: Page
-    errorContentSource: 't3://page?uid=37'
+    errorContentSource: 'https://aba-angelshop.de/404/'
 routes:
   -
     route: robots.txt
@@ -39,7 +39,7 @@ routeEnhancers:
     index: ''
     map:
       /: 0
-      'sitemap.xml': 1533906435
+      sitemap.xml: 1533906435
   NewsPlugin:
     type: Extbase
     limitToPages: 1068
@@ -57,11 +57,3 @@ routeEnhancers:
         type: PersistedAliasMapper
         tableName: tx_news_domain_model_news
         routeFieldName: path_segment
-  SearchPlugin:
-    type: Plugin
-    limitTopages: 960
-    namespace: tx_indexedsearch_pi2
-    routePath: '/{chash}'
-    requirements:
-      search: '[0-9]{1..3}'
-      hash: '^[a-zA-Z0-9]{32}$'
