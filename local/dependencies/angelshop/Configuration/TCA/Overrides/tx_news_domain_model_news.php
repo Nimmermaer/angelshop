@@ -18,48 +18,54 @@
  *  Created by PhpStorm.
  ******************************************************************/
 
-if (!defined('TYPO3_MODE')) {
-    die ('Access denied.');
-}
+defined('TYPO3_MODE') or die();
+
+call_user_func(
+    function ($extensionKey, $table) {
+
+        $newsColumns = [
+            'tx_angelshop_news_recipe' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_recipe',
+                'onChange' => 'reload',
+                'config' => [
+                    'type' => 'check',
+                    'default' => '0'
+                ]
+            ],
+            'tx_angelshop_news_ingredient' => [
+                'exclude' => 0,
+                'displayCond' => 'FIELD:tx_angelshop_news_recipe:=:1',
+                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_ingredient',
+                'config' => array(
+                    'type' => 'text',
+                    'cols' => 40,
+                    'rows' => 6,
+                    'enableRichtext' => true,
+                ),
+
+            ],
+            'tx_angelshop_news_icon' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_icon',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'],
+                ],
+            ],
+        ];
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $newsColumns, 1);
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToAllPalettesOfField($table, 'title', 'tx_angelshop_news_recipe', 'before:isTopNews');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table,
+            'tx_angelshop_news_ingredient', '', 'before:bodytext');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table,
+            'tx_angelshop_news_icon', '', 'before:tags');
 
 
-$newsColumns = [
-    'tx_angelshop_news_recipe' => [
-        'exclude' => 1,
-        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_recipe',
-        'onChange' => 'reload',
-        'config' => [
-            'type' => 'check',
-            'default' => '0'
-        ]
-    ],
-    'tx_angelshop_news_ingredient' => [
-        'exclude' => 0,
-        'displayCond' => 'FIELD:tx_angelshop_news_recipe:=:1',
-        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_ingredient',
-        'config' => array(
-            'type' => 'text',
-            'cols' => 40,
-            'rows' => 6,
-            'enableRichtext' => true,
-        ),
-
-    ],
-    'tx_angelshop_news_icon' => [
-        'exclude' => 1,
-        'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_icon',
-        'config' => [
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'],
-        ],
-    ],
-];
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news', $newsColumns, 1);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToAllPalettesOfField('tx_news_domain_model_news', 'title', 'tx_angelshop_news_recipe', 'before:isTopNews');
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news',
-    'tx_angelshop_news_ingredient', '', 'before:bodytext');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news',
-    'tx_angelshop_news_icon', '', 'before:tags');
+    },
+    'angelshop',
+    'tx_news_domain_model_news'
+);
