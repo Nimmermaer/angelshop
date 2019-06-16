@@ -118,6 +118,7 @@ lib.newsHeader {
 }
 
 plugin.tx_news {
+    settings.cssFile >
     persistence {
         classes {
             GeorgRinger\News\Domain\Model\News {

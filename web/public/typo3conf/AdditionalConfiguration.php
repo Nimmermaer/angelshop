@@ -8,7 +8,7 @@ if (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' 
 } elseif (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . str_replace('/', '.',$currentApplicationContext) . '.php') == true) {
     include realpath(dirname(__FILE__)) . '/AdditionalConfiguration.server.' . str_replace('/', '.',$currentApplicationContext) . '.php';
 }
-$GLOBALS['TYPO3_CONF_VARS']['ANIMATED'] = [
+$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['ANIMATED'] = [
     [
         'Keine Bewegung',
         0
@@ -25,7 +25,7 @@ $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'] = [
 
     ]
 ];
-$GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'] = [
+$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'] = [
     [
         'Kein Icon',
         0

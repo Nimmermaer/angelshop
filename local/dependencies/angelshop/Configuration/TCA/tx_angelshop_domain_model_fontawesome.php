@@ -139,7 +139,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
+                'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'],
             ],
         ],
         'movement' => [
@@ -148,7 +148,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'],
+                'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['ANIMATED'],
             ],
         ],
         'record' => [
@@ -157,7 +157,7 @@ return [
             ],
         ],
         'link' => [
-            'label' => 'LLL:EXT:cms/locallang_ttc.xlf:header_link',
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link',
             'exclude' => 1,
             'config' => [
                 'type' => 'input',

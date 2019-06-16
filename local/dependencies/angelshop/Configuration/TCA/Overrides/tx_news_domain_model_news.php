@@ -51,7 +51,7 @@ $newsColumns = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
-            'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
+            'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'],
         ],
     ],
 ];

@@ -284,7 +284,7 @@ $newTtContentColumns = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
-            'items' => $GLOBALS['TYPO3_CONF_VARS']['FONT_AWESOME'],
+            'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'],
         ],
     ],
     'tx_angelshop_salutation' => [
@@ -318,7 +318,7 @@ $newTtContentColumns = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
-            'items' => $GLOBALS['TYPO3_CONF_VARS']['ANIMATED'],
+            'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['ANIMATED'],
         ],
     ],
 ];

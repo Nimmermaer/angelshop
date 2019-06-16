@@ -1,7 +1,6 @@
 translate = LLL:EXT:angelshop/Resources/Private/Language/locallang.xlf
 
-# Global constants
-# Here defined constants are available in all pagetrees of the TYPO3 instance.
+styles.content.textmedia.maxW = 800
 global {
     homePageUid = 1
     storage {
