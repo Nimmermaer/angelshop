@@ -23,6 +23,8 @@ defined('TYPO3_MODE') or die();
 call_user_func(
     function ($extensionKey, $table) {
         $newTtContentColumns = [
+
+
             'tx_abatemplate_product_stock' => [
                 'exclude' => 1,
                 'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_stock',
@@ -57,46 +59,22 @@ call_user_func(
                     'appearance' => [
                         'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
                     ],
-                    // custom configuration for displaying fields in the overlay/reference table
-                    // to use the imageoverlayPalette instead of the basicoverlayPalette
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'uid_local' => [
+                                'config' => [
+                                    'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+                                    'elementBrowserType' => 'file'
+                                ]
+                            ]
+                        ]
+                    ],
                     'foreign_match_fields' => [
                         'fieldname' => 'image_collection',
                         'tablenames' => 'tx_uploadexample_domain_model_example',
                         'table_local' => 'sys_file',
                     ],
-                    'foreign_types' => [
-                        '0' => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
-                            'showitem' => '
-                            --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                            --palette--;;filePalette'
-                        ]
-                    ]
-                ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
+                ])
             ],
             'tx_abatemplate_product_old_price' => [
                 'exclude' => 1,
@@ -275,7 +253,7 @@ call_user_func(
                         'FIELD:CType:=:tx_service',
                     ],
                 ],
-                'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.subheader',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.subheader',
                 'config' => [
                     'type' => 'input',
                     'size' => '50',
@@ -448,9 +426,16 @@ call_user_func(
         $GLOBALS['TCA'][$table]['types']['ce_product'] = [
             'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-         header, tx_abatemplate_product_stock, image, bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],
-        tx_abatemplate_product_additional_description, tx_abatemplate_product_price,tx_abatemplate_product_old_price,tx_abatemplate_product_manufacturer_name,' . $commonFields
-
+         header, tx_abatemplate_product_stock, image, bodytext,
+        tx_abatemplate_product_additional_description, tx_abatemplate_product_price,tx_abatemplate_product_old_price,tx_abatemplate_product_manufacturer_name,' . $commonFields,
+            'columnsOverrides' => [
+                'bodytext' => [
+                    'config' => [
+                        'enableRichtext' => true,
+                        'richtextConfiguration' => 'angelshop'
+                    ]
+                ]
+            ]
         ];
 
         $GLOBALS['TCA'][$table]['types'] ['tx_newsletter_image'] = [
@@ -461,18 +446,32 @@ call_user_func(
         $GLOBALS['TCA'][$table]['types'] ['tx_newsletter_text'] = [
             'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-         header,tx_angelshop_salutation, subtitle ,bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],' . $commonFields
+         header,tx_angelshop_salutation, subtitle ,bodytext,' . $commonFields,
+            'columnsOverrides' => [
+                'bodytext' => [
+                    'config' => [
+                        'enableRichtext' => true,
+                        'richtextConfiguration' => 'angelshop'
+                    ]
+                ]
+            ]
         ];
         $GLOBALS['TCA'][$table]['types'] ['tx_newsletter_textpic'] = [
             'showitem' => '
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-         header, tx_angelshop_salutation, image, bodytext;;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],' . $commonFields
+         header, tx_angelshop_salutation, image, bodytext,' . $commonFields,
+            'columnsOverrides' => [
+                'bodytext' => [
+                    'config' => [
+                        'enableRichtext' => true,
+                        'richtextConfiguration' => 'angelshop'
+                    ]
+                ]
+            ]
         ];
 
+        $GLOBALS['TCA'][$table]['columns']['layout']['onChange'] = 'reload';
         $GLOBALS['TCA'][$table]['types'] ['tx_angelshop_menu'] = $GLOBALS['TCA'][$table]['types'] ['menu_pages'];
-
-        $GLOBALS['TCA'][$table]['ctrl']['requestUpdate'] = 'layout';
-
     },
     'angelshop',
     'tt_content'

@@ -55,6 +55,7 @@ call_user_func(
                 'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:pages.ce_social_position',
                 'config' => [
                     'type' => 'select',
+                    'renderType' => 'selectSingle',
                     'items' => [
                         ['Anfang des Inhalts', 1],
                         ['Ende des Inhalts', 0]
