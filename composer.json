@@ -22,14 +22,6 @@
   },
   "repositories": [
     {
-      "type": "composer",
-      "url": "https://composer.typo3.org"
-    },
-    {
-      "type": "composer",
-      "url": "https://packagist.org"
-    },
-    {
       "type": "path",
       "url": "local/dependencies/angelshop/"
     }
@@ -70,7 +62,6 @@
     "georgringer/news": "~7.2.0",
     "gridelementsteam/gridelements": "~9.2.2",
     "friendsoftypo3/tt-address": "~4.3.0",
-    "fluidtypo3/vhs": "~5.2.0",
     "phorax/formhandler": "~4.0.0",
     "evoweb/extender": "~6.6.0",
     "mb/angelshop": "0.0.1",

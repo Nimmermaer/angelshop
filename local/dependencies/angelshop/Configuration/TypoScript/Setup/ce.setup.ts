@@ -34,16 +34,36 @@ tt_content {
     header {
         templateName = Angelshop/Header
     }
+
     tx_angelshop_menu < tt_content.menu_pages
     tx_angelshop_menu {
         templateName = Angelshop/Type-101.html
         dataProcessing {
-              10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-              10 {
-                   special = directory
-                   special.value.field = pages
-                  }
-          }
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                special = directory
+                special.value.field = pages
+                dataProcessing {
+
+                    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+                    10 {
+                        table = tt_content
+                        pidInList.field = uid
+                        where = CType LIKE "%ce_product%"
+                        orderBy = sorting
+                        as = content
+                        dataProcessing {
+
+                            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                            10 {
+                                references.fieldName = image
+                                as = images
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     ce_product < lib.contentElement

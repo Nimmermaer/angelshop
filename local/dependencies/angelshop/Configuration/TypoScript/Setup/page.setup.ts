@@ -89,39 +89,6 @@ page {
               </script>
 
         )
-
-        1391075691 = TEXT
-        1391075691 {
-            typolink {
-                parameter.data = TSFE:id
-                returnLast = url
-                forceAbsoluteUrl = 1
-                forceAbsoluteUrl.scheme = https
-            }
-            wrap = <link rel="canonical" href="|"/>
-        }
-        13910 = TEXT
-        13910 {
-            typolink {
-                parameter.data = TSFE:id
-                returnLast = url
-                forceAbsoluteUrl = 1
-                forceAbsoluteUrl.scheme = https
-            }
-            wrap = <link rel="dns-prefetch" href="|">
-
-        }
-        139101 = TEXT
-        139101 {
-            typolink {
-                parameter.data = TSFE:id
-                returnLast = url
-                forceAbsoluteUrl = 1
-                forceAbsoluteUrl.scheme = https
-            }
-            wrap = <link rel="preconnect" href="|">
-
-        }
         3422423424 = TEXT
         3422423424 {
             value (
@@ -145,19 +112,6 @@ page {
             wrap = <title  itemprop="name"> |&nbsp; &#124; Aba-Angelshop Laufen </title>
         }
     }
-       page.headerData.1391075691 >
-       page.headerData.1391075691 = TEXT
-       page.headerData.1391075691 {
-           typolink {
-               parameter.data = TSFE:id
-               returnLast = url
-               forceAbsoluteUrl = 1
-               forceAbsoluteUrl.scheme = https
-               addQueryString = 1
-               addQueryString.exclude = id
-                   }
-           wrap =  <link rel="canonical" href="|"/>
-        }
 [end]
 
 [globalVar = TSFE:id = 1]
