@@ -28,7 +28,7 @@ use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
  * Class ProductController
  * @package MB\Angelshop\Controller
  */
-class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ProductController extends ActionController
 {
 
 

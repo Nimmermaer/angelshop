@@ -25,7 +25,7 @@ namespace MB\Angelshop\Controller;
  * Class NewsletterController
  * @package MB\Angelshop\Controller
  */
-class ShopController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ShopController extends ActionController
 {
 
     public function checkoutAction()

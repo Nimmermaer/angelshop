@@ -27,7 +27,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * Class NewsletterController
  * @package MB\Angelshop\Controller
  */
-class NewsletterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class NewsletterController extends ActionController
 {
 
     /**
