@@ -96,13 +96,17 @@ $boot = function ($extensionKey) {
         'EXT:angelshop/Classes/Domain/Model/Address.php';
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['news']['extender']['GeorgRinger\News\Domain\Model\News']['angelshop'] =
         'EXT:angelshop/Classes/Domain/Model/News.php';
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['extbase']['extensions']['Angelshop']['modules']['Page']['controllers'] = [
+        'Page' => [
+            'actions' => ['show']
+        ]
+    ];
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][$extensionKey] = \MB\Angelshop\Hooks\PageHook::class . '->renderHeader';
 
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['angelshop'] = 'EXT:angelshop/Configuration/RTE/Custom.yaml';
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter');
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\ObjectStorageConverter');
-
-
 };
 
 $boot($_EXTKEY);
