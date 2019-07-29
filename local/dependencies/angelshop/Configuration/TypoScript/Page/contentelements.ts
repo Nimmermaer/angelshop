@@ -2,6 +2,7 @@ mod {
     web_layout.tt_content.preview {
         tx_impressum = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Impressum.html
         tx_tab = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Tab.html
+        tx_service = EXT:angelshop/Resources/Private/Contentelements/Templates/Angelshop/Preview/Service.html
     }
 
     wizards.newContentElement.wizardItems {

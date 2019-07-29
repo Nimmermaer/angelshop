@@ -41,7 +41,7 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     {
         $function = 'show' . str_replace(' ', '', ucwords(str_replace("_", " ", $row['CType'])));
         if (method_exists($this, $function)) {
-            $itemContent .= call_user_func(array($this, $function,), array('data' => $row));
+            $itemContent .= call_user_func(array($this, $function,), ['data' => $row, 'header'=> $headerContent, 'pagelayoutView' => $parentObject ]);
             $drawItem = false;
         }
     }
@@ -49,9 +49,9 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     /**
      * @return string
      */
-    public function showTxSlider($row)
+    public function showTxSlider($arguments)
     {
-        $addContent = 'Slides:' . $row['data']['image'];
+        $addContent = 'Slides:' . $arguments['data']['image'];
         $addContent .= '<h3>Slider</h3>';
 
         return $addContent;
@@ -60,14 +60,14 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     /**
      * @return string
      */
-    public function showTxTab($row)
+    public function showTxTab($arguments)
     {
         $addContent = '';
         $i = 1;
         $objectManager =
             \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
         $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
-        $tabs = $repository->findByRecord($row['data']['uid']);
+        $tabs = $repository->findByRecord($arguments['data']['uid']);
         if ($tabs) {
             foreach ($tabs as $item) {
                 $addContent .= 'Tab-' . $i . '<br/>';
@@ -86,9 +86,9 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     /**
      * @return string
      */
-    public function showTxImpressum($row)
+    public function showTxImpressum($arguments)
     {
-        $addContent = 'GoogleMap Addresse: ' . $row['data']['tx_angelshop_address'];
+        $addContent = 'GoogleMap Addresse: ' . $arguments['data']['tx_angelshop_address'];
 
         $addContent .= '<h3>Impressum</h3>';
 
@@ -98,22 +98,23 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     /**
      * @return string
      */
-    public function showTextmedia($row)
+    public function showTextmedia($arguments)
     {
         $addContent = '';
-        if ($row['data']['layout'] == 1) {
+        if ($arguments['data']['layout'] == 1) {
             $addContent = '<h3>Team Element</h3>';
         }
-        if ($row['data']['layout'] == 2) {
+        if ($arguments['data']['layout'] == 2) {
             $addContent = '<h3>Projekt Element</h3>';
         }
-        if ($row['data']['layout'] == 3) {
+        if ($arguments['data']['layout'] == 3) {
             $addContent = '<h3>Call To Action Element</h3>';
         }
-        if ($row['data']['layout'] == 4) {
+        if ($arguments['data']['layout'] == 4) {
             $addContent = '<h3>Teaser Element</h3>';
         }
 
         return $addContent;
     }
+
 }
