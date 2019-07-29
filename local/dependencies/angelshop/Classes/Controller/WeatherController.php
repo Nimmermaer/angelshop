@@ -26,7 +26,7 @@ namespace MB\Angelshop\Controller;
  * Class WeatherController
  * @package MB\Angelshop\Controller
  */
-class WeatherController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class WeatherController extends ActionController
 {
 
 
