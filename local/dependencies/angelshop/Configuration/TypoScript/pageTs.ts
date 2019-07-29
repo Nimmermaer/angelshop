@@ -1,1 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:angelshop/Configuration/TypoScript/Page" extensions="ts">
+@import 'EXT:angelshop/Configuration/TypoScript/Page/*.ts'
