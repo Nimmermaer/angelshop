@@ -1,0 +1,88 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	  xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+>
+<f:layout name="Default"/>
+
+<f:section name="main">
+	<f:if condition="{page}">
+		<div class="typo3-dblist-sysnotes">
+			<div class="t3-page-column-header">
+				<div class="t3-page-column-header-icons btn-group btn-group-sm">
+					<be:link.editRecord table="pages" uid="{page.uid}" returnUrl="" title="{f:translate(key:'LLL:EXT:lang/Resources/Private/Language/locallang_mod_web_list.xlf:edit')}">
+						<core:icon identifier="actions-document-open"/>
+					</be:link.editRecord>
+				</div>
+				<div class="t3-page-column-header-label">
+					<f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata"/>
+				</div>
+			</div>
+
+			<div class="panel panel-default panel-sysnote panel-sysnote-category-3">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-8">
+							<div class="row">
+								<div class="col-sm-3"><strong>
+									<f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.title_formlabel"/>:</strong>
+								</div>
+								<div class="col-sm-9">
+									<f:if condition="{page.title}">
+										<f:then>{page.title}</f:then>
+										<f:else>-</f:else>
+									</f:if>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-3"><strong>
+									<f:translate key="LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.seo_title"/>:</strong>
+								</div>
+								<div class="col-sm-9">
+									<f:if condition="{page.seo_title}">
+										<f:then>{page.seo_title}</f:then>
+										<f:else>-</f:else>
+									</f:if>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-3"><strong>
+									<f:translate key="LLL:EXT:angelshop/Resources/Private/Language/locallang.xlf:pages.alternative_title"/>:</strong>
+								</div>
+								<div class="col-sm-9">
+									<f:if condition="{page.alternative_title}">
+										<f:then>{page.alternative_title}</f:then>
+										<f:else>-</f:else>
+									</f:if>
+								</div>
+							</div>
+
+							<br>
+
+							<div class="row-no-gutters">
+								<strong><f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.abstract_formlabel"/>:</strong><br>
+								<f:if condition="{page.abstract}">
+									<f:then>{page.abstract}</f:then>
+									<f:else>-</f:else>
+								</f:if>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<f:if condition="{files}">
+								<div class="row-no-gutters">
+									<label for="file">Headerbild: </label>
+									<f:for each="{files}" as="file">
+										<f:if condition="{file.properties.type} == 2">
+											<f:image image="{file}" id="file" width="100" cropVariant="16x10" style="float: right"/>
+										</f:if>
+									</f:for>
+								</div>
+							</f:if>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</f:if>
+</f:section>
