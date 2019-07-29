@@ -87,6 +87,9 @@
             <trans-unit id="open_hours">
                 <source>Öffnungszeiten</source>
             </trans-unit>
+            <trans-unit id="pages.alternative_title">
+                <source>Alternativer Titel</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
