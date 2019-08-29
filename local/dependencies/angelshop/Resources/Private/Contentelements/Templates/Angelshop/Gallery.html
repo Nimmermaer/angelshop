@@ -11,10 +11,9 @@
                 <div class="col-md-12" itemscope="itemscope" itemtype="https://schema.org/ImageObject" >
                     <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1 )}" data-title='{image.title}'
                        data-lightbox="image-{data.uid}">
-                        <img class="img-responsive img-portfolio img-hover"
-                             src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1,width:'750c', height:'450')}" alt=""
-                             itemprop="thumbnailUrl"
-                                >
+
+                        <f:image image="{image}" width="750c" height="450" class="img-responsive img-portfolio img-hover" additionalAttributes="{itemprop:'thumbnailUrl'}" />
+
                     </a>
                 </div>
             </f:for>
@@ -24,10 +23,7 @@
                 <div class="col-md-4 col-sm-6" itemscope="itemscope" itemtype="https://schema.org/ImageObject" >
                     <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1 )}" data-title='{image.title}'
                        data-lightbox="gallery-{data.uid}">
-                        <img class="img-responsive img-portfolio img-hover"
-                             src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1,width:'750c', height:'450')}" alt=""
-                              itemprop="thumbnailUrl"
-                                >
+                        <f:image image="{image}" width="360" height="216c" class="img-responsive img-portfolio img-hover" additionalAttributes="{itemprop:'thumbnailUrl'}" />
                     </a>
                 </div>
             </f:for>
