@@ -23,7 +23,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "local/dependencies/angelshop/"
+      "url": "local/dependencies/*"
     }
   ],
   "config": {
