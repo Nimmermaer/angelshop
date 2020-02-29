@@ -14,14 +14,8 @@ plugin.tx_angelshop {
     }
 
     settings {
-        address {
-            newsletterStoragePid = 1051
-        }
         # cat=plugin.tx_angelshop_gallery/open/b; type=string; label= Api-Id for Open Wather Map
         openweathermapApi = 9e31371905782f75d67d42ff929d711e
-        logoutNewsletter = 1049
-        loginNewsletter = 1049
-        newsletterThankYouPid = 1052
     }
 }
 

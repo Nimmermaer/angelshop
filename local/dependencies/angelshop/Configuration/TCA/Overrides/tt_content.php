@@ -329,9 +329,6 @@ call_user_func(
             'impressum',
             'project',
             'gallery',
-            'newsletter_textpic',
-            'newsletter_text',
-            'newsletter_image',
             'contact',
             'angelshop_menu'
         ];
@@ -428,38 +425,6 @@ call_user_func(
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
          header, tx_abatemplate_product_stock, image, bodytext,
         tx_abatemplate_product_additional_description, tx_abatemplate_product_price,tx_abatemplate_product_old_price,tx_abatemplate_product_manufacturer_name,' . $commonFields,
-            'columnsOverrides' => [
-                'bodytext' => [
-                    'config' => [
-                        'enableRichtext' => true,
-                        'richtextConfiguration' => 'angelshop'
-                    ]
-                ]
-            ]
-        ];
-
-        $GLOBALS['TCA'][$table]['types'] ['tx_newsletter_image'] = [
-            'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-        image,' . $commonFields
-        ];
-        $GLOBALS['TCA'][$table]['types'] ['tx_newsletter_text'] = [
-            'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-         header,tx_angelshop_salutation, subtitle ,bodytext,' . $commonFields,
-            'columnsOverrides' => [
-                'bodytext' => [
-                    'config' => [
-                        'enableRichtext' => true,
-                        'richtextConfiguration' => 'angelshop'
-                    ]
-                ]
-            ]
-        ];
-        $GLOBALS['TCA'][$table]['types'] ['tx_newsletter_textpic'] = [
-            'showitem' => '
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-         header, tx_angelshop_salutation, image, bodytext,' . $commonFields,
             'columnsOverrides' => [
                 'bodytext' => [
                     'config' => [
