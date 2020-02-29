@@ -214,15 +214,6 @@
             <trans-unit id="tx_angelshop_domain_model_fontawesome.movement">
                 <source>Bewegtes Icon</source>
             </trans-unit>
-            <trans-unit id="tx_newsletter_textpic.title">
-                <source>Newsletter Text und Bild</source>
-            </trans-unit>
-            <trans-unit id="tx_newsletter_text.title">
-                <source>Newsletter Text</source>
-            </trans-unit>
-            <trans-unit id="tx_newsletter_image.title">
-                <source>Newsletter Bild über die ganze Breite</source>
-            </trans-unit>
             <trans-unit id="tx_contact.title">
                 <source>Kontaktelement</source>
             </trans-unit>

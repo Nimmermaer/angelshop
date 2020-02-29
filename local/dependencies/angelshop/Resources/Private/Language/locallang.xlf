@@ -52,19 +52,11 @@
             <trans-unit id="address">
                 <source>Adresse</source>
             </trans-unit>
-            <trans-unit id="subscripe_newsletter">
-                <source>Ich möchte den Newsletter abonnieren</source>
-            </trans-unit>
             <trans-unit id="subscripe_here">
                 <source>hier</source>
             </trans-unit>
             <trans-unit id="subscripe_again">
                 <source>wieder anmelden.</source>
-            </trans-unit>
-            <trans-unit id="unsubscripe_newsletter">
-                <source><![CDATA[Schade das Sie sich abgemeldet haben. <br/>
-                    Sollte es aus Versehen passiert sein kannst du dich]]]]>
-                </source>
             </trans-unit>
             <trans-unit id="owner">
                 <source>Inhaber</source>

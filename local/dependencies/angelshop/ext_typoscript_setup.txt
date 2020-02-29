@@ -34,15 +34,6 @@ config.tx_extbase {
                 }
             }
 
-            TYPO3\TtAddress\Domain\Model\Address {
-                mapping {
-                    tableName = tt_address
-                    columns {
-                        tx_angelshop_newsletter.mapOnProperty = newsletter
-                    }
-                }
-            }
-
             GeorgRinger\News\Domain\Model\News {
                 mapping {
                     tableName = tx_news_domain_model_news

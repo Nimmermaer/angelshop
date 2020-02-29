@@ -98,9 +98,6 @@ return [
         'tstemplate' => [
             'packagePath' => 'typo3/sysext/tstemplate/',
         ],
-        'viewpage' => [
-            'packagePath' => 'typo3/sysext/viewpage/',
-        ],
         'news' => [
             'packagePath' => 'typo3conf/ext/news/',
         ],
@@ -110,12 +107,6 @@ return [
         'angelshop' => [
             'packagePath' => 'typo3conf/ext/angelshop/',
         ],
-        'typo3db_legacy' => [
-            'packagePath' => 'typo3conf/ext/typo3db_legacy/',
-        ],
-        'formhandler' => [
-            'packagePath' => 'typo3conf/ext/formhandler/',
-        ],
         'extender' => [
             'packagePath' => 'typo3conf/ext/extender/',
         ],
@@ -124,9 +115,6 @@ return [
         ],
         'staticfilecache' => [
             'packagePath' => 'typo3conf/ext/staticfilecache/',
-        ],
-        'vhs' => [
-            'packagePath' => 'typo3conf/ext/vhs/',
         ],
     ],
     'version' => 5,

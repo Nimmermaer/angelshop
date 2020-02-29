@@ -1,0 +1,2 @@
+@import 'EXT:angelshop/Configuration/TypoScript/Page/*.tsConfig'
+@import 'EXT:angelshop/Configuration/TypoScript/Page/Backendlayouts/*.tsConfig'

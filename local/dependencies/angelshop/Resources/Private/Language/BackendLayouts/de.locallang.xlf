@@ -10,12 +10,6 @@
             <trans-unit id="Default.col.0">
                 <target>Inhalt</target>
             </trans-unit>
-            <trans-unit id="Newsletter.title">
-                <target>Newsletter</target>
-            </trans-unit>
-            <trans-unit id="Newsletter.col.0">
-                <target>Inhalt</target>
-            </trans-unit>
             <trans-unit id="Slider.title">
                 <target>Großer Slider</target>
             </trans-unit>

@@ -61,8 +61,6 @@
     "lochmueller/staticfilecache": "~8.2.1",
     "georgringer/news": "~7.2.0",
     "gridelementsteam/gridelements": "~9.2.2",
-    "friendsoftypo3/tt-address": "~4.3.0",
-    "phorax/formhandler": "~4.0.0",
     "evoweb/extender": "~6.6.0",
     "mb/angelshop": "0.0.1",
     "helhum/typo3-console": "^5.6",

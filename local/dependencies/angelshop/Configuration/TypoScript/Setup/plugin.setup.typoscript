@@ -10,15 +10,6 @@ plugin {
             storagePid = {$plugin.tx_angelshop_gallery.persistence.storagePid}
         }
 
-        settings {
-            address {
-                newsletterStoragePid = {$plugin.tx_angelshop.settings.address.newsletterStoragePid}
-            }
-
-            loginNewsletter = {$plugin.tx_angelshop.settings.loginNewsletter}
-            newsletterThankYouPid = {$plugin.tx_angelshop.settings.newsletterThankYouPid}
-        }
-
         contentElementRendering = RECORDS
         contentElementRendering {
             tables = tt_content
@@ -60,18 +51,6 @@ plugin {
     }
 
     tx_angelshop_fullwidthvideo {
-        view {
-            templateRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.templateRootPath}
-            partialRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.partialRootPath}
-            layoutRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.layoutRootPath}
-        }
-
-        persistence {
-            storagePid = {$plugin.tx_angelshop_fullwidthvideo.persistence.storagePid}
-        }
-    }
-
-    tx_angelshop_newsletter {
         view {
             templateRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.templateRootPath}
             partialRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.partialRootPath}

@@ -79,9 +79,6 @@
             <trans-unit id="pages.tx_angelshop_facebook_image">
                 <source>Facebook Bild</source>
             </trans-unit>
-            <trans-unit id="tt_address.tx_angelshop_newsletter">
-                <source>Newsletteranmeldung</source>
-            </trans-unit>
             <trans-unit id="news.tx_angelshop_news_recipe">
                 <source>Rezept</source>
             </trans-unit>
