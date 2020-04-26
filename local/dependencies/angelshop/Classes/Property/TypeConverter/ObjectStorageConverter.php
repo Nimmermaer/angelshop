@@ -20,14 +20,10 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
     protected $priority = 2;
 
     /**
-     * Return the source, if it is an array, otherwise an empty array.
-     * Filter out empty uploads
-     *
      * @param mixed $source
      * @return array
-     * @api
      */
-    public function getSourceChildPropertiesToBeConverted($source)
+    public function getSourceChildPropertiesToBeConverted($source): array
     {
         $propertiesToConvert = [];
         // TODO: Find a nicer way to throw away empty uploads

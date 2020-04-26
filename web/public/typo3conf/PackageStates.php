@@ -38,6 +38,12 @@ return [
         'install' => [
             'packagePath' => 'typo3/sysext/install/',
         ],
+        'reports' => [
+            'packagePath' => 'typo3/sysext/reports/',
+        ],
+        'redirects' => [
+            'packagePath' => 'typo3/sysext/redirects/',
+        ],
         'recordlist' => [
             'packagePath' => 'typo3/sysext/recordlist/',
         ],
@@ -50,20 +56,11 @@ return [
         'recycler' => [
             'packagePath' => 'typo3/sysext/recycler/',
         ],
-        'reports' => [
-            'packagePath' => 'typo3/sysext/reports/',
-        ],
         'setup' => [
             'packagePath' => 'typo3/sysext/setup/',
         ],
         'rte_ckeditor' => [
             'packagePath' => 'typo3/sysext/rte_ckeditor/',
-        ],
-        'taskcenter' => [
-            'packagePath' => 'typo3/sysext/taskcenter/',
-        ],
-        'sys_action' => [
-            'packagePath' => 'typo3/sysext/sys_action/',
         ],
         'about' => [
             'packagePath' => 'typo3/sysext/about/',
@@ -77,6 +74,9 @@ return [
         'beuser' => [
             'packagePath' => 'typo3/sysext/beuser/',
         ],
+        'dashboard' => [
+            'packagePath' => 'typo3/sysext/dashboard/',
+        ],
         'extensionmanager' => [
             'packagePath' => 'typo3/sysext/extensionmanager/',
         ],
@@ -89,26 +89,20 @@ return [
         'opendocs' => [
             'packagePath' => 'typo3/sysext/opendocs/',
         ],
-        'redirects' => [
-            'packagePath' => 'typo3/sysext/redirects/',
-        ],
         'seo' => [
             'packagePath' => 'typo3/sysext/seo/',
         ],
         'tstemplate' => [
             'packagePath' => 'typo3/sysext/tstemplate/',
         ],
+        'viewpage' => [
+            'packagePath' => 'typo3/sysext/viewpage/',
+        ],
         'news' => [
             'packagePath' => 'typo3conf/ext/news/',
         ],
-        'tt_address' => [
-            'packagePath' => 'typo3conf/ext/tt_address/',
-        ],
         'angelshop' => [
             'packagePath' => 'typo3conf/ext/angelshop/',
-        ],
-        'extender' => [
-            'packagePath' => 'typo3conf/ext/extender/',
         ],
         'gridelements' => [
             'packagePath' => 'typo3conf/ext/gridelements/',

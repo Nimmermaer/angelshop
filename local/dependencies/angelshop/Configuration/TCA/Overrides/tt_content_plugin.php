@@ -23,50 +23,18 @@ defined('TYPO3_MODE') or die();
 call_user_func(
     function ($extensionKey, $table) {
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'MB.' . $extensionKey,
-            'Gallery',
-            'Gallery'
-        );
-
-
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'MB.' . $extensionKey,
+            ucfirst($extensionKey),
             'Product',
-            'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title'
+            'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title',
+            'content-image'
         );
+
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'MB.' . $extensionKey,
+            ucfirst($extensionKey),
             'Weather',
-            'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_weather.title'
+            'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_weather.title',
+            'content-image'
         );
-
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'MB.' . $extensionKey,
-            'Fullwidthvideo',
-            'Video'
-        );
-        if (TYPO3_MODE === 'BE') {
-
-            /**
-             * Registers a Backend Module
-             */
-            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-                'MB.' . $extensionKey,
-                'web',     // Make module a submodule of 'tools'
-                'Productlist',    // Submodule key
-                '',                        // Position
-                array(
-                    'Product' => 'list, edit, update, search',
-
-                ),
-                array(
-                    'access' => 'user,group',
-                    'icon' => 'EXT:' . $extensionKey . '/ext_icon.gif',
-                    'labels' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang.xlf',
-                )
-            );
-
-        }
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript',
             'angelshop');
@@ -86,9 +54,6 @@ call_user_func(
 
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['angelshop']
             = \MB\Angelshop\Hooks\AngelshopPreviewRenderer::class;
-
-
-
 
         $pluginSignature = 'Weather';
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
