@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a9706c0489421d2e5252c774065b289",
+    "content-hash": "a42cf620b00f39bb47694adfb99e5781",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -4229,6 +4229,63 @@
             "time": "2020-04-21T08:00:15+00:00"
         },
         {
+            "name": "typo3/cms-dashboard",
+            "version": "v10.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/dashboard.git",
+                "reference": "cef8ed5c80fecbc4c5b178d371573a329b8b396f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/dashboard/zipball/cef8ed5c80fecbc4c5b178d371573a329b8b396f",
+                "reference": "cef8ed5c80fecbc4c5b178d371573a329b8b396f",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-backend": "10.4.0",
+                "typo3/cms-core": "10.4.0",
+                "typo3/cms-extbase": "10.4.0",
+                "typo3/cms-fluid": "10.4.0",
+                "typo3/cms-frontend": "10.4.0"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "10.4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "dashboard",
+                    "Package": {
+                        "serviceProvider": "TYPO3\\CMS\\Dashboard\\ServiceProvider",
+                        "partOfFactoryDefault": true
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\Dashboard\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Dashboard for TYPO3.",
+            "homepage": "https://typo3.org",
+            "time": "2020-04-21T08:00:15+00:00"
+        },
+        {
             "name": "typo3/cms-extbase",
             "version": "v10.4.0",
             "source": {
@@ -5375,6 +5432,58 @@
                 }
             ],
             "description": "Allows users to edit a limited set of options for their user profile, eg. preferred language and their name and email address.",
+            "homepage": "https://typo3.org",
+            "time": "2020-04-21T08:00:15+00:00"
+        },
+        {
+            "name": "typo3/cms-sys-note",
+            "version": "v10.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/sys_note.git",
+                "reference": "0a66b1017ee1e60fdab87b27763920610599f512"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/sys_note/zipball/0a66b1017ee1e60fdab87b27763920610599f512",
+                "reference": "0a66b1017ee1e60fdab87b27763920610599f512",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "10.4.0"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "10.4.x-dev"
+                },
+                "typo3/cms": {
+                    "Package": {
+                        "partOfFactoryDefault": true
+                    },
+                    "extension-key": "sys_note"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\SysNote\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Records with messages which can be placed on any page and contain instructions or other information related to a page or section.",
             "homepage": "https://typo3.org",
             "time": "2020-04-21T08:00:15+00:00"
         },

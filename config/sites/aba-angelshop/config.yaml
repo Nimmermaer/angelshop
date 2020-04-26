@@ -14,7 +14,7 @@ languages:
     enabled: true
     languageId: '0'
     base: /
-    typo3Language: default
+    typo3Language: de
     locale: de_DE
     iso-639-1: de
     navigationTitle: Deutsch
@@ -25,7 +25,7 @@ errorHandling:
   -
     errorCode: '404'
     errorHandler: Page
-    errorContentSource: 'https://aba-angelshop.de/404/'
+    errorContentSource: 't3://page?uid=37'
 routes:
   -
     route: robots.txt
