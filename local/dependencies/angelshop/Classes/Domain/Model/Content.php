@@ -227,14 +227,6 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->imageCollection = $imageCollection;
     }
 
-    /**
-     * Gets the uid
-     * @return string $uid
-     */
-    public function getUid()
-    {
-        return $this->uid;
-    }
 
     /**
      * @return boolean
@@ -268,15 +260,6 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->stock = $stock;
     }
 
-
-    /**
-     * Gets the pid
-     * @return string $pid
-     */
-    public function getPid()
-    {
-        return $this->pid;
-    }
 
     /**
      * Returns the header

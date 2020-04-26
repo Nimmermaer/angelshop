@@ -11,6 +11,7 @@ namespace MB\Angelshop\Property\TypeConverter;
 use TYPO3\CMS\Core\Resource\Exception\ExistingTargetFileNameException;
 use TYPO3\CMS\Core\Resource\File as FalFile;
 use TYPO3\CMS\Core\Resource\FileReference as FalFileReference;
+use TYPO3\CMS\Core\Resource\Security\FileNameValidator;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Error\Error;
@@ -180,7 +181,8 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
      */
     protected function importUploadedResource(array $uploadInfo, PropertyMappingConfigurationInterface $configuration)
     {
-        if (!GeneralUtility::verifyFilenameAgainstDenyPattern($uploadInfo['name'])) {
+
+        if (!GeneralUtility::makeInstance(FileNameValidator::class)->isValid($uploadInfo['name'])) {
             throw new TypeConverterException('Uploading files with PHP file extensions is not allowed!', 1399312430);
         }
         $allowedFileExtensions = $configuration->getConfigurationValue('Helhum\\UploadExample\\Property\\TypeConverter\\UploadedFileReferenceConverter', self::CONFIGURATION_ALLOWED_FILE_EXTENSIONS);

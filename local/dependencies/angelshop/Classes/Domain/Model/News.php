@@ -25,17 +25,17 @@ class News extends \GeorgRinger\News\Domain\Model\News
     /**
      * @var bool
      */
-    protected $recipe;
+    protected $recipe = false;
 
     /**
      * @var string
      */
-    protected $icon;
+    protected $icon = '';
 
     /**
      * @var string
      */
-    protected $ingredient;
+    protected $ingredient = '';
 
     /**
      * @return boolean

@@ -8,10 +8,10 @@
 
 namespace MB\Angelshop\Service;
 
-require_once '\typo3conf\ext\angelshop\Classes\Service\Import.php';
-$import = new \MB\Angelshop\Service\Import();
-$import->import();
-die();
+//require_once '\typo3conf\ext\angelshop\Classes\Service\Import.php';
+//$import = new \MB\Angelshop\Service\Import();
+//$import->import();
+//die();
 
 class Import
 {

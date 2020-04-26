@@ -8,7 +8,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF['angelshop'] = array(
     'title' => 'angelshop',
     'description' => 'Extension with Bootstrap Modern Business Theme',
     'category' => 'Provider Extension',
@@ -22,8 +22,8 @@ $EM_CONF[$_EXTKEY] = array(
     'version' => '1.0.0',
     'constraints' => array(
         'depends' => array(
-            'typo3' => '7.6.0-9.9.99',
-            'news' => '7.2.0-7.99.99'
+            'typo3' => '7.6.0-10.9.99',
+            'news' => '7.2.0-10.9.99'
         ),
         'conflicts' => array(),
         'suggests' => array(),

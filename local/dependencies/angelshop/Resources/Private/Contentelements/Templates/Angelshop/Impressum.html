@@ -56,39 +56,39 @@
             {data.tx_angelshop_address->f:format.nl2br()}
         </p>
         <f:if condition="{data.tx_angelshop_owner}">
-            <p><i class="fa  fa-user"></i>
+            <p><i class="fa  fa-user"></i>&nbsp;
                 <abbr title="{f:translate(key:'owner', extensionName:'angelshop')}"><f:translate key="owner" extensionName="angelshop"/></abbr>: {data.tx_angelshop_owner}
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_phone}">
-            <p><i class="fa fa-phone"></i>
+            <p><i class="fa fa-phone"></i>&nbsp;
                 <abbr title="{f:translate(key:'phone', extensionName:'angelshop')}"><f:translate key="phone" extensionName="angelshop"/></abbr>: <a
                         href="tel:{data.tx_angelshop_phone->a:trim()}">{data.tx_angelshop_phone}</a>
             </p>
         </f:if>
         <f:if condition="{data.subheader}">
-            <p><i class="fa fa-mobile"></i>
+            <p><i class="fa fa-mobile"></i>&nbsp;
                 <abbr title="{f:translate(key:'mobile', extensionName:'angelshop')}"><f:translate key="mobile" extensionName="angelshop"/></abbr>: <a href="tel:{data.subheader->a:trim()}">{data.subheader}</a>
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_email}">
-            <p><i class="fa fa-envelope-o"></i>
+            <p><i class="fa fa-envelope-o"></i>&nbsp;
                 <abbr title="{f:translate(key:'email', extensionName:'angelshop')}"><f:translate key="email" extensionName="angelshop"/></abbr>:
                 <f:link.typolink parameter="{data.tx_angelshop_email}" />
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_cognizance}">
-            <p><i class="fa fa-university"></i>
+            <p><i class="fa fa-university"></i>&nbsp;
                 <abbr title="{f:translate(key:'cognizance', extensionName:'angelshop')}"><f:translate key="cognizance" extensionName="angelshop"/></abbr>: {data.tx_angelshop_cognizance }
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_sales_tax_indicator}">
-            <p><i class="fa fa-money"></i>
+            <p><i class="fa fa-money"></i>&nbsp;
                 <abbr title="{f:translate(key:'sales_tax_indicator', extensionName:'angelshop')}"><f:translate key="sales_tax_indicator" extensionName="angelshop"/></abbr>: {data.tx_angelshop_sales_tax_indicator}
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_opentime}">
-            <p><i class="fa fa-clock-o"></i>
+            <p><i class="fa fa-clock-o"></i>&nbsp;
                 <abbr title="{f:translate(key:'open_hours', extensionName:'angelshop')}"><f:translate key="open_hours" extensionName="angelshop"/></abbr>:<br/>
                 {data.tx_angelshop_opentime->f:format.nl2br()}
             </p>

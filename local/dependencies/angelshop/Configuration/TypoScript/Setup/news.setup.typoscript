@@ -119,27 +119,5 @@ lib.newsHeader {
 
 plugin.tx_news {
     settings.cssFile >
-    persistence {
-        classes {
-            GeorgRinger\News\Domain\Model\News {
-                subclasses {
-                    # three different classes are used for each news type
-                    # 0 == default news
-                    0 = MB\Angelshop\Domain\Model\News
-                }
-            }
-
-            MB\Angelshop\Domain\Model\News {
-                mapping {
-                    recordType = 0
-                    tableName = tx_news_domain_model_news
-                    columns {
-                        tx_angelshop_news_recipe.mapOnProperty = recipe
-                        tx_angelshop_news_icon.mapOnProperty = icon
-                        tx_angelshop_news_ingredient.mapOnProperty = ingredient
-                    }
-                }
-            }
-        }
-    }
 }
+

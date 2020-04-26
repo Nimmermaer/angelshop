@@ -9,41 +9,24 @@
 namespace MB\Angelshop\Hooks;
 
 
+use MB\Angelshop\Controller\PageController;
+use TYPO3\CMS\Backend\Controller\PageLayoutController;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\SysNote\Controller\NoteController;
+use TYPO3\CMS\SysNote\Domain\Repository\SysNoteRepository;
+
 class PageHook
 {
     /**
-     * @var array
-     */
-    protected $extbaseConfiguration = [
-        'vendorName' => 'MB',
-        'extensionName' => 'Angelshop',
-        'pluginName' => 'Page',
-    ];
-
-    /**
-     * @param $vendorName
-     * @param $extensionName
-     * @param $pluginName
-     */
-    public function overrideConfiguration($vendorName, $extensionName, $pluginName)
-    {
-        $this->extbaseConfiguration =
-            [
-                'vendorName' => $vendorName,
-                'extensionName' => $extensionName,
-                'pluginName' => $pluginName,
-            ];
-    }
-
-    /**
+     * Add sys_notes as additional content to the header of the page module
+     *
      * @param array $params
      * @param \TYPO3\CMS\Backend\Controller\PageLayoutController $parentObject
      * @return string
      */
-    public function renderHeader(array $params = [], \TYPO3\CMS\Backend\Controller\PageLayoutController $parentObject)
+    public function renderInHeader(array $params = [], PageLayoutController $parentObject)
     {
-        /** @var $bootstrap \TYPO3\CMS\Extbase\Core\Bootstrap */
-        $bootstrap = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Core\Bootstrap::class);
-        return $bootstrap->run('', $this->extbaseConfiguration);
+        $controller = GeneralUtility::makeInstance(PageController::class);
+        return $controller->showAction($parentObject->id);
     }
 }

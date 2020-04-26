@@ -138,9 +138,9 @@ class ProductController extends ActionController
 
     /**
      * @param \MB\Angelshop\Domain\Model\Content $content
-     *
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
      * @throws \TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\UnknownObjectException
      */
     public function updateAction(\MB\Angelshop\Domain\Model\Content $content)
     {
