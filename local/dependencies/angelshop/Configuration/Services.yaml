@@ -6,3 +6,6 @@ services:
 
   MB\Angelshop\:
     resource: '../Classes/*'
+
+imports:
+  - { resource: Backend/DashboardWidgets.yaml }

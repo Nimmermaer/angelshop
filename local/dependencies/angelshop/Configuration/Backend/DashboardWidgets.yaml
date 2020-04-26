@@ -1,0 +1,26 @@
+services:
+
+  dashboard.buttons.fish:
+    class: 'TYPO3\CMS\Dashboard\Widgets\Provider\ButtonProvider'
+    arguments:
+      $title: 'More Fish'
+      $link: 'https://www.t-online.de/themen/angeln'
+      $target: '_blank'
+
+  dashboard.widget.fish:
+    class: 'TYPO3\CMS\Dashboard\Widgets\RssWidget'
+    arguments:
+      $view: '@dashboard.views.widget'
+      $cache: '@cache.dashboard.rss'
+      $buttonProvider: '@dashboard.buttons.fish'
+      $options:
+        feedUrl: 'http://feeds.t-online.de/rss/angeln'
+    tags:
+      - name: dashboard.widget
+        identifier: 'fish'
+        groupNames: 'news'
+        title: 'Angelnews T-Online'
+        description: 'Beschreibung'
+        iconIdentifier: 'content-widget-rss'
+        height: 'large'
+        width: 'medium'
