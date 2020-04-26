@@ -39,7 +39,6 @@
     "typo3/cms-frontend": "^10.4",
     "typo3/cms-install": "^10.4",
     "typo3/cms-recordlist": "^10.4",
-    "typo3/cms-about": "^10.4",
     "typo3/cms-adminpanel": "^10.4",
     "typo3/cms-belog": "^10.4",
     "typo3/cms-beuser": "^10.4",

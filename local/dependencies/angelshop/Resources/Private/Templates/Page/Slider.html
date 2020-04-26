@@ -15,7 +15,9 @@
                 </h1>
             </div>
         </div>
-        {columnMain->f:format.raw()}
+        <!--TYPO3SEARCH_begin-->
+        {columnMain ->f:format.raw()}
+        <!--TYPO3SEARCH_end-->
         <hr>
         <ul id="Social">
             <f:render partial="Social/Facebook/Share" arguments="{_all}"/>

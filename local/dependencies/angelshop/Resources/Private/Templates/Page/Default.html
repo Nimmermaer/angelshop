@@ -9,7 +9,9 @@
         </f:if>
         <div class="container">
             <f:render partial="Page/Breadcrumb" arguments="{_all}"/>
+            <!--TYPO3SEARCH_begin-->
             {columnMain ->f:format.raw()}
+            <!--TYPO3SEARCH_end-->
             <hr>
             <ul id="Social">
                 <f:render partial="Social/Facebook/Share" arguments="{_all}"/>
