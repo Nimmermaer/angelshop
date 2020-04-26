@@ -17,7 +17,6 @@ lib {
                 20 < styles.content.get
                 20{
 	                select.where = colPos=1
-	                wrap < temp.typo3searchWrap
                 }
             }
 
@@ -27,7 +26,6 @@ lib {
                 20{
 	                select.where = colPos=2
 	                slide = -1
-	                wrap = <!--TYPO3SEARCH_end-->|
                 }
             }
 
@@ -37,7 +35,6 @@ lib {
                 20{
 	                select.where = colPos=3
 	                slide = -1
-	                wrap = <!--TYPO3SEARCH_end-->|
                 }
             }
 
@@ -47,7 +44,6 @@ lib {
                 20{
 	                select.where = colPos=4
 	                slide = -1
-	                wrap = <!--TYPO3SEARCH_end-->|
                 }
             }
         }
