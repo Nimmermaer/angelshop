@@ -62,9 +62,6 @@ return [
         'rte_ckeditor' => [
             'packagePath' => 'typo3/sysext/rte_ckeditor/',
         ],
-        'about' => [
-            'packagePath' => 'typo3/sysext/about/',
-        ],
         'adminpanel' => [
             'packagePath' => 'typo3/sysext/adminpanel/',
         ],
@@ -73,6 +70,9 @@ return [
         ],
         'beuser' => [
             'packagePath' => 'typo3/sysext/beuser/',
+        ],
+        'dashboard' => [
+            'packagePath' => 'typo3/sysext/dashboard/',
         ],
         'extensionmanager' => [
             'packagePath' => 'typo3/sysext/extensionmanager/',
