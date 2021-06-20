@@ -1,11 +1,11 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /*  | This extension is part of the TYPO3 project. The TYPO3 project is
  *  | free software and is licensed under GNU General Public License.
  *  |
  *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>,
  */
-
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tx_angelshop_domain_model_trader',
@@ -26,9 +26,6 @@ return [
         ],
         'searchFields' => '',
         'iconfile' => 'EXT:angelshop/Resources/Public/Icons/Svg/trader.svg'
-    ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden,title,image,link ',
     ],
     'types' => [
         '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden,--palette--;;1,title,link,image, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
@@ -148,7 +145,7 @@ return [
         'image' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_trader.image',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image',
                 ['maxitems' => 1],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']

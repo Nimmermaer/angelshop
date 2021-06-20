@@ -2,8 +2,11 @@
   "name": "mb/angelshop",
   "type": "typo3-cms-extension",
   "description": "provider extension",
-  "version": "0.0.1",
-  "keywords": ["TYPO3 CMS", "Shop", "Template"],
+  "keywords": [
+    "TYPO3 CMS",
+    "Shop",
+    "Template"
+  ],
   "license": [
     "GPL-2.0+"
   ],
@@ -21,5 +24,11 @@
     "psr-4": {
       "MB\\Angelshop\\": "Classes"
     }
-  }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "angelshop"
+    }
+  },
+  "version": "0.0.1"
 }

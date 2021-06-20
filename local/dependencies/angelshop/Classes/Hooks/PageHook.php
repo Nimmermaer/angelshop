@@ -21,7 +21,7 @@ class PageHook
      * Add sys_notes as additional content to the header of the page module
      *
      * @param array $params
-     * @param \TYPO3\CMS\Backend\Controller\PageLayoutController $parentObject
+     * @param PageLayoutController $parentObject
      * @return string
      */
     public function renderInHeader(array $params = [], PageLayoutController $parentObject)

@@ -1,4 +1,7 @@
 <?php
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use MB\Angelshop\Hooks\AngelshopPreviewRenderer;
 /***************************************************************
  *  Copyright notice
  *  (c) 29.07.2016 Michael <mi.blunck@gmail.com>
@@ -22,21 +25,21 @@ defined('TYPO3_MODE') or die();
 
 call_user_func(
     function ($extensionKey, $table) {
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        ExtensionUtility::registerPlugin(
             ucfirst($extensionKey),
             'Product',
             'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title',
             'content-image'
         );
 
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        ExtensionUtility::registerPlugin(
             ucfirst($extensionKey),
             'Weather',
             'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_weather.title',
             'content-image'
         );
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript',
+        ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript',
             'angelshop');
 
 
@@ -47,22 +50,22 @@ call_user_func(
         ];
 
         foreach ($tables as $table) {
-            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr($table,
+            ExtensionManagementUtility::addLLrefForTCAdescr($table,
                 'EXT:angelshop/Resources/Private/Language/locallang_csh_' . $table);
-            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages($table);
+            ExtensionManagementUtility::allowTableOnStandardPages($table);
         }
 
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['angelshop']
-            = \MB\Angelshop\Hooks\AngelshopPreviewRenderer::class;
+            = AngelshopPreviewRenderer::class;
 
         $pluginSignature = 'Weather';
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        ExtensionUtility::registerPlugin(
             $extensionKey,
             $pluginSignature,
             'Wetter'
         );
         $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$extensionKey . '_' . strtolower($pluginSignature)] = 'pi_flexform';
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($extensionKey . '_' . strtolower($pluginSignature),
+        ExtensionManagementUtility::addPiFlexFormValue($extensionKey . '_' . strtolower($pluginSignature),
             'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginSignature . '.xml');
     }, 'angelshop',
     'tt_content'

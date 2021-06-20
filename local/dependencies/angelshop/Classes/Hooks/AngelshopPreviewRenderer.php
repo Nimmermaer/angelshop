@@ -2,6 +2,7 @@
 
 namespace MB\Angelshop\Hooks;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -65,7 +66,7 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         $addContent = '';
         $i = 1;
         $objectManager =
-            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
         $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
         $tabs = $repository->findByRecord($arguments['data']['uid']);
         if ($tabs) {

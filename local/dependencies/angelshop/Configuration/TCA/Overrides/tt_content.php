@@ -1,4 +1,5 @@
 <?php
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /***************************************************************
  *  Copyright notice
  *  (c) 29.07.2016 Michael <mi.blunck@gmail.com>
@@ -55,7 +56,7 @@ call_user_func(
             'tx_angelshop_image_collection' => [
                 'exclude' => 0,
                 'label' => 'LLL:EXT:upload_example/Resources/Private/Language/locallang_db.xlf:tx_uploadexample_domain_model_example.image_collection',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('tx_angelshop_image_collection', [
+                'config' => ExtensionManagementUtility::getFileFieldTCAConfig('tx_angelshop_image_collection', [
                     'appearance' => [
                         'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
                     ],
@@ -313,10 +314,10 @@ call_user_func(
         ];
 
         $GLOBALS['TCA'][$table]['palettes']['fonts']['showitem'] = 'tx_angelshop_class,tx_angelshop_movement';
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $newTtContentColumns);
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table, 'tx_angelshop_fontawesome', '',
+        ExtensionManagementUtility::addTCAcolumns($table, $newTtContentColumns);
+        ExtensionManagementUtility::addToAllTCAtypes($table, 'tx_angelshop_fontawesome', '',
             'after:header');
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table, '--palette--;;fonts,', '',
+        ExtensionManagementUtility::addToAllTCAtypes($table, '--palette--;;fonts,', '',
             'after:header');
 
         $contentelements = [
@@ -333,7 +334,7 @@ call_user_func(
             'angelshop_menu'
         ];
         foreach ($contentelements as $contentelement) {
-            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+            ExtensionManagementUtility::addTcaSelectItem(
                 $table,
                 'CType',
                 [
@@ -344,7 +345,7 @@ call_user_func(
                 'after'
             );
         }
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+        ExtensionManagementUtility::addTcaSelectItem(
             $table,
             'CType',
             [
@@ -354,7 +355,7 @@ call_user_func(
             'textmedia',
             'after'
         );
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+        ExtensionManagementUtility::addTcaSelectItem(
             $table,
             'CType',
             [

@@ -3,6 +3,8 @@
 namespace MB\Angelshop\DataProcessing;
 
 
+use MB\Angelshop\Domain\Repository\FontawesomeRepository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -35,7 +37,7 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * fontAwesomeRepository
-     * @var \MB\Angelshop\Domain\Repository\FontawesomeRepository
+     * @var FontawesomeRepository
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $fontawesomeRepository = null;
@@ -88,7 +90,7 @@ class ContentElementProcessor implements DataProcessorInterface
     public function processForTextMedia($processedData)
     {
         $objectManager =
-            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
         $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
 
         return $repository->findByRecord($processedData['data']['uid']);
@@ -102,7 +104,7 @@ class ContentElementProcessor implements DataProcessorInterface
     public function processForImpressum($processedData)
     {
         $objectManager =
-            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
         $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
 
         return $repository->findByRecord($processedData['data']['uid']);
@@ -116,7 +118,7 @@ class ContentElementProcessor implements DataProcessorInterface
     public function processForTraderSlider($processedData)
     {
         $objectManager =
-            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
         $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TraderRepository');
 
         return $repository->findByRecord($processedData['data']['uid']);
@@ -131,7 +133,7 @@ class ContentElementProcessor implements DataProcessorInterface
     public function processForTabs($processedData)
     {
         $objectManager =
-            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
         $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
 
         return $repository->findByRecord($processedData['data']['uid']);
@@ -145,7 +147,7 @@ class ContentElementProcessor implements DataProcessorInterface
     public function processForProductList($processedData)
     {
         $objectManager =
-            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
         $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\ContentRepository');
 
         return $repository->findByContentType('ce_product');

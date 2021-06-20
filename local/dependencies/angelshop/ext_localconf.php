@@ -1,5 +1,11 @@
 <?php
 
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use MB\Angelshop\Controller\ProductController;
+use MB\Angelshop\Controller\WeatherController;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use MB\Angelshop\Hooks\PageHook;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Documentation\Slots\ExtensionManager;
 
@@ -9,42 +15,42 @@ if (!defined('TYPO3_MODE')) {
 
 $boot = function ($extensionKey) {
 
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    ExtensionUtility::configurePlugin(
         ucfirst($extensionKey),
         'Product',
-        [\MB\Angelshop\Controller\ProductController::class => 'list, search'],
-        [\MB\Angelshop\Controller\ProductController::class => 'list, search'],
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+        [ProductController::class => 'list, search'],
+        [ProductController::class => 'list, search'],
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    ExtensionUtility::configurePlugin(
         ucfirst($extensionKey),
         'Weather',
-        [\MB\Angelshop\Controller\WeatherController::class => 'show, list, forecast']
+        [WeatherController::class => 'show, list, forecast']
     );
 
     if (TYPO3_MODE === 'BE') {
-        $backendLayoutFileProviderDirectory = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName(
+        $backendLayoutFileProviderDirectory = GeneralUtility::getFileAbsFileName(
             'EXT:angelshop/Configuration/TypoScript/Setup/Backendlayouts'
         );
-        $beFiles = \TYPO3\CMS\Core\Utility\GeneralUtility::getFilesInDir($backendLayoutFileProviderDirectory,
+        $beFiles = GeneralUtility::getFilesInDir($backendLayoutFileProviderDirectory,
             'ts');
         foreach ($beFiles as $beLayoutFileName) {
             $beLayoutPath = $backendLayoutFileProviderDirectory . DIRECTORY_SEPARATOR . $beLayoutFileName;
-            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(file_get_contents($beLayoutPath));
+            ExtensionManagementUtility::addPageTSConfig(file_get_contents($beLayoutPath));
         }
     }
     $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'angelshop';
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][$extensionKey] = \MB\Angelshop\Hooks\PageHook::class . '->renderInHeader';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][$extensionKey] = PageHook::class . '->renderInHeader';
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Extbase\Domain\Model\FileReference::class] = [
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][FileReference::class] = [
         'className' => \MB\Angelshop\Domain\Model\FileReference::class,
     ];
     
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['angelshop'] = 'EXT:angelshop/Configuration/RTE/Custom.yaml';
 
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter');
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\ObjectStorageConverter');
+    ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter');
+    ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\ObjectStorageConverter');
 
     ExtensionManagementUtility::addPageTSConfig('@import "EXT:angelshop/Configuration/TypoScript/pageTs.tsConfig"');
 };

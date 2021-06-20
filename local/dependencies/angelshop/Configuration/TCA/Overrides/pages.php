@@ -1,4 +1,5 @@
 <?php
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /***************************************************************
  *  Copyright notice
  *  (c) 29.07.2016 Michael <mi.blunck@gmail.com>
@@ -67,7 +68,7 @@ call_user_func(
             'tx_angelshop_facebook_image' => [
                 'exclude' => 0,
                 'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_angelshop_facebook_image',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                     'tx_angelshop_facebook_image',
                     ['maxitems' => 1],
                     $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
@@ -75,9 +76,9 @@ call_user_func(
             ],
         ];
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $pagesColumns, 1);
+        ExtensionManagementUtility::addTCAcolumns($table, $pagesColumns, 1);
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table,
+        ExtensionManagementUtility::addToAllTCAtypes($table,
             '--div--;Soziale Netzwerke,tx_angelshop_facebook_image, ce_facebook_button, ce_whatsapp_button, ce_whatsapp_text', '', 'after:categories');
 
 

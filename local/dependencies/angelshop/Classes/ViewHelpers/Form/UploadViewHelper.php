@@ -2,12 +2,14 @@
 
 namespace MB\Angelshop\ViewHelpers\Form;
 
+use TYPO3\CMS\Extbase\Security\Cryptography\HashService;
+use TYPO3\CMS\Extbase\Property\PropertyMapper;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 /*  | This extension is part of the TYPO3 project. The TYPO3 project is
  *  | free software and is licensed under GNU General Public License.
  *  |
  *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>
  */
-
 /**
  * Class UploadViewHelper
  * @package MB\Angelshop\ViewHelpers\Form
@@ -16,13 +18,13 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
 {
 
     /**
-     * @var \TYPO3\CMS\Extbase\Security\Cryptography\HashService
+     * @var HashService
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $hashService;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Property\PropertyMapper
+     * @var PropertyMapper
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $propertyMapper;
@@ -64,7 +66,7 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
      * Return a previously uploaded resource.
      * Return NULL if errors occurred during property mapping for this property.
      *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @return FileReference
      */
     protected function getUploadedResource()
     {
@@ -74,7 +76,7 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
         $resource = $this->getPropertyValue();
         $this->addAdditionalIdentityPropertiesIfNeeded();
 
-        if ($resource instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
+        if ($resource instanceof FileReference) {
             return $resource;
         }
         return $this->propertyMapper->convert($resource, 'TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference');

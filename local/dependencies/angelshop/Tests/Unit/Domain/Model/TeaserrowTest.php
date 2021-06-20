@@ -2,6 +2,8 @@
 
 namespace MB\Angelshop\Tests\Unit\Domain\Model;
 
+use TYPO3\CMS\Core\Tests\UnitTestCase;
+use MB\Angelshop\Domain\Model\Teaserrow;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -19,14 +21,13 @@ namespace MB\Angelshop\Tests\Unit\Domain\Model;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Test case for class \MB\Angelshop\Domain\Model\Teaserrow.
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  * @author Michael Blunck <mi.blunck@gmail.com>
  */
-class TeaserrowTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class TeaserrowTest extends UnitTestCase
 {
     /**
      * @var \MB\Angelshop\Domain\Model\Teaserrow
@@ -35,7 +36,7 @@ class TeaserrowTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
     public function setUp()
     {
-        $this->subject = new \MB\Angelshop\Domain\Model\Teaserrow();
+        $this->subject = new Teaserrow();
     }
 
     public function tearDown()

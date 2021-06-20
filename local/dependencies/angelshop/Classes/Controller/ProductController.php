@@ -3,6 +3,15 @@
 namespace MB\Angelshop\Controller;
 
 
+use MB\Angelshop\Domain\Repository\ContentRepository;
+use TYPO3\CMS\Extbase\Persistence\Generic\Session;
+use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
+use MB\Angelshop\Domain\Model\Content;
+use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
+use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
+use TYPO3\CMS\Extbase\Persistence\Exception\UnknownObjectException;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
+use TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -34,12 +43,12 @@ class ProductController extends ActionController
 
     /**
      * contentRepository
-     * @var \MB\Angelshop\Domain\Repository\ContentRepository
+     * @var ContentRepository
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $contentRepository = null;
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\Generic\Session
+     * @var Session
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $session;
@@ -99,7 +108,7 @@ class ProductController extends ActionController
     /**
      * @param $argumentName
      *
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
+     * @throws NoSuchArgumentException
      */
     protected function registerContentFromRequest($argumentName)
     {
@@ -137,23 +146,23 @@ class ProductController extends ActionController
     }
 
     /**
-     * @param \MB\Angelshop\Domain\Model\Content $content
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\UnknownObjectException
+     * @param Content $content
+     * @throws StopActionException
+     * @throws IllegalObjectTypeException
+     * @throws UnknownObjectException
      */
-    public function updateAction(\MB\Angelshop\Domain\Model\Content $content)
+    public function updateAction(Content $content)
     {
-        $this->addFlashMessage('Das Produkt mit dem Title: ' . $content->getHeader() . ' wurde aktualisiert!', 'Produktaktualisierung', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+        $this->addFlashMessage('Das Produkt mit dem Title: ' . $content->getHeader() . ' wurde aktualisiert!', 'Produktaktualisierung', AbstractMessage::INFO);
         $this->contentRepository->update($content);
         $this->redirect('list');
     }
 
     /**
-     * @param \MB\Angelshop\Domain\Model\Content $content
+     * @param Content $content
      *
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException
+     * @throws UnsupportedRequestTypeException
+     * @throws IllegalObjectTypeException
      */
     public function searchAction()
     {

@@ -1,4 +1,5 @@
 <?php
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /***************************************************************
  *  Copyright notice
  *  (c) 29.07.2016 Michael <mi.blunck@gmail.com>
@@ -56,12 +57,12 @@ call_user_func(
             ],
         ];
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, $newsColumns, 1);
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToAllPalettesOfField($table, 'title', 'tx_angelshop_news_recipe', 'before:isTopNews');
+        ExtensionManagementUtility::addTCAcolumns($table, $newsColumns, 1);
+        ExtensionManagementUtility::addFieldsToAllPalettesOfField($table, 'title', 'tx_angelshop_news_recipe', 'before:isTopNews');
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table,
+        ExtensionManagementUtility::addToAllTCAtypes($table,
             'tx_angelshop_news_ingredient', '', 'before:bodytext');
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table,
+        ExtensionManagementUtility::addToAllTCAtypes($table,
             'tx_angelshop_news_icon', '', 'before:tags');
 
 

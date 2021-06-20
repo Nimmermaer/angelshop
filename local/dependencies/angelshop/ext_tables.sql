@@ -24,9 +24,9 @@ CREATE TABLE pages (
 CREATE TABLE tt_content (
 
   ## Old angelshop_tables
-  tx_abatemplate_product_description text   NOT NULL,
-  tx_abatemplate_product_additional_description text   NOT NULL,
-  tx_abatemplate_product_price   text   NOT NULL,
+  tx_abatemplate_product_description text,
+  tx_abatemplate_product_additional_description text,
+  tx_abatemplate_product_price   text,
   tx_abatemplate_product_old_price   text,
   tx_abatemplate_product_stock   int(11) default '0'   NOT NULL,
   tx_abatemplate_product_image_id    int(11) default '0'   NOT NULL,

@@ -2,7 +2,8 @@
 
 namespace MB\Angelshop\Controller;
 
-
+use TYPO3\CMS\Core\Http\RequestFactory;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -20,15 +21,12 @@ namespace MB\Angelshop\Controller;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
-
 /**
  * Class WeatherController
  * @package MB\Angelshop\Controller
  */
 class WeatherController extends ActionController
 {
-
 
     /**
      * action list
@@ -38,9 +36,7 @@ class WeatherController extends ActionController
     {
         $address = $this->settings['arguments']['address'];
         $apiId = $this->settings['arguments']['appid'];
-        $request = \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl(
-            'http://api.openweathermap.org/data/2.5/weather?q=' . rawurlencode($address) . '&units=metric&lang=de&type=day&appid=' . $apiId
-        );
+        $request = GeneralUtility::makeInstance(RequestFactory::class)->request('http://api.openweathermap.org/data/2.5/weather?q=' . rawurlencode($address) . '&units=metric&lang=de&type=day&appid=' . $apiId)->getBody()->getContents();
         $this->view->assign('weather', json_decode($request));
     }
 
@@ -53,19 +49,18 @@ class WeatherController extends ActionController
     {
         $address = $this->settings['arguments']['address'];
         $apiId = $this->settings['arguments']['appid'];
-        $request = \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl(
-            'http://api.openweathermap.org/data/2.5/weather?q=' . rawurlencode($address) . '&units=metric&lang=de&type=day&appid=' . $apiId
-        );
+        $request = GeneralUtility::makeInstance(RequestFactory::class)->request('http://api.openweathermap.org/data/2.5/weather?q=' . rawurlencode($address) . '&units=metric&lang=de&type=day&appid=' . $apiId)->getBody()->getContents();
         $this->view->assign('weather', json_decode($request));
     }
 
+    /**
+     *
+     */
     public function forecastAction()
     {
         $address = $this->settings['arguments']['address'];
         $apiId = $this->settings['arguments']['appid'];
-        $request = \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl(
-            'http://api.openweathermap.org/data/2.5/forecast/daily?q=' . rawurlencode($address) . '&units=metric&lang=de&type=day&appid=' . $apiId
-        );
+        $request = GeneralUtility::makeInstance(RequestFactory::class)->request('http://api.openweathermap.org/data/2.5/forecast/daily?q=' . rawurlencode($address) . '&units=metric&lang=de&type=day&appid=' . $apiId)->getBody()->getContents();
         $this->view->assign('forecast', json_decode($request));
     }
 

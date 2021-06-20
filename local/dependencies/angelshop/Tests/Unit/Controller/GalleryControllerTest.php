@@ -2,6 +2,8 @@
 
 namespace MB\Angelshop\Tests\Unit\Controller;
 
+use TYPO3\CMS\Core\Tests\UnitTestCase;
+use MB\Angelshop\Domain\Model\Gallery;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -19,12 +21,11 @@ namespace MB\Angelshop\Tests\Unit\Controller;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Test case for class MB\Angelshop\Controller\GalleryController.
  * @author Michael Blunck <mi.blunck@gmail.com>
  */
-class GalleryControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class GalleryControllerTest extends UnitTestCase
 {
 
     /**
@@ -71,7 +72,7 @@ class GalleryControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function showActionAssignsTheGivenGalleryToView()
     {
-        $gallery = new \MB\Angelshop\Domain\Model\Gallery();
+        $gallery = new Gallery();
 
         $view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
         $this->inject($this->subject, 'view', $view);

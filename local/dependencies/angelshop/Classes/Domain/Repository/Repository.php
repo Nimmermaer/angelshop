@@ -2,6 +2,8 @@
 
 namespace MB\Angelshop\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -19,8 +21,6 @@ namespace MB\Angelshop\Domain\Repository;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
-
 /**
  * Class Repository
  * @package MB\Angelshop\Domain\Repository
@@ -43,8 +43,8 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
     /**
      * @param $uid
-     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     * @return array|QueryResultInterface
+     * @throws InvalidQueryException
      */
     public function findByContentelementUid($uid, $table = 'tx_angelshop_trader_ttcontent_mm')
     {

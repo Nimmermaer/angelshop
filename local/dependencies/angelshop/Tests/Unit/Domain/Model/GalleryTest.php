@@ -2,6 +2,8 @@
 
 namespace MB\Angelshop\Tests\Unit\Domain\Model;
 
+use TYPO3\CMS\Core\Tests\UnitTestCase;
+use MB\Angelshop\Domain\Model\Gallery;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -19,14 +21,13 @@ namespace MB\Angelshop\Tests\Unit\Domain\Model;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Test case for class \MB\Angelshop\Domain\Model\Gallery.
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  * @author Michael Blunck <mi.blunck@gmail.com>
  */
-class GalleryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class GalleryTest extends UnitTestCase
 {
     /**
      * @var \MB\Angelshop\Domain\Model\Gallery
@@ -35,7 +36,7 @@ class GalleryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
     public function setUp()
     {
-        $this->subject = new \MB\Angelshop\Domain\Model\Gallery();
+        $this->subject = new Gallery();
     }
 
     public function tearDown()

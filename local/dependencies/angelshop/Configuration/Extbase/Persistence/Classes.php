@@ -1,8 +1,12 @@
 <?php
 declare(strict_types=1);
 
+use GeorgRinger\News\Domain\Model\News;
+use MB\Angelshop\Domain\Model\FileReference;
+use MB\Angelshop\Domain\Model\Content;
+
 return [
-    \GeorgRinger\News\Domain\Model\News::class => [
+    News::class => [
         'tableName' => 'tx_news_domain_model_news',
         'properties' => [
             'recipe' => [
@@ -16,7 +20,7 @@ return [
             ],
         ],
     ],
-    \MB\Angelshop\Domain\Model\FileReference::class => [
+    FileReference::class => [
         'tableName' => 'sys_file_reference',
         'properties' => [
             'originalFileIdentifier' => [
@@ -24,7 +28,7 @@ return [
             ],
         ],
     ],
-    \MB\Angelshop\Domain\Model\Content::class => [
+    Content::class => [
         'tableName' => 'tt_content',
         'properties' => [
             'uid' => [

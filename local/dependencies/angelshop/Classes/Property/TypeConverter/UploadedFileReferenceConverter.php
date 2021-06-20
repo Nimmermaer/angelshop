@@ -8,6 +8,13 @@
 
 namespace MB\Angelshop\Property\TypeConverter;
 
+use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Extbase\Security\Cryptography\HashService;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
+use TYPO3\CMS\Core\Resource\FileInterface;
+use TYPO3\CMS\Extbase\Domain\Model\AbstractFileFolder;
+use InvalidArgumentException;
+use Exception;
 use TYPO3\CMS\Core\Resource\Exception\ExistingTargetFileNameException;
 use TYPO3\CMS\Core\Resource\File as FalFile;
 use TYPO3\CMS\Core\Resource\FileReference as FalFileReference;
@@ -64,22 +71,22 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
      */
     protected $priority = 2;
     /**
-     * @var \TYPO3\CMS\Core\Resource\ResourceFactory
+     * @var ResourceFactory
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $resourceFactory;
     /**
-     * @var \TYPO3\CMS\Extbase\Security\Cryptography\HashService
+     * @var HashService
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $hashService;
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
+     * @var PersistenceManager
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $persistenceManager;
     /**
-     * @var \TYPO3\CMS\Core\Resource\FileInterface[]
+     * @var FileInterface[]
      */
     protected $convertedResources = [];
 
@@ -90,9 +97,9 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
      * @param string|int $source
      * @param string $targetType
      * @param array $convertedChildProperties
-     * @param \TYPO3\CMS\Extbase\Property\PropertyMappingConfigurationInterface $configuration
+     * @param PropertyMappingConfigurationInterface $configuration
      * @throws \TYPO3\CMS\Extbase\Property\Exception
-     * @return \TYPO3\CMS\Extbase\Domain\Model\AbstractFileFolder
+     * @return AbstractFileFolder
      * @api
      */
     public function convertFrom($source, $targetType, array $convertedChildProperties = [], PropertyMappingConfigurationInterface $configuration = null)
@@ -107,7 +114,7 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
                     } else {
                         return $this->createFileReferenceFromFalFileReferenceObject($this->resourceFactory->getFileReferenceObject($resourcePointer), $resourcePointer);
                     }
-                } catch (\InvalidArgumentException $e) {
+                } catch (InvalidArgumentException $e) {
                     // Nothing to do. No file is uploaded and resource pointer is invalid. Discard!
                 }
             }
@@ -128,7 +135,7 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
         }
         try {
             $resource = $this->importUploadedResource($source, $configuration);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return new Error($e->getMessage(), $e->getCode());
         }
         $this->convertedResources[$source['tmp_name']] = $resource;

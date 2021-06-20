@@ -2,6 +2,7 @@
 
 namespace MB\Angelshop\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -19,12 +20,11 @@ namespace MB\Angelshop\Domain\Model;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Class Fontawesome
  * @package MB\Angelshop\Domain\Model
  */
-class Fontawesome extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Fontawesome extends AbstractEntity
 {
 
     /**

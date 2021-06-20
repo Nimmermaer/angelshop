@@ -2,6 +2,8 @@
 
 namespace MB\Angelshop\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -19,12 +21,11 @@ namespace MB\Angelshop\Domain\Model;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Class Tab
  * @package MB\Angelshop\Domain\Model
  */
-class Tab extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Tab extends AbstractEntity
 {
 
     /**
@@ -49,7 +50,7 @@ class Tab extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * image
-     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @var FileReference
      */
     protected $image = null;
 
@@ -86,7 +87,7 @@ class Tab extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @return FileReference
      */
     public function getImage()
     {
@@ -94,7 +95,7 @@ class Tab extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @param FileReference $image
      */
     public function setImage($image)
     {
