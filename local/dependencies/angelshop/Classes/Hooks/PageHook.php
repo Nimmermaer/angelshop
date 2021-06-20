@@ -12,19 +12,17 @@ namespace MB\Angelshop\Hooks;
 use MB\Angelshop\Controller\PageController;
 use TYPO3\CMS\Backend\Controller\PageLayoutController;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\SysNote\Controller\NoteController;
-use TYPO3\CMS\SysNote\Domain\Repository\SysNoteRepository;
+use TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException;
 
 class PageHook
 {
     /**
-     * Add sys_notes as additional content to the header of the page module
-     *
      * @param array $params
      * @param PageLayoutController $parentObject
      * @return string
+     * @throws InvalidExtensionNameException
      */
-    public function renderInHeader(array $params = [], PageLayoutController $parentObject)
+    public function renderInHeader(array $params = [], PageLayoutController $parentObject): string
     {
         $controller = GeneralUtility::makeInstance(PageController::class);
         return $controller->showAction($parentObject->id);

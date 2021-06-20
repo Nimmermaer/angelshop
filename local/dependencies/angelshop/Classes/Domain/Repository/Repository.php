@@ -2,6 +2,8 @@
 
 namespace MB\Angelshop\Domain\Repository;
 
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 /***************************************************************
@@ -54,7 +56,7 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository
             ->where(
                 $queryBuilder->expr()->eq('uid_local', (int)$uid)
             )->execute()
-            ->fetchAll();
+            ->fetchAllAssociative();
 
         $trader = array();
         if (is_array($rawUids) && !empty($rawUids)) {

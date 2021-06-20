@@ -126,7 +126,7 @@ return [
             'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_fontawesome.tx_angelshop_title',
             'config' => [
                 'type' => 'input',
-                'size' => '20',
+                'size' => 20,
                 'eval' => 'trim',
             ],
         ],
@@ -159,10 +159,9 @@ return [
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputLink',
-                'size' => '50',
-                'max' => '256',
+                'size' => 50,
+                'max' => 256,
                 'eval' => 'trim',
-                'softref' => 'typolink'
             ]
         ],
     ],

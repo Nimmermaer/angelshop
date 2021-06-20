@@ -2,7 +2,10 @@
 
 namespace MB\Angelshop\Hooks;
 
+use TYPO3\CMS\Backend\View\PageLayoutView;
+use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -20,9 +23,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
-use TYPO3\CMS\Backend\View\PageLayoutView;
-use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 
 /**
  * Class PreviewRenderer
@@ -42,15 +42,17 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     {
         $function = 'show' . str_replace(' ', '', ucwords(str_replace("_", " ", $row['CType'])));
         if (method_exists($this, $function)) {
-            $itemContent .= call_user_func(array($this, $function,), ['data' => $row, 'header'=> $headerContent, 'pagelayoutView' => $parentObject ]);
+            $itemContent .= call_user_func(array($this, $function,),
+                ['data' => $row, 'header' => $headerContent, 'pagelayoutView' => $parentObject]);
             $drawItem = false;
         }
     }
 
     /**
+     * @param array $arguments
      * @return string
      */
-    public function showTxSlider($arguments)
+    public function showTxSlider(array $arguments)
     {
         $addContent = 'Slides:' . $arguments['data']['image'];
         $addContent .= '<h3>Slider</h3>';
@@ -59,9 +61,10 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     }
 
     /**
+     * @param array $arguments
      * @return string
      */
-    public function showTxTab($arguments)
+    public function showTxTab(array $arguments): string
     {
         $addContent = '';
         $i = 1;
@@ -85,9 +88,10 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
 
 
     /**
+     * @param array $arguments
      * @return string
      */
-    public function showTxImpressum($arguments)
+    public function showTxImpressum(array $arguments): string
     {
         $addContent = 'GoogleMap Addresse: ' . $arguments['data']['tx_angelshop_address'];
 
@@ -97,9 +101,10 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     }
 
     /**
+     * @param array $arguments
      * @return string
      */
-    public function showTextmedia($arguments)
+    public function showTextmedia(array $arguments): string
     {
         $addContent = '';
         if ($arguments['data']['layout'] == 1) {
@@ -114,7 +119,6 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         if ($arguments['data']['layout'] == 4) {
             $addContent = '<h3>Teaser Element</h3>';
         }
-
         return $addContent;
     }
 

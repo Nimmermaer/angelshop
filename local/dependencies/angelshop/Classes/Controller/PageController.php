@@ -11,6 +11,7 @@ namespace MB\Angelshop\Controller;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
 /**
@@ -20,14 +21,15 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
 class PageController extends ActionController
 {
     /**
-     * @var PageRepository
+     * @var PageRepository | null
      */
-    protected $pageRepository = null;
+    protected ?PageRepository $pageRepository = null;
 
     /**
-     * @var FileRepository
+     * @var FileRepository | null
      */
-    protected $fileRepository = null;
+    protected ?FileRepository $fileRepository = null;
+
 
 
     /**
@@ -50,11 +52,11 @@ class PageController extends ActionController
     /**
      * Render notes by single PID or PID list
      *
-     * @param string $pids Single PID or comma separated list of PIDs
-     * @param int|null $position null for no restriction, integer for defined position
+     * @param int $id
      * @return string
+     * @throws InvalidExtensionNameException
      */
-    public function showAction($id): string
+    public function showAction(int $id): string
     {
         $page = $this->pageRepository->getPage($id);
         $files = $this->fileRepository->findByRelation('pages', 'media', $page['uid']);

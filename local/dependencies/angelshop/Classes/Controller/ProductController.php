@@ -3,15 +3,18 @@
 namespace MB\Angelshop\Controller;
 
 
-use MB\Angelshop\Domain\Repository\ContentRepository;
-use TYPO3\CMS\Extbase\Persistence\Generic\Session;
-use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use MB\Angelshop\Domain\Model\Content;
+use MB\Angelshop\Domain\Repository\ContentRepository;
+use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
+use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
+use TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 use TYPO3\CMS\Extbase\Persistence\Exception\UnknownObjectException;
-use TYPO3\CMS\Core\Messaging\AbstractMessage;
-use TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
+use TYPO3\CMS\Extbase\Persistence\Generic\Session;
+use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -30,9 +33,6 @@ use TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
-use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
-
 /**
  * Class ProductController
  * @package MB\Angelshop\Controller
@@ -43,15 +43,16 @@ class ProductController extends ActionController
 
     /**
      * contentRepository
-     * @var ContentRepository
+     * @var ContentRepository | null
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
-    protected $contentRepository = null;
+    protected ?ContentRepository $contentRepository = null;
+
     /**
-     * @var Session
+     * @var Session | null
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
-    protected $session;
+    protected ?Session $session = null;
 
     /**
      * Set TypeConverter option for image upload
@@ -70,16 +71,15 @@ class ProductController extends ActionController
             UploadedFileReferenceConverter::CONFIGURATION_ALLOWED_FILE_EXTENSIONS => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
             UploadedFileReferenceConverter::CONFIGURATION_UPLOAD_FOLDER => '1:/content/',
         ];
-        /** @var PropertyMappingConfiguration $newProductConfiguration */
         $newProductConfiguration = $this->arguments[$argumentName]->getPropertyMappingConfiguration();
         $newProductConfiguration->forProperty('image')
             ->setTypeConverterOptions(
-                'MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter',
+                UploadedFileReferenceConverter::class,
                 $uploadConfiguration
             );
         $newProductConfiguration->forProperty('imageCollection.0')
             ->setTypeConverterOptions(
-                'MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter',
+                UploadedFileReferenceConverter::class,
                 $uploadConfiguration
             );
     }
@@ -91,14 +91,15 @@ class ProductController extends ActionController
     public function listAction()
     {
         $products = $this->contentRepository->findByContentType('ce_product');
-        $this->view->assignMultiple(array(
+        $this->view->assignMultiple([
                 'products' => $products
-            )
+            ]
         );
     }
 
     /**
      *  initialized edit Action
+     * @throws NoSuchArgumentException
      */
     public function initializeEditAction()
     {
@@ -138,6 +139,7 @@ class ProductController extends ActionController
 
     /**
      * Set TypeConverter option for image upload
+     * @throws NoSuchArgumentException
      */
     public function initializeUpdateAction()
     {
@@ -149,35 +151,32 @@ class ProductController extends ActionController
      * @param Content $content
      * @throws StopActionException
      * @throws IllegalObjectTypeException
-     * @throws UnknownObjectException
+     * @throws UnknownObjectException|UnsupportedRequestTypeException
      */
     public function updateAction(Content $content)
     {
-        $this->addFlashMessage('Das Produkt mit dem Title: ' . $content->getHeader() . ' wurde aktualisiert!', 'Produktaktualisierung', AbstractMessage::INFO);
+        $this->addFlashMessage('Das Produkt mit dem Title: ' . $content->header . ' wurde aktualisiert!',
+            'Produktaktualisierung', AbstractMessage::INFO);
         $this->contentRepository->update($content);
         $this->redirect('list');
     }
 
     /**
-     * @param Content $content
-     *
-     * @throws UnsupportedRequestTypeException
-     * @throws IllegalObjectTypeException
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
     public function searchAction()
     {
-        $argument = '';
-        $argument = $this->request->getArguments('tx_angelshop_web_angelshopproductlist');
+        $argument = $this->request->getArguments();
 
         if ($argument['searchword']) {
             $products = $this->contentRepository->findByIndex($argument['searchword']);
         } else {
             $products = $this->contentRepository->findByContentType('ce_product');
         }
-        $this->view->assignMultiple(array(
+        $this->view->assignMultiple([
                 'products' => $products,
                 'searchword' => $argument['searchword']
-            )
+            ]
         );
     }
 }

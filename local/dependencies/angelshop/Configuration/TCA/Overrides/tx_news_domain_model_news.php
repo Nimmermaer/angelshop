@@ -57,7 +57,7 @@ call_user_func(
             ],
         ];
 
-        ExtensionManagementUtility::addTCAcolumns($table, $newsColumns, 1);
+        ExtensionManagementUtility::addTCAcolumns($table, $newsColumns);
         ExtensionManagementUtility::addFieldsToAllPalettesOfField($table, 'title', 'tx_angelshop_news_recipe', 'before:isTopNews');
 
         ExtensionManagementUtility::addToAllTCAtypes($table,

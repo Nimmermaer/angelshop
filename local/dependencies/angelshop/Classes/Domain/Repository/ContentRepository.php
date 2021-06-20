@@ -2,9 +2,11 @@
 
 namespace MB\Angelshop\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Persistence\Repository;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -22,9 +24,11 @@ use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 /**
  * Class ContentRepository
  * @package MB\Angelshop\Domain\Repository
+ * @method findByContentType(string $string)
  */
 class ContentRepository extends Repository
 {
@@ -38,8 +42,8 @@ class ContentRepository extends Repository
      */
     public function initializeObject()
     {
-        /** @var $querySettings \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings */
-        $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
+        /** @var $querySettings Typo3QuerySettings */
+        $querySettings = $this->objectManager->get(Typo3QuerySettings::class);
         $querySettings->setRespectStoragePage(false);
         $querySettings->setIgnoreEnableFields(true);
         $querySettings->setEnableFieldsToBeIgnored([
@@ -87,12 +91,13 @@ class ContentRepository extends Repository
 
         $query = $this->createQuery();
         $query->getQuerySettings()->setIgnoreEnableFields(false);
-        $constraints[] = $query->logicalOr(
-            $query->like('bodytext', "%$term%"),
-            $query->like('product', "%$term%"),
-            $query->like('additionalDescription', "%$term%"),
-            $query->like('header', "%$term%"),
-            $query->like('manufacturer', "%$term%")
+        $constraints[] = $query->logicalOr([
+                $query->like('bodytext', "%$term%"),
+                $query->like('product', "%$term%"),
+                $query->like('additionalDescription', "%$term%"),
+                $query->like('header', "%$term%"),
+                $query->like('manufacturer', "%$term%")
+            ]
         );
         $constraints[] = $query->logicalAnd(
             $query->equals('contentType', 'ce_product')

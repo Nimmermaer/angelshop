@@ -2,9 +2,6 @@
 
 namespace MB\Angelshop\DataProcessing;
 
-
-use MB\Angelshop\Domain\Repository\FontawesomeRepository;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -23,6 +20,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use MB\Angelshop\Domain\Repository\ContentRepository;
+use MB\Angelshop\Domain\Repository\FontawesomeRepository;
+use MB\Angelshop\Domain\Repository\TabRepository;
+use MB\Angelshop\Domain\Repository\TraderRepository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\Exception;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -37,10 +41,10 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * fontAwesomeRepository
-     * @var FontawesomeRepository
+     * @var FontawesomeRepository | null
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
-    protected $fontawesomeRepository = null;
+    protected ?FontawesomeRepository $fontawesomeRepository = null;
 
 
     /**
@@ -56,8 +60,7 @@ class ContentElementProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    )
-    {
+    ): array {
 
         $function = 'processFor' . str_replace(' ', '',
                 ucwords(str_replace("_", " ", $contentObjectConfiguration['templateName'])));
@@ -83,73 +86,70 @@ class ContentElementProcessor implements DataProcessorInterface
     }
 
     /**
-     * @param $processedData
-     *
-     * @return string
+     * @param array $processedData
+     * @return array
+     * @throws Exception
      */
-    public function processForTextMedia($processedData)
+    public function processForTextMedia(array $processedData): array
     {
-        $objectManager =
-            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
-
+        $repository = self::getRepository(FontawesomeRepository::class);
         return $repository->findByRecord($processedData['data']['uid']);
     }
 
     /**
-     * @param $processedData
-     *
-     * @return string
+     * @param array $processedData
+     * @return array
+     * @throws Exception
      */
-    public function processForImpressum($processedData)
+    public function processForImpressum(array $processedData): array
     {
-        $objectManager =
-            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\FontawesomeRepository');
-
+        $repository = self::getRepository(FontawesomeRepository::class);
         return $repository->findByRecord($processedData['data']['uid']);
     }
 
     /**
-     * @param $processedData
-     *
-     * @return string
+     * @param array $processedData
+     * @return array
+     * @throws Exception
      */
-    public function processForTraderSlider($processedData)
+    public function processForTraderSlider(array $processedData): array
     {
-        $objectManager =
-            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TraderRepository');
-
+        $repository = self::getRepository(TraderRepository::class);
         return $repository->findByRecord($processedData['data']['uid']);
     }
 
 
     /**
-     * @param $processedData
-     *
-     * @return string
+     * @param array $processedData
+     * @return array
+     * @throws Exception
      */
-    public function processForTabs($processedData)
+    public function processForTabs(array $processedData):array
     {
-        $objectManager =
-            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
-
+        $repository = self::getRepository(TabRepository::class);
         return $repository->findByRecord($processedData['data']['uid']);
     }
 
     /**
-     * @param $processedData
-     *
-     * @return string
+     * @param array $processedData
+     * @return array
+     * @throws Exception
      */
-    public function processForProductList($processedData)
+    public function processForProductList(array $processedData): array
     {
-        $objectManager =
-            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\ContentRepository');
-
+        $repository = self::getRepository(ContentRepository::class);
         return $repository->findByContentType('ce_product');
+    }
+
+    /**
+     * @param string $repositoryName
+     * @return object
+     * @throws Exception
+     */
+    protected function getRepository(string $repositoryName): object
+    {
+        $objectManager =
+            GeneralUtility::makeInstance(ObjectManager::class);
+        return $objectManager->get($repositoryName);
     }
 }

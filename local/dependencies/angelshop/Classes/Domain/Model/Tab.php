@@ -2,8 +2,9 @@
 
 namespace MB\Angelshop\Domain\Model;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -21,6 +22,7 @@ use TYPO3\CMS\Extbase\Domain\Model\FileReference;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 /**
  * Class Tab
  * @package MB\Angelshop\Domain\Model
@@ -31,60 +33,29 @@ class Tab extends AbstractEntity
     /**
      * @var string
      */
-    protected $header = '';
+    protected string $header = '';
 
     /**
      * @var string
      */
-    protected $text = '';
+    protected string $text = '';
 
     /**
      * @var string
      */
-    protected $icon = '';
+    protected string $icon = '';
 
     /**
      * @var string
      */
-    protected $movement = '';
+    protected string $movement = '';
 
     /**
      * image
      * @var FileReference
      */
-    protected $image = null;
+    protected ?FileReference $image = null;
 
-    /**
-     * @return string
-     */
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    /**
-     * @param string $header
-     */
-    public function setHeader($header)
-    {
-        $this->header = $header;
-    }
-
-    /**
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-    /**
-     * @param string $text
-     */
-    public function setText($text)
-    {
-        $this->text = $text;
-    }
 
     /**
      * @return FileReference
@@ -102,36 +73,5 @@ class Tab extends AbstractEntity
         $this->image = $image;
     }
 
-    /**
-     * @return string
-     */
-    public function getIcon()
-    {
-        return $this->icon;
-    }
-
-    /**
-     * @param string $icon
-     */
-    public function setIcon($icon)
-    {
-        $this->icon = $icon;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMovement()
-    {
-        return $this->movement;
-    }
-
-    /**
-     * @param string $movement
-     */
-    public function setMovement($movement)
-    {
-        $this->movement = $movement;
-    }
 
 }

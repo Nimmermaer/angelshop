@@ -1,5 +1,7 @@
 <?php
+
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 29.07.2016 Michael <mi.blunck@gmail.com>
@@ -76,10 +78,11 @@ call_user_func(
             ],
         ];
 
-        ExtensionManagementUtility::addTCAcolumns($table, $pagesColumns, 1);
+        ExtensionManagementUtility::addTCAcolumns($table, $pagesColumns);
 
         ExtensionManagementUtility::addToAllTCAtypes($table,
-            '--div--;Soziale Netzwerke,tx_angelshop_facebook_image, ce_facebook_button, ce_whatsapp_button, ce_whatsapp_text', '', 'after:categories');
+            '--div--;Soziale Netzwerke,tx_angelshop_facebook_image, ce_facebook_button, ce_whatsapp_button, ce_whatsapp_text',
+            '', 'after:categories');
 
 
     },

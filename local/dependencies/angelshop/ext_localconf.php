@@ -49,8 +49,27 @@ $boot = function ($extensionKey) {
     
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['angelshop'] = 'EXT:angelshop/Configuration/RTE/Custom.yaml';
 
-    ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\UploadedFileReferenceConverter');
-    ExtensionUtility::registerTypeConverter('MB\\Angelshop\\Property\\TypeConverter\\ObjectStorageConverter');
+    ExtensionUtility::registerTypeConverter(\MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter::class);
+    ExtensionUtility::registerTypeConverter(\MB\Angelshop\Property\TypeConverter\ObjectStorageConverter::class);
+
+    $newIcons = [
+        'business' => 'business',
+        'gallery' => 'gallery',
+        'service' => 'service',
+        'tab' => 'tab',
+        'productlist' => 'productlist',
+        'product' => 'product',
+    ];
+    $iconRegistry = GeneralUtility::makeInstance(
+        \TYPO3\CMS\Core\Imaging\IconRegistry::class
+    );
+    foreach ($newIcons as $key => $icon) {
+        $iconRegistry->registerIcon(
+            $key, \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+            ['source' => 'EXT:angelshop/Resources/Public/Icons/Svg/' . $icon . '.svg']
+        );
+    }
+
 
     ExtensionManagementUtility::addPageTSConfig('@import "EXT:angelshop/Configuration/TypoScript/pageTs.tsConfig"');
 };

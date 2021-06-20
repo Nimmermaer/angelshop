@@ -2,8 +2,9 @@
 
 namespace MB\Angelshop\Domain\Model;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -21,6 +22,7 @@ use TYPO3\CMS\Extbase\Domain\Model\FileReference;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 /**
  * Class Trader
  * @package MB\Angelshop\Domain\Model
@@ -31,50 +33,18 @@ class Trader extends AbstractEntity
     /**
      * @var string
      */
-    protected $title = '';
+    protected string $title = '';
 
     /**
      * @var string
      */
-    protected $link = '';
+    protected string $link = '';
 
     /**
      * image
-     * @var FileReference
+     * @var FileReference | null
      */
-    protected $image = null;
-
-    /**
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * @param string $link
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
-    }
+    protected ?FileReference $image = null;
 
     /**
      * @return FileReference

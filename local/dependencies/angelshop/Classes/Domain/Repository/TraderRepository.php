@@ -2,9 +2,6 @@
 
 namespace MB\Angelshop\Domain\Repository;
 
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -29,6 +26,5 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class TraderRepository extends Repository
 {
-
 
 }

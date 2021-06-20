@@ -2,6 +2,7 @@
 
 namespace MB\Angelshop\ViewHelpers\Form;
 
+use TYPO3\CMS\Extbase\Property\Exception;
 use TYPO3\CMS\Extbase\Security\Cryptography\HashService;
 use TYPO3\CMS\Extbase\Property\PropertyMapper;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
@@ -21,13 +22,13 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
      * @var HashService
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
-    protected $hashService;
+    protected HashService $hashService;
 
     /**
      * @var PropertyMapper
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
-    protected $propertyMapper;
+    protected PropertyMapper $propertyMapper;
 
     /**
      * Render the upload field including possible resource pointer
@@ -35,7 +36,7 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
      * @return string
      * @api
      */
-    public function render()
+    public function render(): string
     {
         $output = '';
 
@@ -67,8 +68,9 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
      * Return NULL if errors occurred during property mapping for this property.
      *
      * @return FileReference
+     * @throws Exception
      */
-    protected function getUploadedResource()
+    protected function getUploadedResource(): ?FileReference
     {
         if ($this->getMappingResultsForProperty()->hasErrors()) {
             return null;
@@ -79,6 +81,6 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
         if ($resource instanceof FileReference) {
             return $resource;
         }
-        return $this->propertyMapper->convert($resource, 'TYPO3\\CMS\\Extbase\\Domain\\Model\\FileReference');
+        return $this->propertyMapper->convert($resource, FileReference::class);
     }
 }

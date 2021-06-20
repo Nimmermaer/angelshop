@@ -11,13 +11,13 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
     /**
      * @var string[]
      */
-    protected $sourceTypes = ['array'];
+    protected array $sourceTypes = ['array'];
     /**
      * Take precedence over the available ObjectStorageConverter
      *
      * @var int
      */
-    protected $priority = 2;
+    protected int $priority = 2;
 
     /**
      * @param mixed $source
@@ -45,7 +45,7 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
      * @param mixed $propertyValue
      * @return bool
      */
-    protected function isUploadType($propertyValue)
+    protected function isUploadType($propertyValue): bool
     {
         return is_array($propertyValue) && isset($propertyValue['tmp_name']) && isset($propertyValue['error']);
     }

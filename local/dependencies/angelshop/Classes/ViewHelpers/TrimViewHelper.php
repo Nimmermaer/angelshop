@@ -21,7 +21,7 @@ class TrimViewHelper extends AbstractViewHelper
      * Arguments initialization
      * @return void
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('value', 'string', 'The value to output');
     }
@@ -29,9 +29,9 @@ class TrimViewHelper extends AbstractViewHelper
     /**
      * @return string
      */
-    public function render()
+    public function render(): string
     {
-        if ($this->arguments['value'] === NULL) {
+        if ($this->arguments['value'] === null) {
             $this->arguments['value'] = $this->renderChildren();
         }
         // remove new line - does not matter in html anyway

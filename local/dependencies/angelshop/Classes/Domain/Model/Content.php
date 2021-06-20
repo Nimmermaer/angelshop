@@ -2,6 +2,11 @@
 
 namespace MB\Angelshop\Domain\Model;
 
+use DateTime;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -20,191 +25,179 @@ namespace MB\Angelshop\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-
 /**
  * Class Content
  * @package MB\Angelshop\Domain\Model
  */
-class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Content extends AbstractEntity
 {
 
     /**
-     * @var \DateTime
+     * @var DateTime
      */
     protected $crdate;
     /**
-     * @var \DateTime
+     * @var DateTime
      */
     protected $tstamp;
     /**
      * @var string
      */
-    protected $CType;
+    public string $CType = '';
 
     /**
      * @var string
      */
-    protected $headerPosition;
+    public string $headerPosition = '';
 
     /**
      * @var int
      */
-    protected $colPos;
+    public int $colPos = 0;
 
     /**
      * @var int
      */
-    protected $imagewidth;
+    public int $imagewidth = 0;
     /**
      * @var int
      */
-    protected $imageorient;
+    public int $imageorient = 0;
     /**
      * @var string
      */
-    protected $imagecaption;
+    public string $imagecaption = '';
     /**
      * @var int
      */
-    protected $imagecols;
+    public int $imagecols = 0;
     /**
      * @var int
      */
-    protected $imageborder;
+    public int $imageborder = 0;
     /**
      * @var string
      */
-    protected $media;
+    public string $media = '';
     /**
      * @var string
      */
-    protected $layout;
+    public string $layout = '';
     /**
      * @var int
      */
-    protected $cols;
+    public int $cols = 0;
     /**
      * @var string
      */
-    protected $subheader;
+    public string $subheader = '';
     /**
      * @var string
      */
-    protected $headerLink;
+    public string $headerLink = '';
     /**
      * @var string
      */
-    protected $imageLink;
+    public string $imageLink = '';
     /**
      * @var string
      */
-    protected $imageZoom;
+    public string $imageZoom = '';
     /**
      * @var string
      */
-    protected $altText;
+    public string $altText = '';
     /**
      * @var string
      */
-    protected $titleText;
+    public string $titleText = '';
     /**
      * @var string
      */
-    protected $headerLayout;
+    public string $headerLayout = '';
     /**
      * @var string
      */
-    protected $listType;
+    public string $listType = '';
 
-    /**
-     * uid
-     * @var string
-     */
-    protected $uid = '';
 
     /**
      * uid
      * @var boolean
      */
-    protected $hidden;
+    public bool $hidden = false;
 
     /**
      * image
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $image
+     * @var ObjectStorage<FileReference> $image
      */
-    protected $image = null;
+    protected ?ObjectStorage $image = null;
 
     /**
      * bodytext
      * @var string
      */
-    protected $bodytext = '';
+    public string $bodytext = '';
 
     /**
      * product
      * @var string
      */
-    protected $product = '';
+    public string $product = '';
 
     /**
      * stock
      * @var boolean
      */
-    protected $stock;
+    public bool $stock = false;
 
-    /**
-     * pid
-     * @var string
-     */
-    protected $pid = '';
 
     /**
      * header
      * @var string
      */
-    protected $header = '';
+    public string $header = '';
 
     /**
      * sorting
      * @var string
      */
-    protected $sorting = '';
+    public string $sorting = '';
     /**
      * sorting
      * @var string
      */
-    protected $additionalDescription = '';
+    public string $additionalDescription = '';
 
     /**
      * contentType
      * @var string
      */
-    protected $contentType = '';
+    public string $contentType = '';
 
     /**
      * price
      * @var float
      */
-    protected $price = '';
+    public float $price = 0.00;
 
     /**
      * oldPrice
      * @var float
      */
-    protected $oldPrice = '';
+    public float $oldPrice = 0.00;
 
     /**
      * manufacturer
      * @var string
      */
-    protected $manufacturer = '';
+    public string $manufacturer = '';
 
     /**
      * Image
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
-    protected $imageCollection;
+    protected ObjectStorage $imageCollection;
 
     public function __construct()
     {
@@ -212,563 +205,68 @@ class Content extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @return ObjectStorage
      */
-    public function getImageCollection()
+    public function getImageCollection(): ObjectStorage
     {
         return $this->imageCollection;
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $imageCollection
+     * @param ObjectStorage $imageCollection
      */
-    public function setImageCollection($imageCollection)
+    public function setImageCollection(ObjectStorage $imageCollection)
     {
         $this->imageCollection = $imageCollection;
     }
 
 
     /**
-     * @return boolean
+     * @return ObjectStorage
      */
-    public function isHidden()
-    {
-        return $this->hidden;
-    }
-
-    /**
-     * @param boolean $hidden
-     */
-    public function setHidden($hidden)
-    {
-        $this->hidden = $hidden;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isStock()
-    {
-        return $this->stock;
-    }
-
-    /**
-     * @param boolean $stock
-     */
-    public function setStock($stock)
-    {
-        $this->stock = $stock;
-    }
-
-
-    /**
-     * Returns the header
-     * @return string $header
-     */
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    /**
-     * Sets the header
-     *
-     * @param string $header
-     *
-     * @return void
-     */
-    public function setHeader($header)
-    {
-        $this->header = $header;
-    }
-
-    /**
-     * Returns the sorting
-     * @return string $sorting
-     */
-    public function getSorting()
-    {
-        return $this->sorting;
-    }
-
-    /**
-     * Sets the sorting
-     *
-     * @param string $sorting
-     *
-     * @return void
-     */
-    public function setSorting($sorting)
-    {
-        $this->sorting = $sorting;
-    }
-
-    /**
-     * Returns the contentType
-     * @return string $contentType
-     */
-    public function getContentType()
-    {
-        return $this->contentType;
-    }
-
-    /**
-     * Sets the contentType
-     *
-     * @param string $contentType
-     *
-     * @return void
-     */
-    public function setContentType($contentType)
-    {
-        $this->contentType = $contentType;
-    }
-
-    /**
-     * @return string
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
-     * @param string $product
-     */
-    public function setProduct($product)
-    {
-        $this->product = $product;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBodytext()
-    {
-        return $this->bodytext;
-    }
-
-    /**
-     * @param string $bodytext
-     */
-    public function setBodytext($bodytext)
-    {
-        $this->bodytext = $bodytext;
-    }
-
-    /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
-     */
-    public function getImage()
+    public function getImage(): ?ObjectStorage
     {
         return $this->image;
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $image
+     * @param ObjectStorage $image
      */
-    public function setImage($image)
+    public function setImage(ObjectStorage $image)
     {
         $this->image = $image;
     }
 
-    /**
-     * @return string
-     */
-    public function getAdditionalDescription()
-    {
-        return $this->additionalDescription;
-    }
 
     /**
-     * @param string $additionalDescription
+     * @return DateTime
      */
-    public function setAdditionalDescription($additionalDescription)
-    {
-        $this->additionalDescription = $additionalDescription;
-    }
-
-    /**
-     * @return float
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * @param float $price
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-    }
-
-    /**
-     * @return float
-     */
-    public function getOldPrice()
-    {
-        return $this->oldPrice;
-    }
-
-    /**
-     * @param float $oldPrice
-     */
-    public function setOldPrice($oldPrice)
-    {
-        $this->oldPrice = $oldPrice;
-    }
-
-    /**
-     * @return string
-     */
-    public function getManufacturer()
-    {
-        return $this->manufacturer;
-    }
-
-    /**
-     * @param string $manufacturer
-     */
-    public function setManufacturer($manufacturer)
-    {
-        $this->manufacturer = $manufacturer;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getCrdate()
+    public function getCrdate(): DateTime
     {
         return $this->crdate;
     }
 
     /**
-     * @param \DateTime $crdate
+     * @param DateTime $crdate
      */
-    public function setCrdate($crdate)
+    public function setCrdate(DateTime $crdate)
     {
         $this->crdate = $crdate;
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getTstamp()
+    public function getTstamp(): DateTime
     {
         return $this->tstamp;
     }
 
     /**
-     * @param \DateTime $tstamp
+     * @param DateTime $tstamp
      */
-    public function setTstamp($tstamp)
+    public function setTstamp(DateTime $tstamp)
     {
         $this->tstamp = $tstamp;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCType()
-    {
-        return $this->CType;
-    }
-
-    /**
-     * @param string $CType
-     */
-    public function setCType($CType)
-    {
-        $this->CType = $CType;
-    }
-
-    /**
-     * @return string
-     */
-    public function getHeaderPosition()
-    {
-        return $this->headerPosition;
-    }
-
-    /**
-     * @param string $headerPosition
-     */
-    public function setHeaderPosition($headerPosition)
-    {
-        $this->headerPosition = $headerPosition;
-    }
-
-    /**
-     * @return int
-     */
-    public function getColPos()
-    {
-        return $this->colPos;
-    }
-
-    /**
-     * @param int $colPos
-     */
-    public function setColPos($colPos)
-    {
-        $this->colPos = $colPos;
-    }
-
-    /**
-     * @return int
-     */
-    public function getImagewidth()
-    {
-        return $this->imagewidth;
-    }
-
-    /**
-     * @param int $imagewidth
-     */
-    public function setImagewidth($imagewidth)
-    {
-        $this->imagewidth = $imagewidth;
-    }
-
-    /**
-     * @return int
-     */
-    public function getImageorient()
-    {
-        return $this->imageorient;
-    }
-
-    /**
-     * @param int $imageorient
-     */
-    public function setImageorient($imageorient)
-    {
-        $this->imageorient = $imageorient;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImagecaption()
-    {
-        return $this->imagecaption;
-    }
-
-    /**
-     * @param string $imagecaption
-     */
-    public function setImagecaption($imagecaption)
-    {
-        $this->imagecaption = $imagecaption;
-    }
-
-    /**
-     * @return int
-     */
-    public function getImagecols()
-    {
-        return $this->imagecols;
-    }
-
-    /**
-     * @param int $imagecols
-     */
-    public function setImagecols($imagecols)
-    {
-        $this->imagecols = $imagecols;
-    }
-
-    /**
-     * @return int
-     */
-    public function getImageborder()
-    {
-        return $this->imageborder;
-    }
-
-    /**
-     * @param int $imageborder
-     */
-    public function setImageborder($imageborder)
-    {
-        $this->imageborder = $imageborder;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMedia()
-    {
-        return $this->media;
-    }
-
-    /**
-     * @param string $media
-     */
-    public function setMedia($media)
-    {
-        $this->media = $media;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLayout()
-    {
-        return $this->layout;
-    }
-
-    /**
-     * @param string $layout
-     */
-    public function setLayout($layout)
-    {
-        $this->layout = $layout;
-    }
-
-    /**
-     * @return int
-     */
-    public function getCols()
-    {
-        return $this->cols;
-    }
-
-    /**
-     * @param int $cols
-     */
-    public function setCols($cols)
-    {
-        $this->cols = $cols;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSubheader()
-    {
-        return $this->subheader;
-    }
-
-    /**
-     * @param string $subheader
-     */
-    public function setSubheader($subheader)
-    {
-        $this->subheader = $subheader;
-    }
-
-    /**
-     * @return string
-     */
-    public function getHeaderLink()
-    {
-        return $this->headerLink;
-    }
-
-    /**
-     * @param string $headerLink
-     */
-    public function setHeaderLink($headerLink)
-    {
-        $this->headerLink = $headerLink;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImageLink()
-    {
-        return $this->imageLink;
-    }
-
-    /**
-     * @param string $imageLink
-     */
-    public function setImageLink($imageLink)
-    {
-        $this->imageLink = $imageLink;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImageZoom()
-    {
-        return $this->imageZoom;
-    }
-
-    /**
-     * @param string $imageZoom
-     */
-    public function setImageZoom($imageZoom)
-    {
-        $this->imageZoom = $imageZoom;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAltText()
-    {
-        return $this->altText;
-    }
-
-    /**
-     * @param string $altText
-     */
-    public function setAltText($altText)
-    {
-        $this->altText = $altText;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTitleText()
-    {
-        return $this->titleText;
-    }
-
-    /**
-     * @param string $titleText
-     */
-    public function setTitleText($titleText)
-    {
-        $this->titleText = $titleText;
-    }
-
-    /**
-     * @return string
-     */
-    public function getHeaderLayout()
-    {
-        return $this->headerLayout;
-    }
-
-    /**
-     * @param string $headerLayout
-     */
-    public function setHeaderLayout($headerLayout)
-    {
-        $this->headerLayout = $headerLayout;
-    }
-
-    /**
-     * @return string
-     */
-    public function getListType()
-    {
-        return $this->listType;
-    }
-
-    /**
-     * @param string $listType
-     */
-    public function setListType($listType)
-    {
-        $this->listType = $listType;
     }
 }

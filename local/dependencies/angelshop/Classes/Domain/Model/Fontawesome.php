@@ -30,85 +30,21 @@ class Fontawesome extends AbstractEntity
     /**
      * @var string
      */
-    protected $title = '';
+    public string $title = '';
 
     /**
      * @var string
      */
-    protected $link = '';
+    public string $link = '';
 
     /**
      * @var string
      */
-    protected $class = '';
+    public string $class = '';
 
     /**
      * @var string
      */
-    protected $movement = '';
-
-    /**
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return string
-     */
-    public function getClass()
-    {
-        return $this->class;
-    }
-
-    /**
-     * @param string $class
-     */
-    public function setClass($class)
-    {
-        $this->class = $class;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * @param string $link
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMovement()
-    {
-        return $this->movement;
-    }
-
-    /**
-     * @param string $movement
-     */
-    public function setMovement($movement)
-    {
-        $this->movement = $movement;
-    }
+    public string $movement = '';
 
 }

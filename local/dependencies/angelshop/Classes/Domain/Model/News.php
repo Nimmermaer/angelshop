@@ -25,63 +25,16 @@ class News extends \GeorgRinger\News\Domain\Model\News
     /**
      * @var bool
      */
-    protected $recipe = false;
+    public bool $recipe = false;
 
     /**
      * @var string
      */
-    protected $icon = '';
+    public string $icon = '';
 
     /**
      * @var string
      */
-    protected $ingredient = '';
+    public string $ingredient = '';
 
-    /**
-     * @return boolean
-     */
-    public function isRecipe()
-    {
-        return $this->recipe;
-    }
-
-    /**
-     * @param boolean $recipe
-     */
-    public function setRecipe($recipe)
-    {
-        $this->recipe = $recipe;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIcon()
-    {
-        return $this->icon;
-    }
-
-    /**
-     * @param string $icon
-     */
-    public function setIcon($icon)
-    {
-        $this->icon = $icon;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIngredient()
-    {
-        return $this->ingredient;
-    }
-
-    /**
-     * @param string $ingredient
-     */
-    public function setIngredient($ingredient)
-    {
-        $this->ingredient = $ingredient;
-    }
 }

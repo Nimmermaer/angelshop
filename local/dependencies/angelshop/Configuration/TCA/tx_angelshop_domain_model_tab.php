@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*  | This extension is part of the TYPO3 project. The TYPO3 project is
  *  | free software and is licensed under GNU General Public License.
  *  |
@@ -125,8 +126,8 @@ return [
             'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.text',
             'config' => [
                 'type' => 'text',
-                'cols' => '40',
-                'rows' => '6',
+                'cols' => 40,
+                'rows' => 6,
                 'enableRichtext' => true,
             ],
         ],
@@ -135,7 +136,7 @@ return [
             'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.header',
             'config' => [
                 'type' => 'input',
-                'size' => '30',
+                'size' => 30,
                 'eval' => 'trim',
             ]
         ],

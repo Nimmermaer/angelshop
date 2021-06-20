@@ -1,2 +1,2 @@
-@import 'EXT:angelshop/Configuration/TypoScript/Page/*.tsConfig'
-@import 'EXT:angelshop/Configuration/TypoScript/Page/Backendlayouts/*.tsConfig'
+@import 'EXT:angelshop/Configuration/TypoScript/Page/*.tsconfig'
+@import 'EXT:angelshop/Configuration/TypoScript/Page/Backendlayouts/*.tsconfig'
