@@ -65,7 +65,9 @@
     "georgringer/news": "^8.0",
     "gridelementsteam/gridelements": "^10.0",
     "mb/angelshop": "^0.0.1",
-    "helhum/typo3-console": "^6.0",
+    "helhum/typo3-console": "^6.0"
+  },
+  "require-dev": {
     "ssch/typo3-rector": "^0.10.6"
   }
 }

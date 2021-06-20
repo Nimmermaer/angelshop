@@ -63,17 +63,17 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
     /**
      * @var array<string>
      */
-    protected array $sourceTypes = ['array'];
+    protected $sourceTypes = ['array'];
     /**
      * @var string
      */
-    protected string $targetType = FileReference::class;
+    protected $targetType = FileReference::class;
     /**
      * Take precedence over the available FileReferenceConverter
      *
      * @var int
      */
-    protected int $priority = 2;
+    protected $priority = 2;
     /**
      * @var ResourceFactory
      * @TYPO3\CMS\Extbase\Annotation\Inject

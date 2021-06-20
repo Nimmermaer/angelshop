@@ -11,13 +11,14 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
     /**
      * @var string[]
      */
-    protected array $sourceTypes = ['array'];
+    protected $sourceTypes = ['array'];
+
     /**
      * Take precedence over the available ObjectStorageConverter
      *
      * @var int
      */
-    protected int $priority = 2;
+    protected $priority = 2;
 
     /**
      * @param mixed $source
