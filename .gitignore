@@ -20,3 +20,4 @@ vagrant
 vendor
 web/public/typo3conf/AdditionalConfiguration.server.Production.Live.php
 /var/
+/bin/
