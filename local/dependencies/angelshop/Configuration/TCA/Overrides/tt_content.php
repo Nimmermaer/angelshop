@@ -58,7 +58,7 @@ call_user_func(
                 'label' => 'LLL:EXT:upload_example/Resources/Private/Language/locallang_db.xlf:tx_uploadexample_domain_model_example.image_collection',
                 'config' => ExtensionManagementUtility::getFileFieldTCAConfig('tx_angelshop_image_collection', [
                     'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                     ],
                     'overrideChildTca' => [
                         'columns' => [

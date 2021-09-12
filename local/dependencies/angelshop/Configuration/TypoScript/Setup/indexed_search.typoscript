@@ -23,13 +23,13 @@ plugin.tx_indexedsearch {
         clearSearchBox.enableSubSearchCheckBox = 1
         displayForbiddenRecords = 0
         alwaysShowPageLinks = 1
-        mediaList =
+        mediaList = 
 
         #search.rootPidList
         rootPidList = 1
         page_links = 10
         detectDomainRcords = 0
-        defaultFreeIndexUidList =
+        defaultFreeIndexUidList = 
         searchSkipExtendToSubpagesChecking = 0
         exactCount = 0
         forwardSearchWordsInResultLink = 0
@@ -40,7 +40,7 @@ plugin.tx_indexedsearch {
             titleCropAfter = 50
             titleCropSignifier = ...
             summaryCropAfter = 180
-            summaryCropSignifier =
+            summaryCropSignifier = 
             hrefInSummaryCropAfter = 60
             hrefInSummaryCropSignifier = ...
             markupSW_summaryMax = 300
@@ -49,7 +49,6 @@ plugin.tx_indexedsearch {
             markupSW_divider = ...
             markupSW_divider.noTrimWrap = | | |
         }
-
         # Blinding of option-selectors / values in these (advanced search)
         blind {
             searchType = 0
@@ -65,33 +64,32 @@ plugin.tx_indexedsearch {
             # defaultOperand.1 = 1
             # extResume=1
         }
-
         /*
-        flagRendering = CASE
-        flagRendering {
-        key.current = 1
-        2 = TEXT
-        2.value = German
-        default = TEXT
-        default.value = English
-        }
+flagRendering=CASE
+flagRendering{
+key.current=1
+2=TEXT
+2.value=German
+default=TEXT
+default.value=English
+}
 
-        iconRendering = CASE
-        iconRendering {
-        key.current = 1
-        html = TEXT
-        html.value = HtmL
-        default = TEXT
-        default.value = TYPO3 pages
-        }
+iconRendering=CASE
+iconRendering{
+key.current=1
+html=TEXT
+html.value=HtmL
+default=TEXT
+default.value=TYPO3pages
+}
 
-        specialConfiguration {
-        0.pageIcon = IMAGE
-        0.pageIcon.file = typo3/sysext/indexed_search/Resources/Public/Icons/FileTypes/pages.gif
-        1.pageIcon = IMAGE
-        1.pageIcon.file = typo3/sysext/indexed_search/Resources/Public/Icons/FileTypes/pdf.gif
-        }
-        */
+specialConfiguration{
+0.pageIcon=IMAGE
+0.pageIcon.file=typo3/sysext/indexed_search/Resources/Public/Icons/FileTypes/pages.gif
+1.pageIcon=IMAGE
+1.pageIcon.file=typo3/sysext/indexed_search/Resources/Public/Icons/FileTypes/pdf.gif
+}
+*/
         defaultOptions {
             defaultOperand = 0
             sections = 0
@@ -103,22 +101,18 @@ plugin.tx_indexedsearch {
             searchType = 1
         }
     }
-
     view {
         templateRootPaths {
             0 = EXT:indexed_search/Resources/Private/Templates/
             10 = {$plugin.tx_indexedsearch.view.templateRootPath}
         }
-
         partialRootPaths {
             0 = EXT:indexed_search/Resources/Private/Partials/
             10 = {$plugin.tx_indexedsearch.view.partialRootPath}
         }
-
         layoutRootPaths {
             0 = EXT:indexed_search/Resources/Private/Layouts/
             10 = {$plugin.tx_indexedsearch.view.layoutRootPath}
         }
     }
 }
-

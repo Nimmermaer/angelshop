@@ -1,5 +1,5 @@
 config {
-    additionalHeaders = Content-Type:text/html;charset=utf-8
+    additionalHeaders.10.header = Content-Type:text/html;charset=utf-8
     doctype = html5
     disableAllHeaderCode = 0
     sendCacheHeaders = 1
@@ -61,12 +61,13 @@ config {
     }
 }
 
-[applicationContext = Development]
-    config {
-        compressCss = 0
-        compressJs = 0
-        concatenateCss = 0
-        concatenateJs = 0
-        concatenateJsAndCss = 0
-    }
-[end]
+
+[applicationContext == "Development"]
+config {
+    compressCss = 0
+    compressJs = 0
+    concatenateCss = 0
+    concatenateJs = 0
+    concatenateJsAndCss = 0
+}
+[global]

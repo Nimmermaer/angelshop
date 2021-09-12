@@ -9,29 +9,24 @@ plugin.tx_news {
             0 = EXT:news/Resources/Private/Templates/
             1 = {$plugin.tx_news.view.templateRootPath}
         }
-
         partialRootPaths >
         partialRootPaths {
             0 = EXT:news/Resources/Private/Partials/
             1 = {$plugin.tx_news.view.partialRootPath}
         }
-
         layoutRootPaths >
         layoutRootPaths {
             0 = EXT:news/Resources/Private/Layouts/
             1 = {$plugin.tx_news.view.layoutRootPath}
         }
-
         widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:angelshop/Resources/Private/News/Templates/
     }
-
     # Modify the translation
     _LOCAL_LANG {
         default {
             more-link_more = more >>
         }
     }
-
     # ====================================
     # Settings available inside Controller and View by accessing $this->settings or {settings.xyz}
     # ====================================
@@ -56,11 +51,9 @@ plugin.tx_news {
             registerProperties = keywords,title
             showSocialShareButtons = 0
         }
-
         search {
             fields = teaser,title,bodytext,ingredient
         }
-
         # Opengraph implementation
         opengraph {
             site_name = ABA-Angelshop
@@ -85,7 +78,6 @@ lib.newsList {
             1 = list
         }
     }
-
     settings < plugin.tx_news.settings
     settings {
         templateLayout = 10
@@ -109,7 +101,6 @@ lib.newsHeader {
             1 = detail
         }
     }
-
     view {
         settings.templateLayout = 99
         templateRootPaths >
@@ -120,4 +111,3 @@ lib.newsHeader {
 plugin.tx_news {
     settings.cssFile >
 }
-

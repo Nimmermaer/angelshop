@@ -11,11 +11,9 @@ tt_content.gridelements_pi1.20.10.setup.accordionItem {
             <div style="" aria-expanded="true" id="collapse-{field:uid}" class="panel-collapse collapse">
                         <div class="panel-body">|</div>
              </div>
-
             )
             wrap.insertData = 1
         }
     }
-
     wrap = <div class="panel panel-default">|</div>
 }

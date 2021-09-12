@@ -4,18 +4,15 @@ tt_content.gridelements_pi1.20.10.setup.grid-40-40-40 {
             renderObj =< tt_content
             wrap = <div class=" col-md-4">|</div>
         }
-
         21 {
             renderObj =< tt_content
             wrap = <div class=" col-md-4">|</div>
         }
-
         22 {
             renderObj =< tt_content
             wrap = <div class="col-md-4">|</div>
         }
     }
-
     wrap = <div class="row">|</div>
     prepend < lib.stdheader
 }

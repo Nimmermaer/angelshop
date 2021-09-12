@@ -2,7 +2,7 @@
 
 namespace MB\Angelshop\Tests\Unit\Domain\Model;
 
-use TYPO3\CMS\Core\Tests\UnitTestCase;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use MB\Angelshop\Domain\Model\Teaserrow;
 /***************************************************************
  *  Copyright notice
