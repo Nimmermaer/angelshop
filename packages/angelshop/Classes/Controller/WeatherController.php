@@ -2,6 +2,7 @@
 
 namespace MB\Angelshop\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Http\RequestFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -77,28 +78,31 @@ class WeatherController extends ActionController
     /**
      *
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $this->view->assign('weather', $this->apiRequest);
         $this->view->assign('status', $this->statusCode);
+        return $this->htmlResponse();
     }
 
     /**
      *
      */
-    public function showAction()
+    public function showAction(): ResponseInterface
     {
         $this->view->assign('weather', $this->apiRequest);
         $this->view->assign('status', $this->statusCode);
+        return $this->htmlResponse();
     }
 
     /**
      *
      */
-    public function forecastAction()
+    public function forecastAction(): ResponseInterface
     {
         $this->view->assign('forecast', $this->apiRequest);
         $this->view->assign('status', $this->statusCode);
+        return $this->htmlResponse();
     }
 
 }

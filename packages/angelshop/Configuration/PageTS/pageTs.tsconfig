@@ -1,0 +1,2 @@
+@import 'EXT:angelshop/Configuration/PageTs/Page/*.tsconfig'
+@import 'EXT:angelshop/Configuration/PageTs/Page/Backendlayouts/*.tsconfig'

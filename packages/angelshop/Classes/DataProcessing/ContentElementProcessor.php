@@ -144,12 +144,9 @@ class ContentElementProcessor implements DataProcessorInterface
     /**
      * @param string $repositoryName
      * @return object
-     * @throws Exception
      */
     protected function getRepository(string $repositoryName): object
     {
-        $objectManager =
-            GeneralUtility::makeInstance(ObjectManager::class);
-        return $objectManager->get($repositoryName);
+        return GeneralUtility::makeInstance($repositoryName);
     }
 }

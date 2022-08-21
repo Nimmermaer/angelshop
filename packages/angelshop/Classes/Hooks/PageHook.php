@@ -9,7 +9,7 @@
 namespace MB\Angelshop\Hooks;
 
 
-use MB\Angelshop\Controller\PageController;
+use MB\Angelshop\Controller\BackendController;
 use TYPO3\CMS\Backend\Controller\PageLayoutController;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException;
@@ -24,7 +24,7 @@ class PageHook
      */
     public function renderInHeader(array $params = [], PageLayoutController $parentObject): string
     {
-        $controller = GeneralUtility::makeInstance(PageController::class);
+        $controller = GeneralUtility::makeInstance(BackendController::class);
         return $controller->showAction($parentObject->id);
     }
 }

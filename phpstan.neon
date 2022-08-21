@@ -1,0 +1,8 @@
+parameters:
+  level: 6
+  paths:
+    - local/dependencies
+    - local/dependencies/angelshop/Tests
+services:
+  errorFormatter.fileoutput:
+    factory: noximo\FileOutput(./angelshop/phpstan.html, null)

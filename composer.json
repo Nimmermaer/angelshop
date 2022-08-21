@@ -73,6 +73,7 @@
   "require-dev": {
     "rector/rector": "^0.11.53",
     "phpstan/phpstan": "^0.12.98",
-    "typo3/testing-framework": "^6.11"
+    "typo3/testing-framework": "^6.11",
+    "helmich/typo3-typoscript-lint": "^2.5"
   }
 }

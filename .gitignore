@@ -17,7 +17,7 @@ web/public/typo3conf/l10n/*
 web/public/typo3conf/ext/**
 shared
 vagrant
-vendor
+vendor/
 web/public/typo3conf/AdditionalConfiguration.server.Production.Live.php
-/var/
+var/
 /bin/

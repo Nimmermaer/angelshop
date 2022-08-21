@@ -8,6 +8,7 @@
 
 namespace MB\Angelshop\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -15,10 +16,10 @@ use TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
 /**
- * Class PageController
+ * Class BackendController
  * @package MB\Angelshop\Controller
  */
-class PageController extends ActionController
+class BackendController
 {
     /**
      * @var PageRepository | null
@@ -56,7 +57,7 @@ class PageController extends ActionController
      * @return string
      * @throws InvalidExtensionNameException
      */
-    public function showAction(int $id): string
+    public function showAction(int $id): ResponseInterface
     {
         $page = $this->pageRepository->getPage($id);
         $files = $this->fileRepository->findByRelation('pages', 'media', $page['uid']);
