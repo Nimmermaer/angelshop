@@ -30,12 +30,9 @@ class Fontawesome extends AbstractEntity
 {
     public string $title = '';
 
-
     public string $link = '';
 
-
     public string $class = '';
-
 
     public string $movement = '';
 }

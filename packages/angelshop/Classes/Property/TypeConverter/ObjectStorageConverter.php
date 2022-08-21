@@ -24,6 +24,7 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
 
     /**
      * @param mixed $source
+     * @return array<int|string, mixed>
      */
     public function getSourceChildPropertiesToBeConverted($source): array
     {

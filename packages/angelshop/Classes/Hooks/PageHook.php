@@ -18,7 +18,7 @@ class PageHook
     /**
      * @throws InvalidExtensionNameException
      */
-    public function renderInHeader(array $params = [], PageLayoutController $parentObject): string
+    public function renderInHeader(array $params, PageLayoutController $parentObject): string
     {
         $controller = GeneralUtility::makeInstance(BackendController::class);
         return $controller->showAction($parentObject->id);

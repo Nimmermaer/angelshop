@@ -9,7 +9,6 @@ use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
-use TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\Exception\UnknownObjectException;
@@ -55,7 +54,7 @@ class ProductController extends ActionController
     /**
      * Set TypeConverter option for image upload
      */
-    public function initializeCreateAction()
+    public function initializeCreateAction(): void
     {
         $this->setTypeConverterConfigurationForImageUpload('content');
     }
@@ -63,7 +62,7 @@ class ProductController extends ActionController
     /**
      * @param $argumentName
      */
-    protected function setTypeConverterConfigurationForImageUpload($argumentName)
+    protected function setTypeConverterConfigurationForImageUpload($argumentName): void
     {
         $uploadConfiguration = [
             UploadedFileReferenceConverter::CONFIGURATION_ALLOWED_FILE_EXTENSIONS => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
@@ -100,7 +99,7 @@ class ProductController extends ActionController
      *  initialized edit Action
      * @throws NoSuchArgumentException
      */
-    public function initializeEditAction()
+    public function initializeEditAction(): void
     {
         $this->registerContentFromRequest('product');
     }
@@ -110,7 +109,7 @@ class ProductController extends ActionController
      *
      * @throws NoSuchArgumentException
      */
-    protected function registerContentFromRequest($argumentName)
+    protected function registerContentFromRequest($argumentName): void
     {
         $argument = $this->request->getArgument($argumentName);
         if ($argument) {
@@ -127,7 +126,7 @@ class ProductController extends ActionController
         $product = '';
 
         $arguments = $this->request->getArguments();
-        if ((int) $arguments['product']) {
+        if ((int) $arguments['product'] !== 0) {
             $product = $this->contentRepository->findByIdentifier($arguments['product']);
         }
         $this->view->assignMultiple(
@@ -142,18 +141,18 @@ class ProductController extends ActionController
      * Set TypeConverter option for image upload
      * @throws NoSuchArgumentException
      */
-    public function initializeUpdateAction()
+    public function initializeUpdateAction(): void
     {
         $this->registerContentFromRequest('content');
         $this->setTypeConverterConfigurationForImageUpload('content');
     }
 
     /**
-     * @throws StopActionException
      * @throws IllegalObjectTypeException
-     * @throws UnknownObjectException|UnsupportedRequestTypeException
+     * @throws StopActionException
+     * @throws UnknownObjectException
      */
-    public function updateAction(Content $content)
+    public function updateAction(Content $content): void
     {
         $this->addFlashMessage(
             'Das Produkt mit dem Title: ' . $content->header . ' wurde aktualisiert!',

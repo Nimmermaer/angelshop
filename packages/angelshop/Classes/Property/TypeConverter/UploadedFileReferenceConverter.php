@@ -58,7 +58,6 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
      */
     public const CONFIGURATION_ALLOWED_FILE_EXTENSIONS = 4;
 
-
     protected string $defaultUploadFolder = '1:/user_upload/';
 
     /**
@@ -164,7 +163,6 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
         return $resource;
     }
 
-
     protected function createFileReferenceFromFalFileObject(
         FalFile $file,
         int $resourcePointer = 0
@@ -180,13 +178,10 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
         return $this->createFileReferenceFromFalFileReferenceObject($fileReference, $resourcePointer);
     }
 
-    /**
-     * @return \MB\Angelshop\Domain\Model\FileReference
-     */
     protected function createFileReferenceFromFalFileReferenceObject(
         FalFileReference $falFileReference,
         int $resourcePointer
-    ) {
+    ): object {
         if ($resourcePointer === null) {
             /** @var $fileReference \MB\Angelshop\Domain\Model\FileReference */
             $fileReference = $this->objectManager->get(FileReference::class);
@@ -204,11 +199,10 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
     /**
      * Import a resource and respect configuration given for properties
      *
-     * @return FileReference
      * @throws TypeConverterException
      * @throws ExistingTargetFileNameException
      */
-    protected function importUploadedResource(array $uploadInfo, PropertyMappingConfigurationInterface $configuration)
+    protected function importUploadedResource(array $uploadInfo, PropertyMappingConfigurationInterface $configuration): \MB\Angelshop\Domain\Model\FileReference
     {
         if (! GeneralUtility::makeInstance(FileNameValidator::class)->isValid($uploadInfo['name'])) {
             throw new TypeConverterException('Uploading files with PHP file extensions is not allowed!', 1399312430);

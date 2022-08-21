@@ -34,11 +34,11 @@ class ContentRepository extends Repository
 {
     /**
      * Repository for tt_content objects
+     * @var class-string<\\MB\Angelshop\Domain\Model\Content>
      */
     protected $objectType = '\MB\Angelshop\Domain\Model\Content';
 
-
-    public function initializeObject()
+    public function initializeObject(): void
     {
         /** @var $querySettings Typo3QuerySettings */
         $querySettings = $this->objectManager->get(Typo3QuerySettings::class);
@@ -65,9 +65,8 @@ class ContentRepository extends Repository
 
     /**
      * @param $uid
-     * @return object
      */
-    public function findHiddenEntryByUid($uid)
+    public function findHiddenEntryByUid($uid): ?object
     {
         if (array_key_exists('__identity', $uid)) {
             $uid = $uid['__identity'];

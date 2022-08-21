@@ -23,6 +23,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(Typo3SetList::TYPO3_95);
     $containerConfigurator->import(Typo3SetList::TYPO3_104);
     $containerConfigurator->import(Typo3SetList::TYPO3_11);
+    $containerConfigurator->import(\Rector\Set\ValueObject\SetList::CODE_QUALITY);
+    $containerConfigurator->import(\Rector\Set\ValueObject\SetList::TYPE_DECLARATION);
 
     // In order to have a better analysis from phpstan we teach it here some more things
     $parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, Typo3Option::PHPSTAN_FOR_RECTOR_PATH);
@@ -85,6 +87,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // get services (needed for register a single rule)
     $services = $containerConfigurator->services();
 
+
     // register a single rule
     // $services->set(InjectAnnotationRector::class);
 
@@ -110,7 +113,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(ConvertTypo3ConfVarsRector::class);
     $services->set(ExtEmConfRector::class);
     $services->set(ExtensionComposerRector::class);
-
     // Do you want to modernize your TypoScript include statements for files and move from <INCLUDE /> to @import use the FileIncludeToImportStatementVisitor
     // $services->set(FileIncludeToImportStatementTypoScriptRector::class);
 };

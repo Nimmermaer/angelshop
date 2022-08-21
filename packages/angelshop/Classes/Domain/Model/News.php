@@ -24,9 +24,7 @@ class News extends \GeorgRinger\News\Domain\Model\News
 {
     public bool $recipe = false;
 
-
     public string $icon = '';
-
 
     public string $ingredient = '';
 }

@@ -35,7 +35,7 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
      * @param string $headerContent
      * @param string $itemContent
      */
-    public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row)
+    public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row): void
     {
         $function = 'show' . str_replace(' ', '', ucwords(str_replace("_", " ", $row['CType'])));
         if (method_exists($this, $function)) {
@@ -51,17 +51,12 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         }
     }
 
-    /**
-     * @return string
-     */
-    public function showTxSlider(array $arguments)
+    public function showTxSlider(array $arguments): string
     {
         $addContent = 'Slides:' . $arguments['data']['image'];
-        $addContent .= '<h3>Slider</h3>';
 
-        return $addContent;
+        return $addContent . '<h3>Slider</h3>';
     }
-
 
     public function showTxTab(array $arguments): string
     {
@@ -83,21 +78,16 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
                 $i++;
             }
         }
-        $addContent .= '<h3>Tab</h3>';
 
-        return $addContent;
+        return $addContent . '<h3>Tab</h3>';
     }
-
 
     public function showTxImpressum(array $arguments): string
     {
         $addContent = 'GoogleMap Addresse: ' . $arguments['data']['tx_angelshop_address'];
 
-        $addContent .= '<h3>Impressum</h3>';
-
-        return $addContent;
+        return $addContent . '<h3>Impressum</h3>';
     }
-
 
     public function showTextmedia(array $arguments): string
     {

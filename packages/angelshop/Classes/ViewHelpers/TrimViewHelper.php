@@ -24,7 +24,6 @@ class TrimViewHelper extends AbstractViewHelper
         $this->registerArgument('value', 'string', 'The value to output');
     }
 
-
     public function render(): string
     {
         if ($this->arguments['value'] === null) {

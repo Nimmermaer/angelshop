@@ -49,7 +49,7 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @return array|QueryResultInterface
      * @throws InvalidQueryException
      */
-    public function findByContentelementUid($uid, $table = 'tx_angelshop_trader_ttcontent_mm')
+    public function findByContentelementUid($uid, string $table = 'tx_angelshop_trader_ttcontent_mm')
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
         $rawUids = $queryBuilder->from($table)

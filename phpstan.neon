@@ -3,6 +3,3 @@ parameters:
   paths:
     - packages/
     - packages/angelshop/Tests
-services:
-  errorFormatter.fileoutput:
-    factory: noximo\FileOutput(./angelshop/phpstan.html, null)

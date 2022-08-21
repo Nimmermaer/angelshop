@@ -52,7 +52,7 @@ class GalleryControllerTest extends UnitTestCase
     /**
      * @test
      */
-    public function listActionFetchesAllGalleriesFromRepositoryAndAssignsThemToView()
+    public function listActionFetchesAllGalleriesFromRepositoryAndAssignsThemToView(): void
     {
         $allGalleries = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', [], [], '', false);
 
@@ -76,7 +76,7 @@ class GalleryControllerTest extends UnitTestCase
     /**
      * @test
      */
-    public function showActionAssignsTheGivenGalleryToView()
+    public function showActionAssignsTheGivenGalleryToView(): void
     {
         $gallery = new Gallery();
 

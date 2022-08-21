@@ -49,7 +49,7 @@ class GalleryTest extends UnitTestCase
     /**
      * @test
      */
-    public function dummyTestToNotLeaveThisFileEmpty()
+    public function dummyTestToNotLeaveThisFileEmpty(): void
     {
         $this->markTestIncomplete();
     }

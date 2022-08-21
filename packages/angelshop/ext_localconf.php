@@ -69,7 +69,6 @@ $boot = function ($extensionKey) {
             ]
         );
     }
-
     ExtensionManagementUtility::addPageTSConfig('@import "EXT:angelshop/Configuration/PageTS/pageTs.tsconfig"');
 };
 

@@ -33,9 +33,7 @@ class WeatherController extends ActionController
 {
     public string $address = '';
 
-
     public string $appId = '';
-
 
     public string $statusCode = '';
 
@@ -44,14 +42,12 @@ class WeatherController extends ActionController
      */
     public ?stdClass $apiRequest = null;
 
-
     public function listAction(): ResponseInterface
     {
         $this->view->assign('weather', $this->apiRequest);
         $this->view->assign('status', $this->statusCode);
         return $this->htmlResponse();
     }
-
 
     public function showAction(): ResponseInterface
     {
@@ -60,7 +56,6 @@ class WeatherController extends ActionController
         return $this->htmlResponse();
     }
 
-
     public function forecastAction(): ResponseInterface
     {
         $this->view->assign('forecast', $this->apiRequest);
@@ -68,10 +63,9 @@ class WeatherController extends ActionController
         return $this->htmlResponse();
     }
 
-
-    protected function initializeAction()
+    protected function initializeAction(): void
     {
-        parent::initializeAction(); 
+        parent::initializeAction();
         $this->address = $this->settings['arguments']['address'];
         $this->appId = $this->settings['arguments']['appid'];
         $requestFactory = GeneralUtility::makeInstance(RequestFactory::class);

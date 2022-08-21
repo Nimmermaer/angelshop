@@ -15,7 +15,7 @@ namespace MB\Angelshop\Service;
 
 class Import
 {
-    public function import()
+    public function import(): void
     {
         $db = mysqli_connect('localhost', 'root', '', 'old_shop');
 

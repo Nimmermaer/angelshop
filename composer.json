@@ -81,6 +81,7 @@
 	"scripts": {
 		"fix-style": "ecs --fix",
 		"phpstan": "phpstan --memory-limit=-1",
+		"rector": "rector",
 		"lint" : [
 			"typo3cms lint:xliff packages/angelshop/Resources/Private/Language/",
 			"typo3cms lint:yaml packages/angelshop/Configuration/ packages/angelshop/Configuration/RTE/ config/sites/",

@@ -31,12 +31,9 @@ class Tab extends AbstractEntity
 {
     protected string $header = '';
 
-
     protected string $text = '';
 
-
     protected string $icon = '';
-
 
     protected string $movement = '';
 
@@ -46,18 +43,12 @@ class Tab extends AbstractEntity
      */
     protected ?FileReference $image = null;
 
-    /**
-     * @return FileReference
-     */
-    public function getImage()
+    public function getImage(): ?FileReference
     {
         return $this->image;
     }
 
-    /**
-     * @param FileReference $image
-     */
-    public function setImage($image)
+    public function setImage(FileReference $image): void
     {
         $this->image = $image;
     }

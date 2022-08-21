@@ -23,7 +23,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
  *  Created by PhpStorm.
  ******************************************************************/
 
-defined('TYPO3') or die();
+defined('TYPO3') || die();
 
 call_user_func(
     function ($extensionKey, $table) {

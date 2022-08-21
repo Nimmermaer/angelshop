@@ -52,7 +52,7 @@ class TeaserrowControllerTest extends UnitTestCase
     /**
      * @test
      */
-    public function listActionFetchesAllTeaserrowsFromRepositoryAndAssignsThemToView()
+    public function listActionFetchesAllTeaserrowsFromRepositoryAndAssignsThemToView(): void
     {
         $allTeaserrows = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', [], [], '', false);
 
@@ -76,7 +76,7 @@ class TeaserrowControllerTest extends UnitTestCase
     /**
      * @test
      */
-    public function showActionAssignsTheGivenTeaserrowToView()
+    public function showActionAssignsTheGivenTeaserrowToView(): void
     {
         $teaserrow = new Teaserrow();
 

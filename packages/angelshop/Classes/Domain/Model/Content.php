@@ -33,57 +33,39 @@ class Content extends AbstractEntity
 {
     public string $CType = '';
 
-
     public string $headerPosition = '';
-
 
     public int $colPos = 0;
 
-
     public int $imagewidth = 0;
-
 
     public int $imageorient = 0;
 
-
     public string $imagecaption = '';
-
 
     public int $imagecols = 0;
 
-
     public int $imageborder = 0;
-
 
     public string $media = '';
 
-
     public string $layout = '';
-
 
     public int $cols = 0;
 
-
     public string $subheader = '';
-
 
     public string $headerLink = '';
 
-
     public string $imageLink = '';
-
 
     public string $imageZoom = '';
 
-
     public string $altText = '';
-
 
     public string $titleText = '';
 
-
     public string $headerLayout = '';
-
 
     public string $listType = '';
 
@@ -171,14 +153,12 @@ class Content extends AbstractEntity
         $this->imageCollection = new ObjectStorage();
     }
 
-
     public function getImageCollection(): ObjectStorage
     {
         return $this->imageCollection;
     }
 
-
-    public function setImageCollection(ObjectStorage $imageCollection)
+    public function setImageCollection(ObjectStorage $imageCollection): void
     {
         $this->imageCollection = $imageCollection;
     }
@@ -191,32 +171,39 @@ class Content extends AbstractEntity
         return $this->image;
     }
 
-
-    public function setImage(ObjectStorage $image)
+    public function setImage(ObjectStorage $image): void
     {
         $this->image = $image;
     }
 
-
-    public function getCrdate(): DateTime
+    /**
+     * @return \DateTime|\DateTimeImmutable
+     */
+    public function getCrdate(): \DateTime
     {
         return $this->crdate;
     }
 
-
-    public function setCrdate(DateTime $crdate)
+    /**
+     * @param \DateTime|\DateTimeImmutable $crdate
+     */
+    public function setCrdate(\DateTimeInterface $crdate): void
     {
         $this->crdate = $crdate;
     }
 
-
-    public function getTstamp(): DateTime
+    /**
+     * @return \DateTime|\DateTimeImmutable
+     */
+    public function getTstamp(): \DateTime
     {
         return $this->tstamp;
     }
 
-
-    public function setTstamp(DateTime $tstamp)
+    /**
+     * @param \DateTime|\DateTimeImmutable $tstamp
+     */
+    public function setTstamp(\DateTimeInterface $tstamp): void
     {
         $this->tstamp = $tstamp;
     }

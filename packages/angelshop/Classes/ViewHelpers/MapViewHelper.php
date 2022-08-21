@@ -23,7 +23,6 @@ class MapViewHelper extends AbstractViewHelper
         $this->registerArgument('name', 'string', 'Name');
     }
 
-
     public function render(): string
     {
         $mapsLocation = '';

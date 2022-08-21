@@ -23,7 +23,6 @@ class ShareViewHelper extends AbstractViewHelper
         $this->registerArgument('text', 'string', 'text');
     }
 
-
     public function render(): string
     {
         if (is_null($this->arguments['text'])) {

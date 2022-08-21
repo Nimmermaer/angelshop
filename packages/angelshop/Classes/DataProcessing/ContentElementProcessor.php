@@ -42,7 +42,9 @@ class ContentElementProcessor implements DataProcessorInterface
      */
     protected ?FontawesomeRepository $fontawesomeRepository = null;
 
-
+    /**
+     * @return mixed[]
+     */
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
@@ -75,13 +77,13 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * @throws Exception
+     * @return mixed[]
      */
     public function processForTextMedia(array $processedData): array
     {
         $repository = self::getRepository(FontawesomeRepository::class);
         return $repository->findByRecord($processedData['data']['uid']);
     }
-
 
     protected function getRepository(string $repositoryName): object
     {
@@ -90,6 +92,7 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * @throws Exception
+     * @return mixed[]
      */
     public function processForImpressum(array $processedData): array
     {
@@ -99,6 +102,7 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * @throws Exception
+     * @return mixed[]
      */
     public function processForTraderSlider(array $processedData): array
     {
@@ -108,6 +112,7 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * @throws Exception
+     * @return mixed[]
      */
     public function processForTabs(array $processedData): array
     {
@@ -117,6 +122,7 @@ class ContentElementProcessor implements DataProcessorInterface
 
     /**
      * @throws Exception
+     * @return mixed[]
      */
     public function processForProductList(array $processedData): array
     {

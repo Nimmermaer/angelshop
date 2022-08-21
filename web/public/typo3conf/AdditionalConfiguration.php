@@ -2,7 +2,7 @@
 
 use TYPO3\CMS\Core\Core\Environment;
 
-$currentApplicationContext = (string)Environment::getContext(); 
+$currentApplicationContext = (string)Environment::getContext();
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] .= ' (' . (string)$currentApplicationContext . ')';
 
 if (file_exists(realpath(dirname(__FILE__)) . '/AdditionalConfiguration.local.' . str_replace('/', '.',$currentApplicationContext) . '.php') == true) {
