@@ -1,28 +1,28 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
 <f:if condition="{data.seo_title}">
     <f:then>
-        <n:metaTag property="og:title" content="{data.seo_title}"/>
+        <n:metaTag content="{data.seo_title}" property="og:title"/>
     </f:then>
     <f:else>
-        <n:metaTag property="og:title" content="{data.header}"/>
+        <n:metaTag content="{data.header}" property="og:title"/>
     </f:else>
 </f:if>
 <f:comment>
-    <n:metaTag property="og:type" content="{settings.opengraph.type}"/>
+    <n:metaTag content="{settings.opengraph.type}" property="og:type"/>
 </f:comment>
 
-<n:metaTag property="og:url" content="" useCurrentDomain="1"/>
-<n:metaTag property="og:site_name" content="{settings.opengraph.site_name}"/>
+<n:metaTag content="" property="og:url" useCurrentDomain="1"/>
+<n:metaTag content="{settings.opengraph.site_name}" property="og:site_name"/>
 <f:if condition="{facebook}">
     <f:then>
-        <f:for each="{facebook}" as="image" iteration="imageIterator">
+        <f:for as="image" each="{facebook}" iteration="imageIterator">
             <f:if condition="{imageIterator.isFirst}">
                 <n:metaTag
-                        property="og:image"
-                        content="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, maxWidth:'400')}"
-                        forceAbsoluteUrl="1"/>
+                    content="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, maxWidth:'400')}"
+                    forceAbsoluteUrl="1"
+                    property="og:image"/>
             </f:if>
         </f:for>
     </f:then>
@@ -30,12 +30,12 @@
 
 <f:if condition="{data.description}">
     <f:then>
-        <n:metaTag property="og:description" content="{data.description}"/>
+        <n:metaTag content="{data.description}" property="og:description"/>
     </f:then>
     <f:else>
-        <n:metaTag property="og:description" content="{data.abstract}"/>
+        <n:metaTag content="{data.abstract}" property="og:description"/>
     </f:else>
 </f:if>
-<n:metaTag name="keywords" content="{data.keywords}"/>
-<n:metaTag property="og:site_name" content="Aba-Angelshop"/>
+<n:metaTag content="{data.keywords}" name="keywords"/>
+<n:metaTag content="Aba-Angelshop" property="og:site_name"/>
 </html>

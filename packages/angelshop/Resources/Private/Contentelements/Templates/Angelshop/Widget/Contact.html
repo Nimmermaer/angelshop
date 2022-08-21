@@ -1,13 +1,13 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-<f:render partial="Header/OnlyHeader" arguments="{
+<f:render arguments="{
 				header: data.header,
-				layout: data.header_layout}"/>
-<f:form pageUid="{data.header_link}" method="post">
-    <div id="c{data.uid}" class="input-group">
-        <input type="text" name="email" class="form-control" placeholder="Email"/>
-      <span class="input-group-btn">
+				layout: data.header_layout}" partial="Header/OnlyHeader"/>
+<f:form method="post" pageUid="{data.header_link}">
+    <div class="input-group" id="c{data.uid}">
+        <input class="form-control" name="email" placeholder="Email" type="text"/>
+        <span class="input-group-btn">
           <button class="btn btn-default" type="submit">anfragen</button>
       </span>
     </div>

@@ -2,15 +2,17 @@
 
 namespace MB\Angelshop\ViewHelpers\Form;
 
-use TYPO3\CMS\Extbase\Property\Exception;
-use TYPO3\CMS\Extbase\Security\Cryptography\HashService;
-use TYPO3\CMS\Extbase\Property\PropertyMapper;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\Property\Exception;
+use TYPO3\CMS\Extbase\Property\PropertyMapper;
+use TYPO3\CMS\Extbase\Security\Cryptography\HashService;
+
 /*  | This extension is part of the TYPO3 project. The TYPO3 project is
  *  | free software and is licensed under GNU General Public License.
  *  |
  *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>
  */
+
 /**
  * Class UploadViewHelper
  * @package MB\Angelshop\ViewHelpers\Form

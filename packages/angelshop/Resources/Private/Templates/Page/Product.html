@@ -1,13 +1,13 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:layout name="Page/Default"/>
 <f:section name="main">
-    <f:render partial="Opengraph" arguments="{_all}"/>
-    <f:render partial="Page/Header" arguments="{_all}"/>
+    <f:render arguments="{_all}" partial="Opengraph"/>
+    <f:render arguments="{_all}" partial="Page/Header"/>
     <f:if condition="{files}">
-        <f:render partial="Page/ImageHeader" arguments="{_all}"/>
+        <f:render arguments="{_all}" partial="Page/ImageHeader"/>
     </f:if>
     <div class="container">
-        <f:render partial="Page/Breadcrumb" arguments="{_all}"/>
+        <f:render arguments="{_all}" partial="Page/Breadcrumb"/>
         <div class="row">
             <f:if condition="{columnSpecial}">
                 <div class="col-md-12">
@@ -20,10 +20,10 @@
         {columnBottom->f:format.raw()}
         <hr>
         <ul id="Social">
-            <f:render partial="Social/Facebook/Share" arguments="{_all}"/>
-            <f:render partial="Social/Whatsapp/Share" arguments="{_all}"/>
+            <f:render arguments="{_all}" partial="Social/Facebook/Share"/>
+            <f:render arguments="{_all}" partial="Social/Whatsapp/Share"/>
         </ul>
     </div>
-    <f:render partial="Page/Footer" arguments="{_all}"/>
+    <f:render arguments="{_all}" partial="Page/Footer"/>
 </f:section>
 </html>

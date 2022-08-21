@@ -1,7 +1,7 @@
 <div class="tx-indexedsearch-res">
     <f:format.raw>
         <h3>
-            <i class="fa fa-bookmark" aria-hidden="true"></i>
+            <i aria-hidden="true" class="fa fa-bookmark"></i>
             <f:if condition="{settings.displayResultNumber}">
                 <span class="tx-indexedsearch-result-number">{row.result_number}</span>
             </f:if>
@@ -23,8 +23,8 @@
 
     <f:if condition="{row.subresults}">
         <p class="tx-indexedsearch-list">
-            <f:for each="{row.subresults.items}" as="subrow">
-                <f:render partial="Searchresult" arguments="{row: subrow}"/>
+            <f:for as="subrow" each="{row.subresults.items}">
+                <f:render arguments="{row: subrow}" partial="Searchresult"/>
             </f:for>
         </p>
     </f:if>

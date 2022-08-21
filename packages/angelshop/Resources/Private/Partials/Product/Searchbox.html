@@ -1,9 +1,11 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:form action="search">
     <div class="form-group">
-        <label class="control-label"><f:translate key="what_you_search" extensionName="angelshop"/></label>
-       <div class="input-group">
+        <label class="control-label">
+            <f:translate extensionName="angelshop" key="what_you_search"/>
+        </label>
+        <div class="input-group">
             <f:form.textfield class="form-control" name="searchword" value="{searchword}"/>
             <span class="input-group-btn">
             <f:form.submit class="btn btn-default" name="suche" value="Suche starten"/>

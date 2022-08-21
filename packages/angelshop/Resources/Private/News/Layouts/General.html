@@ -1,12 +1,12 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-	  data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
 
 <f:if condition="{settings.cssFile}">
-	<n:includeFile path="{settings.cssFile}" />
+    <n:includeFile path="{settings.cssFile}"/>
 </f:if>
 
 <div class="news">
-	<f:render section="content" />
+    <f:render section="content"/>
 </div>
 </html>

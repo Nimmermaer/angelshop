@@ -1,6 +1,6 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
 <f:layout name="General"/>
 <!--
 	=====================
@@ -13,24 +13,24 @@
         <f:then>
             <f:switch expression="{settings.templateLayout}">
                 <f:case value="2">
-                    <f:render section="newsImage"
-                              arguments="{_all}"/>
+                    <f:render arguments="{_all}"
+                              section="newsImage"/>
                 </f:case>
                 <f:case value="3">
                     <f:if condition="{settings.hidePagination}">
                         <f:then>
-                            <f:for each="{news}" as="newsItem" iteration="iterator">
-                                <f:render section="newsIcon"
-                                          arguments="{_all}"/>
+                            <f:for as="newsItem" each="{news}" iteration="iterator">
+                                <f:render arguments="{_all}"
+                                          section="newsIcon"/>
                             </f:for>
                         </f:then>
                         <f:else>
-                            <n:widget.paginate objects="{news}" as="paginatedNews"
-                                               configuration="{settings.list.paginate}"
-                                               initial="{offset:settings.offset,limit:settings.limit}">
-                                <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-                                    <f:render section="newsIcon"
-                                              arguments="{_all}"/>
+                            <n:widget.paginate as="paginatedNews" configuration="{settings.list.paginate}"
+                                               initial="{offset:settings.offset,limit:settings.limit}"
+                                               objects="{news}">
+                                <f:for as="newsItem" each="{paginatedNews}" iteration="iterator">
+                                    <f:render arguments="{_all}"
+                                              section="newsIcon"/>
                                 </f:for>
                             </n:widget.paginate>
                         </f:else>
@@ -38,34 +38,35 @@
 
                 </f:case>
                 <f:case value="6">
-                    <f:render section="newsWidget"
-                              arguments="{_all}"/>
+                    <f:render arguments="{_all}"
+                              section="newsWidget"/>
                 </f:case>
                 <f:case value="7">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4><i class="fa fa-fw fa-book"></i>{contentObjectData.header}</h4>
                         </div>
-                            <div class="list-group">
-                            <f:for each="{news}" as="newsItem" iteration="iterator">
-                                <n:link newsItem="{newsItem}" settings="{settings}" class="list-group-item" title="{newsItem.title}">
-                                        {newsItem.title}
+                        <div class="list-group">
+                            <f:for as="newsItem" each="{news}" iteration="iterator">
+                                <n:link class="list-group-item" newsItem="{newsItem}" settings="{settings}"
+                                        title="{newsItem.title}">
+                                    {newsItem.title}
                                 </n:link>
                             </f:for>
-                                <f:if condition="{settings.listPid}">
-                                    <f:link.page pageUid="{settings.listPid}" class="list-group-item default">
-                                        Alle Rezepte &raquo;
-                                    </f:link.page>
-                                </f:if>
+                            <f:if condition="{settings.listPid}">
+                                <f:link.page class="list-group-item default" pageUid="{settings.listPid}">
+                                    Alle Rezepte &raquo;
+                                </f:link.page>
+                            </f:if>
 
-                            </div>
                         </div>
+                    </div>
                 </f:case>
                 <f:case value="10">
-                      <div class="list-group">
-                        <f:for each="{news}" as="newsItem" iteration="iterator">
-                            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}"
-                                    class="list-group-item">
+                    <div class="list-group">
+                        <f:for as="newsItem" each="{news}" iteration="iterator">
+                            <n:link class="list-group-item" newsItem="{newsItem}" settings="{settings}"
+                                    title="{newsItem.title}">
                                 <div class="media-body">
                                     <h4 class="media-heading" itemprop="headline">{newsItem.title}</h4>
                                     {newsItem.teaser->f:format.raw()}
@@ -75,7 +76,7 @@
                     </div>
                 </f:case>
                 <f:defaultCase>
-                    <f:render section="newsDefault" arguments="{_all}"/>
+                    <f:render arguments="{_all}" section="newsDefault"/>
                 </f:defaultCase>
             </f:switch>
         </f:then>
@@ -96,18 +97,18 @@
     <div class="news-list-view">
         <f:if condition="{settings.hidePagination}">
             <f:then>
-                <f:for each="{news}" as="newsItem" iteration="iterator">
-                    <f:render partial="List/Item"
-                              arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                <f:for as="newsItem" each="{news}" iteration="iterator">
+                    <f:render arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"
+                              partial="List/Item"/>
                 </f:for>
             </f:then>
             <f:else>
-                <n:widget.paginate objects="{news}" as="paginatedNews"
-                                   configuration="{settings.list.paginate}"
-                                   initial="{offset:settings.offset,limit:settings.limit}">
-                    <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-                        <f:render partial="List/Item"
-                                  arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                <n:widget.paginate as="paginatedNews" configuration="{settings.list.paginate}"
+                                   initial="{offset:settings.offset,limit:settings.limit}"
+                                   objects="{news}">
+                    <f:for as="newsItem" each="{paginatedNews}" iteration="iterator">
+                        <f:render arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"
+                                  partial="List/Item"/>
                     </f:for>
                 </n:widget.paginate>
             </f:else>
@@ -136,17 +137,17 @@
                 <f:alias map="{mediaElement: '{newsItem.falMedia.0}'}">
 
                     <f:if condition="{mediaElement.originalResource.type} == 2">
-                        <f:image class="img-responsive img-hover" image="{mediaElement}"
-                                 title="{mediaElement.originalResource.title}"
-                                 alt="{mediaElement.originalResource.alternative}" width="600" height="300c"/>
+                        <f:image alt="{mediaElement.originalResource.alternative}" class="img-responsive img-hover"
+                                 height="300c"
+                                 image="{mediaElement}" title="{mediaElement.originalResource.title}" width="600"/>
                     </f:if>
                     <f:if condition="{mediaElement.originalResource.type} == 4">
-                        <f:render partial="Detail/FalMediaVideo" arguments="{mediaElement: mediaElement}"/>
+                        <f:render arguments="{mediaElement: mediaElement}" partial="Detail/FalMediaVideo"/>
                     </f:if>
                     <f:if condition="{mediaElement.originalResource.type} == 5">
-                        <f:image class="img-responsive img-hover" image="{mediaElement}"
-                                 title="{mediaElement.originalResource.title}"
-                                 alt="{mediaElement.originalResource.alternative}" width="600" height="300c"/>
+                        <f:image alt="{mediaElement.originalResource.alternative}" class="img-responsive img-hover"
+                                 height="300c"
+                                 image="{mediaElement}" title="{mediaElement.originalResource.title}" width="600"/>
                     </f:if>
                 </f:alias>
             </n:link>
@@ -158,7 +159,8 @@
                 </n:link>
             </h3>
             <f:if condition="{newsItem.author}">
-                <p>von <f:link.typolink parameter="{newsItem.authorEmail}" >{newsItem.author}</f:link.typolink>
+                <p>von
+                    <f:link.typolink parameter="{newsItem.authorEmail}">{newsItem.author}</f:link.typolink>
                 </p>
             </f:if>
 

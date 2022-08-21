@@ -1,4 +1,5 @@
-<f:be.widget.paginate objects="{products}" as="paginatedProducts" configuration="{insertAbove:'true',addQueryString:'1', addQueryStringMethod:'POST,GET'}" >
+<f:be.widget.paginate as="paginatedProducts" configuration="{insertAbove:'true',addQueryString:'1', addQueryStringMethod:'POST,GET'}"
+                      objects="{products}">
     <table class="table table-striped">
         <thead>
         <tr>
@@ -7,20 +8,20 @@
             <th>Titel</th>
             <th>Beschreibung</th>
             <th>Zusätzliche Beschreibung</th>
-            <th  style="text-align:right; ">Preis</th>
+            <th style="text-align:right; ">Preis</th>
             <th></th>
         </tr>
         </thead>
         <tbody>
-        <f:for each="{paginatedProducts}" as="product">
-           <tr class="{f:if(condition:'{product.hidden}',then:'danger')} {f:if(condition:'{product.stock}',then:'success',else:'warning')}" >
+        <f:for as="product" each="{paginatedProducts}">
+            <tr class="{f:if(condition:'{product.hidden}',then:'danger')} {f:if(condition:'{product.stock}',then:'success',else:'warning')}">
                 <th>{product.uid}</th>
                 <td>
-                    <f:for each="{product.image}" as="image" iteration="imageIterator">
+                    <f:for as="image" each="{product.image}" iteration="imageIterator">
                         <f:if condition="{imageIterator.isFirst}">
-                            <f:image src="{image.uid}" treatIdAsReference="1" maxWidth="50"/>
+                            <f:image maxWidth="50" src="{image.uid}" treatIdAsReference="1"/>
                         </f:if>
-                   </f:for>
+                    </f:for>
                 </td>
                 <td>{product.header}</td>
                 <td>
@@ -30,11 +31,11 @@
                     <f:format.raw>{product.additionalDescription->f:format.crop(maxCharacters:'50')}</f:format.raw>
                 </td>
                 <td style="width:150px; text-align:right; ">
-                   {product.price->f:format.currency(currencySign:'€',decimalSeparator:',' )}
+                    {product.price->f:format.currency(currencySign:'€',decimalSeparator:',' )}
                 </td>
                 <td>
                     <f:link.action action="edit" arguments="{product : '{product.uid}'}" class="">
-                        <button type="button" class="btn btn-primary">Bearbeiten</button>
+                        <button class="btn btn-primary" type="button">Bearbeiten</button>
                     </f:link.action>
                 </td>
             </tr>

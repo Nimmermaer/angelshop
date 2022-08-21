@@ -1,26 +1,26 @@
-<div id="Footer" >
-<footer class="container" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
- <meta itemprop="name" content="Zusätzliche Informationen für {f:uri.page(pageUid:data.uid, absolute:1)}"/>
-    <div class="row">
-        <div class="col-lg-4">
-            {columnFooterLeft->f:format.raw()}
+<div id="Footer">
+    <footer class="container" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
+        <meta content="Zusätzliche Informationen für {f:uri.page(pageUid:data.uid, absolute:1)}" itemprop="name"/>
+        <div class="row">
+            <div class="col-lg-4">
+                {columnFooterLeft->f:format.raw()}
+            </div>
+            <div class="col-lg-4">
+                {columnFooterMiddle->f:format.raw()}
+            </div>
+            <div class="col-lg-4">
+                {columnFooterRight->f:format.raw()}
+            </div>
         </div>
-        <div class="col-lg-4">
-            {columnFooterMiddle->f:format.raw()}
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="footer-nav">
+                    <li>
+                        <p>{copyright->f:format.raw()}</p>
+                    </li>
+                    <f:cObject typoscriptObjectPath="lib.footermenu"/>
+                </ul>
+            </div>
         </div>
-        <div class="col-lg-4">
-            {columnFooterRight->f:format.raw()}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <ul class="footer-nav">
-                <li>
-                    <p>{copyright->f:format.raw()}</p>
-                </li>
-                <f:cObject typoscriptObjectPath="lib.footermenu"/>
-            </ul>
-        </div>
-    </div>
-</footer>
+    </footer>
 </div>

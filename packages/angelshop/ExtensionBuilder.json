@@ -1,146 +1,146 @@
 {
-  "modules": [
-    {
-      "config": {
-        "position": [
-          175,
-          87
-        ]
-      },
-      "name": "New Model Object",
-      "value": {
-        "actionGroup": {
-          "_default0_list": true,
-          "_default1_show": true,
-          "_default2_new_create": false,
-          "_default3_edit_update": false,
-          "_default4_delete": false,
-          "customActions": []
-        },
-        "name": "Gallery",
-        "objectsettings": {
-          "addDeletedField": true,
-          "addHiddenField": true,
-          "addStarttimeEndtimeFields": true,
-          "aggregateRoot": true,
-          "categorizable": false,
-          "description": "",
-          "mapToTable": "",
-          "parentClass": "",
-          "sorting": false,
-          "type": "Entity",
-          "uid": "742639414139"
-        },
-        "propertyGroup": {
-          "properties": []
-        },
-        "relationGroup": {
-          "relations": []
-        }
-      }
-    },
-    {
-      "config": {
-        "position": [
-          534,
-          115
-        ]
-      },
-      "name": "New Model Object",
-      "value": {
-        "actionGroup": {
-          "_default0_list": true,
-          "_default1_show": true,
-          "_default2_new_create": false,
-          "_default3_edit_update": false,
-          "_default4_delete": false,
-          "customActions": []
-        },
-        "name": "Teaserrow",
-        "objectsettings": {
-          "addDeletedField": true,
-          "addHiddenField": true,
-          "addStarttimeEndtimeFields": true,
-          "aggregateRoot": true,
-          "categorizable": false,
-          "description": "",
-          "mapToTable": "",
-          "parentClass": "",
-          "sorting": false,
-          "type": "Entity",
-          "uid": "1431780607445"
-        },
-        "propertyGroup": {
-          "properties": []
-        },
-        "relationGroup": {
-          "relations": []
-        }
-      }
-    }
-  ],
-  "properties": {
-    "backendModules": [],
-    "description": "",
-    "emConf": {
-      "category": "plugin",
-      "custom_category": "Provider Extension",
-      "dependsOn": "typo3 => 7.6.0-7.6.99\n",
-      "disableLocalization": false,
-      "disableVersioning": false,
-      "skipGenerateDocumentationTemplate": false,
-      "sourceLanguage": "de",
-      "state": "alpha",
-      "targetVersion": "7.6.0-7.6.99",
-      "version": "0.0.1"
-    },
-    "extensionKey": "angelshop",
-    "name": "angelshop",
-    "originalExtensionKey": "",
-    "originalVendorName": "",
-    "persons": [
-      {
-        "company": "",
-        "email": "mi.blunck@gmail.com",
-        "name": "Michael Blunck",
-        "role": "Developer"
-      }
-    ],
-    "plugins": [
-      {
-        "actions": {
-          "controllerActionCombinations": "Gallery => list, show",
-          "noncacheableActions": "Gallery => list, show",
-          "switchableActions": ""
-        },
-        "key": "gallery",
-        "name": "Gallery"
-      },
-      {
-        "actions": {
-          "controllerActionCombinations": "TeaserRow => list",
-          "noncacheableActions": "TeaserRow => list",
-          "switchableActions": ""
-        },
-        "key": "teaserrow",
-        "name": "TeaserRow"
-      },
-      {
-        "actions": {
-          "controllerActionCombinations": "Video => show",
-          "noncacheableActions": "Video => show",
-          "switchableActions": ""
-        },
-        "key": "fullwidthvideo",
-        "name": "Video"
-      }
-    ],
-    "vendorName": "MB"
-  },
-  "wires": [],
-  "log": {
-    "last_modified": "2016-05-28 12:21",
-    "extension_builder_version": "7.6.0",
-    "be_user": " (1)"
-  }
+	"modules": [
+		{
+			"config": {
+				"position": [
+					175,
+					87
+				]
+			},
+			"name": "New Model Object",
+			"value": {
+				"actionGroup": {
+					"_default0_list": true,
+					"_default1_show": true,
+					"_default2_new_create": false,
+					"_default3_edit_update": false,
+					"_default4_delete": false,
+					"customActions": []
+				},
+				"name": "Gallery",
+				"objectsettings": {
+					"addDeletedField": true,
+					"addHiddenField": true,
+					"addStarttimeEndtimeFields": true,
+					"aggregateRoot": true,
+					"categorizable": false,
+					"description": "",
+					"mapToTable": "",
+					"parentClass": "",
+					"sorting": false,
+					"type": "Entity",
+					"uid": "742639414139"
+				},
+				"propertyGroup": {
+					"properties": []
+				},
+				"relationGroup": {
+					"relations": []
+				}
+			}
+		},
+		{
+			"config": {
+				"position": [
+					534,
+					115
+				]
+			},
+			"name": "New Model Object",
+			"value": {
+				"actionGroup": {
+					"_default0_list": true,
+					"_default1_show": true,
+					"_default2_new_create": false,
+					"_default3_edit_update": false,
+					"_default4_delete": false,
+					"customActions": []
+				},
+				"name": "Teaserrow",
+				"objectsettings": {
+					"addDeletedField": true,
+					"addHiddenField": true,
+					"addStarttimeEndtimeFields": true,
+					"aggregateRoot": true,
+					"categorizable": false,
+					"description": "",
+					"mapToTable": "",
+					"parentClass": "",
+					"sorting": false,
+					"type": "Entity",
+					"uid": "1431780607445"
+				},
+				"propertyGroup": {
+					"properties": []
+				},
+				"relationGroup": {
+					"relations": []
+				}
+			}
+		}
+	],
+	"properties": {
+		"backendModules": [],
+		"description": "",
+		"emConf": {
+			"category": "plugin",
+			"custom_category": "Provider Extension",
+			"dependsOn": "typo3 => 7.6.0-7.6.99\n",
+			"disableLocalization": false,
+			"disableVersioning": false,
+			"skipGenerateDocumentationTemplate": false,
+			"sourceLanguage": "de",
+			"state": "alpha",
+			"targetVersion": "7.6.0-7.6.99",
+			"version": "0.0.1"
+		},
+		"extensionKey": "angelshop",
+		"name": "angelshop",
+		"originalExtensionKey": "",
+		"originalVendorName": "",
+		"persons": [
+			{
+				"company": "",
+				"email": "mi.blunck@gmail.com",
+				"name": "Michael Blunck",
+				"role": "Developer"
+			}
+		],
+		"plugins": [
+			{
+				"actions": {
+					"controllerActionCombinations": "Gallery => list, show",
+					"noncacheableActions": "Gallery => list, show",
+					"switchableActions": ""
+				},
+				"key": "gallery",
+				"name": "Gallery"
+			},
+			{
+				"actions": {
+					"controllerActionCombinations": "TeaserRow => list",
+					"noncacheableActions": "TeaserRow => list",
+					"switchableActions": ""
+				},
+				"key": "teaserrow",
+				"name": "TeaserRow"
+			},
+			{
+				"actions": {
+					"controllerActionCombinations": "Video => show",
+					"noncacheableActions": "Video => show",
+					"switchableActions": ""
+				},
+				"key": "fullwidthvideo",
+				"name": "Video"
+			}
+		],
+		"vendorName": "MB"
+	},
+	"wires": [],
+	"log": {
+		"last_modified": "2016-05-28 12:21",
+		"extension_builder_version": "7.6.0",
+		"be_user": " (1)"
+	}
 }

@@ -1,7 +1,9 @@
 <?php
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 use MB\Angelshop\Hooks\AngelshopPreviewRenderer;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 29.07.2016 Michael <mi.blunck@gmail.com>

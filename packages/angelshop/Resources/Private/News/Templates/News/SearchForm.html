@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:layout name="General"/>
 <!--
 	=====================
@@ -9,14 +9,16 @@
     <f:switch expression="{settings.templateLayout}">
         <f:case value="5">
             <div class="well">
-               <f:if condition="{contentObjectData.header}">
+                <f:if condition="{contentObjectData.header}">
                     <h4>{contentObjectData.header}</h4>
                 </f:if>
-                <f:form object="{search}" name="search" pageUid="{settings.listPid}">
+                <f:form name="search" object="{search}" pageUid="{settings.listPid}">
                     <div class="input-group">
-                        <f:form.textfield id="news-subject" property="subject" class="form-control"/>
-                    <span class="input-group-btn">
-                         <f:form.submit value="{f:translate(key:'LLL:EXT:angelshop/Resources/Private/Language/locallang.xlf:search-start')}" class="btn btn-default">
+                        <f:form.textfield class="form-control" id="news-subject" property="subject"/>
+                        <span class="input-group-btn">
+                         <f:form.submit
+                             class="btn btn-default"
+                             value="{f:translate(key:'LLL:EXT:angelshop/Resources/Private/Language/locallang.xlf:search-start')}">
                              <i class="fa fa-search"></i>
                          </f:form.submit>
                    </span>
@@ -26,31 +28,33 @@
         </f:case>
         <f:defaultCase>
             <div class="news-search-form">
-                <f:form object="{search}" name="search" pageUid="{settings.listPid}">
+                <f:form name="search" object="{search}" pageUid="{settings.listPid}">
                     <fieldset>
                         <div class="form-group">
                             <label for="news-subject">
                                 <f:translate key="search-subject"/>
                             </label>
-                            <f:form.textfield id="news-subject" property="subject" class="form-control"/>
+                            <f:form.textfield class="form-control" id="news-subject" property="subject"/>
                         </div>
 
                         <div class="form-group">
                             <label for="news-minimumDate">
                                 <f:translate key="search-minimumDate"/>
                             </label>
-                            <f:form.textfield id="news-minimumDate" property="minimumDate" type="date"
-                                              class="form-control"/>
+                            <f:form.textfield class="form-control" id="news-minimumDate" property="minimumDate"
+                                              type="date"/>
                         </div>
 
                         <div class="form-group">
                             <label for="news-maximumDate">
                                 <f:translate key="search-maximumDate"/>
                             </label>
-                            <f:form.textfield id="news-maximumDate" property="maximumDate" type="date"
-                                              class="form-control"/>
+                            <f:form.textfield class="form-control" id="news-maximumDate" property="maximumDate"
+                                              type="date"/>
                         </div>
-                        <f:form.submit value="{f:translate(key:'LLL:EXT:angelshop/Resources/Private/Language/locallang.xlf:search-start')}" class="btn btn-default"/>
+                        <f:form.submit
+                            class="btn btn-default"
+                            value="{f:translate(key:'LLL:EXT:angelshop/Resources/Private/Language/locallang.xlf:search-start')}"/>
                     </fieldset>
                 </f:form>
             </div>

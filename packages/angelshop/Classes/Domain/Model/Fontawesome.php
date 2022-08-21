@@ -3,6 +3,7 @@
 namespace MB\Angelshop\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -20,6 +21,7 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 /**
  * Class Fontawesome
  * @package MB\Angelshop\Domain\Model

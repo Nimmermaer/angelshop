@@ -1,45 +1,44 @@
 <div itemscope itemtype="http://schema.org/WebSite">
-<meta itemprop="url" content="{f:uri.page(pageUid:homePagePid, absolute:1)}" />
-<f:form class="navbar-form navbar-left" pageUid="{searchPid}" method="post" id="tx_indexedsearch-header"
-	        absolute="0"
-	        action="search" 
-	        extensionName="IndexedSearch"
-	         pluginName="pi2" 
-	         controller="Search"
-	         additionalAttributes="{itemprop:'potentialAction', 
-	         itemscope:'', 
+    <meta content="{f:uri.page(pageUid:homePagePid, absolute:1)}" itemprop="url"/>
+    <f:form absolute="0" action="search" additionalAttributes="{itemprop:'potentialAction',
+	         itemscope:'',
 	         role:'search',
-	         itemtype:'http://schema.org/SearchAction'}"
-         >
-    <div class="hidden tx-indexedsearch-hidden-fields">
-        <f:form.hidden name="search[_sections]" value="0"/>
-        <f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_"/>
-        <f:form.hidden name="search[ext]" value="{searchParams.ext}"/>
-        <f:form.hidden name="search[searchType]" value="{searchParams.searchType}"/>
-        <f:form.hidden name="search[defaultOperand]" value="{searchParams.defaultOperand}"/>
-        <f:form.hidden name="search[mediaType]" value="{searchParams.mediaType}"/>
-        <f:form.hidden name="search[sortOrder]" value="{searchParams.sortOrder}"/>
-        <f:form.hidden name="search[group]" value="{searchParams.group}"/>
-        <f:form.hidden name="search[languageUid]" value="{searchParams.languageUid}"/>
-        <f:form.hidden name="search[desc]" value="{searchParams.desc}"/>
-        <f:form.hidden name="search[numberOfResults]" value="{searchParams.numberOfResults}"/>
-        <f:form.hidden name="search[extendedSearch]" value="{searchParams.extendedSearch}"/>
-    </div>
-      <meta itemprop="target"
-              content="{f:uri.page(pageUid:searchPid,absolute:1)}?L=0&amp;tx_indexedsearch_pi2%5Baction%5D=search&amp;tx_indexedsearch_pi2%5Bcontroller%5D=Search<![CDATA[{search_term_string}]]>">
-        <input itemprop="query-input" name="search_term_string" type="text" style="display: none;">
-    <div class="input-group">
-        <f:form.textfield name="search[sword]" value="" id="tx-indexedsearch-searchbox-sword"
-                          class="form-control"
-                          placeholder="{f:translate(key:'search_website',extensionName:'angelshop')}"/>
-        <span class="input-group-btn">
-            <f:form.button type="submit" class="btn btn-secondary"
-                           name="search[submitButton]" value="" id="tx-indexedsearch-searchbox-button-submit"><i
-                    class="fa fa-search"></i></f:form.button>
+	         itemtype:'http://schema.org/SearchAction'}" class="navbar-form navbar-left"
+            controller="Search"
+            extensionName="IndexedSearch"
+            id="tx_indexedsearch-header"
+            method="post"
+            pageUid="{searchPid}"
+            pluginName="pi2"
+    >
+        <div class="hidden tx-indexedsearch-hidden-fields">
+            <f:form.hidden name="search[_sections]" value="0"/>
+            <f:form.hidden id="tx_indexedsearch_freeIndexUid" name="search[_freeIndexUid]" value="_"/>
+            <f:form.hidden name="search[ext]" value="{searchParams.ext}"/>
+            <f:form.hidden name="search[searchType]" value="{searchParams.searchType}"/>
+            <f:form.hidden name="search[defaultOperand]" value="{searchParams.defaultOperand}"/>
+            <f:form.hidden name="search[mediaType]" value="{searchParams.mediaType}"/>
+            <f:form.hidden name="search[sortOrder]" value="{searchParams.sortOrder}"/>
+            <f:form.hidden name="search[group]" value="{searchParams.group}"/>
+            <f:form.hidden name="search[languageUid]" value="{searchParams.languageUid}"/>
+            <f:form.hidden name="search[desc]" value="{searchParams.desc}"/>
+            <f:form.hidden name="search[numberOfResults]" value="{searchParams.numberOfResults}"/>
+            <f:form.hidden name="search[extendedSearch]" value="{searchParams.extendedSearch}"/>
+        </div>
+        <meta content="{f:uri.page(pageUid:searchPid,absolute:1)}?L=0&amp;tx_indexedsearch_pi2%5Baction%5D=search&amp;tx_indexedsearch_pi2%5Bcontroller%5D=Search<![CDATA[{search_term_string}]]>"
+              itemprop="target">
+        <input itemprop="query-input" name="search_term_string" style="display: none;" type="text">
+        <div class="input-group">
+            <f:form.textfield class="form-control" id="tx-indexedsearch-searchbox-sword" name="search[sword]"
+                              placeholder="{f:translate(key:'search_website',extensionName:'angelshop')}"
+                              value=""/>
+            <span class="input-group-btn">
+            <f:form.button class="btn btn-secondary" id="tx-indexedsearch-searchbox-button-submit"
+                           name="search[submitButton]" type="submit" value=""><i
+                class="fa fa-search"></i></f:form.button>
             </span>
-    </div>
-</f:form>
+        </div>
+    </f:form>
 </div>
 
 
-      

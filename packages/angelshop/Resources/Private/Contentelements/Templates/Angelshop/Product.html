@@ -1,22 +1,22 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-<div itemscope itemtype="http://schema.org/Product" class="row">
-    <div id="c{data.uid}" class="col-md-8">
-        <div itemprop="name" class="hidden">{data.header}</div>
-        <div id="Carousel-{data.uid}" class="carousel slide" data-ride="carousel">
+<div class="row" itemscope itemtype="http://schema.org/Product">
+    <div class="col-md-8" id="c{data.uid}">
+        <div class="hidden" itemprop="name">{data.header}</div>
+        <div class="carousel slide" data-ride="carousel" id="Carousel-{data.uid}">
             <!-- Indicators -->
             <f:if condition="{files}">
                 <f:if condition="{files->f:count()}>1">
                     <ol class="carousel-indicators">
-                        <f:for each="{files}" as="image" iteration="imageIteration">
+                        <f:for as="image" each="{files}" iteration="imageIteration">
                             <f:if condition="{imageIteration.isFirst}">
                                 <f:then>
-                                    <li data-target="#Carousel-{data.uid}" data-slide-to="{imageIteration.index}"
-                                        class="active"></li>
+                                    <li class="active" data-slide-to="{imageIteration.index}"
+                                        data-target="#Carousel-{data.uid}"></li>
                                 </f:then>
                                 <f:else>
-                                    <li data-target="#Carousel-{data.uid}" data-slide-to="{imageIteration.index}"></li>
+                                    <li data-slide-to="{imageIteration.index}" data-target="#Carousel-{data.uid}"></li>
                                 </f:else>
                             </f:if>
 
@@ -26,11 +26,12 @@
                 <f:if condition="{files->f:count()}>1">
                     <f:then>
                         <div class="carousel-inner">
-                            <f:for each="{files}" as="image" iteration="imageIteration">
-                                <div class="{f:if(condition:'{imageIteration.isFirst}',then:'item active',else:'item')}">
-                                    <img itemprop="image" class=" img-responsive"
-                                         src="{f:uri.image(src:'{image.originalFile.publicUrl}',maxWidth:'750',maxHeight:'500c')}"
-                                         alt="{image.reference.alternative}"/>
+                            <f:for as="image" each="{files}" iteration="imageIteration">
+                                <div
+                                    class="{f:if(condition:'{imageIteration.isFirst}',then:'item active',else:'item')}">
+                                    <img alt="{image.reference.alternative}" class=" img-responsive"
+                                         itemprop="image"
+                                         src="{f:uri.image(src:'{image.originalFile.publicUrl}',maxWidth:'750',maxHeight:'500c')}"/>
 
                                     <div class="carousel-caption">
                                         {image.reference.title}
@@ -41,11 +42,11 @@
                     </f:then>
                     <f:else>
                         <div class="">
-                            <f:for each="{files}" as="image" iteration="imageIteration">
+                            <f:for as="image" each="{files}" iteration="imageIteration">
                                 <div>
-                                    <img itemprop="image"
-                                         src="{f:uri.image(src:'{image.originalFile.publicUrl}',maxWidth:'750',maxHeight:'500c')}"
-                                         alt="{image.reference.alternative}"/>
+                                    <img alt="{image.reference.alternative}"
+                                         itemprop="image"
+                                         src="{f:uri.image(src:'{image.originalFile.publicUrl}',maxWidth:'750',maxHeight:'500c')}"/>
 
                                     <div class="carousel-caption">
                                         {image.reference.title}
@@ -56,12 +57,12 @@
                     </f:else>
                 </f:if>
                 <!-- Controls -->
-                <f:for each="{files}" as="image" iteration="imageIteration">
+                <f:for as="image" each="{files}" iteration="imageIteration">
                     <f:if condition="{imageIteration.cycle}>1">
-                        <a class="left carousel-control" href="#Carousel-{data.uid}" data-slide="prev">
+                        <a class="left carousel-control" data-slide="prev" href="#Carousel-{data.uid}">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </a>
-                        <a class="right carousel-control" href="#Carousel-{data.uid}" data-slide="next">
+                        <a class="right carousel-control" data-slide="next" href="#Carousel-{data.uid}">
                             <span class="glyphicon glyphicon-chevron-right"></span>
                         </a>
                     </f:if>
@@ -71,14 +72,14 @@
     </div>
     <div class="col-md-4">
 
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="panel panel-primary">
+        <div class="panel panel-primary" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <div class="panel-heading">
-                <h3 id="Product-title" class="panel-title" itemprop="name" data-uid="{data.uid}">{data.header}</h3>
+                <h3 class="panel-title" data-uid="{data.uid}" id="Product-title" itemprop="name">{data.header}</h3>
             </div>
             <div class="panel-body  text-center">
-                <meta itemprop="priceCurrency" content="EUR"/>
-            <span class="price"><div itemprop="price"
-                                     content="{data.tx_abatemplate_product_price-> f:format.currency(thousandsSeparator: ',')}">
+                <meta content="EUR" itemprop="priceCurrency"/>
+                <span class="price"><div content="{data.tx_abatemplate_product_price-> f:format.currency(thousandsSeparator: ',')}"
+                                         itemprop="price">
                 {data.tx_abatemplate_product_price-> f:format.currency(thousandsSeparator: ',', currencySign: '€')}<br/>
             </div></span>
             </div>
@@ -86,7 +87,7 @@
                 <f:if condition="{data.tx_abatemplate_product_manufacturer_name}">
                     <li class="list-group-item">
                         <h3>Hersteller</h3>
-            <span itemprop="description">
+                        <span itemprop="description">
             {data.tx_abatemplate_product_manufacturer_name->f:format.html()}<br/>
             </span>
                     </li>
@@ -94,7 +95,7 @@
                 <f:if condition="{data.bodytext}">
                     <li class="list-group-item  text-center">
                         <h3>Produkt Details</h3>
-            <span itemprop="description">
+                        <span itemprop="description">
             {data.bodytext->f:format.html()}<br/>
             </span>
                     </li>
@@ -107,8 +108,8 @@
                 </f:if>
 
                 <li class="list-group-item">
-                    <f:link.page pageUid="12" class="btn btn-success" additionalParams="{order:'{data.header}'}"
-                                 noCacheHash="1">
+                    <f:link.page additionalParams="{order:'{data.header}'}" class="btn btn-success" noCacheHash="1"
+                                 pageUid="12">
                         Interesse am Produkt &raquo;
                     </f:link.page>
                 </li>

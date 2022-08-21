@@ -1,10 +1,10 @@
 {namespace mb=MB\Angelshop\ViewHelpers}
 <f:if condition="{data.ce_facebook_button}">
     <li class="social-share-item">
-        <f:link.external target="_blank" class="social-share-link"
+        <f:link.external class="social-share-link" target="_blank"
                          uri="{mb:social.facebook.share(text:'{data.title}')}">
             <span class="fa fa-facebook-square fa-2x"></span>
-            <span class="social-share-text"> <f:translate key="facebook_share" extensionName="angelshop"/></span>
+            <span class="social-share-text"> <f:translate extensionName="angelshop" key="facebook_share"/></span>
         </f:link.external>
     </li>
 </f:if>

@@ -1,15 +1,14 @@
 <tr>
-    <td align="center" valign="top"
-        style="mso-table-lspace:0pt; mso-table-rspace:0pt; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+    <td align="center" style="mso-table-lspace:0pt; mso-table-rspace:0pt; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;"
+        valign="top">
         <!-- BEGIN HEADER // -->
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader"
-               style="
+        <table border="0" cellpadding="0" cellspacing="0" id="templateHeader" style="
              background-color:#F4F4F4;
              border-top:1px solid #FFFFFF;
-             border-bottom:1px solid #CCCCCC; border-collapse:collapse !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+             border-bottom:1px solid #CCCCCC; border-collapse:collapse !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;"
+               width="100%">
             <tr>
-                <td valign="top" class="headerContent"
-                    style="
+                <td class="headerContent" style="
             color:#505050;
             font-family:Helvetica;
             font-size:20px;
@@ -20,13 +19,16 @@
             padding-bottom:0;
             padding-left:0;
             text-align: center;
-            vertical-align:middle;mso-table-lspace:0pt; mso-table-rspace:0pt; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
-                    <f:for each="{files}" as="image" iteration="imageIterator">
+            vertical-align:middle;mso-table-lspace:0pt; mso-table-rspace:0pt; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;"
+                    valign="top">
+                    <f:for as="image" each="{files}" iteration="imageIterator">
                         <f:if condition="{imageIterator.isFirst}">
-                            <img src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1', width:600, maxHeight:450)}" style="   height:auto;
-            max-width:600px; border:0; height:auto; line-height:100%; outline:none; text-decoration:none;-ms-interpolation-mode:bicubic; max-width:600px;"
-                                 id="headerImage" mc:label="header_image" mc:edit="header_image"
-                                 mc:allowdesigner mc:allowtext/>
+                            <img
+                                id="headerImage"
+                                mc:allowdesigner
+                                mc:allowtext mc:edit="header_image" mc:label="header_image"
+                                src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1', width:600, maxHeight:450)}" style="   height:auto;
+            max-width:600px; border:0; height:auto; line-height:100%; outline:none; text-decoration:none;-ms-interpolation-mode:bicubic; max-width:600px;"/>
                         </f:if>
 
                     </f:for>

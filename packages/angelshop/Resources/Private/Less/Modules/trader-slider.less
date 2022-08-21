@@ -1,18 +1,22 @@
 .trader-slider-outer {
-  margin: 20px 0px 20px 0px;
-  padding: 25px;
-  .slick-slide {
-    text-align: center;
-    img {
-      display: inline-block;
-    }
-  }
-  .slick-prev:before {
+    margin: 20px 0px 20px 0px;
+    padding: 25px;
 
-    color: orange;
-  }
-  .slick-next:before {
-    content: @slick-next-character;
-    color: orange;
-  }
+    .slick-slide {
+        text-align: center;
+
+        img {
+            display: inline-block;
+        }
+    }
+
+    .slick-prev:before {
+
+        color: orange;
+    }
+
+    .slick-next:before {
+        content: @slick-next-character;
+        color: orange;
+    }
 }

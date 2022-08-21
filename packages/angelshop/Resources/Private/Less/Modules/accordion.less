@@ -1,36 +1,40 @@
 
 .panel-group {
-  .panel-heading {
-    padding: 0;
-  }
-
-  a {
-    &.accordion-toggle {
-      display: block;
-      padding: 10px 15px;
+    .panel-heading {
+        padding: 0;
     }
-  }
+
+    a {
+        &.accordion-toggle {
+            display: block;
+            padding: 10px 15px;
+        }
+    }
 }
+
 .panel-group {
-  .panel-default {
-    &>.panel-heading:hover {
-      background-color: #fff;
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-  .panel-group a{
-      &:hover,
-      &.accordion-toggle:focus {
-      text-decoration:none;
+    .panel-default {
+        & > .panel-heading:hover {
+            background-color: #fff;
+
+            a {
+                text-decoration: none;
+            }
+        }
     }
 
-  }
-  .panel-title a{
-    &:hover,
-    &:focus {
-      text-decoration:none;
+    .panel-group a {
+        &:hover,
+        &.accordion-toggle:focus {
+            text-decoration: none;
+        }
+
     }
-  }
+
+    .panel-title a {
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
 }

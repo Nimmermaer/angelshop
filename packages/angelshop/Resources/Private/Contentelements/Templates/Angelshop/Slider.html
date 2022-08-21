@@ -1,10 +1,10 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
-<header id="AngelshopCarousel-{data.uid}" class="carousel">
-    <div id="c{data.uid}" class="full-width-slider">
-        <f:for each="{files}" as="file" iteration="fileIterator">
-            <div class="fill" title="{file.title}"
-                 style="background-image:url('{f:uri.image(src:'{file.uid}', treatIdAsReference:1,width:1900px)}');">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<header class="carousel" id="AngelshopCarousel-{data.uid}">
+    <div class="full-width-slider" id="c{data.uid}">
+        <f:for as="file" each="{files}" iteration="fileIterator">
+            <div class="fill" style="background-image:url('{f:uri.image(src:'{file.uid}', treatIdAsReference:1,width:1900px)}');"
+                 title="{file.title}">
             </div>
         </f:for>
     </div>

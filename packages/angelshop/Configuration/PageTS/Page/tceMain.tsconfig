@@ -1,4 +1,4 @@
 TCEMAIN.permissions {
-    group = 31
-    everybody = show
+  group = 31
+  everybody = show
 }

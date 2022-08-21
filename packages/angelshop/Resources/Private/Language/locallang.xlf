@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
-          product-name="angelshop">
-        <header/>
-        <body>
-            <trans-unit id="tx_angelshop_domain_model_gallery">
-                <source>Gallery</source>
-            </trans-unit>
-            <trans-unit id="tx_angelshop_domain_model_teaserrow">
-                <source>Teaserrow</source>
-            </trans-unit>
-            <trans-unit id="mlang_tabs_tab">
-                <source>Produktliste</source>
-            </trans-unit>
-            <trans-unit id="mlang_labels_tabdescr">
-                <source>Produktliste</source>
-            </trans-unit>
-            <trans-unit id="search-start">
-                <source>Rezeptsuche</source>
-            </trans-unit>
-            <trans-unit id="company_name">
-                <source>ABA-Angelshop</source>
-            </trans-unit>
-            <trans-unit id="dropdown_navigation">
-                <source>Aufklapp Navigation</source>
-            </trans-unit>
-            <trans-unit id="search_website">
-                <source>Webseite durchsuchen...</source>
-            </trans-unit>
-            <trans-unit id="what_you_search">
-                <source>Was suchen Sie?</source>
-            </trans-unit>
-            <trans-unit id="facebook_share">
-                <source>Auf Facebook teilen</source>
-            </trans-unit>
-            <trans-unit id="whatsapp_share">
-                <source>Auf Whatsapp teilen</source>
-            </trans-unit>
-            <trans-unit id="first_name">
-                <source>Vorname</source>
-            </trans-unit>
-            <trans-unit id="last_name">
-                <source>Nachname</source>
-            </trans-unit>
-            <trans-unit id="email">
-                <source>E-Mail</source>
-            </trans-unit>
-            <trans-unit id="phone">
-                <source>Telefon</source>
-            </trans-unit>
-            <trans-unit id="address">
-                <source>Adresse</source>
-            </trans-unit>
-            <trans-unit id="subscripe_here">
-                <source>hier</source>
-            </trans-unit>
-            <trans-unit id="subscripe_again">
-                <source>wieder anmelden.</source>
-            </trans-unit>
-            <trans-unit id="owner">
-                <source>Inhaber</source>
-            </trans-unit>
-            <trans-unit id="phone">
-                <source>Telefon</source>
-            </trans-unit>
-            <trans-unit id="mobile">
-                <source>Mobil</source>
-            </trans-unit>
-            <trans-unit id="email">
-                <source>E-Mail</source>
-            </trans-unit>
-            <trans-unit id="cognizance">
-                <source>Gerichtsbarkeit</source>
-            </trans-unit>
-            <trans-unit id="sales_tax_indicator">
-                <source>USt-IdNr.</source>
-            </trans-unit>
-            <trans-unit id="open_hours">
-                <source>Öffnungszeiten</source>
-            </trans-unit>
-            <trans-unit id="pages.alternative_title">
-                <source>Alternativer Titel</source>
-            </trans-unit>
-        </body>
-    </file>
+	<file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
+	product-name="angelshop">
+		<header />
+		<body>
+			<trans-unit id="tx_angelshop_domain_model_gallery">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_teaserrow">
+				<source>Teaserrow</source>
+			</trans-unit>
+			<trans-unit id="mlang_tabs_tab">
+				<source>Produktliste</source>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr">
+				<source>Produktliste</source>
+			</trans-unit>
+			<trans-unit id="search-start">
+				<source>Rezeptsuche</source>
+			</trans-unit>
+			<trans-unit id="company_name">
+				<source>ABA-Angelshop</source>
+			</trans-unit>
+			<trans-unit id="dropdown_navigation">
+				<source>Aufklapp Navigation</source>
+			</trans-unit>
+			<trans-unit id="search_website">
+				<source>Webseite durchsuchen...</source>
+			</trans-unit>
+			<trans-unit id="what_you_search">
+				<source>Was suchen Sie?</source>
+			</trans-unit>
+			<trans-unit id="facebook_share">
+				<source>Auf Facebook teilen</source>
+			</trans-unit>
+			<trans-unit id="whatsapp_share">
+				<source>Auf Whatsapp teilen</source>
+			</trans-unit>
+			<trans-unit id="first_name">
+				<source>Vorname</source>
+			</trans-unit>
+			<trans-unit id="last_name">
+				<source>Nachname</source>
+			</trans-unit>
+			<trans-unit id="email">
+				<source>E-Mail</source>
+			</trans-unit>
+			<trans-unit id="phone">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="address">
+				<source>Adresse</source>
+			</trans-unit>
+			<trans-unit id="subscripe_here">
+				<source>hier</source>
+			</trans-unit>
+			<trans-unit id="subscripe_again">
+				<source>wieder anmelden.</source>
+			</trans-unit>
+			<trans-unit id="owner">
+				<source>Inhaber</source>
+			</trans-unit>
+			<trans-unit id="phone">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="mobile">
+				<source>Mobil</source>
+			</trans-unit>
+			<trans-unit id="email">
+				<source>E-Mail</source>
+			</trans-unit>
+			<trans-unit id="cognizance">
+				<source>Gerichtsbarkeit</source>
+			</trans-unit>
+			<trans-unit id="sales_tax_indicator">
+				<source>USt-IdNr.</source>
+			</trans-unit>
+			<trans-unit id="open_hours">
+				<source>Öffnungszeiten</source>
+			</trans-unit>
+			<trans-unit id="pages.alternative_title">
+				<source>Alternativer Titel</source>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>

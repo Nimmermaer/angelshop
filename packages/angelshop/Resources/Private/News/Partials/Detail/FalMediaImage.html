@@ -1,49 +1,59 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-	  data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-<div  itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="mediaelement mediaelement-image">
-	<f:if condition="{mediaElement.link}">
-		<f:then>
-			<f:link.page pageUid="{mediaElement.link}" target="{n:targetLink(link:mediaElement.link)}">
-				<f:image additionalAttributes="{itemprop:'image'}" image="{mediaElement}" title="{mediaElement.title}" alt="{mediaElement.alternative}" maxWidth="{settings.detail.media.image.maxWidth}" maxHeight="{settings.detail.media.image.maxHeight}" />
-				<meta itemprop="url" content="{f:uri.image(image:mediaElement)}">
-				<meta itemprop="width" content="{settings.detail.media.image.maxWidth}">
-	    		<meta itemprop="height" content="{settings.detail.media.image.maxHeight}">
-			</f:link.page>
-		</f:then>
-		<f:else>
-			<f:if condition="{settings.detail.media.image.lightbox.enabled}">
-				<f:then>
-					<a href="{f:uri.image(image:mediaElement, width:'{settings.detail.media.image.lightbox.width}', height:'{settings.detail.media.image.lightbox.height}')}" title="{mediaElement.title}" class="{settings.detail.media.image.lightbox.class}" rel="{settings.detail.media.image.lightbox.rel}">
-						<f:image additionalAttributes="{itemprop:'image'}" image="{mediaElement}" title="{mediaElement.title}" alt="{mediaElement.alternative}" maxWidth="{settings.detail.media.image.maxWidth}" maxHeight="{settings.detail.media.image.maxHeight}" />
-						<meta itemprop="url" content="{f:uri.image(image:mediaElement)}">
-						<meta itemprop="width" content="{settings.detail.media.image.maxWidth}">
-			    		<meta itemprop="height" content="{settings.detail.media.image.maxHeight}">
-					</a>
-				</f:then>
-				<f:else>
-					<f:image additionalAttributes="{itemprop:'image'}" image="{mediaElement}" title="{mediaElement.title}" alt="{mediaElement.alternative}" maxWidth="{settings.detail.media.image.maxWidth}" maxHeight="{settings.detail.media.image.maxHeight}" />
-					<meta itemprop="url" content="{f:uri.image(image:mediaElement)}">
-					<meta itemprop="width" content="{settings.detail.media.image.maxWidth}">
-		    		<meta itemprop="height" content="{settings.detail.media.image.maxHeight}">
-				</f:else>
-			</f:if>
-		</f:else>
-	</f:if>
+<div class="mediaelement mediaelement-image" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <f:if condition="{mediaElement.link}">
+        <f:then>
+            <f:link.page pageUid="{mediaElement.link}" target="{n:targetLink(link:mediaElement.link)}">
+                <f:image additionalAttributes="{itemprop:'image'}" alt="{mediaElement.alternative}" image="{mediaElement}"
+                         maxHeight="{settings.detail.media.image.maxHeight}" maxWidth="{settings.detail.media.image.maxWidth}"
+                         title="{mediaElement.title}"/>
+                <meta content="{f:uri.image(image:mediaElement)}" itemprop="url">
+                <meta content="{settings.detail.media.image.maxWidth}" itemprop="width">
+                <meta content="{settings.detail.media.image.maxHeight}" itemprop="height">
+            </f:link.page>
+        </f:then>
+        <f:else>
+            <f:if condition="{settings.detail.media.image.lightbox.enabled}">
+                <f:then>
+                    <a class="{settings.detail.media.image.lightbox.class}"
+                       href="{f:uri.image(image:mediaElement, width:'{settings.detail.media.image.lightbox.width}', height:'{settings.detail.media.image.lightbox.height}')}" rel="{settings.detail.media.image.lightbox.rel}"
+                       title="{mediaElement.title}">
+                        <f:image additionalAttributes="{itemprop:'image'}" alt="{mediaElement.alternative}"
+                                 image="{mediaElement}" maxHeight="{settings.detail.media.image.maxHeight}"
+                                 maxWidth="{settings.detail.media.image.maxWidth}"
+                                 title="{mediaElement.title}"/>
+                        <meta content="{f:uri.image(image:mediaElement)}" itemprop="url">
+                        <meta content="{settings.detail.media.image.maxWidth}" itemprop="width">
+                        <meta content="{settings.detail.media.image.maxHeight}" itemprop="height">
+                    </a>
+                </f:then>
+                <f:else>
+                    <f:image additionalAttributes="{itemprop:'image'}" alt="{mediaElement.alternative}"
+                             image="{mediaElement}" maxHeight="{settings.detail.media.image.maxHeight}"
+                             maxWidth="{settings.detail.media.image.maxWidth}"
+                             title="{mediaElement.title}"/>
+                    <meta content="{f:uri.image(image:mediaElement)}" itemprop="url">
+                    <meta content="{settings.detail.media.image.maxWidth}" itemprop="width">
+                    <meta content="{settings.detail.media.image.maxHeight}" itemprop="height">
+                </f:else>
+            </f:if>
+        </f:else>
+    </f:if>
 </div>
 <f:if condition="{mediaElement.description}">
-	<p class="news-img-caption">
-		{mediaElement.description}
-	</p>
+    <p class="news-img-caption">
+        {mediaElement.description}
+    </p>
 </f:if>
 </html>
 
 <f:comment>
-<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-            <img itemprop="image" class="post_preview" alt="Article title" class="hide-for-small" src="http://example.co.uk/wp-content/uploads/2016/02/example-image.jpg" /> 
-            <meta itemprop="url" content="http://example.co.uk/wp-content/uploads/2016/02/example-image.jpg">
-            <meta itemprop="width" content="800">
-    		<meta itemprop="height" content="800">
-            </div>
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <img alt="Article title" class="post_preview" class="hide-for-small" itemprop="image"
+             src="http://example.co.uk/wp-content/uploads/2016/02/example-image.jpg"/>
+        <meta content="http://example.co.uk/wp-content/uploads/2016/02/example-image.jpg" itemprop="url">
+        <meta content="800" itemprop="width">
+        <meta content="800" itemprop="height">
+    </div>
 </f:comment>

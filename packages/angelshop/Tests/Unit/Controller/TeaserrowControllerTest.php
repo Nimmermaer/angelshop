@@ -2,8 +2,10 @@
 
 namespace MB\Angelshop\Tests\Unit\Controller;
 
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use MB\Angelshop\Controller\TeaserrowController;
 use MB\Angelshop\Domain\Model\Teaserrow;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -21,6 +23,7 @@ use MB\Angelshop\Domain\Model\Teaserrow;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 /**
  * Test case for class MB\Angelshop\Controller\TeaserrowController.
  * @author Michael Blunck <mi.blunck@gmail.com>
@@ -29,7 +32,7 @@ class TeaserrowControllerTest extends UnitTestCase
 {
 
     /**
-     * @var \MB\Angelshop\Controller\TeaserrowController
+     * @var TeaserrowController
      */
     protected $subject = null;
 

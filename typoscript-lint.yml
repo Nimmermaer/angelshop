@@ -1,5 +1,13 @@
 sniffs:
+  - class: DeadCode
+    disabled: false
   - class: Indentation
     parameters:
       useSpaces: false
       indentPerLevel: 1
+filePatterns:
+  - "*.typoscript"
+  - "*.tsconfig"
+paths:
+  - packages/angelshop/Configuration/PageTS/
+  - packages/angelshop/Configuration/TypoScript/

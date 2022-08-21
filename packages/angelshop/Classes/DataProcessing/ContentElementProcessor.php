@@ -26,7 +26,6 @@ use MB\Angelshop\Domain\Repository\TabRepository;
 use MB\Angelshop\Domain\Repository\TraderRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\Exception;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -66,7 +65,7 @@ class ContentElementProcessor implements DataProcessorInterface
                 ucwords(str_replace("_", " ", $contentObjectConfiguration['templateName'])));
         if (strpos($function, 'Angelshop/') !== false) {
             $function = str_replace('Angelshop/', '', $function);
-        };
+        }
 
         if (method_exists($this, $function)) {
 
@@ -75,7 +74,7 @@ class ContentElementProcessor implements DataProcessorInterface
             if (strpos($templateName, 'Angelshop/') !== false) {
 
                 $templateName = str_replace('Angelshop/', '', $templateName);
-            };
+            }
             $processedData[$templateName] = call_user_func(array(
                 $this,
                 $function,
@@ -94,6 +93,15 @@ class ContentElementProcessor implements DataProcessorInterface
     {
         $repository = self::getRepository(FontawesomeRepository::class);
         return $repository->findByRecord($processedData['data']['uid']);
+    }
+
+    /**
+     * @param string $repositoryName
+     * @return object
+     */
+    protected function getRepository(string $repositoryName): object
+    {
+        return GeneralUtility::makeInstance($repositoryName);
     }
 
     /**
@@ -118,13 +126,12 @@ class ContentElementProcessor implements DataProcessorInterface
         return $repository->findByRecord($processedData['data']['uid']);
     }
 
-
     /**
      * @param array $processedData
      * @return array
      * @throws Exception
      */
-    public function processForTabs(array $processedData):array
+    public function processForTabs(array $processedData): array
     {
         $repository = self::getRepository(TabRepository::class);
         return $repository->findByRecord($processedData['data']['uid']);
@@ -139,14 +146,5 @@ class ContentElementProcessor implements DataProcessorInterface
     {
         $repository = self::getRepository(ContentRepository::class);
         return $repository->findByContentType('ce_product');
-    }
-
-    /**
-     * @param string $repositoryName
-     * @return object
-     */
-    protected function getRepository(string $repositoryName): object
-    {
-        return GeneralUtility::makeInstance($repositoryName);
     }
 }

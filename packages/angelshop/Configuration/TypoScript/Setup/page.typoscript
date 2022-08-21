@@ -1,62 +1,69 @@
 page = PAGE
 page {
-    typeNum = 0
-    10 =< lib.templates.base
+  typeNum = 0
+  10 =< lib.templates.base
 
-    shortcutIcon = EXT:angelshop/Resources/Public/Icons/angelshop.ico
+  shortcutIcon = EXT:angelshop/Resources/Public/Icons/angelshop.ico
 
-    meta {
-        X-UA-Compatible = IE=edge
-        X-UA-Compatible.httpEquivalent = 1
+  meta {
+    X-UA-Compatible = IE=edge
+    X-UA-Compatible.httpEquivalent = 1
 
-        copyright.data = {$translate}companyName
+    copyright.data = {$translate}companyName
 
-        language = de,en
-        imagetoolbar = false
-        viewport = width=device-width, initial-scale=1
+    language = de,en
+    imagetoolbar = false
+    viewport = width=device-width, initial-scale=1
 
-        keywords {
-            data = page:keywords
-            ifEmpty.data = levelfield :-1, keywords, slide
-        }
-        author = Angelika Anna Sailer
-        author.override.field = author
-
-        abstract {
-            data = page:abstract
-            data = levelfield:-1, abstract, slide
-        }
-        date {
-            data = page:SYS_LASTCHANGED // page:crdate
-            date = Y-m-d
-        }
-        robots = INDEX,FOLLOW
-        viewport = width=device-width, initial-scale=1.0
+    keywords {
+      data = page:keywords
+      ifEmpty.data = levelfield :-1, keywords, slide
     }
-    # Body Tag Rendering
-    bodyTagCObject = COA
-    bodyTagCObject {
-        10 = TEXT
-        10 {
-            value = default
-            stdWrap.noTrimWrap = |language-| |
-        }
-        stdWrap {
-            trim = 1
-            dataWrap = <body class="|" data-languid="{TSFE:sys_language_uid}" itemscope itemtype="https://schema.org/WebPage">
-        }
+
+    author = Angelika Anna Sailer
+    author.override.field = author
+
+    abstract {
+      data = page:abstract
+      data = levelfield:-1, abstract, slide
     }
-    headTag = <head itemscope itemtype="http://schema.org/WebSite">
-    headerData {
-        10 = TEXT
-        10 {
-            field = title
-            noTrimWrap = |<title itemprop="name"> | &#124; Aba-Angelshop Laufen </title>|
-        }
-        11 = TEXT
-        11.value =                 <meta name="theme-color" content="#FFA500">
-        12 = TEXT
-        12.value (
+
+    date {
+      data = page:SYS_LASTCHANGED // page:crdate
+      date = Y-m-d
+    }
+
+    robots = INDEX,FOLLOW
+    viewport = width=device-width, initial-scale=1.0
+  }
+
+  # Body Tag Rendering
+  bodyTagCObject = COA
+  bodyTagCObject {
+    10 = TEXT
+    10 {
+      value = default
+      stdWrap.noTrimWrap = |language-| |
+    }
+
+    stdWrap {
+      trim = 1
+      dataWrap = <body class="|" data-languid="{TSFE:sys_language_uid}" itemscope itemtype="https://schema.org/WebPage">
+    }
+  }
+
+  headTag = <head itemscope itemtype="http://schema.org/WebSite">
+  headerData {
+    10 = TEXT
+    10 {
+      field = title
+      noTrimWrap = |<title itemprop="name"> | &#124; Aba-Angelshop Laufen </title>|
+    }
+
+    11 = TEXT
+    11.value = <meta name="theme-color" content="#FFA500">
+    12 = TEXT
+    12.value (
         <script type="application/ld+json">
               {
                 "@context": "http://schema.org",
@@ -79,36 +86,37 @@ page {
                  "description": "Angeln und Zubehör für Angler und Angelsport. Riesige Auswahl an Angelruten, Angelhaken, Angelrollen, Ködern, Blei und vieles mehr!"
               }
               </script>
-        )
-        3422423424 = TEXT
-        3422423424 {
-            value =             	<meta name="google-site-verification" content="AOQ3Y0Tr2YEGxArXS_0qu7T_LHJt5d0sv2KIWlhAZZ4" />
-        }
+    )
+    3422423424 = TEXT
+    3422423424 {
+      value = <meta name="google-site-verification" content="AOQ3Y0Tr2YEGxArXS_0qu7T_LHJt5d0sv2KIWlhAZZ4" />
     }
+  }
 }
 
 
+[(request.getQueryParams()['tx_news_pi1'])
 
-[(request.getQueryParams()['tx_news_pi1'])['news'] > 0 || (request.getParsedBody()['tx_news_pi1'])['news'] > 0]
+['news'] > 0 || (request.getParsedBody()['tx_news_pi1'])['news'] > 0]
 page.headerData {
-    10 = RECORDS
-    10 {
-        source = {GP:tx_news_pi1|news}
-        source.insertData = 1
-        tables = tx_news_domain_model_news
-        conf.tx_news_domain_model_news >
-        conf.tx_news_domain_model_news = TEXT
-        conf.tx_news_domain_model_news.field = title
-        wrap = <title  itemprop="name"> |&nbsp; &#124; Aba-Angelshop Laufen </title>
-    }
+10 = RECORDS
+10 {
+source = {GP:tx_news_pi1|news}
+source.insertData = 1
+tables = tx_news_domain_model_news
+conf.tx_news_domain_model_news >
+conf.tx_news_domain_model_news = TEXT
+conf.tx_news_domain_model_news.field = title
+wrap = <title  itemprop="name"> |&nbsp; &#124; Aba-Angelshop Laufen </title>
+}
 }
 [global]
 [getTSFE().id == 1]
 page.headerData {
-    10 = TEXT
-    10 {
-        field = title
-        noTrimWrap = |<title  itemprop="name"> | Laufen I'geh fisch'n</title>|
-    }
+10 = TEXT
+10 {
+field = title
+noTrimWrap = |<title  itemprop="name"> | Laufen I'geh fisch'n</title>|
+}
 }
 [global]

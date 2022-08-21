@@ -1,6 +1,6 @@
 <!-- categories -->
 <span class="news-list-category" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-	<f:for each="{categories}" as="category">
+	<f:for as="category" each="{categories}">
 		<f:if condition="{category.shortcut}">
 			<f:then>
 				<f:link.page pageUid="{category.shortcut}">

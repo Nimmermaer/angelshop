@@ -72,7 +72,7 @@ class Import
                 // echo 'Customer <br/>';
             } else {
                 echo " Error: " . $inputQuery . " <br /> " . mysqli_error($db2);
-            };
+            }
 
         }
 
@@ -93,7 +93,7 @@ class Import
                 } else {
                     echo "Error" . $queryPage . '<br />' . mysqli_error($db2);
 
-                };
+                }
 
                 $previewId = $db2->insert_id;
 
@@ -111,7 +111,7 @@ class Import
                     //  echo '$queryProducts <br />';
                 } else {
                     echo " Error: " . $queryProducts . " <br /> " . mysqli_error($db2);
-                };
+                }
 
                 $imageUID = $db2->insert_id;
 
@@ -126,7 +126,7 @@ class Import
                     echo '$queryImage <br />';
                 } else {
                     echo " Error: " . $queryImage . " <br /> " . mysqli_error($db2);
-                };
+                }
 
                 /**
                  * sys_file_refernece == pid = uid.tt_content

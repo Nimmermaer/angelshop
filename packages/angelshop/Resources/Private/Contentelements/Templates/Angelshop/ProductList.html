@@ -1,14 +1,15 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
-<f:widget.paginate objects="{ProductList}" as="products">
-    <f:for each="{products}" as="product">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:widget.paginate as="products" objects="{ProductList}">
+    <f:for as="product" each="{products}">
         <f:if condition="{product.stock} != 1">
-            <div id="c{data.uid}" class="row">
+            <div class="row" id="c{data.uid}">
                 <f:link.typolink parameter="{product.pid}">
                     <div class="col-md-4">
-                        <f:for each="{product.image}" as="item" iteration="imageIterator">
+                        <f:for as="item" each="{product.image}" iteration="imageIterator">
                             <f:if condition="{imageIterator.isFirst}">
-                                <img src="{f:uri.image(src:'{item.uid}', treatIdAsReference:1, maxWidth:150, maxHeight:150)}"/>
+                                <img
+                                    src="{f:uri.image(src:'{item.uid}', treatIdAsReference:1, maxWidth:150, maxHeight:150)}"/>
                             </f:if>
                         </f:for>
                     </div>

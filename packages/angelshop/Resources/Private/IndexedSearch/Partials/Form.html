@@ -1,9 +1,10 @@
 <div class="tx-indexedsearch-searchbox">
-    <f:form action="search" method="post" id="tx_indexedsearch" class="col-md-12 form-horizontal"  pageUid="{settings.targetPid}">
-           <div class="tx-indexedsearch-hidden-fields">
+    <f:form action="search" class="col-md-12 form-horizontal" id="tx_indexedsearch" method="post"
+            pageUid="{settings.targetPid}">
+        <div class="tx-indexedsearch-hidden-fields">
             <f:form.hidden name="search[_sections]" value="0"/>
-            <f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_"/>
-            <f:form.hidden name="search[pointer]" id="tx_indexedsearch_pointer" value="0"/>
+            <f:form.hidden id="tx_indexedsearch_freeIndexUid" name="search[_freeIndexUid]" value="_"/>
+            <f:form.hidden id="tx_indexedsearch_pointer" name="search[pointer]" value="0"/>
             <f:form.hidden name="search[ext]" value="{searchParams.ext}"/>
             <f:form.hidden name="search[searchType]" value="{searchParams.searchType}"/>
             <f:form.hidden name="search[defaultOperand]" value="{searchParams.defaultOperand}"/>
@@ -26,15 +27,15 @@
                     :</label>
 
                 <div class="col-sm-10">
-                    <f:form.textfield name="search[sword]" value="{sword}" id="tx-indexedsearch-searchbox-sword"
-                                      class="tx-indexedsearch-searchbox-sword form-control"/>
+                    <f:form.textfield class="tx-indexedsearch-searchbox-sword form-control" id="tx-indexedsearch-searchbox-sword" name="search[sword]"
+                                      value="{sword}"/>
                 </div>
             </div>
 
             <f:if condition="{showAdditionalKeywordSearch}">
                 <f:form.hidden name="search[sword_prev]" value="{previousSearchWord}"/>
-                <f:form.checkbox name="search[sword_prev_include]" id="tx_indexedsearch_sword_prev_include" value="1"
-                                 checked="{searchParams.sword_prev}"/>
+                <f:form.checkbox checked="{searchParams.sword_prev}" id="tx_indexedsearch_sword_prev_include" name="search[sword_prev_include]"
+                                 value="1"/>
                 <label for="tx_indexedsearch_sword_prev_include">
                     <f:translate key="form.addToSearch"/>
                     .</label>
@@ -48,17 +49,17 @@
 
                         <div class="row">
                             <f:if condition="{allSearchTypes}">
-                                <f:form.select name="search[searchType]" options="{allSearchTypes}"
-                                               value="{searchParams.searchType}"
-                                               id="tx-indexedsearch-selectbox-searchtype"
-                                               class="form-control tx-indexedsearch-selectbox-searchtype"/>
+                                <f:form.select class="form-control tx-indexedsearch-selectbox-searchtype" id="tx-indexedsearch-selectbox-searchtype"
+                                               name="search[searchType]"
+                                               options="{allSearchTypes}"
+                                               value="{searchParams.searchType}"/>
                             </f:if>
 
                             <f:if condition="{allDefaultOperands}">
-                                <f:form.select name="search[defaultOperand]" options="{allDefaultOperands}"
-                                               value="{searchParams.defaultOperand}"
-                                               id="tx-indexedsearch-selectbox-defaultoperand"
-                                               class="form-control tx-indexedsearch-selectbox-defaultoperand"/>
+                                <f:form.select class="form-control tx-indexedsearch-selectbox-defaultoperand" id="tx-indexedsearch-selectbox-defaultoperand"
+                                               name="search[defaultOperand]"
+                                               options="{allDefaultOperands}"
+                                               value="{searchParams.defaultOperand}"/>
                             </f:if>
                         </div>
                     </div>
@@ -72,15 +73,15 @@
 
                         <div class="row">
                             <f:if condition="{allMediaTypes}">
-                                <f:form.select name="search[mediaType]" options="{allMediaTypes}"
-                                               value="{searchParams.mediaType}" id="tx-indexedsearch-selectbox-media"
-                                               class=" form-control tx-indexedsearch-selectbox-media media"/>
+                                <f:form.select class=" form-control tx-indexedsearch-selectbox-media media" id="tx-indexedsearch-selectbox-media"
+                                               name="search[mediaType]" options="{allMediaTypes}"
+                                               value="{searchParams.mediaType}"/>
                             </f:if>
 
                             <f:if condition="{allLanguageUids}">
-                                <f:form.select name="search[languageUid]" options="{allLanguageUids}"
-                                               value="{searchParams.languageUid}" id="tx-indexedsearch-selectbox-lang"
-                                               class="form-control tx-indexedsearch-selectbox-lang lang"/>
+                                <f:form.select class="form-control tx-indexedsearch-selectbox-lang lang" id="tx-indexedsearch-selectbox-lang"
+                                               name="search[languageUid]" options="{allLanguageUids}"
+                                               value="{searchParams.languageUid}"/>
                             </f:if>
                         </div>
                     </div>
@@ -94,9 +95,9 @@
                             :</label>
 
                         <div class="row">
-                            <f:form.select name="search[sections]" options="{allSections}"
-                                           value="{searchParams.sections}" id="tx-indexedsearch-selectbox-sections"
-                                           class="form-control tx-indexedsearch-selectbox-sections"/>
+                            <f:form.select class="form-control tx-indexedsearch-selectbox-sections" id="tx-indexedsearch-selectbox-sections"
+                                           name="search[sections]" options="{allSections}"
+                                           value="{searchParams.sections}"/>
                         </div>
                     </div>
                 </f:if>
@@ -109,10 +110,10 @@
                             :</label>
 
                         <div class="row">
-                            <f:form.select name="search[freeIndexUid]" options="{allIndexConfigurations}"
-                                           value="{searchParams.freeIndexUid}"
-                                           id="tx-indexedsearch-selectbox-freeIndexUid"
-                                           class=" form-control tx-indexedsearch-selectbox-freeIndexUid"/>
+                            <f:form.select class=" form-control tx-indexedsearch-selectbox-freeIndexUid" id="tx-indexedsearch-selectbox-freeIndexUid"
+                                           name="search[freeIndexUid]"
+                                           options="{allIndexConfigurations}"
+                                           value="{searchParams.freeIndexUid}"/>
                         </div>
                     </div>
                 </f:if>
@@ -124,13 +125,13 @@
                             :</label>
 
                         <div class="row">
-                            <f:form.select name="search[sortOrder]" options="{allSortOrders}"
-                                           value="{searchParams.sortOrder}" id="tx-indexedsearch-selectbox-order"
-                                           class="form-control tx-indexedsearch-selectbox-order"/>
+                            <f:form.select class="form-control tx-indexedsearch-selectbox-order" id="tx-indexedsearch-selectbox-order"
+                                           name="search[sortOrder]" options="{allSortOrders}"
+                                           value="{searchParams.sortOrder}"/>
                             &nbsp;
-                            <f:form.select name="search[sortDesc]" options="{allSortDescendings}"
-                                           value="{searchParams.sortDesc}" id="tx-indexedsearch-selectbox-desc"
-                                           class=" form-control tx-indexedsearch-selectbox-desc"/>
+                            <f:form.select class=" form-control tx-indexedsearch-selectbox-desc" id="tx-indexedsearch-selectbox-desc"
+                                           name="search[sortDesc]" options="{allSortDescendings}"
+                                           value="{searchParams.sortDesc}"/>
                         </div>
                     </div>
                 </f:if>
@@ -143,10 +144,10 @@
                         </label>
 
                         <div class="row">
-                            <f:form.select name="search[numberOfResults]" options="{allNumberOfResults}"
-                                           value="{searchParams.numberOfResults}"
-                                           id="tx-indexedsearch-selectbox-results"
-                                           class="form-control tx-indexedsearch-selectbox-results"/>
+                            <f:form.select class="form-control tx-indexedsearch-selectbox-results" id="tx-indexedsearch-selectbox-results"
+                                           name="search[numberOfResults]"
+                                           options="{allNumberOfResults}"
+                                           value="{searchParams.numberOfResults}"/>
                         </div>
                     </div>
                 </f:if>
@@ -159,12 +160,12 @@
                             :</label>
 
                         <div class="row">
-                            <f:form.select name="search[group]" options="{allGroups}" value="{searchParams.group}"
-                                           id="tx-indexedsearch-selectbox-group"
-                                           class="form-control tx-indexedsearch-selectbox-group"/>
+                            <f:form.select class="form-control tx-indexedsearch-selectbox-group" id="tx-indexedsearch-selectbox-group" name="search[group]"
+                                           options="{allGroups}"
+                                           value="{searchParams.group}"/>
                             <f:if condition="{settings.blind.extResume} == 0">
-                                <f:form.checkbox name="search[extResume]" id="tx_indexedsearch_extResume"
-                                                 checked="{searchParams.extResume}" value="1"/>
+                                <f:form.checkbox checked="{searchParams.extResume}" id="tx_indexedsearch_extResume"
+                                                 name="search[extResume]" value="1"/>
                             </f:if>
                         </div>
                     </div>
@@ -194,9 +195,9 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <f:form.submit name="search[submitButton]" value="{f:translate(key: 'form.submit')}"
-                               id="tx-indexedsearch-searchbox-button-submit"
-                               class="tx-indexedsearch-searchbox-button btn btn-default"/>
+                <f:form.submit class="tx-indexedsearch-searchbox-button btn btn-default" id="tx-indexedsearch-searchbox-button-submit"
+                               name="search[submitButton]"
+                               value="{f:translate(key: 'form.submit')}"/>
             </div>
         </div>
 

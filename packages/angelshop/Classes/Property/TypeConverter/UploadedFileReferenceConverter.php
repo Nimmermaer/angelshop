@@ -29,6 +29,11 @@ use TYPO3\CMS\Extbase\Property\TypeConverter\AbstractTypeConverter;
 use TYPO3\CMS\Extbase\Security\Cryptography\HashService;
 use TYPO3\CMS\Extbase\Security\Exception\InvalidArgumentForHashGenerationException;
 use TYPO3\CMS\Extbase\Security\Exception\InvalidHashException;
+use const UPLOAD_ERR_FORM_SIZE;
+use const UPLOAD_ERR_INI_SIZE;
+use const UPLOAD_ERR_NO_FILE;
+use const UPLOAD_ERR_OK;
+use const UPLOAD_ERR_PARTIAL;
 
 /**
  * Class UploadedFileReferenceConverter
@@ -114,7 +119,7 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
         array $convertedChildProperties = [],
         PropertyMappingConfigurationInterface $configuration = null
     ) {
-        if (!isset($source['error']) || $source['error'] === \UPLOAD_ERR_NO_FILE) {
+        if (!isset($source['error']) || $source['error'] === UPLOAD_ERR_NO_FILE) {
             if (isset($source['submittedFile']['resourcePointer'])) {
                 try {
                     $resourcePointer = $this->hashService->validateAndStripHmac($source['submittedFile']['resourcePointer']);
@@ -131,11 +136,11 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
             }
             return null;
         }
-        if ($source['error'] !== \UPLOAD_ERR_OK) {
+        if ($source['error'] !== UPLOAD_ERR_OK) {
             switch ($source['error']) {
-                case \UPLOAD_ERR_INI_SIZE:
-                case \UPLOAD_ERR_FORM_SIZE:
-                case \UPLOAD_ERR_PARTIAL:
+                case UPLOAD_ERR_INI_SIZE:
+                case UPLOAD_ERR_FORM_SIZE:
+                case UPLOAD_ERR_PARTIAL:
                     return new Error('Error Code: ' . $source['error'], 1264440823);
                 default:
                     return new Error('An error occurred while uploading. Please try again or contact the administrator if the problem remains',
@@ -228,7 +233,7 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
                 'file:') === false
                 ? $this->hashService->validateAndStripHmac($uploadInfo['submittedFile']['resourcePointer'])
                 : null;
-        } catch (InvalidArgumentForHashGenerationException | InvalidHashException $e) {
+        } catch (InvalidArgumentForHashGenerationException|InvalidHashException $e) {
         }
         return $this->createFileReferenceFromFalFileObject($uploadedFile, $resourcePointer);
     }

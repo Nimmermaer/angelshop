@@ -1,10 +1,10 @@
-<f:form class="navbar-form navbar-left" pageUid="{searchPid}" method="post" id="tx_indexedsearch" noCacheHash="true"
-        absolute="0"
-        action="search" extensionName="IndexedSearch" pluginName="pi2" controller="Search">
+<f:form absolute="0" action="search" class="navbar-form navbar-left" controller="Search" extensionName="IndexedSearch"
+        id="tx_indexedsearch"
+        method="post" noCacheHash="true" pageUid="{searchPid}" pluginName="pi2">
     <div class="hidden tx-indexedsearch-hidden-fields">
         <f:form.hidden name="search[_sections]" value="0"/>
-        <f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_"/>
-        <f:form.hidden name="search[pointer]" id="tx_indexedsearch_pointer" value="0"/>
+        <f:form.hidden id="tx_indexedsearch_freeIndexUid" name="search[_freeIndexUid]" value="_"/>
+        <f:form.hidden id="tx_indexedsearch_pointer" name="search[pointer]" value="0"/>
         <f:form.hidden name="search[ext]" value="{searchParams.ext}"/>
         <f:form.hidden name="search[searchType]" value="{searchParams.searchType}"/>
         <f:form.hidden name="search[defaultOperand]" value="{searchParams.defaultOperand}"/>
@@ -17,13 +17,13 @@
         <f:form.hidden name="search[extendedSearch]" value="{searchParams.extendedSearch}"/>
     </div>
     <div class="input-group">
-        <f:form.textfield name="search[sword]" value="" id="tx-indexedsearch-searchbox-sword"
-                          class="form-control"
-                          placeholder="{f:translate(key:'search_website',extensionName:'angelshop')}"/>
+        <f:form.textfield class="form-control" id="tx-indexedsearch-searchbox-sword" name="search[sword]"
+                          placeholder="{f:translate(key:'search_website',extensionName:'angelshop')}"
+                          value=""/>
         <span class="input-group-btn">
-            <f:form.button type="submit" class="btn btn-secondary"
-                           name="search[submitButton]" value="" id="tx-indexedsearch-searchbox-button-submit"><i
-                    class="fa fa-search"></i></f:form.button>
+            <f:form.button class="btn btn-secondary" id="tx-indexedsearch-searchbox-button-submit"
+                           name="search[submitButton]" type="submit" value=""><i
+                class="fa fa-search"></i></f:form.button>
             </span>
     </div>
 </f:form>

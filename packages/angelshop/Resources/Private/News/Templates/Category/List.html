@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <f:layout name="General"/>
 <!--
@@ -12,12 +12,12 @@
             <f:switch expression="{settings.templateLayout}">
                 <f:case value="4">
 
-                    <f:render section="categoryTreeBootstrap"
-                              arguments="{categories:categories,overwriteDemand:overwriteDemand,data:contentObjectData}"/>
+                    <f:render arguments="{categories:categories,overwriteDemand:overwriteDemand,data:contentObjectData}"
+                              section="categoryTreeBootstrap"/>
                 </f:case>
                 <f:defaultCase>
-                    <f:render section="categoryTree"
-                              arguments="{categories:categories,overwriteDemand:overwriteDemand}"/>
+                    <f:render arguments="{categories:categories,overwriteDemand:overwriteDemand}"
+                              section="categoryTree"/>
                 </f:defaultCase>
             </f:switch>
 
@@ -31,26 +31,26 @@
 
 <f:section name="categoryTree">
     <ul class="list-unstyled">
-        <f:for each="{categories}" as="category">
+        <f:for as="category" each="{categories}">
             <li>
                 <f:if condition="{category.item.uid} == {overwriteDemand.categories}">
                     <f:then>
-                        <f:link.page title="{category.item.title}" class="active" pageUid="{settings.listPid}"
-                                     additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+                        <f:link.page additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}" class="active" pageUid="{settings.listPid}"
+                                     title="{category.item.title}">
                             {category.item.title}
                         </f:link.page>
                     </f:then>
                     <f:else>
-                        <f:link.page title="{category.item.title}" pageUid="{settings.listPid}"
-                                     additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+                        <f:link.page additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}" pageUid="{settings.listPid}"
+                                     title="{category.item.title}">
                             {category.item.title}
                         </f:link.page>
                     </f:else>
                 </f:if>
 
                 <f:if condition="{category.children}">
-                    <f:render section="categoryTree"
-                              arguments="{categories: category.children,overwriteDemand:overwriteDemand}"/>
+                    <f:render arguments="{categories: category.children,overwriteDemand:overwriteDemand}"
+                              section="categoryTree"/>
                 </f:if>
             </li>
         </f:for>
@@ -63,19 +63,19 @@
         <div class="row">
             <div class="col-lg-6">
                 <ul class="list-unstyled">
-                    <f:for each="{categories}" as="category">
+                    <f:for as="category" each="{categories}">
                         <li>
                             <f:if condition="{category.item.uid} == {overwriteDemand.categories}">
                                 <f:then>
-                                    <f:link.page title="{category.item.title}" class="active"
+                                    <f:link.page additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}" class="active"
                                                  pageUid="{settings.listPid}"
-                                                 additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+                                                 title="{category.item.title}">
                                         {category.item.title}
                                     </f:link.page>
                                 </f:then>
                                 <f:else>
-                                    <f:link.page title="{category.item.title}" pageUid="{settings.listPid}"
-                                                 additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+                                    <f:link.page additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}" pageUid="{settings.listPid}"
+                                                 title="{category.item.title}">
                                         {category.item.title}
                                     </f:link.page>
                                 </f:else>
@@ -84,10 +84,10 @@
                 </ul>
             </div>
             <div class="col-lg-6">
-                <f:for each="{categories}" as="category">
+                <f:for as="category" each="{categories}">
                     <f:if condition="{category.children}">
-                        <f:render section="categoryTree"
-                                  arguments="{categories: category.children,overwriteDemand:overwriteDemand}"/>
+                        <f:render arguments="{categories: category.children,overwriteDemand:overwriteDemand}"
+                                  section="categoryTree"/>
                     </f:if>
                 </f:for>
             </div>

@@ -9,6 +9,7 @@
 namespace MB\Angelshop\Domain\Model;
 
 use TYPO3\CMS\Core\Resource\ResourceInterface;
+
 /**
  * Class FileReference
  * @package MB\Angelshop\Domain\Model

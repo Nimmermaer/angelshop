@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
-          product-name="angelshop">
-        <header/>
-        <body>
-            <trans-unit id="tx_angelshop_domain_model_trader">
-                <source>Trader</source>
-            </trans-unit>
-            <trans-unit id="tx_angelshop_domain_model_gallery">
-                <source>Gallery</source>
-            </trans-unit>
-            <trans-unit id="tx_angelshop_domain_model_teaserrow">
-                <source>Teaserrow</source>
-            </trans-unit>
-            <trans-unit id="tx_sidebarList.title">
-                <source>Sidebarlist</source>
-            </trans-unit>
-            <trans-unit id="tx_angelshop_domain_model_fontawesome">
-                <source>Iconauswahl</source>
-            </trans-unit>
-            <trans-unit id="tx_angelshop_domain_model_tab">
-                <source>Tab</source>
-            </trans-unit>
-            <trans-unit id="tx_accordion.title">
-                <source>Accordion</source>
-            </trans-unit>
-            <trans-unit id="tx_table.title">
-                <source>Table</source>
-            </trans-unit>
-            <trans-unit id="tx_project.title">
-                <source>Project</source>
-            </trans-unit>
-            <trans-unit id="tx_impressum.title">
-                <source>Impressum</source>
-            </trans-unit>
-            <trans-unit id="tx_serviceList.title">
-                <source>ServiceList</source>
-            </trans-unit>
-            <trans-unit id="tx_tab.title">
-                <source>Tab</source>
-            </trans-unit>
-            <trans-unit id="tx_service.title">
-                <source>Service</source>
-            </trans-unit>
-            <trans-unit id="tx_callToAction.title">
-                <source>CallToAction</source>
-            </trans-unit>
-            <trans-unit id="tx_slider.title">
-                <source>Slider</source>
-            </trans-unit>
-            <trans-unit id="tx_teaser.title">
-                <source>Teaser</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_abatemplate_product_stock">
-                <source>Produkt nicht mehr auf Lager</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_abatemplate_product_price">
-                <source>Produkt Preis</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_abatemplate_product_manufacturer_name">
-                <source>Herstellername</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_abatemplate_product_old_price">
-                <source>Alter Preis</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_abatemplate_product_additional_description">
-                <source>Zusätzliche Beschreibung</source>
-            </trans-unit>
-            <trans-unit id="pages.ce_whatsapp_text">
-                <source>Text für Whatsappnachricht</source>
-            </trans-unit>
-            <trans-unit id="pages.ce_whatsapp_button">
-                <source>Anzeige von Whatsapp Button (nur mobil)</source>
-            </trans-unit>
-            <trans-unit id="pages.ce_facebook_button">
-                <source>Anzeige von Facebook Button</source>
-            </trans-unit>
-            <trans-unit id="pages.tx_angelshop_facebook_image">
-                <source>Facebook Bild</source>
-            </trans-unit>
-            <trans-unit id="news.tx_angelshop_news_recipe">
-                <source>Rezept</source>
-            </trans-unit>
-            <trans-unit id="news.tx_angelshop_news_ingredient">
-                <source>Zutaten</source>
-            </trans-unit>
-            <trans-unit id="news.tx_angelshop_news_icon">
-                <source>Symbol</source>
-            </trans-unit>
-            <trans-unit id="pages.ce_social_position">
-                <source>Postion des Social Links</source>
-            </trans-unit>
-        </body>
-    </file>
+	<file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
+	product-name="angelshop">
+		<header />
+		<body>
+			<trans-unit id="tx_angelshop_domain_model_trader">
+				<source>Trader</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_gallery">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_teaserrow">
+				<source>Teaserrow</source>
+			</trans-unit>
+			<trans-unit id="tx_sidebarList.title">
+				<source>Sidebarlist</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_fontawesome">
+				<source>Iconauswahl</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_tab">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="tx_accordion.title">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="tx_table.title">
+				<source>Table</source>
+			</trans-unit>
+			<trans-unit id="tx_project.title">
+				<source>Project</source>
+			</trans-unit>
+			<trans-unit id="tx_impressum.title">
+				<source>Impressum</source>
+			</trans-unit>
+			<trans-unit id="tx_serviceList.title">
+				<source>ServiceList</source>
+			</trans-unit>
+			<trans-unit id="tx_tab.title">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="tx_service.title">
+				<source>Service</source>
+			</trans-unit>
+			<trans-unit id="tx_callToAction.title">
+				<source>CallToAction</source>
+			</trans-unit>
+			<trans-unit id="tx_slider.title">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="tx_teaser.title">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_abatemplate_product_stock">
+				<source>Produkt nicht mehr auf Lager</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_abatemplate_product_price">
+				<source>Produkt Preis</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_abatemplate_product_manufacturer_name">
+				<source>Herstellername</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_abatemplate_product_old_price">
+				<source>Alter Preis</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_abatemplate_product_additional_description">
+				<source>Zusätzliche Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="pages.ce_whatsapp_text">
+				<source>Text für Whatsappnachricht</source>
+			</trans-unit>
+			<trans-unit id="pages.ce_whatsapp_button">
+				<source>Anzeige von Whatsapp Button (nur mobil)</source>
+			</trans-unit>
+			<trans-unit id="pages.ce_facebook_button">
+				<source>Anzeige von Facebook Button</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_angelshop_facebook_image">
+				<source>Facebook Bild</source>
+			</trans-unit>
+			<trans-unit id="news.tx_angelshop_news_recipe">
+				<source>Rezept</source>
+			</trans-unit>
+			<trans-unit id="news.tx_angelshop_news_ingredient">
+				<source>Zutaten</source>
+			</trans-unit>
+			<trans-unit id="news.tx_angelshop_news_icon">
+				<source>Symbol</source>
+			</trans-unit>
+			<trans-unit id="pages.ce_social_position">
+				<source>Postion des Social Links</source>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>

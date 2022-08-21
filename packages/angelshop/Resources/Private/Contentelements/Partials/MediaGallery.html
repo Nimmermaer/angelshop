@@ -1,16 +1,17 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <f:if condition="{gallery.rows}">
-    <div itemscope="itemscope" itemtype="https://schema.org/ImageObject" class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}"
-         data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+    <div class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-columns="{gallery.count.columns}"
+         data-ce-images="{gallery.count.files}"
+         itemscope="itemscope" itemtype="https://schema.org/ImageObject">
         <f:if condition="{gallery.position.horizontal} == 'center'">
             <div class="ce-outer">
                 <div class="ce-inner">
         </f:if>
-        <f:for each="{gallery.rows}" as="row">
+        <f:for as="row" each="{gallery.rows}">
             <div class="ce-row">
-                <f:for each="{row.columns}" as="column">
+                <f:for as="column" each="{row.columns}">
                     <f:if condition="{column.media}">
                         <div class="ce-column">
                             <f:if condition="{column.media.description}">
@@ -24,13 +25,13 @@
 
                             <f:switch expression="{column.media.type}">
                                 <f:case value="3">
-                                    <f:render section="audioType" arguments="{_all}"/>
+                                    <f:render arguments="{_all}" section="audioType"/>
                                 </f:case>
                                 <f:case value="4">
-                                    <f:render section="videoType" arguments="{_all}"/>
+                                    <f:render arguments="{_all}" section="videoType"/>
                                 </f:case>
                                 <f:defaultCase>
-                                    <f:render section="imageType" arguments="{_all}"/>
+                                    <f:render arguments="{_all}" section="imageType"/>
                                 </f:defaultCase>
                             </f:switch>
 
@@ -61,16 +62,16 @@
     <f:if condition="{column.media.link}">
         <f:then>
             <f:link.typolink parameter="{column.media.link}">
-                <f:render section="media" arguments="{column:'{column}', isImage: 1}"/>
+                <f:render arguments="{column:'{column}', isImage: 1}" section="media"/>
             </f:link.typolink>
         </f:then>
         <f:else>
             <f:if condition="{data.image_zoom}">
                 <f:then>
-                    <f:render section="popUpMedia" arguments="{_all}"/>
+                    <f:render arguments="{_all}" section="popUpMedia"/>
                 </f:then>
                 <f:else>
-                    <f:render section="media" arguments="{column: '{column}', isImage: 1}"/>
+                    <f:render arguments="{column: '{column}', isImage: 1}" section="media"/>
                 </f:else>
             </f:if>
         </f:else>
@@ -78,11 +79,11 @@
 </f:section>
 
 <f:section name="audioType">
-    <f:render section="media" arguments="{_all}"/>
+    <f:render arguments="{_all}" section="media"/>
 </f:section>
 
 <f:section name="videoType">
-    <f:render section="mediaVideo" arguments="{_all}"/>
+    <f:render arguments="{_all}" section="mediaVideo"/>
 </f:section>
 
 <f:section name="media">
@@ -90,51 +91,51 @@
     <f:if condition="{class}">
         <f:then>
             <f:media
-                    class="{class}"
-                    file="{column.media}"
-                    width="{column.dimensions.width}"
-                    height="{column.dimensions.height}"
-                    alt="{column.media.alternative}"
-                    title="{column.media.title}"
-                    additionalAttributes="{itemprop:'thumbnailUrl'}"
-                    />
+                additionalAttributes="{itemprop:'thumbnailUrl'}"
+                alt="{column.media.alternative}"
+                class="{class}"
+                file="{column.media}"
+                height="{column.dimensions.height}"
+                title="{column.media.title}"
+                width="{column.dimensions.width}"
+            />
         </f:then>
         <f:else>
             <f:media
-                    class="img-responsive"
-                    file="{column.media}"
-                    width="{column.dimensions.width}"
-                    height="{column.dimensions.height}"
-                    alt="{column.media.alternative}"
-                    title="{column.media.title}"
-                    additionalAttributes="{itemprop:'thumbnailUrl'}"
-                    />
+                additionalAttributes="{itemprop:'thumbnailUrl'}"
+                alt="{column.media.alternative}"
+                class="img-responsive"
+                file="{column.media}"
+                height="{column.dimensions.height}"
+                title="{column.media.title}"
+                width="{column.dimensions.width}"
+            />
         </f:else>
     </f:if>
 </f:section>
 
 <f:section name="popUpMedia">
-    <a href="{f:uri.image(src:'{column.media.uid}', treatIdAsReference:1)}" data-title='{column.media.title}'
-       data-lightbox="gallery-{data.uid}">
-        <f:media class="img-responsive img-hover"
+    <a data-lightbox="gallery-{data.uid}" data-title='{column.media.title}'
+       href="{f:uri.image(src:'{column.media.uid}', treatIdAsReference:1)}">
+        <f:media additionalAttributes="{itemprop:'thumbnailUrl'}"
+                 class="img-responsive img-hover"
                  file="{column.media}"
-                 additionalAttributes="{itemprop:'thumbnailUrl'}"
-                />
+        />
     </a>
 </f:section>
 
 <f:section name="mediaVideo">
     <div class="embed-responsive embed-responsive-16by9">
         <f:media
-                class="embed-responsive-item"
-                file="{column.media}"
-                width="{column.dimensions.width}"
-                height="{column.dimensions.height}"
-                alt="{column.media.alternative}"
-                title="{column.media.title}"
-                additionalAttributes="{itemprop:'thumbnailUrl'}"
-                />
+            additionalAttributes="{itemprop:'thumbnailUrl'}"
+            alt="{column.media.alternative}"
+            class="embed-responsive-item"
+            file="{column.media}"
+            height="{column.dimensions.height}"
+            title="{column.media.title}"
+            width="{column.dimensions.width}"
+        />
     </div>
- </f:section>
+</f:section>
 
 </html>

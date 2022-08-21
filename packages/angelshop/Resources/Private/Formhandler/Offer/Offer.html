@@ -1,12 +1,12 @@
 <!-- ###TEMPLATE_FORM1### begin -->
 <div class="row">
     <div class="col-md-8">
-        <form role="form" action="###REL_URL###" name="sentMessage" method="post" id="contactForm">
+        <form action="###REL_URL###" id="contactForm" method="post" name="sentMessage" role="form">
             <!-- ###IF_product###  -->
             <div class="control-group form-group">
                 <div class="controls">
                     <label>###LLL:mail_product###</label>
-                    <input type="text" class="form-control" name="formhandler[product]" id="mail_product"
+                    <input class="form-control" id="mail_product" name="formhandler[product]" type="text"
                            value="###value_product###"/>
                 </div>
             </div>
@@ -14,7 +14,7 @@
             <div class="control-group form-group">
                 <div class="controls">
                     <label>###LLL:mail_name###*</label>
-                    <input type="text" class="form-control" name="formhandler[mail_name]" id="mail_name"
+                    <input class="form-control" id="mail_name" name="formhandler[mail_name]" type="text"
                            value="###value_mail_name###"/>
                     ###error_mail_name###
 
@@ -23,31 +23,32 @@
             <div class="control-group form-group">
                 <div class="controls">
                     <label for="phone">###LLL:mail_phone###</label>
-                    <input type="text" class="form-control" name="formhandler[phone]" id="phone"
+                    <input class="form-control" id="phone" name="formhandler[phone]" type="text"
                            value="###value_phone###"
-                            />
+                    />
                 </div>
             </div>
             <div class="control-group form-group">
                 <div class="controls">
                     <label for="email">###LLL:mail_email###*</label>
-                    <input type="text" class="form-control" name="formhandler[email]" id="email"
+                    <input class="form-control" id="email" name="formhandler[email]" type="text"
                            value="###value_email###"
-                            />
+                    />
                     ###error_email###
                 </div>
             </div>
             <div class="control-group form-group">
                 <div class="controls">
                     <label for="text">###LLL:mail_text###</label>
-                <textarea name="formhandler[text]" rows="10" maxlength="999" cols="100" class="form-control" id="text"
-                        >###value_text###</textarea>
+                    <textarea class="form-control" cols="100" id="text" maxlength="999" name="formhandler[text]"
+                              rows="10"
+                    >###value_text###</textarea>
                 </div>
             </div>
             <div id="success"></div>
-            <input type="hidden" name="formhandler[formtime]" value="###TIMESTAMP###"/>
+            <input name="formhandler[formtime]" type="hidden" value="###TIMESTAMP###"/>
             <!-- For success/fail messages -->
-            <input class="btn btn-primary" type="submit" value="###LLL:page_submit###" ###submit_nextStep###/>
+            <input ###submit_nextStep### class="btn btn-primary" type="submit" value="###LLL:page_submit###"/>
         </form>
     </div>
 </div>

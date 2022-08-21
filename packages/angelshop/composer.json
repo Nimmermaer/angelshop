@@ -1,35 +1,35 @@
 {
-  "name": "mb/angelshop",
-  "type": "typo3-cms-extension",
-  "description": "provider extension",
-  "keywords": [
-    "TYPO3 CMS",
-    "Shop",
-    "Template"
-  ],
-  "license": [
-    "GPL-2.0+"
-  ],
-  "authors": [
-    {
-      "name": "Michael Blunck",
-      "email": "mi.blunck@gmail.com",
-      "role": "Developer"
-    }
-  ],
-  "require": {
-    "typo3/cms-core": "^11.5",
-    "georgringer/news": "^9.4"
-  },
-  "autoload": {
-    "psr-4": {
-      "MB\\Angelshop\\": "Classes"
-    }
-  },
-  "extra": {
-    "typo3/cms": {
-      "extension-key": "angelshop"
-    }
-  },
-  "version": "0.0.1"
+	"name": "mb/angelshop",
+	"type": "typo3-cms-extension",
+	"description": "provider extension",
+	"keywords": [
+		"TYPO3 CMS",
+		"Shop",
+		"Template"
+	],
+	"license": [
+		"GPL-2.0+"
+	],
+	"authors": [
+		{
+			"name": "Michael Blunck",
+			"email": "mi.blunck@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"typo3/cms-core": "^11.5",
+		"georgringer/news": "^9.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"MB\\Angelshop\\": "Classes"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "angelshop"
+		}
+	},
+	"version": "0.0.1"
 }

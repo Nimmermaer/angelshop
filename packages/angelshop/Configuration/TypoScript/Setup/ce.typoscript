@@ -1,166 +1,166 @@
 lib.contentElement {
-    templateName = Angelshop
-    templateRootPaths {
-        1 = EXT:angelshop/Resources/Private/Contentelements/Templates
-    }
+  templateName = Angelshop
+  templateRootPaths {
+    1 = EXT:angelshop/Resources/Private/Contentelements/Templates
+  }
 
-    partialRootPaths {
-        1 = EXT:angelshop/Resources/Private/Contentelements/Partials/
-    }
+  partialRootPaths {
+    1 = EXT:angelshop/Resources/Private/Contentelements/Partials/
+  }
 
-    layoutRootPaths {
-        1 = EXT:angelshop/Resources/Private/Contentelements/Layouts/
-    }
+  layoutRootPaths {
+    1 = EXT:angelshop/Resources/Private/Contentelements/Layouts/
+  }
 
-    settings {
-        defaultHeaderType = {$styles.content.defaultHeaderType}
-        offerPid = {$global.page.offerPid}
-        openweathermapApi = {$plugin.tx_angelshop.settings.openweathermapApi}
-    }
+  settings {
+    defaultHeaderType = {$styles.content.defaultHeaderType}
+    offerPid = {$global.page.offerPid}
+    openweathermapApi = {$plugin.tx_angelshop.settings.openweathermapApi}
+  }
 }
 
 tt_content {
-    tx_slider < lib.contentElement
-    tx_slider {
-        templateName = Angelshop/Slider
+  tx_slider < lib.contentElement
+  tx_slider {
+    templateName = Angelshop/Slider
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = image
+      }
+    }
+  }
+
+  header {
+    templateName = Angelshop/Header
+  }
+
+  tx_angelshop_menu < tt_content.menu_pages
+  tx_angelshop_menu {
+    templateName = Angelshop/Type-101.html
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        special = directory
+        special.value.field = pages
         dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
+
+          10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+          10 {
+            table = tt_content
+            pidInList.field = uid
+            where = CType LIKE "%ce_product%"
+            orderBy = sorting
+            as = content
+            dataProcessing {
+
+              10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+              10 {
                 references.fieldName = image
+                as = images
+              }
             }
+          }
         }
+      }
+    }
+  }
+
+  ce_product < lib.contentElement
+  ce_product {
+    templateName = Angelshop/Product
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = image
+      }
+    }
+  }
+
+  textmedia {
+    dataProcessing {
+      100 = MB\Angelshop\DataProcessing\ContentElementProcessor
+      100 {
+        references.fieldName = tx_angelshop_domain_model_fontawesome
+      }
+    }
+  }
+
+  tx_trader_slider < lib.contentElement
+  tx_trader_slider {
+    templateName = TraderSlider
+    dataProcessing {
+      100 = MB\Angelshop\DataProcessing\ContentElementProcessor
+      100 {
+        references.fieldName = tx_angelshop_domain_model_trader
+      }
+    }
+  }
+
+  tx_gallery < lib.contentElement
+  tx_gallery {
+    templateName = Angelshop/Gallery
+    dataProcessing {
+      100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      100 {
+        references.fieldName = image
+      }
+    }
+  }
+
+  tx_service < lib.contentElement
+  tx_service {
+    templateName = Angelshop/Service
+    dataProcessing {
+      10 = MB\Angelshop\DataProcessing\ContentElementProcessor
+      10 {
+        references.fieldName = assets
+      }
+    }
+  }
+
+  tx_tab < lib.contentElement
+  tx_tab {
+    templateName = Tabs
+    dataProcessing {
+      100 = MB\Angelshop\DataProcessing\ContentElementProcessor
+      100 {
+        references.fieldName = tx_angelshop_domain_model_tab
+      }
+    }
+  }
+
+  tx_impressum < lib.contentElement
+  tx_impressum {
+    templateName = Angelshop/Impressum
+    dataProcessing {
+      100 = MB\Angelshop\DataProcessing\ContentElementProcessor
+      100 {
+        references.fieldName = tx_angelshop_domain_model_fontawesome
+      }
     }
 
-    header {
-        templateName = Angelshop/Header
+    dataProcessing {
+      110 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      110 {
+        references.fieldName = image
+      }
     }
+  }
 
-    tx_angelshop_menu < tt_content.menu_pages
-    tx_angelshop_menu {
-        templateName = Angelshop/Type-101.html
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-            10 {
-                special = directory
-                special.value.field = pages
-                dataProcessing {
-
-                    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-                    10 {
-                        table = tt_content
-                        pidInList.field = uid
-                        where = CType LIKE "%ce_product%"
-                        orderBy = sorting
-                        as = content
-                        dataProcessing {
-
-                            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                            10 {
-                                references.fieldName = image
-                                as = images
-                            }
-                        }
-                    }
-                }
-            }
-        }
+  tx_project < lib.contentElement
+  tx_project {
+    templateName = Angelshop/Project
+    dataProcessing {
+      10 = MB\Angelshop\DataProcessing\ContentElementProcessor
+      10 {
+        references.fieldName = assets
+      }
     }
-
-    ce_product < lib.contentElement
-    ce_product {
-        templateName = Angelshop/Product
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
-                references.fieldName = image
-            }
-        }
-    }
-
-    textmedia {
-        dataProcessing {
-            100 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            100 {
-                references.fieldName = tx_angelshop_domain_model_fontawesome
-            }
-        }
-    }
-
-    tx_trader_slider < lib.contentElement
-    tx_trader_slider {
-        templateName = TraderSlider
-        dataProcessing {
-            100 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            100 {
-                references.fieldName = tx_angelshop_domain_model_trader
-            }
-        }
-    }
-
-    tx_gallery < lib.contentElement
-    tx_gallery {
-        templateName = Angelshop/Gallery
-        dataProcessing {
-            100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            100 {
-                references.fieldName = image
-            }
-        }
-    }
-
-    tx_service < lib.contentElement
-    tx_service {
-        templateName = Angelshop/Service
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
-            }
-        }
-    }
-
-    tx_tab < lib.contentElement
-    tx_tab {
-        templateName = Tabs
-        dataProcessing {
-            100 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            100 {
-                references.fieldName = tx_angelshop_domain_model_tab
-            }
-        }
-    }
-
-    tx_impressum < lib.contentElement
-    tx_impressum {
-        templateName = Angelshop/Impressum
-        dataProcessing {
-            100 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            100 {
-                references.fieldName = tx_angelshop_domain_model_fontawesome
-            }
-        }
-
-        dataProcessing {
-            110 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            110 {
-                references.fieldName = image
-            }
-        }
-    }
-
-    tx_project < lib.contentElement
-    tx_project {
-        templateName = Angelshop/Project
-        dataProcessing {
-            10 = MB\Angelshop\DataProcessing\ContentElementProcessor
-            10 {
-                references.fieldName = assets
-            }
-        }
-    }
+  }
 
 
-    tx_contact < lib.contentElement
-    tx_contact.templateName = Angelshop/Widget/Contact
+  tx_contact < lib.contentElement
+  tx_contact.templateName = Angelshop/Widget/Contact
 
 }

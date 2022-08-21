@@ -1,29 +1,33 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
-<div id="c{data.uid}"  class="row">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<div class="row" id="c{data.uid}">
     <div class="col-lg-12">
-        <f:render partial="Header/OnlyHeader"
-                  arguments="{layout:'{data.header_layout}', header:'{data.header}',link:'{data.header_link}'}"/>
+        <f:render arguments="{layout:'{data.header_layout}', header:'{data.header}',link:'{data.header_link}'}"
+                  partial="Header/OnlyHeader"/>
     </div>
     <f:if condition="{files->f:count()} == 1">
         <f:then>
-            <f:for each="{files}" as="image">
-                <div class="col-md-12" itemscope="itemscope" itemtype="https://schema.org/ImageObject" >
-                    <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1 )}" data-title='{image.title}'
-                       data-lightbox="image-{data.uid}">
+            <f:for as="image" each="{files}">
+                <div class="col-md-12" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+                    <a data-lightbox="image-{data.uid}" data-title='{image.title}'
+                       href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1 )}">
 
-                        <f:image image="{image}" width="750c" height="450" class="img-responsive img-portfolio img-hover" additionalAttributes="{itemprop:'thumbnailUrl'}" />
+                        <f:image additionalAttributes="{itemprop:'thumbnailUrl'}" class="img-responsive img-portfolio img-hover" height="450"
+                                 image="{image}"
+                                 width="750c"/>
 
                     </a>
                 </div>
             </f:for>
         </f:then>
         <f:else>
-            <f:for each="{files}" as="image">
-                <div class="col-md-4 col-sm-6" itemscope="itemscope" itemtype="https://schema.org/ImageObject" >
-                    <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1 )}" data-title='{image.title}'
-                       data-lightbox="gallery-{data.uid}">
-                        <f:image image="{image}" width="360" height="216c" class="img-responsive img-portfolio img-hover" additionalAttributes="{itemprop:'thumbnailUrl'}" />
+            <f:for as="image" each="{files}">
+                <div class="col-md-4 col-sm-6" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+                    <a data-lightbox="gallery-{data.uid}" data-title='{image.title}'
+                       href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1 )}">
+                        <f:image additionalAttributes="{itemprop:'thumbnailUrl'}" class="img-responsive img-portfolio img-hover" height="216c"
+                                 image="{image}"
+                                 width="360"/>
                     </a>
                 </div>
             </f:for>

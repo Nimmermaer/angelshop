@@ -1,100 +1,116 @@
 {namespace a=MB\Angelshop\ViewHelpers}
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <div id="c{data.uid}">
-<f:switch expression="{data.tx_angelshop_map_small}">
-    <f:case value="0">
-        <div class="row">
-            <div class="col-md-8">
-                <f:render section="Map" arguments="{_all}"/>
+    <f:switch expression="{data.tx_angelshop_map_small}">
+        <f:case value="0">
+            <div class="row">
+                <div class="col-md-8">
+                    <f:render arguments="{_all}" section="Map"/>
+                </div>
+                <div class="col-md-4">
+                    <f:render arguments="{_all}" section="Impressum"/>
+                </div>
             </div>
-            <div class="col-md-4">
-                <f:render section="Impressum" arguments="{_all}"/>
-            </div>
-        </div>
-    </f:case>
+        </f:case>
         <f:case value="1">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4><i class="fa fa-fw fa-compass"></i>Anfahrt</h4></div>
                 <div class="panel-body">
-            <f:render section="Map" arguments="{_all}"/>
-                    </div>
+                    <f:render arguments="{_all}" section="Map"/>
                 </div>
+            </div>
         </f:case>
         <f:case value="2">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4><i class="fa fa-fw fa-compass"></i>Impressum</h4></div>
                 <div class="panel-body">
-                    <f:render section="Impressum" arguments="{_all}"/>
+                    <f:render arguments="{_all}" section="Impressum"/>
                 </div>
             </div>
         </f:case>
         <f:case value="3">
-            <f:render section="Impressum" arguments="{_all}"/>
+            <f:render arguments="{_all}" section="Impressum"/>
         </f:case>
-</f:switch>
-    </div>
+    </f:switch>
+</div>
 </html>
 
 <f:section name="Map">
-<div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://maps.google.com/maps?q={a:map(name:'{data.header}', address:'{data.tx_angelshop_address}')}&h1=es;z=14&amp;output=embed"
-         >
-    </iframe>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item"
+                src="https://maps.google.com/maps?q={a:map(name:'{data.header}', address:'{data.tx_angelshop_address}')}&h1=es;z=14&amp;output=embed"
+        >
+        </iframe>
     </div>
 </f:section>
 <f:section name="Impressum">
-<h3>{data.header}</h3>
-   <address>
-        <f:for each="{files}" as="logo" iteration="imageIterator">
+    <h3>{data.header}</h3>
+    <address>
+        <f:for as="logo" each="{files}" iteration="imageIterator">
             <f:if condition="{imageIterator.isFirst}">
-                <img src="{f:uri.image(src:'{logo.uid}', treatIdAsReference:1, maxWidth:380, maxHeight:100c)}" alt="data.header"/>
+                <img alt="data.header"
+                     src="{f:uri.image(src:'{logo.uid}', treatIdAsReference:1, maxWidth:380, maxHeight:100c)}"/>
             </f:if>
         </f:for>
-        
+
         <p>
             {data.tx_angelshop_address->f:format.nl2br()}
         </p>
         <f:if condition="{data.tx_angelshop_owner}">
             <p><i class="fa  fa-user"></i>&nbsp;
-                <abbr title="{f:translate(key:'owner', extensionName:'angelshop')}"><f:translate key="owner" extensionName="angelshop"/></abbr>: {data.tx_angelshop_owner}
+                <abbr title="{f:translate(key:'owner', extensionName:'angelshop')}">
+                    <f:translate extensionName="angelshop" key="owner"/>
+                </abbr>: {data.tx_angelshop_owner}
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_phone}">
             <p><i class="fa fa-phone"></i>&nbsp;
-                <abbr title="{f:translate(key:'phone', extensionName:'angelshop')}"><f:translate key="phone" extensionName="angelshop"/></abbr>: <a
-                        href="tel:{data.tx_angelshop_phone->a:trim()}">{data.tx_angelshop_phone}</a>
+                <abbr title="{f:translate(key:'phone', extensionName:'angelshop')}">
+                    <f:translate extensionName="angelshop" key="phone"/>
+                </abbr>: <a
+                    href="tel:{data.tx_angelshop_phone->a:trim()}">{data.tx_angelshop_phone}</a>
             </p>
         </f:if>
         <f:if condition="{data.subheader}">
             <p><i class="fa fa-mobile"></i>&nbsp;
-                <abbr title="{f:translate(key:'mobile', extensionName:'angelshop')}"><f:translate key="mobile" extensionName="angelshop"/></abbr>: <a href="tel:{data.subheader->a:trim()}">{data.subheader}</a>
+                <abbr title="{f:translate(key:'mobile', extensionName:'angelshop')}">
+                    <f:translate extensionName="angelshop" key="mobile"/>
+                </abbr>: <a href="tel:{data.subheader->a:trim()}">{data.subheader}</a>
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_email}">
             <p><i class="fa fa-envelope-o"></i>&nbsp;
-                <abbr title="{f:translate(key:'email', extensionName:'angelshop')}"><f:translate key="email" extensionName="angelshop"/></abbr>:
-                <f:link.typolink parameter="{data.tx_angelshop_email}" />
+                <abbr title="{f:translate(key:'email', extensionName:'angelshop')}">
+                    <f:translate extensionName="angelshop" key="email"/>
+                </abbr>:
+                <f:link.typolink parameter="{data.tx_angelshop_email}"/>
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_cognizance}">
             <p><i class="fa fa-university"></i>&nbsp;
-                <abbr title="{f:translate(key:'cognizance', extensionName:'angelshop')}"><f:translate key="cognizance" extensionName="angelshop"/></abbr>: {data.tx_angelshop_cognizance }
+                <abbr title="{f:translate(key:'cognizance', extensionName:'angelshop')}">
+                    <f:translate extensionName="angelshop" key="cognizance"/>
+                </abbr>: {data.tx_angelshop_cognizance }
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_sales_tax_indicator}">
             <p><i class="fa fa-money"></i>&nbsp;
-                <abbr title="{f:translate(key:'sales_tax_indicator', extensionName:'angelshop')}"><f:translate key="sales_tax_indicator" extensionName="angelshop"/></abbr>: {data.tx_angelshop_sales_tax_indicator}
+                <abbr title="{f:translate(key:'sales_tax_indicator', extensionName:'angelshop')}">
+                    <f:translate extensionName="angelshop" key="sales_tax_indicator"/>
+                </abbr>: {data.tx_angelshop_sales_tax_indicator}
             </p>
         </f:if>
         <f:if condition="{data.tx_angelshop_opentime}">
             <p><i class="fa fa-clock-o"></i>&nbsp;
-                <abbr title="{f:translate(key:'open_hours', extensionName:'angelshop')}"><f:translate key="open_hours" extensionName="angelshop"/></abbr>:<br/>
+                <abbr title="{f:translate(key:'open_hours', extensionName:'angelshop')}">
+                    <f:translate extensionName="angelshop" key="open_hours"/>
+                </abbr>:<br/>
                 {data.tx_angelshop_opentime->f:format.nl2br()}
             </p>
         </f:if>
         <ul class="list-unstyled list-inline list-social-icons">
-            <f:for each="{Impressum}" as="item">
+            <f:for as="item" each="{Impressum}">
                 <li>
                     <f:link.typolink parameter="{item.link}" title="{item.title}">
                         <i class="fa {item.class} {item.movement} fa-2x"></i>

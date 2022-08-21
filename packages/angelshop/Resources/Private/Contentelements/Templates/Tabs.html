@@ -1,20 +1,20 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
-<f:render partial="Header/OnlyHeader"
-          arguments="{header:'{data.header}', link:'{data.header_link}',layout:'{data.header_layout}'}"/>
-<ul id="Tab-{data.uid}" class="nav nav-tabs nav-justified">
-    <f:for each="{Tabs}" as="tab" iteration="tabIterator">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:render arguments="{header:'{data.header}', link:'{data.header_link}',layout:'{data.header_layout}'}"
+          partial="Header/OnlyHeader"/>
+<ul class="nav nav-tabs nav-justified" id="Tab-{data.uid}">
+    <f:for as="tab" each="{Tabs}" iteration="tabIterator">
         <f:if condition="{tabIterator.isFirst}">
             <f:then>
                 <li class="active">
-                    <a href="#service-{tab.uid}" data-toggle="tab">
+                    <a data-toggle="tab" href="#service-{tab.uid}">
                         <i class="fa {tab.icon} {tab.movement}"></i> {tab.header}
                     </a>
                 </li>
             </f:then>
             <f:else>
                 <li>
-                    <a href="#service-{tab.uid}" data-toggle="tab">
+                    <a data-toggle="tab" href="#service-{tab.uid}">
                         <i class="fa {tab.icon} {tab.movement}"></i> {tab.header}
                     </a>
                 </li>
@@ -23,8 +23,8 @@
     </f:for>
 </ul>
 
-<div id="Tab-{data.uid}-content" class="tab-content">
-    <f:for each="{Tabs}" as="tab" iteration="tabContentIterator">
+<div class="tab-content" id="Tab-{data.uid}-content">
+    <f:for as="tab" each="{Tabs}" iteration="tabContentIterator">
         <f:if condition="{tabContentIterator.isFirst}">
             <f:then>
                 <div class="tab-pane fade active in" id="service-{tab.uid}">

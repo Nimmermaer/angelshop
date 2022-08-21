@@ -12,7 +12,7 @@
                 <tfoot class="setting-switcher">
                 <tr>
                     <td colspan="2">
-                        <a href="#" data-identifier="newscollapse-{id}">
+                        <a data-identifier="newscollapse-{id}" href="#">
                             <span class="down">{core:icon(identifier:'actions-move-down')}</span>
                             <span class="up">{core:icon(identifier:'actions-move-up')}</span>
                             Toggle settings
@@ -22,7 +22,7 @@
                 </tfoot>
             </f:if>
             <tbody>
-            <f:for each="{rows.above}" as="item">
+            <f:for as="item" each="{rows.above}">
                 <tr>
                     <th>{item.0 -> f:format.raw()}</th>
                     <td>{item.1 -> f:format.raw()}</td>
@@ -31,7 +31,7 @@
             </tbody>
             <f:if condition="{rows.below}">
                 <tbody class="hidden-settings hidden" id="newscollapse-{id}">
-                <f:for each="{rows.below}" as="item">
+                <f:for as="item" each="{rows.below}">
                     <tr>
                         <th>{item.0 -> f:format.raw()}</th>
                         <td>{item.1 -> f:format.raw()}</td>

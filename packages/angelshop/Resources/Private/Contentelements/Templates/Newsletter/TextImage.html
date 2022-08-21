@@ -1,14 +1,14 @@
 <tr style="border-collapse: collapse !important;">
     <td align="center" valign="top">
         <!-- BEGIN COLUMNS // -->
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns">
+        <table border="0" cellpadding="0" cellspacing="0" id="templateColumns" width="100%">
             <tbody>
             <tr mc:repeatable="">
-                <td align="center" valign="top" class="templateColumnContainer" style="padding-top:20px;    background-color: #F4F4F4;
+                <td align="center" class="templateColumnContainer" style="padding-top:20px;    background-color: #F4F4F4;
     border-top: 1px solid #FFFFFF;
-    border-bottom: 1px solid #CCCCCC;    border-collapse: collapse !important;">
-                    <table border="0" cellpadding="20" cellspacing="0" width="100%"
-                           style="border-collapse: collapse !important;">
+    border-bottom: 1px solid #CCCCCC;    border-collapse: collapse !important;" valign="top">
+                    <table border="0" cellpadding="20" cellspacing="0" style="border-collapse: collapse !important;"
+                           width="100%">
                         <tbody style="border-collapse: collapse !important;">
                         <tr>
                             <td style="color: #505050;
@@ -20,22 +20,23 @@
     padding-bottom: 20px;
     padding-left: 20px;
    text-align: center;">
-                                <f:for each="{files}" as="image" iteration="imageIterator">
+                                <f:for as="image" each="{files}" iteration="imageIterator">
                                     <f:if condition="{imageIterator.isFirst}">
-                                        <img src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1', width:600, maxHeight:450)}"
-                                             style="    max-width: 555px;;     display: inline;
+                                        <img
+                                            class="columnImage"
+                                            mc:edit="left_column_image" mc:label="left_column_image" src="{f:uri.image(src:'{image.uid}', absolute:'1', treatIdAsReference:'1', width:600, maxHeight:450)}"
+                                            style="    max-width: 555px;;     display: inline;
     height: auto;    border: 0;
     line-height: 100%;
     outline: none;
-    text-decoration: none;" class="columnImage" mc:label="left_column_image"
-                                             mc:edit="left_column_image">
+    text-decoration: none;">
                                     </f:if>
 
                                 </f:for>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top" class="leftColumnContent" mc:edit="left_column_content" style="    color: #505050;
+                            <td class="leftColumnContent" mc:edit="left_column_content" style="    color: #505050;
     font-family: Helvetica;
     font-size: 14px;
     line-height: 150%;
@@ -43,10 +44,10 @@
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
-    text-align: left;">
+    text-align: left;" valign="top">
 
                                 <f:switch expression="{data.tx_angelshop_salutation}">
-                                    <f:case value="1"> <h3 style="    color: #606060 !important;
+                                    <f:case value="1"><h3 style="    color: #606060 !important;
     display: block;
     font-family: Helvetica;
     font-size: 16px;
@@ -59,7 +60,7 @@
     margin-bottom: 10px;
     margin-left: 0;
     text-align: left;">Hallo ###USER_firstname###</h3></f:case>
-                                    <f:case value="2"> <h3 style="    color: #606060 !important;
+                                    <f:case value="2"><h3 style="    color: #606060 !important;
     display: block;
     font-family: Helvetica;
     font-size: 16px;
@@ -72,7 +73,7 @@
     margin-bottom: 10px;
     margin-left: 0;
     text-align: left;">Sehr geehrte/r Frau/Herr ###USER_lastname###</h3></f:case>
-                                    <f:defaultCase> <h3 style="    color: #606060 !important;
+                                    <f:defaultCase><h3 style="    color: #606060 !important;
     display: block;
     font-family: Helvetica;
     font-size: 16px;

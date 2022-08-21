@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T11:47:18Z" product-name="news">
-		<header/>
+		<header />
 		<body>
 			<trans-unit id="pi1_title" xml:space="preserve">
 				<source>News system</source>
@@ -239,8 +239,8 @@
 			</trans-unit>
 			<trans-unit id="extmng.categoryRestriction" xml:space="preserve">
 				<source>Category restriction: Restrict the available categories in news records. PageTsConfig:
-				TCEFORM.tx_news_domain_model_news.categories.PAGE_TSCONFIG_ID=120. This feature is currently under development and not beeing expected to work!
-			</source>
+TCEFORM.tx_news_domain_model_news.categories.PAGE_TSCONFIG_ID=120. This feature is currently under development and not beeing expected to work!
+				</source>
 			</trans-unit>
 			<trans-unit id="extmng.categoryRestriction.current_pid" xml:space="preserve">
 				<source>Categories from current page</source>
@@ -373,7 +373,7 @@
 			</trans-unit>
 			<trans-unit id="administration.newsPidListing.description" xml:space="preserve">
 				<source>Choose a recursive level to display your page tree with the related entries. Click on the page title to show the news entries of the page.
-			</source>
+				</source>
 			</trans-unit>
 			<trans-unit id="administration.nolimit" xml:space="preserve">
 				<source>No limit defined in setting &quot;%s&quot;! Include the default TypoScript in the root page.</source>

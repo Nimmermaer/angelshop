@@ -79,7 +79,7 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
                 $addContent .= '<p>' . substr($item->getText(), 0,
                         80) . '</p> <hr style="background-color:black; "  />';
                 $i++;
-            };
+            }
         }
         $addContent .= '<h3>Tab</h3>';
 

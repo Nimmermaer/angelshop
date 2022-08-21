@@ -1,8 +1,8 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <div class="list-group">
-    <f:for each="{sidebar}" as="item">
-        <f:link.page pageUid="{item.data.uid}" class="list-group-item">
+    <f:for as="item" each="{sidebar}">
+        <f:link.page class="list-group-item" pageUid="{item.data.uid}">
             {item.title}
         </f:link.page>
     </f:for>

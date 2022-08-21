@@ -1,5 +1,7 @@
 <?php
+
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 29.07.2016 Michael <mi.blunck@gmail.com>
@@ -28,7 +30,7 @@ call_user_func(
 
             'tx_abatemplate_product_stock' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_stock',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_stock',
                 'config' => [
                     'type' => 'check',
                     'default' => '0'
@@ -36,7 +38,7 @@ call_user_func(
             ],
             'tx_abatemplate_product_price' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_price',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_price',
                 'config' => [
                     'type' => 'input',
                     'size' => '20',
@@ -45,7 +47,7 @@ call_user_func(
             ],
             'tx_abatemplate_product_manufacturer_name' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_manufacturer_name',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_manufacturer_name',
                 'config' => [
                     'type' => 'input',
                     'size' => '40',
@@ -79,7 +81,7 @@ call_user_func(
             ],
             'tx_abatemplate_product_old_price' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_old_price',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_old_price',
                 'config' => [
                     'type' => 'input',
                     'size' => '20',
@@ -88,7 +90,7 @@ call_user_func(
             ],
             'tx_abatemplate_product_additional_description' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_additional_description',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:tt_content.tx_abatemplate_product_additional_description',
                 'config' => [
                     'type' => 'text',
                     'cols' => '40',
@@ -98,7 +100,7 @@ call_user_func(
             ],
             'tx_angelshop_cognizance' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_cognizance',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_cognizance',
                 'config' => [
                     'type' => 'input',
                     'size' => '30',
@@ -107,7 +109,7 @@ call_user_func(
             ],
             'tx_angelshop_owner' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_owner',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_owner',
                 'config' => [
                     'type' => 'input',
                     'size' => '30',
@@ -116,7 +118,7 @@ call_user_func(
             ],
             'tx_angelshop_sales_tax_indicator' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_sales_tax_indicator',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_sales_tax_indicator',
                 'config' => [
                     'type' => 'input',
                     'size' => '30',
@@ -125,7 +127,7 @@ call_user_func(
             ],
             'tx_angelshop_opentime' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_opentime',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_opentime',
                 'config' => [
                     'type' => 'text',
                     'row' => '5',
@@ -135,7 +137,7 @@ call_user_func(
             ],
             'tx_angelshop_address' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_address',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_address',
                 'config' => [
                     'type' => 'text',
                     'row' => '5',
@@ -145,7 +147,7 @@ call_user_func(
             ],
             'tx_angelshop_phone' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_phone',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_phone',
                 'config' => [
                     'type' => 'input',
                     'size' => '30',
@@ -154,7 +156,7 @@ call_user_func(
             ],
             'tx_angelshop_email' => [
                 'exclude' => 1,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_email',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_email',
                 'config' => [
                     'type' => 'input',
                     'renderType' => 'inputLink',
@@ -165,7 +167,7 @@ call_user_func(
             ],
             'tx_angelshop_title' => [
                 'exclude' => 0,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_title',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_title',
                 'config' => [
                     'type' => 'input',
                     'size' => '30',
@@ -174,7 +176,7 @@ call_user_func(
             ],
             'tx_angelshop_link' => [
                 'exclude' => 0,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_link',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_link',
                 'config' => [
                     'type' => 'input',
                     'renderType' => 'inputLink',
@@ -192,7 +194,7 @@ call_user_func(
                         'FIELD:CType:=:tx_impressum',
                     ],
                 ],
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_fontawesome',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_fontawesome',
                 'config' => [
                     'type' => 'inline',
                     'foreign_table' => 'tx_angelshop_domain_model_fontawesome',
@@ -201,7 +203,7 @@ call_user_func(
             ],
             'tx_angelshop_trader' => [
                 'exclude' => 0,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_trader',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_trader',
                 'config' => [
                     'type' => 'inline',
                     'foreign_table' => 'tx_angelshop_domain_model_trader',
@@ -210,7 +212,7 @@ call_user_func(
             ],
             'tx_angelshop_tab' => [
                 'exclude' => 0,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_tab',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_tab',
                 'config' => [
                     'type' => 'inline',
                     'foreign_table' => 'tx_angelshop_domain_model_tab',
@@ -219,25 +221,25 @@ call_user_func(
             ],
             'tx_angelshop_map_small' => [
                 'exclude' => 0,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.0',
+                            'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.0',
                             0
                         ],
                         [
-                            'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.1',
+                            'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.1',
                             1
                         ],
                         [
-                            'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.2',
+                            'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.2',
                             2
                         ],
                         [
-                            'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.3',
+                            'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_map_small.3',
                             3
                         ]
                     ],
@@ -270,7 +272,7 @@ call_user_func(
                         'FIELD:CType:=:tx_service',
                     ],
                 ],
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_class',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_class',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -279,19 +281,22 @@ call_user_func(
             ],
             'tx_angelshop_salutation' => [
                 'exclude' => 0,
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_salutation',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_salutation',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            'Eigene Überschrift', 0
+                            'Eigene Überschrift',
+                            0
                         ],
                         [
-                            'Hallo "Vorname"', 1
+                            'Hallo "Vorname"',
+                            1
                         ],
                         [
-                            'Sehr geehrte/r Frau/Herr', 2
+                            'Sehr geehrte/r Frau/Herr',
+                            2
                         ]
                     ]
                 ],
@@ -304,7 +309,7 @@ call_user_func(
                         'FIELD:CType:=:tx_service',
                     ],
                 ],
-                'label' => 'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_movement',
+                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tca.tt_content.tx_angelshop_movement',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -338,7 +343,7 @@ call_user_func(
                 $table,
                 'CType',
                 [
-                    'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:tx_' . $contentelement . '.title',
+                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:tx_' . $contentelement . '.title',
                     'tx_' . $contentelement,
                 ],
                 '',
@@ -349,7 +354,7 @@ call_user_func(
             $table,
             'CType',
             [
-                'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:ce_product.title',
+                'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:ce_product.title',
                 'ce_product',
             ],
             'textmedia',
@@ -359,7 +364,7 @@ call_user_func(
             $table,
             'CType',
             [
-                'LLL:EXT:'.$extensionKey.'/Resources/Private/Language/locallang_be.xlf:angelshop_product.title',
+                'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:angelshop_product.title',
                 'angelshop_product',
             ],
             'textmedia',

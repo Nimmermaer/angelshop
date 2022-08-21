@@ -1,25 +1,25 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
 <f:if condition="{data.seo_title}">
     <f:then>
-        <n:metaTag property="og:title" content="{data.seo_title}"/>
+        <n:metaTag content="{data.seo_title}" property="og:title"/>
     </f:then>
     <f:else>
-        <n:metaTag property="og:title" content="{data.header}"/>
+        <n:metaTag content="{data.header}" property="og:title"/>
     </f:else>
 </f:if>
-<n:metaTag property="og:type" content="{settings.opengraph.type}"/>
-<n:metaTag property="og:url" content="" useCurrentDomain="1"/>
-<n:metaTag property="og:site_name" content="{settings.opengraph.site_name}"/>
+<n:metaTag content="{settings.opengraph.type}" property="og:type"/>
+<n:metaTag content="" property="og:url" useCurrentDomain="1"/>
+<n:metaTag content="{settings.opengraph.site_name}" property="og:site_name"/>
 <f:if condition="{files}">
     <f:then>
-        <f:for each="{files}" as="image" iteration="imageIterator">
+        <f:for as="image" each="{files}" iteration="imageIterator">
             <f:if condition="{imageIterator.isFirst}">
                 <n:metaTag
-                        property="og:image"
-                        content="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, maxWidth:'500')}"
-                        forceAbsoluteUrl="1"/>
+                    content="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, maxWidth:'500')}"
+                    forceAbsoluteUrl="1"
+                    property="og:image"/>
             </f:if>
         </f:for>
     </f:then>
@@ -27,21 +27,21 @@
 
 <f:if condition="{data.description}">
     <f:then>
-        <n:metaTag name="description" content="{data.description}"/>
-        <n:metaTag property="og:description" content="{data.description}"/>
+        <n:metaTag content="{data.description}" name="description"/>
+        <n:metaTag content="{data.description}" property="og:description"/>
     </f:then>
     <f:else>
-        <n:metaTag name="description" content=""/>
-        <n:metaTag property="og:description" content="{data.abstract}"/>
+        <n:metaTag content="" name="description"/>
+        <n:metaTag content="{data.abstract}" property="og:description"/>
     </f:else>
 </f:if>
-<n:metaTag name="keywords" content="{data.keywords}"/>
-<n:metaTag property="fb:admins" content="{settings.opengraph.admins}"/>
-<n:metaTag property="og:email" content="{settings.opengraph.email}"/>
-<n:metaTag property="og:phone_number" content="{settings.opengraph.phone_number}"/>
-<n:metaTag property="og:street-address" content="{settings.opengraph.street-address}"/>
-<n:metaTag property="og:locality" content="{settings.opengraph.locality}"/>
-<n:metaTag property="og:region" content="{settings.opengraph.region}"/>
-<n:metaTag property="og:postal-code" content="{settings.opengraph.postal-code}"/>
-<n:metaTag property="og:country-name" content="{settings.opengraph.country-name}"/>
+<n:metaTag content="{data.keywords}" name="keywords"/>
+<n:metaTag content="{settings.opengraph.admins}" property="fb:admins"/>
+<n:metaTag content="{settings.opengraph.email}" property="og:email"/>
+<n:metaTag content="{settings.opengraph.phone_number}" property="og:phone_number"/>
+<n:metaTag content="{settings.opengraph.street-address}" property="og:street-address"/>
+<n:metaTag content="{settings.opengraph.locality}" property="og:locality"/>
+<n:metaTag content="{settings.opengraph.region}" property="og:region"/>
+<n:metaTag content="{settings.opengraph.postal-code}" property="og:postal-code"/>
+<n:metaTag content="{settings.opengraph.country-name}" property="og:country-name"/>
 </html>

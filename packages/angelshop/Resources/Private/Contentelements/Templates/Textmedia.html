@@ -1,37 +1,38 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <div id="c{data.uid}">
     <f:switch expression="{data.layout}">
         <f:case value="0">
 
             <f:if condition="{gallery.position.noWrap} != 1">
-                <f:render partial="Header/All" arguments="{_all}"/>
+                <f:render arguments="{_all}" partial="Header/All"/>
             </f:if>
 
-            <div class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
+            <div
+                class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
                 <f:if condition="{gallery.position.vertical} != 'below'">
-                    <f:render partial="MediaGallery" arguments="{_all}"/>
+                    <f:render arguments="{_all}" partial="MediaGallery"/>
                 </f:if>
 
                 <div class="ce-bodytext">
                     <f:if condition="{gallery.position.noWrap}">
-                        <f:render partial="Header/All" arguments="{_all}"/>
+                        <f:render arguments="{_all}" partial="Header/All"/>
                     </f:if>
                     <f:format.html>{data.bodytext}</f:format.html>
                 </div>
 
                 <f:if condition="{gallery.position.vertical} == 'below'">
-                    <f:render partial="MediaGallery" arguments="{_all}"/>
+                    <f:render arguments="{_all}" partial="MediaGallery"/>
                 </f:if>
             </div>
-            <f:render partial="Footer/All" arguments="{_all}"/>
+            <f:render arguments="{_all}" partial="Footer/All"/>
 
         </f:case>
         <!--Team Element -->
         <f:case value="1">
             <div class="thumbnail">
 
-                <f:render partial="MediaGallery" arguments="{gallery:'{gallery}', class:'img-responsive'}"/>
+                <f:render arguments="{gallery:'{gallery}', class:'img-responsive'}" partial="MediaGallery"/>
                 <div class="caption">
 
                     <f:if condition="{data.header}">
@@ -44,7 +45,7 @@
                     </f:if>
                     {data.bodytext->f:format.html()}
                     <ul class="list-inline">
-                        <f:for each="{Textmedia}" as="social">
+                        <f:for as="social" each="{Textmedia}">
                             <li>
                                 <f:link.typolink parameter="{social.link}">
                                     <i class="fa fa-2x {social.class} {social.movement}"></i>
@@ -60,27 +61,28 @@
             <div class="img-portfolio">
                 <f:if condition="{data.image_zoom}">
                     <f:then>
-                        <f:for each="{files}" as="image" iteration="ImageIterator">
+                        <f:for as="image" each="{files}" iteration="ImageIterator">
                             <f:if condition="{ImageIterator.isFirst}">
-                                <a href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1)}"
-                                   data-title='{column.media.title}' data-lightbox="gallery-{data.uid}">
+                                <a data-lightbox="gallery-{data.uid}"
+                                   data-title='{column.media.title}' href="{f:uri.image(src:'{image.uid}', treatIdAsReference:1)}">
                                     <f:media class="img-responsive img-hover"
                                              file="{image}"
-                                             width="295"
                                              height="170"
-                                            />
+                                             width="295"
+                                    />
                                 </a>
                             </f:if>
                         </f:for>
 
                     </f:then>
                     <f:else>
-                        <f:for each="{files}" as="image" iteration="ImageIterator">
+                        <f:for as="image" each="{files}" iteration="ImageIterator">
                             <f:if condition="{ImageIterator.isFirst}">
                                 <f:link.typolink parameter="{data.header_link}">
 
-                                    <img src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, width:'295', height:'170')}"
-                                         class="img-responsive {f:if(condition:'{data.header_link}',then:'img-hover')}"/>
+                                    <img
+                                        class="img-responsive {f:if(condition:'{data.header_link}',then:'img-hover')}"
+                                        src="{f:uri.image(src:'{image.uid}', treatIdAsReference:1, width:'295', height:'170')}"/>
 
                                 </f:link.typolink>
                             </f:if>
@@ -103,7 +105,8 @@
                     </div>
                     <div class="col-md-4">
                         <f:link.typolink
-                                parameter="{data.header_link}" class="btn btn-lg call-to-action-{data.uid} btn-default btn-block" >
+                            class="btn btn-lg call-to-action-{data.uid} btn-default btn-block"
+                            parameter="{data.header_link}">
                             {data.header}
                         </f:link.typolink>
                     </div>
@@ -114,16 +117,17 @@
         <f:case value="4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4><i class="fa fa-fw {data.tx_angelshop_class} {data.tx_angelshop_movement} "></i>{data.header}</h4>
+                    <h4><i class="fa fa-fw {data.tx_angelshop_class} {data.tx_angelshop_movement} "></i>{data.header}
+                    </h4>
                 </div>
                 <div class="panel-body">
                     <f:if condition="{data.assets}">
                         <f:then>
-                            <f:render partial="MediaGallery" arguments="{_all}" />
+                            <f:render arguments="{_all}" partial="MediaGallery"/>
                         </f:then>
                         <f:else>
                             {data.bodytext->f:format.html()}
-                            <f:link.typolink parameter="{data.header_link}" class="btn btn-default">
+                            <f:link.typolink class="btn btn-default" parameter="{data.header_link}">
                                 {data.rowDescription->f:format.nl2br()}
                             </f:link.typolink>
                         </f:else>

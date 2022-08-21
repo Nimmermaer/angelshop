@@ -32,7 +32,6 @@ class BackendController
     protected ?FileRepository $fileRepository = null;
 
 
-
     /**
      * @param PageRepository $pageRepository
      */

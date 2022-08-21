@@ -1,201 +1,227 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-	  data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-<f:layout name="Backend/Default" />
+<f:layout name="Backend/Default"/>
 
 <f:section name="categoryTree">
-	<ul class="{class}">
-		<f:for each="{categories}" as="category">
-			<li>
-				<label>
-					<input type="checkbox" {n:be.isCheckboxActive(id:category.item.uid,categories:demand.selectedCategories)} name="tx_news_web_newstxnewsm2[demand][selectedCategories][]" value="{category.item.uid}" /> {category.item.title}
-				</label>
+    <ul class="{class}">
+        <f:for as="category" each="{categories}">
+            <li>
+                <label>
+                    <input name="tx_news_web_newstxnewsm2[demand][selectedCategories][]"
+                           type="checkbox"
+                           value="{category.item.uid}" {n:be.isCheckboxActive(id:category.item.uid,categories:demand.selectedCategories)}/>
+                    {category.item.title}
+                </label>
 
-				<f:if condition="{category.children}">
-					<f:render section="categoryTree" arguments="{categories: category.children, demand:demand}" />
-				</f:if>
-			</li>
-		</f:for>
-	</ul>
+                <f:if condition="{category.children}">
+                    <f:render arguments="{categories: category.children, demand:demand}" section="categoryTree"/>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
 </f:section>
 
 <f:section name="content">
-	<h1>
-		<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.title" />
-	</h1>
-	<f:if condition="{page} == 0">
-		<div class="alert alert-info">
-			<div class="message-body">
-				<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.nopageselected" />
-			</div>
-		</div>
-	</f:if>
-	<f:if condition="{showSearchForm}">
-		<f:form name="demand" object="{demand}" method="get">
-			<input type="hidden" name="M" value="web_NewsTxNewsM2">
-			<input type="hidden" name="moduleToken" value="{moduleToken}">
-			<input type="hidden" name="id" value="{page}">
-			<f:form.checkbox style="display:none" property="selectedCategories" value="0" />
+    <h1>
+        <f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.title"/>
+    </h1>
+    <f:if condition="{page} == 0">
+        <div class="alert alert-info">
+            <div class="message-body">
+                <f:translate
+                    key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.nopageselected"/>
+            </div>
+        </div>
+    </f:if>
+    <f:if condition="{showSearchForm}">
+        <f:form method="get" name="demand" object="{demand}">
+            <input name="M" type="hidden" value="web_NewsTxNewsM2">
+            <input name="moduleToken" type="hidden" value="{moduleToken}">
+            <input name="id" type="hidden" value="{page}">
+            <f:form.checkbox property="selectedCategories" style="display:none" value="0"/>
 
-			<a id="toggle-settings"><i class="fa fa-minus"></i> {f:translate(key:'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.toggleForm')}</a>
+            <a id="toggle-settings"><i class="fa fa-minus"></i>
+                {f:translate(key:'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.toggleForm')}</a>
 
-			<div id="setting-container" style="{f:if(condition:hideForm,then:'display:none',else:'')}">
-				<h2>
-					<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.headline" />
-				</h2>
-				<div class="settings">
-					<div class="row">
-						<div class="col-sm-4 form-horizontal">
-							<div class="form-group">
-								<label for="searchWord" class="col-sm-4 control-label">
-									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.searchWord" />
-								</label>
+            <div id="setting-container" style="{f:if(condition:hideForm,then:'display:none',else:'')}">
+                <h2>
+                    <f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.headline"/>
+                </h2>
+                <div class="settings">
+                    <div class="row">
+                        <div class="col-sm-4 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label" for="searchWord">
+                                    <f:translate
+                                        key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.searchWord"/>
+                                </label>
 
-								<div class="col-sm-8">
-									<f:form.textfield property="searchWord" id="searchWord" class="form-control" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="recursive" class="col-sm-4 control-label">
-									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.recursive" />
-								</label>
+                                <div class="col-sm-8">
+                                    <f:form.textfield class="form-control" id="searchWord" property="searchWord"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label" for="recursive">
+                                    <f:translate
+                                        key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.recursive"/>
+                                </label>
 
-								<div class="col-sm-8">
-									<f:form.select property="recursive" options="{0:0,1:1,2:2,3:3,4:4,5:5}" id="recursive" class="form-control" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="timeRestriction" class="col-sm-4 control-label">
-									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.timeRestriction" />
-								</label>
+                                <div class="col-sm-8">
+                                    <f:form.select class="form-control" id="recursive"
+                                                   options="{0:0,1:1,2:2,3:3,4:4,5:5}" property="recursive"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label" for="timeRestriction">
+                                    <f:translate
+                                        key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.timeRestriction"/>
+                                </label>
 
-								<div class="col-sm-8">
-									<f:form.textfield property="timeRestriction" id="timeRestriction" class="form-control" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="timeRestrictionHigh" class="col-sm-4 control-label">
-									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.timeRestrictionHigh" />
-								</label>
+                                <div class="col-sm-8">
+                                    <f:form.textfield class="form-control" id="timeRestriction"
+                                                      property="timeRestriction"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label" for="timeRestrictionHigh">
+                                    <f:translate
+                                        key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.timeRestrictionHigh"/>
+                                </label>
 
-								<div class="col-sm-8">
-									<f:form.textfield property="timeRestrictionHigh" id="timeRestrictionHigh" class="form-control" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="topNewsRestriction" class="col-sm-4 control-label">
-									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.topNewsRestriction" />
-								</label>
+                                <div class="col-sm-8">
+                                    <f:form.textfield class="form-control" id="timeRestrictionHigh"
+                                                      property="timeRestrictionHigh"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label" for="topNewsRestriction">
+                                    <f:translate
+                                        key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.topNewsRestriction"/>
+                                </label>
 
-								<div class="col-sm-8">
-									<f:form.select property="topNewsRestriction" class="form-control" options="{
+                                <div class="col-sm-8">
+                                    <f:form.select class="form-control" id="topNewsRestriction" options="{
 						0:'',
 						1:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.topNewsRestriction.1\')}',
 						2:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.topNewsRestriction.2\')}'
-					}" id="topNewsRestriction" />
-								</div>
-							</div>
+					}" property="topNewsRestriction"/>
+                                </div>
+                            </div>
 
-							<div class="form-group">
-								<label for="sortingField" class="col-sm-4 control-label">
-									<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy" />
-								</label>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label" for="sortingField">
+                                    <f:translate
+                                        key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy"/>
+                                </label>
 
-								<div class="col-sm-4">
-									<f:form.select class="form-control" property="sortingField" options="{
+                                <div class="col-sm-4">
+                                    <f:form.select class="form-control" id="sortingField" options="{
 					title:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy.title\')}',
 					datetime:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy.datetime\')}',
 					tstamp:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy.tstamp\')}',
 					archive:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.archive\')}',
 					author:'{f:translate(key: \'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.author_formlabel\')}'
-				}" id="sortingField" />
-								</div>
-								<div class="col-sm-offset-1 col-sm-2">
-									<f:form.select class="form-control" property="sortingDirection" options="{
+				}" property="sortingField"/>
+                                </div>
+                                <div class="col-sm-offset-1 col-sm-2">
+                                    <f:form.select class="form-control" id="sortingDirection" options="{
 					asc:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderDirection.asc\')}',
 					desc:'{f:translate(key: \'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderDirection.desc\')}'
-				}" id="sortingDirection" />
-								</div>
-							</div>
+				}" property="sortingDirection"/>
+                                </div>
+                            </div>
 
-							<div class="form-group">
-								<div class="col-sm-offset-4 col-sm-8">
-									<f:form.submit value="{f:translate(key:'LLL:EXT:lang/locallang_common.xlf:search')}" class="btn btn-default" />
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-8">
-							<div class="category-tree">
-								<div class="tree-wrapper">
-									<f:render section="categoryTree" arguments="{demand:demand,categories: categories, class:'list-tree'}" />
-								</div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                    <f:form.submit class="btn btn-default"
+                                                   value="{f:translate(key:'LLL:EXT:lang/locallang_common.xlf:search')}"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="category-tree">
+                                <div class="tree-wrapper">
+                                    <f:render arguments="{demand:demand,categories: categories, class:'list-tree'}"
+                                              section="categoryTree"/>
+                                </div>
 
-								<f:if condition="{categories}">
-									<div class="form-group">
-										<label for="categoryConjunction" class="col-sm-6 control-label">
-											<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.categoryConjunction" />
-										</label>
+                                <f:if condition="{categories}">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label" for="categoryConjunction">
+                                            <f:translate
+                                                key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.categoryConjunction"/>
+                                        </label>
 
-										<div class="col-sm-6">
-											<f:form.select class="form-control" property="categoryConjunction" options="{AND:'AND', OR:'OR', notor:'notor', notand:'notand'}" id="categoryConjunction" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="includeSubCategories" class="col-sm-6 control-label">
-											<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.includeSubCategories" />
-										</label>
+                                        <div class="col-sm-6">
+                                            <f:form.select class="form-control" id="categoryConjunction"
+                                                           options="{AND:'AND', OR:'OR', notor:'notor', notand:'notand'}"
+                                                           property="categoryConjunction"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label" for="includeSubCategories">
+                                            <f:translate
+                                                key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.includeSubCategories"/>
+                                        </label>
 
-										<div class="col-sm-6">
-											<f:form.checkbox class="form-control" property="includeSubCategories" value="1" id="includeSubCategories" />
-										</div>
-									</div>
-								</f:if>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</f:form>
-	</f:if>
-	<f:if condition="{newsCount}">
-		<f:then>
-			<div class="result">
-				{news -> f:format.raw()}
-			</div>
-		</f:then>
-		<f:else>
-			<div class="callout callout-info">
-				<div class="media">
-					<div class="media-left">
+                                        <div class="col-sm-6">
+                                            <f:form.checkbox class="form-control" id="includeSubCategories"
+                                                             property="includeSubCategories" value="1"/>
+                                        </div>
+                                    </div>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:form>
+    </f:if>
+    <f:if condition="{newsCount}">
+        <f:then>
+            <div class="result">
+                {news -> f:format.raw()}
+            </div>
+        </f:then>
+        <f:else>
+            <div class="callout callout-info">
+                <div class="media">
+                    <div class="media-left">
 						<span class="fa-stack fa-lg callout-icon"> <i class="fa fa-circle fa-stack-2x"></i>
 							<i class="fa fa-info fa-stack-1x"></i> </span>
-					</div>
-					<div class="media-body">
-						<h4 class="callout-title">
-							{f:translate(key:'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.nonewsfound')}</h4>
-						<div class="callout-body">
-							<p>
-								{f:translate(key:'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.nonewsfoundText')}</p>
-							<p>
-								<f:link.action action="newsPidListing" class="btn btn-info">{f:translate(key:'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.nonewsfoundSwitch')}</f:link.action>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="callout-title">
+                            {f:translate(key:'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.nonewsfound')}</h4>
+                        <div class="callout-body">
+                            <p>
+                                {f:translate(key:'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.nonewsfoundText')}</p>
+                            <p>
+                                <f:link.action action="newsPidListing" class="btn btn-info">
+                                    {f:translate(key:'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:administration.nonewsfoundSwitch')}
+                                </f:link.action>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-		</f:else>
-	</f:if>
-	<script type="text/javascript">
-		T3_THIS_LOCATION = {requestUri -> f:format.raw()};
-		TYPO3.jQuery(document).ready(function () {
-			TYPO3.jQuery('#toggle-settings').click(function () {
-				TYPO3.jQuery(this).children('i').toggleClass('fa-minus');
-				TYPO3.jQuery(this).children('i').toggleClass('fa-plus');
-				TYPO3.jQuery('#setting-container').toggle();
-			});
-		});
-	</script>
+        </f:else>
+    </f:if>
+    <script type="text/javascript">
+        T3_THIS_LOCATION = {requestUri
+        ->
+        format.raw()
+        }
+
+        TYPO3.jQuery(document).ready(function () {
+            TYPO3.jQuery('#toggle-settings').click(function () {
+                TYPO3.jQuery(this).children('i').toggleClass('fa-minus');
+                TYPO3.jQuery(this).children('i').toggleClass('fa-plus');
+                TYPO3.jQuery('#setting-container').toggle();
+            });
+        });
+    </script>
 </f:section>
 </html>

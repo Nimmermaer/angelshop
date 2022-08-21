@@ -33,28 +33,17 @@ class Content extends AbstractEntity
 {
 
     /**
-     * @var DateTime
-     */
-    protected $crdate;
-    /**
-     * @var DateTime
-     */
-    protected $tstamp;
-    /**
      * @var string
      */
     public string $CType = '';
-
     /**
      * @var string
      */
     public string $headerPosition = '';
-
     /**
      * @var int
      */
     public int $colPos = 0;
-
     /**
      * @var int
      */
@@ -119,45 +108,31 @@ class Content extends AbstractEntity
      * @var string
      */
     public string $listType = '';
-
-
     /**
      * uid
      * @var boolean
      */
     public bool $hidden = false;
-
-    /**
-     * image
-     * @var ObjectStorage<FileReference> $image
-     */
-    protected ?ObjectStorage $image = null;
-
     /**
      * bodytext
      * @var string
      */
     public string $bodytext = '';
-
     /**
      * product
      * @var string
      */
     public string $product = '';
-
     /**
      * stock
      * @var boolean
      */
     public bool $stock = false;
-
-
     /**
      * header
      * @var string
      */
     public string $header = '';
-
     /**
      * sorting
      * @var string
@@ -168,31 +143,39 @@ class Content extends AbstractEntity
      * @var string
      */
     public string $additionalDescription = '';
-
     /**
      * contentType
      * @var string
      */
     public string $contentType = '';
-
     /**
      * price
      * @var float
      */
     public float $price = 0.00;
-
     /**
      * oldPrice
      * @var float
      */
     public float $oldPrice = 0.00;
-
     /**
      * manufacturer
      * @var string
      */
     public string $manufacturer = '';
-
+    /**
+     * @var DateTime
+     */
+    protected $crdate;
+    /**
+     * @var DateTime
+     */
+    protected $tstamp;
+    /**
+     * image
+     * @var ObjectStorage<FileReference> $image
+     */
+    protected ?ObjectStorage $image = null;
     /**
      * Image
      * @var ObjectStorage<FileReference>

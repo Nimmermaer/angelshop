@@ -1,27 +1,28 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-	  data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
 
 <f:if condition="{settings.cssFile}">
-	<n:includeFile path="{settings.cssFile}" />
+    <n:includeFile path="{settings.cssFile}"/>
 </f:if>
 
 <div class="news news-single">
-	<div class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
-		<meta itemprop="author" content="{newsItem.author}"/>
-		
-		 <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-		    	<meta itemprop="name" content="Aba-Angelshop" />
-		    	<div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject" >
-		    	<meta itemprop="url" content="{f:uri.image(src:'/fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg', absolute:1)}" />
-		  </div>
-		  </div>
-		
-		<meta itemprop="datePublished" content="{newsItem.tstamp->f:format.date(format:'Y-m-d')}"/>
-		<meta itemprop="headline" content="{newsItem.title}"/>
-		<meta itemprop="dateModified" content="{newsItem.crdate->f:format.date(format:'Y-m-d')}"/>
-		<meta itemprop="mainEntityOfPage" content="http://aba-angelshop.de"/>
-		<f:render section="content" />
-	</div>
+    <div class="article" itemscope="itemscope" itemtype="http://schema.org/Article">
+        <meta content="{newsItem.author}" itemprop="author"/>
+
+        <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta content="Aba-Angelshop" itemprop="name"/>
+            <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+                <meta content="{f:uri.image(src:'/fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg', absolute:1)}"
+                      itemprop="url"/>
+            </div>
+        </div>
+
+        <meta content="{newsItem.tstamp->f:format.date(format:'Y-m-d')}" itemprop="datePublished"/>
+        <meta content="{newsItem.title}" itemprop="headline"/>
+        <meta content="{newsItem.crdate->f:format.date(format:'Y-m-d')}" itemprop="dateModified"/>
+        <meta content="http://aba-angelshop.de" itemprop="mainEntityOfPage"/>
+        <f:render section="content"/>
+    </div>
 </div>
 </html>

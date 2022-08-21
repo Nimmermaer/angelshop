@@ -1,7 +1,7 @@
-<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+<div lang="en" xmlns="http://www.w3.org/1999/xhtml"
      xmlns:f="http://xsd.helmut-hummel.de/ns/TYPO3/CMS/Fluid/ViewHelpers"
      xmlns:n="http://typo3.org/ns/MB/Angelshop/ViewHelpers"
-        >
+>
     <f:layout name="Default"/>
     <f:section name="content">
         <div class="container">
@@ -12,18 +12,18 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 ">
-                    <f:form enctype="multipart/form-data" class="form-horizontal" object="{product}"
-                            objectName="content" action="update">
+                    <f:form action="update" class="form-horizontal" enctype="multipart/form-data"
+                            object="{product}" objectName="content">
                         <label class="control-label"
                                for="tx_angelshop_web_angelshopproductlist[content][header]">Titel</label>
                         <f:form.textfield
-                                property="header" required="1" class="form-control col-lg-10" size="50"/>
+                            class="form-control col-lg-10" property="header" required="1" size="50"/>
                         <br/>
 
                         <div class="input-group">
                             <n:form.upload property="image.0">
                                 <f:if condition="{resource}">
-                                    <f:image image="{resource}" alt="" width="50"/>
+                                    <f:image alt="" image="{resource}" width="50"/>
                                 </f:if>
                             </n:form.upload>
                         </div>
@@ -32,39 +32,39 @@
                         <div class="input-group">
                             <span class="input-group-addon">€</span>
                             <f:form.textfield
-                                    property="price" required="1" class="form-control col-lg-10" size="50"/>
+                                class="form-control col-lg-10" property="price" required="1" size="50"/>
                         </div>
                         <label class="control-label">Alter Preis (optional)</label>
 
                         <div class="input-group">
                             <span class="input-group-addon">€</span>
                             <f:form.textfield
-                                    property="oldPrice" class="form-control col-lg-10" size="50"/>
+                                class="form-control col-lg-10" property="oldPrice" size="50"/>
                         </div>
                         <br/>
                         <label class="control-label"
-                                >Hersteller</label>
+                        >Hersteller</label>
                         <f:form.textfield
-                                property="manufacturer" class="form-control col-lg-10" size="50"/>
+                            class="form-control col-lg-10" property="manufacturer" size="50"/>
                         <br/>
 
                         <div class="checkbox">
                             <label for="tx_angelshop_web_angelshopproductlist[content][stock]">
-                                <f:form.checkbox property="stock"  value="false" />
+                                <f:form.checkbox property="stock" value="false"/>
                                 Auf Lager
                             </label>
                         </div>
                         <div class="checkbox">
 
                             <label for="tx_angelshop_web_angelshopproductlist[content][hidden]">
-                                <f:form.checkbox property="hidden" value="false" />
+                                <f:form.checkbox property="hidden" value="false"/>
                                 Ausblenden
                             </label>
                         </div>
                         <br/>
                         <label for="tx_angelshop_web_angelshopproductlist[content][bodytext]">Beschreibung</label><br/>
                         <f:form.textfield
-                                property="bodytext" type="hidden" size="50"/>
+                            property="bodytext" size="50" type="hidden"/>
                         <div id="bodytext-container">
                             {product.bodytext->f:format.html()}
                         </div>
@@ -72,7 +72,7 @@
                         <label for="tx_angelshop_web_angelshopproductlist[content][additionalDescription]">Zusätzliche
                             Beschreibung</label>
                         <f:form.textfield
-                                property="additionalDescription" type="hidden" size="50"/>
+                            property="additionalDescription" size="50" type="hidden"/>
                         <div id="description-container">
                             {product.additionalDescription->f:format.html()}
                         </div>

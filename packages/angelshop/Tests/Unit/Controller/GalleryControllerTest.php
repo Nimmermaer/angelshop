@@ -2,8 +2,10 @@
 
 namespace MB\Angelshop\Tests\Unit\Controller;
 
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use MB\Angelshop\Controller\GalleryController;
 use MB\Angelshop\Domain\Model\Gallery;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2016 Michael Blunck <mi.blunck@gmail.com>
@@ -21,6 +23,7 @@ use MB\Angelshop\Domain\Model\Gallery;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 /**
  * Test case for class MB\Angelshop\Controller\GalleryController.
  * @author Michael Blunck <mi.blunck@gmail.com>
@@ -29,7 +32,7 @@ class GalleryControllerTest extends UnitTestCase
 {
 
     /**
-     * @var \MB\Angelshop\Controller\GalleryController
+     * @var GalleryController
      */
     protected $subject = null;
 

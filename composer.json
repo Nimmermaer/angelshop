@@ -75,5 +75,8 @@
     "phpstan/phpstan": "^0.12.98",
     "typo3/testing-framework": "^6.11",
     "helmich/typo3-typoscript-lint": "^2.5"
-  }
+  },
+	"scripts": {
+		"lint" : "bin/typoscript-lint"
+	}
 }

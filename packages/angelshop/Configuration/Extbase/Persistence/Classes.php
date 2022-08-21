@@ -2,8 +2,8 @@
 declare(strict_types=1);
 
 use GeorgRinger\News\Domain\Model\News;
-use MB\Angelshop\Domain\Model\FileReference;
 use MB\Angelshop\Domain\Model\Content;
+use MB\Angelshop\Domain\Model\FileReference;
 
 return [
     News::class => [
