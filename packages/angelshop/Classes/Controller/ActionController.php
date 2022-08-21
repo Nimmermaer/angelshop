@@ -10,5 +10,4 @@ namespace MB\Angelshop\Controller;
 
 class ActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
 }

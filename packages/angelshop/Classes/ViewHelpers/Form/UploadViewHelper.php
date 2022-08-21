@@ -19,15 +19,12 @@ use TYPO3\CMS\Extbase\Security\Cryptography\HashService;
  */
 class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelper
 {
-
     /**
-     * @var HashService
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected HashService $hashService;
 
     /**
-     * @var PropertyMapper
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected PropertyMapper $propertyMapper;
@@ -35,7 +32,6 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
     /**
      * Render the upload field including possible resource pointer
      *
-     * @return string
      * @api
      */
     public function render(): string
@@ -54,7 +50,7 @@ class UploadViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Form\UploadViewHelpe
                 // Use the file UID instead, but prefix it with "file:" to communicate this to the type converter
                 $resourcePointerValue = 'file:' . $resource->getOriginalResource()->getOriginalFile()->getUid();
             }
-            $output .= '<input type="hidden" name="' . $this->getName() . '[submittedFile][resourcePointer]" value="' . htmlspecialchars($this->hashService->appendHmac((string)$resourcePointerValue)) . '"' . $resourcePointerIdAttribute . ' />';
+            $output .= '<input type="hidden" name="' . $this->getName() . '[submittedFile][resourcePointer]" value="' . htmlspecialchars($this->hashService->appendHmac((string) $resourcePointerValue)) . '"' . $resourcePointerIdAttribute . ' />';
 
             $this->templateVariableContainer->add('resource', $resource);
             $output .= $this->renderChildren();

@@ -2,7 +2,6 @@
 
 namespace MB\Angelshop\ViewHelpers;
 
-
 /*  | This extension is part of the TYPO3 project. The TYPO3 project is
  *  | free software and is licensed under GNU General Public License.
  *  |
@@ -17,7 +16,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class MapViewHelper extends AbstractViewHelper
 {
-
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -25,9 +23,7 @@ class MapViewHelper extends AbstractViewHelper
         $this->registerArgument('name', 'string', 'Name');
     }
 
-    /**
-     * @return string
-     */
+
     public function render(): string
     {
         $mapsLocation = '';

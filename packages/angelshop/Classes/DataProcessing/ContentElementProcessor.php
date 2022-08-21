@@ -29,15 +29,12 @@ use TYPO3\CMS\Extbase\Object\Exception;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-
 /**
  * Class ContentElementProcessor
  * @package MB\Angelshop\DataProcessing
  */
 class ContentElementProcessor implements DataProcessorInterface
 {
-
-
     /**
      * fontAwesomeRepository
      * @var FontawesomeRepository | null
@@ -46,47 +43,37 @@ class ContentElementProcessor implements DataProcessorInterface
     protected ?FontawesomeRepository $fontawesomeRepository = null;
 
 
-    /**
-     * @param ContentObjectRenderer $cObj
-     * @param array $contentObjectConfiguration
-     * @param array $processorConfiguration
-     * @param array $processedData
-     *
-     * @return array
-     */
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
     ): array {
-
-        $function = 'processFor' . str_replace(' ', '',
-                ucwords(str_replace("_", " ", $contentObjectConfiguration['templateName'])));
+        $function = 'processFor' . str_replace(
+            ' ',
+            '',
+            ucwords(str_replace("_", " ", $contentObjectConfiguration['templateName']))
+        );
         if (strpos($function, 'Angelshop/') !== false) {
             $function = str_replace('Angelshop/', '', $function);
         }
 
         if (method_exists($this, $function)) {
-
             $templateName = $contentObjectConfiguration['templateName'];
 
             if (strpos($templateName, 'Angelshop/') !== false) {
-
                 $templateName = str_replace('Angelshop/', '', $templateName);
             }
-            $processedData[$templateName] = call_user_func(array(
+            $processedData[$templateName] = call_user_func([
                 $this,
                 $function,
-            ), $processedData);
+            ], $processedData);
         }
 
         return $processedData;
     }
 
     /**
-     * @param array $processedData
-     * @return array
      * @throws Exception
      */
     public function processForTextMedia(array $processedData): array
@@ -95,18 +82,13 @@ class ContentElementProcessor implements DataProcessorInterface
         return $repository->findByRecord($processedData['data']['uid']);
     }
 
-    /**
-     * @param string $repositoryName
-     * @return object
-     */
+
     protected function getRepository(string $repositoryName): object
     {
         return GeneralUtility::makeInstance($repositoryName);
     }
 
     /**
-     * @param array $processedData
-     * @return array
      * @throws Exception
      */
     public function processForImpressum(array $processedData): array
@@ -116,8 +98,6 @@ class ContentElementProcessor implements DataProcessorInterface
     }
 
     /**
-     * @param array $processedData
-     * @return array
      * @throws Exception
      */
     public function processForTraderSlider(array $processedData): array
@@ -127,8 +107,6 @@ class ContentElementProcessor implements DataProcessorInterface
     }
 
     /**
-     * @param array $processedData
-     * @return array
      * @throws Exception
      */
     public function processForTabs(array $processedData): array
@@ -138,8 +116,6 @@ class ContentElementProcessor implements DataProcessorInterface
     }
 
     /**
-     * @param array $processedData
-     * @return array
      * @throws Exception
      */
     public function processForProductList(array $processedData): array

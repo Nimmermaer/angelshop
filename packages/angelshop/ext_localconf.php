@@ -12,24 +12,29 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-if (!defined('TYPO3')) {
+if (! defined('TYPO3')) {
     die('Access denied.');
 }
 
 $boot = function ($extensionKey) {
-
     ExtensionUtility::configurePlugin(
         ucfirst($extensionKey),
         'Product',
-        [ProductController::class => 'list, search'],
-        [ProductController::class => 'list, search'],
+        [
+            ProductController::class => 'list, search',
+        ],
+        [
+            ProductController::class => 'list, search',
+        ],
         ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 
     ExtensionUtility::configurePlugin(
         ucfirst($extensionKey),
         'Weather',
-        [WeatherController::class => 'show, list, forecast']
+        [
+            WeatherController::class => 'show, list, forecast',
+        ]
     );
 
     $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'angelshop';
@@ -57,11 +62,13 @@ $boot = function ($extensionKey) {
     );
     foreach ($newIcons as $key => $icon) {
         $iconRegistry->registerIcon(
-            $key, SvgIconProvider::class,
-            ['source' => 'EXT:angelshop/Resources/Public/Icons/Svg/' . $icon . '.svg']
+            $key,
+            SvgIconProvider::class,
+            [
+                'source' => 'EXT:angelshop/Resources/Public/Icons/Svg/' . $icon . '.svg',
+            ]
         );
     }
-
 
     ExtensionManagementUtility::addPageTSConfig('@import "EXT:angelshop/Configuration/PageTS/pageTs.tsconfig"');
 };

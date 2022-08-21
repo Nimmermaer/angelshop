@@ -25,7 +25,6 @@ defined('TYPO3') or die();
 
 call_user_func(
     function ($extensionKey, $table) {
-
         $newsColumns = [
             'tx_angelshop_news_recipe' => [
                 'exclude' => 1,
@@ -33,20 +32,19 @@ call_user_func(
                 'onChange' => 'reload',
                 'config' => [
                     'type' => 'check',
-                    'default' => '0'
-                ]
+                    'default' => '0',
+                ],
             ],
             'tx_angelshop_news_ingredient' => [
                 'exclude' => 0,
                 'displayCond' => 'FIELD:tx_angelshop_news_recipe:=:1',
                 'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:news.tx_angelshop_news_ingredient',
-                'config' => array(
+                'config' => [
                     'type' => 'text',
                     'cols' => 40,
                     'rows' => 6,
                     'enableRichtext' => true,
-                ),
-
+                ],
             ],
             'tx_angelshop_news_icon' => [
                 'exclude' => 1,
@@ -60,15 +58,25 @@ call_user_func(
         ];
 
         ExtensionManagementUtility::addTCAcolumns($table, $newsColumns);
-        ExtensionManagementUtility::addFieldsToAllPalettesOfField($table, 'title', 'tx_angelshop_news_recipe',
-            'before:isTopNews');
+        ExtensionManagementUtility::addFieldsToAllPalettesOfField(
+            $table,
+            'title',
+            'tx_angelshop_news_recipe',
+            'before:isTopNews'
+        );
 
-        ExtensionManagementUtility::addToAllTCAtypes($table,
-            'tx_angelshop_news_ingredient', '', 'before:bodytext');
-        ExtensionManagementUtility::addToAllTCAtypes($table,
-            'tx_angelshop_news_icon', '', 'before:tags');
-
-
+        ExtensionManagementUtility::addToAllTCAtypes(
+            $table,
+            'tx_angelshop_news_ingredient',
+            '',
+            'before:bodytext'
+        );
+        ExtensionManagementUtility::addToAllTCAtypes(
+            $table,
+            'tx_angelshop_news_icon',
+            '',
+            'before:tags'
+        );
     },
     'angelshop',
     'tx_news_domain_model_news'

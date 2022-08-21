@@ -22,19 +22,11 @@ namespace MB\Angelshop\Domain\Model;
  */
 class News extends \GeorgRinger\News\Domain\Model\News
 {
-    /**
-     * @var bool
-     */
     public bool $recipe = false;
 
-    /**
-     * @var string
-     */
+
     public string $icon = '';
 
-    /**
-     * @var string
-     */
-    public string $ingredient = '';
 
+    public string $ingredient = '';
 }

@@ -8,7 +8,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF['angelshop'] = array(
+$EM_CONF['angelshop'] = [
     'title' => 'angelshop',
     'description' => 'Extension with Bootstrap Modern Business Theme',
     'category' => 'Provider Extension',
@@ -20,12 +20,12 @@ $EM_CONF['angelshop'] = array(
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
     'version' => '1.0.0',
-    'constraints' => array(
-        'depends' => array(
+    'constraints' => [
+        'depends' => [
             'typo3' => '7.6.0-10.9.99',
-            'news' => '7.2.0-10.9.99'
-        ),
-        'conflicts' => array(),
-        'suggests' => array(),
-    ),
-);
+            'news' => '7.2.0-10.9.99',
+        ],
+        'conflicts' => [],
+        'suggests' => [],
+    ],
+];

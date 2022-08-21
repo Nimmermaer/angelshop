@@ -29,15 +29,9 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Trader extends AbstractEntity
 {
-
-    /**
-     * @var string
-     */
     protected string $title = '';
 
-    /**
-     * @var string
-     */
+
     protected string $link = '';
 
     /**
@@ -61,6 +55,4 @@ class Trader extends AbstractEntity
     {
         $this->image = $image;
     }
-
-
 }

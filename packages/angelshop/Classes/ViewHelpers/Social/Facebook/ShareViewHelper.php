@@ -17,16 +17,13 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class ShareViewHelper extends AbstractViewHelper
 {
-
     public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('text', 'string', 'text');
     }
 
-    /**
-     * @return string
-     */
+
     public function render(): string
     {
         if (is_null($this->arguments['text'])) {

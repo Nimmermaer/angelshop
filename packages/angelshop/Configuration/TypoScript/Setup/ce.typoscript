@@ -138,9 +138,7 @@ tt_content {
       100 {
         references.fieldName = tx_angelshop_domain_model_fontawesome
       }
-    }
 
-    dataProcessing {
       110 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
       110 {
         references.fieldName = image
@@ -159,8 +157,6 @@ tt_content {
     }
   }
 
-
   tx_contact < lib.contentElement
   tx_contact.templateName = Angelshop/Widget/Contact
-
 }

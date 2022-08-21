@@ -3,18 +3,16 @@ mod {
     defaultLanguageFlag = de
     defaultLanguageLabel = Deutsch
   }
+
+  web_list {
+    listOnlyInSingleTableView = 1
+  }
+
+  web_func.menu.function {
+    TYPO3\CMS\WizardSortpages\View\SortPagesWizardModuleFunction = 0
+  }
+
 }
-
-
-mod.web_list {
-  listOnlyInSingleTableView = 1
-}
-
-
-mod.web_func.menu.function {
-  TYPO3\CMS\WizardSortpages\View\SortPagesWizardModuleFunction = 0
-}
-
 
 setup {
   startModule = web_layout

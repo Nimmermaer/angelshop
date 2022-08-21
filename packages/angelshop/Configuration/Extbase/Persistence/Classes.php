@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use GeorgRinger\News\Domain\Model\News;
@@ -10,13 +11,13 @@ return [
         'tableName' => 'tx_news_domain_model_news',
         'properties' => [
             'recipe' => [
-                'fieldName' => 'tx_angelshop_news_recipe'
+                'fieldName' => 'tx_angelshop_news_recipe',
             ],
             'icon' => [
-                'fieldName' => 'tx_angelshop_news_icon'
+                'fieldName' => 'tx_angelshop_news_icon',
             ],
             'ingredient' => [
-                'fieldName' => 'tx_angelshop_news_ingredient'
+                'fieldName' => 'tx_angelshop_news_ingredient',
             ],
         ],
     ],
@@ -24,7 +25,7 @@ return [
         'tableName' => 'sys_file_reference',
         'properties' => [
             'originalFileIdentifier' => [
-                'fieldName' => 'uid_local'
+                'fieldName' => 'uid_local',
             ],
         ],
     ],
@@ -32,43 +33,43 @@ return [
         'tableName' => 'tt_content',
         'properties' => [
             'uid' => [
-                'fieldName' => 'uid'
+                'fieldName' => 'uid',
             ],
             'hidden' => [
-                'fieldName' => 'hidden'
+                'fieldName' => 'hidden',
             ],
             'pid' => [
-                'fieldName' => 'pid'
+                'fieldName' => 'pid',
             ],
             'sorting' => [
-                'fieldName' => 'sorting'
+                'fieldName' => 'sorting',
             ],
             'contentType' => [
-                'fieldName' => 'CType'
+                'fieldName' => 'CType',
             ],
             'header' => [
-                'fieldName' => 'header'
+                'fieldName' => 'header',
             ],
             'product' => [
-                'fieldName' => 'tx_abatemplate_product'
+                'fieldName' => 'tx_abatemplate_product',
             ],
             'stock' => [
-                'fieldName' => 'tx_abatemplate_product_stock'
+                'fieldName' => 'tx_abatemplate_product_stock',
             ],
             'additionalDescription' => [
-                'fieldName' => 'tx_abatemplate_product_additional_description'
+                'fieldName' => 'tx_abatemplate_product_additional_description',
             ],
             'price' => [
-                'fieldName' => 'tx_abatemplate_product_price'
+                'fieldName' => 'tx_abatemplate_product_price',
             ],
             'oldPrice' => [
-                'fieldName' => 'tx_abatemplate_product_old_price'
+                'fieldName' => 'tx_abatemplate_product_old_price',
             ],
             'manufacturer' => [
-                'fieldName' => 'tx_abatemplate_product_manufacturer_name'
+                'fieldName' => 'tx_abatemplate_product_manufacturer_name',
             ],
             'imageCollection' => [
-                'fieldName' => 'tx_angelshop_image_collection'
+                'fieldName' => 'tx_angelshop_image_collection',
             ],
         ],
     ],

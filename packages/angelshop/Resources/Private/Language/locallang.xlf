@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
 	product-name="angelshop">
 		<header />
@@ -42,12 +42,6 @@
 			</trans-unit>
 			<trans-unit id="last_name">
 				<source>Nachname</source>
-			</trans-unit>
-			<trans-unit id="email">
-				<source>E-Mail</source>
-			</trans-unit>
-			<trans-unit id="phone">
-				<source>Telefon</source>
 			</trans-unit>
 			<trans-unit id="address">
 				<source>Adresse</source>

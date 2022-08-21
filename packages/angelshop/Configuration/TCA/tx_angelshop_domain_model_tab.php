@@ -25,14 +25,20 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => '',
-        'iconfile' => 'EXT:angelshop/Resources/Public/Icons/Svg/tab.svg'
+        'iconfile' => 'EXT:angelshop/Resources/Public/Icons/Svg/tab.svg',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,--palette--;;1,header,--palette--;;fonts,text,image,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime'],
+        '1' => [
+            'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,--palette--;;1,header,--palette--;;fonts,text,image,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime',
+        ],
     ],
     'palettes' => [
-        '1' => ['showitem' => ''],
-        'fonts' => ['showitem' => 'icon, movement'],
+        '1' => [
+            'showitem' => '',
+        ],
+        'fonts' => [
+            'showitem' => 'icon, movement',
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -46,11 +52,11 @@ return [
                     [
                         'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
-                        'flags-multiple'
+                        'flags-multiple',
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -59,12 +65,12 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['', 0]
+                    ['', 0],
                 ],
                 'foreign_table' => 'sys_file_reference',
                 'foreign_table_where' => 'AND sys_file_reference.uid=###REC_FIELD_l10n_parent### AND sys_file_reference.sys_language_uid IN (-1,0)',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'l10n_diffsource' => [
             'config' => [
@@ -76,8 +82,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'max' => 30
-            ]
+                'max' => 30,
+            ],
         ],
         'hidden' => [
             'exclude' => true,
@@ -89,10 +95,10 @@ return [
                     [
                         0 => '',
                         1 => '',
-                        'invertStateDisplay' => true
-                    ]
+                        'invertStateDisplay' => true,
+                    ],
                 ],
-            ]
+            ],
         ],
         'starttime' => [
             'exclude' => true,
@@ -101,10 +107,10 @@ return [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'eval' => 'datetime,int',
-                'default' => 0
+                'default' => 0,
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'endtime' => [
             'exclude' => true,
@@ -115,11 +121,11 @@ return [
                 'eval' => 'datetime,int',
                 'default' => 0,
                 'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ]
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
+                ],
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'text' => [
             'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.text',
@@ -137,14 +143,16 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-            ]
+            ],
         ],
         'image' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_domain_model_tab.image',
             'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image',
-                ['maxitems' => 1],
+                [
+                    'maxitems' => 1,
+                ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
         ],

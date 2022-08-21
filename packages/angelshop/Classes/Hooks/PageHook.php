@@ -8,7 +8,6 @@
 
 namespace MB\Angelshop\Hooks;
 
-
 use MB\Angelshop\Controller\BackendController;
 use TYPO3\CMS\Backend\Controller\PageLayoutController;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -17,9 +16,6 @@ use TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException;
 class PageHook
 {
     /**
-     * @param array $params
-     * @param PageLayoutController $parentObject
-     * @return string
      * @throws InvalidExtensionNameException
      */
     public function renderInHeader(array $params = [], PageLayoutController $parentObject): string

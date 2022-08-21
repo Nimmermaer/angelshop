@@ -31,7 +31,6 @@ config {
   noPageTitle = 2
 
   absRefPrefix = /
-  # prefixLocalAnchors = all
 
   compressCss = 1
   compressJs = 1

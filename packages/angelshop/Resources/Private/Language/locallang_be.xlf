@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
 	product-name="angelshop">
 		<header />
@@ -11,9 +11,7 @@
 				<source>Link</source>
 			</trans-unit>
 			<trans-unit id="tca.tt_content.tx_angelshop_fontawesome">
-				<source>Fontawesome Icon
-<a href="http://fontawesome.io/icons/">Iconsuche</a>
-				</source>
+				<source>Fontawesome Icon <![CDATA[<a href="http://fontawesome.io/icons/">Iconsuche</a>]]></source>
 			</trans-unit>
 			<trans-unit id="tca.tt_content.tx_angelshop_title">
 				<source>Titel</source>
@@ -100,23 +98,14 @@
 			<trans-unit id="tx_team.title">
 				<source>Team Element</source>
 			</trans-unit>
-			<trans-unit id="tx_team.title">
-				<source>Element mit Sociallinks</source>
-			</trans-unit>
 			<trans-unit id="tx_angelshop_domain_model_fontawesome.tx_angelshop_title">
 				<source>Titel</source>
 			</trans-unit>
 			<trans-unit id="tx_angelshop_domain_model_fontawesome.class">
 				<source>Klasse</source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_fontawesome.class">
-				<source>Klasse</source>
-			</trans-unit>
 			<trans-unit id="tca.tt_content.tx_angelshop_class">
 				<source>Header Icon</source>
-			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_class">
-				<source>Icon für Element</source>
 			</trans-unit>
 			<trans-unit id="tx_angelshop_domain_model_trader.image">
 				<source>Händlerbild</source>

@@ -30,7 +30,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class GalleryControllerTest extends UnitTestCase
 {
-
     /**
      * @var GalleryController
      */
@@ -38,11 +37,11 @@ class GalleryControllerTest extends UnitTestCase
 
     public function setUp()
     {
-        $this->subject = $this->getMock('MB\\Angelshop\\Controller\\GalleryController', array(
+        $this->subject = $this->getMock('MB\\Angelshop\\Controller\\GalleryController', [
             'redirect',
             'forward',
-            'addFlashMessage'
-        ), array(), '', false);
+            'addFlashMessage',
+        ], [], '', false);
     }
 
     public function tearDown()
@@ -55,11 +54,15 @@ class GalleryControllerTest extends UnitTestCase
      */
     public function listActionFetchesAllGalleriesFromRepositoryAndAssignsThemToView()
     {
+        $allGalleries = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', [], [], '', false);
 
-        $allGalleries = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', false);
-
-        $galleryRepository = $this->getMock('MB\\Angelshop\\Domain\\Repository\\GalleryRepository', array('findAll'),
-            array(), '', false);
+        $galleryRepository = $this->getMock(
+            'MB\\Angelshop\\Domain\\Repository\\GalleryRepository',
+            ['findAll'],
+            [],
+            '',
+            false
+        );
         $galleryRepository->expects($this->once())->method('findAll')->will($this->returnValue($allGalleries));
         $this->inject($this->subject, 'galleryRepository', $galleryRepository);
 

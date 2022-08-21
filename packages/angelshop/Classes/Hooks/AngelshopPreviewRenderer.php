@@ -30,26 +30,28 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
 {
-
     /**
-     * @param PageLayoutView $parentObject
      * @param bool $drawItem
      * @param string $headerContent
      * @param string $itemContent
-     * @param array $row
      */
     public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row)
     {
         $function = 'show' . str_replace(' ', '', ucwords(str_replace("_", " ", $row['CType'])));
         if (method_exists($this, $function)) {
-            $itemContent .= call_user_func(array($this, $function,),
-                ['data' => $row, 'header' => $headerContent, 'pagelayoutView' => $parentObject]);
+            $itemContent .= call_user_func(
+                [$this, $function],
+                [
+                    'data' => $row,
+                    'header' => $headerContent,
+                    'pagelayoutView' => $parentObject,
+                ]
+            );
             $drawItem = false;
         }
     }
 
     /**
-     * @param array $arguments
      * @return string
      */
     public function showTxSlider(array $arguments)
@@ -60,10 +62,7 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         return $addContent;
     }
 
-    /**
-     * @param array $arguments
-     * @return string
-     */
+
     public function showTxTab(array $arguments): string
     {
         $addContent = '';
@@ -76,8 +75,11 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
             foreach ($tabs as $item) {
                 $addContent .= 'Tab-' . $i . '<br/>';
                 $addContent .= '<strong>' . $item->getHeader() . '</strong>';
-                $addContent .= '<p>' . substr($item->getText(), 0,
-                        80) . '</p> <hr style="background-color:black; "  />';
+                $addContent .= '<p>' . substr(
+                    $item->getText(),
+                    0,
+                    80
+                ) . '</p> <hr style="background-color:black; "  />';
                 $i++;
             }
         }
@@ -87,10 +89,6 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
     }
 
 
-    /**
-     * @param array $arguments
-     * @return string
-     */
     public function showTxImpressum(array $arguments): string
     {
         $addContent = 'GoogleMap Addresse: ' . $arguments['data']['tx_angelshop_address'];
@@ -100,10 +98,7 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         return $addContent;
     }
 
-    /**
-     * @param array $arguments
-     * @return string
-     */
+
     public function showTextmedia(array $arguments): string
     {
         $addContent = '';
@@ -121,5 +116,4 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         }
         return $addContent;
     }
-
 }

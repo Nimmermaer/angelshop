@@ -23,14 +23,20 @@ lib {
       }
 
       IFSUB = 1
-      IFSUB.wrapItemAndSub = <li class="dropdown">|</li>
-      IFSUB.doNotLinkIt = 1
-      IFSUB.allWrap = <a class="dropdown-toggle" data-toggle="dropdown" href="#" >|<b class="caret"></b></a>
+      IFSUB {
+        wrapItemAndSub = <li class="dropdown">|</li>
+        doNotLinkIt = 1
+        allWrap = <a class="dropdown-toggle" data-toggle="dropdown" href="#" >|<b class="caret"></b></a>
+      }
+
 
       ACTIFSUB = 1
-      ACTIFSUB.wrapItemAndSub = <li class="active dropdown">|</li>
-      ACTIFSUB.doNotLinkIt = 1
-      ACTIFSUB.allWrap = <a class="dropdown-toggle" data-toggle="dropdown" href="#" >|<b class="caret"></b></a>
+      ACTIFSUB {
+        wrapItemAndSub = <li class="active dropdown">|</li>
+        doNotLinkIt = 1
+        allWrap = <a class="dropdown-toggle" data-toggle="dropdown" href="#" >|<b class="caret"></b></a>
+      }
+
     }
 
     2 = TMENU
@@ -61,8 +67,11 @@ lib {
   }
 
   datum = TEXT
-  datum.data = date : U
-  datum.strftime = %Y
+  datum {
+    data = date : U
+    strftime = %Y
+  }
+
 
   footermenu = HMENU
   footermenu {
@@ -100,16 +109,20 @@ lib {
       1 = TMENU
       1 {
         NO = 1
-        NO.doNotLinkIt = |*| 0 |*| 1
-        NO.allWrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" > | <meta itemprop="position" content="{register:count_MENUOBJ}"> </li> |*| <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> | <meta itemprop="position" content="{register:count_MENUOBJ}"></li> |*| <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> | <meta itemprop="position" content="{register:count_MENUOBJ}"></li>
-        NO.allWrap.insertData = 1
-        NO.stdWrap.htmlSpecialChars = 1
-        NO.ATagParams = itemprop="url"
         NO {
-          after.stdWrap.cObject = TEXT
-          after.stdWrap.cObject {
-            field = title // alt_title
-            wrap = <meta itemprop="name" content="|" />
+          doNotLinkIt = |*| 0 |*| 1
+          allWrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" > | <meta itemprop="position" content="{register:count_MENUOBJ}"> </li> |*| <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> | <meta itemprop="position" content="{register:count_MENUOBJ}"></li> |*| <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> | <meta itemprop="position" content="{register:count_MENUOBJ}"></li>
+          allWrap.insertData = 1
+          stdWrap.htmlSpecialChars = 1
+          ATagParams = itemprop="url"
+          after {
+            stdWrap {
+              cObject = TEXT
+              cObject {
+                field = title // alt_title
+                wrap = <meta itemprop="name" content="|" />
+              }
+            }
           }
         }
       }
@@ -121,17 +134,32 @@ lib {
 [traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0 || traverse(request.getParsedBody(), 'tx_news_pi1/news') > 0]
 
   lib.breadcrumb {
-    10.1.NO.doNotLinkIt = 0
-    10.1.NO.allWrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"  >| <meta itemprop="position" content="{register:count_MENUOBJ}"> </li>
+    10 {
+      1 {
+        NO {
+          doNotLinkIt = 0
+          allWrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"  >| <meta itemprop="position" content="{register:count_MENUOBJ}"> </li>
+        }
+      }
+    }
+
     20 = RECORDS
     20 {
       dontCheckPid = 1
       tables = tx_news_domain_model_news
-      source.data = GP:tx_news_pi1|news
-      source.intval = 1
-      conf.tx_news_domain_model_news = TEXT
-      conf.tx_news_domain_model_news.field = title // alt_title
-      conf.tx_news_domain_model_news.htmlSpecialChars = 1
+      source {
+        data = GP:tx_news_pi1|news
+        intval = 1
+      }
+
+      conf {
+        tx_news_domain_model_news = TEXT
+        tx_news_domain_model_news {
+          field = title // alt_title
+          htmlSpecialChars = 1
+        }
+      }
+
       wrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" >|</li>
     }
   }

@@ -29,25 +29,15 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Tab extends AbstractEntity
 {
-
-    /**
-     * @var string
-     */
     protected string $header = '';
 
-    /**
-     * @var string
-     */
+
     protected string $text = '';
 
-    /**
-     * @var string
-     */
+
     protected string $icon = '';
 
-    /**
-     * @var string
-     */
+
     protected string $movement = '';
 
     /**
@@ -55,7 +45,6 @@ class Tab extends AbstractEntity
      * @var FileReference
      */
     protected ?FileReference $image = null;
-
 
     /**
      * @return FileReference
@@ -72,6 +61,4 @@ class Tab extends AbstractEntity
     {
         $this->image = $image;
     }
-
-
 }

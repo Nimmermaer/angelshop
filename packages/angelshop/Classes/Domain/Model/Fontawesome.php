@@ -28,25 +28,14 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Fontawesome extends AbstractEntity
 {
-
-    /**
-     * @var string
-     */
     public string $title = '';
 
-    /**
-     * @var string
-     */
+
     public string $link = '';
 
-    /**
-     * @var string
-     */
+
     public string $class = '';
 
-    /**
-     * @var string
-     */
-    public string $movement = '';
 
+    public string $movement = '';
 }

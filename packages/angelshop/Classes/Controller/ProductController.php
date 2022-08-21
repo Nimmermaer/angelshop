@@ -2,7 +2,6 @@
 
 namespace MB\Angelshop\Controller;
 
-
 use MB\Angelshop\Domain\Model\Content;
 use MB\Angelshop\Domain\Repository\ContentRepository;
 use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
@@ -40,8 +39,6 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Session;
  */
 class ProductController extends ActionController
 {
-
-
     /**
      * contentRepository
      * @var ContentRepository | null
@@ -87,13 +84,13 @@ class ProductController extends ActionController
 
     /**
      *  list action
-     * @return void
      */
     public function listAction(): ResponseInterface
     {
         $products = $this->contentRepository->findByContentType('ce_product');
-        $this->view->assignMultiple([
-                'products' => $products
+        $this->view->assignMultiple(
+            [
+                'products' => $products,
             ]
         );
         return $this->htmlResponse();
@@ -130,12 +127,13 @@ class ProductController extends ActionController
         $product = '';
 
         $arguments = $this->request->getArguments();
-        if ((int)$arguments['product']) {
+        if ((int) $arguments['product']) {
             $product = $this->contentRepository->findByIdentifier($arguments['product']);
         }
-        $this->view->assignMultiple(array(
-                'product' => $product
-            )
+        $this->view->assignMultiple(
+            [
+                'product' => $product,
+            ]
         );
         return $this->htmlResponse();
     }
@@ -151,15 +149,17 @@ class ProductController extends ActionController
     }
 
     /**
-     * @param Content $content
      * @throws StopActionException
      * @throws IllegalObjectTypeException
      * @throws UnknownObjectException|UnsupportedRequestTypeException
      */
     public function updateAction(Content $content)
     {
-        $this->addFlashMessage('Das Produkt mit dem Title: ' . $content->header . ' wurde aktualisiert!',
-            'Produktaktualisierung', AbstractMessage::INFO);
+        $this->addFlashMessage(
+            'Das Produkt mit dem Title: ' . $content->header . ' wurde aktualisiert!',
+            'Produktaktualisierung',
+            AbstractMessage::INFO
+        );
         $this->contentRepository->update($content);
         $this->redirect('list');
     }
@@ -176,9 +176,10 @@ class ProductController extends ActionController
         } else {
             $products = $this->contentRepository->findByContentType('ce_product');
         }
-        $this->view->assignMultiple([
+        $this->view->assignMultiple(
+            [
                 'products' => $products,
-                'searchword' => $argument['searchword']
+                'searchword' => $argument['searchword'],
             ]
         );
         return $this->htmlResponse();

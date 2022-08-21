@@ -26,5 +26,4 @@ namespace MB\Angelshop\Domain\Repository;
  */
 class TraderRepository extends Repository
 {
-
 }

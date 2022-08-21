@@ -31,151 +31,135 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  */
 class Content extends AbstractEntity
 {
-
-    /**
-     * @var string
-     */
     public string $CType = '';
-    /**
-     * @var string
-     */
+
+
     public string $headerPosition = '';
-    /**
-     * @var int
-     */
+
+
     public int $colPos = 0;
-    /**
-     * @var int
-     */
+
+
     public int $imagewidth = 0;
-    /**
-     * @var int
-     */
+
+
     public int $imageorient = 0;
-    /**
-     * @var string
-     */
+
+
     public string $imagecaption = '';
-    /**
-     * @var int
-     */
+
+
     public int $imagecols = 0;
-    /**
-     * @var int
-     */
+
+
     public int $imageborder = 0;
-    /**
-     * @var string
-     */
+
+
     public string $media = '';
-    /**
-     * @var string
-     */
+
+
     public string $layout = '';
-    /**
-     * @var int
-     */
+
+
     public int $cols = 0;
-    /**
-     * @var string
-     */
+
+
     public string $subheader = '';
-    /**
-     * @var string
-     */
+
+
     public string $headerLink = '';
-    /**
-     * @var string
-     */
+
+
     public string $imageLink = '';
-    /**
-     * @var string
-     */
+
+
     public string $imageZoom = '';
-    /**
-     * @var string
-     */
+
+
     public string $altText = '';
-    /**
-     * @var string
-     */
+
+
     public string $titleText = '';
-    /**
-     * @var string
-     */
+
+
     public string $headerLayout = '';
-    /**
-     * @var string
-     */
+
+
     public string $listType = '';
+
     /**
      * uid
      * @var boolean
      */
     public bool $hidden = false;
+
     /**
      * bodytext
-     * @var string
      */
     public string $bodytext = '';
+
     /**
      * product
-     * @var string
      */
     public string $product = '';
+
     /**
      * stock
      * @var boolean
      */
     public bool $stock = false;
+
     /**
      * header
-     * @var string
      */
     public string $header = '';
+
     /**
      * sorting
-     * @var string
      */
     public string $sorting = '';
+
     /**
      * sorting
-     * @var string
      */
     public string $additionalDescription = '';
+
     /**
      * contentType
-     * @var string
      */
     public string $contentType = '';
+
     /**
      * price
-     * @var float
      */
     public float $price = 0.00;
+
     /**
      * oldPrice
-     * @var float
      */
     public float $oldPrice = 0.00;
+
     /**
      * manufacturer
-     * @var string
      */
     public string $manufacturer = '';
+
     /**
      * @var DateTime
      */
     protected $crdate;
+
     /**
      * @var DateTime
      */
     protected $tstamp;
+
     /**
      * image
-     * @var ObjectStorage<FileReference> $image
+     * @var ObjectStorage<FileReference>
      */
     protected ?ObjectStorage $image = null;
+
     /**
      * Image
      * @var ObjectStorage<FileReference>
@@ -187,22 +171,17 @@ class Content extends AbstractEntity
         $this->imageCollection = new ObjectStorage();
     }
 
-    /**
-     * @return ObjectStorage
-     */
+
     public function getImageCollection(): ObjectStorage
     {
         return $this->imageCollection;
     }
 
-    /**
-     * @param ObjectStorage $imageCollection
-     */
+
     public function setImageCollection(ObjectStorage $imageCollection)
     {
         $this->imageCollection = $imageCollection;
     }
-
 
     /**
      * @return ObjectStorage
@@ -212,42 +191,31 @@ class Content extends AbstractEntity
         return $this->image;
     }
 
-    /**
-     * @param ObjectStorage $image
-     */
+
     public function setImage(ObjectStorage $image)
     {
         $this->image = $image;
     }
 
 
-    /**
-     * @return DateTime
-     */
     public function getCrdate(): DateTime
     {
         return $this->crdate;
     }
 
-    /**
-     * @param DateTime $crdate
-     */
+
     public function setCrdate(DateTime $crdate)
     {
         $this->crdate = $crdate;
     }
 
-    /**
-     * @return DateTime
-     */
+
     public function getTstamp(): DateTime
     {
         return $this->tstamp;
     }
 
-    /**
-     * @param DateTime $tstamp
-     */
+
     public function setTstamp(DateTime $tstamp)
     {
         $this->tstamp = $tstamp;

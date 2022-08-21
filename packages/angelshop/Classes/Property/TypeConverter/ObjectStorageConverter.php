@@ -24,7 +24,6 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
 
     /**
      * @param mixed $source
-     * @return array
      */
     public function getSourceChildPropertiesToBeConverted($source): array
     {
@@ -46,7 +45,6 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
      * Check if this is an upload type
      *
      * @param mixed $propertyValue
-     * @return bool
      */
     protected function isUploadType($propertyValue): bool
     {

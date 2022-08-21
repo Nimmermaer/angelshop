@@ -32,7 +32,6 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
  */
 class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-
     /**
      * initialize repository
      */
@@ -43,7 +42,6 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $querySettings->setRespectStoragePage(false);
         $querySettings->setRespectSysLanguage(false);
         $this->setDefaultQuerySettings($querySettings);
-
     }
 
     /**
@@ -57,12 +55,12 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $rawUids = $queryBuilder->from($table)
             ->select('uid_foreign')
             ->where(
-                $queryBuilder->expr()->eq('uid_local', (int)$uid)
+                $queryBuilder->expr()->eq('uid_local', (int) $uid)
             )->execute()
             ->fetchAllAssociative();
 
-        $trader = array();
-        if (is_array($rawUids) && !empty($rawUids)) {
+        $trader = [];
+        if (is_array($rawUids) && ! empty($rawUids)) {
             $query = $this->createQuery();
             $query->matching($query->in('uid', array_keys($rawUids)));
             $trader = $query->execute();

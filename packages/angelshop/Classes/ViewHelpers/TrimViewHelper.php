@@ -16,19 +16,15 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class TrimViewHelper extends AbstractViewHelper
 {
-
     /**
      * Arguments initialization
-     * @return void
      */
     public function initializeArguments(): void
     {
         $this->registerArgument('value', 'string', 'The value to output');
     }
 
-    /**
-     * @return string
-     */
+
     public function render(): string
     {
         if ($this->arguments['value'] === null) {

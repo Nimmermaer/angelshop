@@ -30,7 +30,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class TeaserrowControllerTest extends UnitTestCase
 {
-
     /**
      * @var TeaserrowController
      */
@@ -38,11 +37,11 @@ class TeaserrowControllerTest extends UnitTestCase
 
     public function setUp()
     {
-        $this->subject = $this->getMock('MB\\Angelshop\\Controller\\TeaserrowController', array(
+        $this->subject = $this->getMock('MB\\Angelshop\\Controller\\TeaserrowController', [
             'redirect',
             'forward',
-            'addFlashMessage'
-        ), array(), '', false);
+            'addFlashMessage',
+        ], [], '', false);
     }
 
     public function tearDown()
@@ -55,11 +54,15 @@ class TeaserrowControllerTest extends UnitTestCase
      */
     public function listActionFetchesAllTeaserrowsFromRepositoryAndAssignsThemToView()
     {
+        $allTeaserrows = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', [], [], '', false);
 
-        $allTeaserrows = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', false);
-
-        $teaserrowRepository = $this->getMock('MB\\Angelshop\\Domain\\Repository\\TeaserrowRepository',
-            array('findAll'), array(), '', false);
+        $teaserrowRepository = $this->getMock(
+            'MB\\Angelshop\\Domain\\Repository\\TeaserrowRepository',
+            ['findAll'],
+            [],
+            '',
+            false
+        );
         $teaserrowRepository->expects($this->once())->method('findAll')->will($this->returnValue($allTeaserrows));
         $this->inject($this->subject, 'teaserrowRepository', $teaserrowRepository);
 

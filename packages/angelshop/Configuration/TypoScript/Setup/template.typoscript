@@ -1,104 +1,135 @@
 # Initiate template (used by page)
-lib.templates.base = FLUIDTEMPLATE
-lib.templates.base {
-  partialRootPath = EXT:angelshop/Resources/Private/Partials/
-  layoutRootPath = EXT:angelshop/Resources/Private/Layouts/
-  dataProcessing {
-    100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    100 {
-      references.fieldName = media
-      as = files
-    }
+lib {
+  templates {
+    base = CASE
+    base {
+      key {
+        data = levelfield:-1, backend_layout_next_level, slide
+        override {
+          data = page:backend_layout
+        }
+      }
 
-    110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-    110 {
-      special = directory
-      special.value.data = TSFE:id
-      special.entryLevel = -1
-      as = sidebar
-    }
+      10 = FLUIDTEMPLATE
+      10 {
+        partialRootPath = EXT:angelshop/Resources/Private/Partials/
+        layoutRootPath = EXT:angelshop/Resources/Private/Layouts/
+        dataProcessing {
+          100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+          100 {
+            references.fieldName = media
+            as = files
+          }
 
-    120 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    120 {
-      references.fieldName = tx_angelshop_facebook_image
-      as = facebook
-    }
-  }
+          110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+          110 {
+            special = directory
+            special {
+              value {
+                data = TSFE:id
+                entryLevel = -1
+              }
+            }
 
-  variables {
-    columnMain =< lib.contents.columns.main
-    columnSpecial =< lib.contents.columns.special
-    columnFooterLeft =< lib.contents.columns.footerLeft
-    columnFooterMiddle =< lib.contents.columns.footerMiddle
-    columnFooterRight =< lib.contents.columns.footerRight
+            as = sidebar
+          }
 
-    homePagePid = TEXT
-    homePagePid {
-      value = {$global.homePageUid}
-    }
+          120 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+          120 {
+            references {
+              fieldName = tx_angelshop_facebook_image
+            }
 
-    footerStartPid = TEXT
-    footerStartPid {
-      value = {$global.navigation.footerStartPoint}
-    }
+            as = facebook
+          }
+        }
 
-    serviceStartPid = TEXT
-    serviceStartPid {
-      value = {$global.navigation.serviceStartPoint}
-    }
+        variables {
+          columnMain =< lib.contents.columns.main
+          columnSpecial =< lib.contents.columns.special
+          columnFooterLeft =< lib.contents.columns.footerLeft
+          columnFooterMiddle =< lib.contents.columns.footerMiddle
+          columnFooterRight =< lib.contents.columns.footerRight
 
-    metaStartPoint = TEXT
-    metaStartPoint {
-      value = {$global.navigation.metaStartPoint}
-    }
+          homePagePid = TEXT
+          homePagePid {
+            value = {$global.homePageUid}
+          }
 
-    searchPid = TEXT
-    searchPid {
-      value = {$global.page.search.pid}
-    }
+          footerStartPid = TEXT
+          footerStartPid {
+            value = {$global.navigation.footerStartPoint}
+          }
 
-    copyright = TEXT
-    copyright {
-      data = date:U
-      strftime = %Y
-      wrap = &copy; &nbsp; | &nbsp; Aba-Angelshop
-    }
-  }
+          serviceStartPid = TEXT
+          serviceStartPid {
+            value = {$global.navigation.serviceStartPoint}
+          }
 
-  settings {
-    opengraph {
-      type =
-      site_name = ABA - Angelshop, Laufen
-      admins =
-      email = info@aba-angelshop.de
-      phone_number = 0 170 / 994 22 53
-      street-address = Gartenstr. 10
-      locality = Laufen/Leobendorf
-      region = Bayern
-      postal-code = 83410
-      country-name = Deutschland
+          metaStartPoint = TEXT
+          metaStartPoint {
+            value = {$global.navigation.metaStartPoint}
+          }
+
+          searchPid = TEXT
+          searchPid {
+            value = {$global.page.search.pid}
+          }
+
+          copyright = TEXT
+          copyright {
+            data = date:U
+            strftime = %Y
+            wrap = &copy; &nbsp; | &nbsp; Aba-Angelshop
+          }
+        }
+
+        settings {
+          opengraph {
+            type =
+            site_name = ABA - Angelshop, Laufen
+            admins =
+            email = info@aba-angelshop.de
+            phone_number = 0 170 / 994 22 53
+            street-address = Gartenstr. 10
+            locality = Laufen/Leobendorf
+            region = Bayern
+            postal-code = 83410
+            country-name = Deutschland
+          }
+        }
+      }
+
+      default < lib.templates.base.10
+
+      pagets__Default < .default
+      pagets__Default {
+        templateName = Default
+      }
+
+      pagets__Sidebar < .default
+      pagets__Sidebar {
+        templateName = Sidebar
+      }
+
+      pagets__Slider < .default
+      pagets__Slider {
+        templateName = Slider
+      }
+
+      pagets__Product < .default
+      pagets__Product {
+        templateName = Product
+      }
+
+      pagets__News < .default
+      pagets__News {
+        templateName = News
+      }
     }
   }
 }
+
 
 # Choose template file (based on backend_layout, respecting heredity)
-lib.templates.base.file.stdWrap.cObject = CASE
-lib.templates.base.file.stdWrap.cObject {
-  key.field = backend_layout
-  key.ifEmpty.data = levelfield : -1 , backend_layout_next_level, slide
 
-  pagets__Default = TEXT
-  pagets__Default.value = EXT:angelshop/Resources/Private/Templates/Page/Default.html
-
-  pagets__Sidebar = TEXT
-  pagets__Sidebar.value = EXT:angelshop/Resources/Private/Templates/Page/Sidebar.html
-
-  pagets__Slider = TEXT
-  pagets__Slider.value = EXT:angelshop/Resources/Private/Templates/Page/Slider.html
-
-  pagets__Product = TEXT
-  pagets__Product.value = EXT:angelshop/Resources/Private/Templates/Page/Product.html
-
-  pagets__News = TEXT
-  pagets__News.value = EXT:angelshop/Resources/Private/Templates/Page/News.html
-}

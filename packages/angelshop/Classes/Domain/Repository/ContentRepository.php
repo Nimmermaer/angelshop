@@ -37,9 +37,7 @@ class ContentRepository extends Repository
      */
     protected $objectType = '\MB\Angelshop\Domain\Model\Content';
 
-    /**
-     *
-     */
+
     public function initializeObject()
     {
         /** @var $querySettings Typo3QuerySettings */
@@ -48,7 +46,7 @@ class ContentRepository extends Repository
         $querySettings->setIgnoreEnableFields(true);
         $querySettings->setEnableFieldsToBeIgnored([
             'hidden',
-            'starttime'
+            'starttime',
         ]);
         $this->setDefaultQuerySettings($querySettings);
     }
@@ -78,7 +76,7 @@ class ContentRepository extends Repository
         $query->getQuerySettings()->setIgnoreEnableFields(true);
         $query->getQuerySettings()->setEnableFieldsToBeIgnored(['hidden']);
 
-        return $query->matching($query->equals('uid', (int)$uid))->execute()->getFirst();
+        return $query->matching($query->equals('uid', (int) $uid))->execute()->getFirst();
     }
 
     /**
@@ -88,15 +86,15 @@ class ContentRepository extends Repository
      */
     public function findByIndex($term)
     {
-
         $query = $this->createQuery();
         $query->getQuerySettings()->setIgnoreEnableFields(false);
-        $constraints[] = $query->logicalOr([
+        $constraints[] = $query->logicalOr(
+            [
                 $query->like('bodytext', "%$term%"),
                 $query->like('product', "%$term%"),
                 $query->like('additionalDescription', "%$term%"),
                 $query->like('header', "%$term%"),
-                $query->like('manufacturer', "%$term%")
+                $query->like('manufacturer', "%$term%"),
             ]
         );
         $constraints[] = $query->logicalAnd(

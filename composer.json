@@ -68,7 +68,9 @@
     "lochmueller/staticfilecache": "^12.3.2",
     "mb/angelshop": "^0.0.1",
     "helhum/typo3-console": "^7.0",
-    "georgringer/news": "^9.1"
+    "georgringer/news": "^9.1",
+    "symfony/translation": "^6.0",
+    "symplify/easy-coding-standard": "^11.1"
   },
   "require-dev": {
     "rector/rector": "^0.11.53",
@@ -77,6 +79,12 @@
     "helmich/typo3-typoscript-lint": "^2.5"
   },
 	"scripts": {
-		"lint" : "bin/typoscript-lint"
+		"fix-style": "ecs --fix",
+		"phpstan": "phpstan --memory-limit=-1",
+		"lint" : [
+			"typo3cms lint:xliff packages/angelshop/Resources/Private/Language/",
+			"typo3cms lint:yaml packages/angelshop/Configuration/ packages/angelshop/Configuration/RTE/ config/sites/",
+			"typoscript-lint"
+		]
 	}
 }

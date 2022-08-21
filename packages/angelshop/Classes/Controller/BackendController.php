@@ -32,27 +32,20 @@ class BackendController
     protected ?FileRepository $fileRepository = null;
 
 
-    /**
-     * @param PageRepository $pageRepository
-     */
     public function injectPageRepository(PageRepository $pageRepository)
     {
         $this->pageRepository = $pageRepository;
     }
 
-    /**
-     * @param FileRepository $fileRepository
-     */
+
     public function injectFileRepository(FileRepository $fileRepository)
     {
         $this->fileRepository = $fileRepository;
     }
 
-
     /**
      * Render notes by single PID or PID list
      *
-     * @param int $id
      * @return string
      * @throws InvalidExtensionNameException
      */
@@ -69,7 +62,7 @@ class BackendController
             $view->getRequest()->setControllerExtensionName('Angelshop');
             $view->assignMultiple([
                 'page' => $page,
-                'files' => $files
+                'files' => $files,
             ]);
             return $view->render();
         }

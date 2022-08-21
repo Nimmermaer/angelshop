@@ -41,9 +41,11 @@ call_user_func(
             'content-image'
         );
 
-        ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript',
-            'angelshop');
-
+        ExtensionManagementUtility::addStaticFile(
+            $extensionKey,
+            'Configuration/TypoScript',
+            'angelshop'
+        );
 
         $tables = [
             'tx_angelshop_domain_model_fontawesome',
@@ -52,8 +54,10 @@ call_user_func(
         ];
 
         foreach ($tables as $table) {
-            ExtensionManagementUtility::addLLrefForTCAdescr($table,
-                'EXT:angelshop/Resources/Private/Language/locallang_csh_' . $table);
+            ExtensionManagementUtility::addLLrefForTCAdescr(
+                $table,
+                'EXT:angelshop/Resources/Private/Language/locallang_csh_' . $table
+            );
             ExtensionManagementUtility::allowTableOnStandardPages($table);
         }
 
@@ -67,8 +71,11 @@ call_user_func(
             'Wetter'
         );
         $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$extensionKey . '_' . strtolower($pluginSignature)] = 'pi_flexform';
-        ExtensionManagementUtility::addPiFlexFormValue($extensionKey . '_' . strtolower($pluginSignature),
-            'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginSignature . '.xml');
-    }, 'angelshop',
+        ExtensionManagementUtility::addPiFlexFormValue(
+            $extensionKey . '_' . strtolower($pluginSignature),
+            'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginSignature . '.xml'
+        );
+    },
+    'angelshop',
     'tt_content'
 );
