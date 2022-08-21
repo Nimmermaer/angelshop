@@ -22,8 +22,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(Typo3SetList::TYPO3_87);
     $containerConfigurator->import(Typo3SetList::TYPO3_95);
     $containerConfigurator->import(Typo3SetList::TYPO3_104);
-    $containerConfigurator->import(Typo3SetList::TYPOSCRIPT_CONDITIONS_95);
-    $containerConfigurator->import(Typo3SetList::TYPOSCRIPT_CONDITIONS_104);
+    $containerConfigurator->import(Typo3SetList::TYPO3_11);
 
     // In order to have a better analysis from phpstan we teach it here some more things
     $parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, Typo3Option::PHPSTAN_FOR_RECTOR_PATH);
@@ -46,7 +45,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // If you only want to process one/some TYPO3 extension(s), you can specify its path(s) here.
     // If you use the option --config change __DIR__ to getcwd()
      $parameters->set(Option::PATHS, [
-        __DIR__ . '/local/dependencies/',
+        __DIR__ . '/packages/*',
      ]);
 
     // If you set option Option::AUTO_IMPORT_NAMES to true, you should consider excluding some TYPO3 files.

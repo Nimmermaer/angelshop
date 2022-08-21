@@ -3,6 +3,7 @@
 namespace MB\Angelshop\Controller;
 
 
+use Psr\Http\Message\ResponseInterface;
 use MB\Angelshop\Domain\Model\Content;
 use MB\Angelshop\Domain\Repository\ContentRepository;
 use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
@@ -88,13 +89,14 @@ class ProductController extends ActionController
      *  list action
      * @return void
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $products = $this->contentRepository->findByContentType('ce_product');
         $this->view->assignMultiple([
                 'products' => $products
             ]
         );
+        return $this->htmlResponse();
     }
 
     /**
@@ -123,7 +125,7 @@ class ProductController extends ActionController
     /**
      *  edit Action
      */
-    public function editAction()
+    public function editAction(): ResponseInterface
     {
         $product = '';
 
@@ -135,6 +137,7 @@ class ProductController extends ActionController
                 'product' => $product
             )
         );
+        return $this->htmlResponse();
     }
 
     /**
@@ -164,7 +167,7 @@ class ProductController extends ActionController
     /**
      * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
-    public function searchAction()
+    public function searchAction(): ResponseInterface
     {
         $argument = $this->request->getArguments();
 
@@ -178,5 +181,6 @@ class ProductController extends ActionController
                 'searchword' => $argument['searchword']
             ]
         );
+        return $this->htmlResponse();
     }
 }
