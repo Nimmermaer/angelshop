@@ -87,6 +87,11 @@ call_user_func(
             '',
             'after:categories'
         );
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+            'angelshop',
+            'Configuration/TSconfig/pageTs.tsconfig',
+            'EXT:angelshop :: Configuration for pages'
+        );
     },
     'angelshop',
     'pages'

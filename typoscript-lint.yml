@@ -1,5 +1,5 @@
 paths:
-  - packages/angelshop/Configuration/PageTS/
+  - packages/angelshop/Configuration/TSconfig/
   - packages/angelshop/Configuration/TypoScript/
 
 filePatterns:

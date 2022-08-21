@@ -16,7 +16,7 @@ if (! defined('TYPO3')) {
     die('Access denied.');
 }
 
-$boot = function ($extensionKey) {
+$boot = static function ($extensionKey): void {
     ExtensionUtility::configurePlugin(
         ucfirst($extensionKey),
         'Product',
@@ -69,7 +69,10 @@ $boot = function ($extensionKey) {
             ]
         );
     }
-    ExtensionManagementUtility::addPageTSConfig('@import "EXT:angelshop/Configuration/PageTS/pageTs.tsconfig"');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
+    @import \'EXT:angelshop/Configuration/TSconfig/pageTs.tsconfig\'
+    ');
+
 };
 
 $boot('angelshop');
