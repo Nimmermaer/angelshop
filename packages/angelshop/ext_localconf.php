@@ -72,7 +72,6 @@ $boot = static function ($extensionKey): void {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
     @import \'EXT:angelshop/Configuration/TSconfig/pageTs.tsconfig\'
     ');
-
 };
 
 $boot('angelshop');

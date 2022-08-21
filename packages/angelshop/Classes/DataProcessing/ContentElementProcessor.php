@@ -26,6 +26,7 @@ use MB\Angelshop\Domain\Repository\TabRepository;
 use MB\Angelshop\Domain\Repository\TraderRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\Exception;
+use TYPO3\CMS\Extbase\Persistence\Generic\QueryResult;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -82,7 +83,9 @@ class ContentElementProcessor implements DataProcessorInterface
     public function processForTextMedia(array $processedData): array
     {
         $repository = self::getRepository(FontawesomeRepository::class);
-        return $repository->findByRecord($processedData['data']['uid']);
+        /** @var QueryResult $contentElements */
+        $contentElements = $repository->findByRecord($processedData['data']['uid']);
+        return $contentElements->count() > 0 ? $contentElements : [];
     }
 
     protected function getRepository(string $repositoryName): object
