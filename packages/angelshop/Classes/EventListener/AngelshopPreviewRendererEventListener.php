@@ -2,6 +2,7 @@
 
 namespace MB\Angelshop\EventListener;
 
+use MB\Angelshop\Domain\Model\Tab;
 use MB\Angelshop\Domain\Repository\TabRepository;
 use TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -55,16 +56,15 @@ final readonly class AngelshopPreviewRendererEventListener
     {
         $addContent = '';
         $i = 1;
-        $objectManager =
-            GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository = $objectManager->get(TabRepository::class);
+        $repository = GeneralUtility::makeInstance(TabRepository::class);
         $tabs = $repository->findByRecord($arguments['data']['uid']);
         if ($tabs) {
+            /** @var Tab $item */
             foreach ($tabs as $item) {
                 $addContent .= 'Tab-' . $i . '<br/>';
-                $addContent .= '<strong>' . $item->getHeader() . '</strong>';
+                $addContent .= '<strong>' . $item->header . '</strong>';
                 $addContent .= '<p>' . substr(
-                    (string) $item->getText(),
+                    (string) $item->text,
                     0,
                     80
                 ) . '</p> <hr style="background-color:black; "  />';

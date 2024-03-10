@@ -25,13 +25,13 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Tab extends AbstractEntity
 {
-    protected string $header = '';
+    public string $header = '';
 
-    protected string $text = '';
+    public string $text = '';
 
-    protected string $icon = '';
+    public string $icon = '';
 
-    protected string $movement = '';
+    public string $movement = '';
 
     /**
      * image
