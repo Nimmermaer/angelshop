@@ -1,9 +1,9 @@
 <?php
 
-namespace MB\Angelshop\Hooks;
+namespace MB\Angelshop\EventListener;
 
-use TYPO3\CMS\Backend\View\PageLayoutView;
-use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
+use MB\Angelshop\Domain\Repository\TabRepository;
+use TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************
@@ -24,30 +24,23 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class PreviewRenderer
- * @package MB\Angelshop\Hooks
- */
-class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
+final readonly class AngelshopPreviewRendererEventListener
 {
-    /**
-     * @param bool $drawItem
-     * @param string $headerContent
-     * @param string $itemContent
-     */
-    public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row): void
+    public function __invoke(PageContentPreviewRenderingEvent $event): void
     {
-        $function = 'show' . str_replace(' ', '', ucwords(str_replace("_", " ", $row['CType'])));
+        $itemContent = '';
+
+        $function = 'show' . str_replace(' ', '', ucwords(str_replace('_', ' ', (string) $event->getRecord()['CType'])));
         if (method_exists($this, $function)) {
             $itemContent .= call_user_func(
                 [$this, $function],
                 [
-                    'data' => $row,
-                    'header' => $headerContent,
-                    'pagelayoutView' => $parentObject,
+                    'data' => $event->getRecord(),
                 ]
             );
-            $drawItem = false;
+        }
+        if ($itemContent) {
+            $event->setPreviewContent($itemContent);
         }
     }
 
@@ -64,14 +57,14 @@ class AngelshopPreviewRenderer implements PageLayoutViewDrawItemHookInterface
         $i = 1;
         $objectManager =
             GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $repository = $objectManager->get('MB\\Angelshop\\Domain\\Repository\\TabRepository');
+        $repository = $objectManager->get(TabRepository::class);
         $tabs = $repository->findByRecord($arguments['data']['uid']);
         if ($tabs) {
             foreach ($tabs as $item) {
                 $addContent .= 'Tab-' . $i . '<br/>';
                 $addContent .= '<strong>' . $item->getHeader() . '</strong>';
                 $addContent .= '<p>' . substr(
-                    $item->getText(),
+                    (string) $item->getText(),
                     0,
                     80
                 ) . '</p> <hr style="background-color:black; "  />';

@@ -3,8 +3,9 @@
       xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers">
 
 <f:if condition="{settings.cssFile}">
-    <n:includeFile path="{settings.cssFile}"/>
+    <f:asset.css identifier="ext-news" href="{settings.cssFile}" />
 </f:if>
+
 
 <div class="news news-single">
     <div class="article" itemscope="itemscope" itemtype="http://schema.org/Article">

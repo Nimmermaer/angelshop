@@ -10,10 +10,6 @@ namespace MB\Angelshop\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
-/**
- * Class MapViewHelper
- * @package MB\Angelshop\ViewHelpers
- */
 class MapViewHelper extends AbstractViewHelper
 {
     public function initializeArguments(): void
@@ -27,10 +23,10 @@ class MapViewHelper extends AbstractViewHelper
     {
         $mapsLocation = '';
         if ($this->arguments['name']) {
-            $mapsLocation = trim($this->arguments['name']);
+            $mapsLocation = trim((string) $this->arguments['name']);
         }
         if ($this->arguments['address']) {
-            $mapsLocation .= trim($this->arguments['address']);
+            $mapsLocation .= trim((string) $this->arguments['address']);
         }
 
         return rawurlencode($mapsLocation);

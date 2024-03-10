@@ -4,6 +4,7 @@ namespace MB\Angelshop\Tests\Unit\Controller;
 
 use MB\Angelshop\Controller\GalleryController;
 use MB\Angelshop\Domain\Model\Gallery;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /***************************************************************
@@ -26,7 +27,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Test case for class MB\Angelshop\Controller\GalleryController.
- * @author Michael Blunck <mi.blunck@gmail.com>
  */
 class GalleryControllerTest extends UnitTestCase
 {
@@ -35,7 +35,7 @@ class GalleryControllerTest extends UnitTestCase
      */
     protected $subject = null;
 
-    public function setUp()
+    protected function setUp()
     {
         $this->subject = $this->getMock('MB\\Angelshop\\Controller\\GalleryController', [
             'redirect',
@@ -44,17 +44,14 @@ class GalleryControllerTest extends UnitTestCase
         ], [], '', false);
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
         unset($this->subject);
     }
 
-    /**
-     * @test
-     */
-    public function listActionFetchesAllGalleriesFromRepositoryAndAssignsThemToView(): void
+    public function testListActionFetchesAllGalleriesFromRepositoryAndAssignsThemToView(): void
     {
-        $allGalleries = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', [], [], '', false);
+        $allGalleries = $this->getMock(ObjectStorage::class, [], [], '', false);
 
         $galleryRepository = $this->getMock(
             'MB\\Angelshop\\Domain\\Repository\\GalleryRepository',
@@ -63,26 +60,29 @@ class GalleryControllerTest extends UnitTestCase
             '',
             false
         );
-        $galleryRepository->expects($this->once())->method('findAll')->will($this->returnValue($allGalleries));
+        $galleryRepository->expects($this->once())
+            ->method('findAll')
+            ->will($this->returnValue($allGalleries));
         $this->inject($this->subject, 'galleryRepository', $galleryRepository);
 
         $view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
-        $view->expects($this->once())->method('assign')->with('galleries', $allGalleries);
+        $view->expects($this->once())
+            ->method('assign')
+            ->with('galleries', $allGalleries);
         $this->inject($this->subject, 'view', $view);
 
         $this->subject->listAction();
     }
 
-    /**
-     * @test
-     */
-    public function showActionAssignsTheGivenGalleryToView(): void
+    public function testShowActionAssignsTheGivenGalleryToView(): void
     {
         $gallery = new Gallery();
 
         $view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
         $this->inject($this->subject, 'view', $view);
-        $view->expects($this->once())->method('assign')->with('gallery', $gallery);
+        $view->expects($this->once())
+            ->method('assign')
+            ->with('gallery', $gallery);
 
         $this->subject->showAction($gallery);
     }

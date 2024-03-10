@@ -69,10 +69,10 @@
     "typo3/cms-tstemplate": "^12.4",
     "typo3/cms-viewpage": "^12.4",
     "typo3/cms-webhooks": "^12.4",
-    "typo3/cms-workspaces": "^12.4",
     "helhum/typo3-console": "^8",
     "symfony/translation": "^7.0",
-    "mb/angelshop": "^0.0.1"
+    "mb/angelshop": "^0.0.1",
+    "lochmueller/sourceopt": "^5.1"
   },
   "scripts": {
 		"fix-style": "ecs --fix",

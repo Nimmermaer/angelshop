@@ -1,0 +1,9 @@
+@import 'EXT:angelshop/Configuration/TSconfig/Extension/news.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/Mod/WebLayout/backendlayout.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/Mod/WebLayout/configuration.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/Mod/WebList/configuration.tsconfig'
+
+@import 'EXT:angelshop/Configuration/TSconfig/RTE.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/TCAdefault.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/TCEFORM.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/TCEMAIN.tsconfig'

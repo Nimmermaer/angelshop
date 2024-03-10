@@ -4,10 +4,6 @@ namespace MB\Angelshop\Property\TypeConverter;
 
 use const UPLOAD_ERR_NO_FILE;
 
-/**
- * Class ObjectStorageConverter
- * @package MB\Angelshop\Property\TypeConverter
- */
 class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\ObjectStorageConverter
 {
     /**
@@ -44,10 +40,8 @@ class ObjectStorageConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\O
 
     /**
      * Check if this is an upload type
-     *
-     * @param mixed $propertyValue
      */
-    protected function isUploadType($propertyValue): bool
+    protected function isUploadType(mixed $propertyValue): bool
     {
         return is_array($propertyValue) && isset($propertyValue['tmp_name']) && isset($propertyValue['error']);
     }

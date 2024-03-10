@@ -6,7 +6,6 @@ tt_content.gridelements_pi1.20.10.setup.accordion {
       insertData = 1
     }
   }
-
   wrap = <div class="row"><div class="col-lg-12">|</div></div>
   prepend < lib.stdheader
 }

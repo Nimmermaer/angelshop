@@ -3,7 +3,6 @@ services:
     autowire: true
     autoconfigure: true
     public: false
-
   MB\Angelshop\:
     resource: '../Classes/*'
 
@@ -11,14 +10,29 @@ services:
     arguments:
       $requireStrictFileNames: false
     tags:
-      - name: 'console.command'
+      - name: console.command
         command: 'lint:xliff'
   Symfony\Component\Yaml\Command\LintCommand:
     arguments:
       $name: 'Yaml Linter'
     tags:
-      - name: 'console.command'
+      - name: console.command
         command: 'lint:yaml'
+
+  MB\Angelshop\EventListener\PageModulePreviewEventListener:
+    tags:
+      - name: event.listener
+        identifier: page-properties-to-page-module
+  MB\Angelshop\Property\TypeConverter\ObjectStorageConverter:
+    tags:
+      - name: extbase.type_converter
+        priority: 1710097405791
+        sources: array
+        target: TYPO3\CMS\Extbase\Persistence\ObjectStorage
+  MB\Angelshop\EventListener\AngelshopPreviewRendererEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'angelshop/preview-renderer'
 
 imports:
   - { resource: Backend/DashboardWidgets.yaml }

@@ -23,20 +23,12 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class Trader
- * @package MB\Angelshop\Domain\Model
- */
 class Trader extends AbstractEntity
 {
     protected string $title = '';
 
     protected string $link = '';
 
-    /**
-     * image
-     * @var FileReference | null
-     */
     protected ?FileReference $image = null;
 
     public function getImage(): ?FileReference

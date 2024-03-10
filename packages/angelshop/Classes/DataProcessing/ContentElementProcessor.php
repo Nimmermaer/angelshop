@@ -25,27 +25,18 @@ use MB\Angelshop\Domain\Repository\FontawesomeRepository;
 use MB\Angelshop\Domain\Repository\TabRepository;
 use MB\Angelshop\Domain\Repository\TraderRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\Exception;
 use TYPO3\CMS\Extbase\Persistence\Generic\QueryResult;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-/**
- * Class ContentElementProcessor
- * @package MB\Angelshop\DataProcessing
- */
 class ContentElementProcessor implements DataProcessorInterface
 {
     /**
      * fontAwesomeRepository
-     * @var FontawesomeRepository | null
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected ?FontawesomeRepository $fontawesomeRepository = null;
 
-    /**
-     * @return mixed[]
-     */
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
@@ -55,32 +46,25 @@ class ContentElementProcessor implements DataProcessorInterface
         $function = 'processFor' . str_replace(
             ' ',
             '',
-            ucwords(str_replace("_", " ", $contentObjectConfiguration['templateName']))
+            ucwords(str_replace('_', ' ', (string) $contentObjectConfiguration['templateName']))
         );
-        if (strpos($function, 'Angelshop/') !== false) {
+        if (str_contains($function, 'Angelshop/')) {
             $function = str_replace('Angelshop/', '', $function);
         }
 
         if (method_exists($this, $function)) {
             $templateName = $contentObjectConfiguration['templateName'];
 
-            if (strpos($templateName, 'Angelshop/') !== false) {
-                $templateName = str_replace('Angelshop/', '', $templateName);
+            if (str_contains((string) $templateName, 'Angelshop/')) {
+                $templateName = str_replace('Angelshop/', '', (string) $templateName);
             }
-            $processedData[$templateName] = call_user_func([
-                $this,
-                $function,
-            ], $processedData);
+            $processedData[$templateName] = call_user_func([$this, $function], $processedData);
         }
 
         return $processedData;
     }
 
-    /**
-     * @throws Exception
-     * @return mixed[]
-     */
-    public function processForTextMedia(array $processedData): array
+    public function processForTextMedia(array $processedData): array|QueryResult
     {
         $repository = self::getRepository(FontawesomeRepository::class);
         /** @var QueryResult $contentElements */
@@ -88,48 +72,38 @@ class ContentElementProcessor implements DataProcessorInterface
         return $contentElements->count() > 0 ? $contentElements : [];
     }
 
-    protected function getRepository(string $repositoryName): object
-    {
-        return GeneralUtility::makeInstance($repositoryName);
-    }
-
-    /**
-     * @throws Exception
-     * @return mixed[]
-     */
-    public function processForImpressum(array $processedData): array
+    public function processForImpressum(array $processedData): array|QueryResult
     {
         $repository = self::getRepository(FontawesomeRepository::class);
-        return $repository->findByRecord($processedData['data']['uid']);
+        return $repository->findBy([
+            'record' => $processedData['data']['uid'],
+        ]);
     }
 
-    /**
-     * @throws Exception
-     * @return mixed[]
-     */
-    public function processForTraderSlider(array $processedData): array
+    public function processForTraderSlider(array $processedData): array|QueryResult
     {
         $repository = self::getRepository(TraderRepository::class);
-        return $repository->findByRecord($processedData['data']['uid']);
+        return $repository->findBy([
+            'record' => $processedData['data']['uid'],
+        ]);
     }
 
-    /**
-     * @throws Exception
-     * @return mixed[]
-     */
-    public function processForTabs(array $processedData): array
+    public function processForTabs(array $processedData): array|QueryResult
     {
         $repository = self::getRepository(TabRepository::class);
-        return $repository->findByRecord($processedData['data']['uid']);
+        return $repository->findBy([
+            'record' => $processedData['data']['uid'],
+        ]);
     }
 
-    /**
-     * @throws Exception
-     * @return mixed[]
-     */
-    public function processForProductList(array $processedData): array
+    public function processForProductList(array $processedData): array|QueryResult
     {
         $repository = self::getRepository(ContentRepository::class);
         return $repository->findByContentType('ce_product');
+    }
+
+    protected function getRepository(string $repositoryName): object
+    {
+        return GeneralUtility::makeInstance($repositoryName);
     }
 }

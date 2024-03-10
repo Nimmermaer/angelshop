@@ -1,5 +1,10 @@
 services:
 
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
   dashboard.buttons.fish:
     class: 'TYPO3\CMS\Dashboard\Widgets\Provider\ButtonProvider'
     arguments:
@@ -10,16 +15,16 @@ services:
   dashboard.widget.fish:
     class: 'TYPO3\CMS\Dashboard\Widgets\RssWidget'
     arguments:
-      $view: '@dashboard.views.widget'
-      $cache: '@cache.dashboard.rss'
       $buttonProvider: '@dashboard.buttons.fish'
+      $cache: '@cache.dashboard.rss'
       $options:
-        feedUrl: 'http://feeds.t-online.de/rss/angeln'
+        feedUrl: 'https://www.bmel.de/SiteGlobals/Functions/RSSFeed/RSSNewsfeed/RSSNewsfeed_Pressemitteilungen.xml'
+        refreshAvailable: true
     tags:
       - name: dashboard.widget
         identifier: 'fish'
         groupNames: 'news'
-        title: 'Angelnews T-Online'
+        title: 'Ernährung und Lebensmittel'
         description: 'Beschreibung'
         iconIdentifier: 'content-widget-rss'
         height: 'large'

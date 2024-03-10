@@ -4,6 +4,7 @@ namespace MB\Angelshop\Tests\Unit\Controller;
 
 use MB\Angelshop\Controller\TeaserrowController;
 use MB\Angelshop\Domain\Model\Teaserrow;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /***************************************************************
@@ -26,7 +27,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Test case for class MB\Angelshop\Controller\TeaserrowController.
- * @author Michael Blunck <mi.blunck@gmail.com>
  */
 class TeaserrowControllerTest extends UnitTestCase
 {
@@ -35,7 +35,7 @@ class TeaserrowControllerTest extends UnitTestCase
      */
     protected $subject = null;
 
-    public function setUp()
+    protected function setUp()
     {
         $this->subject = $this->getMock('MB\\Angelshop\\Controller\\TeaserrowController', [
             'redirect',
@@ -44,17 +44,14 @@ class TeaserrowControllerTest extends UnitTestCase
         ], [], '', false);
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
         unset($this->subject);
     }
 
-    /**
-     * @test
-     */
-    public function listActionFetchesAllTeaserrowsFromRepositoryAndAssignsThemToView(): void
+    public function testListActionFetchesAllTeaserrowsFromRepositoryAndAssignsThemToView(): void
     {
-        $allTeaserrows = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', [], [], '', false);
+        $allTeaserrows = $this->getMock(ObjectStorage::class, [], [], '', false);
 
         $teaserrowRepository = $this->getMock(
             'MB\\Angelshop\\Domain\\Repository\\TeaserrowRepository',
@@ -63,26 +60,29 @@ class TeaserrowControllerTest extends UnitTestCase
             '',
             false
         );
-        $teaserrowRepository->expects($this->once())->method('findAll')->will($this->returnValue($allTeaserrows));
+        $teaserrowRepository->expects($this->once())
+            ->method('findAll')
+            ->will($this->returnValue($allTeaserrows));
         $this->inject($this->subject, 'teaserrowRepository', $teaserrowRepository);
 
         $view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
-        $view->expects($this->once())->method('assign')->with('teaserrows', $allTeaserrows);
+        $view->expects($this->once())
+            ->method('assign')
+            ->with('teaserrows', $allTeaserrows);
         $this->inject($this->subject, 'view', $view);
 
         $this->subject->listAction();
     }
 
-    /**
-     * @test
-     */
-    public function showActionAssignsTheGivenTeaserrowToView(): void
+    public function testShowActionAssignsTheGivenTeaserrowToView(): void
     {
         $teaserrow = new Teaserrow();
 
         $view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
         $this->inject($this->subject, 'view', $view);
-        $view->expects($this->once())->method('assign')->with('teaserrow', $teaserrow);
+        $view->expects($this->once())
+            ->method('assign')
+            ->with('teaserrow', $teaserrow);
 
         $this->subject->showAction($teaserrow);
     }

@@ -27,7 +27,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  * Test case for class \MB\Angelshop\Domain\Model\Teaserrow.
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- * @author Michael Blunck <mi.blunck@gmail.com>
  */
 class TeaserrowTest extends UnitTestCase
 {
@@ -36,20 +35,17 @@ class TeaserrowTest extends UnitTestCase
      */
     protected $subject = null;
 
-    public function setUp()
+    protected function setUp()
     {
         $this->subject = new Teaserrow();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
         unset($this->subject);
     }
 
-    /**
-     * @test
-     */
-    public function dummyTestToNotLeaveThisFileEmpty(): void
+    public function testDummyTestToNotLeaveThisFileEmpty(): void
     {
         $this->markTestIncomplete();
     }

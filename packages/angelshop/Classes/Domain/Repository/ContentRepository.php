@@ -2,7 +2,8 @@
 
 namespace MB\Angelshop\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use MB\Angelshop\Domain\Model\Content;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -26,8 +27,6 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  ***************************************************************/
 
 /**
- * Class ContentRepository
- * @package MB\Angelshop\Domain\Repository
  * @method findByContentType(string $string)
  */
 class ContentRepository extends Repository
@@ -36,26 +35,19 @@ class ContentRepository extends Repository
      * Repository for tt_content objects
      * @var class-string<\\MB\Angelshop\Domain\Model\Content>
      */
-    protected $objectType = '\MB\Angelshop\Domain\Model\Content';
+    protected $objectType = '\\' . Content::class;
 
     public function initializeObject(): void
     {
-        /** @var $querySettings Typo3QuerySettings */
-        $querySettings = $this->objectManager->get(Typo3QuerySettings::class);
+        /** @var Typo3QuerySettings $querySettings */
+        $querySettings = GeneralUtility::makeInstance(Typo3QuerySettings::class);
         $querySettings->setRespectStoragePage(false);
         $querySettings->setIgnoreEnableFields(true);
-        $querySettings->setEnableFieldsToBeIgnored([
-            'hidden',
-            'starttime',
-        ]);
+        $querySettings->setEnableFieldsToBeIgnored(['hidden', 'starttime']);
         $this->setDefaultQuerySettings($querySettings);
     }
 
-    /**
-     * @return array|QueryResultInterface
-     * @throws InvalidQueryException
-     */
-    public function findProducts()
+    public function findProducts(): QueryResultInterface|array
     {
         $query = $this->createQuery();
         $query->like('tx_abatemplate_product', 1);
@@ -63,47 +55,37 @@ class ContentRepository extends Repository
         return $query->execute();
     }
 
-    /**
-     * @param $uid
-     */
     public function findHiddenEntryByUid($uid): ?object
     {
         if (array_key_exists('__identity', $uid)) {
             $uid = $uid['__identity'];
         }
         $query = $this->createQuery();
-        $query->getQuerySettings()->setIgnoreEnableFields(true);
-        $query->getQuerySettings()->setEnableFieldsToBeIgnored(['hidden']);
+        $query->getQuerySettings()
+            ->setIgnoreEnableFields(true);
+        $query->getQuerySettings()
+            ->setEnableFieldsToBeIgnored(['hidden']);
 
-        return $query->matching($query->equals('uid', (int) $uid))->execute()->getFirst();
+        return $query->matching($query->equals('uid', (int) $uid))
+            ->execute()
+            ->getFirst();
     }
 
-    /**
-     * @param $term
-     * @return array|QueryResultInterface
-     * @throws InvalidQueryException
-     */
-    public function findByIndex($term)
+    public function findByIndex($term): array|QueryResultInterface
     {
+        $constraints = [];
         $query = $this->createQuery();
-        $query->getQuerySettings()->setIgnoreEnableFields(false);
+        $query->getQuerySettings()
+            ->setIgnoreEnableFields(false);
         $constraints[] = $query->logicalOr(
-            [
-                $query->like('bodytext', "%$term%"),
-                $query->like('product', "%$term%"),
-                $query->like('additionalDescription', "%$term%"),
-                $query->like('header', "%$term%"),
-                $query->like('manufacturer', "%$term%"),
-            ]
+            $query->like('bodytext', "%{$term}%"),
+            $query->like('product', "%{$term}%"),
+            $query->like('additionalDescription', "%{$term}%"),
+            $query->like('header', "%{$term}%"),
+            $query->like('manufacturer', "%{$term}%")
         );
-        $constraints[] = $query->logicalAnd(
-            $query->equals('contentType', 'ce_product')
-        );
-        $query->matching(
-            $query->logicalAnd(
-                $constraints
-            )
-        );
+        $constraints[] = $query->logicalAnd($query->equals('contentType', 'ce_product'));
+        $query->matching($query->logicalAnd(...$constraints));
         return $query->execute();
     }
 }

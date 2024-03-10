@@ -9,3 +9,13 @@ options {
   }
   clearCache.pages = 1
 }
+setup {
+  startModule = dashboard
+  default {
+    emailMeAtLogin = 1
+  }
+  fields {
+    avatar.disabled = 1
+  }
+}
+

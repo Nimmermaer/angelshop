@@ -3,13 +3,7 @@ lib {
   templates {
     base = CASE
     base {
-      key {
-        data = levelfield:-1, backend_layout_next_level, slide
-        override {
-          data = page:backend_layout
-        }
-      }
-
+      key.data = pagelayout
       10 = FLUIDTEMPLATE
       10 {
         partialRootPath = EXT:angelshop/Resources/Private/Partials/
@@ -21,7 +15,6 @@ lib {
             references.fieldName = media
             as = files
           }
-
           110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
           110 {
             special = directory
@@ -31,20 +24,16 @@ lib {
                 entryLevel = -1
               }
             }
-
             as = sidebar
           }
-
           120 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
           120 {
             references {
               fieldName = tx_angelshop_facebook_image
             }
-
             as = facebook
           }
         }
-
         variables {
           columnMain =< lib.contents.columns.main
           columnSpecial =< lib.contents.columns.special
@@ -56,27 +45,22 @@ lib {
           homePagePid {
             value = {$global.homePageUid}
           }
-
           footerStartPid = TEXT
           footerStartPid {
             value = {$global.navigation.footerStartPoint}
           }
-
           serviceStartPid = TEXT
           serviceStartPid {
             value = {$global.navigation.serviceStartPoint}
           }
-
           metaStartPoint = TEXT
           metaStartPoint {
             value = {$global.navigation.metaStartPoint}
           }
-
           searchPid = TEXT
           searchPid {
             value = {$global.page.search.pid}
           }
-
           copyright = TEXT
           copyright {
             data = date:U
@@ -84,7 +68,6 @@ lib {
             wrap = &copy; &nbsp; | &nbsp; Aba-Angelshop
           }
         }
-
         settings {
           opengraph {
             type =
@@ -100,29 +83,24 @@ lib {
           }
         }
       }
-
       default < lib.templates.base.10
 
       pagets__Default < .default
       pagets__Default {
         templateName = Default
       }
-
       pagets__Sidebar < .default
       pagets__Sidebar {
         templateName = Sidebar
       }
-
       pagets__Slider < .default
       pagets__Slider {
         templateName = Slider
       }
-
       pagets__Product < .default
       pagets__Product {
         templateName = Product
       }
-
       pagets__News < .default
       pagets__News {
         templateName = News
@@ -133,4 +111,3 @@ lib {
 
 
 # Choose template file (based on backend_layout, respecting heredity)
-

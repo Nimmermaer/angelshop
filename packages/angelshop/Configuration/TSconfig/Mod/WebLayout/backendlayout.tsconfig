@@ -1,0 +1,5 @@
+@import 'EXT:angelshop/Configuration/TSconfig/Mod/WebLayout/Backendlayouts/Default.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/Mod/WebLayout/Backendlayouts/News.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/Mod/WebLayout/Backendlayouts/Product.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/Mod/WebLayout/Backendlayouts/Sidebar.tsconfig'
+@import 'EXT:angelshop/Configuration/TSconfig/Mod/WebLayout/Backendlayouts/Slider.tsconfig'

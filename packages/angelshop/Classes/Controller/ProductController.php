@@ -6,12 +6,7 @@ use MB\Angelshop\Domain\Model\Content;
 use MB\Angelshop\Domain\Repository\ContentRepository;
 use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\Messaging\AbstractMessage;
-use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
-use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
-use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
-use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
-use TYPO3\CMS\Extbase\Persistence\Exception\UnknownObjectException;
+use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 use TYPO3\CMS\Extbase\Persistence\Generic\Session;
 
 /***************************************************************
@@ -32,21 +27,15 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Session;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class ProductController
- * @package MB\Angelshop\Controller
- */
 class ProductController extends ActionController
 {
     /**
      * contentRepository
-     * @var ContentRepository | null
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected ?ContentRepository $contentRepository = null;
 
     /**
-     * @var Session | null
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected ?Session $session = null;
@@ -60,62 +49,23 @@ class ProductController extends ActionController
     }
 
     /**
-     * @param $argumentName
-     */
-    protected function setTypeConverterConfigurationForImageUpload($argumentName): void
-    {
-        $uploadConfiguration = [
-            UploadedFileReferenceConverter::CONFIGURATION_ALLOWED_FILE_EXTENSIONS => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-            UploadedFileReferenceConverter::CONFIGURATION_UPLOAD_FOLDER => '1:/content/',
-        ];
-        $newProductConfiguration = $this->arguments[$argumentName]->getPropertyMappingConfiguration();
-        $newProductConfiguration->forProperty('image')
-            ->setTypeConverterOptions(
-                UploadedFileReferenceConverter::class,
-                $uploadConfiguration
-            );
-        $newProductConfiguration->forProperty('imageCollection.0')
-            ->setTypeConverterOptions(
-                UploadedFileReferenceConverter::class,
-                $uploadConfiguration
-            );
-    }
-
-    /**
      *  list action
      */
     public function listAction(): ResponseInterface
     {
         $products = $this->contentRepository->findByContentType('ce_product');
-        $this->view->assignMultiple(
-            [
-                'products' => $products,
-            ]
-        );
+        $this->view->assignMultiple([
+            'products' => $products,
+        ]);
         return $this->htmlResponse();
     }
 
     /**
      *  initialized edit Action
-     * @throws NoSuchArgumentException
      */
     public function initializeEditAction(): void
     {
         $this->registerContentFromRequest('product');
-    }
-
-    /**
-     * @param $argumentName
-     *
-     * @throws NoSuchArgumentException
-     */
-    protected function registerContentFromRequest($argumentName): void
-    {
-        $argument = $this->request->getArgument($argumentName);
-        if ($argument) {
-            $content = $this->contentRepository->findHiddenEntryByUid($argument);
-            $this->session->registerObject($content, $content->getUid());
-        }
     }
 
     /**
@@ -129,17 +79,14 @@ class ProductController extends ActionController
         if ((int) $arguments['product'] !== 0) {
             $product = $this->contentRepository->findByIdentifier($arguments['product']);
         }
-        $this->view->assignMultiple(
-            [
-                'product' => $product,
-            ]
-        );
+        $this->view->assignMultiple([
+            'product' => $product,
+        ]);
         return $this->htmlResponse();
     }
 
     /**
      * Set TypeConverter option for image upload
-     * @throws NoSuchArgumentException
      */
     public function initializeUpdateAction(): void
     {
@@ -147,25 +94,17 @@ class ProductController extends ActionController
         $this->setTypeConverterConfigurationForImageUpload('content');
     }
 
-    /**
-     * @throws IllegalObjectTypeException
-     * @throws StopActionException
-     * @throws UnknownObjectException
-     */
     public function updateAction(Content $content): void
     {
         $this->addFlashMessage(
             'Das Produkt mit dem Title: ' . $content->header . ' wurde aktualisiert!',
             'Produktaktualisierung',
-            AbstractMessage::INFO
+            ContextualFeedbackSeverity::INFO
         );
         $this->contentRepository->update($content);
         $this->redirect('list');
     }
 
-    /**
-     * @throws InvalidQueryException
-     */
     public function searchAction(): ResponseInterface
     {
         $argument = $this->request->getArguments();
@@ -175,12 +114,32 @@ class ProductController extends ActionController
         } else {
             $products = $this->contentRepository->findByContentType('ce_product');
         }
-        $this->view->assignMultiple(
-            [
-                'products' => $products,
-                'searchword' => $argument['searchword'],
-            ]
-        );
+        $this->view->assignMultiple([
+            'products' => $products,
+            'searchword' => $argument['searchword'],
+        ]);
         return $this->htmlResponse();
+    }
+
+    protected function setTypeConverterConfigurationForImageUpload($argumentName): void
+    {
+        $uploadConfiguration = [
+            UploadedFileReferenceConverter::CONFIGURATION_ALLOWED_FILE_EXTENSIONS => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+            UploadedFileReferenceConverter::CONFIGURATION_UPLOAD_FOLDER => '1:/content/',
+        ];
+        $newProductConfiguration = $this->arguments[$argumentName]->getPropertyMappingConfiguration();
+        $newProductConfiguration->forProperty('image')
+            ->setTypeConverterOptions(UploadedFileReferenceConverter::class, $uploadConfiguration);
+        $newProductConfiguration->forProperty('imageCollection.0')
+            ->setTypeConverterOptions(UploadedFileReferenceConverter::class, $uploadConfiguration);
+    }
+
+    protected function registerContentFromRequest(string $argumentName): void
+    {
+        $argument = $this->request->getArgument($argumentName);
+        if ($argument) {
+            $content = $this->contentRepository->findHiddenEntryByUid($argument);
+            $this->session->registerObject($content, $content->getUid());
+        }
     }
 }

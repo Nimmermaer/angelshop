@@ -2,7 +2,6 @@
 
 namespace MB\Angelshop\Domain\Model;
 
-use DateTime;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -25,10 +24,6 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class Content
- * @package MB\Angelshop\Domain\Model
- */
 class Content extends AbstractEntity
 {
     public string $CType = '';
@@ -69,76 +64,35 @@ class Content extends AbstractEntity
 
     public string $listType = '';
 
-    /**
-     * uid
-     * @var boolean
-     */
     public bool $hidden = false;
 
-    /**
-     * bodytext
-     */
     public string $bodytext = '';
 
-    /**
-     * product
-     */
     public string $product = '';
 
-    /**
-     * stock
-     * @var boolean
-     */
     public bool $stock = false;
 
-    /**
-     * header
-     */
     public string $header = '';
 
-    /**
-     * sorting
-     */
     public string $sorting = '';
 
-    /**
-     * sorting
-     */
     public string $additionalDescription = '';
 
-    /**
-     * contentType
-     */
     public string $contentType = '';
 
-    /**
-     * price
-     */
     public float $price = 0.00;
 
-    /**
-     * oldPrice
-     */
     public float $oldPrice = 0.00;
 
-    /**
-     * manufacturer
-     */
     public string $manufacturer = '';
 
-    /**
-     * @var DateTime
-     */
-    protected $crdate;
+    protected \DateTime $crdate;
 
-    /**
-     * @var DateTime
-     */
-    protected $tstamp;
+    protected \DateTime $tstamp;
 
     /**
      * image
-     * @var ObjectStorage<FileReference>
+     * @var ObjectStorage<FileReference>|null
      */
     protected ?ObjectStorage $image = null;
 
@@ -163,9 +117,6 @@ class Content extends AbstractEntity
         $this->imageCollection = $imageCollection;
     }
 
-    /**
-     * @return ObjectStorage
-     */
     public function getImage(): ?ObjectStorage
     {
         return $this->image;

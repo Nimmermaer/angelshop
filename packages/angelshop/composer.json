@@ -18,12 +18,14 @@
 		}
 	],
 	"require": {
-		"typo3/cms-core": "^11.5",
-		"georgringer/news": "^9.4"
+		"typo3/cms-core": "^12.4",
+		"georgringer/news": "*",
+		"lochmueller/staticfilecache": "^14.0",
+		"b13/container": "*"
 	},
 	"autoload": {
 		"psr-4": {
-			"MB\\Angelshop\\": "Classes"
+			"MB\\Angelshop\\": "Classes/"
 		}
 	},
 	"extra": {

@@ -1,12 +1,9 @@
 <?php
 
 use MB\Angelshop\Controller\ProductController;
+use MB\Angelshop\Controller\SearchController;
 use MB\Angelshop\Controller\WeatherController;
-use MB\Angelshop\Hooks\PageHook;
-use MB\Angelshop\Property\TypeConverter\ObjectStorageConverter;
-use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
-use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
-use TYPO3\CMS\Core\Imaging\IconRegistry;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
@@ -18,7 +15,7 @@ if (! defined('TYPO3')) {
 
 $boot = static function ($extensionKey): void {
     ExtensionUtility::configurePlugin(
-        ucfirst($extensionKey),
+        ucfirst((string) $extensionKey),
         'Product',
         [
             ProductController::class => 'list, search',
@@ -30,15 +27,33 @@ $boot = static function ($extensionKey): void {
     );
 
     ExtensionUtility::configurePlugin(
-        ucfirst($extensionKey),
-        'Weather',
+        ucfirst((string) $extensionKey),
+        'WeatherShow',
         [
-            WeatherController::class => 'show, list, forecast',
+            WeatherController::class => 'show, list',
+        ]
+    );
+
+    ExtensionUtility::configurePlugin(
+        ucfirst((string) $extensionKey),
+        'WeatherForecast',
+        [
+            WeatherController::class => 'forecast',
+        ]
+    );
+
+    ExtensionUtility::configurePlugin(
+        ucfirst((string) $extensionKey),
+        'Search',
+        [
+            SearchController::class => 'search',
+        ],
+        [
+            SearchController::class => 'search',
         ]
     );
 
     $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'angelshop';
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/db_layout.php']['drawHeaderHook'][$extensionKey] = PageHook::class . '->renderInHeader';
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][FileReference::class] = [
         'className' => \MB\Angelshop\Domain\Model\FileReference::class,
@@ -46,32 +61,59 @@ $boot = static function ($extensionKey): void {
 
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['angelshop'] = 'EXT:angelshop/Configuration/RTE/Custom.yaml';
 
-    ExtensionUtility::registerTypeConverter(UploadedFileReferenceConverter::class);
-    ExtensionUtility::registerTypeConverter(ObjectStorageConverter::class);
-
-    $newIcons = [
-        'business' => 'business',
-        'gallery' => 'gallery',
-        'service' => 'service',
-        'tab' => 'tab',
-        'productlist' => 'productlist',
-        'product' => 'product',
+    $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['ANIMATED'] = [
+        ['Keine Bewegung', 0],
+        ['Drehen', 'fa-spin'],
+        ['Pulsieren', 'fa-pulse'],
     ];
-    $iconRegistry = GeneralUtility::makeInstance(
-        IconRegistry::class
-    );
-    foreach ($newIcons as $key => $icon) {
-        $iconRegistry->registerIcon(
-            $key,
-            SvgIconProvider::class,
-            [
-                'source' => 'EXT:angelshop/Resources/Public/Icons/Svg/' . $icon . '.svg',
-            ]
+    $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'] = [
+        ['Kein Icon', 0],
+        ['Facebook', 'fa-facebook-square'],
+        ['Messer und Gabel', 'fa-cutlery'],
+        ['Zitrone', 'fa-lemon-o'],
+        ['Xing', 'fa-xing-square'],
+        ['Geschenk', 'fa-gift'],
+        ['Check', 'fa-check'],
+        ['Kompass', 'fa-compass'],
+        ['Twitter', 'fa-twitter-square'],
+        ['linkedIn', 'fa-linkedin-square'],
+        ['Baum', 'fa-tree'],
+        ['Auto', 'fa-car'],
+        ['Kalender', 'fa-calendar-check-o'],
+        ['Google +', 'fa-google-plus-square'],
+        ['Einkaufstasche', 'fa-shopping-bag'],
+        ['Buch', 'fa-book'],
+        ['Kommentare', 'fa-comments'],
+        ['Foto', 'fa-picture-o'],
+        ['Telefon', 'fa-phone-square'],
+        ['Schiff', 'fa-ship'],
+        ['Gruppe', 'fa-users'],
+        ['Stift', 'fa-pencil'],
+        ['Kamera', 'fa-camera'],
+        ['Papierflieger', 'fa-paper-plane-o'],
+        ['Ausgefuelltes Herz', 'fa-heart'],
+        ['Leeres Herz', 'fa-heart-o'],
+        ['Youtube', 'fa-youtube'],
+        ['Youtube', 'fa-youtube'],
+        ['Vimeo', 'fa-vimeo'],
+        ['Zahnrad', 'fa-cog'],
+        ['Amazon', 'fa-amazon'],
+        ['Lizard Hand', 'fa-hand-lizard-o'],
+        ['Zeigende Hand nach unten', 'fa fa-hand-o-down'],
+        ['Zeigende Hand nach links', 'fa-hand-o-left'],
+        ['Zeigende Hand nach rechts', 'fa-hand-o-right'],
+        ['Zeigende Hand nach oben', 'fa-hand-o-up'],
+        ['Kreis mit Luecke', 'fa-circle-o-notch'],
+        ['Kreis aus Punkten', 'fa-spinner'],
+        ['Kreis aus Pfeilen', 'fa-refresh'],
+        ['Zahnrad', 'fa-cog'],
+    ];
+    $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
+    if ($versionInformation->getMajorVersion() < 13) {
+        ExtensionManagementUtility::addUserTSConfig(
+            '@import "EXT:angelshop/Configuration/TypoScript/user.tsconfig"'
         );
     }
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
-    @import \'EXT:angelshop/Configuration/TSconfig/pageTs.tsconfig\'
-    ');
 };
 
 $boot('angelshop');

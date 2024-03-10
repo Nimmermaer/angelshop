@@ -20,10 +20,6 @@ namespace MB\Angelshop\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class TraderRepository
- * @package MB\Angelshop\Domain\Repository
- */
 class TraderRepository extends Repository
 {
 }

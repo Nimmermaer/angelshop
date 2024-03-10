@@ -22,10 +22,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class Fontawesome
- * @package MB\Angelshop\Domain\Model
- */
 class Fontawesome extends AbstractEntity
 {
     public string $title = '';

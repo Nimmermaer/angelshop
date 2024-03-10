@@ -1,19 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cox
- * Date: 27.08.2017
- * Time: 11:08
- */
 
 namespace MB\Angelshop\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
-/**
- * Class TrimViewHelper
- * @package MB\Angelshop\ViewHelpers
- */
 class TrimViewHelper extends AbstractViewHelper
 {
     /**
@@ -30,7 +20,7 @@ class TrimViewHelper extends AbstractViewHelper
             $this->arguments['value'] = $this->renderChildren();
         }
         // remove new line - does not matter in html anyway
-        $this->arguments['value'] = str_replace(chr(10), '', $this->arguments['value']);
+        $this->arguments['value'] = str_replace(chr(10), '', (string) $this->arguments['value']);
         $this->arguments['value'] = str_replace(' ', '', $this->arguments['value']);
         $this->arguments['value'] = str_replace('/', '', $this->arguments['value']);
         // remove multiple whitespaces

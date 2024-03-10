@@ -1,18 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cox
- * Date: 28.11.2016
- * Time: 23:05
- */
 
 namespace MB\Angelshop\Property\TypeConverter;
 
 use Exception;
 use InvalidArgumentException;
-use TYPO3\CMS\Core\Resource\Exception\ExistingTargetFileNameException;
-use TYPO3\CMS\Core\Resource\Exception\FileDoesNotExistException;
-use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
 use TYPO3\CMS\Core\Resource\File as FalFile;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference as FalFileReference;
@@ -35,28 +26,26 @@ use const UPLOAD_ERR_NO_FILE;
 use const UPLOAD_ERR_OK;
 use const UPLOAD_ERR_PARTIAL;
 
-/**
- * Class UploadedFileReferenceConverter
- * @package MB\Angelshop\Property\TypeConverter
- */
 class UploadedFileReferenceConverter extends AbstractTypeConverter
 {
     /**
      * Folder where the file upload should go to (including storage).
      */
-    public const CONFIGURATION_UPLOAD_FOLDER = 1;
+    final public const CONFIGURATION_UPLOAD_FOLDER = 1;
 
     /**
      * How to handle a upload when the name of the uploaded file conflicts.
      */
-    public const CONFIGURATION_UPLOAD_CONFLICT_MODE = 2;
+    final public const CONFIGURATION_UPLOAD_CONFLICT_MODE = 2;
 
     /**
      * Whether to replace an already present resource.
      * Useful for "maxitems = 1" fields and properties
      * with no ObjectStorage annotation.
      */
-    public const CONFIGURATION_ALLOWED_FILE_EXTENSIONS = 4;
+    final public const CONFIGURATION_ALLOWED_FILE_EXTENSIONS = 4;
+
+    public $objectManager;
 
     protected string $defaultUploadFolder = '1:/user_upload/';
 
@@ -107,31 +96,19 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
      * built $convertedChildProperties and $configuration.
      *
      * @param string|int $source
-     * @throws FileDoesNotExistException
-     * @throws ResourceDoesNotExistException
-     * @throws InvalidArgumentForHashGenerationException
-     * @throws InvalidHashException
      * @api
      */
-    public function convertFrom(
-        $source,
-        string $targetType,
-        array $convertedChildProperties = [],
-        PropertyMappingConfigurationInterface $configuration = null
-    ) {
+    public function convertFrom($source, string $targetType, array $convertedChildProperties = [], PropertyMappingConfigurationInterface $configuration = null)
+    {
         if (! isset($source['error']) || $source['error'] === UPLOAD_ERR_NO_FILE) {
             if (isset($source['submittedFile']['resourcePointer'])) {
                 try {
                     $resourcePointer = $this->hashService->validateAndStripHmac($source['submittedFile']['resourcePointer']);
-                    if (strpos($resourcePointer, 'file:') === 0) {
+                    if (str_starts_with($resourcePointer, 'file:')) {
                         $fileUid = substr($resourcePointer, 5);
                         return $this->createFileReferenceFromFalFileObject($this->resourceFactory->getFileObject($fileUid));
-                    } else {
-                        return $this->createFileReferenceFromFalFileReferenceObject(
-                            $this->resourceFactory->getFileReferenceObject($resourcePointer),
-                            $resourcePointer
-                        );
                     }
+                    return $this->createFileReferenceFromFalFileReferenceObject($this->resourceFactory->getFileReferenceObject($resourcePointer), $resourcePointer);
                 } catch (InvalidArgumentException $e) {
                     // Nothing to do. No file is uploaded and resource pointer is invalid. Discard!
                 }
@@ -139,17 +116,10 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
             return null;
         }
         if ($source['error'] !== UPLOAD_ERR_OK) {
-            switch ($source['error']) {
-                case UPLOAD_ERR_INI_SIZE:
-                case UPLOAD_ERR_FORM_SIZE:
-                case UPLOAD_ERR_PARTIAL:
-                    return new Error('Error Code: ' . $source['error'], 1264440823);
-                default:
-                    return new Error(
-                        'An error occurred while uploading. Please try again or contact the administrator if the problem remains',
-                        1340193849
-                    );
-            }
+            return match ($source['error']) {
+                UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, UPLOAD_ERR_PARTIAL => new Error('Error Code: ' . $source['error'], 1_264_440_823),
+                default => new Error('An error occurred while uploading. Please try again or contact the administrator if the problem remains', 1_340_193_849),
+            };
         }
         if (isset($this->convertedResources[$source['tmp_name']])) {
             return $this->convertedResources[$source['tmp_name']];
@@ -163,34 +133,24 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
         return $resource;
     }
 
-    protected function createFileReferenceFromFalFileObject(
-        FalFile $file,
-        int $resourcePointer = 0
-    ): \MB\Angelshop\Domain\Model\FileReference {
-        $fileReference = $this->resourceFactory->createFileReferenceObject(
-            [
-                'uid_local' => $file->getUid(),
-                'uid_foreign' => uniqid('NEW_'),
-                'uid' => uniqid('NEW_'),
-                'crop' => null,
-            ]
-        );
+    protected function createFileReferenceFromFalFileObject(FalFile $file, int $resourcePointer = 0): \MB\Angelshop\Domain\Model\FileReference
+    {
+        $fileReference = $this->resourceFactory->createFileReferenceObject([
+            'uid_local' => $file->getUid(),
+            'uid_foreign' => uniqid('NEW_'),
+            'uid' => uniqid('NEW_'),
+            'crop' => null,
+        ]);
         return $this->createFileReferenceFromFalFileReferenceObject($fileReference, $resourcePointer);
     }
 
-    protected function createFileReferenceFromFalFileReferenceObject(
-        FalFileReference $falFileReference,
-        int $resourcePointer
-    ): object {
+    protected function createFileReferenceFromFalFileReferenceObject(FalFileReference $falFileReference, int $resourcePointer): object
+    {
         if ($resourcePointer === null) {
-            /** @var $fileReference \MB\Angelshop\Domain\Model\FileReference */
+            /** @var \MB\Angelshop\Domain\Model\FileReference $fileReference */
             $fileReference = $this->objectManager->get(FileReference::class);
         } else {
-            $fileReference = $this->persistenceManager->getObjectByIdentifier(
-                $resourcePointer,
-                FileReference::class,
-                false
-            );
+            $fileReference = $this->persistenceManager->getObjectByIdentifier($resourcePointer, FileReference::class, false);
         }
         $fileReference->setOriginalResource($falFileReference);
         return $fileReference;
@@ -198,43 +158,27 @@ class UploadedFileReferenceConverter extends AbstractTypeConverter
 
     /**
      * Import a resource and respect configuration given for properties
-     *
-     * @throws TypeConverterException
-     * @throws ExistingTargetFileNameException
      */
     protected function importUploadedResource(array $uploadInfo, PropertyMappingConfigurationInterface $configuration): \MB\Angelshop\Domain\Model\FileReference
     {
+        $resourcePointer = null;
         if (! GeneralUtility::makeInstance(FileNameValidator::class)->isValid($uploadInfo['name'])) {
-            throw new TypeConverterException('Uploading files with PHP file extensions is not allowed!', 1399312430);
+            throw new TypeConverterException('Uploading files with PHP file extensions is not allowed!', 1_399_312_430);
         }
-        $allowedFileExtensions = $configuration->getConfigurationValue(
-            UploadedFileReferenceConverter::class,
-            self::CONFIGURATION_ALLOWED_FILE_EXTENSIONS
-        );
+        $allowedFileExtensions = $configuration->getConfigurationValue(self::class, self::CONFIGURATION_ALLOWED_FILE_EXTENSIONS);
         if ($allowedFileExtensions !== null) {
             $filePathInfo = PathUtility::pathinfo($uploadInfo['name']);
-            if (! GeneralUtility::inList($allowedFileExtensions, strtolower($filePathInfo['extension']))) {
-                throw new TypeConverterException('File extension is not allowed!', 1399312430);
+            if (! GeneralUtility::inList($allowedFileExtensions, strtolower((string) $filePathInfo['extension']))) {
+                throw new TypeConverterException('File extension is not allowed!', 1_399_312_430);
             }
         }
-        $uploadFolderId = $configuration->getConfigurationValue(
-            UploadedFileReferenceConverter::class,
-            self::CONFIGURATION_UPLOAD_FOLDER
-        ) ?: $this->defaultUploadFolder;
-        $conflictMode = $configuration->getConfigurationValue(
-            UploadedFileReferenceConverter::class,
-            self::CONFIGURATION_UPLOAD_CONFLICT_MODE
-        ) ?: $this->defaultConflictMode;
+        $uploadFolderId = $configuration->getConfigurationValue(self::class, self::CONFIGURATION_UPLOAD_FOLDER) ?: $this->defaultUploadFolder;
+        $conflictMode = $configuration->getConfigurationValue(self::class, self::CONFIGURATION_UPLOAD_CONFLICT_MODE) ?: $this->defaultConflictMode;
         $uploadFolder = $this->resourceFactory->retrieveFileOrFolderObject($uploadFolderId);
         $uploadedFile = $uploadFolder->addUploadedFile($uploadInfo, $conflictMode);
         try {
-            $resourcePointer = isset($uploadInfo['submittedFile']['resourcePointer']) && strpos(
-                $uploadInfo['submittedFile']['resourcePointer'],
-                'file:'
-            ) === false
-                ? $this->hashService->validateAndStripHmac($uploadInfo['submittedFile']['resourcePointer'])
-                : null;
-        } catch (InvalidArgumentForHashGenerationException|InvalidHashException $e) {
+            $resourcePointer = isset($uploadInfo['submittedFile']['resourcePointer']) && ! str_contains((string) $uploadInfo['submittedFile']['resourcePointer'], 'file:') ? $this->hashService->validateAndStripHmac($uploadInfo['submittedFile']['resourcePointer']) : null;
+        } catch (InvalidArgumentForHashGenerationException|InvalidHashException) {
         }
         return $this->createFileReferenceFromFalFileObject($uploadedFile, $resourcePointer);
     }

@@ -23,10 +23,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class Tab
- * @package MB\Angelshop\Domain\Model
- */
 class Tab extends AbstractEntity
 {
     protected string $header = '';
@@ -39,7 +35,6 @@ class Tab extends AbstractEntity
 
     /**
      * image
-     * @var FileReference
      */
     protected ?FileReference $image = null;
 

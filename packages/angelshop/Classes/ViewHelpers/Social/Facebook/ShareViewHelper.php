@@ -11,10 +11,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  *  | (c) 2015-2016 Michael <mi.blunck@gmail.com>
  */
 
-/**
- * Class ShareViewHelper
- * @package MB\Angelshop\ViewHelpers\Social\Facebook
- */
 class ShareViewHelper extends AbstractViewHelper
 {
     public function initializeArguments(): void
@@ -25,12 +21,14 @@ class ShareViewHelper extends AbstractViewHelper
 
     public function render(): string
     {
-        if (is_null($this->arguments['text'])) {
+        if ($this->arguments['text'] === null) {
             return '';
         }
 
-        $uri = empty($this->arguments['shareurl']) ? GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL') : $this->arguments['shareurl'];
-        $urlEncode = rawurlencode($uri);
+        $uri = empty($this->arguments['shareurl']) ? GeneralUtility::getIndpEnv(
+            'TYPO3_REQUEST_URL'
+        ) : $this->arguments['shareurl'];
+        $urlEncode = rawurlencode((string) $uri);
         return 'https://www.facebook.com/sharer.php?u=' . $urlEncode . '&t=' . $this->arguments['text'];
     }
 }

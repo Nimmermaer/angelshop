@@ -4,7 +4,6 @@ namespace MB\Angelshop\Domain\Repository;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
@@ -26,41 +25,29 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class Repository
- * @package MB\Angelshop\Domain\Repository
- */
 class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
     /**
      * initialize repository
      */
-    public function initializeObject()
+    public function initializeObject(): void
     {
-        /** @var $querySettings Typo3QuerySettings */
-        $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
+        /** @var Typo3QuerySettings $querySettings */
+        $querySettings = GeneralUtility::makeInstance(Typo3QuerySettings::class);
         $querySettings->setRespectStoragePage(false);
         $querySettings->setRespectSysLanguage(false);
         $this->setDefaultQuerySettings($querySettings);
     }
 
-    /**
-     * @param $uid
-     * @return array|QueryResultInterface
-     * @throws InvalidQueryException
-     */
-    public function findByContentelementUid($uid, string $table = 'tx_angelshop_trader_ttcontent_mm')
+    public function findByContentelementUid($uid, string $table = 'tx_angelshop_trader_ttcontent_mm'): QueryResultInterface|array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
         $rawUids = $queryBuilder->from($table)
-            ->select('uid_foreign')
-            ->where(
-                $queryBuilder->expr()->eq('uid_local', (int) $uid)
-            )->execute()
+            ->select('uid_foreign')->where($queryBuilder->expr() ->eq('uid_local', (int) $uid))->executeQuery()
             ->fetchAllAssociative();
 
         $trader = [];
-        if (is_array($rawUids) && ! empty($rawUids)) {
+        if (is_array($rawUids) && $rawUids !== []) {
             $query = $this->createQuery();
             $query->matching($query->in('uid', array_keys($rawUids)));
             $trader = $query->execute();

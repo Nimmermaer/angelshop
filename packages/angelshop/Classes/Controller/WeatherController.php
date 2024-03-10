@@ -25,10 +25,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class WeatherController
- * @package MB\Angelshop\Controller
- */
 class WeatherController extends ActionController
 {
     public string $address = '';
@@ -37,9 +33,6 @@ class WeatherController extends ActionController
 
     public string $statusCode = '';
 
-    /**
-     * @var stdClass | null
-     */
     public ?stdClass $apiRequest = null;
 
     public function listAction(): ResponseInterface
@@ -69,28 +62,28 @@ class WeatherController extends ActionController
         $this->address = $this->settings['arguments']['address'];
         $this->appId = $this->settings['arguments']['appid'];
         $requestFactory = GeneralUtility::makeInstance(RequestFactory::class);
-        switch ($this->request->getControllerActionName()) {
-            case 'forecast':
-                $request = $requestFactory->request(
-                    'http://api.openweathermap.org/data/2.5/forecast/daily?q=' . rawurlencode($this->address) . '&units=metric&lang=de&type=day&appid=' . $this->appId,
-                    'GET',
-                    [
-                        'http_errors' => false,
-                    ]
-                );
-                break;
-            default:
-                $request = $requestFactory->request(
-                    'http://api.openweathermap.org/data/2.5/weather?q=' . rawurlencode($this->address) . '&units=metric&lang=de&type=day&appid=' . $this->appId,
-                    'GET',
-                    [
-                        'http_errors' => false,
-                    ]
-                );
-                break;
-        }
+        $request = match ($this->request->getControllerActionName()) {
+            'forecast' => $requestFactory->request(
+                'http://api.openweathermap.org/data/2.5/forecast/daily?q=' . rawurlencode(
+                    (string) $this->address
+                ) . '&units=metric&lang=de&type=day&appid=' . $this->appId,
+                'GET',
+                [
+                    'http_errors' => false,
+                ]
+            ),
+            default => $requestFactory->request(
+                'http://api.openweathermap.org/data/2.5/weather?q=' . rawurlencode(
+                    (string) $this->address
+                ) . '&units=metric&lang=de&type=day&appid=' . $this->appId,
+                'GET',
+                [
+                    'http_errors' => false,
+                ]
+            ),
+        };
 
         $this->statusCode = $request->getStatusCode();
-        $this->apiRequest = json_decode($request->getBody()->getContents());
+        $this->apiRequest = json_decode($request->getBody()->getContents(), null, 512, JSON_THROW_ON_ERROR);
     }
 }
