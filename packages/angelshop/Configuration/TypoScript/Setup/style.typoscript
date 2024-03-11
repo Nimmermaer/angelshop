@@ -10,15 +10,15 @@ page {
     style = EXT:angelshop/Resources/Public/Css/angelshop.min.css
   }
   includeJSFooter {
-    jquery = EXT:angelshop/Resources/Public/Js/jquery.min.js
+    jquery = EXT:angelshop/Resources/Public/JavaScript/jquery.min.js
     jquery.async = 1
-    bootstrap = EXT:angelshop/Resources/Public/Js/bootstrap.min.js
+    bootstrap = EXT:angelshop/Resources/Public/JavaScript/bootstrap.min.js
     bootstrap.async = 1
-    lightbox = EXT:angelshop/Resources/Public/Js/lightbox.min.js
+    lightbox = EXT:angelshop/Resources/Public/JavaScript/lightbox.min.js
     lightbox.async = 1
-    custom = EXT:angelshop/Resources/Public/Js/custom.min.js
+    custom = EXT:angelshop/Resources/Public/JavaScript/custom.min.js
     custom.async = 1
-    scripts = EXT:angelshop/Resources/Public/Js/scripts.min.js
+    scripts = EXT:angelshop/Resources/Public/JavaScript/scripts.min.js
     scripts.async = 1
   }
 }
