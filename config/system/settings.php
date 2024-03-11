@@ -1,0 +1,205 @@
+<?php
+
+return [
+    'BE' => [
+        'debug' => true,
+        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$M2hhUXlOZEpZTUxvcDdvTg$Qs/6zAIOqfAc2zVrdFrSR9ygdZ7ML5xgOc8/qYO3k3I',
+        'passwordHashing' => [
+            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
+            'options' => [],
+        ],
+    ],
+    'DB' => [
+        'Connections' => [
+            'Default' => [
+                'charset' => 'utf8mb4',
+                'dbname' => getenv('TYPO3_DB_NAME'),
+                'driver' => 'mysqli',
+                'host' =>  getenv('TYPO3_HOST_NAME'),
+                'password' =>  getenv('TYPO3_PASSWORD'),
+                'port' => 3306,
+                'tableoptions' => [
+                    'charset' => 'utf8mb4',
+                    'collate' => 'utf8mb4_unicode_ci',
+                ],
+                'user' => getenv('TYPO3_USER_NAME'),
+            ],
+        ],
+    ],
+    'EXTENSIONS' => [
+        'backend' => [
+            'backendFavicon' => '',
+            'backendLogo' => '',
+            'loginBackgroundImage' => '',
+            'loginFootnote' => '',
+            'loginHighlightColor' => '',
+            'loginLogo' => '',
+            'loginLogoAlt' => '',
+        ],
+        'extensionmanager' => [
+            'automaticInstallation' => '1',
+            'offlineMode' => '0',
+        ],
+        'indexed_search' => [
+            'catdoc' => '/usr/bin/',
+            'debugMode' => '0',
+            'deleteFromIndexAfterEditing' => '1',
+            'disableFrontendIndexing' => '0',
+            'enableMetaphoneSearch' => '1',
+            'flagBitMask' => '192',
+            'fullTextDataLength' => '0',
+            'ignoreExtensions' => '',
+            'indexExternalURLs' => '0',
+            'maxAge' => '0',
+            'maxExternalFiles' => '5',
+            'minAge' => '24',
+            'pdf_mode' => '20',
+            'pdftools' => '/usr/bin/',
+            'ppthtml' => '/usr/bin/',
+            'unrtf' => '/usr/bin/',
+            'unzip' => '/usr/bin/',
+            'useCrawlerForExternalFiles' => '0',
+            'useMysqlFulltext' => '0',
+            'xlhtml' => '/usr/bin/',
+        ],
+        'news' => [
+            'advancedMediaPreview' => '1',
+            'archiveDate' => 'date',
+            'categoryBeGroupTceFormsRestriction' => '0',
+            'categoryRestriction' => '',
+            'contentElementPreview' => '1',
+            'contentElementRelation' => '1',
+            'dateTimeNotRequired' => '0',
+            'hidePageTreeForAdministrationModule' => '0',
+            'manualSorting' => '0',
+            'prependAtCopy' => '1',
+            'resourceFolderImporter' => '/news_import',
+            'rteForTeaser' => '0',
+            'showAdministrationModule' => '1',
+            'showImporter' => '0',
+            'slugBehaviour' => 'unique',
+            'storageUidImporter' => '1',
+            'tagPid' => '1',
+        ],
+        'scheduler' => [
+            'maxLifetime' => '1440',
+            'showSampleTasks' => '1',
+        ],
+        'staticfilecache' => [
+            'backendDisplayMode' => 'both',
+            'boostMode' => '0',
+            'cacheTagsEnable' => '0',
+            'clearCacheForAllDomains' => '1',
+            'debugHeaders' => '0',
+            'disableInDevelopment' => '0',
+            'enableGeneratorBrotli' => '0',
+            'enableGeneratorGzip' => '1',
+            'enableGeneratorManifest' => '0',
+            'enableGeneratorPhp' => '0',
+            'enableGeneratorPlain' => '0',
+            'hashUriInCache' => '0',
+            'htaccessTemplateName' => 'EXT:staticfilecache/Resources/Private/Templates/Htaccess.html',
+            'inlineAssetsFileSize' => '50000',
+            'inlineScriptMinify' => '0',
+            'inlineServiceFavIcon' => '0',
+            'inlineServiceScripts' => '0',
+            'inlineServiceStyles' => '0',
+            'inlineStyleAssets' => 'ico,png,woff2',
+            'inlineStyleMinify' => '0',
+            'largeIdentifierInCacheTable' => '0',
+            'overrideCacheDirectory' => '',
+            'phpTemplateName' => 'EXT:staticfilecache/Resources/Private/Templates/Php.html',
+            'rawurldecodeCacheFileName' => '0',
+            'renameTablesToOtherPrefix' => '0',
+            'sendCacheControlHeaderRedirectAfterCacheTimeout' => '0',
+            'sendHttp2PushEnable' => '0',
+            'sendHttp2PushFileExtensions' => 'css,js',
+            'sendHttp2PushFileLimit' => '10',
+            'sendHttp2PushLimitToArea' => '',
+            'useFallbackMiddleware' => '1',
+            'useReverseUriLengthInPriority' => '1',
+            'validFallbackHeaders' => 'Content-Type,Content-Language,Content-Security-Policy,Link,X-SFC-Tags',
+            'validHtaccessHeaders' => 'Content-Type,Content-Language,Link,X-SFC-Tags',
+        ],
+    ],
+    'FE' => [
+        'debug' => false,
+        'disableNoCacheParameter' => true,
+        'passwordHashing' => [
+            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
+            'options' => [],
+        ],
+    ],
+    'GFX' => [
+        'processor' => 'ImageMagick',
+        'processor_allowTemporaryMasksAsPng' => false,
+        'processor_colorspace' => 'sRGB',
+        'processor_effects' => true,
+        'processor_enabled' => true,
+        'processor_path' => '/usr/bin/',
+    ],
+    'LOG' => [
+        'TYPO3' => [
+            'CMS' => [
+                'deprecations' => [
+                    'writerConfiguration' => [
+                        'notice' => [
+                            'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
+                                'disabled' => true,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'MAIL' => [
+        'transport' => 'sendmail',
+        'transport_sendmail_command' => '/usr/local/bin/mailhog sendmail -bs test@example.org --smtp-addr 127.0.0.1:1025',
+        'transport_smtp_encrypt' => '',
+        'transport_smtp_password' => '',
+        'transport_smtp_server' => '',
+        'transport_smtp_username' => '',
+    ],
+    'SYS' => [
+        'caching' => [
+            'cacheConfigurations' => [
+                'hash' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                ],
+                'imagesizes' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                    'options' => [
+                        'compression' => true,
+                    ],
+                ],
+                'pages' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                    'options' => [
+                        'compression' => true,
+                    ],
+                ],
+                'rootline' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                    'options' => [
+                        'compression' => true,
+                    ],
+                ],
+            ],
+        ],
+        'devIPmask' => '*',
+        'displayErrors' => 1,
+        'encryptionKey' => '29ede769d6e99f261a8693a32bb84a399fe829acaa14be32e77cc49ac88ed46875019b3dc533bf2c17ca3357ab66d22a',
+        'exceptionalErrors' => 12290,
+        'features' => [
+            'security.usePasswordPolicyForFrontendUsers' => true,
+            'unifiedPageTranslationHandling' => true,
+            'yamlImportsFollowDeclarationOrder' => true,
+        ],
+        'sitename' => 'Aba-Angelshop',
+        'systemMaintainers' => [
+            1,
+        ],
+        'trustedHostsPattern' => '.*',
+    ],
+];

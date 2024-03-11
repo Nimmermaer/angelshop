@@ -30,7 +30,8 @@
     "bin-dir": "bin",
     "allow-plugins": {
       "typo3/class-alias-loader": true,
-      "typo3/cms-composer-installers": true
+      "typo3/cms-composer-installers": true,
+      "helhum/dotenv-connector": true
     }
   },
   "require": {
@@ -72,7 +73,8 @@
     "helhum/typo3-console": "^8",
     "symfony/translation": "^7.0",
     "mb/angelshop": "^0.0.1",
-    "lochmueller/sourceopt": "^5.1"
+    "lochmueller/sourceopt": "^5.1",
+    "helhum/dotenv-connector": "^3.1"
   },
   "scripts": {
 		"fix-style": "ecs --fix",
