@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
+		  product-name="angelshop">
+		<header />
+		<body>
+			<trans-unit id="Default.title">
+				<source>Standard</source>
+			</trans-unit>
+			<trans-unit id="Default.col.0">
+				<source>Inhalt</source>
+			</trans-unit>
+			<trans-unit id="Slider.title">
+				<source>Großer Slider</source>
+			</trans-unit>
+			<trans-unit id="Slider.col.0">
+				<source>Inhalt</source>
+			</trans-unit>
+			<trans-unit id="Slider.col.1">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="Sidebar.title">
+				<source>Seitentemplate mit Seitennavigation (Unterseiten)</source>
+			</trans-unit>
+			<trans-unit id="Sidebar.col.0">
+				<source>Inhalt</source>
+			</trans-unit>
+			<trans-unit id="Sidebar.col.1">
+				<source>Seitennavigation</source>
+			</trans-unit>
+			<trans-unit id="Product.title">
+				<source>Produktseite</source>
+			</trans-unit>
+			<trans-unit id="Product.col.0">
+				<source>Inhalt</source>
+			</trans-unit>
+			<trans-unit id="Product.col.1">
+				<source>Bild</source>
+			</trans-unit>
+			<trans-unit id="Product.col.2">
+				<source>Fußleiste</source>
+			</trans-unit>
+			<trans-unit id="News.title">
+				<source>Artikel Layout</source>
+			</trans-unit>
+			<trans-unit id="News.col.1">
+				<source>Seitenleiste</source>
+			</trans-unit>
+			<trans-unit id="News.col.0">
+				<source>Inhalt</source>
+			</trans-unit>
+			<trans-unit id="Footer.col.0">
+				<source>Footer Links</source>
+			</trans-unit>
+			<trans-unit id="Footer.col.1">
+				<source>Footer Mitte</source>
+			</trans-unit>
+			<trans-unit id="Footer.col.2">
+				<source>Footer Rechts</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

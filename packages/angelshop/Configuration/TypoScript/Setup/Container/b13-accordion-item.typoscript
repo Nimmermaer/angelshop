@@ -1,0 +1,4 @@
+tt_content.b13-accordion-item < tt_content.container
+tt_content.b13-accordion-item {
+  templateName = AccordionItem
+}

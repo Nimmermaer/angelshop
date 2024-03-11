@@ -1,0 +1,24 @@
+tt_content.container < lib.contentElement
+tt_content.container {
+  templateName = Default
+  templateRootPaths {
+    10 = EXT:angelshop/Resources/Private/Container/Templates/
+  }
+
+  dataProcessing {
+    201 = B13\Container\DataProcessing\ContainerProcessor
+    201 {
+      colPos = 201
+      as = children_201
+    }
+  }
+}
+
+@import 'EXT:angelshop/Configuration/TypoScript/Setup/Container/b13-30-30-30-30.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Setup/Container/b13-40-40-40.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Setup/Container/b13-40-80.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Setup/Container/b13-50-50.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Setup/Container/b13-80-40.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Setup/Container/b13-accordion-item.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Setup/Container/b13-accordion.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Setup/Container/b13-fullwidth.typoscript'

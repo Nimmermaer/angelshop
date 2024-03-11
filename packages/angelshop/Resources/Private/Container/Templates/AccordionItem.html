@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a aria-expanded="true" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-{field:uid}">{field:header}</a>
+        </h4>
+    </div>
+    <div style="" aria-expanded="true" id="collapse-{field:uid}" class="panel-collapse collapse">
+        <div class="panel-body">
+            <f:for each="{children_201}" as="record">
+                <f:format.raw>
+                    {record.renderedContent}
+                </f:format.raw>
+            </f:for>
+        </div>
+    </div>
+</div>

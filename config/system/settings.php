@@ -1,9 +1,9 @@
 <?php
-
 return [
     'BE' => [
         'debug' => true,
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$M2hhUXlOZEpZTUxvcDdvTg$Qs/6zAIOqfAc2zVrdFrSR9ygdZ7ML5xgOc8/qYO3k3I',
+        'languageDebug' => false,
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
@@ -13,16 +13,12 @@ return [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8mb4',
-                'dbname' => getenv('TYPO3_DB_NAME'),
                 'driver' => 'mysqli',
-                'host' =>  getenv('TYPO3_HOST_NAME'),
-                'password' =>  getenv('TYPO3_PASSWORD'),
                 'port' => 3306,
                 'tableoptions' => [
                     'charset' => 'utf8mb4',
                     'collate' => 'utf8mb4_unicode_ci',
                 ],
-                'user' => getenv('TYPO3_USER_NAME'),
             ],
         ],
     ],

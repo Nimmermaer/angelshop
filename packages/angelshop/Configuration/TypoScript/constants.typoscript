@@ -1,1 +1,5 @@
-@import 'EXT:angelshop/Configuration/TypoScript/Constants/*.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Constants/global.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Constants/indexed_search.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Constants/module.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Constants/news.typoscript'
+@import 'EXT:angelshop/Configuration/TypoScript/Constants/plugin.typoscript'

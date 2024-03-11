@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-lg-12">
+        <f:for each="{children_201}" as="record">
+            <div class="panel-group" id="Accordion-{record.uid}">
+                <f:format.raw>
+                    {record.renderedContent}
+                </f:format.raw>
+            </div>
+        </f:for>
+    </div>
+</div>

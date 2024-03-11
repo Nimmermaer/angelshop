@@ -1,0 +1,21 @@
+tt_content.b13-30-30-30-30 < tt_content.container
+tt_content.b13-30-30-30-30 {
+  templateName = 4ColsContainer
+  dataProcessing {
+    202 = B13\Container\DataProcessing\ContainerProcessor
+    202 {
+      colPos = 202
+      as = children_202
+    }
+    203 = B13\Container\DataProcessing\ContainerProcessor
+    203 {
+      colPos = 203
+      as = children_203
+    }
+    204 = B13\Container\DataProcessing\ContainerProcessor
+    204 {
+      colPos = 204
+      as = children_204
+    }
+  }
+}

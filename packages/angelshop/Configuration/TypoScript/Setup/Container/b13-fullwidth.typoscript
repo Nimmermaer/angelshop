@@ -1,0 +1,4 @@
+tt_content.b13-fullwidth < tt_content.container
+tt_content.b13-fullwidth {
+  templateName = Fullwidth
+}
