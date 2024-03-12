@@ -33,7 +33,7 @@ call_user_func(
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'],
+                    'items' => \MB\Angelshop\Utility\FontawesomeIcons::ICONS,
                 ],
             ],
         ];

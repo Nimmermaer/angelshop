@@ -7,7 +7,7 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return static function (ECSConfig $ecsConfig): void {
-    $ecsConfig->paths([__DIR__ . '/packages/angelshop/', __DIR__ . '/packages/angelshop/Tests']);
+    $ecsConfig->paths([__DIR__ . '/packages/angelshop/']);
 
     $ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, [
         'syntax' => 'short',

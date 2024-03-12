@@ -210,7 +210,7 @@ call_user_func(
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'],
+                    'items' => \MB\Angelshop\Utility\FontawesomeIcons::ICONS,
                 ],
             ],
             'tx_angelshop_salutation' => [
@@ -244,7 +244,7 @@ call_user_func(
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['ANIMATED'],
+                    'items' => \MB\Angelshop\Utility\FontawesomeIcons::ANIMATED,
                 ],
             ],
         ];

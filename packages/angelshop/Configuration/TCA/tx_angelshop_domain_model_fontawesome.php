@@ -123,7 +123,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['FONT_AWESOME'],
+                'items' => \MB\Angelshop\Utility\FontawesomeIcons::ICONS,
             ],
         ],
         'movement' => [
@@ -132,7 +132,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['angelshop']['ANIMATED'],
+                'items' => \MB\Angelshop\Utility\FontawesomeIcons::ANIMATED,
             ],
         ],
         'record' => [
