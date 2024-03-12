@@ -97,16 +97,16 @@
 
                     <f:if condition="{mediaElement.originalResource.type} == 2">
                         <f:image alt="{mediaElement.originalResource.alternative}" class="img-responsive img-hover"
-                                 height="300c"
-                                 image="{mediaElement}" title="{mediaElement.originalResource.title}" width="600"/>
+                                 height="300"
+                                 image="{mediaElement}" title="{mediaElement.originalResource.title}" width="600c"/>
                     </f:if>
                     <f:if condition="{mediaElement.originalResource.type} == 4">
                         <f:render arguments="{mediaElement: mediaElement}" partial="Detail/FalMediaVideo"/>
                     </f:if>
                     <f:if condition="{mediaElement.originalResource.type} == 5">
                         <f:image alt="{mediaElement.originalResource.alternative}" class="img-responsive img-hover"
-                                 height="300c"
-                                 image="{mediaElement}" title="{mediaElement.originalResource.title}" width="600"/>
+                                 height="300"
+                                 image="{mediaElement}" title="{mediaElement.originalResource.title}" width="600c"/>
                     </f:if>
                 </f:alias>
             </n:link>

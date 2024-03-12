@@ -47,7 +47,7 @@ lib {
   newsList = EXTBASEPLUGIN
   newsList {
     extensionName = News
-    pluginName = NewsDetail
+    pluginName = NewsListSticky
     controller = News
     settings < plugin.tx_news.settings
     settings {
