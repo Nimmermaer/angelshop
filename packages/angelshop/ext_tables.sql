@@ -5,7 +5,9 @@ CREATE TABLE tx_news_domain_model_news
 (
 	tx_angelshop_news_recipe     tinyint(11) default '0' NOT NULL,
 	tx_angelshop_news_icon       varchar(255) default ' ' NOT NULL,
-	tx_angelshop_news_ingredient text
+	tx_angelshop_news_ingredient text,
+	title text,
+	related_links tinytext,
 );
 
 #
@@ -25,9 +27,7 @@ CREATE TABLE pages
 #
 CREATE TABLE tt_content
 (
-
-	##                                            Old angelshop_tables
-		tx_abatemplate_product_description text,
+  tx_abatemplate_product_description text,
 	tx_abatemplate_product_additional_description text,
 	tx_abatemplate_product_price                  text,
 	tx_abatemplate_product_old_price              text,
@@ -39,8 +39,7 @@ CREATE TABLE tt_content
 	tx_abatemplate_product_category               text,
 	tx_abatemplate_product                        int(11) default '0' NOT NULL,
 
-	##                                            New angelshop_tables
-		tx_angelshop_title varchar (255) default ' ' NOT NULL,
+	tx_angelshop_title varchar (255) default ' ' NOT NULL,
 	tx_angelshop_link                             int(11) default 0 NOT NULL,
 	tx_angelshop_fontawesome                      varchar(255) default ' ' NOT NULL,
 	tx_angelshop_class                            varchar(255) default ' ' NOT NULL,
@@ -56,7 +55,8 @@ CREATE TABLE tt_content
 	tx_angelshop_owner                            varchar(255) default ' ' NOT NULL,
 	tx_angelshop_map_small                        int(11) default '0' NOT NULL,
 	tx_angelshop_salutation                       varchar(255) default '0' NOT NULL,
-	tx_angelshop_image_collection                 int(11) unsigned DEFAULT '0'
+	tx_angelshop_image_collection                 int(11) unsigned DEFAULT '0',
+  colPos 			int(11) default '0' NOT NULL,
 );
 #
 # Table structure for table 'fe_users'
