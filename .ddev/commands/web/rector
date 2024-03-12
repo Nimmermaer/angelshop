@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#ddev-generated
+# This assumes that the rector command will be in the $PATH; if in vendor/bin/ it will be
+
+## Description: Run TYPO3 CLI (rector) command inside the web container
+## Usage: rector [args]
+## Example: "ddev rector site:list" or "ddev rector list" or "ddev rector extension:list"
+## ProjectTypes: typo3
+## ExecRaw: true
+
+rector "$@"

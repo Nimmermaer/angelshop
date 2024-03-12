@@ -1,0 +1,25 @@
+#!/bin/bash
+
+## Description: Run updater
+## Usage: typo3-update
+## Example: "ddev typo3-update"
+## ProjectTypes: typo3
+## ExecRaw: true
+
+typo3 database:updateschema
+typo3 upgrade:run  backendGroupsExplicitAllowDenyMigration
+typo3 upgrade:run  backendModulePermission
+typo3 upgrade:run  backendUserLanguage
+typo3 upgrade:run  databaseRowsUpdateWizard
+typo3 upgrade:run  shortcutRecordsMigration
+typo3 upgrade:run  sysFileCollectionIdentifierMigration
+typo3 upgrade:run  sysFileMountIdentifierMigration
+typo3 upgrade:run  sysLogSerialization
+typo3 upgrade:run  txNewsRelatedLinkIntegerDefault
+typo3 upgrade:run  txNewsTitleFieldDefault
+typo3 upgrade:run  txNewsPluginUpdater
+typo3 upgrade:run  txNewsPluginPermissionUpdater
+typo3 upgrade:run  GridelementsMigrationWizard
+typo3 upgrade:run  container_migratesorting
+
+typo3 cache:flush

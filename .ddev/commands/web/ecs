@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#ddev-generated
+# This assumes that the ecs command will be in the $PATH; if in vendor/bin/ it will be
+
+## Description: Run TYPO3 CLI (ecs) command inside the web container
+## Usage: ecs [args]
+## Example: "ddev ecs site:list" or "ddev ecs list" or "ddev ecs extension:list"
+## ProjectTypes: typo3
+## ExecRaw: true
+
+ecs "$@"

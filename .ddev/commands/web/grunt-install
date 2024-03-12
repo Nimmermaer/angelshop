@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## Description: Run TYPO3 CLI (ecs) command inside the web container
+## Usage: grunt-install [args]
+## Example: "ddev ecs site:list" or "ddev ecs list" or "ddev ecs extension:list"
+## ProjectTypes: typo3
+## ExecRaw: true
+
+cd frontend/
+npm install
+npm install grunt-cli -g
