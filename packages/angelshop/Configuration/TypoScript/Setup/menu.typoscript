@@ -16,10 +16,12 @@ lib {
         ATagBeforeWrap = 1
         stdWrap.htmlSpecialChars = 1
       }
+
       ACT < .NO
       ACT {
         wrapItemAndSub = <li class="active"> |</li>
       }
+
       IFSUB = 1
       IFSUB {
         wrapItemAndSub = <li class="dropdown">|</li>
@@ -34,6 +36,7 @@ lib {
         allWrap = <a class="dropdown-toggle" data-toggle="dropdown" href="#" >|<b class="caret"></b></a>
       }
     }
+
     2 = TMENU
     2 {
       expAll = 1
@@ -51,13 +54,16 @@ lib {
           20.field = subtitle
         }
       }
+
       ACT < .NO
       ACT {
         allWrap = <li class="active"> | </li>
       }
+
       wrap = <ul class="dropdown-menu">|</ul>
     }
   }
+
   datum = TEXT
   datum {
     data = date : U
@@ -80,12 +86,14 @@ lib {
         ATagBeforeWrap = 1
         stdWrap.htmlSpecialChars = 1
       }
+
       ACT < .NO
       ACT {
         wrapItemAndSub = <li class="active" > | &nbsp;&#8226;&nbsp;</li>|*|<li class="active" >|&nbsp;&#8226;&nbsp;</li>|*|<li class="active last" >&nbsp;| </li>
       }
     }
   }
+
   breadcrumb = COA
   breadcrumb {
     wrap = <div itemprop="breadcrumb"> <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">|</ol></div>
@@ -122,31 +130,34 @@ lib {
 
 [traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0 || traverse(request.getParsedBody(), 'tx_news_pi1/news') > 0]
 
-lib.breadcrumb {
-  10 {
-    1 {
-      NO {
-        doNotLinkIt = 0
-        allWrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"  >| <meta itemprop="position" content="{register:count_MENUOBJ}"> </li>
+  lib.breadcrumb {
+    10 {
+      1 {
+        NO {
+          doNotLinkIt = 0
+          allWrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"  >| <meta itemprop="position" content="{register:count_MENUOBJ}"> </li>
+        }
       }
     }
-  }
-  20 = RECORDS
-  20 {
-    dontCheckPid = 1
-    tables = tx_news_domain_model_news
-    source {
-      data = GP:tx_news_pi1|news
-      intval = 1
-    }
-    conf {
-      tx_news_domain_model_news = TEXT
-      tx_news_domain_model_news {
-        field = title // alt_title
-        htmlSpecialChars = 1
+
+    20 = RECORDS
+    20 {
+      dontCheckPid = 1
+      tables = tx_news_domain_model_news
+      source {
+        data = GP:tx_news_pi1|news
+        intval = 1
       }
+
+      conf {
+        tx_news_domain_model_news = TEXT
+        tx_news_domain_model_news {
+          field = title // alt_title
+          htmlSpecialChars = 1
+        }
+      }
+
+      wrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" >|</li>
     }
-    wrap = <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" >|</li>
   }
-}
 [global]
