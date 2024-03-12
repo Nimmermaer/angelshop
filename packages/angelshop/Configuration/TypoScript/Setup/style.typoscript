@@ -9,13 +9,14 @@ page {
   includeCSS {
     style = EXT:angelshop/Resources/Public/Css/angelshop.min.css
   }
-  includeJSFooter {
+  includeJS {
     jquery = EXT:angelshop/Resources/Public/JavaScript/jquery.min.js
     jquery.async = 1
+    jquery.forceOnTop = 1
+  }
+  includeJSFooter {
     bootstrap = EXT:angelshop/Resources/Public/JavaScript/bootstrap.min.js
     bootstrap.async = 1
-    lightbox = EXT:angelshop/Resources/Public/JavaScript/lightbox.min.js
-    lightbox.async = 1
     custom = EXT:angelshop/Resources/Public/JavaScript/custom.min.js
     custom.async = 1
     scripts = EXT:angelshop/Resources/Public/JavaScript/scripts.min.js
