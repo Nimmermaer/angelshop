@@ -29,16 +29,11 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Session;
 
 class ProductController extends ActionController
 {
-    /**
-     * contentRepository
-     * @TYPO3\CMS\Extbase\Annotation\Inject
-     */
-    protected ?ContentRepository $contentRepository = null;
-
-    /**
-     * @TYPO3\CMS\Extbase\Annotation\Inject
-     */
-    protected ?Session $session = null;
+    public function __construct(
+        protected readonly ?ContentRepository $contentRepository,
+        protected readonly ?Session $session
+    ) {
+    }
 
     /**
      * Set TypeConverter option for image upload

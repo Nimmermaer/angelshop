@@ -1,6 +1,5 @@
 <?php
 
-
 namespace MB\Angelshop\Upgrades;
 
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;

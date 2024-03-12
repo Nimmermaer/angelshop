@@ -1,11 +1,15 @@
 <?php
 
+use B13\Container\Tca\ContainerConfiguration;
+use B13\Container\Tca\Registry;
+use MB\Angelshop\Utility\Container;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') || die();
 
 call_user_func(
     function ($extensionKey, $table): void {
-        foreach (\MB\Angelshop\Utility\Container::CONFIGURATION as $key => $columnConfigurations) {
+        foreach (Container::CONFIGURATION as $key => $columnConfigurations) {
             $colPositions = [];
             $langKey = '.';
 
@@ -19,9 +23,9 @@ call_user_func(
                     'allowed' => $colPosConfiguration['allowed'],
                 ];
             }
-            \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+            GeneralUtility::makeInstance(Registry::class)->configureContainer(
                 (
-                new \B13\Container\Tca\ContainerConfiguration(
+                new ContainerConfiguration(
                     $key,
                     'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Backend/Container/locallang.xlf:tt_content.CType.' . $key . '.title',
                     'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Backend/Container/locallang.xlf:tt_content.CType.' . $key . '.description',
@@ -30,7 +34,7 @@ call_user_func(
                 )->setIcon($columnConfigurations['containerIcon'])
             );
         }
-        foreach (\MB\Angelshop\Utility\Container::CONFIGURATION as $containerName => $columnConfigurations) {
+        foreach (Container::CONFIGURATION as $containerName => $columnConfigurations) {
             $GLOBALS['TCA']['tt_content']['types'][$containerName]['showitem'] =
                 '
                     --palette--;;general,
@@ -42,7 +46,6 @@ call_user_func(
                     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes, rowDescription,
                     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,';
         }
-
     },
     'angelshop',
     'tt_content'

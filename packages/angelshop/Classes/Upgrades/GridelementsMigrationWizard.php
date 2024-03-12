@@ -1,4 +1,5 @@
 <?php
+
 namespace MB\Angelshop\Upgrades;
 
 use Symfony\Component\Console\Output\OutputInterface;

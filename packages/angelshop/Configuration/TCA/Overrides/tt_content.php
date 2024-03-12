@@ -304,8 +304,7 @@ call_user_func(
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
       --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
-         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
-      --div--;Raster Elemente,tx_gridelements_container,tx_gridelements_columns';
+         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,';
 
         $GLOBALS['TCA'][$table]['types']['tx_impressum'] = [
             'showitem' => '
