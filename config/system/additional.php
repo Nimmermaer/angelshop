@@ -1,6 +1,8 @@
 <?php
 
-$currentApplicationContext = (string)\TYPO3\CMS\Core\Core\Environment::getContext();
+use TYPO3\CMS\Core\Log\Writer\FileWriter;
+use TYPO3\CMS\Core\Core\Environment;
+$currentApplicationContext = (string)Environment::getContext();
 if (getenv('IS_DDEV_PROJECT') == 'true') {
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         $GLOBALS['TYPO3_CONF_VARS'],
@@ -34,6 +36,21 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
                 'transport_smtp_encrypt' => false,
                 'transport_smtp_server' => 'localhost:1025',
             ],
+            'LOG' => [
+                'TYPO3' => [
+                    'CMS' => [
+                        'deprecations' => [
+                            'writerConfiguration' => [
+                                'notice' => [
+                                    FileWriter::class => [
+                                        'disabled' => false,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'SYS' => [
                 'trustedHostsPattern' => '.*.*',
                 'devIPmask' => '*',
@@ -42,3 +59,20 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
         ]
     );
 }
+$GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
+    $GLOBALS['TYPO3_CONF_VARS'],
+    [
+        'DB' => [
+            'Connections' => [
+                'Default' => [
+                    'dbname' => getenv('TYPO3_DB_NAME'),
+                    'driver' => 'mysqli',
+                    'host' => getenv('TYPO3_HOST_NAME'),
+                    'password' => getenv('TYPO3_PASSWORD'),
+                    'port' => '3306',
+                    'user' => getenv('TYPO3_USER_NAME'),
+                ],
+            ],
+        ],
+    ],
+);

@@ -1,14 +1,16 @@
 <?php
 return [
     'BE' => [
-        'compressionLevel' => '5',
-        'debug' => true,
+        'compressionLevel' => 9,
+        'debug' => false,
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$M2hhUXlOZEpZTUxvcDdvTg$Qs/6zAIOqfAc2zVrdFrSR9ygdZ7ML5xgOc8/qYO3k3I',
         'languageDebug' => false,
+        'lockSSL' => true,
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
         ],
+        'versionNumberInFilename' => 1,
     ],
     'DB' => [
         'Connections' => [
@@ -23,6 +25,17 @@ return [
             ],
         ],
     ],
+    'EXT' => [],
+    'EXTCONF' => [
+        'helhum-typo3-console' => [
+            'initialUpgradeDone' => '9.5',
+        ],
+        'lang' => [
+            'availableLanguages' => [
+                'de',
+            ],
+        ],
+    ],
     'EXTENSIONS' => [
         'backend' => [
             'backendFavicon' => 'EXT:angelshop/Resources/Public/Icons/angelshop_inverted.ico',
@@ -31,11 +44,11 @@ return [
             'loginFootnote' => '2024 by aba-angelshop',
             'loginHighlightColor' => '#00ccff',
             'loginLogo' => 'fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg',
-            'loginLogoAlt' => 'Aba Angelshop',
+            'loginLogoAlt' => '',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
-            'offlineMode' => '0',
+            'offlineMode' => '1',
         ],
         'indexed_search' => [
             'catdoc' => '/usr/bin/',
@@ -53,6 +66,7 @@ return [
             'pdf_mode' => '20',
             'pdftools' => '/usr/bin/',
             'ppthtml' => '/usr/bin/',
+            'trackIpInStatistic' => '2',
             'unrtf' => '/usr/bin/',
             'unzip' => '/usr/bin/',
             'useCrawlerForExternalFiles' => '0',
@@ -69,6 +83,7 @@ return [
             'dateTimeNotRequired' => '0',
             'hidePageTreeForAdministrationModule' => '0',
             'manualSorting' => '0',
+            'mediaPreview' => 'false',
             'prependAtCopy' => '1',
             'resourceFolderImporter' => '/news_import',
             'rteForTeaser' => '0',
@@ -84,16 +99,16 @@ return [
         ],
         'staticfilecache' => [
             'backendDisplayMode' => 'both',
-            'boostMode' => '0',
-            'cacheTagsEnable' => '0',
+            'boostMode' => '1',
+            'cacheTagsEnable' => '1',
             'clearCacheForAllDomains' => '1',
             'debugHeaders' => '0',
             'disableInDevelopment' => '0',
-            'enableGeneratorBrotli' => '0',
+            'enableGeneratorBrotli' => '1',
             'enableGeneratorGzip' => '1',
             'enableGeneratorManifest' => '0',
             'enableGeneratorPhp' => '0',
-            'enableGeneratorPlain' => '0',
+            'enableGeneratorPlain' => '1',
             'hashUriInCache' => '0',
             'htaccessTemplateName' => 'EXT:staticfilecache/Resources/Private/Templates/Htaccess.html',
             'inlineAssetsFileSize' => '50000',
@@ -108,8 +123,8 @@ return [
             'phpTemplateName' => 'EXT:staticfilecache/Resources/Private/Templates/Php.html',
             'rawurldecodeCacheFileName' => '0',
             'renameTablesToOtherPrefix' => '0',
-            'sendCacheControlHeaderRedirectAfterCacheTimeout' => '0',
-            'sendHttp2PushEnable' => '0',
+            'sendCacheControlHeaderRedirectAfterCacheTimeout' => '1',
+            'sendHttp2PushEnable' => '1',
             'sendHttp2PushFileExtensions' => 'css,js',
             'sendHttp2PushFileLimit' => '10',
             'sendHttp2PushLimitToArea' => '',
@@ -136,20 +151,8 @@ return [
         'processor_enabled' => true,
         'processor_path' => '/usr/bin/',
     ],
-    'LOG' => [
-        'TYPO3' => [
-            'CMS' => [
-                'deprecations' => [
-                    'writerConfiguration' => [
-                        'notice' => [
-                            'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
-                                'disabled' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
+    'HTTP' => [
+        'verify' => false,
     ],
     'MAIL' => [
         'transport' => 'sendmail',
@@ -185,20 +188,19 @@ return [
                 ],
             ],
         ],
-        'defaultScheme' => 'https',
-        'devIPmask' => '*',
+        'devIPmask' => '',
         'displayErrors' => 0,
-        'encryptionKey' => '29ede769d6e99f261a8693a32bb84a399fe829acaa14be32e77cc49ac88ed46875019b3dc533bf2c17ca3357ab66d22a',
+        'encryptionKey' => '60b267acdd65bc73381f84e271262a784a96a06973896def77f3f9d7bc51b91e84ac4717028f584f9d1104af0d48137e',
         'exceptionalErrors' => 12290,
         'features' => [
             'security.usePasswordPolicyForFrontendUsers' => true,
             'unifiedPageTranslationHandling' => true,
             'yamlImportsFollowDeclarationOrder' => true,
         ],
-        'sitename' => 'Aba-Angelshop',
+        'sitename' => 'Aba Angelshop @ Development',
         'systemMaintainers' => [
             1,
         ],
-        'trustedHostsPattern' => '.*',
+        'trustedHostsPattern' => 'SERVER_NAME',
     ],
 ];
