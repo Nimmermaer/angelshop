@@ -2,4 +2,4 @@ version: '3.6'
 services:
   web:
     environment:
-      - TYPO3_CONTEXT=Development
+      - TYPO3_CONTEXT=Development/DDev
