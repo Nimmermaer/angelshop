@@ -1,6 +1,7 @@
 <?php
 return [
     'BE' => [
+        'compressionLevel' => '5',
         'debug' => true,
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$M2hhUXlOZEpZTUxvcDdvTg$Qs/6zAIOqfAc2zVrdFrSR9ygdZ7ML5xgOc8/qYO3k3I',
         'languageDebug' => false,
@@ -24,13 +25,13 @@ return [
     ],
     'EXTENSIONS' => [
         'backend' => [
-            'backendFavicon' => '',
-            'backendLogo' => '',
+            'backendFavicon' => 'EXT:angelshop/Resources/Public/Icons/angelshop_inverted.ico',
+            'backendLogo' => 'EXT:angelshop/Resources/Public/Icons/angelshop.ico',
             'loginBackgroundImage' => '',
-            'loginFootnote' => '',
-            'loginHighlightColor' => '',
-            'loginLogo' => '',
-            'loginLogoAlt' => '',
+            'loginFootnote' => '2024 by aba-angelshop',
+            'loginHighlightColor' => '#00ccff',
+            'loginLogo' => 'fileadmin/user_upload/Logos/LOGOabafischer_150x57.jpg',
+            'loginLogoAlt' => 'Aba Angelshop',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
@@ -119,6 +120,7 @@ return [
         ],
     ],
     'FE' => [
+        'compressionLevel' => 5,
         'debug' => false,
         'disableNoCacheParameter' => true,
         'passwordHashing' => [
@@ -183,8 +185,9 @@ return [
                 ],
             ],
         ],
+        'defaultScheme' => 'https',
         'devIPmask' => '*',
-        'displayErrors' => 1,
+        'displayErrors' => 0,
         'encryptionKey' => '29ede769d6e99f261a8693a32bb84a399fe829acaa14be32e77cc49ac88ed46875019b3dc533bf2c17ca3357ab66d22a',
         'exceptionalErrors' => 12290,
         'features' => [

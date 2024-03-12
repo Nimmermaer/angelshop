@@ -7,6 +7,7 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
         [
             'FE' => [
                 'disableNoCacheParameter' => 0,
+                'debug' => true,
             ],
             'BE' => [
                 'loginRateLimit' => 0,
