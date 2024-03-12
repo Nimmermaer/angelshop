@@ -80,12 +80,6 @@ module.exports = function (grunt) {
         ],
         dest: '../packages/angelshop/Resources/Public/JavaScript/custom.js'
       },
-      angelshop: {
-        src: [
-          'JavaScript/*.js'
-        ],
-        dest: '../packages/angelshop/Resources/Public/JavaScript/scripts.js'
-      }
     },
     uglify: {
       options: {
@@ -93,7 +87,6 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          '../packages/angelshop/Resources/Public/JavaScript/scripts.min.js': ['../packages/angelshop/Resources/Public/JavaScript/scripts.js'],
           '../packages/angelshop/Resources/Public/JavaScript/bootstrap.min.js': ['../packages/angelshop/Resources/Public/JavaScript/bootstrap.js'],
           '../packages/angelshop/Resources/Public/JavaScript/jquery.min.js': ['node_modules/jquery/dist/jquery.js'],
           '../packages/angelshop/Resources/Public/JavaScript/custom.min.js': ['../packages/angelshop/Resources/Public/JavaScript/custom.js']
@@ -122,8 +115,8 @@ module.exports = function (grunt) {
     },
     sprite: {
       angelshop: {
-        src: 'Images/Images/*.png',
-        dest: 'Images/Images/spritesheet.png',
+        src: 'Images/*.png',
+        dest: 'Images/spritesheet.png',
         destCss: '../packages/angelshop/Resources/Public/Css/sprites.css'
       }
     },
@@ -166,8 +159,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-strip-css-comments');
 
-  grunt.registerTask('default', ['copy', 'less', 'jshint', 'concat', 'uglify', 'stripCssComments', 'cssmin']);
+  grunt.registerTask('default', ['sprite', 'copy', 'less', 'jshint', 'concat', 'uglify', 'stripCssComments', 'cssmin']);
 };

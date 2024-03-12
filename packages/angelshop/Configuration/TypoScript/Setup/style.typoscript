@@ -1,12 +1,6 @@
-config.inlineStyle2TempFile = 0
 page {
-  includeJSlibs >
-  includeJS >
-  includeJSFooterlibs >
-  includeJSFooter >
-  includeCSS >
-  tx_felogin_pi1._CSS_DEFAULT_STYLE >
   includeCSS {
+    sprite = EXT:packages/angelshop/Resources/Public/Css/sprites.css
     style = EXT:angelshop/Resources/Public/Css/angelshop.min.css
   }
   includeJS {
