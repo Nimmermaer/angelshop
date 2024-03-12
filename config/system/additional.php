@@ -56,6 +56,21 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
                 'devIPmask' => '*',
                 'displayErrors' => 1,
             ],
+            'EXTCONF' => [
+                'filefill'=> [
+                    'storages' => [
+                        1 => [
+                            [
+                                'identifier' => 'domain',
+                                'configuration' => 'https://aba-angelshop.de',
+                            ],
+                            [
+                                'identifier' => 'placeholder',
+                            ],
+                        ],
+                    ]
+                ]
+            ]
         ]
     );
 }

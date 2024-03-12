@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05c5e052cc1074113dd6ee2cccffdb8c",
+    "content-hash": "82cc7a5a35a41c85ecd0ab72a857ecc7",
     "packages": [
         {
             "name": "b13/container",
@@ -8705,6 +8705,73 @@
                 }
             ],
             "time": "2024-03-03T13:38:45+00:00"
+        },
+        {
+            "name": "ichhabrecht/filefill",
+            "version": "4.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/IchHabRecht/filefill.git",
+                "reference": "be12bf32e5448c6482d4d2ea265394dbc814d939"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/IchHabRecht/filefill/zipball/be12bf32e5448c6482d4d2ea265394dbc814d939",
+                "reference": "be12bf32e5448c6482d4d2ea265394dbc814d939",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "typo3/cms-core": "^10.4.11 || ^11.5 || ^12.4"
+            },
+            "replace": {
+                "typo3-ter/filefill": "self.version"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6",
+                "typo3/testing-framework": "^6.16 || ^7.0.2"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "filefill",
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/public"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IchHabRecht\\Filefill\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nicole Cordes",
+                    "email": "typo3@cordes.co",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Find and fetch missing local files from different remotes",
+            "homepage": "https://github.com/IchHabRecht/filefill",
+            "keywords": [
+                "extension",
+                "file",
+                "missing",
+                "placeholder",
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/IchHabRecht/filefill/issues",
+                "source": "https://github.com/IchHabRecht/filefill/tree/4.3.2"
+            },
+            "time": "2024-02-23T08:40:52+00:00"
         },
         {
             "name": "nette/utils",
