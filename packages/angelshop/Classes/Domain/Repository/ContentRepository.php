@@ -77,13 +77,7 @@ class ContentRepository extends Repository
         $query = $this->createQuery();
         $query->getQuerySettings()
             ->setIgnoreEnableFields(false);
-        $constraints[] = $query->logicalOr(
-            $query->like('bodytext', "%{$term}%"),
-            $query->like('product', "%{$term}%"),
-            $query->like('additionalDescription', "%{$term}%"),
-            $query->like('header', "%{$term}%"),
-            $query->like('manufacturer', "%{$term}%")
-        );
+        $constraints[] = $query->logicalOr([$query->like('bodytext', "%{$term}%"), $query->like('product', "%{$term}%"), $query->like('additionalDescription', "%{$term}%"), $query->like('header', "%{$term}%"), $query->like('manufacturer', "%{$term}%")]);
         $constraints[] = $query->logicalAnd($query->equals('contentType', 'ce_product'));
         $query->matching($query->logicalAnd(...$constraints));
         return $query->execute();

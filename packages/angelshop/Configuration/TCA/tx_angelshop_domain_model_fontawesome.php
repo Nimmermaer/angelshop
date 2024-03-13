@@ -1,5 +1,6 @@
 <?php
 
+use MB\Angelshop\Utility\FontawesomeIcons;
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tx_angelshop_domain_model_fontawesome',
@@ -123,7 +124,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => \MB\Angelshop\Utility\FontawesomeIcons::ICONS,
+                'items' => FontawesomeIcons::ICONS,
             ],
         ],
         'movement' => [
@@ -132,7 +133,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => \MB\Angelshop\Utility\FontawesomeIcons::ANIMATED,
+                'items' => FontawesomeIcons::ANIMATED,
             ],
         ],
         'record' => [

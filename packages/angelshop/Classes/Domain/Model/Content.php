@@ -86,9 +86,9 @@ class Content extends AbstractEntity
 
     public string $manufacturer = '';
 
-    protected \DateTime $crdate;
+    protected int $crdate = 0;
 
-    protected \DateTime $tstamp;
+    protected int $tstamp = 0;
 
     /**
      * image
@@ -127,34 +127,22 @@ class Content extends AbstractEntity
         $this->image = $image;
     }
 
-    /**
-     * @return \DateTime|\DateTimeImmutable
-     */
-    public function getCrdate(): \DateTime
+    public function getCrdate(): int
     {
         return $this->crdate;
     }
 
-    /**
-     * @param \DateTime|\DateTimeImmutable $crdate
-     */
-    public function setCrdate(\DateTimeInterface $crdate): void
+    public function setCrdate(int $crdate): void
     {
         $this->crdate = $crdate;
     }
 
-    /**
-     * @return \DateTime|\DateTimeImmutable
-     */
-    public function getTstamp(): \DateTime
+    public function getTstamp(): int
     {
         return $this->tstamp;
     }
 
-    /**
-     * @param \DateTime|\DateTimeImmutable $tstamp
-     */
-    public function setTstamp(\DateTimeInterface $tstamp): void
+    public function setTstamp(int $tstamp): void
     {
         $this->tstamp = $tstamp;
     }

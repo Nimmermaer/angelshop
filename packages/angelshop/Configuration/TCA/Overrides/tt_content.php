@@ -1,5 +1,6 @@
 <?php
 
+use MB\Angelshop\Utility\FontawesomeIcons;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -210,7 +211,7 @@ call_user_func(
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => \MB\Angelshop\Utility\FontawesomeIcons::ICONS,
+                    'items' => FontawesomeIcons::ICONS,
                 ],
             ],
             'tx_angelshop_salutation' => [
@@ -244,7 +245,7 @@ call_user_func(
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => \MB\Angelshop\Utility\FontawesomeIcons::ANIMATED,
+                    'items' => FontawesomeIcons::ANIMATED,
                 ],
             ],
         ];

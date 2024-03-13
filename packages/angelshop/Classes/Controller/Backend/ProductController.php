@@ -1,12 +1,18 @@
 <?php
 
-namespace MB\Angelshop\Controller;
+namespace MB\Angelshop\Controller\Backend;
 
+use MB\Angelshop\Controller\ActionController;
 use MB\Angelshop\Domain\Model\Content;
 use MB\Angelshop\Domain\Repository\ContentRepository;
 use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
+use MB\Angelshop\Traits\PaginationTrait;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Backend\Attribute\AsController;
+use TYPO3\CMS\Backend\Template\ModuleTemplate;
+use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
 use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\Session;
 
 /***************************************************************
@@ -27,11 +33,15 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Session;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+#[AsController]
 class ProductController extends ActionController
 {
+    use PaginationTrait;
+
     public function __construct(
         protected readonly ?ContentRepository $contentRepository,
-        protected readonly ?Session $session
+        protected readonly ?Session $session,
+        protected readonly ModuleTemplateFactory $moduleTemplateFactory
     ) {
     }
 
@@ -102,18 +112,17 @@ class ProductController extends ActionController
 
     public function searchAction(): ResponseInterface
     {
+        $view = $this->moduleTemplateFactory->create($this->request);
         $argument = $this->request->getArguments();
 
         if ($argument['searchword'] ?? false) {
             $products = $this->contentRepository->findByIndex($argument['searchword']);
-            $this->view->assign('searchword', $argument['searchword']);
+            $view->assign('searchword', $argument['searchword']);
         } else {
             $products = $this->contentRepository->findByContentType('ce_product');
         }
-        $this->view->assignMultiple([
-            'products' => $products,
-        ]);
-        return $this->htmlResponse();
+        $view = $this->buildSlideWindowPagination($products, view: $view);
+        return $view->renderResponse();
     }
 
     protected function setTypeConverterConfigurationForImageUpload($argumentName): void

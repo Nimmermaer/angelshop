@@ -1,0 +1,47 @@
+<html xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:render partial="Pagination"
+          arguments="{pagination:pagination.pagination, paginator:pagination.paginator, section:'publications'}"/>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Uid</th>
+        <th>Bild</th>
+        <th>Titel</th>
+        <th>Beschreibung</th>
+        <th>Zusätzliche Beschreibung</th>
+        <th style="text-align:right; ">Preis</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <f:for as="product" each="{pagination.paginator.paginatedItems}">
+        <tr class="{f:if(condition:'{product.hidden}',then:'danger')} {f:if(condition:'{product.stock}',then:'success',else:'warning')}">
+            <th>{product.uid}</th>
+            <td>
+                <f:for as="image" each="{product.image}" iteration="imageIterator">
+                    <f:if condition="{imageIterator.isFirst}">
+                        <f:image maxWidth="50" src="{image.uid}" treatIdAsReference="1"/>
+                    </f:if>
+                </f:for>
+            </td>
+            <td>{product.header}</td>
+            <td>
+                <f:format.raw>{product.bodytext->f:format.crop(maxCharacters:'150')}</f:format.raw>
+            </td>
+            <td>
+                <f:format.raw>{product.additionalDescription->f:format.crop(maxCharacters:'50')}</f:format.raw>
+            </td>
+            <td style="width:150px; text-align:right; ">
+                {product.price->f:format.currency(currencySign:'€',decimalSeparator:',' )}
+            </td>
+            <td>
+                <be:link.editRecord uid="{product.uid}" table="tt_content">
+                    <core:icon identifier="actions-document-edit"></core:icon>
+                </be:link.editRecord>
+            </td>
+        </tr>
+    </f:for>
+    </tbody>
+</table>
+</html>

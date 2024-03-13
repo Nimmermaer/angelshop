@@ -7,6 +7,7 @@ web/public/typo3temp
 web/public/fileadmin
 web/public/index.php
 web/public/uploads
+frontend/node_modules
 .htaccess
 web/public/typo3conf/node_modules
 web/public/node_modules
