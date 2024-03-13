@@ -53,30 +53,15 @@ module.exports = function (grunt) {
       all: ['!JavaScript/*.js', 'JavaScript/scripts.js']
     },
     concat: {
-      bootstrap: {
-        src: [
-          'JavaScript/bootstrap/transition.js',
-          'JavaScript/bootstrap/alert.js',
-          'JavaScript/bootstrap/button.js',
-          'JavaScript/bootstrap/carousel.js',
-          'JavaScript/bootstrap/collapse.js',
-          'JavaScript/bootstrap/dropdown.js',
-          'JavaScript/bootstrap/modal.js',
-          'JavaScript/bootstrap/tooltip.js',
-          'JavaScript/bootstrap/popover.js',
-          'JavaScript/bootstrap/lightbox.js',
-          'JavaScript/bootstrap/scrollspy.js',
-          'JavaScript/bootstrap/tab.js',
-          'JavaScript/bootstrap/affix.js',
-          'JavaScript/bootstrap/button.js'
-        ],
-        dest: '../packages/angelshop/Resources/Public/JavaScript/bootstrap.js'
-      },
       custom: {
         src: [
+          'node_modules/slick-carousel/slick/slick.js',
+          'node_modules/lightbox2/dist/js/lightbox.js',
+          'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
+          'node_modules/jquery-match-height/dist/jquery.matchHeight.js',
           'JavaScript/analytics.js',
-          'JavaScript/script.js',
-          'JavaScript/cookiebar.js'
+          'JavaScript/cookiebar.js',
+          'JavaScript/scripts.js',
         ],
         dest: '../packages/angelshop/Resources/Public/JavaScript/custom.js'
       },
@@ -87,8 +72,8 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          '../packages/angelshop/Resources/Public/JavaScript/bootstrap.min.js': ['../packages/angelshop/Resources/Public/JavaScript/bootstrap.js'],
           '../packages/angelshop/Resources/Public/JavaScript/jquery.min.js': ['node_modules/jquery/dist/jquery.js'],
+          '../packages/angelshop/Resources/Public/JavaScript/bootstrap.min.js': ['node_modules/bootstrap/dist/js/bootstrap.js'],
           '../packages/angelshop/Resources/Public/JavaScript/custom.min.js': ['../packages/angelshop/Resources/Public/JavaScript/custom.js']
         }
       }
@@ -109,14 +94,15 @@ module.exports = function (grunt) {
       compress: {
         files: {
           '../packages/angelshop/Resources/Public/Css/angelshop.min.css': ['../packages/angelshop/Resources/Public/Css/angelshop_comment.css'],
-          '../packages/angelshop/Resources/Public/Css/angelshop_critical.min.css': ['../packages/angelshop/Resources/Public/Css/angelshop_critical.css']
+          '../packages/angelshop/Resources/Public/Css/angelshop_critical.min.css': ['../packages/angelshop/Resources/Public/Css/angelshop_critical.css'],
+          '../packages/angelshop/Resources/Public/Css/modern-business.css': ['node_modules/startbootstrap-modern-business/dist/css/styles.css']
         }
       }
     },
     sprite: {
       angelshop: {
         src: 'Images/*.png',
-        dest: 'Images/spritesheet.png',
+        dest: 'Icons/spritesheet.png',
         destCss: '../packages/angelshop/Resources/Public/Css/sprites.css'
       }
     },
@@ -127,7 +113,10 @@ module.exports = function (grunt) {
           sourceMap: false,
           outputSourceFiles: true
         },
-        src: 'Less/angelshop.less',
+        src: [
+          'node_modules/startbootstrap-modern-business/css/modern-business.css',
+          'Less/angelshop.less'
+        ],
         dest: '../packages/angelshop/Resources/Public/Css/angelshop.css'
       }
     },
@@ -149,6 +138,12 @@ module.exports = function (grunt) {
         cwd: 'Fonts',
         src: '**/*',
         dest: '../packages/angelshop/Resources/Public/Fonts'
+      },
+      awesomeFonts: {
+        expand: true,
+        cwd: 'node_modules/font-awesome/fonts',
+        src: '**/*',
+        dest: '../packages/angelshop/Resources/Public/fonts'
       }
     },
   });

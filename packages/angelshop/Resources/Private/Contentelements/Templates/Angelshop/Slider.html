@@ -3,9 +3,7 @@
 <header class="carousel" id="AngelshopCarousel-{data.uid}">
     <div class="full-width-slider" id="c{data.uid}">
         <f:for as="file" each="{files}" iteration="fileIterator">
-            <div class="fill" style="background-image:url('{f:uri.image(src:'{file.uid}', treatIdAsReference:1,width:1900px)}');"
-                 title="{file.title}">
-            </div>
+            <div class="fill" style="background-image:url('{f:uri.image(image:file, treatIdAsReference:1,width:1900)}');" title="{file.title}"></div>
         </f:for>
     </div>
     <f:cObject typoscriptObjectPath="lib.weatherView"/>

@@ -10,10 +10,7 @@ page {
   }
   includeJSFooter {
     bootstrap = EXT:angelshop/Resources/Public/JavaScript/bootstrap.min.js
-    bootstrap.async = 1
     custom = EXT:angelshop/Resources/Public/JavaScript/custom.min.js
-    custom.async = 1
     scripts = EXT:angelshop/Resources/Public/JavaScript/scripts.min.js
-    scripts.async = 1
   }
 }
