@@ -1,4 +1,7 @@
 <?php
+
+use TYPO3\CMS\Core\Crypto\PasswordHashing\Argon2iPasswordHash;
+use TYPO3\CMS\Core\Cache\Backend\Typo3DatabaseBackend;
 return [
     'BE' => [
         'compressionLevel' => 9,
@@ -7,7 +10,7 @@ return [
         'languageDebug' => false,
         'lockSSL' => true,
         'passwordHashing' => [
-            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
+            'className' => Argon2iPasswordHash::class,
             'options' => [],
         ],
         'versionNumberInFilename' => 1,
@@ -135,11 +138,11 @@ return [
         ],
     ],
     'FE' => [
-        'compressionLevel' => 5,
+        'compressionLevel' => 9,
         'debug' => false,
         'disableNoCacheParameter' => true,
         'passwordHashing' => [
-            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
+            'className' => Argon2iPasswordHash::class,
             'options' => [],
         ],
     ],
@@ -166,22 +169,22 @@ return [
         'caching' => [
             'cacheConfigurations' => [
                 'hash' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                    'backend' => Typo3DatabaseBackend::class,
                 ],
                 'imagesizes' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                    'backend' => Typo3DatabaseBackend::class,
                     'options' => [
                         'compression' => true,
                     ],
                 ],
                 'pages' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                    'backend' => Typo3DatabaseBackend::class,
                     'options' => [
                         'compression' => true,
                     ],
                 ],
                 'rootline' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                    'backend' => Typo3DatabaseBackend::class,
                     'options' => [
                         'compression' => true,
                     ],

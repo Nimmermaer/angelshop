@@ -3,11 +3,15 @@ page {
     sprite = EXT:packages/angelshop/Resources/Public/Css/sprites.css
     style = EXT:angelshop/Resources/Public/Css/angelshop.min.css
   }
+
   includeJS {
     jquery = EXT:angelshop/Resources/Public/JavaScript/jquery.min.js
-    jquery.async = 1
-    jquery.forceOnTop = 1
+    jquery {
+      async = 1
+      forceOnTop = 1
+    }
   }
+
   includeJSFooter {
     bootstrap = EXT:angelshop/Resources/Public/JavaScript/bootstrap.min.js
     custom = EXT:angelshop/Resources/Public/JavaScript/custom.min.js

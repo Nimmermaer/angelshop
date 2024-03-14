@@ -4,6 +4,7 @@ namespace MB\Angelshop\Domain\Repository;
 
 use MB\Angelshop\Domain\Model\Content;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -71,13 +72,22 @@ class ContentRepository extends Repository
             ->getFirst();
     }
 
+    /**
+     * @throws InvalidQueryException
+     */
     public function findByIndex($term): array|QueryResultInterface
     {
         $constraints = [];
         $query = $this->createQuery();
         $query->getQuerySettings()
             ->setIgnoreEnableFields(false);
-        $constraints[] = $query->logicalOr([$query->like('bodytext', "%{$term}%"), $query->like('product', "%{$term}%"), $query->like('additionalDescription', "%{$term}%"), $query->like('header', "%{$term}%"), $query->like('manufacturer', "%{$term}%")]);
+        $constraints[] = $query->logicalOr(
+            $query->like('bodytext', "%{$term}%"),
+            $query->like('product', "%{$term}%"),
+            $query->like('additionalDescription', "%{$term}%"),
+            $query->like('header', "%{$term}%"),
+            $query->like('manufacturer', "%{$term}%")
+        );
         $constraints[] = $query->logicalAnd($query->equals('contentType', 'ce_product'));
         $query->matching($query->logicalAnd(...$constraints));
         return $query->execute();

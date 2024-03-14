@@ -8,14 +8,18 @@ lib {
       10 {
         partialRootPath = EXT:angelshop/Resources/Private/Partials/
         layoutRootPath = EXT:angelshop/Resources/Private/Layouts/
-        templateRootPaths.10 = EXT:angelshop/Resources/Private/Templates/Page
+        templateRootPaths {
+          10 = EXT:angelshop/Resources/Private/Templates/Page
+        }
+
         dataProcessing {
-          100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+          100 = files
           100 {
             references.fieldName = media
             as = files
           }
-          110 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+
+          110 = menu
           110 {
             special = directory
             special {
@@ -24,17 +28,22 @@ lib {
                 entryLevel = -1
               }
             }
+
             as = sidebar
           }
-          120 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+
+          120 = files
           120 {
             references {
               fieldName = tx_angelshop_facebook_image
             }
+
             as = facebook
           }
         }
+
         variables {
+
           columnMain =< lib.contents.columns.main
           columnSpecial =< lib.contents.columns.special
           columnFooterLeft =< lib.contents.columns.footerLeft
@@ -45,22 +54,27 @@ lib {
           homePagePid {
             value = {$global.homePageUid}
           }
+
           footerStartPid = TEXT
           footerStartPid {
             value = {$global.navigation.footerStartPoint}
           }
+
           serviceStartPid = TEXT
           serviceStartPid {
             value = {$global.navigation.serviceStartPoint}
           }
+
           metaStartPoint = TEXT
           metaStartPoint {
             value = {$global.navigation.metaStartPoint}
           }
+
           searchPid = TEXT
           searchPid {
             value = {$global.page.search.pid}
           }
+
           copyright = TEXT
           copyright {
             data = date:U
@@ -68,6 +82,7 @@ lib {
             wrap = &copy; &nbsp; | &nbsp; Aba-Angelshop
           }
         }
+
         settings {
           opengraph {
             type =
@@ -83,24 +98,29 @@ lib {
           }
         }
       }
+
       default < lib.templates.base.10
 
       pagets__Default < .default
       pagets__Default {
         templateName = Default
       }
+
       pagets__Sidebar < .default
       pagets__Sidebar {
         templateName = Sidebar
       }
+
       pagets__Slider < .default
       pagets__Slider {
         templateName = Slider
       }
+
       pagets__Product < .default
       pagets__Product {
         templateName = Product
       }
+
       pagets__News < .default
       pagets__News {
         templateName = News
@@ -108,6 +128,3 @@ lib {
     }
   }
 }
-
-
-# Choose template file (based on backend_layout, respecting heredity)

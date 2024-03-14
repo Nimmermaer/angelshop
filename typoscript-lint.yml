@@ -1,6 +1,8 @@
 paths:
   - packages/angelshop/Configuration/TSconfig/
   - packages/angelshop/Configuration/TypoScript/
+  - packages/angelshop/Configuration/page.tsconfig
+  - packages/angelshop/Configuration/user.tsconfig
 
 filePatterns:
   - "*.tsconfig"

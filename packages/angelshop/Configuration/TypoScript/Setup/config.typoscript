@@ -13,7 +13,6 @@ config {
 
   stdWrap.strftime = %A, %e. %B %Y
 
-
   noPageTitle = 2
 
   forceAbsoluteUrls = 1

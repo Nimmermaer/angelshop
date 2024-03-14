@@ -42,8 +42,6 @@
     "typo3/cms-core": "^12.4",
     "typo3/cms-dashboard": "^12.4",
     "typo3/cms-extbase": "^12.4",
-    "typo3/cms-extensionmanager": "^12.4",
-    "typo3/cms-felogin": "^12.4",
     "typo3/cms-filelist": "^12.4",
     "typo3/cms-filemetadata": "^12.4",
     "typo3/cms-fluid": "^12.4",
@@ -69,12 +67,16 @@
     "typo3/cms-t3editor": "^12.4",
     "typo3/cms-tstemplate": "^12.4",
     "typo3/cms-viewpage": "^12.4",
-    "typo3/cms-webhooks": "^12.4",
     "helhum/typo3-console": "^8",
     "symfony/translation": "^7.0",
     "mb/angelshop": "^0.0.1",
     "lochmueller/sourceopt": "^5.1",
-    "helhum/dotenv-connector": "^3.1"
+    "helhum/dotenv-connector": "^3.1",
+    "typo3/cms-extensionmanager": "^12.4",
+    "typo3/cms-felogin": "^12.4",
+    "typo3/cms-webhooks": "^12.4",
+    "typo3/cms-workspaces": "^12.4",
+    "typo3/minimal": "^12"
   },
   "scripts": {
 		"fix-style": "ecs --fix",
