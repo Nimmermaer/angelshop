@@ -20,12 +20,14 @@ call_user_func(
             'ce_whatsapp_button' => [
                 'exclude' => 1,
                 'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:pages.ce_whatsapp_button',
+                'description' => 'Zeigt einen Teilen Button am Ende der Seite an',
                 'config' => [
                     'type' => 'check',
                     'default' => '0',
                 ],
             ],
             'ce_facebook_button' => [
+                'description' => 'Zeigt einen Teilen Button am Ende der Seite an',
                 'exclude' => 1,
                 'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:pages.ce_facebook_button',
                 'config' => [
@@ -33,23 +35,6 @@ call_user_func(
                     'default' => '0',
                 ],
             ],
-            'ce_social_position' => [
-                'exclude' => 1,
-                'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:pages.ce_social_position',
-                'config' => [
-                    'type' => 'select',
-                    'renderType' => 'selectSingle',
-                    'items' => [[
-                        'label' => 'Anfang des Inhalts',
-                        'value' => 1,
-                    ], [
-                        'label' => 'Ende des Inhalts',
-                        'value' => 0,
-                    ]],
-                    'default' => 1,
-                ],
-            ],
-
             'tx_angelshop_facebook_image' => [
                 'exclude' => 0,
                 'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_angelshop_facebook_image',
@@ -62,12 +47,21 @@ call_user_func(
         ];
 
         ExtensionManagementUtility::addTCAcolumns($table, $pagesColumns);
-
+        $GLOBALS['TCA'][$table]['palettes']['whatsapp'] = [
+            'label' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_db.xlf:pages.palette.whatsapp',
+            'showitem' => 'ce_whatsapp_button,--linebreak--,ce_whatsapp_text',
+        ];
         ExtensionManagementUtility::addToAllTCAtypes(
             $table,
-            '--div--;Soziale Netzwerke,tx_angelshop_facebook_image, ce_facebook_button, ce_whatsapp_button, ce_whatsapp_text',
+            '--palette--;;whatsapp',
             '',
-            'after:categories'
+            'after:twitter_card'
+        );
+        ExtensionManagementUtility::addToAllTCAtypes(
+            $table,
+            'ce_facebook_button',
+            '',
+            'before:og_title'
         );
     },
     'angelshop',

@@ -40,6 +40,30 @@ lib {
 
             as = facebook
           }
+          1710618786297 = menu
+          1710618786297 {
+            special = directory
+            special.value = {$global.navigation.footerStartPoint}
+            as = footerMenu
+          }
+          1710617525880 = menu
+          1710617525880 {
+            special = directory
+            special.value = {$global.homePageUid}
+            levels = 2
+            as = mainMenu
+          }
+          1710616704919 = menu
+          1710616704919 {
+            special = rootline
+            special {
+              range = 0|-1
+            }
+            includeNotInMenu = 0
+            as = breadcrumb
+          }
+          1710617282297 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+          1710617282297.menus = breadcrumb
         }
 
         variables {

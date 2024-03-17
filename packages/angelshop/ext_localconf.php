@@ -6,7 +6,6 @@ use MB\Angelshop\Controller\WeatherController;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 if (! defined('TYPO3')) {
@@ -21,7 +20,8 @@ $boot = static function ($extensionKey): void {
             ProductController::class => 'list, search',
         ],
         [
-            ProductController::class => 'list, search',
+            ProductController::class => 'search',
+
         ],
         ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
@@ -55,19 +55,14 @@ $boot = static function ($extensionKey): void {
 
     $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'angelshop';
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][FileReference::class] = [
-        'className' => \MB\Angelshop\Domain\Model\FileReference::class,
-    ];
-
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['angelshop'] = 'EXT:angelshop/Configuration/RTE/Custom.yaml';
 
     $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
     if ($versionInformation->getMajorVersion() < 13) {
         ExtensionManagementUtility::addUserTSConfig(
-            '@import "EXT:angelshop/Configuration/TypoScript/user.tsconfig"'
+            '@import "EXT:angelshop/Configuration/user.tsconfig"'
         );
     }
 };
-
 $boot('angelshop');
 unset($boot);

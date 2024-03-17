@@ -1,8 +1,8 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-<f:widget.paginate as="productlist" configuration="{searchword:'{searchword}',itemsPerPage:10, addQueryStringMethod: 'POST,GET'}"
-                   objects="{products}">
-    <f:for as="product" each="{productlist}">
+<f:render partial="Pagination"
+          arguments="{pagination:pagination.pagination, paginator:pagination.paginator, section:'publications', searchword:searchword}"/>
+    <f:for as="product" each="{pagination.paginator.paginatedItems}">
         <f:if condition="{product.stock} != 1">
             <div class="row">
                 <f:link.typolink parameter="{product.pid}">
@@ -25,5 +25,6 @@
             </div>
         </f:if>
     </f:for>
-</f:widget.paginate>
+<f:render partial="Pagination"
+          arguments="{pagination:pagination.pagination, paginator:pagination.paginator, section:'publications', searchword:searchword}"/>
 </html>

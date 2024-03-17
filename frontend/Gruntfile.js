@@ -55,6 +55,8 @@ module.exports = function (grunt) {
     concat: {
       custom: {
         src: [
+          'node_modules/jquery/dist/jquery.js',
+          'node_modules/bootstrap/dist/js/bootstrap.js',
           'node_modules/slick-carousel/slick/slick.js',
           'node_modules/lightbox2/dist/js/lightbox.js',
           'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
@@ -72,8 +74,6 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          '../packages/angelshop/Resources/Public/JavaScript/jquery.min.js': ['node_modules/jquery/dist/jquery.js'],
-          '../packages/angelshop/Resources/Public/JavaScript/bootstrap.min.js': ['node_modules/bootstrap/dist/js/bootstrap.js'],
           '../packages/angelshop/Resources/Public/JavaScript/custom.min.js': ['../packages/angelshop/Resources/Public/JavaScript/custom.js']
         }
       }

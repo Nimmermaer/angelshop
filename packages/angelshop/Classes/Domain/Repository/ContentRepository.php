@@ -32,10 +32,6 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  */
 class ContentRepository extends Repository
 {
-    /**
-     * Repository for tt_content objects
-     * @var class-string<\\MB\Angelshop\Domain\Model\Content>
-     */
     protected $objectType = '\\' . Content::class;
 
     public function initializeObject(): void
@@ -51,25 +47,9 @@ class ContentRepository extends Repository
     public function findProducts(): QueryResultInterface|array
     {
         $query = $this->createQuery();
-        $query->like('tx_abatemplate_product', 1);
+        $query->like('tx_angelshop_product', 1);
 
         return $query->execute();
-    }
-
-    public function findHiddenEntryByUid($uid): ?object
-    {
-        if (array_key_exists('__identity', $uid)) {
-            $uid = $uid['__identity'];
-        }
-        $query = $this->createQuery();
-        $query->getQuerySettings()
-            ->setIgnoreEnableFields(true);
-        $query->getQuerySettings()
-            ->setEnableFieldsToBeIgnored(['hidden']);
-
-        return $query->matching($query->equals('uid', (int) $uid))
-            ->execute()
-            ->getFirst();
     }
 
     /**
@@ -81,14 +61,8 @@ class ContentRepository extends Repository
         $query = $this->createQuery();
         $query->getQuerySettings()
             ->setIgnoreEnableFields(false);
-        $constraints[] = $query->logicalOr(
-            $query->like('bodytext', "%{$term}%"),
-            $query->like('product', "%{$term}%"),
-            $query->like('additionalDescription', "%{$term}%"),
-            $query->like('header', "%{$term}%"),
-            $query->like('manufacturer', "%{$term}%")
-        );
-        $constraints[] = $query->logicalAnd($query->equals('contentType', 'ce_product'));
+        $constraints[] = $query->logicalOr([$query->like('bodytext', "%{$term}%"), $query->like('product', "%{$term}%"), $query->like('additionalDescription', "%{$term}%"), $query->like('header', "%{$term}%"), $query->like('manufacturer', "%{$term}%")]);
+        $constraints[] = $query->logicalAnd($query->equals('contentType', 'tx_angelshop_product'));
         $query->matching($query->logicalAnd(...$constraints));
         return $query->execute();
     }

@@ -1,97 +1,104 @@
 {
-  "name": "mb/angelshop-webpage",
-  "description": "description_text",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "Michael Blunck",
-      "email": "mi.blunck@gmail.com"
-    }
-  ],
-  "extra": {
-    "typo3/cms": {
-      "composer-mode": true,
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": "web/public"
-    },
-    "typo3/class-alias-loader": {
-      "always-add-alias-loader": true
-    }
-  },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "packages/*"
-    }
-  ],
-  "config": {
-    "bin-dir": "bin",
-    "allow-plugins": {
-      "typo3/class-alias-loader": true,
-      "typo3/cms-composer-installers": true,
-      "helhum/dotenv-connector": true
-    }
-  },
-  "require": {
-    "typo3/cms-adminpanel": "^12.4",
-    "typo3/cms-backend": "^12.4",
-    "typo3/cms-belog": "^12.4",
-    "typo3/cms-beuser": "^12.4",
-    "typo3/cms-core": "^12.4",
-    "typo3/cms-dashboard": "^12.4",
-    "typo3/cms-extbase": "^12.4",
-    "typo3/cms-filelist": "^12.4",
-    "typo3/cms-filemetadata": "^12.4",
-    "typo3/cms-fluid": "^12.4",
-    "typo3/cms-fluid-styled-content": "^12.4",
-    "typo3/cms-form": "^12.4",
-    "typo3/cms-frontend": "^12.4",
-    "typo3/cms-impexp": "^12.4",
-    "typo3/cms-indexed-search": "^12.4",
-    "typo3/cms-info": "^12.4",
-    "typo3/cms-install": "^12.4",
-    "typo3/cms-linkvalidator": "^12.4",
-    "typo3/cms-lowlevel": "^12.4",
-    "typo3/cms-opendocs": "^12.4",
-    "typo3/cms-reactions": "^12.4",
-    "typo3/cms-recycler": "^12.4",
-    "typo3/cms-redirects": "^12.4",
-    "typo3/cms-reports": "^12.4",
-    "typo3/cms-rte-ckeditor": "^12.4",
-    "typo3/cms-scheduler": "^12.4",
-    "typo3/cms-seo": "^12.4",
-    "typo3/cms-setup": "^12.4",
-    "typo3/cms-sys-note": "^12.4",
-    "typo3/cms-t3editor": "^12.4",
-    "typo3/cms-tstemplate": "^12.4",
-    "typo3/cms-viewpage": "^12.4",
-    "helhum/typo3-console": "^8",
-    "symfony/translation": "^7.0",
-    "mb/angelshop": "^0.0.1",
-    "lochmueller/sourceopt": "^5.1",
-    "helhum/dotenv-connector": "^3.1",
-    "typo3/cms-extensionmanager": "^12.4",
-    "typo3/cms-felogin": "^12.4",
-    "typo3/cms-webhooks": "^12.4",
-    "typo3/cms-workspaces": "^12.4",
-    "typo3/minimal": "^12"
-  },
-  "scripts": {
+	"name": "mb/angelshop-webpage",
+	"description": "description_text",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Michael Blunck",
+			"email": "mi.blunck@gmail.com"
+		}
+	],
+	"extra": {
+		"typo3/cms": {
+			"composer-mode": true,
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": "web/public"
+		},
+		"typo3/class-alias-loader": {
+			"always-add-alias-loader": true
+		}
+	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "packages/*"
+		}
+	],
+	"config": {
+		"bin-dir": "bin",
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true,
+			"helhum/dotenv-connector": true
+		}
+	},
+	"require": {
+		"typo3/cms-adminpanel": "^12.4",
+		"typo3/cms-backend": "^12.4",
+		"typo3/cms-belog": "^12.4",
+		"typo3/cms-beuser": "^12.4",
+		"typo3/cms-core": "^12.4",
+		"typo3/cms-dashboard": "^12.4",
+		"typo3/cms-extbase": "^12.4",
+		"typo3/cms-filelist": "^12.4",
+		"typo3/cms-filemetadata": "^12.4",
+		"typo3/cms-fluid": "^12.4",
+		"typo3/cms-fluid-styled-content": "^12.4",
+		"typo3/cms-form": "^12.4",
+		"typo3/cms-frontend": "^12.4",
+		"typo3/cms-impexp": "^12.4",
+		"typo3/cms-indexed-search": "^12.4",
+		"typo3/cms-info": "^12.4",
+		"typo3/cms-install": "^12.4",
+		"typo3/cms-linkvalidator": "^12.4",
+		"typo3/cms-lowlevel": "^12.4",
+		"typo3/cms-opendocs": "^12.4",
+		"typo3/cms-reactions": "^12.4",
+		"typo3/cms-recycler": "^12.4",
+		"typo3/cms-redirects": "^12.4",
+		"typo3/cms-reports": "^12.4",
+		"typo3/cms-rte-ckeditor": "^12.4",
+		"typo3/cms-scheduler": "^12.4",
+		"typo3/cms-seo": "^12.4",
+		"typo3/cms-setup": "^12.4",
+		"typo3/cms-sys-note": "^12.4",
+		"typo3/cms-t3editor": "^12.4",
+		"typo3/cms-tstemplate": "^12.4",
+		"typo3/cms-viewpage": "^12.4",
+		"helhum/typo3-console": "^8",
+		"symfony/translation": "^7.0",
+		"helhum/dotenv-connector": "^3.1",
+		"typo3/cms-extensionmanager": "^12.4",
+		"typo3/cms-felogin": "^12.4",
+		"typo3/cms-webhooks": "^12.4",
+		"typo3/cms-workspaces": "^12.4",
+		"typo3/minimal": "^12",
+		"mb/angelshop": "^0.0.1"
+	},
+	"scripts": {
 		"fix-style": "ecs --fix",
 		"phpstan": "phpstan --memory-limit=-1",
 		"rector": "rector",
-		"lint" : [
+		"lint": [
 			"typo3 lint:xliff packages/angelshop/Resources/Private/Language/",
 			"typo3 lint:yaml packages/angelshop/Configuration/ packages/angelshop/Configuration/RTE/ config/sites/",
 			"typoscript-lint"
+		],
+		"post-update-cmd": [
+			"typo3 database:update",
+			"typo3 cache:flush"
+		],
+		"post-install-cmd": [
+			"typo3 database:update",
+			"typo3 cache:flush"
 		]
 	},
-  "require-dev": {
-    "symplify/easy-coding-standard": "^12.1",
-    "ssch/typo3-rector": "1.5",
-    "helmich/typo3-typoscript-lint": "^3.1",
-    "ichhabrecht/filefill": "^4.3"
-  }
+	"require-dev": {
+		"symplify/easy-coding-standard": "^12.1",
+		"ssch/typo3-rector": "1.5",
+		"helmich/typo3-typoscript-lint": "^3.1",
+		"ichhabrecht/filefill": "^4.3"
+	}
 }

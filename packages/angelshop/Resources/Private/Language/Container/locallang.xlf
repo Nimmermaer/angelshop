@@ -41,28 +41,6 @@
 			<trans-unit id="tt_content.CType.b13-fullwidth.description">
 				<source>Über die ganze Breite</source>
 			</trans-unit>
-
-			<trans-unit id="column.left">
-				<source>Linke Spalte</source>
-			</trans-unit>
-			<trans-unit id="column.right">
-				<source>Rechte Spalte</source>
-			</trans-unit>
-			<trans-unit id="column.middle-left">
-				<source>Mitte-Links</source>
-			</trans-unit>
-			<trans-unit id="column.middle-right">
-				<source>Mitte-Rechts</source>
-			</trans-unit>
-			<trans-unit id="column.middle">
-				<source>Mitte</source>
-			</trans-unit>
-			<trans-unit id="column.main">
-				<source>Main</source>
-			</trans-unit>
-			<trans-unit id="accordion.column">
-				<source>Accordion content</source>
-			</trans-unit>
 			<trans-unit id="tt_content.CType.b13-accordion.title">
 				<source>Accordion</source>
 			</trans-unit>

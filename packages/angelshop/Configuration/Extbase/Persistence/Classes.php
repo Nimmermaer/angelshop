@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use GeorgRinger\News\Domain\Model\News;
 use MB\Angelshop\Domain\Model\Content;
-use MB\Angelshop\Domain\Model\FileReference;
 
 return [
     News::class => [
@@ -18,14 +17,6 @@ return [
             ],
             'ingredient' => [
                 'fieldName' => 'tx_angelshop_news_ingredient',
-            ],
-        ],
-    ],
-    FileReference::class => [
-        'tableName' => 'sys_file_reference',
-        'properties' => [
-            'originalFileIdentifier' => [
-                'fieldName' => 'uid_local',
             ],
         ],
     ],
@@ -51,22 +42,22 @@ return [
                 'fieldName' => 'header',
             ],
             'product' => [
-                'fieldName' => 'tx_abatemplate_product',
+                'fieldName' => 'tx_angelshop_product',
             ],
             'stock' => [
-                'fieldName' => 'tx_abatemplate_product_stock',
+                'fieldName' => 'tx_angelshop_product_stock',
             ],
             'additionalDescription' => [
-                'fieldName' => 'tx_abatemplate_product_additional_description',
+                'fieldName' => 'tx_angelshop_product_additional_description',
             ],
             'price' => [
-                'fieldName' => 'tx_abatemplate_product_price',
+                'fieldName' => 'tx_angelshop_product_price',
             ],
             'oldPrice' => [
-                'fieldName' => 'tx_abatemplate_product_old_price',
+                'fieldName' => 'tx_angelshop_product_old_price',
             ],
             'manufacturer' => [
-                'fieldName' => 'tx_abatemplate_product_manufacturer_name',
+                'fieldName' => 'tx_angelshop_product_manufacturer_name',
             ],
             'imageCollection' => [
                 'fieldName' => 'tx_angelshop_image_collection',

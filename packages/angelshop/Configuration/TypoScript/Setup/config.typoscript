@@ -1,6 +1,11 @@
 config {
   additionalHeaders {
     10.header = Content-Type:text/html;charset=utf-8
+    20.header = X-Frame-Options:SAMEORIGIN
+    30.header = X-Xss-Protection: 1; mode=block
+    40.header = X-Content-Type-Options: nosniff
+    50.header = Referrer-Policy:strict-origin
+    1710613669417.header = strict-transport-security:max-age=31536000
   }
 
   doctype = html5
@@ -43,12 +48,22 @@ config {
 }
 
 
-[applicationContext == "Development"]
+[applicationContext == "Development/DDev"]
   config {
     compressCss = 0
     compressJs = 0
     concatenateCss = 0
     concatenateJs = 0
     concatenateJsAndCss = 0
+    sourceopt {
+      removeGenerator = 0
+      enabled = 0
+      removeBlurScript = 0
+      enable_utf-8_support = 0
+      headerComment = 0
+      removeComments = 0
+      removeComments.keep.10 = /^TYPO3SEARCH_/usi
+      formatHtml = 0
+    }
   }
 [global]

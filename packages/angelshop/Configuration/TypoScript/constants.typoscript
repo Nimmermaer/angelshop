@@ -1,5 +1,10 @@
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript'
+@import 'EXT:seo/Configuration/TypoScript/XmlSitemap/constants.typoscript'
+@import 'EXT:indexed_search/Configuration/TypoScript/constants.typoscript'
+@import 'EXT:news/Configuration/TypoScript/constants.typoscript'
+@import 'EXT:sourceopt/Configuration/TypoScript/constants.typoscript'
+
 @import 'EXT:angelshop/Configuration/TypoScript/Constants/global.typoscript'
 @import 'EXT:angelshop/Configuration/TypoScript/Constants/indexed_search.typoscript'
-@import 'EXT:angelshop/Configuration/TypoScript/Constants/module.typoscript'
 @import 'EXT:angelshop/Configuration/TypoScript/Constants/news.typoscript'
 @import 'EXT:angelshop/Configuration/TypoScript/Constants/plugin.typoscript'

@@ -18,7 +18,7 @@ call_user_func(
             }
             foreach ($columnConfigurations['colPos'] as $colPosId => $colPosConfiguration) {
                 $colPositions[] = [
-                    'name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Backend/Container/locallang.xlf:tt_content.colPos.' . $colPosId . $langKey,
+                    'name' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Container/locallang.xlf:tt_content.colPos.' . $colPosId . $langKey,
                     'colPos' => $colPosId,
                     'allowed' => $colPosConfiguration['allowed'],
                 ];
@@ -27,8 +27,8 @@ call_user_func(
                 (
                 new ContainerConfiguration(
                     $key,
-                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Backend/Container/locallang.xlf:tt_content.CType.' . $key . '.title',
-                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Backend/Container/locallang.xlf:tt_content.CType.' . $key . '.description',
+                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Container/locallang.xlf:tt_content.CType.' . $key . '.title',
+                    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/Container/locallang.xlf:tt_content.CType.' . $key . '.description',
                     [$colPositions]
                 )
                 )->setIcon($columnConfigurations['containerIcon'])

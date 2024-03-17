@@ -21,5 +21,8 @@ typo3 upgrade:run  txNewsPluginUpdater
 typo3 upgrade:run  txNewsPluginPermissionUpdater
 typo3 upgrade:run  GridelementsMigrationWizard
 typo3 upgrade:run  container_migratesorting
+typo3 upgrade:run  MigrateOldFields
+typo3 upgrade:run  CleanUpTyposcriptTemplate
+typo3 upgrade:run  RenamesContentElements
 
 typo3 cache:flush

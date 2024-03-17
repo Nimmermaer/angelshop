@@ -23,7 +23,12 @@ call_user_func(
 
         ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript', 'angelshop');
 
-        $pluginSignature = ExtensionUtility::registerPlugin($extensionKey, 'Weather', 'Wetter');
+        $pluginSignature = ExtensionUtility::registerPlugin(
+            $extensionKey,
+            'Weather',
+            'Wetter',
+            pluginIcon: 'actions-cloud'
+        );
         $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
         ExtensionManagementUtility::addPiFlexFormValue(
             $pluginSignature,

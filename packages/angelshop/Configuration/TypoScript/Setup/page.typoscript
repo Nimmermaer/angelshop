@@ -90,27 +90,38 @@ page {
       value = <meta name="google-site-verification" content="AOQ3Y0Tr2YEGxArXS_0qu7T_LHJt5d0sv2KIWlhAZZ4" />
     }
   }
-}
-
-
-[traverse(request.getQueryParams(), 'tx_news_pi1/news') >0 || traverse(request.getParsedBody(), 'tx_news_pi1/news') > 0]
-  page.headerData {
-    10 = RECORDS
-    10 {
-      source = {GP:tx_news_pi1|news}
-      source.insertData = 1
-      tables = tx_news_domain_model_news
-      conf {
-        tx_news_domain_model_news >
-        tx_news_domain_model_news = TEXT
-        tx_news_domain_model_news.field = title
-      }
-
-      wrap = <title  itemprop="name"> |&nbsp; &#124; Aba-Angelshop Laufen </title>
+  includeCSS {
+    sprite = EXT:packages/angelshop/Resources/Public/Css/sprites.css
+    style = EXT:angelshop/Resources/Public/Css/angelshop.min.css
+  }
+  includeJSFooter {
+    custom = EXT:angelshop/Resources/Public/JavaScript/custom.min.js
+    custom {
+      async = 1
+      forceOnTop = 1
     }
   }
-[global]
+}
 
+#
+#[traverse(request.getQueryParams(), 'tx_news_pi1/news') >0 || traverse(request.getParsedBody(), 'tx_news_pi1/news') > 0]
+#  page.headerData {
+#    10 = RECORDS
+#    10 {
+#      source = {GP:tx_news_pi1|news}
+#      source.insertData = 1
+#      tables = tx_news_domain_model_news
+#      conf {
+#        tx_news_domain_model_news >
+#        tx_news_domain_model_news = TEXT
+#        tx_news_domain_model_news.field = title
+#      }
+#
+#      wrap = <title  itemprop="name"> |&nbsp; &#124; Aba-Angelshop Laufen </title>
+#    }
+#  }
+#[global]
+#
 [getTSFE()?.id == 1]
   page.headerData {
     10 = TEXT
@@ -120,3 +131,11 @@ page {
     }
   }
 [global]
+
+lib {
+  datum = TEXT
+  datum {
+    data = date : U
+    strftime = %Y
+  }
+}

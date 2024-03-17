@@ -16,9 +16,9 @@
             <div class="col-lg-12">
                 <ul class="footer-nav">
                     <li>
-                        <p>{copyright->f:format.raw()}</p>
+                        <p>{copyright->f:format.raw()} &#8226; </p>
                     </li>
-                    <f:cObject typoscriptObjectPath="lib.footermenu"/>
+                   <f:render partial="Page/Menu/Footer" arguments="{_all}" />
                 </ul>
             </div>
         </div>

@@ -1,13 +1,24 @@
 TCEFORM {
   pages {
-    layout.disabled = 1
-    backend_layout.removeItems = -1
-    backend_layout_next_level.removeItems = -1
+    layout {
+      disabled = 1
+    }
+
+    backend_layout {
+      removeItems = -1
+    }
+
+    backend_layout_next_level {
+      removeItems = -1
+    }
   }
 
   tt_content {
     CType {
-      removeItems := addToList(div,formhandler_pi1, form_formframework,header,text,textpic,image,bullets,table,uploads,splash,login, shortcut,script,menu,html,mailform,menu_abstract,menu_categorized_content,menu_categorized_pages,menu_pages,menu_subpages,menu_recently_updated,menu_related_pages,menu_section,menu_section_pages,menu_sitemap_pages)
+      removeItems := addToList(div,form_formframework,header,text,textpic,image,bullets,table,uploads,splash,login)
+      removeItems := addToList(shortcut,script,menu,html,mailform,menu_abstract,menu_categorized_content)
+      removeItems := addToList(menu_categorized_pages,menu_pages,menu_subpages,menu_recently_updated,menu_related_pages)
+      removeItems := addToList(menu_section,menu_section_pages,menu_sitemap_pages)
     }
 
     imagewidth.disabled = 1
@@ -17,7 +28,7 @@ TCEFORM {
     header_position.disabled = 1
     frame_class.disabled = 1
     space_before_class.disabled = 1
-    space_after_class.disablded = 1
+    space_after_class.disabled = 1
     date.disabled = 1
     imageorient {
       removeItems = 1,2,9,10,17,18

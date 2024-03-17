@@ -1,5 +1,7 @@
 <?php
 
+use FriendsOfTYPO3\FontawesomeProvider\Imaging\IconProvider\FontawesomeIconProvider;
+use MB\Angelshop\Utility\FontawesomeIcons;
 use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
@@ -14,6 +16,15 @@ $svg = [
     'tab',
     'trader',
 ];
+foreach (FontawesomeIcons::ICONS as $icon) {
+    if ($icon['value'] === 0) {
+        continue;
+    }
+    $icons[$icon['value']] = [
+        'provider' => FontawesomeIconProvider::class,
+        'name' => substr($icon['value'], 3),
+    ];
+}
 foreach ($svg as $icon) {
     $icons['angelshop-' . $icon] = [
         'provider' => SvgIconProvider::class,

@@ -99,7 +99,7 @@ class ContentElementProcessor implements DataProcessorInterface
     public function processForProductList(array $processedData): array|QueryResult
     {
         $repository = self::getRepository(ContentRepository::class);
-        return $repository->findByContentType('ce_product');
+        return $repository->findByContentType('tx_angelshop_product');
     }
 
     protected function getRepository(string $repositoryName): object

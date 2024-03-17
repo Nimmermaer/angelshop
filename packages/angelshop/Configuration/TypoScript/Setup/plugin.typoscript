@@ -9,7 +9,6 @@ plugin {
     persistence {
       storagePid = {$plugin.tx_angelshop_gallery.persistence.storagePid}
     }
-
     contentElementRendering = RECORDS
     contentElementRendering {
       tables = tt_content
@@ -17,51 +16,6 @@ plugin {
       dontCheckPid = 1
     }
   }
-
-  tx_product_list {
-    view {
-      templateRootPaths.0 = {$plugin.tx_angelshop.view.templateRootPath}
-      partialRootPaths.0 = {$plugin.tx_angelshop.view.partialRootPath}
-      layoutRootPaths.0 = {$plugin.tx_angelshop.view.layoutRootPath}
-    }
-  }
-
-  tx_angelshop_gallery {
-    view {
-      templateRootPaths.0 = {$plugin.tx_angelshop_gallery.view.templateRootPath}
-      partialRootPaths.0 = {$plugin.tx_angelshop_gallery.view.partialRootPath}
-      layoutRootPaths.0 = {$plugin.tx_angelshop_gallery.view.layoutRootPath}
-    }
-
-    persistence {
-      storagePid = {$plugin.tx_angelshop_gallery.persistence.storagePid}
-    }
-  }
-
-  tx_angelshop_teaserrow {
-    view {
-      templateRootPaths.0 = {$plugin.tx_angelshop_teaserrow.view.templateRootPath}
-      partialRootPaths.0 = {$plugin.tx_angelshop_teaserrow.view.partialRootPath}
-      layoutRootPaths.0 = {$plugin.tx_angelshop_teaserrow.view.layoutRootPath}
-    }
-
-    persistence {
-      storagePid = {$plugin.tx_angelshop_teaserrow.persistence.storagePid}
-    }
-  }
-
-  tx_angelshop_fullwidthvideo {
-    view {
-      templateRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.templateRootPath}
-      partialRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.partialRootPath}
-      layoutRootPaths.0 = {$plugin.tx_angelshop_fullwidthvideo.view.layoutRootPath}
-    }
-
-    persistence {
-      storagePid = {$plugin.tx_angelshop_fullwidthvideo.persistence.storagePid}
-    }
-  }
-
   tx_seo {
     config {
       xmlSitemap {
@@ -72,7 +26,6 @@ plugin {
               additionalWhere = AND (no_index = 0 OR no_follow = 0)
             }
           }
-
           news {
             provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
             config {
@@ -111,14 +64,13 @@ lib {
     view {
       templateRootPaths.10 = EXT:angelshop/Resources/Private/Plugins/Templates
     }
-
     persistence < plugin.tx_angelshop.persistence
     settings < plugin.tx_angelshop.settings
     settings {
       arguments {
         title = Abtsdorfer See
         address = Waging am See
-        appid = 9e31371905782f75d67d42ff929d711e
+        appid = {$plugin.tx_angelshop.settings.openweathermapApi}
       }
     }
   }
@@ -128,5 +80,4 @@ lib {
     extensionName = Angelshop
     pluginName = Search
   }
-
 }

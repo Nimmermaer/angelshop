@@ -1,27 +1,18 @@
 <?php
 
-namespace MB\Angelshop\Upgrades;
+namespace MB\Angelshop\Updates;
 
-use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 use TYPO3\CMS\Core\Exception;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
-use TYPO3\CMS\Install\Updates\ChattyInterface;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 #[UpgradeWizard('GridelementsMigrationWizard')]
-class GridelementsMigrationWizard extends AbstractMigrationWizard implements UpgradeWizardInterface, ChattyInterface
+class GridelementsMigrationWizard extends AbstractMigrationWizard implements UpgradeWizardInterface
 {
-    public OutputInterface $output;
-
-    public function setOutput(OutputInterface $output): void
-    {
-        $this->output = $output;
-    }
-
     public function getTitle(): string
     {
         return 'Gridelements Migration: migrate all active content elements to b13/container';

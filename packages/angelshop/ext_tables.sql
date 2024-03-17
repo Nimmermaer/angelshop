@@ -15,11 +15,9 @@ CREATE TABLE tx_news_domain_model_news
 #
 CREATE TABLE pages
 (
-	ce_whatsapp_text            text,
-	ce_whatsapp_button          int(11) default '0' NOT NULL,
-	ce_facebook_button          int(11) default '0' NOT NULL,
-	ce_social_position          int(11) default '0' NOT NULL,
-	tx_angelshop_facebook_image int(11) default '0' NOT NULL
+	tx_angelshop_whatsapp_text text,
+	tx_angelshop_whatapp_button int(11) default '0' NOT NULL,
+	tx_angelshop_facebook_button int(11) default '0' NOT NULL,
 );
 
 #
@@ -27,17 +25,17 @@ CREATE TABLE pages
 #
 CREATE TABLE tt_content
 (
-  tx_abatemplate_product_description text,
-	tx_abatemplate_product_additional_description text,
-	tx_abatemplate_product_price                  text,
-	tx_abatemplate_product_old_price              text,
-	tx_abatemplate_product_stock                  int(11) default '0' NOT NULL,
-	tx_abatemplate_product_image_id               int(11) default '0' NOT NULL,
-	tx_abatemplate_product_image_count            int(11) default '0' NOT NULL,
-	tx_abatemplate_product_image_name             text,
-	tx_abatemplate_product_manufacturer_name      text,
-	tx_abatemplate_product_category               text,
-	tx_abatemplate_product                        int(11) default '0' NOT NULL,
+  tx_angelshop_product_description text,
+	tx_angelshop_product_additional_description text,
+	tx_angelshop_product_price                  text,
+	tx_angelshop_product_old_price              text,
+	tx_angelshop_product_stock                  int(11) default '0' NOT NULL,
+	tx_angelshop_product_image_id               int(11) default '0' NOT NULL,
+	tx_angelshop_product_image_count            int(11) default '0' NOT NULL,
+	tx_angelshop_product_image_name             text,
+	tx_angelshop_product_manufacturer_name      text,
+	tx_angelshop_product_category               text,
+	tx_angelshop_product                        int(11) default '0' NOT NULL,
 
 	tx_angelshop_title varchar (255) default ' ' NOT NULL,
 	tx_angelshop_link                             int(11) default 0 NOT NULL,

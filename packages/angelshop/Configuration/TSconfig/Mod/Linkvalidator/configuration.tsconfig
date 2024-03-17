@@ -1,0 +1,3 @@
+mod.linkvalidator.searchFields {
+  tt_content = tx_angelshop_product_additional_description,
+}

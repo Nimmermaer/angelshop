@@ -1,0 +1,17 @@
+<f:for as="menuItem" each="{mainMenu}">
+    <li>
+        <f:if condition="{menuItem.hasSubpages}">
+            <f:then>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">{menuItem.title}<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <f:for as="childrenItem" each="{menuItem.children}">
+                        <li><a href="{childrenItem.link}">{childrenItem.title}{f:if(condition:childrenItem.data.subtitle,then:' {childrenItem.data.subtitle}')}</a></li>
+                    </f:for>
+                </ul>
+            </f:then>
+            <f:else>
+                <a href="{menuItem.link}"><span>{menuItem.title}{f:if(condition:menuItem.data.subtitle,then:' {menuItem.data.subtitle}')}</span></a>
+            </f:else>
+        </f:if>
+    </li>
+</f:for>

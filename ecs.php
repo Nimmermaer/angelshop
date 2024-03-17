@@ -2,22 +2,25 @@
 
 declare(strict_types=1);
 
-use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
+use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
-use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return static function (ECSConfig $ecsConfig): void {
-    $ecsConfig->paths([__DIR__ . '/packages/angelshop/']);
+return ECSConfig::configure()
+    ->withPaths([
+        __DIR__ . '/config',
+        __DIR__ . '/packages',
+    ])
 
-    $ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, [
-        'syntax' => 'short',
-    ]);
+    // add a single rule
+    ->withRules([
+        NoUnusedImportsFixer::class,
+    ])
 
-    $ecsConfig->sets([
-        // run and fix, one by one
-         SetList::SPACES,
-         SetList::ARRAY,
-         SetList::DOCBLOCK,
-         SetList::PSR_12,
-    ]);
-};
+    // add sets - group of rules
+    ->withPreparedSets(
+        arrays: true,
+        comments: true,
+        docblocks: true,
+        spaces: true,
+        namespaces: true,
+    );

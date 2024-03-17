@@ -31,7 +31,7 @@
                                     class="{f:if(condition:'{imageIteration.isFirst}',then:'item active',else:'item')}">
                                     <img alt="{image.reference.alternative}" class=" img-responsive"
                                          itemprop="image"
-                                         src="{f:uri.image(src:'{image.originalFile.publicUrl}',maxWidth:'750',maxHeight:'500c')}"/>
+                                         src="{f:uri.image(image:image,maxWidth:750,maxHeight:500)}"/>
 
                                     <div class="carousel-caption">
                                         {image.reference.title}
@@ -46,7 +46,7 @@
                                 <div>
                                     <img alt="{image.reference.alternative}"
                                          itemprop="image"
-                                         src="{f:uri.image(src:'{image.originalFile.publicUrl}',maxWidth:'750',maxHeight:'500c')}"/>
+                                         src="{f:uri.image(image:image,maxWidth:750,maxHeight:500)}"/>
 
                                     <div class="carousel-caption">
                                         {image.reference.title}
@@ -78,17 +78,17 @@
             </div>
             <div class="panel-body  text-center">
                 <meta content="EUR" itemprop="priceCurrency"/>
-                <span class="price"><div content="{data.tx_abatemplate_product_price-> f:format.currency(thousandsSeparator: ',')}"
+                <span class="price"><div content="{data.tx_angelshop_product_price-> f:format.currency(thousandsSeparator: ',')}"
                                          itemprop="price">
-                {data.tx_abatemplate_product_price-> f:format.currency(thousandsSeparator: ',', currencySign: '€')}<br/>
+                {data.tx_angelshop_product_price-> f:format.currency(thousandsSeparator: ',', currencySign: '€')}<br/>
             </div></span>
             </div>
             <ul class="list-group">
-                <f:if condition="{data.tx_abatemplate_product_manufacturer_name}">
+                <f:if condition="{data.tx_angelshop_product_manufacturer_name}">
                     <li class="list-group-item">
                         <h3>Hersteller</h3>
                         <span itemprop="description">
-            {data.tx_abatemplate_product_manufacturer_name->f:format.html()}<br/>
+            {data.tx_angelshop_product_manufacturer_name->f:format.html()}<br/>
             </span>
                     </li>
                 </f:if>
@@ -100,15 +100,15 @@
             </span>
                     </li>
                 </f:if>
-                <f:if condition="{data.tx_abatemplate_product_additional_description}">
+                <f:if condition="{data.tx_angelshop_product_additional_description}">
                     <li class="list-group-item">
                         <h3>Zusätzliche Informationen</h3>
-                        {data.tx_abatemplate_product_additional_description->f:format.html()}<br/>
+                        {data.tx_angelshop_product_additional_description->f:format.html()}<br/>
                     </li>
                 </f:if>
 
                 <li class="list-group-item">
-                    <f:link.page additionalParams="{order:'{data.header}'}" class="btn btn-success" noCacheHash="1"
+                    <f:link.page additionalParams="{order:'{data.header}'}" class="btn btn-success"
                                  pageUid="12">
                         Interesse am Produkt &raquo;
                     </f:link.page>

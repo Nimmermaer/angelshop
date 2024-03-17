@@ -3,9 +3,6 @@
 declare(strict_types=1);
 use MB\Angelshop\Controller\Backend\ProductController;
 
-use T3docs\Examples\Controller\AdminModuleController;
-use T3docs\Examples\Controller\ModuleController;
-
 return [
     'angelshop_products' => [
         'parent' => 'web',
@@ -20,7 +17,7 @@ return [
         'iconIdentifier' => 'module-dbal',
         'controllerActions' => [
             ProductController::class => [
-                'search', 'update', 'edit', 'list',
+                'search', 'list',
             ],
         ],
     ],

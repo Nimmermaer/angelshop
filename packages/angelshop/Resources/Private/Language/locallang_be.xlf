@@ -1,183 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file source-language="de" datatype="plaintext" original="messages" date="2016-05-28T00:21:09Z"
-	product-name="angelshop">
+		  product-name="angelshop">
 		<header />
 		<body>
-			<trans-unit id="tx_angelshop_domain_model_gallery">
-				<source>Gallery</source>
+			<trans-unit id="tx_angelshop_product.title">
+				<source>Produkt</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_link">
-				<source>Link</source>
+			<trans-unit id="tx_angelshop_product.description">
+				<source>Einzelne Produktbeschreibung</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_fontawesome">
-				<source>Fontawesome Icon <![CDATA[<a href="http://fontawesome.io/icons/">Iconsuche</a>]]></source>
+			<trans-unit id="pages.tx_angelshop_facebook_button">
+				<source>Anzeige von Facebook Button</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_title">
-				<source>Titel</source>
+			<trans-unit id="pages.ce_social_position">
+				<source>Postion des Social Links</source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_teaserrow">
-				<source>Teaserrow</source>
+			<trans-unit id="pages.tx_angelshop_whatsapp_button">
+				<source>Anzeige von Whatsapp Button (nur mobil)</source>
 			</trans-unit>
-			<trans-unit id="tx_sidebarList.title">
-				<source>Sidebarlist</source>
-			</trans-unit>
-			<trans-unit id="tx_sidebarList.description">
-				<source>Ermöglicht eine Seitenleiste</source>
-			</trans-unit>
-			<trans-unit id="tx_weather.title">
-				<source>Wetter</source>
-			</trans-unit>
-
-			<trans-unit id="tx_accordion.title">
-				<source>Accordion</source>
+			<trans-unit id="pages.tx_angelshop_whatsapp_text">
+				<source>Text für Whatsappnachricht</source>
 			</trans-unit>
 			<trans-unit id="tx_accordion.description">
 				<source>Erstellt ein Accordion Element</source>
 			</trans-unit>
-			<trans-unit id="tx_table.title">
-				<source>Table</source>
-			</trans-unit>
-			<trans-unit id="tx_table.description">
-				<source>Ermöglicht eine Tabelle zu erstellen</source>
-			</trans-unit>
-			<trans-unit id="tx_project.title">
-				<source>Project</source>
-			</trans-unit>
-			<trans-unit id="tx_project.description">
-				<source>Erstellt eine Projektkachel</source>
-			</trans-unit>
-			<trans-unit id="tx_trader_slider.title">
-				<source>Händlerslider</source>
-			</trans-unit>
-			<trans-unit id="tx_trader_slider.description">
-				<source>Einzelne Händler anlegen und als Slider anzeigen</source>
-			</trans-unit>
-			<trans-unit id="tx_impressum.title">
-				<source>Impressum</source>
-			</trans-unit>
-			<trans-unit id="tx_impressum.description">
-				<source>Impressum anlegen mit Google Karte</source>
-			</trans-unit>
-			<trans-unit id="tx_serviceList.title">
-				<source>ServiceList</source>
-			</trans-unit>
-			<trans-unit id="tx_serviceList.description">
-				<source>Eine Liste mit Serviceitems und kurzer Erklärung</source>
-			</trans-unit>
-			<trans-unit id="tx_tab.title">
-				<source>Tab</source>
-			</trans-unit>
-			<trans-unit id="tx_tab.description">
-				<source>Tabelement</source>
-			</trans-unit>
-			<trans-unit id="tx_service.title">
-				<source>Service</source>
-			</trans-unit>
-			<trans-unit id="tx_service.description">
-				<source>Einzelne Serviceboxen mit Icons</source>
-			</trans-unit>
-			<trans-unit id="tx_callToAction.title">
-				<source>CallToAction</source>
-			</trans-unit>
-			<trans-unit id="tx_callToAction.description">
-				<source>Button mit Link und Beschreibung</source>
-			</trans-unit>
-			<trans-unit id="tx_slider.title">
-				<source>Slider</source>
-			</trans-unit>
-			<trans-unit id="tx_slider.description">
-				<source>Großer Bilderslider</source>
-			</trans-unit>
-			<trans-unit id="tx_teaser.title">
-				<source>Teaser</source>
-			</trans-unit>
-			<trans-unit id="tx_teaser.description">
-				<source>Kleiner Teaser mit Icon, Überschrift und Link</source>
-			</trans-unit>
-			<trans-unit id="tx_team.title">
-				<source>Team Element</source>
-			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_fontawesome.tx_angelshop_title">
-				<source>Titel</source>
+			<trans-unit id="tx_accordion.title">
+				<source>Accordion</source>
 			</trans-unit>
 			<trans-unit id="tx_angelshop_domain_model_fontawesome.class">
 				<source>Klasse</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_class">
-				<source>Header Icon</source>
+			<trans-unit id="tx_angelshop_domain_model_fontawesome.movement">
+				<source>Bewegtes Icon</source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_trader.image">
-				<source>Händlerbild</source>
+			<trans-unit id="tx_angelshop_domain_model_fontawesome">
+				<source>Fontawesome Icon <![CDATA[<a href="http://fontawesome.io/icons/">Iconsuche</a>]]></source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_trader.title">
-				<source>Händler</source>
-			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_trader.link">
-				<source>Link</source>
-			</trans-unit>
-			<trans-unit id="tx_gallery.title">
+			<trans-unit id="tx_angelshop_domain_model_gallery">
 				<source>Gallery</source>
-			</trans-unit>
-			<trans-unit id="tx_gallery.description">
-				<source>Gallery mit PopUp</source>
-			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_tab.image">
-				<source>Bild</source>
 			</trans-unit>
 			<trans-unit id="tx_angelshop_domain_model_tab.header">
 				<source>Titel</source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_tab.text">
-				<source>Text</source>
-			</trans-unit>
 			<trans-unit id="tx_angelshop_domain_model_tab.icon">
 				<source>Icon</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_tab">
-				<source>Tabs</source>
+			<trans-unit id="tx_angelshop_domain_model_tab.image">
+				<source>Bild</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_trader">
+			<trans-unit id="tx_angelshop_domain_model_tab.movement">
+				<source>Bewegtes Icon</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_tab.text">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_tab">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_teaserrow">
+				<source>Teaserrow</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_trader.image">
+				<source>Händlerbild</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_trader.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_trader.title">
 				<source>Händler</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_sales_tax_indicator">
-				<source>USt-IdNr.</source>
+			<trans-unit id="tx_angelshop_domain_model_trader">
+				<source>Trader</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_opentime">
-				<source>Öffnungszeiten</source>
+			<trans-unit id="tx_angelshop_menu.description">
+				<source>Produktliste der Unterseiten</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_cognizance">
-				<source>Gerichtsbarkeit</source>
+			<trans-unit id="tx_angelshop_menu.title">
+				<source>ABA-Angelshop Produktliste</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_address">
-				<source>Adresse</source>
+			<trans-unit id="tx_callToAction.description">
+				<source>Button mit Link und Beschreibung</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_phone">
-				<source>Telefon</source>
+			<trans-unit id="tx_callToAction.title">
+				<source>CallToAction</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_contact.description">
+				<source>Seitenlink zur Kontaktseite pflegbar</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_contact.title">
+				<source>Kontaktelement</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_gallery.description">
+				<source>Gallery mit PopUp</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_gallery.title">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_impressum.description">
+				<source>Impressum anlegen mit Google Karte</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_impressum.title">
+				<source>Impressum</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_project.description">
+				<source>Erstellt eine Projektkachel</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_project.title">
+				<source>Project</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_service.description">
+				<source>Einzelne Serviceboxen mit Icons</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_service.title">
+				<source>Service</source>
+			</trans-unit>
+			<trans-unit id="tx_sidebarList.description">
+				<source>Ermöglicht eine Seitenleiste</source>
+			</trans-unit>
+			<trans-unit id="tx_sidebarList.title">
+				<source>Sidebarlist</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_slider.description">
+				<source>Großer Bilderslider</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_slider.title">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_tab.description">
+				<source>Tabelement</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_tab.title">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_trader_slider.description">
+				<source>Einzelne Händler anlegen und als Slider anzeigen</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_trader_slider.title">
+				<source>Händlerslider</source>
+			</trans-unit>
+			<trans-unit id="tx_weather.title">
+				<source>Wetter</source>
+			</trans-unit>
+			<trans-unit id="tca.tt_content.tx_angelshop_class">
+				<source>Header Icon</source>
 			</trans-unit>
 			<trans-unit id="tca.tt_content.tx_angelshop_email">
 				<source>E-Mail</source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_owner">
-				<source>Inhaber</source>
+			<trans-unit id="tca.tt_content.tx_angelshop_fontawesome">
+				<source>Fontawesome Icon <![CDATA[<a href="http://fontawesome.io/icons/">Iconsuche</a>]]></source>
 			</trans-unit>
-			<trans-unit id="tca.tt_content.tx_angelshop_salutation">
-				<source>Text Überschrift</source>
-			</trans-unit>
-			<trans-unit id="ce_product.title">
-				<source>Produkt</source>
-			</trans-unit>
-			<trans-unit id="ce_product.description">
-				<source>Einzelne Produktbeschreibung</source>
-			</trans-unit>
-			<trans-unit id="tx_product_list.title">
-				<source>Produktliste</source>
-			</trans-unit>
-			<trans-unit id="angelshop_product.title">
-				<source>Produktliste</source>
-			</trans-unit>
-			<trans-unit id="tx_product_list.description">
-				<source>Eine durchschaltbare Liste an Produkten</source>
+			<trans-unit id="tca.tt_content.tx_angelshop_link">
+				<source>Link</source>
 			</trans-unit>
 			<trans-unit id="tca.tt_content.tx_angelshop_map_small">
 				<source>Kleines Impressum</source>
@@ -194,26 +169,56 @@
 			<trans-unit id="tca.tt_content.tx_angelshop_map_small.3">
 				<source>Kleines Impressum</source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_tab.movement">
-				<source>Bewegtes Icon</source>
-			</trans-unit>
 			<trans-unit id="tca.tt_content.tx_angelshop_movement">
 				<source>Bewegtes Icon</source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_domain_model_fontawesome.movement">
-				<source>Bewegtes Icon</source>
+			<trans-unit id="tca.tt_content.tx_angelshop_opentime">
+				<source>Öffnungszeiten</source>
 			</trans-unit>
-			<trans-unit id="tx_contact.title">
-				<source>Kontaktelement</source>
+			<trans-unit id="tca.tt_content.tx_angelshop_owner">
+				<source>Inhaber</source>
 			</trans-unit>
-			<trans-unit id="tx_contact.description">
-				<source>Seitenlink zur Kontaktseite pflegbar</source>
+			<trans-unit id="tca.tt_content.tx_angelshop_phone">
+				<source>Telefon</source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_menu.title">
-				<source>ABA-Angelshop Produktliste</source>
+			<trans-unit id="tca.tt_content.tx_angelshop_sales_tax_indicator">
+				<source>USt-IdNr.</source>
 			</trans-unit>
-			<trans-unit id="tx_angelshop_menu.description">
-				<source>Produktliste der Unterseiten</source>
+			<trans-unit id="tca.tt_content.tx_angelshop_tab">
+				<source>Tabs</source>
+			</trans-unit>
+			<trans-unit id="tca.tt_content.tx_angelshop_title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tca.tt_content.tx_angelshop_trader">
+				<source>Händler</source>
+			</trans-unit>
+			<trans-unit id="tca.tt_content.tx_angelshop">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tca.tt_content.tx_angelshop_cognizance">
+				<source>Gerichtsbarkeit</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_angelshop_product_additional_description">
+				<source>Zusätzliche Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_angelshop_product_manufacturer_name">
+				<source>Herstellername</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_angelshop_product_old_price">
+				<source>Alter Preis</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_angelshop_product_price">
+				<source>Produkt Preis</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_angelshop_product_stock">
+				<source>Produkt nicht mehr auf Lager</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_domain_model_fontawesome.tx_angelshop_title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_team.title">
+				<source>Team Element</source>
 			</trans-unit>
 		</body>
 	</file>

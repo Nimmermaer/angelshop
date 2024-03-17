@@ -1,6 +1,7 @@
 <?php
 
 use MB\Angelshop\Utility\FontawesomeIcons;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:angelshop/Resources/Private/Language/locallang_db.xlf:tx_angelshop_domain_model_fontawesome',
@@ -125,6 +126,11 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => FontawesomeIcons::ICONS,
+                'fieldWizard' => [
+                    'selectIcons' => [
+                        'disabled' => false,
+                    ],
+                ],
             ],
         ],
         'movement' => [

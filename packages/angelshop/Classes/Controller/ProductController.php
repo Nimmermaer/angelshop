@@ -2,11 +2,8 @@
 
 namespace MB\Angelshop\Controller;
 
-use MB\Angelshop\Domain\Model\Content;
 use MB\Angelshop\Domain\Repository\ContentRepository;
-use MB\Angelshop\Property\TypeConverter\UploadedFileReferenceConverter;
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 use TYPO3\CMS\Extbase\Persistence\Generic\Session;
 
 /***************************************************************
@@ -36,68 +33,15 @@ class ProductController extends ActionController
     }
 
     /**
-     * Set TypeConverter option for image upload
-     */
-    public function initializeCreateAction(): void
-    {
-        $this->setTypeConverterConfigurationForImageUpload('content');
-    }
-
-    /**
      *  list action
      */
     public function listAction(): ResponseInterface
     {
-        $products = $this->contentRepository->findByContentType('ce_product');
+        $products = $this->contentRepository->findByContentType('tx_angelshop_product');
         $this->view->assignMultiple([
             'products' => $products,
         ]);
         return $this->htmlResponse();
-    }
-
-    /**
-     *  initialized edit Action
-     */
-    public function initializeEditAction(): void
-    {
-        $this->registerContentFromRequest('product');
-    }
-
-    /**
-     *  edit Action
-     */
-    public function editAction(): ResponseInterface
-    {
-        $product = '';
-
-        $arguments = $this->request->getArguments();
-        if ((int) $arguments['product'] !== 0) {
-            $product = $this->contentRepository->findByIdentifier($arguments['product']);
-        }
-        $this->view->assignMultiple([
-            'product' => $product,
-        ]);
-        return $this->htmlResponse();
-    }
-
-    /**
-     * Set TypeConverter option for image upload
-     */
-    public function initializeUpdateAction(): void
-    {
-        $this->registerContentFromRequest('content');
-        $this->setTypeConverterConfigurationForImageUpload('content');
-    }
-
-    public function updateAction(Content $content): void
-    {
-        $this->addFlashMessage(
-            'Das Produkt mit dem Title: ' . $content->header . ' wurde aktualisiert!',
-            'Produktaktualisierung',
-            ContextualFeedbackSeverity::INFO
-        );
-        $this->contentRepository->update($content);
-        $this->redirect('list');
     }
 
     public function searchAction(): ResponseInterface
@@ -114,27 +58,5 @@ class ProductController extends ActionController
             'products' => $products,
         ]);
         return $this->htmlResponse();
-    }
-
-    protected function setTypeConverterConfigurationForImageUpload($argumentName): void
-    {
-        $uploadConfiguration = [
-            UploadedFileReferenceConverter::CONFIGURATION_ALLOWED_FILE_EXTENSIONS => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-            UploadedFileReferenceConverter::CONFIGURATION_UPLOAD_FOLDER => '1:/content/',
-        ];
-        $newProductConfiguration = $this->arguments[$argumentName]->getPropertyMappingConfiguration();
-        $newProductConfiguration->forProperty('image')
-            ->setTypeConverterOptions(UploadedFileReferenceConverter::class, $uploadConfiguration);
-        $newProductConfiguration->forProperty('imageCollection.0')
-            ->setTypeConverterOptions(UploadedFileReferenceConverter::class, $uploadConfiguration);
-    }
-
-    protected function registerContentFromRequest(string $argumentName): void
-    {
-        $argument = $this->request->getArgument($argumentName);
-        if ($argument) {
-            $content = $this->contentRepository->findHiddenEntryByUid($argument);
-            $this->session->registerObject($content, $content->getUid());
-        }
     }
 }

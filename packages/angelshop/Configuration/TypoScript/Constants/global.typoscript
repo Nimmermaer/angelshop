@@ -1,6 +1,14 @@
 translate = LLL:EXT:angelshop/Resources/Private/Language/locallang.xlf
 
-styles.content.textmedia.maxW = 800
+styles {
+  content {
+    textmedia {
+      maxW = 800
+      maxWInText = 800
+    }
+  }
+}
+
 global {
   homePageUid = 1
   storage {

@@ -1,7 +1,8 @@
 <?php
 
-namespace MB\Angelshop\Upgrades;
+namespace MB\Angelshop\Updates;
 
+use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Core\Environment;
@@ -13,10 +14,13 @@ use TYPO3\CMS\Core\Http\ServerRequestFactory;
 use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Updates\ChattyInterface;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 
-abstract class AbstractMigrationWizard
+abstract class AbstractMigrationWizard implements ChattyInterface
 {
+    protected OutputInterface $output;
+
     protected BackendUserAuthentication $backendUser;
 
     protected ?DataHandler $dataHandler = null;
@@ -67,5 +71,10 @@ abstract class AbstractMigrationWizard
         $this->dataHandler = GeneralUtility::makeInstance(DataHandler::class);
 
         $this->flexformService = GeneralUtility::makeInstance(FlexFormService::class);
+    }
+
+    public function setOutput(OutputInterface $output): void
+    {
+        $this->output = $output;
     }
 }

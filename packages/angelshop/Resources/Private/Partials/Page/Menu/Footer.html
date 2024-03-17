@@ -1,0 +1,10 @@
+<f:for each="{footerMenu}" as="menuItem" iteration="footerIterator">
+    <f:if condition="{footerIterator.isLast}">
+        <f:then>
+            <li>&nbsp;<a href="{menuItem.link}">{menuItem.title}</a></li>
+        </f:then>
+        <f:else>
+            <li>&nbsp;<a href="{menuItem.link}">{menuItem.title}</a> &#8226;</li>
+        </f:else>
+    </f:if>
+</f:for>

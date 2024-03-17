@@ -16,7 +16,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="Angelshop-Nav">
             <ul class="nav navbar-nav navbar-right">
-                <f:cObject typoscriptObjectPath="lib.mainmenu"/>
+              <f:render partial="Page/Menu/Main" arguments="{_all}"/>
                 <li>
                     <f:cObject typoscriptObjectPath="lib.headerSearch"/>
                 </li>

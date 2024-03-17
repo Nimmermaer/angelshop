@@ -1,54 +1,54 @@
 <f:if condition="{paginator.numberOfPages} > 1">
-    <div class="pagination">
-        <f:if condition="{pagination.previousPageNumber}">
-            <f:if condition="{pagination.previousPageNumber} > 1">
-                <f:then>
-                    <a href="{f:uri.action(action:action, arguments:'{currentPage: pagination.previousPage,pagination: 1, filter:queryString}', additionalParams:additionalParams, section: section)}"
-                       class="pagination-button button-left" rel="prev"
-                       title="{f:translate(key:'widget.pagination.first',extensionName:'fluid')}" >
-                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </a>
-                </f:then>
-                <f:else>
-                    <a href="{f:uri.action(action:action, arguments:'{pagination: 1, filter:queryString}', additionalParams:additionalParams, section: section)}"
-                       class="pagination-button button-left" rel="prev">
-                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </a>
-                </f:else>
-            </f:if>
-        </f:if>
+    <nav aria-label="Product navigation">
+        <ul class="pagination justify-content-center">
+            <f:if condition="{pagination.previousPageNumber}">
+                <f:if condition="{pagination.previousPageNumber} > 1">
+                    <f:then>
+                        <li class="page-item">
 
-        <span class="widget-paginator-page"><f:translate key="page" extensionName="avocado"/></span>
-        <ul class="f3-widget-paginator">
-            <f:if condition="{pagination.displayRangeStart} > 1">
-                <li class="first">
-                    <a href="{f:uri.action(action:action, arguments:'{currentPage: page.number,pagination: 1, filter:queryString}', additionalParams:additionalParams, section: section)}"
-                       class="pagination-button button-left" rel="prev">
-                        1
-                    </a>
-                </li>
+                            <a href="{f:uri.action(action:action, arguments:'{currentPage: pagination.previousPage,pagination: 1, filter:queryString, searchword:searchword}', additionalParams:additionalParams, section: section)}"
+                               class="page-link pagination-button button-left" rel="prev"
+                               title="{f:translate(key:'widget.pagination.first',extensionName:'fluid')}">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    </f:then>
+                    <f:else>
+
+                        <li class="page-item">
+                            <a href="{f:uri.action(action:action, arguments:'{pagination: 1, filter:queryString, searchword:searchword}', additionalParams:additionalParams, section: section)}"
+                               class="page-link pagination-button button-left" rel="prev">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+
+                    </f:else>
+                </f:if>
             </f:if>
             <f:if condition="{pagination.hasLessPages}">
-                <li>...</li>
+                <li class="page-item"><span class="page-link">...</span></li>
             </f:if>
             <f:for each="{pagination.allPageNumbers}" as="page">
                 <f:if condition="{page} == {paginator.currentPageNumber}">
                     <f:then>
-                        <li class="current">
-                            <span class="current-number">{page}</span>
+                        <li class="page-item current">
+                            <span class="page-link active current-number">{page}</span>
                         </li>
                     </f:then>
                     <f:else>
-                        <li>
+                        <li class="page-item">
                             <f:if condition="{page} > 1">
                                 <f:then>
-                                    <a href="{f:uri.action(action:action,arguments:'{currentPage: page,pagination: 1, filter:queryString}', additionalParams:additionalParams, section: section)}"
+
+                                    <a class="page-link"
+                                       href="{f:uri.action(action:action,arguments:'{currentPage: page,pagination: 1, filter:queryString, searchword:searchword}', additionalParams:additionalParams, section: section)}"
                                     >
                                         {page}
                                     </a>
                                 </f:then>
                                 <f:else>
-                                    <a href="{f:uri.action(action:action, arguments:'{pagination: 1, filter:queryString}', additionalParams:additionalParams, section: section)}"
+                                    <a class="page-link"
+                                       href="{f:uri.action(action:action, arguments:'{pagination: 1, filter:queryString, searchword:searchword}', additionalParams:additionalParams, section: section)}"
                                     >
                                         {page}
                                     </a>
@@ -58,18 +58,21 @@
                     </f:else>
                 </f:if>
             </f:for>
+            <f:if condition="{pagination.hasMorePages}">
+                <li class="page-item"><span class="page-link">...</span></li>
+            </f:if>
+            <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} =< {pagination.lastPageNumber}">
+                <f:then>
+                    <li class="page-item">
+                        <a href="{f:uri.action(action:action,arguments:'{currentPage: pagination.lastPageNumber, searchword:searchword}', additionalParams:additionalParams, section: section)}"
+                           class="page-link pagination-button button-right" rel="next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+
+                </f:then>
+            </f:if>
 
         </ul>
-        <f:if condition="{showFromPagesInformation} && {paginator.numberOfPages} > 7">
-            <span class="number-of-pages"><f:translate key="of"/> {paginator.numberOfPages}</span>
-        </f:if>
-        <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} =< {pagination.lastPageNumber}">
-            <f:then>
-                <a href="{f:uri.action(action:action,arguments:'{currentPage: pagination.lastPageNumber}', additionalParams:additionalParams, section: section)}"
-                   class="pagination-button button-right" rel="next">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
-            </f:then>
-        </f:if>
-    </div>
+    </nav>
 </f:if>

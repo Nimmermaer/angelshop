@@ -33,9 +33,6 @@ class Tab extends AbstractEntity
 
     public string $movement = '';
 
-    /**
-     * image
-     */
     protected ?FileReference $image = null;
 
     public function getImage(): ?FileReference

@@ -1,7 +1,7 @@
 <?php
 
-use TYPO3\CMS\Core\Crypto\PasswordHashing\Argon2iPasswordHash;
 use TYPO3\CMS\Core\Cache\Backend\Typo3DatabaseBackend;
+use TYPO3\CMS\Core\Crypto\PasswordHashing\Argon2iPasswordHash;
 return [
     'BE' => [
         'compressionLevel' => 9,

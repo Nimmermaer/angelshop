@@ -35,6 +35,11 @@ call_user_func(
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => FontawesomeIcons::ICONS,
+                    'fieldWizard' => [
+                        'selectIcons' => [
+                            'disabled' => false,
+                        ],
+                    ],
                 ],
             ],
         ];

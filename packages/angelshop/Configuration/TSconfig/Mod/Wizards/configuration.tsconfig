@@ -1,0 +1,116 @@
+mod {
+  wizards {
+    newContentElement {
+      wizardItems {
+        provider {
+          header = Angelshop
+          elements {
+            tx_angelshop_impressum {
+              iconIdentifier = angelshop-map
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_impressum.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_impressum.description
+              tt_content_defValues {
+                CType = tx_angelshop_impressum
+              }
+            }
+
+            tx_angelshop_product {
+              iconIdentifier = angelshop-product
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_product.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_product.description
+              tt_content_defValues {
+                CType = tx_angelshop_product
+              }
+            }
+
+            angelshop_product {
+              iconIdentifier = angelshop-productlist
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.description
+              tt_content_defValues {
+                CType = angelshop_product
+              }
+            }
+
+            tx_angelshop_contact {
+              iconIdentifier = mimetypes-x-content-form
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_contact.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_contact.description
+              tt_content_defValues {
+                CType = tx_angelshop_contact
+              }
+            }
+          }
+
+          show = *
+        }
+
+        menu {
+          elements {
+            tx_angelshop_menu {
+              iconIdentifier = angelshop-productlist
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_menu.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_menu.description
+              tt_content_defValues {
+                CType = tx_angelshop_menu
+              }
+            }
+          }
+
+          show = *
+        }
+
+        common {
+          elements {
+            tx_angelshop_slider {
+              iconIdentifier = content-image
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_slider.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_slider.description
+              tt_content_defValues {
+                CType = tx_angelshop_slider
+              }
+            }
+
+            tx_angelshop_service {
+              iconIdentifier = angelshop-service
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_service.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_service.description
+              tt_content_defValues {
+                CType = tx_angelshop_service
+              }
+            }
+
+            tx_angelshop_trader_slider {
+              iconIdentifier = angelshop-business
+              title = Trader Slider
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_service.description
+              tt_content_defValues {
+                CType = tx_angelshop_trader_slider
+              }
+            }
+
+            tx_angelshop_tab {
+              iconIdentifier = angelshop-tab
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_tab.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_tab.description
+              tt_content_defValues {
+                CType = tx_angelshop_tab
+              }
+            }
+
+            tx_angelshop_gallery {
+              iconIdentifier = angelshop-gallery
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_gallery.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_gallery.description
+              tt_content_defValues {
+                CType = tx_angelshop_gallery
+              }
+            }
+          }
+
+          show = *
+        }
+      }
+    }
+  }
+}

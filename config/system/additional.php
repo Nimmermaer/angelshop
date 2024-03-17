@@ -1,8 +1,8 @@
 <?php
 
-use TYPO3\CMS\Core\Log\Writer\FileWriter;
 use TYPO3\CMS\Core\Core\Environment;
-$currentApplicationContext = (string)Environment::getContext();
+use TYPO3\CMS\Core\Log\Writer\FileWriter;
+$currentApplicationContext = (string) Environment::getContext();
 if (getenv('IS_DDEV_PROJECT') == 'true') {
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         $GLOBALS['TYPO3_CONF_VARS'],
@@ -15,19 +15,8 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
             'BE' => [
                 'loginRateLimit' => 0,
                 'compressionLevel' => 0,
-                'debug' =>true,
-            ],
-            'DB' => [
-                'Connections' => [
-                    'Default' => [
-                        'dbname' => 'db',
-                        'driver' => 'mysqli',
-                        'host' => 'db',
-                        'password' => 'db',
-                        'port' => '3306',
-                        'user' => 'db',
-                    ],
-                ],
+                'debug' => true,
+                'languageDebug' => false,
             ],
             'GFX' => [
                 'processor' => 'ImageMagick',
@@ -60,7 +49,7 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
                 'displayErrors' => 1,
             ],
             'EXTCONF' => [
-                'filefill'=> [
+                'filefill' => [
                     'storages' => [
                         1 => [
                             [
@@ -71,9 +60,9 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
                                 'identifier' => 'placeholder',
                             ],
                         ],
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ]
     );
 }
@@ -84,10 +73,8 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
             'Connections' => [
                 'Default' => [
                     'dbname' => getenv('TYPO3_DB_NAME'),
-                    'driver' => 'mysqli',
                     'host' => getenv('TYPO3_HOST_NAME'),
                     'password' => getenv('TYPO3_PASSWORD'),
-                    'port' => '3306',
                     'user' => getenv('TYPO3_USER_NAME'),
                 ],
             ],

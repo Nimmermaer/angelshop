@@ -19,9 +19,12 @@
 	],
 	"require": {
 		"typo3/cms-core": "^12.4",
+		"typo3/cms-seo": "^12.4",
 		"georgringer/news": "*",
 		"lochmueller/staticfilecache": "^14.0",
-		"b13/container": "*"
+		"b13/container": "*",
+		"friendsoftypo3/fontawesome-provider": "^1.0",
+		"lochmueller/sourceopt": "^5.1"
 	},
 	"autoload": {
 		"psr-4": {
