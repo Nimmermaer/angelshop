@@ -10,7 +10,7 @@ call_user_func(
         ExtensionUtility::registerPlugin(
             ucfirst((string) $extensionKey),
             'Product',
-            'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_product_list.title',
+            'LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_product_list.title',
             'content-image'
         );
 

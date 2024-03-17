@@ -110,6 +110,19 @@ mod {
 
           show = *
         }
+
+        plugins {
+          elements {
+            angelshop_product {
+              iconIdentifier = angelshop-productlist
+              title = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_product_list.title
+              description = LLL:EXT:angelshop/Resources/Private/Language/locallang_be.xlf:tx_angelshop_product_list.description
+              tt_content_defValues {
+                CType = angelshop_product
+              }
+            }
+          }
+        }
       }
     }
   }

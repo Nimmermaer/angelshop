@@ -283,16 +283,6 @@ call_user_func(
                 'after'
             );
         }
-        ExtensionManagementUtility::addTcaSelectItem(
-            $table,
-            'CType',
-            [
-                'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:angelshop_product.title',
-                'angelshop_product',
-            ],
-            'textmedia',
-            'after'
-        );
 
         $commonFields = '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
          --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,

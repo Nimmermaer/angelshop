@@ -27,4 +27,21 @@ trait PaginationTrait
         ]);
         return $view;
     }
+
+    private function buildSlideWindowPaginationForFrontend(
+        QueryResultInterface $allItems,
+        int $itemsPerPage = 10,
+        int $maximumLinks = 15,
+    ): void {
+        $currentPage = $this->request->hasArgument('currentPage')
+            ? (int) $this->request->getArgument('currentPage')
+            : 1;
+
+        $paginator = new QueryResultPaginator($allItems, $currentPage, $itemsPerPage);
+        $pagination = new SlidingWindowPagination($paginator, $maximumLinks);
+        $this->view->assign('pagination', [
+            'pagination' => $pagination,
+            'paginator' => $paginator,
+        ]);
+    }
 }

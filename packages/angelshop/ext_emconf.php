@@ -18,8 +18,8 @@ $EM_CONF['angelshop'] = [
     'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.0-10.9.99',
-            'news' => '7.2.0-10.9.99',
+            'typo3' => '12.4.00-12.4.99',
+            'news' => '11.4.00-11.4.99',
         ],
         'conflicts' => [],
         'suggests' => [],

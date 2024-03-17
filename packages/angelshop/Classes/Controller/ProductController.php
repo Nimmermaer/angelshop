@@ -3,6 +3,7 @@
 namespace MB\Angelshop\Controller;
 
 use MB\Angelshop\Domain\Repository\ContentRepository;
+use MB\Angelshop\Traits\PaginationTrait;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Session;
 
@@ -23,9 +24,10 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Session;
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 class ProductController extends ActionController
 {
+    use PaginationTrait;
+
     public function __construct(
         protected readonly ?ContentRepository $contentRepository,
         protected readonly ?Session $session
@@ -47,16 +49,14 @@ class ProductController extends ActionController
     public function searchAction(): ResponseInterface
     {
         $argument = $this->request->getArguments();
-
+        $products = $this->contentRepository->findByContentType('tx_angelshop_product');
         if ($argument['searchword'] ?? false) {
             $products = $this->contentRepository->findByIndex($argument['searchword']);
             $this->view->assign('searchword', $argument['searchword']);
-        } else {
-            $products = $this->contentRepository->findByContentType('ce_product');
         }
-        $this->view->assignMultiple([
-            'products' => $products,
-        ]);
+        if ($products) {
+            $this->buildSlideWindowPaginationForFrontend($products);
+        }
         return $this->htmlResponse();
     }
 }

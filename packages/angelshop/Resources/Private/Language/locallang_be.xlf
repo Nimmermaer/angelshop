@@ -220,6 +220,12 @@
 			<trans-unit id="tx_team.title">
 				<source>Team Element</source>
 			</trans-unit>
+			<trans-unit id="tx_angelshop_product_list.title">
+				<source>Produktsuche</source>
+			</trans-unit>
+			<trans-unit id="tx_angelshop_product_list.description">
+				<source />
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
