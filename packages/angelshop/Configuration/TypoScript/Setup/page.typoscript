@@ -52,11 +52,6 @@ page {
 
   headTag = <head itemscope itemtype="http://schema.org/WebSite">
   headerData {
-    10 = TEXT
-    10 {
-      field = title
-      noTrimWrap = |<title itemprop="name"> | &#124; Aba-Angelshop Laufen </title>|
-    }
 
     11 = TEXT
     11.value = <meta name="theme-color" content="#FFA500">
@@ -103,34 +98,6 @@ page {
   }
 }
 
-#
-#[traverse(request.getQueryParams(), 'tx_news_pi1/news') >0 || traverse(request.getParsedBody(), 'tx_news_pi1/news') > 0]
-#  page.headerData {
-#    10 = RECORDS
-#    10 {
-#      source = {GP:tx_news_pi1|news}
-#      source.insertData = 1
-#      tables = tx_news_domain_model_news
-#      conf {
-#        tx_news_domain_model_news >
-#        tx_news_domain_model_news = TEXT
-#        tx_news_domain_model_news.field = title
-#      }
-#
-#      wrap = <title  itemprop="name"> |&nbsp; &#124; Aba-Angelshop Laufen </title>
-#    }
-#  }
-#[global]
-#
-[getTSFE()?.id == 1]
-  page.headerData {
-    10 = TEXT
-    10 {
-      field = title
-      noTrimWrap = |<title  itemprop="name"> | Laufen I'geh fisch'n</title>|
-    }
-  }
-[global]
 
 lib {
   datum = TEXT

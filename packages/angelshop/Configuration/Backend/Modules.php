@@ -11,7 +11,7 @@ return [
         ],
         'access' => 'user',
         'workspaces' => 'live',
-        'path' => '/module/angelshop/prouducts',
+        'path' => '/module/angelshop/products',
         'labels' => 'LLL:EXT:angelshop/Resources/Private/Language/Module/locallang_mod.xlf',
         'extensionName' => 'Angelshop',
         'iconIdentifier' => 'module-dbal',

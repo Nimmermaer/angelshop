@@ -2,6 +2,7 @@
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\Translation\Command\XliffLintCommand;
+use Symfony\Component\Yaml\Command\LintCommand;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
@@ -10,6 +11,16 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ->public()
             ->tag('console.command', [
                 'command' => 'xliff:lint',
+            ]);
+    }
+    if (class_exists(LintCommand::class)) {
+        $services->set(LintCommand::class)
+            ->public()
+            ->args([
+                '$name' => 'Yaml Linter',
+            ])
+            ->tag('console.command', [
+                'command' => 'lint:yaml',
             ]);
     }
 };

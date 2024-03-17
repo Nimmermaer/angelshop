@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "495144b401aac5a2a24f75ef27939b10",
+    "content-hash": "6e143488a302de3675ef657797b7d4aa",
     "packages": [
         {
             "name": "b13/container",
@@ -2090,16 +2090,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.19.0",
+            "version": "v4.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "32cdab9a034239a8f57ae0e9a15bada4bd9747bf"
+                "reference": "4e1b88d21c69391150ace211e9eaf05810858d0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/32cdab9a034239a8f57ae0e9a15bada4bd9747bf",
-                "reference": "32cdab9a034239a8f57ae0e9a15bada4bd9747bf",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4e1b88d21c69391150ace211e9eaf05810858d0b",
+                "reference": "4e1b88d21c69391150ace211e9eaf05810858d0b",
                 "shasum": ""
             },
             "require": {
@@ -2140,9 +2140,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.19.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.19.1"
             },
-            "time": "2024-03-16T14:49:31+00:00"
+            "time": "2024-03-17T08:10:35+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -7706,64 +7706,6 @@
             "time": "2024-03-12T08:15:14+00:00"
         },
         {
-            "name": "typo3/cms-reactions",
-            "version": "v12.4.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3-CMS/reactions.git",
-                "reference": "ada9cbe342ad79e5f53555ea194bf271a062e78a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/reactions/zipball/ada9cbe342ad79e5f53555ea194bf271a062e78a",
-                "reference": "ada9cbe342ad79e5f53555ea194bf271a062e78a",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/cms-core": "12.4.12"
-            },
-            "conflict": {
-                "typo3/cms": "*"
-            },
-            "suggest": {
-                "typo3/cms-lowlevel": "To display registered reactions in the configuration module"
-            },
-            "type": "typo3-cms-framework",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "12.4.x-dev"
-                },
-                "typo3/cms": {
-                    "extension-key": "reactions"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TYPO3\\CMS\\Reactions\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "TYPO3 Core Team",
-                    "email": "typo3cms@typo3.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "TYPO3 CMS Reactions - Handle incoming Webhooks for TYPO3",
-            "homepage": "https://typo3.org",
-            "support": {
-                "chat": "https://typo3.org/help",
-                "docs": "https://docs.typo3.org/c/typo3/cms-reactions/main/en-us/",
-                "issues": "https://forge.typo3.org",
-                "source": "https://github.com/typo3/typo3"
-            },
-            "time": "2024-03-12T08:15:14+00:00"
-        },
-        {
             "name": "typo3/cms-recycler",
             "version": "v12.4.12",
             "source": {
@@ -8421,123 +8363,6 @@
             "time": "2024-03-12T08:15:14+00:00"
         },
         {
-            "name": "typo3/cms-webhooks",
-            "version": "v12.4.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3-CMS/webhooks.git",
-                "reference": "85c02db5f0bf15341af52aaaf368a15b992c657b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/webhooks/zipball/85c02db5f0bf15341af52aaaf368a15b992c657b",
-                "reference": "85c02db5f0bf15341af52aaaf368a15b992c657b",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/uid": "^6.4 || ^7.0",
-                "typo3/cms-core": "12.4.12"
-            },
-            "conflict": {
-                "typo3/cms": "*"
-            },
-            "suggest": {
-                "typo3/cms-lowlevel": "To display registered webhooks in the configuration module"
-            },
-            "type": "typo3-cms-framework",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "12.4.x-dev"
-                },
-                "typo3/cms": {
-                    "extension-key": "webhooks"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TYPO3\\CMS\\Webhooks\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "TYPO3 Core Team",
-                    "email": "typo3cms@typo3.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "TYPO3 CMS Webhooks - Handle outgoing Webhooks for TYPO3",
-            "homepage": "https://typo3.org",
-            "support": {
-                "chat": "https://typo3.org/help",
-                "docs": "https://docs.typo3.org/c/typo3/cms-webhooks/main/en-us/",
-                "issues": "https://forge.typo3.org",
-                "source": "https://github.com/typo3/typo3"
-            },
-            "time": "2024-03-12T08:15:14+00:00"
-        },
-        {
-            "name": "typo3/cms-workspaces",
-            "version": "v12.4.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3-CMS/workspaces.git",
-                "reference": "dc94403166d3f9ee815d1b7979e9c97eb76efa00"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/workspaces/zipball/dc94403166d3f9ee815d1b7979e9c97eb76efa00",
-                "reference": "dc94403166d3f9ee815d1b7979e9c97eb76efa00",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/cms-core": "12.4.12"
-            },
-            "conflict": {
-                "typo3/cms": "*"
-            },
-            "replace": {
-                "typo3/cms-version": "self.version"
-            },
-            "type": "typo3-cms-framework",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "12.4.x-dev"
-                },
-                "typo3/cms": {
-                    "extension-key": "workspaces"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TYPO3\\CMS\\Workspaces\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "TYPO3 Core Team",
-                    "email": "typo3cms@typo3.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "TYPO3 CMS Workspaces - Workflows with custom stages and versioning for a better editing and publishing experience.",
-            "homepage": "https://typo3.org",
-            "support": {
-                "chat": "https://typo3.org/help",
-                "docs": "https://docs.typo3.org/c/typo3/cms-workspaces/main/en-us",
-                "issues": "https://forge.typo3.org",
-                "source": "https://github.com/typo3/typo3"
-            },
-            "time": "2024-03-12T08:15:14+00:00"
-        },
-        {
             "name": "typo3/html-sanitizer",
             "version": "v2.1.4",
             "source": {
@@ -8587,56 +8412,6 @@
                 "source": "https://github.com/TYPO3/html-sanitizer/tree/v2.1.4"
             },
             "time": "2023-11-14T07:41:08+00:00"
-        },
-        {
-            "name": "typo3/minimal",
-            "version": "v12.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3/minimal.git",
-                "reference": "07b5d521858532f893908bd50803c6bb5e0169e4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/minimal/zipball/07b5d521858532f893908bd50803c6bb5e0169e4",
-                "reference": "07b5d521858532f893908bd50803c6bb5e0169e4",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/cms-backend": "^12.4",
-                "typo3/cms-core": "^12.4",
-                "typo3/cms-extbase": "^12.4",
-                "typo3/cms-extensionmanager": "^12.4",
-                "typo3/cms-filelist": "^12.4",
-                "typo3/cms-fluid": "^12.4",
-                "typo3/cms-frontend": "^12.4",
-                "typo3/cms-install": "^12.4"
-            },
-            "type": "metapackage",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "TYPO3 CMS Core Team",
-                    "homepage": "https://forge.typo3.org/projects/typo3cms-core",
-                    "role": "Developer"
-                },
-                {
-                    "name": "The TYPO3 Community",
-                    "homepage": "https://typo3.org/community/",
-                    "role": "Contributor"
-                }
-            ],
-            "description": "Minimal required set of TYPO3 extensions",
-            "support": {
-                "chat": "https://typo3.org/help",
-                "docs": "https://docs.typo3.org",
-                "issues": "https://forge.typo3.org",
-                "source": "https://github.com/typo3/typo3"
-            },
-            "time": "2023-04-25T05:34:21+00:00"
         },
         {
             "name": "typo3fluid/fluid",

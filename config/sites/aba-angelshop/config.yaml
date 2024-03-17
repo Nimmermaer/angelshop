@@ -25,7 +25,6 @@ languages:
     hreflang: de-DE
     direction: ltr
     flag: de
-    websiteTitle: 'Aba Angelshop'
 rootPageId: 1
 routeEnhancers:
   PageTypeSuffix:
@@ -58,4 +57,4 @@ routes:
     route: robots.txt
     type: staticText
     content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\nSitemap: https://aba-angelshop.de/sitemap.xml"
-websiteTitle: 'Aba Angelshop'
+websiteTitle: 'Aba-Angelshop Laufen'

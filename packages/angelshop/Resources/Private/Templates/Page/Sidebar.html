@@ -7,7 +7,16 @@
         <f:render arguments="{_all}" partial="Page/ImageHeader"/>
     </f:if>
     <div class="container">
-        <f:render arguments="{_all}" partial="Page/Menu/Breadcrumb"/>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header" itemprop="name">{data.title}
+                    <f:if condition="{data.subtitle}">
+                        <small>{data.subtitle}</small>
+                    </f:if>
+                </h1>
+                <f:render arguments="{_all}" partial="Page/Menu/Breadcrumb"/>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-3">
                 <f:render arguments="{_all}" partial="Page/Submenu"/>

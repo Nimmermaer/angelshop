@@ -16,13 +16,6 @@ services:
       - name: console.command
         command: 'lint:xliff'
 
-  Symfony\Component\Yaml\Command\LintCommand:
-    arguments:
-      $name: 'Yaml Linter'
-    tags:
-      - name: console.command
-        command: 'lint:yaml'
-
   MB\Angelshop\EventListener\PageModulePreviewEventListener:
     tags:
       - name: event.listener

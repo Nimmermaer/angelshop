@@ -17,10 +17,12 @@ final readonly class AngelshopPageTitleProvider implements PageTitleProviderInte
     public function getTitle(): string
     {
         $site = $this->siteFinder->getSiteByPageId($this->getTypoScriptFrontendController()->page['uid']);
-        $title = $this->getTypoScriptFrontendController()->page['title'] . $this->getTypoScriptFrontendController()->page['subtitle'];
-        dd($this->getTypoScriptFrontendController());
-        if($this->getTypoScriptFrontendController()->page['uid'] === 1) {
-            $title = $this->getTypoScriptFrontendController()->page['title'] . ' | I` geh fisch`n';
+        $title = $this->getTypoScriptFrontendController()->page['title'];
+        if($this->getTypoScriptFrontendController()->page['subtitle']) {
+            $title = $this->getTypoScriptFrontendController()->page['title'] .' '. $this->getTypoScriptFrontendController()->page['subtitle'];
+        }
+        if($this->getTypoScriptFrontendController()->page['uid'] === $site->getRootPageId()) {
+            $title = 'I` geh fisch`n';
         }
        return $title;
     }

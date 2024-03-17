@@ -1,27 +1,18 @@
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header" itemprop="name">{data.title}
-            <f:if condition="{data.subtitle}">
-                <small>{data.subtitle}</small>
-            </f:if>
-        </h1>
-        <div itemprop="breadcrumb">
-            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
-                <f:for as="linkItem" each="{breadcrumb}" iteration="breadcrumpIterator">
-                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <f:if condition="{breadcrumpIterator.isLast}">
-                            <f:else>
-                                <a href="{linkItem.link}" itemprop="url">{linkItem.title}</a>
-                            </f:else>
-                            <f:then>
-                                {linkItem.title}
-                            </f:then>
-                        </f:if>
-                        <meta itemprop="name" content="{linkItem.title}">
-                        <meta itemprop="position" content="{breadcrumpIterator.cycle}">
-                    </li>
-                </f:for>
-            </ol>
-        </div>
-    </div>
+<div itemprop="breadcrumb">
+    <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+        <f:for as="linkItem" each="{breadcrumb}" iteration="breadcrumpIterator">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <f:if condition="{breadcrumpIterator.isLast}">
+                    <f:else>
+                        <a href="{linkItem.link}" itemprop="url">{linkItem.title}</a>
+                    </f:else>
+                    <f:then>
+                        {linkItem.title}
+                    </f:then>
+                </f:if>
+                <meta itemprop="name" content="{linkItem.title}">
+                <meta itemprop="position" content="{breadcrumpIterator.cycle}">
+            </li>
+        </f:for>
+    </ol>
 </div>
