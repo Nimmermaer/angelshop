@@ -14,7 +14,7 @@
 		"typo3/cms": {
 			"composer-mode": true,
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
-			"web-dir": "web/public"
+			"web-dir": "public"
 		},
 		"typo3/class-alias-loader": {
 			"always-add-alias-loader": true
